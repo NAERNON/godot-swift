@@ -81,46 +81,50 @@ open class ScriptEditor: PanelContainer {
     }()
 
     internal static var __method_binding_get_current_editor: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_current_editor").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_current_editor").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1906266726)!
         }
         }
     }()
 
     public func currentEditor() -> Godot.ScriptEditorBase? {
-        Godot.ScriptEditorBase?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_current_editor,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_current_editor,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_get_open_script_editors: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_open_script_editors").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_open_script_editors").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
         }
         }
     }()
 
     public func openScriptEditors() -> Godot.GodotArray<Godot.ScriptEditorBase?> {
-        Godot.GodotArray<Godot.ScriptEditorBase?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_open_script_editors,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_open_script_editors,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_register_syntax_highlighter: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "register_syntax_highlighter").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "register_syntax_highlighter").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1092774468)!
         }
         }
@@ -129,21 +133,25 @@ open class ScriptEditor: PanelContainer {
     public func registerSyntaxHighlighter(
         _ syntaxHighlighter: Godot.EditorSyntaxHighlighter?
     ) {
-        syntaxHighlighter.withGodotUnsafeRawPointer { __ptr_syntaxHighlighter in
-        withUnsafePointer(to: __ptr_syntaxHighlighter) { _ptr___ptr_syntaxHighlighter in
-        withUnsafeArgumentPackPointer(_ptr___ptr_syntaxHighlighter) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_register_syntax_highlighter,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: syntaxHighlighter) { __ptr_syntaxHighlighter in
+            withUnsafePointer(to: __ptr_syntaxHighlighter) { _ptr___ptr_syntaxHighlighter in
+                withUnsafeArgumentPackPointer(_ptr___ptr_syntaxHighlighter) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_register_syntax_highlighter,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_unregister_syntax_highlighter: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "unregister_syntax_highlighter").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "unregister_syntax_highlighter").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1092774468)!
         }
         }
@@ -152,21 +160,25 @@ open class ScriptEditor: PanelContainer {
     public func unregisterSyntaxHighlighter(
         _ syntaxHighlighter: Godot.EditorSyntaxHighlighter?
     ) {
-        syntaxHighlighter.withGodotUnsafeRawPointer { __ptr_syntaxHighlighter in
-        withUnsafePointer(to: __ptr_syntaxHighlighter) { _ptr___ptr_syntaxHighlighter in
-        withUnsafeArgumentPackPointer(_ptr___ptr_syntaxHighlighter) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_unregister_syntax_highlighter,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: syntaxHighlighter) { __ptr_syntaxHighlighter in
+            withUnsafePointer(to: __ptr_syntaxHighlighter) { _ptr___ptr_syntaxHighlighter in
+                withUnsafeArgumentPackPointer(_ptr___ptr_syntaxHighlighter) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_unregister_syntax_highlighter,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_goto_line: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "goto_line").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "goto_line").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -175,58 +187,65 @@ open class ScriptEditor: PanelContainer {
     public func gotoLine(
         lineNumber: Int32
     ) {
-        lineNumber.withGodotUnsafeRawPointer { __ptr_lineNumber in
-        withUnsafeArgumentPackPointer(__ptr_lineNumber) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_goto_line,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: lineNumber) { __ptr_lineNumber in
+            withUnsafeArgumentPackPointer(__ptr_lineNumber) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_goto_line,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_current_script: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_current_script").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_current_script").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2146468882)!
         }
         }
     }()
 
     public func currentScript() -> Godot.Script? {
-        Godot.Script?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_current_script,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_current_script,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_get_open_scripts: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_open_scripts").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_open_scripts").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
         }
         }
     }()
 
     public func openScripts() -> Godot.GodotArray<Godot.Script?> {
-        Godot.GodotArray<Godot.Script?> .fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_open_scripts,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_open_scripts,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_open_script_create_dialog: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "open_script_create_dialog").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "open_script_create_dialog").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3186203200)!
         }
         }
@@ -236,16 +255,20 @@ open class ScriptEditor: PanelContainer {
         baseName: Godot.GodotString,
         basePath: Godot.GodotString
     ) {
-        baseName.withGodotUnsafeRawPointer { __ptr_baseName in
-        basePath.withGodotUnsafeRawPointer { __ptr_basePath in
-        withUnsafeArgumentPackPointer(__ptr_baseName, __ptr_basePath) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_open_script_create_dialog,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: baseName) { __ptr_baseName in
+            withTransferrableUnsafeRawPointer(to: basePath) { __ptr_basePath in
+                withUnsafeArgumentPackPointer(__ptr_baseName, __ptr_basePath) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_open_script_create_dialog,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

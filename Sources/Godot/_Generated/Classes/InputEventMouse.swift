@@ -7,8 +7,8 @@ import GodotExtensionHeaders
 @GodotRefCountedClass
 open class InputEventMouse: InputEventWithModifiers {
     internal static var __method_binding_set_button_mask: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_button_mask").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_button_mask").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3950145251)!
         }
         }
@@ -17,39 +17,44 @@ open class InputEventMouse: InputEventWithModifiers {
     private func __setButtonMask(
         _ buttonMask: Godot.MouseButtonMask
     ) {
-        buttonMask.withGodotUnsafeRawPointer { __ptr_buttonMask in
-        withUnsafeArgumentPackPointer(__ptr_buttonMask) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_button_mask,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: buttonMask) { __ptr_buttonMask in
+            withUnsafeArgumentPackPointer(__ptr_buttonMask) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_button_mask,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_button_mask: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_button_mask").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_button_mask").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2512161324)!
         }
         }
     }()
 
     private func __getButtonMask() -> Godot.MouseButtonMask {
-        Godot.MouseButtonMask.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_button_mask,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_button_mask,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_position: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_position").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_position").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -58,39 +63,44 @@ open class InputEventMouse: InputEventWithModifiers {
     private func __setPosition(
         _ position: Godot.Vector2
     ) {
-        position.withGodotUnsafeRawPointer { __ptr_position in
-        withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_position,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: position) { __ptr_position in
+            withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_position,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_position: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_position").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_position").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
     }()
 
     private func __getPosition() -> Godot.Vector2 {
-        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_position,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_position,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_global_position: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_global_position").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_global_position").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
         }
         }
@@ -99,34 +109,39 @@ open class InputEventMouse: InputEventWithModifiers {
     private func __setGlobalPosition(
         _ globalPosition: Godot.Vector2
     ) {
-        globalPosition.withGodotUnsafeRawPointer { __ptr_globalPosition in
-        withUnsafeArgumentPackPointer(__ptr_globalPosition) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_global_position,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: globalPosition) { __ptr_globalPosition in
+            withUnsafeArgumentPackPointer(__ptr_globalPosition) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_global_position,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_global_position: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_global_position").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_global_position").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
     }()
 
     private func __getGlobalPosition() -> Godot.Vector2 {
-        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_global_position,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_global_position,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     public var buttonMask: Godot.MouseButtonMask {

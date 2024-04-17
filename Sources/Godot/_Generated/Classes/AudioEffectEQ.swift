@@ -7,8 +7,8 @@ import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AudioEffectEQ: AudioEffect {
     internal static var __method_binding_set_band_gain_db: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_band_gain_db").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_band_gain_db").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
         }
         }
@@ -18,21 +18,25 @@ open class AudioEffectEQ: AudioEffect {
         bandIdx: Int32,
         volumeDb: Double
     ) {
-        bandIdx.withGodotUnsafeRawPointer { __ptr_bandIdx in
-        volumeDb.withGodotUnsafeRawPointer { __ptr_volumeDb in
-        withUnsafeArgumentPackPointer(__ptr_bandIdx, __ptr_volumeDb) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_band_gain_db,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: bandIdx) { __ptr_bandIdx in
+            withTransferrableUnsafeRawPointer(to: volumeDb) { __ptr_volumeDb in
+                withUnsafeArgumentPackPointer(__ptr_bandIdx, __ptr_volumeDb) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_set_band_gain_db,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_band_gain_db: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_band_gain_db").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_band_gain_db").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
         }
         }
@@ -41,35 +45,41 @@ open class AudioEffectEQ: AudioEffect {
     public func bandGainDb(
         bandIdx: Int32
     ) -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        bandIdx.withGodotUnsafeRawPointer { __ptr_bandIdx in
-        withUnsafeArgumentPackPointer(__ptr_bandIdx) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_band_gain_db,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: bandIdx) { __ptr_bandIdx in
+                withUnsafeArgumentPackPointer(__ptr_bandIdx) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_get_band_gain_db,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_band_count: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_band_count").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_band_count").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
     }()
 
     public func bandCount() -> Int32 {
-        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_band_count,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_band_count,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

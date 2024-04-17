@@ -7,8 +7,8 @@ import GodotExtensionHeaders
 @GodotRefCountedClass
 open class MissingResource: Resource {
     internal static var __method_binding_set_original_class: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_original_class").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_original_class").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -17,39 +17,44 @@ open class MissingResource: Resource {
     private func __setOriginalClass(
         name: Godot.GodotString
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_original_class,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_original_class,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_original_class: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_original_class").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_original_class").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
     }()
 
     private func __getOriginalClass() -> Godot.GodotString {
-        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_original_class,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_original_class,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_recording_properties: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_recording_properties").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_recording_properties").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -58,34 +63,39 @@ open class MissingResource: Resource {
     private func __setRecordingProperties(
         enable: Bool
     ) {
-        enable.withGodotUnsafeRawPointer { __ptr_enable in
-        withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_recording_properties,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: enable) { __ptr_enable in
+            withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_recording_properties,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_is_recording_properties: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_recording_properties").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_recording_properties").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
 
     private func __isRecordingProperties() -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_is_recording_properties,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_is_recording_properties,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     public var originalClass: Godot.GodotString {

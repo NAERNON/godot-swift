@@ -27,8 +27,8 @@ open class ScrollBar: Range {
     }()
 
     internal static var __method_binding_set_custom_step: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_custom_step").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_custom_step").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -37,34 +37,39 @@ open class ScrollBar: Range {
     private func __setCustomStep(
         _ step: Double
     ) {
-        step.withGodotUnsafeRawPointer { __ptr_step in
-        withUnsafeArgumentPackPointer(__ptr_step) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_custom_step,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: step) { __ptr_step in
+            withUnsafeArgumentPackPointer(__ptr_step) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_custom_step,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_custom_step: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_custom_step").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_custom_step").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
     }()
 
     private func __getCustomStep() -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_custom_step,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_custom_step,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     public var customStep: Double {

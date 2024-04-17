@@ -7,8 +7,8 @@ import GodotExtensionHeaders
 @GodotClass
 open class Marker2D: Node2D {
     internal static var __method_binding_set_gizmo_extents: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_gizmo_extents").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_gizmo_extents").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -17,34 +17,39 @@ open class Marker2D: Node2D {
     private func __setGizmoExtents(
         _ extents: Double
     ) {
-        extents.withGodotUnsafeRawPointer { __ptr_extents in
-        withUnsafeArgumentPackPointer(__ptr_extents) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_gizmo_extents,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: extents) { __ptr_extents in
+            withUnsafeArgumentPackPointer(__ptr_extents) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_gizmo_extents,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_gizmo_extents: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_gizmo_extents").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_gizmo_extents").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
     }()
 
     private func __getGizmoExtents() -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_gizmo_extents,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_gizmo_extents,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     public var gizmoExtents: Double {

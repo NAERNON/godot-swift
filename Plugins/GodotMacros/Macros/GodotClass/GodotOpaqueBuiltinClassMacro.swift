@@ -62,7 +62,7 @@ public enum GodotOpaqueBuiltinClassMacro: MemberMacro {
             try opaque.withUnsafeRawBufferPointer(body)
         }
         
-        func withUnsafeMutableRawBufferPointer<Result>(
+        mutating func withUnsafeMutableRawBufferPointer<Result>(
             _ body: (UnsafeMutableRawBufferPointer) throws -> Result
         ) rethrows -> Result {
             try opaque.withUnsafeMutableRawBufferPointer(body)
@@ -74,7 +74,7 @@ public enum GodotOpaqueBuiltinClassMacro: MemberMacro {
             try opaque.withUnsafeRawPointer(body)
         }
         
-        func withUnsafeMutableRawPointer<Result>(
+        mutating func withUnsafeMutableRawPointer<Result>(
             _ body: (UnsafeMutableRawPointer) throws -> Result
         ) rethrows -> Result {
             try opaque.withUnsafeMutableRawPointer(body)

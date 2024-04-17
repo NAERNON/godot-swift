@@ -122,7 +122,7 @@ struct GodotBuiltinClass: Decodable {
         }
         
         var returnType: GodotType? {
-            "Self"
+            .selfType
         }
         
         var isStatic: Bool {
@@ -188,7 +188,7 @@ struct GodotBuiltinClass: Decodable {
         }
         
         var returnType: GodotType? {
-            "Self"
+            .selfType
         }
         
         var isStatic: Bool {
@@ -203,20 +203,16 @@ struct GodotBuiltinClass: Decodable {
     // MARK: - Syntax
     
     var generatesConstants: Bool {
-        name == "Color"
+        name == .color
     }
     
     var generatesEnums: Bool {
-        !name.syntax().starts(with: "Vector")
+        !name.isVector
     }
     
     var isCoveredByStandardLibrary: Bool {
-        switch name {
-        case "bool",
-            "float",
-            "int",
-            "Nil":
-            true
+        return switch name {
+        case .bool, .float, .int, .nil: true
         default: false
         }
     }
@@ -230,7 +226,7 @@ struct GodotBuiltinClass: Decodable {
     }
     
     var syntaxOptions: GodotTypeSyntaxOptions {
-        if name == "Color" {
+        if name == .color {
             [
                 .optionalClasses,
                 .prefixByGodot,
@@ -319,7 +315,7 @@ struct GodotBuiltinClass: Decodable {
             for method in methods {
                 """
                 private var \(raw: method.ptrIdentifier): GDExtensionPtrBuiltInMethod = {
-                    GodotStringName(swiftStaticString: \(literal: method.name)).withGodotUnsafeRawPointer { __ptr__method_name in
+                    GodotStringName(swiftStaticString: \(literal: method.name)).withUnsafeRawPointer { __ptr__method_name in
                     return GodotExtension.Interface.variantGetPtrBuiltinMethod(\(raw: name.variantRepresentationType!), __ptr__method_name, \(literal: method.hash))!
                     }
                 }()
@@ -358,10 +354,8 @@ struct GodotBuiltinClass: Decodable {
             let destructorPtr = hasDestructor ? "__destructor" : "nil"
             
             """
-            static internal func fromInitializingMutatingGodotUnsafePointer(_ body: (UnsafeMutableRawPointer) -> Void) -> Self {
-                let opaque = Opaque(size: \(literal: classSize), destructorPtr: \(raw: destructorPtr))
-                opaque.withUnsafeMutableRawPointer(body)
-                return Self.init(opaque: opaque)
+            static internal func makeOpaque() -> Opaque {
+                Opaque(size: \(literal: classSize), destructorPtr: \(raw: destructorPtr))
             }
             """
         }
@@ -527,9 +521,9 @@ struct GodotBuiltinClass: Decodable {
             internal func _getValue(forKey key: borrowing Variant.Storage) -> Variant.Storage {
                 let __returnValue = Variant.Storage()
                 
-                __returnValue.withGodotUnsafeMutableRawPointer { __ptr___returnValue in
-                    key.withGodotUnsafeRawPointer { __ptr_key in
-                        self.withGodotUnsafeRawPointer { __ptr_self in
+                __returnValue.withUnsafeMutableRawPointer { __ptr___returnValue in
+                    key.withUnsafeRawPointer { __ptr_key in
+                        self.withUnsafeRawPointer { __ptr_self in
                             __keyed_getter(__ptr_self, __ptr_key, __ptr___returnValue)
                         }
                     }
@@ -543,9 +537,9 @@ struct GodotBuiltinClass: Decodable {
             internal mutating func _set(value: borrowing Variant.Storage, forKey key: borrowing Variant.Storage) {
                 replaceOpaqueValueIfNecessary()
                 
-                value.withGodotUnsafeRawPointer { __ptr_value in
-                    key.withGodotUnsafeRawPointer { __ptr_key in
-                        self.withGodotUnsafeMutableRawPointer { __ptr_self in
+                value.withUnsafeRawPointer { __ptr_value in
+                    key.withUnsafeRawPointer { __ptr_key in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
                             __keyed_setter(__ptr_self, __ptr_key, __ptr_value)
                         }
                     }
@@ -557,8 +551,8 @@ struct GodotBuiltinClass: Decodable {
             internal func _check(key: borrowing Variant.Storage) -> Bool {
                 var keyCheck = UInt32()
                 
-                key.withGodotUnsafeRawPointer { __ptr_key in
-                    self.withGodotUnsafeRawPointer { __ptr_self in
+                key.withUnsafeRawPointer { __ptr_key in
+                    self.withUnsafeRawPointer { __ptr_self in
                         keyCheck = __keyed_checker(__ptr_self, __ptr_key)
                     }
                 }

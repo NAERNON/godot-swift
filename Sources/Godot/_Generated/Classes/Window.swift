@@ -415,8 +415,8 @@ open class Window: Viewport {
     }
 
     internal static var __method_binding_set_title: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_title").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_title").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -425,58 +425,65 @@ open class Window: Viewport {
     private func __setTitle(
         _ title: Godot.GodotString
     ) {
-        title.withGodotUnsafeRawPointer { __ptr_title in
-        withUnsafeArgumentPackPointer(__ptr_title) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_title,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: title) { __ptr_title in
+            withUnsafeArgumentPackPointer(__ptr_title) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_title,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_title: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_title").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_title").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
     }()
 
     private func __getTitle() -> Godot.GodotString {
-        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_title,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_title,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_get_window_id: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_window_id").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_window_id").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
     }()
 
     public func windowID() -> Int32 {
-        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_window_id,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_window_id,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_initial_position: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_initial_position").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_initial_position").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4084468099)!
         }
         }
@@ -485,39 +492,44 @@ open class Window: Viewport {
     private func __setInitialPosition(
         _ initialPosition: Godot.Window.WindowInitialPosition
     ) {
-        initialPosition.withGodotUnsafeRawPointer { __ptr_initialPosition in
-        withUnsafeArgumentPackPointer(__ptr_initialPosition) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_initial_position,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: initialPosition) { __ptr_initialPosition in
+            withUnsafeArgumentPackPointer(__ptr_initialPosition) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_initial_position,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_initial_position: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_initial_position").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_initial_position").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4294066647)!
         }
         }
     }()
 
     private func __getInitialPosition() -> Godot.Window.WindowInitialPosition {
-        Godot.Window.WindowInitialPosition.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_initial_position,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_initial_position,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_current_screen: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_current_screen").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_current_screen").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -526,39 +538,44 @@ open class Window: Viewport {
     private func __setCurrentScreen(
         index: Int32
     ) {
-        index.withGodotUnsafeRawPointer { __ptr_index in
-        withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_current_screen,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
+            withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_current_screen,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_current_screen: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_current_screen").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_current_screen").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
     }()
 
     private func __getCurrentScreen() -> Int32 {
-        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_current_screen,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_current_screen,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_position: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_position").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_position").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
         }
         }
@@ -567,57 +584,63 @@ open class Window: Viewport {
     private func __setPosition(
         _ position: Godot.Vector2I
     ) {
-        position.withGodotUnsafeRawPointer { __ptr_position in
-        withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_position,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: position) { __ptr_position in
+            withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_position,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_position: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_position").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_position").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
         }
         }
     }()
 
     private func __getPosition() -> Godot.Vector2I {
-        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_position,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_position,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_move_to_center: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "move_to_center").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "move_to_center").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
 
     public func moveToCenter() {
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_move_to_center,
-            __ptr_self,
-            nil,
-            nil
-        )}
+        self.withUnsafeMutableRawPointer { __ptr_self in
+            GodotExtension.Interface.objectMethodBindPtrcall(
+                Self.__method_binding_move_to_center,
+                __ptr_self,
+                nil,
+                nil
+            )
+        }
     }
 
     internal static var __method_binding_set_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
         }
         }
@@ -626,95 +649,105 @@ open class Window: Viewport {
     private func __setSize(
         _ size: Godot.Vector2I
     ) {
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_size,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+            withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_size,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
         }
         }
     }()
 
     private func __getSize() -> Godot.Vector2I {
-        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_size,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_size,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_reset_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "reset_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "reset_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
 
     public func resetSize() {
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_reset_size,
-            __ptr_self,
-            nil,
-            nil
-        )}
+        self.withUnsafeMutableRawPointer { __ptr_self in
+            GodotExtension.Interface.objectMethodBindPtrcall(
+                Self.__method_binding_reset_size,
+                __ptr_self,
+                nil,
+                nil
+            )
+        }
     }
 
     internal static var __method_binding_get_position_with_decorations: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_position_with_decorations").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_position_with_decorations").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
         }
         }
     }()
 
     public func positionWithDecorations() -> Godot.Vector2I {
-        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_position_with_decorations,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_position_with_decorations,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_get_size_with_decorations: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_size_with_decorations").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_size_with_decorations").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
         }
         }
     }()
 
     public func sizeWithDecorations() -> Godot.Vector2I {
-        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_size_with_decorations,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_size_with_decorations,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_max_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_max_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_max_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
         }
         }
@@ -723,39 +756,44 @@ open class Window: Viewport {
     private func __setMaxSize(
         _ maxSize: Godot.Vector2I
     ) {
-        maxSize.withGodotUnsafeRawPointer { __ptr_maxSize in
-        withUnsafeArgumentPackPointer(__ptr_maxSize) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_max_size,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: maxSize) { __ptr_maxSize in
+            withUnsafeArgumentPackPointer(__ptr_maxSize) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_max_size,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_max_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_max_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_max_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
         }
         }
     }()
 
     private func __getMaxSize() -> Godot.Vector2I {
-        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_max_size,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_max_size,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_min_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_min_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_min_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
         }
         }
@@ -764,39 +802,44 @@ open class Window: Viewport {
     private func __setMinSize(
         _ minSize: Godot.Vector2I
     ) {
-        minSize.withGodotUnsafeRawPointer { __ptr_minSize in
-        withUnsafeArgumentPackPointer(__ptr_minSize) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_min_size,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: minSize) { __ptr_minSize in
+            withUnsafeArgumentPackPointer(__ptr_minSize) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_min_size,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_min_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_min_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_min_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
         }
         }
     }()
 
     private func __getMinSize() -> Godot.Vector2I {
-        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_min_size,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_min_size,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_mode: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_mode").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_mode").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3095236531)!
         }
         }
@@ -805,39 +848,44 @@ open class Window: Viewport {
     private func __setMode(
         _ mode: Godot.Window.Mode
     ) {
-        mode.withGodotUnsafeRawPointer { __ptr_mode in
-        withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_mode,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: mode) { __ptr_mode in
+            withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_mode,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_mode: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_mode").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_mode").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2566346114)!
         }
         }
     }()
 
     private func __getMode() -> Godot.Window.Mode {
-        Godot.Window.Mode.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_mode,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_mode,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_flag: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_flag").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_flag").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3426449779)!
         }
         }
@@ -847,21 +895,25 @@ open class Window: Viewport {
         _ flag: Godot.Window.Flags,
         enabled: Bool
     ) {
-        flag.withGodotUnsafeRawPointer { __ptr_flag in
-        enabled.withGodotUnsafeRawPointer { __ptr_enabled in
-        withUnsafeArgumentPackPointer(__ptr_flag, __ptr_enabled) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_flag,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: flag) { __ptr_flag in
+            withTransferrableUnsafeRawPointer(to: enabled) { __ptr_enabled in
+                withUnsafeArgumentPackPointer(__ptr_flag, __ptr_enabled) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_set_flag,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_flag: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_flag").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_flag").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3062752289)!
         }
         }
@@ -870,76 +922,84 @@ open class Window: Viewport {
     private func __getFlag(
         _ flag: Godot.Window.Flags
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        flag.withGodotUnsafeRawPointer { __ptr_flag in
-        withUnsafeArgumentPackPointer(__ptr_flag) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_flag,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: flag) { __ptr_flag in
+                withUnsafeArgumentPackPointer(__ptr_flag) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_get_flag,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_is_maximize_allowed: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_maximize_allowed").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_maximize_allowed").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
 
     public func isMaximizeAllowed() -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_is_maximize_allowed,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_is_maximize_allowed,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_request_attention: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "request_attention").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "request_attention").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
 
     public func requestAttention() {
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_request_attention,
-            __ptr_self,
-            nil,
-            nil
-        )}
+        self.withUnsafeMutableRawPointer { __ptr_self in
+            GodotExtension.Interface.objectMethodBindPtrcall(
+                Self.__method_binding_request_attention,
+                __ptr_self,
+                nil,
+                nil
+            )
+        }
     }
 
     internal static var __method_binding_move_to_foreground: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "move_to_foreground").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "move_to_foreground").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
 
     public func moveToForeground() {
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_move_to_foreground,
-            __ptr_self,
-            nil,
-            nil
-        )}
+        self.withUnsafeMutableRawPointer { __ptr_self in
+            GodotExtension.Interface.objectMethodBindPtrcall(
+                Self.__method_binding_move_to_foreground,
+                __ptr_self,
+                nil,
+                nil
+            )
+        }
     }
 
     internal static var __method_binding_set_visible: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_visible").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_visible").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -948,75 +1008,82 @@ open class Window: Viewport {
     private func __setVisible(
         _ visible: Bool
     ) {
-        visible.withGodotUnsafeRawPointer { __ptr_visible in
-        withUnsafeArgumentPackPointer(__ptr_visible) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_visible,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: visible) { __ptr_visible in
+            withUnsafeArgumentPackPointer(__ptr_visible) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_visible,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_is_visible: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_visible").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_visible").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
 
     private func __isVisible() -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_is_visible,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_is_visible,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_hide: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "hide").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "hide").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
 
     public func hide() {
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_hide,
-            __ptr_self,
-            nil,
-            nil
-        )}
+        self.withUnsafeMutableRawPointer { __ptr_self in
+            GodotExtension.Interface.objectMethodBindPtrcall(
+                Self.__method_binding_hide,
+                __ptr_self,
+                nil,
+                nil
+            )
+        }
     }
 
     internal static var __method_binding_show: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "show").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "show").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
 
     public func show() {
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_show,
-            __ptr_self,
-            nil,
-            nil
-        )}
+        self.withUnsafeMutableRawPointer { __ptr_self in
+            GodotExtension.Interface.objectMethodBindPtrcall(
+                Self.__method_binding_show,
+                __ptr_self,
+                nil,
+                nil
+            )
+        }
     }
 
     internal static var __method_binding_set_transient: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_transient").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_transient").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1025,39 +1092,44 @@ open class Window: Viewport {
     private func __setTransient(
         _ transient: Bool
     ) {
-        transient.withGodotUnsafeRawPointer { __ptr_transient in
-        withUnsafeArgumentPackPointer(__ptr_transient) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_transient,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: transient) { __ptr_transient in
+            withUnsafeArgumentPackPointer(__ptr_transient) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_transient,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_is_transient: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_transient").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_transient").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
 
     private func __isTransient() -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_is_transient,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_is_transient,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_exclusive: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_exclusive").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_exclusive").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1066,39 +1138,44 @@ open class Window: Viewport {
     private func __setExclusive(
         _ exclusive: Bool
     ) {
-        exclusive.withGodotUnsafeRawPointer { __ptr_exclusive in
-        withUnsafeArgumentPackPointer(__ptr_exclusive) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_exclusive,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: exclusive) { __ptr_exclusive in
+            withUnsafeArgumentPackPointer(__ptr_exclusive) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_exclusive,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_is_exclusive: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_exclusive").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_exclusive").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
 
     private func __isExclusive() -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_is_exclusive,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_is_exclusive,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_unparent_when_invisible: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_unparent_when_invisible").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_unparent_when_invisible").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1107,76 +1184,84 @@ open class Window: Viewport {
     public func setUnparentWhenInvisible(
         unparent: Bool
     ) {
-        unparent.withGodotUnsafeRawPointer { __ptr_unparent in
-        withUnsafeArgumentPackPointer(__ptr_unparent) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_unparent_when_invisible,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: unparent) { __ptr_unparent in
+            withUnsafeArgumentPackPointer(__ptr_unparent) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_unparent_when_invisible,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_can_draw: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "can_draw").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "can_draw").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
 
     public func canDraw() -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_can_draw,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_can_draw,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_has_focus: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_focus").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_focus").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
 
     public func hasFocus() -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_focus,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_has_focus,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_grab_focus: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "grab_focus").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "grab_focus").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
 
     public func grabFocus() {
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_grab_focus,
-            __ptr_self,
-            nil,
-            nil
-        )}
+        self.withUnsafeMutableRawPointer { __ptr_self in
+            GodotExtension.Interface.objectMethodBindPtrcall(
+                Self.__method_binding_grab_focus,
+                __ptr_self,
+                nil,
+                nil
+            )
+        }
     }
 
     internal static var __method_binding_set_ime_active: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_ime_active").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_ime_active").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1185,20 +1270,23 @@ open class Window: Viewport {
     public func setImeActive(
         _ active: Bool
     ) {
-        active.withGodotUnsafeRawPointer { __ptr_active in
-        withUnsafeArgumentPackPointer(__ptr_active) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_ime_active,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: active) { __ptr_active in
+            withUnsafeArgumentPackPointer(__ptr_active) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_ime_active,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_set_ime_position: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_ime_position").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_ime_position").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
         }
         }
@@ -1207,58 +1295,65 @@ open class Window: Viewport {
     public func setImePosition(
         _ position: Godot.Vector2I
     ) {
-        position.withGodotUnsafeRawPointer { __ptr_position in
-        withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_ime_position,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: position) { __ptr_position in
+            withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_ime_position,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_is_embedded: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_embedded").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_embedded").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
 
     public func isEmbedded() -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_is_embedded,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_is_embedded,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_get_contents_minimum_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_contents_minimum_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_contents_minimum_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
     }()
 
     public func contentsMinimumSize() -> Godot.Vector2 {
-        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_contents_minimum_size,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_contents_minimum_size,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_content_scale_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_content_scale_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_content_scale_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
         }
         }
@@ -1267,39 +1362,44 @@ open class Window: Viewport {
     private func __setContentScaleSize(
         _ size: Godot.Vector2I
     ) {
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_content_scale_size,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+            withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_content_scale_size,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_content_scale_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_content_scale_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_content_scale_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
         }
         }
     }()
 
     private func __getContentScaleSize() -> Godot.Vector2I {
-        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_content_scale_size,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_content_scale_size,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_content_scale_mode: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_content_scale_mode").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_content_scale_mode").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2937716473)!
         }
         }
@@ -1308,39 +1408,44 @@ open class Window: Viewport {
     private func __setContentScaleMode(
         _ mode: Godot.Window.ContentScaleMode
     ) {
-        mode.withGodotUnsafeRawPointer { __ptr_mode in
-        withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_content_scale_mode,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: mode) { __ptr_mode in
+            withUnsafeArgumentPackPointer(__ptr_mode) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_content_scale_mode,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_content_scale_mode: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_content_scale_mode").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_content_scale_mode").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 161585230)!
         }
         }
     }()
 
     private func __getContentScaleMode() -> Godot.Window.ContentScaleMode {
-        Godot.Window.ContentScaleMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_content_scale_mode,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_content_scale_mode,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_content_scale_aspect: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_content_scale_aspect").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_content_scale_aspect").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2370399418)!
         }
         }
@@ -1349,39 +1454,44 @@ open class Window: Viewport {
     private func __setContentScaleAspect(
         _ aspect: Godot.Window.ContentScaleAspect
     ) {
-        aspect.withGodotUnsafeRawPointer { __ptr_aspect in
-        withUnsafeArgumentPackPointer(__ptr_aspect) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_content_scale_aspect,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: aspect) { __ptr_aspect in
+            withUnsafeArgumentPackPointer(__ptr_aspect) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_content_scale_aspect,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_content_scale_aspect: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_content_scale_aspect").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_content_scale_aspect").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4158790715)!
         }
         }
     }()
 
     private func __getContentScaleAspect() -> Godot.Window.ContentScaleAspect {
-        Godot.Window.ContentScaleAspect.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_content_scale_aspect,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_content_scale_aspect,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_content_scale_stretch: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_content_scale_stretch").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_content_scale_stretch").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 349355940)!
         }
         }
@@ -1390,39 +1500,44 @@ open class Window: Viewport {
     private func __setContentScaleStretch(
         _ stretch: Godot.Window.ContentScaleStretch
     ) {
-        stretch.withGodotUnsafeRawPointer { __ptr_stretch in
-        withUnsafeArgumentPackPointer(__ptr_stretch) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_content_scale_stretch,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: stretch) { __ptr_stretch in
+            withUnsafeArgumentPackPointer(__ptr_stretch) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_content_scale_stretch,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_content_scale_stretch: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_content_scale_stretch").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_content_scale_stretch").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 536857316)!
         }
         }
     }()
 
     private func __getContentScaleStretch() -> Godot.Window.ContentScaleStretch {
-        Godot.Window.ContentScaleStretch.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_content_scale_stretch,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_content_scale_stretch,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_keep_title_visible: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_keep_title_visible").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_keep_title_visible").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1431,39 +1546,44 @@ open class Window: Viewport {
     private func __setKeepTitleVisible(
         _ titleVisible: Bool
     ) {
-        titleVisible.withGodotUnsafeRawPointer { __ptr_titleVisible in
-        withUnsafeArgumentPackPointer(__ptr_titleVisible) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_keep_title_visible,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: titleVisible) { __ptr_titleVisible in
+            withUnsafeArgumentPackPointer(__ptr_titleVisible) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_keep_title_visible,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_keep_title_visible: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_keep_title_visible").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_keep_title_visible").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
 
     private func __getKeepTitleVisible() -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_keep_title_visible,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_keep_title_visible,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_content_scale_factor: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_content_scale_factor").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_content_scale_factor").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1472,39 +1592,44 @@ open class Window: Viewport {
     private func __setContentScaleFactor(
         _ factor: Double
     ) {
-        factor.withGodotUnsafeRawPointer { __ptr_factor in
-        withUnsafeArgumentPackPointer(__ptr_factor) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_content_scale_factor,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: factor) { __ptr_factor in
+            withUnsafeArgumentPackPointer(__ptr_factor) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_content_scale_factor,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_content_scale_factor: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_content_scale_factor").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_content_scale_factor").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
     }()
 
     private func __getContentScaleFactor() -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_content_scale_factor,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_content_scale_factor,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_use_font_oversampling: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_use_font_oversampling").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_use_font_oversampling").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1513,39 +1638,44 @@ open class Window: Viewport {
     public func setUseFontOversampling(
         enable: Bool
     ) {
-        enable.withGodotUnsafeRawPointer { __ptr_enable in
-        withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_use_font_oversampling,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: enable) { __ptr_enable in
+            withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_use_font_oversampling,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_is_using_font_oversampling: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_using_font_oversampling").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_using_font_oversampling").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
 
     public func isUsingFontOversampling() -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_is_using_font_oversampling,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_is_using_font_oversampling,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_mouse_passthrough_polygon: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_mouse_passthrough_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_mouse_passthrough_polygon").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
         }
         }
@@ -1554,39 +1684,44 @@ open class Window: Viewport {
     private func __setMousePassthroughPolygon(
         _ polygon: Godot.PackedVector2Array
     ) {
-        polygon.withGodotUnsafeRawPointer { __ptr_polygon in
-        withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_mouse_passthrough_polygon,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: polygon) { __ptr_polygon in
+            withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_mouse_passthrough_polygon,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_mouse_passthrough_polygon: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_mouse_passthrough_polygon").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_mouse_passthrough_polygon").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!
         }
         }
     }()
 
     private func __getMousePassthroughPolygon() -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_mouse_passthrough_polygon,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_mouse_passthrough_polygon,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_wrap_controls: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_wrap_controls").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_wrap_controls").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -1595,57 +1730,63 @@ open class Window: Viewport {
     private func __setWrapControls(
         enable: Bool
     ) {
-        enable.withGodotUnsafeRawPointer { __ptr_enable in
-        withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_wrap_controls,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: enable) { __ptr_enable in
+            withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_wrap_controls,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_is_wrapping_controls: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_wrapping_controls").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_wrapping_controls").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
 
     private func __isWrappingControls() -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_is_wrapping_controls,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_is_wrapping_controls,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_child_controls_changed: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "child_controls_changed").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "child_controls_changed").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
 
     public func childControlsChanged() {
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_child_controls_changed,
-            __ptr_self,
-            nil,
-            nil
-        )}
+        self.withUnsafeMutableRawPointer { __ptr_self in
+            GodotExtension.Interface.objectMethodBindPtrcall(
+                Self.__method_binding_child_controls_changed,
+                __ptr_self,
+                nil,
+                nil
+            )
+        }
     }
 
     internal static var __method_binding_set_theme: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_theme").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_theme").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2326690814)!
         }
         }
@@ -1654,40 +1795,46 @@ open class Window: Viewport {
     private func __setTheme(
         _ theme: Godot.Theme?
     ) {
-        theme.withGodotUnsafeRawPointer { __ptr_theme in
-        withUnsafePointer(to: __ptr_theme) { _ptr___ptr_theme in
-        withUnsafeArgumentPackPointer(_ptr___ptr_theme) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_theme,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: theme) { __ptr_theme in
+            withUnsafePointer(to: __ptr_theme) { _ptr___ptr_theme in
+                withUnsafeArgumentPackPointer(_ptr___ptr_theme) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_set_theme,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_theme: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_theme").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3846893731)!
         }
         }
     }()
 
     private func __getTheme() -> Godot.Theme? {
-        Godot.Theme?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_theme,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_theme,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_theme_type_variation: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_theme_type_variation").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_theme_type_variation").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -1696,75 +1843,82 @@ open class Window: Viewport {
     private func __setThemeTypeVariation(
         themeType: Godot.GodotStringName
     ) {
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_theme_type_variation,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+            withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_theme_type_variation,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_theme_type_variation: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_type_variation").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_theme_type_variation").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
         }
         }
     }()
 
     private func __getThemeTypeVariation() -> Godot.GodotStringName {
-        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_theme_type_variation,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_theme_type_variation,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_begin_bulk_theme_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "begin_bulk_theme_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "begin_bulk_theme_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
 
     public func beginBulkThemeOverride() {
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_begin_bulk_theme_override,
-            __ptr_self,
-            nil,
-            nil
-        )}
+        self.withUnsafeMutableRawPointer { __ptr_self in
+            GodotExtension.Interface.objectMethodBindPtrcall(
+                Self.__method_binding_begin_bulk_theme_override,
+                __ptr_self,
+                nil,
+                nil
+            )
+        }
     }
 
     internal static var __method_binding_end_bulk_theme_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "end_bulk_theme_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "end_bulk_theme_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
 
     public func endBulkThemeOverride() {
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_end_bulk_theme_override,
-            __ptr_self,
-            nil,
-            nil
-        )}
+        self.withUnsafeMutableRawPointer { __ptr_self in
+            GodotExtension.Interface.objectMethodBindPtrcall(
+                Self.__method_binding_end_bulk_theme_override,
+                __ptr_self,
+                nil,
+                nil
+            )
+        }
     }
 
     internal static var __method_binding_add_theme_icon_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_theme_icon_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_theme_icon_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1373065600)!
         }
         }
@@ -1774,22 +1928,27 @@ open class Window: Viewport {
         name: Godot.GodotStringName,
         texture: Godot.Texture2D?
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        texture.withGodotUnsafeRawPointer { __ptr_texture in
-        withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
-        withUnsafeArgumentPackPointer(__ptr_name, _ptr___ptr_texture) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_theme_icon_override,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withTransferrableUnsafeRawPointer(to: texture) { __ptr_texture in
+                withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
+                    withUnsafeArgumentPackPointer(__ptr_name, _ptr___ptr_texture) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_add_theme_icon_override,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_add_theme_stylebox_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_theme_stylebox_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_theme_stylebox_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4188838905)!
         }
         }
@@ -1799,22 +1958,27 @@ open class Window: Viewport {
         name: Godot.GodotStringName,
         stylebox: Godot.StyleBox?
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        stylebox.withGodotUnsafeRawPointer { __ptr_stylebox in
-        withUnsafePointer(to: __ptr_stylebox) { _ptr___ptr_stylebox in
-        withUnsafeArgumentPackPointer(__ptr_name, _ptr___ptr_stylebox) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_theme_stylebox_override,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withTransferrableUnsafeRawPointer(to: stylebox) { __ptr_stylebox in
+                withUnsafePointer(to: __ptr_stylebox) { _ptr___ptr_stylebox in
+                    withUnsafeArgumentPackPointer(__ptr_name, _ptr___ptr_stylebox) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_add_theme_stylebox_override,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_add_theme_font_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_theme_font_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_theme_font_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3518018674)!
         }
         }
@@ -1824,22 +1988,27 @@ open class Window: Viewport {
         name: Godot.GodotStringName,
         font: Godot.Font?
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        font.withGodotUnsafeRawPointer { __ptr_font in
-        withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
-        withUnsafeArgumentPackPointer(__ptr_name, _ptr___ptr_font) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_theme_font_override,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withTransferrableUnsafeRawPointer(to: font) { __ptr_font in
+                withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
+                    withUnsafeArgumentPackPointer(__ptr_name, _ptr___ptr_font) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_add_theme_font_override,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_add_theme_font_size_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_theme_font_size_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_theme_font_size_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2415702435)!
         }
         }
@@ -1849,21 +2018,25 @@ open class Window: Viewport {
         name: Godot.GodotStringName,
         fontSize: Int32
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        fontSize.withGodotUnsafeRawPointer { __ptr_fontSize in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_fontSize) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_theme_font_size_override,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withTransferrableUnsafeRawPointer(to: fontSize) { __ptr_fontSize in
+                withUnsafeArgumentPackPointer(__ptr_name, __ptr_fontSize) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_add_theme_font_size_override,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_add_theme_color_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_theme_color_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_theme_color_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4260178595)!
         }
         }
@@ -1873,21 +2046,25 @@ open class Window: Viewport {
         name: Godot.GodotStringName,
         color: Godot.Color
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        color.withGodotUnsafeRawPointer { __ptr_color in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_color) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_theme_color_override,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withTransferrableUnsafeRawPointer(to: color) { __ptr_color in
+                withUnsafeArgumentPackPointer(__ptr_name, __ptr_color) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_add_theme_color_override,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_add_theme_constant_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_theme_constant_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_theme_constant_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2415702435)!
         }
         }
@@ -1897,21 +2074,25 @@ open class Window: Viewport {
         name: Godot.GodotStringName,
         constant: Int32
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        constant.withGodotUnsafeRawPointer { __ptr_constant in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_constant) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_theme_constant_override,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withTransferrableUnsafeRawPointer(to: constant) { __ptr_constant in
+                withUnsafeArgumentPackPointer(__ptr_name, __ptr_constant) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_add_theme_constant_override,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_remove_theme_icon_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_theme_icon_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "remove_theme_icon_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -1920,20 +2101,23 @@ open class Window: Viewport {
     public func removeThemeIconOverride(
         name: Godot.GodotStringName
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_remove_theme_icon_override,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_remove_theme_icon_override,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_remove_theme_stylebox_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_theme_stylebox_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "remove_theme_stylebox_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -1942,20 +2126,23 @@ open class Window: Viewport {
     public func removeThemeStyleboxOverride(
         name: Godot.GodotStringName
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_remove_theme_stylebox_override,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_remove_theme_stylebox_override,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_remove_theme_font_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_theme_font_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "remove_theme_font_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -1964,20 +2151,23 @@ open class Window: Viewport {
     public func removeThemeFontOverride(
         name: Godot.GodotStringName
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_remove_theme_font_override,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_remove_theme_font_override,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_remove_theme_font_size_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_theme_font_size_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "remove_theme_font_size_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -1986,20 +2176,23 @@ open class Window: Viewport {
     public func removeThemeFontSizeOverride(
         name: Godot.GodotStringName
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_remove_theme_font_size_override,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_remove_theme_font_size_override,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_remove_theme_color_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_theme_color_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "remove_theme_color_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -2008,20 +2201,23 @@ open class Window: Viewport {
     public func removeThemeColorOverride(
         name: Godot.GodotStringName
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_remove_theme_color_override,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_remove_theme_color_override,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_remove_theme_constant_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_theme_constant_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "remove_theme_constant_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -2030,20 +2226,23 @@ open class Window: Viewport {
     public func removeThemeConstantOverride(
         name: Godot.GodotStringName
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_remove_theme_constant_override,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_remove_theme_constant_override,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_theme_icon: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_icon").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_theme_icon").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3163973443)!
         }
         }
@@ -2053,22 +2252,27 @@ open class Window: Viewport {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
     ) -> Godot.Texture2D? {
-        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_theme_icon,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_get_theme_icon,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_theme_stylebox: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_stylebox").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_theme_stylebox").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 604739069)!
         }
         }
@@ -2078,22 +2282,27 @@ open class Window: Viewport {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
     ) -> Godot.StyleBox? {
-        Godot.StyleBox?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_theme_stylebox,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_get_theme_stylebox,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_theme_font: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_font").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_theme_font").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2826986490)!
         }
         }
@@ -2103,22 +2312,27 @@ open class Window: Viewport {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
     ) -> Godot.Font? {
-        Godot.Font?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_theme_font,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_get_theme_font,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_theme_font_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_font_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_theme_font_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1327056374)!
         }
         }
@@ -2128,22 +2342,27 @@ open class Window: Viewport {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
     ) -> Int32 {
-        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_theme_font_size,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_get_theme_font_size,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_theme_color: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_color").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_theme_color").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2798751242)!
         }
         }
@@ -2153,22 +2372,27 @@ open class Window: Viewport {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
     ) -> Godot.Color {
-        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_theme_color,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_get_theme_color,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_theme_constant: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_constant").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_theme_constant").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1327056374)!
         }
         }
@@ -2178,22 +2402,27 @@ open class Window: Viewport {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
     ) -> Int32 {
-        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_theme_constant,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_get_theme_constant,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_has_theme_icon_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_icon_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_theme_icon_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
         }
         }
@@ -2202,21 +2431,25 @@ open class Window: Viewport {
     public func hasThemeIconOverride(
         name: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_theme_icon_override,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_has_theme_icon_override,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_has_theme_stylebox_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_stylebox_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_theme_stylebox_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
         }
         }
@@ -2225,21 +2458,25 @@ open class Window: Viewport {
     public func hasThemeStyleboxOverride(
         name: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_theme_stylebox_override,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_has_theme_stylebox_override,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_has_theme_font_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_font_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_theme_font_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
         }
         }
@@ -2248,21 +2485,25 @@ open class Window: Viewport {
     public func hasThemeFontOverride(
         name: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_theme_font_override,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_has_theme_font_override,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_has_theme_font_size_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_font_size_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_theme_font_size_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
         }
         }
@@ -2271,21 +2512,25 @@ open class Window: Viewport {
     public func hasThemeFontSizeOverride(
         name: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_theme_font_size_override,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_has_theme_font_size_override,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_has_theme_color_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_color_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_theme_color_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
         }
         }
@@ -2294,21 +2539,25 @@ open class Window: Viewport {
     public func hasThemeColorOverride(
         name: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_theme_color_override,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_has_theme_color_override,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_has_theme_constant_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_constant_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_theme_constant_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
         }
         }
@@ -2317,21 +2566,25 @@ open class Window: Viewport {
     public func hasThemeConstantOverride(
         name: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_theme_constant_override,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_has_theme_constant_override,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_has_theme_icon: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_icon").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_theme_icon").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
         }
         }
@@ -2341,22 +2594,27 @@ open class Window: Viewport {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_theme_icon,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_has_theme_icon,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_has_theme_stylebox: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_stylebox").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_theme_stylebox").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
         }
         }
@@ -2366,22 +2624,27 @@ open class Window: Viewport {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_theme_stylebox,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_has_theme_stylebox,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_has_theme_font: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_font").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_theme_font").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
         }
         }
@@ -2391,22 +2654,27 @@ open class Window: Viewport {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_theme_font,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_has_theme_font,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_has_theme_font_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_font_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_theme_font_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
         }
         }
@@ -2416,22 +2684,27 @@ open class Window: Viewport {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_theme_font_size,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_has_theme_font_size,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_has_theme_color: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_color").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_theme_color").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
         }
         }
@@ -2441,22 +2714,27 @@ open class Window: Viewport {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_theme_color,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_has_theme_color,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_has_theme_constant: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_constant").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_theme_constant").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
         }
         }
@@ -2466,79 +2744,90 @@ open class Window: Viewport {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_theme_constant,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_has_theme_constant,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_theme_default_base_scale: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_default_base_scale").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_theme_default_base_scale").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
     }()
 
     public func themeDefaultBaseScale() -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_theme_default_base_scale,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_theme_default_base_scale,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_get_theme_default_font: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_default_font").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_theme_default_font").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3229501585)!
         }
         }
     }()
 
     public func themeDefaultFont() -> Godot.Font? {
-        Godot.Font?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_theme_default_font,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_theme_default_font,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_get_theme_default_font_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_default_font_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_theme_default_font_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
     }()
 
     public func themeDefaultFontSize() -> Int32 {
-        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_theme_default_font_size,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_theme_default_font_size,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_layout_direction: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_layout_direction").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_layout_direction").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3094704184)!
         }
         }
@@ -2547,58 +2836,65 @@ open class Window: Viewport {
     public func setLayoutDirection(
         _ direction: Godot.Window.LayoutDirection
     ) {
-        direction.withGodotUnsafeRawPointer { __ptr_direction in
-        withUnsafeArgumentPackPointer(__ptr_direction) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_layout_direction,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: direction) { __ptr_direction in
+            withUnsafeArgumentPackPointer(__ptr_direction) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_layout_direction,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_layout_direction: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_layout_direction").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_layout_direction").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3909617982)!
         }
         }
     }()
 
     public func layoutDirection() -> Godot.Window.LayoutDirection {
-        Godot.Window.LayoutDirection.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_layout_direction,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_layout_direction,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_is_layout_rtl: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_layout_rtl").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_layout_rtl").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
 
     public func isLayoutRtl() -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_is_layout_rtl,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_is_layout_rtl,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_auto_translate: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_auto_translate").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_auto_translate").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -2607,39 +2903,44 @@ open class Window: Viewport {
     private func __setAutoTranslate(
         enable: Bool
     ) {
-        enable.withGodotUnsafeRawPointer { __ptr_enable in
-        withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_auto_translate,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: enable) { __ptr_enable in
+            withUnsafeArgumentPackPointer(__ptr_enable) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_auto_translate,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_is_auto_translating: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_auto_translating").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_auto_translating").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
 
     private func __isAutoTranslating() -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_is_auto_translating,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_is_auto_translating,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_popup: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "popup").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "popup").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1680304321)!
         }
         }
@@ -2648,20 +2949,23 @@ open class Window: Viewport {
     public func popup(
         rect: Godot.Rect2I = Rect2i(x: 0, y: 0, width: 0, height: 0)
     ) {
-        rect.withGodotUnsafeRawPointer { __ptr_rect in
-        withUnsafeArgumentPackPointer(__ptr_rect) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_popup,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: rect) { __ptr_rect in
+            withUnsafeArgumentPackPointer(__ptr_rect) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_popup,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_popup_on_parent: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "popup_on_parent").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "popup_on_parent").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1763793166)!
         }
         }
@@ -2670,20 +2974,23 @@ open class Window: Viewport {
     public func popupOnParent(
         parentRect: Godot.Rect2I
     ) {
-        parentRect.withGodotUnsafeRawPointer { __ptr_parentRect in
-        withUnsafeArgumentPackPointer(__ptr_parentRect) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_popup_on_parent,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: parentRect) { __ptr_parentRect in
+            withUnsafeArgumentPackPointer(__ptr_parentRect) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_popup_on_parent,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_popup_centered: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "popup_centered").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "popup_centered").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3447975422)!
         }
         }
@@ -2692,20 +2999,23 @@ open class Window: Viewport {
     public func popupCentered(
         minsize: Godot.Vector2I = Vector2i(x: 0, y: 0)
     ) {
-        minsize.withGodotUnsafeRawPointer { __ptr_minsize in
-        withUnsafeArgumentPackPointer(__ptr_minsize) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_popup_centered,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: minsize) { __ptr_minsize in
+            withUnsafeArgumentPackPointer(__ptr_minsize) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_popup_centered,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_popup_centered_ratio: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "popup_centered_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "popup_centered_ratio").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1014814997)!
         }
         }
@@ -2714,20 +3024,23 @@ open class Window: Viewport {
     public func popupCenteredRatio(
         _ ratio: Double = 0.8
     ) {
-        ratio.withGodotUnsafeRawPointer { __ptr_ratio in
-        withUnsafeArgumentPackPointer(__ptr_ratio) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_popup_centered_ratio,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: ratio) { __ptr_ratio in
+            withUnsafeArgumentPackPointer(__ptr_ratio) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_popup_centered_ratio,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_popup_centered_clamped: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "popup_centered_clamped").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "popup_centered_clamped").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2613752477)!
         }
         }
@@ -2737,21 +3050,25 @@ open class Window: Viewport {
         minsize: Godot.Vector2I = Vector2i(x: 0, y: 0),
         fallbackRatio: Double = 0.75
     ) {
-        minsize.withGodotUnsafeRawPointer { __ptr_minsize in
-        fallbackRatio.withGodotUnsafeRawPointer { __ptr_fallbackRatio in
-        withUnsafeArgumentPackPointer(__ptr_minsize, __ptr_fallbackRatio) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_popup_centered_clamped,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: minsize) { __ptr_minsize in
+            withTransferrableUnsafeRawPointer(to: fallbackRatio) { __ptr_fallbackRatio in
+                withUnsafeArgumentPackPointer(__ptr_minsize, __ptr_fallbackRatio) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_popup_centered_clamped,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_popup_exclusive: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "popup_exclusive").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "popup_exclusive").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2134721627)!
         }
         }
@@ -2761,22 +3078,27 @@ open class Window: Viewport {
         fromNode node: Godot.Node?,
         rect: Godot.Rect2I = Rect2i(x: 0, y: 0, width: 0, height: 0)
     ) {
-        node.withGodotUnsafeRawPointer { __ptr_node in
-        withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
-        rect.withGodotUnsafeRawPointer { __ptr_rect in
-        withUnsafeArgumentPackPointer(_ptr___ptr_node, __ptr_rect) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_popup_exclusive,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: node) { __ptr_node in
+            withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
+                withTransferrableUnsafeRawPointer(to: rect) { __ptr_rect in
+                    withUnsafeArgumentPackPointer(_ptr___ptr_node, __ptr_rect) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_popup_exclusive,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_popup_exclusive_on_parent: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "popup_exclusive_on_parent").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "popup_exclusive_on_parent").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2344671043)!
         }
         }
@@ -2786,22 +3108,27 @@ open class Window: Viewport {
         fromNode node: Godot.Node?,
         parentRect: Godot.Rect2I
     ) {
-        node.withGodotUnsafeRawPointer { __ptr_node in
-        withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
-        parentRect.withGodotUnsafeRawPointer { __ptr_parentRect in
-        withUnsafeArgumentPackPointer(_ptr___ptr_node, __ptr_parentRect) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_popup_exclusive_on_parent,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: node) { __ptr_node in
+            withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
+                withTransferrableUnsafeRawPointer(to: parentRect) { __ptr_parentRect in
+                    withUnsafeArgumentPackPointer(_ptr___ptr_node, __ptr_parentRect) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_popup_exclusive_on_parent,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_popup_exclusive_centered: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "popup_exclusive_centered").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "popup_exclusive_centered").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3357594017)!
         }
         }
@@ -2811,22 +3138,27 @@ open class Window: Viewport {
         fromNode node: Godot.Node?,
         minsize: Godot.Vector2I = Vector2i(x: 0, y: 0)
     ) {
-        node.withGodotUnsafeRawPointer { __ptr_node in
-        withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
-        minsize.withGodotUnsafeRawPointer { __ptr_minsize in
-        withUnsafeArgumentPackPointer(_ptr___ptr_node, __ptr_minsize) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_popup_exclusive_centered,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: node) { __ptr_node in
+            withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
+                withTransferrableUnsafeRawPointer(to: minsize) { __ptr_minsize in
+                    withUnsafeArgumentPackPointer(_ptr___ptr_node, __ptr_minsize) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_popup_exclusive_centered,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_popup_exclusive_centered_ratio: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "popup_exclusive_centered_ratio").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "popup_exclusive_centered_ratio").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2284776287)!
         }
         }
@@ -2836,22 +3168,27 @@ open class Window: Viewport {
         fromNode node: Godot.Node?,
         ratio: Double = 0.8
     ) {
-        node.withGodotUnsafeRawPointer { __ptr_node in
-        withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
-        ratio.withGodotUnsafeRawPointer { __ptr_ratio in
-        withUnsafeArgumentPackPointer(_ptr___ptr_node, __ptr_ratio) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_popup_exclusive_centered_ratio,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: node) { __ptr_node in
+            withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
+                withTransferrableUnsafeRawPointer(to: ratio) { __ptr_ratio in
+                    withUnsafeArgumentPackPointer(_ptr___ptr_node, __ptr_ratio) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_popup_exclusive_centered_ratio,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_popup_exclusive_centered_clamped: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "popup_exclusive_centered_clamped").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "popup_exclusive_centered_clamped").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2612708785)!
         }
         }
@@ -2862,18 +3199,24 @@ open class Window: Viewport {
         minsize: Godot.Vector2I = Vector2i(x: 0, y: 0),
         fallbackRatio: Double = 0.75
     ) {
-        node.withGodotUnsafeRawPointer { __ptr_node in
-        withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
-        minsize.withGodotUnsafeRawPointer { __ptr_minsize in
-        fallbackRatio.withGodotUnsafeRawPointer { __ptr_fallbackRatio in
-        withUnsafeArgumentPackPointer(_ptr___ptr_node, __ptr_minsize, __ptr_fallbackRatio) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_popup_exclusive_centered_clamped,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}
+        withTransferrableUnsafeRawPointer(to: node) { __ptr_node in
+            withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
+                withTransferrableUnsafeRawPointer(to: minsize) { __ptr_minsize in
+                    withTransferrableUnsafeRawPointer(to: fallbackRatio) { __ptr_fallbackRatio in
+                        withUnsafeArgumentPackPointer(_ptr___ptr_node, __ptr_minsize, __ptr_fallbackRatio) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_popup_exclusive_centered_clamped,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    nil
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public var mode: Godot.Window.Mode {

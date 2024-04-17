@@ -102,8 +102,8 @@ open class EditorDebuggerSession: RefCounted {
     }()
 
     internal static var __method_binding_send_message: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "send_message").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "send_message").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 85656714)!
         }
         }
@@ -113,21 +113,25 @@ open class EditorDebuggerSession: RefCounted {
         _ message: Godot.GodotString,
         data: Godot.GodotArray<Value> = []
     ) {
-        message.withGodotUnsafeRawPointer { __ptr_message in
-        data.withGodotUnsafeRawPointer { __ptr_data in
-        withUnsafeArgumentPackPointer(__ptr_message, __ptr_data) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_send_message,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: message) { __ptr_message in
+            withTransferrableUnsafeRawPointer(to: data) { __ptr_data in
+                withUnsafeArgumentPackPointer(__ptr_message, __ptr_data) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_send_message,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_toggle_profiler: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "toggle_profiler").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "toggle_profiler").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1198443697)!
         }
         }
@@ -138,79 +142,90 @@ open class EditorDebuggerSession: RefCounted {
         enable: Bool,
         data: Godot.GodotArray<Value> = []
     ) {
-        profiler.withGodotUnsafeRawPointer { __ptr_profiler in
-        enable.withGodotUnsafeRawPointer { __ptr_enable in
-        data.withGodotUnsafeRawPointer { __ptr_data in
-        withUnsafeArgumentPackPointer(__ptr_profiler, __ptr_enable, __ptr_data) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_toggle_profiler,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: profiler) { __ptr_profiler in
+            withTransferrableUnsafeRawPointer(to: enable) { __ptr_enable in
+                withTransferrableUnsafeRawPointer(to: data) { __ptr_data in
+                    withUnsafeArgumentPackPointer(__ptr_profiler, __ptr_enable, __ptr_data) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_toggle_profiler,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_is_breaked: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_breaked").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_breaked").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
     }()
 
     public func isBreaked() -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_is_breaked,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_is_breaked,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_is_debuggable: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_debuggable").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_debuggable").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
     }()
 
     public func isDebuggable() -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_is_debuggable,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_is_debuggable,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_is_active: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_active").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_active").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
         }
         }
     }()
 
     public func isActive() -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_is_active,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_is_active,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_add_session_tab: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_session_tab").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_session_tab").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
         }
         }
@@ -219,21 +234,25 @@ open class EditorDebuggerSession: RefCounted {
     public func addSessionTab(
         control: Godot.Control?
     ) {
-        control.withGodotUnsafeRawPointer { __ptr_control in
-        withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
-        withUnsafeArgumentPackPointer(_ptr___ptr_control) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_session_tab,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: control) { __ptr_control in
+            withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
+                withUnsafeArgumentPackPointer(_ptr___ptr_control) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_add_session_tab,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_remove_session_tab: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_session_tab").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "remove_session_tab").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
         }
         }
@@ -242,16 +261,20 @@ open class EditorDebuggerSession: RefCounted {
     public func removeSessionTab(
         control: Godot.Control?
     ) {
-        control.withGodotUnsafeRawPointer { __ptr_control in
-        withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
-        withUnsafeArgumentPackPointer(_ptr___ptr_control) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_remove_session_tab,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: control) { __ptr_control in
+            withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
+                withUnsafeArgumentPackPointer(_ptr___ptr_control) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_remove_session_tab,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

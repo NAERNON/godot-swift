@@ -22,7 +22,7 @@ extension GodotExtension {
         of _: Value.Type
     ) -> UnsafeMutableRawPointer
     where Value : CustomObject {
-        Value().withGodotUnsafeMutableRawPointer { $0! }
+        Value().withUnsafeMutableRawPointer { $0 }
     }
     
     public static func makeNewInstanceManagedByGodot<Value>(
@@ -33,7 +33,7 @@ extension GodotExtension {
         
         _ = Unmanaged.passRetained(instance)
         
-        return instance.withGodotUnsafeMutableRawPointer { $0! }
+        return instance.withUnsafeMutableRawPointer { $0 }
     }
     
     // MARK: Free instance

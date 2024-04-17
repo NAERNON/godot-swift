@@ -58,26 +58,27 @@ open class Container: Control {
     }
 
     internal static var __method_binding_queue_sort: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "queue_sort").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "queue_sort").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
 
     public func queueSort() {
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_queue_sort,
-            __ptr_self,
-            nil,
-            nil
-        )}
+        self.withUnsafeMutableRawPointer { __ptr_self in
+            GodotExtension.Interface.objectMethodBindPtrcall(
+                Self.__method_binding_queue_sort,
+                __ptr_self,
+                nil,
+                nil
+            )
+        }
     }
 
     internal static var __method_binding_fit_child_in_rect: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "fit_child_in_rect").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "fit_child_in_rect").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1993438598)!
         }
         }
@@ -87,17 +88,22 @@ open class Container: Control {
         child: Godot.Control?,
         rect: Godot.Rect2
     ) {
-        child.withGodotUnsafeRawPointer { __ptr_child in
-        withUnsafePointer(to: __ptr_child) { _ptr___ptr_child in
-        rect.withGodotUnsafeRawPointer { __ptr_rect in
-        withUnsafeArgumentPackPointer(_ptr___ptr_child, __ptr_rect) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_fit_child_in_rect,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: child) { __ptr_child in
+            withUnsafePointer(to: __ptr_child) { _ptr___ptr_child in
+                withTransferrableUnsafeRawPointer(to: rect) { __ptr_rect in
+                    withUnsafeArgumentPackPointer(_ptr___ptr_child, __ptr_rect) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_fit_child_in_rect,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

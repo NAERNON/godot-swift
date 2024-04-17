@@ -73,30 +73,6 @@ extension Object: Variant.Storable {
     }
 }
 
-extension Object: GodotRawPointerAccessible {
-    func withGodotUnsafeRawPointer<Result>(
-        _ body: (UnsafeRawPointer?) throws -> Result
-    ) rethrows -> Result {
-        try body(self.extensionObjectPtr)
-    }
-    
-    func withGodotUnsafeMutableRawPointer<Result>(
-        _ body: (UnsafeMutableRawPointer?) throws -> Result
-    ) rethrows -> Result {
-        try body(self.extensionObjectPtr)
-    }
-    
-    static func fromInitializingMutatingGodotUnsafePointer(
-        _ body: (UnsafeMutableRawPointer) -> Void
-    ) -> Self {
-        var objectPointer: UnsafeMutableRawPointer!
-        withUnsafeMutablePointer(to: &objectPointer) { pointer in
-            body(pointer)
-        }
-        return Self.retrievedInstanceManagedByGodot(objectPointer)!
-    }
-}
-
 extension Node: Hintable {
     public typealias HintingValue = Node
     public static var defaultHint: Hint<Node> { .init(Hint<Self>.node) }
@@ -140,39 +116,5 @@ extension Optional: Exposable where Wrapped : Object {
         } else {
             Wrapped.retrievedInstanceManagedByGodot(nil)
         }
-    }
-}
-
-extension Optional: GodotRawPointerAccessible where Wrapped : Object {
-    func withGodotUnsafeRawPointer<Result>(
-        _ body: (UnsafeRawPointer?) throws -> Result
-    ) rethrows -> Result {
-        switch self {
-        case .none:
-            try body(nil)
-        case .some(let wrapped):
-            try body(wrapped.extensionObjectPtr)
-        }
-    }
-    
-    func withGodotUnsafeMutableRawPointer<Result>(
-        _ body: (UnsafeMutableRawPointer?) throws -> Result
-    ) rethrows -> Result {
-        switch self {
-        case .none:
-            try body(nil)
-        case .some(let wrapped):
-            try body(wrapped.extensionObjectPtr)
-        }
-    }
-    
-    static func fromInitializingMutatingGodotUnsafePointer(
-        _ body: (UnsafeMutableRawPointer) -> Void
-    ) -> Self {
-        var objectPointer: UnsafeMutableRawPointer!
-        withUnsafeMutablePointer(to: &objectPointer) { pointer in
-            body(pointer)
-        }
-        return Wrapped.retrievedInstanceManagedByGodot(objectPointer)
     }
 }

@@ -53,84 +53,92 @@ open class Texture2D: Texture {
     }
 
     internal static var __method_binding_get_width: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_width").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_width").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
     }()
 
     public func width() -> Int32 {
-        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_width,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_width,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_get_height: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_height").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_height").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
     }()
 
     public func height() -> Int32 {
-        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_height,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_height,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_get_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
         }
         }
     }()
 
     public func size() -> Godot.Vector2 {
-        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_size,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_size,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_has_alpha: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_alpha").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_alpha").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
 
     public func hasAlpha() -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_alpha,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_has_alpha,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_draw: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "draw").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2729649137)!
         }
         }
@@ -142,23 +150,29 @@ open class Texture2D: Texture {
         modulate: Godot.Color = .white,
         transpose: Bool = false
     ) {
-        canvasItem.withGodotUnsafeRawPointer { __ptr_canvasItem in
-        position.withGodotUnsafeRawPointer { __ptr_position in
-        modulate.withGodotUnsafeRawPointer { __ptr_modulate in
-        transpose.withGodotUnsafeRawPointer { __ptr_transpose in
-        withUnsafeArgumentPackPointer(__ptr_canvasItem, __ptr_position, __ptr_modulate, __ptr_transpose) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_draw,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}
+        withTransferrableUnsafeRawPointer(to: canvasItem) { __ptr_canvasItem in
+            withTransferrableUnsafeRawPointer(to: position) { __ptr_position in
+                withTransferrableUnsafeRawPointer(to: modulate) { __ptr_modulate in
+                    withTransferrableUnsafeRawPointer(to: transpose) { __ptr_transpose in
+                        withUnsafeArgumentPackPointer(__ptr_canvasItem, __ptr_position, __ptr_modulate, __ptr_transpose) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_draw,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    nil
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_draw_rect: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_rect").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "draw_rect").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3499451691)!
         }
         }
@@ -171,24 +185,31 @@ open class Texture2D: Texture {
         modulate: Godot.Color = .white,
         transpose: Bool = false
     ) {
-        canvasItem.withGodotUnsafeRawPointer { __ptr_canvasItem in
-        rect.withGodotUnsafeRawPointer { __ptr_rect in
-        tile.withGodotUnsafeRawPointer { __ptr_tile in
-        modulate.withGodotUnsafeRawPointer { __ptr_modulate in
-        transpose.withGodotUnsafeRawPointer { __ptr_transpose in
-        withUnsafeArgumentPackPointer(__ptr_canvasItem, __ptr_rect, __ptr_tile, __ptr_modulate, __ptr_transpose) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_draw_rect,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}}
+        withTransferrableUnsafeRawPointer(to: canvasItem) { __ptr_canvasItem in
+            withTransferrableUnsafeRawPointer(to: rect) { __ptr_rect in
+                withTransferrableUnsafeRawPointer(to: tile) { __ptr_tile in
+                    withTransferrableUnsafeRawPointer(to: modulate) { __ptr_modulate in
+                        withTransferrableUnsafeRawPointer(to: transpose) { __ptr_transpose in
+                            withUnsafeArgumentPackPointer(__ptr_canvasItem, __ptr_rect, __ptr_tile, __ptr_modulate, __ptr_transpose) { __accessPtr in
+                                self.withUnsafeMutableRawPointer { __ptr_self in
+                                    GodotExtension.Interface.objectMethodBindPtrcall(
+                                        Self.__method_binding_draw_rect,
+                                        __ptr_self,
+                                        __accessPtr,
+                                        nil
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_draw_rect_region: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_rect_region").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "draw_rect_region").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2963678660)!
         }
         }
@@ -202,58 +223,70 @@ open class Texture2D: Texture {
         transpose: Bool = false,
         clipUv: Bool = true
     ) {
-        canvasItem.withGodotUnsafeRawPointer { __ptr_canvasItem in
-        rect.withGodotUnsafeRawPointer { __ptr_rect in
-        srcRect.withGodotUnsafeRawPointer { __ptr_srcRect in
-        modulate.withGodotUnsafeRawPointer { __ptr_modulate in
-        transpose.withGodotUnsafeRawPointer { __ptr_transpose in
-        clipUv.withGodotUnsafeRawPointer { __ptr_clipUv in
-        withUnsafeArgumentPackPointer(__ptr_canvasItem, __ptr_rect, __ptr_srcRect, __ptr_modulate, __ptr_transpose, __ptr_clipUv) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_draw_rect_region,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}}}
+        withTransferrableUnsafeRawPointer(to: canvasItem) { __ptr_canvasItem in
+            withTransferrableUnsafeRawPointer(to: rect) { __ptr_rect in
+                withTransferrableUnsafeRawPointer(to: srcRect) { __ptr_srcRect in
+                    withTransferrableUnsafeRawPointer(to: modulate) { __ptr_modulate in
+                        withTransferrableUnsafeRawPointer(to: transpose) { __ptr_transpose in
+                            withTransferrableUnsafeRawPointer(to: clipUv) { __ptr_clipUv in
+                                withUnsafeArgumentPackPointer(__ptr_canvasItem, __ptr_rect, __ptr_srcRect, __ptr_modulate, __ptr_transpose, __ptr_clipUv) { __accessPtr in
+                                    self.withUnsafeMutableRawPointer { __ptr_self in
+                                        GodotExtension.Interface.objectMethodBindPtrcall(
+                                            Self.__method_binding_draw_rect_region,
+                                            __ptr_self,
+                                            __accessPtr,
+                                            nil
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_image: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_image").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_image").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4190603485)!
         }
         }
     }()
 
     public func image() -> Godot.Image? {
-        Godot.Image?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_image,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_image,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_create_placeholder: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_placeholder").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "create_placeholder").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 121922552)!
         }
         }
     }()
 
     public func createPlaceholder() -> Godot.Resource? {
-        Godot.Resource?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_create_placeholder,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_create_placeholder,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

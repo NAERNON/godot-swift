@@ -177,13 +177,13 @@ extension Object {
         _ signal: GodotStringName,
         arguments: [Variant]
     ) -> ErrorType {
-        ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
             Variant.withStorageUnsafeRawPointer(to: signal) { __ptr_signal in
                 withUnsafeArgumentPackPointer(
                     __ptr_signal,
                     varargsArray: arguments
                 ) { packCount, __accessPtr in
-                    `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
                         GodotExtension.Interface.objectMethodBindCall(
                             Self.__method_binding_emit_signal,
                             __ptr_self,

@@ -28,8 +28,8 @@ open class Theme: Resource {
     }
 
     internal static var __method_binding_set_icon: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_icon").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_icon").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2188371082)!
         }
         }
@@ -40,23 +40,29 @@ open class Theme: Resource {
         themeType: Godot.GodotStringName,
         texture: Godot.Texture2D?
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        texture.withGodotUnsafeRawPointer { __ptr_texture in
-        withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType, _ptr___ptr_texture) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_icon,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                withTransferrableUnsafeRawPointer(to: texture) { __ptr_texture in
+                    withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
+                        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType, _ptr___ptr_texture) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_set_icon,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    nil
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_icon: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_icon").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_icon").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 934555193)!
         }
         }
@@ -66,22 +72,27 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Godot.Texture2D? {
-        Godot.Texture2D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_icon,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_get_icon,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_has_icon: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_icon").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_icon").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 471820014)!
         }
         }
@@ -91,22 +102,27 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_icon,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_has_icon,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_rename_icon: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "rename_icon").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "rename_icon").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 642128662)!
         }
         }
@@ -117,22 +133,27 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) {
-        oldName.withGodotUnsafeRawPointer { __ptr_oldName in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_oldName, __ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_rename_icon,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: oldName) { __ptr_oldName in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_oldName, __ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_rename_icon,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_clear_icon: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear_icon").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "clear_icon").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740211285)!
         }
         }
@@ -142,21 +163,25 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_clear_icon,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_clear_icon,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_icon_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_icon_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_icon_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4291131558)!
         }
         }
@@ -165,40 +190,46 @@ open class Theme: Resource {
     public func iconList(
         themeType: Godot.GodotString
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_icon_list,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_get_icon_list,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_icon_type_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_icon_type_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_icon_type_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
     }()
 
     public func iconTypeList() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_icon_type_list,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_icon_type_list,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_stylebox: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_stylebox").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_stylebox").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2075907568)!
         }
         }
@@ -209,23 +240,29 @@ open class Theme: Resource {
         themeType: Godot.GodotStringName,
         texture: Godot.StyleBox?
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        texture.withGodotUnsafeRawPointer { __ptr_texture in
-        withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType, _ptr___ptr_texture) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_stylebox,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                withTransferrableUnsafeRawPointer(to: texture) { __ptr_texture in
+                    withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in
+                        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType, _ptr___ptr_texture) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_set_stylebox,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    nil
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_stylebox: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_stylebox").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_stylebox").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3405608165)!
         }
         }
@@ -235,22 +272,27 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Godot.StyleBox? {
-        Godot.StyleBox?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_stylebox,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_get_stylebox,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_has_stylebox: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_stylebox").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_stylebox").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 471820014)!
         }
         }
@@ -260,22 +302,27 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_stylebox,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_has_stylebox,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_rename_stylebox: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "rename_stylebox").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "rename_stylebox").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 642128662)!
         }
         }
@@ -286,22 +333,27 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) {
-        oldName.withGodotUnsafeRawPointer { __ptr_oldName in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_oldName, __ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_rename_stylebox,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: oldName) { __ptr_oldName in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_oldName, __ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_rename_stylebox,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_clear_stylebox: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear_stylebox").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "clear_stylebox").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740211285)!
         }
         }
@@ -311,21 +363,25 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_clear_stylebox,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_clear_stylebox,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_stylebox_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_stylebox_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_stylebox_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4291131558)!
         }
         }
@@ -334,40 +390,46 @@ open class Theme: Resource {
     public func styleboxList(
         themeType: Godot.GodotString
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_stylebox_list,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_get_stylebox_list,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_stylebox_type_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_stylebox_type_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_stylebox_type_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
     }()
 
     public func styleboxTypeList() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_stylebox_type_list,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_stylebox_type_list,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_font: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_font").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_font").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 177292320)!
         }
         }
@@ -378,23 +440,29 @@ open class Theme: Resource {
         themeType: Godot.GodotStringName,
         font: Godot.Font?
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        font.withGodotUnsafeRawPointer { __ptr_font in
-        withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType, _ptr___ptr_font) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_font,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                withTransferrableUnsafeRawPointer(to: font) { __ptr_font in
+                    withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
+                        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType, _ptr___ptr_font) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_set_font,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    nil
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_font: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_font").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_font").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3445063586)!
         }
         }
@@ -404,22 +472,27 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Godot.Font? {
-        Godot.Font?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_font,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_get_font,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_has_font: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_font").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_font").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 471820014)!
         }
         }
@@ -429,22 +502,27 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_font,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_has_font,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_rename_font: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "rename_font").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "rename_font").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 642128662)!
         }
         }
@@ -455,22 +533,27 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) {
-        oldName.withGodotUnsafeRawPointer { __ptr_oldName in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_oldName, __ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_rename_font,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: oldName) { __ptr_oldName in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_oldName, __ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_rename_font,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_clear_font: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear_font").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "clear_font").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740211285)!
         }
         }
@@ -480,21 +563,25 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_clear_font,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_clear_font,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_font_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_font_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_font_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4291131558)!
         }
         }
@@ -503,40 +590,46 @@ open class Theme: Resource {
     public func fontList(
         themeType: Godot.GodotString
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_font_list,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_get_font_list,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_font_type_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_font_type_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_font_type_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
     }()
 
     public func fontTypeList() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_font_type_list,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_font_type_list,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_font_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_font_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_font_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 281601298)!
         }
         }
@@ -547,22 +640,27 @@ open class Theme: Resource {
         themeType: Godot.GodotStringName,
         fontSize: Int32
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        fontSize.withGodotUnsafeRawPointer { __ptr_fontSize in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType, __ptr_fontSize) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_font_size,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                withTransferrableUnsafeRawPointer(to: fontSize) { __ptr_fontSize in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType, __ptr_fontSize) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_set_font_size,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_font_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_font_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_font_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2419549490)!
         }
         }
@@ -572,22 +670,27 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Int32 {
-        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_font_size,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_get_font_size,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_has_font_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_font_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_font_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 471820014)!
         }
         }
@@ -597,22 +700,27 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_font_size,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_has_font_size,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_rename_font_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "rename_font_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "rename_font_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 642128662)!
         }
         }
@@ -623,22 +731,27 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) {
-        oldName.withGodotUnsafeRawPointer { __ptr_oldName in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_oldName, __ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_rename_font_size,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: oldName) { __ptr_oldName in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_oldName, __ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_rename_font_size,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_clear_font_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear_font_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "clear_font_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740211285)!
         }
         }
@@ -648,21 +761,25 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_clear_font_size,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_clear_font_size,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_font_size_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_font_size_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_font_size_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4291131558)!
         }
         }
@@ -671,40 +788,46 @@ open class Theme: Resource {
     public func fontSizeList(
         themeType: Godot.GodotString
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_font_size_list,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_get_font_size_list,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_font_size_type_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_font_size_type_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_font_size_type_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
     }()
 
     public func fontSizeTypeList() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_font_size_type_list,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_font_size_type_list,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_color: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_color").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_color").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4111215154)!
         }
         }
@@ -715,22 +838,27 @@ open class Theme: Resource {
         themeType: Godot.GodotStringName,
         color: Godot.Color
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        color.withGodotUnsafeRawPointer { __ptr_color in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType, __ptr_color) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_color,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                withTransferrableUnsafeRawPointer(to: color) { __ptr_color in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType, __ptr_color) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_set_color,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_color: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_color").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_color").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2015923404)!
         }
         }
@@ -740,22 +868,27 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Godot.Color {
-        Godot.Color.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_color,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_get_color,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_has_color: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_color").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_color").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 471820014)!
         }
         }
@@ -765,22 +898,27 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_color,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_has_color,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_rename_color: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "rename_color").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "rename_color").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 642128662)!
         }
         }
@@ -791,22 +929,27 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) {
-        oldName.withGodotUnsafeRawPointer { __ptr_oldName in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_oldName, __ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_rename_color,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: oldName) { __ptr_oldName in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_oldName, __ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_rename_color,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_clear_color: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear_color").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "clear_color").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740211285)!
         }
         }
@@ -816,21 +959,25 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_clear_color,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_clear_color,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_color_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_color_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_color_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4291131558)!
         }
         }
@@ -839,40 +986,46 @@ open class Theme: Resource {
     public func colorList(
         themeType: Godot.GodotString
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_color_list,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_get_color_list,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_color_type_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_color_type_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_color_type_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
     }()
 
     public func colorTypeList() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_color_type_list,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_color_type_list,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_constant: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_constant").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_constant").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 281601298)!
         }
         }
@@ -883,22 +1036,27 @@ open class Theme: Resource {
         themeType: Godot.GodotStringName,
         constant: Int32
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        constant.withGodotUnsafeRawPointer { __ptr_constant in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType, __ptr_constant) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_constant,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                withTransferrableUnsafeRawPointer(to: constant) { __ptr_constant in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType, __ptr_constant) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_set_constant,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_constant: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_constant").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_constant").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2419549490)!
         }
         }
@@ -908,22 +1066,27 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Int32 {
-        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_constant,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_get_constant,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_has_constant: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_constant").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_constant").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 471820014)!
         }
         }
@@ -933,22 +1096,27 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_constant,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_has_constant,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_rename_constant: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "rename_constant").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "rename_constant").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 642128662)!
         }
         }
@@ -959,22 +1127,27 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) {
-        oldName.withGodotUnsafeRawPointer { __ptr_oldName in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_oldName, __ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_rename_constant,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: oldName) { __ptr_oldName in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_oldName, __ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_rename_constant,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_clear_constant: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear_constant").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "clear_constant").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740211285)!
         }
         }
@@ -984,21 +1157,25 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_clear_constant,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                withUnsafeArgumentPackPointer(__ptr_name, __ptr_themeType) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_clear_constant,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_constant_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_constant_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_constant_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4291131558)!
         }
         }
@@ -1007,40 +1184,46 @@ open class Theme: Resource {
     public func constantList(
         themeType: Godot.GodotString
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_constant_list,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_get_constant_list,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_constant_type_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_constant_type_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_constant_type_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
     }()
 
     public func constantTypeList() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_constant_type_list,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_constant_type_list,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_default_base_scale: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_default_base_scale").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_default_base_scale").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -1049,58 +1232,65 @@ open class Theme: Resource {
     private func __setDefaultBaseScale(
         _ baseScale: Double
     ) {
-        baseScale.withGodotUnsafeRawPointer { __ptr_baseScale in
-        withUnsafeArgumentPackPointer(__ptr_baseScale) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_default_base_scale,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: baseScale) { __ptr_baseScale in
+            withUnsafeArgumentPackPointer(__ptr_baseScale) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_default_base_scale,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_default_base_scale: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_default_base_scale").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_default_base_scale").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
     }()
 
     private func __getDefaultBaseScale() -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_default_base_scale,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_default_base_scale,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_has_default_base_scale: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_default_base_scale").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_default_base_scale").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
 
     public func hasDefaultBaseScale() -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_default_base_scale,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_has_default_base_scale,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_default_font: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_default_font").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_default_font").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1262170328)!
         }
         }
@@ -1109,59 +1299,67 @@ open class Theme: Resource {
     private func __setDefaultFont(
         _ font: Godot.Font?
     ) {
-        font.withGodotUnsafeRawPointer { __ptr_font in
-        withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
-        withUnsafeArgumentPackPointer(_ptr___ptr_font) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_default_font,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: font) { __ptr_font in
+            withUnsafePointer(to: __ptr_font) { _ptr___ptr_font in
+                withUnsafeArgumentPackPointer(_ptr___ptr_font) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_set_default_font,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_default_font: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_default_font").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_default_font").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3229501585)!
         }
         }
     }()
 
     private func __getDefaultFont() -> Godot.Font? {
-        Godot.Font?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_default_font,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_default_font,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_has_default_font: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_default_font").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_default_font").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
 
     public func hasDefaultFont() -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_default_font,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_has_default_font,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_default_font_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_default_font_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_default_font_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -1170,58 +1368,65 @@ open class Theme: Resource {
     private func __setDefaultFontSize(
         _ fontSize: Int32
     ) {
-        fontSize.withGodotUnsafeRawPointer { __ptr_fontSize in
-        withUnsafeArgumentPackPointer(__ptr_fontSize) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_default_font_size,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: fontSize) { __ptr_fontSize in
+            withUnsafeArgumentPackPointer(__ptr_fontSize) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_default_font_size,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_default_font_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_default_font_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_default_font_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
     }()
 
     private func __getDefaultFontSize() -> Int32 {
-        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_default_font_size,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_default_font_size,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_has_default_font_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_default_font_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_default_font_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }
     }()
 
     public func hasDefaultFontSize() -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_default_font_size,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_has_default_font_size,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_set_theme_item: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_theme_item").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_theme_item").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2492983623)!
         }
         }
@@ -1233,23 +1438,29 @@ open class Theme: Resource {
         themeType: Godot.GodotStringName,
         value: Value
     ) {
-        dataType.withGodotUnsafeRawPointer { __ptr_dataType in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
-        withUnsafeArgumentPackPointer(__ptr_dataType, __ptr_name, __ptr_themeType, __ptr_value) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_theme_item,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}
+        withTransferrableUnsafeRawPointer(to: dataType) { __ptr_dataType in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
+                        withUnsafeArgumentPackPointer(__ptr_dataType, __ptr_name, __ptr_themeType, __ptr_value) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_set_theme_item,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    nil
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_theme_item: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_item").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_theme_item").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2191024021)!
         }
         }
@@ -1260,23 +1471,29 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Godot.Variant {
-        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        dataType.withGodotUnsafeRawPointer { __ptr_dataType in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_dataType, __ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_theme_item,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: dataType) { __ptr_dataType in
+                withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                    withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                        withUnsafeArgumentPackPointer(__ptr_dataType, __ptr_name, __ptr_themeType) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_get_theme_item,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_has_theme_item: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_item").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_theme_item").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1739311056)!
         }
         }
@@ -1287,23 +1504,29 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        dataType.withGodotUnsafeRawPointer { __ptr_dataType in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_dataType, __ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_theme_item,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: dataType) { __ptr_dataType in
+                withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                    withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                        withUnsafeArgumentPackPointer(__ptr_dataType, __ptr_name, __ptr_themeType) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_has_theme_item,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_rename_theme_item: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "rename_theme_item").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "rename_theme_item").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3900867553)!
         }
         }
@@ -1315,23 +1538,29 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) {
-        dataType.withGodotUnsafeRawPointer { __ptr_dataType in
-        oldName.withGodotUnsafeRawPointer { __ptr_oldName in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_dataType, __ptr_oldName, __ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_rename_theme_item,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}
+        withTransferrableUnsafeRawPointer(to: dataType) { __ptr_dataType in
+            withTransferrableUnsafeRawPointer(to: oldName) { __ptr_oldName in
+                withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                    withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                        withUnsafeArgumentPackPointer(__ptr_dataType, __ptr_oldName, __ptr_name, __ptr_themeType) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_rename_theme_item,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    nil
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_clear_theme_item: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear_theme_item").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "clear_theme_item").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2965505587)!
         }
         }
@@ -1342,22 +1571,27 @@ open class Theme: Resource {
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName
     ) {
-        dataType.withGodotUnsafeRawPointer { __ptr_dataType in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_dataType, __ptr_name, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_clear_theme_item,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: dataType) { __ptr_dataType in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_dataType, __ptr_name, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_clear_theme_item,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_theme_item_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_item_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_theme_item_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3726716710)!
         }
         }
@@ -1367,22 +1601,27 @@ open class Theme: Resource {
         dataType: Godot.Theme.DataType,
         themeType: Godot.GodotString
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        dataType.withGodotUnsafeRawPointer { __ptr_dataType in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_dataType, __ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_theme_item_list,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: dataType) { __ptr_dataType in
+                withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                    withUnsafeArgumentPackPointer(__ptr_dataType, __ptr_themeType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_get_theme_item_list,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_theme_item_type_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_item_type_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_theme_item_type_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1316004935)!
         }
         }
@@ -1391,21 +1630,25 @@ open class Theme: Resource {
     public func themeItemTypeList(
         dataType: Godot.Theme.DataType
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        dataType.withGodotUnsafeRawPointer { __ptr_dataType in
-        withUnsafeArgumentPackPointer(__ptr_dataType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_theme_item_type_list,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: dataType) { __ptr_dataType in
+                withUnsafeArgumentPackPointer(__ptr_dataType) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_get_theme_item_type_list,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_set_type_variation: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_type_variation").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_type_variation").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740211285)!
         }
         }
@@ -1415,21 +1658,25 @@ open class Theme: Resource {
         themeType: Godot.GodotStringName,
         baseType: Godot.GodotStringName
     ) {
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        baseType.withGodotUnsafeRawPointer { __ptr_baseType in
-        withUnsafeArgumentPackPointer(__ptr_themeType, __ptr_baseType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_type_variation,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+            withTransferrableUnsafeRawPointer(to: baseType) { __ptr_baseType in
+                withUnsafeArgumentPackPointer(__ptr_themeType, __ptr_baseType) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_set_type_variation,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_is_type_variation: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_type_variation").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_type_variation").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 471820014)!
         }
         }
@@ -1439,22 +1686,27 @@ open class Theme: Resource {
         themeType: Godot.GodotStringName,
         baseType: Godot.GodotStringName
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        baseType.withGodotUnsafeRawPointer { __ptr_baseType in
-        withUnsafeArgumentPackPointer(__ptr_themeType, __ptr_baseType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_is_type_variation,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                withTransferrableUnsafeRawPointer(to: baseType) { __ptr_baseType in
+                    withUnsafeArgumentPackPointer(__ptr_themeType, __ptr_baseType) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_is_type_variation,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_clear_type_variation: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear_type_variation").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "clear_type_variation").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -1463,20 +1715,23 @@ open class Theme: Resource {
     public func clearTypeVariation(
         themeType: Godot.GodotStringName
     ) {
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_clear_type_variation,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+            withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_clear_type_variation,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_type_variation_base: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_type_variation_base").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_type_variation_base").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1965194235)!
         }
         }
@@ -1485,21 +1740,25 @@ open class Theme: Resource {
     public func typeVariationBase(
         themeType: Godot.GodotStringName
     ) -> Godot.GodotStringName {
-        Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_type_variation_base,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+                withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_get_type_variation_base,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_type_variation_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_type_variation_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_type_variation_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1761182771)!
         }
         }
@@ -1508,21 +1767,25 @@ open class Theme: Resource {
     public func typeVariationList(
         baseType: Godot.GodotStringName
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        baseType.withGodotUnsafeRawPointer { __ptr_baseType in
-        withUnsafeArgumentPackPointer(__ptr_baseType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_type_variation_list,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: baseType) { __ptr_baseType in
+                withUnsafeArgumentPackPointer(__ptr_baseType) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_get_type_variation_list,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_add_type: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_type").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_type").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -1531,20 +1794,23 @@ open class Theme: Resource {
     public func addType(
         themeType: Godot.GodotStringName
     ) {
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_type,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+            withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_add_type,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_remove_type: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_type").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "remove_type").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
         }
         }
@@ -1553,39 +1819,44 @@ open class Theme: Resource {
     public func removeType(
         themeType: Godot.GodotStringName
     ) {
-        themeType.withGodotUnsafeRawPointer { __ptr_themeType in
-        withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_remove_type,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
+            withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_remove_type,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_type_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_type_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_type_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
         }
         }
     }()
 
     public func typeList() -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_type_list,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_type_list,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_merge_with: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "merge_with").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "merge_with").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2326690814)!
         }
         }
@@ -1594,34 +1865,39 @@ open class Theme: Resource {
     public func mergeWith(
         other: Godot.Theme?
     ) {
-        other.withGodotUnsafeRawPointer { __ptr_other in
-        withUnsafePointer(to: __ptr_other) { _ptr___ptr_other in
-        withUnsafeArgumentPackPointer(_ptr___ptr_other) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_merge_with,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: other) { __ptr_other in
+            withUnsafePointer(to: __ptr_other) { _ptr___ptr_other in
+                withUnsafeArgumentPackPointer(_ptr___ptr_other) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_merge_with,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "clear").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
 
     public func clear() {
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_clear,
-            __ptr_self,
-            nil,
-            nil
-        )}
+        self.withUnsafeMutableRawPointer { __ptr_self in
+            GodotExtension.Interface.objectMethodBindPtrcall(
+                Self.__method_binding_clear,
+                __ptr_self,
+                nil,
+                nil
+            )
+        }
     }
 
     public var defaultBaseScale: Double {

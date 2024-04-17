@@ -7,8 +7,8 @@ import GodotExtensionHeaders
 @GodotRefCountedClass
 open class ImageTexture3D: Texture3D {
     internal static var __method_binding_create: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "create").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130379827)!
         }
         }
@@ -22,26 +22,35 @@ open class ImageTexture3D: Texture3D {
         useMipmaps: Bool,
         data: Godot.GodotArray<Godot.Image?>
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        format.withGodotUnsafeRawPointer { __ptr_format in
-        width.withGodotUnsafeRawPointer { __ptr_width in
-        height.withGodotUnsafeRawPointer { __ptr_height in
-        depth.withGodotUnsafeRawPointer { __ptr_depth in
-        useMipmaps.withGodotUnsafeRawPointer { __ptr_useMipmaps in
-        data.withGodotUnsafeRawPointer { __ptr_data in
-        withUnsafeArgumentPackPointer(__ptr_format, __ptr_width, __ptr_height, __ptr_depth, __ptr_useMipmaps, __ptr_data) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_create,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: format) { __ptr_format in
+                withTransferrableUnsafeRawPointer(to: width) { __ptr_width in
+                    withTransferrableUnsafeRawPointer(to: height) { __ptr_height in
+                        withTransferrableUnsafeRawPointer(to: depth) { __ptr_depth in
+                            withTransferrableUnsafeRawPointer(to: useMipmaps) { __ptr_useMipmaps in
+                                withTransferrableUnsafeRawPointer(to: data) { __ptr_data in
+                                    withUnsafeArgumentPackPointer(__ptr_format, __ptr_width, __ptr_height, __ptr_depth, __ptr_useMipmaps, __ptr_data) { __accessPtr in
+                                        self.withUnsafeMutableRawPointer { __ptr_self in
+                                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                                Self.__method_binding_create,
+                                                __ptr_self,
+                                                __accessPtr,
+                                                __temporary
+                                            )
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_update: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "update").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "update").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
         }
         }
@@ -50,15 +59,18 @@ open class ImageTexture3D: Texture3D {
     public func update(
         data: Godot.GodotArray<Godot.Image?>
     ) {
-        data.withGodotUnsafeRawPointer { __ptr_data in
-        withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_update,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: data) { __ptr_data in
+            withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_update,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

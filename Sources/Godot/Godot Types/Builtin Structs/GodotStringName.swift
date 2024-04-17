@@ -30,7 +30,7 @@ extension GodotStringName {
         forObjectPointer instancePtr: GDExtensionObjectPtr
     ) -> GodotStringName? {
         var className = Self._make()
-        let classNameRetrieved = className.withGodotUnsafeMutableRawPointer { ptr in
+        let classNameRetrieved = className.withUnsafeMutableRawPointer { ptr in
             GodotExtension.Interface.objectGetClassName(instancePtr, GodotExtension.libraryPtr, ptr) != 0
         }
         

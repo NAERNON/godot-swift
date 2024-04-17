@@ -70,8 +70,8 @@ open class EditorImportPlugin: ResourceImporter {
     }
 
     internal static var __method_binding_append_import_external_resource: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "append_import_external_resource").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "append_import_external_resource").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 320493106)!
         }
         }
@@ -83,19 +83,26 @@ open class EditorImportPlugin: ResourceImporter {
         customImporter: Godot.GodotString = "",
         generatorParameters: Value3 = Variant()
     ) -> Godot.ErrorType {
-        Godot.ErrorType.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        path.withGodotUnsafeRawPointer { __ptr_path in
-        customOptions.withGodotUnsafeRawPointer { __ptr_customOptions in
-        customImporter.withGodotUnsafeRawPointer { __ptr_customImporter in
-        Godot.Variant.withStorageUnsafeRawPointer(to: generatorParameters) { __ptr_generatorParameters in
-        withUnsafeArgumentPackPointer(__ptr_path, __ptr_customOptions, __ptr_customImporter, __ptr_generatorParameters) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_append_import_external_resource,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: path) { __ptr_path in
+                withTransferrableUnsafeRawPointer(to: customOptions) { __ptr_customOptions in
+                    withTransferrableUnsafeRawPointer(to: customImporter) { __ptr_customImporter in
+                        Godot.Variant.withStorageUnsafeRawPointer(to: generatorParameters) { __ptr_generatorParameters in
+                            withUnsafeArgumentPackPointer(__ptr_path, __ptr_customOptions, __ptr_customImporter, __ptr_generatorParameters) { __accessPtr in
+                                self.withUnsafeMutableRawPointer { __ptr_self in
+                                    GodotExtension.Interface.objectMethodBindPtrcall(
+                                        Self.__method_binding_append_import_external_resource,
+                                        __ptr_self,
+                                        __accessPtr,
+                                        __temporary
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

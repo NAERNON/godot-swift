@@ -24,8 +24,8 @@ open class PhysicsServer3DRenderingServerHandler: Object {
     }
 
     internal static var __method_binding_set_vertex: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_vertex").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_vertex").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1530502735)!
         }
         }
@@ -35,21 +35,25 @@ open class PhysicsServer3DRenderingServerHandler: Object {
         vertexID: Int32,
         vertex: Godot.Vector3
     ) {
-        vertexID.withGodotUnsafeRawPointer { __ptr_vertexID in
-        vertex.withGodotUnsafeRawPointer { __ptr_vertex in
-        withUnsafeArgumentPackPointer(__ptr_vertexID, __ptr_vertex) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_vertex,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: vertexID) { __ptr_vertexID in
+            withTransferrableUnsafeRawPointer(to: vertex) { __ptr_vertex in
+                withUnsafeArgumentPackPointer(__ptr_vertexID, __ptr_vertex) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_set_vertex,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_set_normal: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_normal").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_normal").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1530502735)!
         }
         }
@@ -59,21 +63,25 @@ open class PhysicsServer3DRenderingServerHandler: Object {
         vertexID: Int32,
         normal: Godot.Vector3
     ) {
-        vertexID.withGodotUnsafeRawPointer { __ptr_vertexID in
-        normal.withGodotUnsafeRawPointer { __ptr_normal in
-        withUnsafeArgumentPackPointer(__ptr_vertexID, __ptr_normal) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_normal,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: vertexID) { __ptr_vertexID in
+            withTransferrableUnsafeRawPointer(to: normal) { __ptr_normal in
+                withUnsafeArgumentPackPointer(__ptr_vertexID, __ptr_normal) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_set_normal,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_set_aabb: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_aabb").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_aabb").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 259215842)!
         }
         }
@@ -82,15 +90,18 @@ open class PhysicsServer3DRenderingServerHandler: Object {
     public func setAABB(
         _ aabb: Godot.AABB
     ) {
-        aabb.withGodotUnsafeRawPointer { __ptr_aabb in
-        withUnsafeArgumentPackPointer(__ptr_aabb) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_aabb,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: aabb) { __ptr_aabb in
+            withUnsafeArgumentPackPointer(__ptr_aabb) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_aabb,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

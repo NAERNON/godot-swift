@@ -81,8 +81,8 @@ open class EditorScenePostImportPlugin: RefCounted {
     }
 
     internal static var __method_binding_get_option_value: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_option_value").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_option_value").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2760726917)!
         }
         }
@@ -91,21 +91,25 @@ open class EditorScenePostImportPlugin: RefCounted {
     public func optionValue(
         name: Godot.GodotStringName
     ) -> Godot.Variant {
-        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_option_value,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_get_option_value,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_add_import_option: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_import_option").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_import_option").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 402577236)!
         }
         }
@@ -115,21 +119,25 @@ open class EditorScenePostImportPlugin: RefCounted {
         name: Godot.GodotString,
         value: Value
     ) {
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
-        withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_import_option,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+            Godot.Variant.withStorageUnsafeRawPointer(to: value) { __ptr_value in
+                withUnsafeArgumentPackPointer(__ptr_name, __ptr_value) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_add_import_option,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_add_import_option_advanced: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_import_option_advanced").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_import_option_advanced").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3674075649)!
         }
         }
@@ -143,20 +151,28 @@ open class EditorScenePostImportPlugin: RefCounted {
         hintString: Godot.GodotString = "",
         usageFlags: Int32 = 6
     ) {
-        type.withGodotUnsafeRawPointer { __ptr_type in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        Godot.Variant.withStorageUnsafeRawPointer(to: defaultValue) { __ptr_defaultValue in
-        hint.withGodotUnsafeRawPointer { __ptr_hint in
-        hintString.withGodotUnsafeRawPointer { __ptr_hintString in
-        usageFlags.withGodotUnsafeRawPointer { __ptr_usageFlags in
-        withUnsafeArgumentPackPointer(__ptr_type, __ptr_name, __ptr_defaultValue, __ptr_hint, __ptr_hintString, __ptr_usageFlags) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_import_option_advanced,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}}}
+        withTransferrableUnsafeRawPointer(to: type) { __ptr_type in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                Godot.Variant.withStorageUnsafeRawPointer(to: defaultValue) { __ptr_defaultValue in
+                    withTransferrableUnsafeRawPointer(to: hint) { __ptr_hint in
+                        withTransferrableUnsafeRawPointer(to: hintString) { __ptr_hintString in
+                            withTransferrableUnsafeRawPointer(to: usageFlags) { __ptr_usageFlags in
+                                withUnsafeArgumentPackPointer(__ptr_type, __ptr_name, __ptr_defaultValue, __ptr_hint, __ptr_hintString, __ptr_usageFlags) { __accessPtr in
+                                    self.withUnsafeMutableRawPointer { __ptr_self in
+                                        GodotExtension.Interface.objectMethodBindPtrcall(
+                                            Self.__method_binding_add_import_option_advanced,
+                                            __ptr_self,
+                                            __accessPtr,
+                                            nil
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

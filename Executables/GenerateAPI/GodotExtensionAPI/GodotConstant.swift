@@ -44,19 +44,19 @@ struct GodotConstant: Decodable, Equatable {
             return type.syntax() + "(rawValue: \(string))"
         }
         
-        if type == "StringName" {
+        if type == .stringName {
             return "\"\(string.components(separatedBy: "\"")[1])\""
         }
         
-        if type == "Dictionary" && string == "{}" {
+        if type == .dictionary && string == "{}" {
             return "[:]"
         }
         
-        if (type.isTypedArray || type == "Array") && string.contains("([])") {
+        if (type.isTypedArray || type == .array) && string.contains("([])") {
             return "[]"
         }
         
-        if type == "float" && string.last == "f" {
+        if type == .float && string.last == "f" {
             return string.dropLast() + "0"
         }
         

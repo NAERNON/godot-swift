@@ -161,8 +161,8 @@ open class EditorVCSInterface: Object {
     }
 
     internal static var __method_binding_create_diff_line: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_diff_line").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "create_diff_line").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2901184053)!
         }
         }
@@ -174,24 +174,31 @@ open class EditorVCSInterface: Object {
         content: Godot.GodotString,
         status: Godot.GodotString
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        newLineNo.withGodotUnsafeRawPointer { __ptr_newLineNo in
-        oldLineNo.withGodotUnsafeRawPointer { __ptr_oldLineNo in
-        content.withGodotUnsafeRawPointer { __ptr_content in
-        status.withGodotUnsafeRawPointer { __ptr_status in
-        withUnsafeArgumentPackPointer(__ptr_newLineNo, __ptr_oldLineNo, __ptr_content, __ptr_status) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_create_diff_line,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: newLineNo) { __ptr_newLineNo in
+                withTransferrableUnsafeRawPointer(to: oldLineNo) { __ptr_oldLineNo in
+                    withTransferrableUnsafeRawPointer(to: content) { __ptr_content in
+                        withTransferrableUnsafeRawPointer(to: status) { __ptr_status in
+                            withUnsafeArgumentPackPointer(__ptr_newLineNo, __ptr_oldLineNo, __ptr_content, __ptr_status) { __accessPtr in
+                                self.withUnsafeMutableRawPointer { __ptr_self in
+                                    GodotExtension.Interface.objectMethodBindPtrcall(
+                                        Self.__method_binding_create_diff_line,
+                                        __ptr_self,
+                                        __accessPtr,
+                                        __temporary
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_create_diff_hunk: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_diff_hunk").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "create_diff_hunk").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3784842090)!
         }
         }
@@ -203,24 +210,31 @@ open class EditorVCSInterface: Object {
         oldLines: Int32,
         newLines: Int32
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        oldStart.withGodotUnsafeRawPointer { __ptr_oldStart in
-        newStart.withGodotUnsafeRawPointer { __ptr_newStart in
-        oldLines.withGodotUnsafeRawPointer { __ptr_oldLines in
-        newLines.withGodotUnsafeRawPointer { __ptr_newLines in
-        withUnsafeArgumentPackPointer(__ptr_oldStart, __ptr_newStart, __ptr_oldLines, __ptr_newLines) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_create_diff_hunk,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: oldStart) { __ptr_oldStart in
+                withTransferrableUnsafeRawPointer(to: newStart) { __ptr_newStart in
+                    withTransferrableUnsafeRawPointer(to: oldLines) { __ptr_oldLines in
+                        withTransferrableUnsafeRawPointer(to: newLines) { __ptr_newLines in
+                            withUnsafeArgumentPackPointer(__ptr_oldStart, __ptr_newStart, __ptr_oldLines, __ptr_newLines) { __accessPtr in
+                                self.withUnsafeMutableRawPointer { __ptr_self in
+                                    GodotExtension.Interface.objectMethodBindPtrcall(
+                                        Self.__method_binding_create_diff_hunk,
+                                        __ptr_self,
+                                        __accessPtr,
+                                        __temporary
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_create_diff_file: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_diff_file").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "create_diff_file").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2723227684)!
         }
         }
@@ -230,22 +244,27 @@ open class EditorVCSInterface: Object {
         newFile: Godot.GodotString,
         oldFile: Godot.GodotString
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        newFile.withGodotUnsafeRawPointer { __ptr_newFile in
-        oldFile.withGodotUnsafeRawPointer { __ptr_oldFile in
-        withUnsafeArgumentPackPointer(__ptr_newFile, __ptr_oldFile) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_create_diff_file,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: newFile) { __ptr_newFile in
+                withTransferrableUnsafeRawPointer(to: oldFile) { __ptr_oldFile in
+                    withUnsafeArgumentPackPointer(__ptr_newFile, __ptr_oldFile) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_create_diff_file,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_create_commit: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_commit").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "create_commit").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1075983584)!
         }
         }
@@ -258,25 +277,33 @@ open class EditorVCSInterface: Object {
         unixTimestamp: Int64,
         offsetMinutes: Int64
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        msg.withGodotUnsafeRawPointer { __ptr_msg in
-        author.withGodotUnsafeRawPointer { __ptr_author in
-        id.withGodotUnsafeRawPointer { __ptr_id in
-        unixTimestamp.withGodotUnsafeRawPointer { __ptr_unixTimestamp in
-        offsetMinutes.withGodotUnsafeRawPointer { __ptr_offsetMinutes in
-        withUnsafeArgumentPackPointer(__ptr_msg, __ptr_author, __ptr_id, __ptr_unixTimestamp, __ptr_offsetMinutes) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_create_commit,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: msg) { __ptr_msg in
+                withTransferrableUnsafeRawPointer(to: author) { __ptr_author in
+                    withTransferrableUnsafeRawPointer(to: id) { __ptr_id in
+                        withTransferrableUnsafeRawPointer(to: unixTimestamp) { __ptr_unixTimestamp in
+                            withTransferrableUnsafeRawPointer(to: offsetMinutes) { __ptr_offsetMinutes in
+                                withUnsafeArgumentPackPointer(__ptr_msg, __ptr_author, __ptr_id, __ptr_unixTimestamp, __ptr_offsetMinutes) { __accessPtr in
+                                    self.withUnsafeMutableRawPointer { __ptr_self in
+                                        GodotExtension.Interface.objectMethodBindPtrcall(
+                                            Self.__method_binding_create_commit,
+                                            __ptr_self,
+                                            __accessPtr,
+                                            __temporary
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_create_status_file: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_status_file").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "create_status_file").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1083471673)!
         }
         }
@@ -287,23 +314,29 @@ open class EditorVCSInterface: Object {
         changeType: Godot.EditorVCSInterface.ChangeType,
         area: Godot.EditorVCSInterface.TreeArea
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        filePath.withGodotUnsafeRawPointer { __ptr_filePath in
-        changeType.withGodotUnsafeRawPointer { __ptr_changeType in
-        area.withGodotUnsafeRawPointer { __ptr_area in
-        withUnsafeArgumentPackPointer(__ptr_filePath, __ptr_changeType, __ptr_area) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_create_status_file,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: filePath) { __ptr_filePath in
+                withTransferrableUnsafeRawPointer(to: changeType) { __ptr_changeType in
+                    withTransferrableUnsafeRawPointer(to: area) { __ptr_area in
+                        withUnsafeArgumentPackPointer(__ptr_filePath, __ptr_changeType, __ptr_area) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_create_status_file,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_add_diff_hunks_into_diff_file: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_diff_hunks_into_diff_file").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_diff_hunks_into_diff_file").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4015243225)!
         }
         }
@@ -313,22 +346,27 @@ open class EditorVCSInterface: Object {
         _ diffFile: Godot.GodotDictionary<Value1, Value2>,
         diffHunks: Godot.GodotArray<Godot.AnyGodotDictionary>
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        diffFile.withGodotUnsafeRawPointer { __ptr_diffFile in
-        diffHunks.withGodotUnsafeRawPointer { __ptr_diffHunks in
-        withUnsafeArgumentPackPointer(__ptr_diffFile, __ptr_diffHunks) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_diff_hunks_into_diff_file,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: diffFile) { __ptr_diffFile in
+                withTransferrableUnsafeRawPointer(to: diffHunks) { __ptr_diffHunks in
+                    withUnsafeArgumentPackPointer(__ptr_diffFile, __ptr_diffHunks) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_add_diff_hunks_into_diff_file,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_add_line_diffs_into_diff_hunk: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_line_diffs_into_diff_hunk").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_line_diffs_into_diff_hunk").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4015243225)!
         }
         }
@@ -338,22 +376,27 @@ open class EditorVCSInterface: Object {
         _ diffHunk: Godot.GodotDictionary<Value1, Value2>,
         lineDiffs: Godot.GodotArray<Godot.AnyGodotDictionary>
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        diffHunk.withGodotUnsafeRawPointer { __ptr_diffHunk in
-        lineDiffs.withGodotUnsafeRawPointer { __ptr_lineDiffs in
-        withUnsafeArgumentPackPointer(__ptr_diffHunk, __ptr_lineDiffs) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_line_diffs_into_diff_hunk,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: diffHunk) { __ptr_diffHunk in
+                withTransferrableUnsafeRawPointer(to: lineDiffs) { __ptr_lineDiffs in
+                    withUnsafeArgumentPackPointer(__ptr_diffHunk, __ptr_lineDiffs) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_add_line_diffs_into_diff_hunk,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_popup_error: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "popup_error").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "popup_error").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -362,15 +405,18 @@ open class EditorVCSInterface: Object {
     public func popupError(
         msg: Godot.GodotString
     ) {
-        msg.withGodotUnsafeRawPointer { __ptr_msg in
-        withUnsafeArgumentPackPointer(__ptr_msg) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_popup_error,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: msg) { __ptr_msg in
+            withUnsafeArgumentPackPointer(__ptr_msg) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_popup_error,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

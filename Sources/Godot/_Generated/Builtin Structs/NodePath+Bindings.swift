@@ -49,72 +49,68 @@ private var __operator_binding_in_godotarray: GDExtensionPtrOperatorEvaluator = 
 }()
 
 private var __method_binding_is_absolute: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "is_absolute").withGodotUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "is_absolute").withUnsafeRawPointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 3918633141)!
     }
 }()
 
 private var __method_binding_get_name_count: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_name_count").withGodotUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "get_name_count").withUnsafeRawPointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 3173160232)!
     }
 }()
 
 private var __method_binding_get_name: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_name").withGodotUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "get_name").withUnsafeRawPointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 2948586938)!
     }
 }()
 
 private var __method_binding_get_subname_count: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_subname_count").withGodotUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "get_subname_count").withUnsafeRawPointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 3173160232)!
     }
 }()
 
 private var __method_binding_hash: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "hash").withGodotUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "hash").withUnsafeRawPointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 3173160232)!
     }
 }()
 
 private var __method_binding_get_subname: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_subname").withGodotUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "get_subname").withUnsafeRawPointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 2948586938)!
     }
 }()
 
 private var __method_binding_get_concatenated_names: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_concatenated_names").withGodotUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "get_concatenated_names").withUnsafeRawPointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 1825232092)!
     }
 }()
 
 private var __method_binding_get_concatenated_subnames: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_concatenated_subnames").withGodotUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "get_concatenated_subnames").withUnsafeRawPointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 1825232092)!
     }
 }()
 
 private var __method_binding_get_as_property_path: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_as_property_path").withGodotUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "get_as_property_path").withUnsafeRawPointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 1598598043)!
     }
 }()
 
 private var __method_binding_is_empty: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "is_empty").withGodotUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "is_empty").withUnsafeRawPointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 3918633141)!
     }
 }()
 
 extension NodePath {
-    static internal func fromInitializingMutatingGodotUnsafePointer(
-        _ body: (UnsafeMutableRawPointer) -> Void
-    ) -> Self {
-        let opaque = Opaque(size: 8, destructorPtr: __destructor)
-        opaque.withUnsafeMutableRawPointer(body)
-        return Self.init(opaque: opaque)
+    static internal func makeOpaque() -> Opaque {
+        Opaque(size: 8, destructorPtr: __destructor)
     }
 
     static internal func _make() -> Self {
@@ -129,11 +125,13 @@ extension NodePath {
         from: Godot.NodePath
     ) -> Self {
         let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
-        from.withGodotUnsafeRawPointer { __ptr_from in
-        withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
-        __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructorFromNodePath(__ptr___temporary, __accessPtr)
-        }}}
+        withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
+            withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
+                __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
+                    __constructorFromNodePath(__ptr___temporary, __accessPtr)
+                }
+            }
+        }
         return Self.init(opaque: __temporary)
     }
 
@@ -142,9 +140,10 @@ extension NodePath {
     ) -> Self {
         let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
         withUnsafeArgumentPackPointer(from) { __accessPtr in
-        __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructorFromNodePath(__ptr___temporary, __accessPtr)
-        }}
+            __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
+                __constructorFromNodePath(__ptr___temporary, __accessPtr)
+            }
+        }
         return Self.init(opaque: __temporary)
     }
 
@@ -152,11 +151,13 @@ extension NodePath {
         from: Godot.GodotString
     ) -> Self {
         let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
-        from.withGodotUnsafeRawPointer { __ptr_from in
-        withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
-        __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructorFromGodotString(__ptr___temporary, __accessPtr)
-        }}}
+        withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
+            withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
+                __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
+                    __constructorFromGodotString(__ptr___temporary, __accessPtr)
+                }
+            }
+        }
         return Self.init(opaque: __temporary)
     }
 
@@ -165,9 +166,10 @@ extension NodePath {
     ) -> Self {
         let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
         withUnsafeArgumentPackPointer(from) { __accessPtr in
-        __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructorFromGodotString(__ptr___temporary, __accessPtr)
-        }}
+            __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
+                __constructorFromGodotString(__ptr___temporary, __accessPtr)
+            }
+        }
         return Self.init(opaque: __temporary)
     }
 
@@ -175,135 +177,179 @@ extension NodePath {
         _ lhs: Godot.NodePath,
         _ rhs: Value
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
-        Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
-        __operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
+                Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
+                    __operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)
+                }
+            }
+        }
     }
 
     static internal func _operatorNotEqual<Value: Variant.Storable>(
         _ lhs: Godot.NodePath,
         _ rhs: Value
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
-        Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
-        __operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
+                Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
+                    __operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)
+                }
+            }
+        }
     }
 
     static internal func _operatorNot(
         _ lhs: Godot.NodePath
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
-        __operator_binding_not(__ptr_lhs, nil, __temporary)}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
+                __operator_binding_not(__ptr_lhs, nil, __temporary)
+            }
+        }
     }
 
     static internal func _operatorEqual(
         _ lhs: Godot.NodePath,
         _ rhs: Godot.NodePath
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
-        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
-        __operator_binding_equal_nodepath(__ptr_lhs, __ptr_rhs, __temporary)}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
+                withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
+                    __operator_binding_equal_nodepath(__ptr_lhs, __ptr_rhs, __temporary)
+                }
+            }
+        }
     }
 
     static internal func _operatorNotEqual(
         _ lhs: Godot.NodePath,
         _ rhs: Godot.NodePath
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
-        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
-        __operator_binding_not_equal_nodepath(__ptr_lhs, __ptr_rhs, __temporary)}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
+                withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
+                    __operator_binding_not_equal_nodepath(__ptr_lhs, __ptr_rhs, __temporary)
+                }
+            }
+        }
     }
 
     static internal func _operatorIn<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ lhs: Godot.NodePath,
         _ rhs: Godot.GodotDictionary<Value1, Value2>
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
-        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
-        __operator_binding_in_godotdictionary(__ptr_lhs, __ptr_rhs, __temporary)}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
+                withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
+                    __operator_binding_in_godotdictionary(__ptr_lhs, __ptr_rhs, __temporary)
+                }
+            }
+        }
     }
 
     static internal func _operatorIn<Value: Variant.Storable>(
         _ lhs: Godot.NodePath,
         _ rhs: Godot.GodotArray<Value>
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        lhs.withGodotUnsafeRawPointer { __ptr_lhs in
-        rhs.withGodotUnsafeRawPointer { __ptr_rhs in
-        __operator_binding_in_godotarray(__ptr_lhs, __ptr_rhs, __temporary)}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
+                withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
+                    __operator_binding_in_godotarray(__ptr_lhs, __ptr_rhs, __temporary)
+                }
+            }
+        }
     }
 
     internal func _isAbsolute() -> Bool {
-        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeRawPointer { __ptr_self in
-        __method_binding_is_absolute(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
+        return fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                __method_binding_is_absolute(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+            }
+        }
     }
 
     internal func _nameCount() -> Int {
-        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeRawPointer { __ptr_self in
-        __method_binding_get_name_count(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
+        return fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                __method_binding_get_name_count(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+            }
+        }
     }
 
     internal func _name(
         idx: Int
     ) -> Godot.GodotStringName {
-        return Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        idx.withGodotUnsafeRawPointer { __ptr_idx in
-        withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
-        `self`.withGodotUnsafeRawPointer { __ptr_self in
-        __method_binding_get_name(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
+        return fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: idx) { __ptr_idx in
+                withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        __method_binding_get_name(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                    }
+                }
+            }
+        }
     }
 
     internal func _subnameCount() -> Int {
-        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeRawPointer { __ptr_self in
-        __method_binding_get_subname_count(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
+        return fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                __method_binding_get_subname_count(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+            }
+        }
     }
 
     internal func _hash() -> Int {
-        return Int.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeRawPointer { __ptr_self in
-        __method_binding_hash(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
+        return fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                __method_binding_hash(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+            }
+        }
     }
 
     internal func _subname(
         idx: Int
     ) -> Godot.GodotStringName {
-        return Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        idx.withGodotUnsafeRawPointer { __ptr_idx in
-        withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
-        `self`.withGodotUnsafeRawPointer { __ptr_self in
-        __method_binding_get_subname(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)}}}}
+        return fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: idx) { __ptr_idx in
+                withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        __method_binding_get_subname(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                    }
+                }
+            }
+        }
     }
 
     internal func _concatenatedNames() -> Godot.GodotStringName {
-        return Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeRawPointer { __ptr_self in
-        __method_binding_get_concatenated_names(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
+        return fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                __method_binding_get_concatenated_names(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+            }
+        }
     }
 
     internal func _concatenatedSubnames() -> Godot.GodotStringName {
-        return Godot.GodotStringName.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeRawPointer { __ptr_self in
-        __method_binding_get_concatenated_subnames(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
+        return fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                __method_binding_get_concatenated_subnames(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+            }
+        }
     }
 
     internal func _asPropertyPath() -> Godot.NodePath {
-        return Godot.NodePath.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeRawPointer { __ptr_self in
-        __method_binding_get_as_property_path(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
+        return fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                __method_binding_get_as_property_path(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+            }
+        }
     }
 
     internal func _isEmpty() -> Bool {
-        return Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeRawPointer { __ptr_self in
-        __method_binding_is_empty(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)}}
+        return fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                __method_binding_is_empty(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+            }
+        }
     }
 }

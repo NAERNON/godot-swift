@@ -7,8 +7,8 @@ import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Crypto: RefCounted {
     internal static var __method_binding_generate_random_bytes: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "generate_random_bytes").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "generate_random_bytes").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 47165747)!
         }
         }
@@ -17,21 +17,25 @@ open class Crypto: RefCounted {
     public func generateRandomBytes(
         size: Int32
     ) -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_generate_random_bytes,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_generate_random_bytes,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_generate_rsa: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "generate_rsa").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "generate_rsa").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1237515462)!
         }
         }
@@ -40,21 +44,25 @@ open class Crypto: RefCounted {
     public func generateRsa(
         size: Int32
     ) -> Godot.CryptoKey? {
-        Godot.CryptoKey?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_generate_rsa,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_generate_rsa,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_generate_self_signed_certificate: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "generate_self_signed_certificate").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "generate_self_signed_certificate").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 492266173)!
         }
         }
@@ -66,25 +74,33 @@ open class Crypto: RefCounted {
         notBefore: Godot.GodotString = "20140101000000",
         notAfter: Godot.GodotString = "20340101000000"
     ) -> Godot.X509Certificate? {
-        Godot.X509Certificate?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        key.withGodotUnsafeRawPointer { __ptr_key in
-        withUnsafePointer(to: __ptr_key) { _ptr___ptr_key in
-        issuerName.withGodotUnsafeRawPointer { __ptr_issuerName in
-        notBefore.withGodotUnsafeRawPointer { __ptr_notBefore in
-        notAfter.withGodotUnsafeRawPointer { __ptr_notAfter in
-        withUnsafeArgumentPackPointer(_ptr___ptr_key, __ptr_issuerName, __ptr_notBefore, __ptr_notAfter) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_generate_self_signed_certificate,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: key) { __ptr_key in
+                withUnsafePointer(to: __ptr_key) { _ptr___ptr_key in
+                    withTransferrableUnsafeRawPointer(to: issuerName) { __ptr_issuerName in
+                        withTransferrableUnsafeRawPointer(to: notBefore) { __ptr_notBefore in
+                            withTransferrableUnsafeRawPointer(to: notAfter) { __ptr_notAfter in
+                                withUnsafeArgumentPackPointer(_ptr___ptr_key, __ptr_issuerName, __ptr_notBefore, __ptr_notAfter) { __accessPtr in
+                                    self.withUnsafeMutableRawPointer { __ptr_self in
+                                        GodotExtension.Interface.objectMethodBindPtrcall(
+                                            Self.__method_binding_generate_self_signed_certificate,
+                                            __ptr_self,
+                                            __accessPtr,
+                                            __temporary
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_sign: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "sign").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "sign").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1673662703)!
         }
         }
@@ -95,24 +111,31 @@ open class Crypto: RefCounted {
         hash: Godot.PackedByteArray,
         key: Godot.CryptoKey?
     ) -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        hashType.withGodotUnsafeRawPointer { __ptr_hashType in
-        hash.withGodotUnsafeRawPointer { __ptr_hash in
-        key.withGodotUnsafeRawPointer { __ptr_key in
-        withUnsafePointer(to: __ptr_key) { _ptr___ptr_key in
-        withUnsafeArgumentPackPointer(__ptr_hashType, __ptr_hash, _ptr___ptr_key) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_sign,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: hashType) { __ptr_hashType in
+                withTransferrableUnsafeRawPointer(to: hash) { __ptr_hash in
+                    withTransferrableUnsafeRawPointer(to: key) { __ptr_key in
+                        withUnsafePointer(to: __ptr_key) { _ptr___ptr_key in
+                            withUnsafeArgumentPackPointer(__ptr_hashType, __ptr_hash, _ptr___ptr_key) { __accessPtr in
+                                self.withUnsafeMutableRawPointer { __ptr_self in
+                                    GodotExtension.Interface.objectMethodBindPtrcall(
+                                        Self.__method_binding_sign,
+                                        __ptr_self,
+                                        __accessPtr,
+                                        __temporary
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_verify: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "verify").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "verify").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2805902225)!
         }
         }
@@ -124,25 +147,33 @@ open class Crypto: RefCounted {
         signature: Godot.PackedByteArray,
         key: Godot.CryptoKey?
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        hashType.withGodotUnsafeRawPointer { __ptr_hashType in
-        hash.withGodotUnsafeRawPointer { __ptr_hash in
-        signature.withGodotUnsafeRawPointer { __ptr_signature in
-        key.withGodotUnsafeRawPointer { __ptr_key in
-        withUnsafePointer(to: __ptr_key) { _ptr___ptr_key in
-        withUnsafeArgumentPackPointer(__ptr_hashType, __ptr_hash, __ptr_signature, _ptr___ptr_key) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_verify,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: hashType) { __ptr_hashType in
+                withTransferrableUnsafeRawPointer(to: hash) { __ptr_hash in
+                    withTransferrableUnsafeRawPointer(to: signature) { __ptr_signature in
+                        withTransferrableUnsafeRawPointer(to: key) { __ptr_key in
+                            withUnsafePointer(to: __ptr_key) { _ptr___ptr_key in
+                                withUnsafeArgumentPackPointer(__ptr_hashType, __ptr_hash, __ptr_signature, _ptr___ptr_key) { __accessPtr in
+                                    self.withUnsafeMutableRawPointer { __ptr_self in
+                                        GodotExtension.Interface.objectMethodBindPtrcall(
+                                            Self.__method_binding_verify,
+                                            __ptr_self,
+                                            __accessPtr,
+                                            __temporary
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_encrypt: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "encrypt").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "encrypt").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2361793670)!
         }
         }
@@ -152,23 +183,29 @@ open class Crypto: RefCounted {
         key: Godot.CryptoKey?,
         plaintext: Godot.PackedByteArray
     ) -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        key.withGodotUnsafeRawPointer { __ptr_key in
-        withUnsafePointer(to: __ptr_key) { _ptr___ptr_key in
-        plaintext.withGodotUnsafeRawPointer { __ptr_plaintext in
-        withUnsafeArgumentPackPointer(_ptr___ptr_key, __ptr_plaintext) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_encrypt,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: key) { __ptr_key in
+                withUnsafePointer(to: __ptr_key) { _ptr___ptr_key in
+                    withTransferrableUnsafeRawPointer(to: plaintext) { __ptr_plaintext in
+                        withUnsafeArgumentPackPointer(_ptr___ptr_key, __ptr_plaintext) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_encrypt,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_decrypt: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "decrypt").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "decrypt").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2361793670)!
         }
         }
@@ -178,23 +215,29 @@ open class Crypto: RefCounted {
         key: Godot.CryptoKey?,
         ciphertext: Godot.PackedByteArray
     ) -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        key.withGodotUnsafeRawPointer { __ptr_key in
-        withUnsafePointer(to: __ptr_key) { _ptr___ptr_key in
-        ciphertext.withGodotUnsafeRawPointer { __ptr_ciphertext in
-        withUnsafeArgumentPackPointer(_ptr___ptr_key, __ptr_ciphertext) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_decrypt,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: key) { __ptr_key in
+                withUnsafePointer(to: __ptr_key) { _ptr___ptr_key in
+                    withTransferrableUnsafeRawPointer(to: ciphertext) { __ptr_ciphertext in
+                        withUnsafeArgumentPackPointer(_ptr___ptr_key, __ptr_ciphertext) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_decrypt,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_hmac_digest: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "hmac_digest").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "hmac_digest").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2368951203)!
         }
         }
@@ -205,23 +248,29 @@ open class Crypto: RefCounted {
         key: Godot.PackedByteArray,
         msg: Godot.PackedByteArray
     ) -> Godot.PackedByteArray {
-        Godot.PackedByteArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        hashType.withGodotUnsafeRawPointer { __ptr_hashType in
-        key.withGodotUnsafeRawPointer { __ptr_key in
-        msg.withGodotUnsafeRawPointer { __ptr_msg in
-        withUnsafeArgumentPackPointer(__ptr_hashType, __ptr_key, __ptr_msg) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_hmac_digest,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: hashType) { __ptr_hashType in
+                withTransferrableUnsafeRawPointer(to: key) { __ptr_key in
+                    withTransferrableUnsafeRawPointer(to: msg) { __ptr_msg in
+                        withUnsafeArgumentPackPointer(__ptr_hashType, __ptr_key, __ptr_msg) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_hmac_digest,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_constant_time_compare: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "constant_time_compare").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "constant_time_compare").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1024142237)!
         }
         }
@@ -231,17 +280,22 @@ open class Crypto: RefCounted {
         trusted: Godot.PackedByteArray,
         received: Godot.PackedByteArray
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        trusted.withGodotUnsafeRawPointer { __ptr_trusted in
-        received.withGodotUnsafeRawPointer { __ptr_received in
-        withUnsafeArgumentPackPointer(__ptr_trusted, __ptr_received) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_constant_time_compare,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: trusted) { __ptr_trusted in
+                withTransferrableUnsafeRawPointer(to: received) { __ptr_received in
+                    withUnsafeArgumentPackPointer(__ptr_trusted, __ptr_received) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_constant_time_compare,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

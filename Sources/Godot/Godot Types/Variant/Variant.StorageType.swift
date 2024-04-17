@@ -56,28 +56,3 @@ extension Variant {
         }
     }
 }
-
-extension Variant.StorageType: GodotRawPointerAccessible {
-    func withGodotUnsafeRawPointer<Result>(
-        _ body: (UnsafeRawPointer?) throws -> Result
-    ) rethrows -> Result {
-        try withUnsafePointer(to: rawValue) { try body($0) }
-    }
-    
-    mutating func withGodotUnsafeMutableRawPointer<Result>(
-        _ body: (UnsafeMutableRawPointer?) throws -> Result
-    ) rethrows -> Result {
-        var rawValue = self.rawValue
-        let result = try withUnsafeMutablePointer(to: &rawValue) { try body($0) }
-        self = .init(rawValue: rawValue)!
-        return result
-    }
-    
-    static func fromInitializingMutatingGodotUnsafePointer(
-        _ body: (UnsafeMutableRawPointer) -> Void
-    ) -> Variant.StorageType {
-        var value = RawValue()
-        withUnsafeMutablePointer(to: &value) { body($0) }
-        return Self(rawValue: value)!
-    }
-}

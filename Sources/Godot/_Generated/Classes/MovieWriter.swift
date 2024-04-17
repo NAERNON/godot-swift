@@ -39,8 +39,8 @@ open class MovieWriter: Object {
     }
 
     internal static var __method_binding_add_writer: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_writer").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_writer").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4023702871)!
         }
         }
@@ -49,15 +49,18 @@ open class MovieWriter: Object {
     static public func addWriter(
         _ writer: Godot.MovieWriter?
     ) {
-        writer.withGodotUnsafeRawPointer { __ptr_writer in
-        withUnsafePointer(to: __ptr_writer) { _ptr___ptr_writer in
-        withUnsafeArgumentPackPointer(_ptr___ptr_writer) { __accessPtr in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_writer,
-            nil,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: writer) { __ptr_writer in
+            withUnsafePointer(to: __ptr_writer) { _ptr___ptr_writer in
+                withUnsafeArgumentPackPointer(_ptr___ptr_writer) { __accessPtr in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_add_writer,
+                        nil,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

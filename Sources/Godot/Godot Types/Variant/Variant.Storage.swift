@@ -144,7 +144,7 @@ extension Variant {
         public var description: String {
             var string = GodotString()
             
-            string.withGodotUnsafeMutableRawPointer { stringNativeTypePtr in
+            string.withUnsafeMutableRawPointer { stringNativeTypePtr in
                 GodotExtension.Interface.variantStringify(
                     rawData.baseAddress!,
                     stringNativeTypePtr
@@ -231,31 +231,5 @@ extension Variant {
                 lhs.evaluate(.notEqual, with: rhs)
             )
         }
-    }
-}
-
-// MARK: - GodotRawPointerAccessible
-
-extension Variant.Storage {
-    func withGodotUnsafeRawPointer<Result>(
-        _ body: (UnsafeRawPointer) throws -> Result
-    ) rethrows -> Result {
-        try body(rawData.baseAddress!)
-    }
-    
-    func withGodotUnsafeMutableRawPointer<Result>(
-        _ body: (UnsafeMutableRawPointer) throws -> Result
-    ) rethrows -> Result {
-        try body(rawData.baseAddress!)
-    }
-    
-    static func fromInitializingMutatingGodotUnsafePointer(
-        _ body: (UnsafeMutableRawPointer) -> Void
-    ) -> Self {
-        let value = Self()
-        value.withUnsafeMutableRawBufferPointer { buffer in
-            body(buffer.baseAddress!)
-        }
-        return value
     }
 }

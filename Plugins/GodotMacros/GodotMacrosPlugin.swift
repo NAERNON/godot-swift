@@ -25,5 +25,8 @@ struct GodotMacrosPlugin: CompilerPlugin {
         
         InterfaceFunctionMacro.self,
         InterfaceLoaderMacro.self,
+        
+        TransferrableBitwiseUnsafePointerMacro.self,
+        TransferrableOpaqueUnsafePointerMacro.self,
     ]
 }

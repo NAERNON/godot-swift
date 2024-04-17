@@ -7,8 +7,8 @@ import GodotExtensionHeaders
 @GodotClass
 open class OpenXRInteractionProfileMetadata: Object {
     internal static var __method_binding_register_profile_rename: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "register_profile_rename").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "register_profile_rename").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3186203200)!
         }
         }
@@ -18,21 +18,25 @@ open class OpenXRInteractionProfileMetadata: Object {
         oldName: Godot.GodotString,
         newName: Godot.GodotString
     ) {
-        oldName.withGodotUnsafeRawPointer { __ptr_oldName in
-        newName.withGodotUnsafeRawPointer { __ptr_newName in
-        withUnsafeArgumentPackPointer(__ptr_oldName, __ptr_newName) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_register_profile_rename,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: oldName) { __ptr_oldName in
+            withTransferrableUnsafeRawPointer(to: newName) { __ptr_newName in
+                withUnsafeArgumentPackPointer(__ptr_oldName, __ptr_newName) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_register_profile_rename,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_register_top_level_path: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "register_top_level_path").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "register_top_level_path").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 254767734)!
         }
         }
@@ -43,22 +47,27 @@ open class OpenXRInteractionProfileMetadata: Object {
         openxrPath: Godot.GodotString,
         openxrExtensionName: Godot.GodotString
     ) {
-        displayName.withGodotUnsafeRawPointer { __ptr_displayName in
-        openxrPath.withGodotUnsafeRawPointer { __ptr_openxrPath in
-        openxrExtensionName.withGodotUnsafeRawPointer { __ptr_openxrExtensionName in
-        withUnsafeArgumentPackPointer(__ptr_displayName, __ptr_openxrPath, __ptr_openxrExtensionName) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_register_top_level_path,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: displayName) { __ptr_displayName in
+            withTransferrableUnsafeRawPointer(to: openxrPath) { __ptr_openxrPath in
+                withTransferrableUnsafeRawPointer(to: openxrExtensionName) { __ptr_openxrExtensionName in
+                    withUnsafeArgumentPackPointer(__ptr_displayName, __ptr_openxrPath, __ptr_openxrExtensionName) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_register_top_level_path,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_register_interaction_profile: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "register_interaction_profile").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "register_interaction_profile").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 254767734)!
         }
         }
@@ -69,22 +78,27 @@ open class OpenXRInteractionProfileMetadata: Object {
         openxrPath: Godot.GodotString,
         openxrExtensionName: Godot.GodotString
     ) {
-        displayName.withGodotUnsafeRawPointer { __ptr_displayName in
-        openxrPath.withGodotUnsafeRawPointer { __ptr_openxrPath in
-        openxrExtensionName.withGodotUnsafeRawPointer { __ptr_openxrExtensionName in
-        withUnsafeArgumentPackPointer(__ptr_displayName, __ptr_openxrPath, __ptr_openxrExtensionName) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_register_interaction_profile,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: displayName) { __ptr_displayName in
+            withTransferrableUnsafeRawPointer(to: openxrPath) { __ptr_openxrPath in
+                withTransferrableUnsafeRawPointer(to: openxrExtensionName) { __ptr_openxrExtensionName in
+                    withUnsafeArgumentPackPointer(__ptr_displayName, __ptr_openxrPath, __ptr_openxrExtensionName) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_register_interaction_profile,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_register_io_path: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "register_io_path").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "register_io_path").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3443511926)!
         }
         }
@@ -98,20 +112,28 @@ open class OpenXRInteractionProfileMetadata: Object {
         openxrExtensionName: Godot.GodotString,
         actionType: Godot.OpenXRAction.ActionType
     ) {
-        interactionProfile.withGodotUnsafeRawPointer { __ptr_interactionProfile in
-        displayName.withGodotUnsafeRawPointer { __ptr_displayName in
-        toplevelPath.withGodotUnsafeRawPointer { __ptr_toplevelPath in
-        openxrPath.withGodotUnsafeRawPointer { __ptr_openxrPath in
-        openxrExtensionName.withGodotUnsafeRawPointer { __ptr_openxrExtensionName in
-        actionType.withGodotUnsafeRawPointer { __ptr_actionType in
-        withUnsafeArgumentPackPointer(__ptr_interactionProfile, __ptr_displayName, __ptr_toplevelPath, __ptr_openxrPath, __ptr_openxrExtensionName, __ptr_actionType) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_register_io_path,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}}}
+        withTransferrableUnsafeRawPointer(to: interactionProfile) { __ptr_interactionProfile in
+            withTransferrableUnsafeRawPointer(to: displayName) { __ptr_displayName in
+                withTransferrableUnsafeRawPointer(to: toplevelPath) { __ptr_toplevelPath in
+                    withTransferrableUnsafeRawPointer(to: openxrPath) { __ptr_openxrPath in
+                        withTransferrableUnsafeRawPointer(to: openxrExtensionName) { __ptr_openxrExtensionName in
+                            withTransferrableUnsafeRawPointer(to: actionType) { __ptr_actionType in
+                                withUnsafeArgumentPackPointer(__ptr_interactionProfile, __ptr_displayName, __ptr_toplevelPath, __ptr_openxrPath, __ptr_openxrExtensionName, __ptr_actionType) { __accessPtr in
+                                    self.withUnsafeMutableRawPointer { __ptr_self in
+                                        GodotExtension.Interface.objectMethodBindPtrcall(
+                                            Self.__method_binding_register_io_path,
+                                            __ptr_self,
+                                            __accessPtr,
+                                            nil
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

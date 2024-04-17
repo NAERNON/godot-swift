@@ -57,25 +57,3 @@ extension Rect2I: Exposable {
         destinationUnsafePointer.storeBytes(of: self, as: Self.self)
     }
 }
-
-extension Rect2I: GodotRawPointerAccessible {
-    func withGodotUnsafeRawPointer<Result>(
-        _ body: (UnsafeRawPointer?) throws -> Result
-    ) rethrows -> Result {
-        try withUnsafePointer(to: self) { try body($0) }
-    }
-    
-    mutating func withGodotUnsafeMutableRawPointer<Result>(
-        _ body: (UnsafeMutableRawPointer?) throws -> Result
-    ) rethrows -> Result {
-        try withUnsafeMutablePointer(to: &self) { try body($0) }
-    }
-    
-    static func fromInitializingMutatingGodotUnsafePointer(
-        _ body: (UnsafeMutableRawPointer) -> Void
-    ) -> Self {
-        var value = Self()
-        withUnsafeMutablePointer(to: &value) { body($0) }
-        return value
-    }
-}

@@ -7,8 +7,8 @@ import GodotExtensionHeaders
 @GodotRefCountedClass
 open class TLSOptions: RefCounted {
     internal static var __method_binding_client: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "client").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "client").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3565000357)!
         }
         }
@@ -18,22 +18,27 @@ open class TLSOptions: RefCounted {
         trustedChain: Godot.X509Certificate? = nil,
         commonNameOverride: Godot.GodotString = ""
     ) -> Godot.TLSOptions? {
-        Godot.TLSOptions?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        trustedChain.withGodotUnsafeRawPointer { __ptr_trustedChain in
-        withUnsafePointer(to: __ptr_trustedChain) { _ptr___ptr_trustedChain in
-        commonNameOverride.withGodotUnsafeRawPointer { __ptr_commonNameOverride in
-        withUnsafeArgumentPackPointer(_ptr___ptr_trustedChain, __ptr_commonNameOverride) { __accessPtr in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_client,
-            nil,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: trustedChain) { __ptr_trustedChain in
+                withUnsafePointer(to: __ptr_trustedChain) { _ptr___ptr_trustedChain in
+                    withTransferrableUnsafeRawPointer(to: commonNameOverride) { __ptr_commonNameOverride in
+                        withUnsafeArgumentPackPointer(_ptr___ptr_trustedChain, __ptr_commonNameOverride) { __accessPtr in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_client,
+                                nil,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_client_unsafe: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "client_unsafe").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "client_unsafe").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2090251749)!
         }
         }
@@ -42,21 +47,25 @@ open class TLSOptions: RefCounted {
     static public func clientUnsafe(
         trustedChain: Godot.X509Certificate? = nil
     ) -> Godot.TLSOptions? {
-        Godot.TLSOptions?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        trustedChain.withGodotUnsafeRawPointer { __ptr_trustedChain in
-        withUnsafePointer(to: __ptr_trustedChain) { _ptr___ptr_trustedChain in
-        withUnsafeArgumentPackPointer(_ptr___ptr_trustedChain) { __accessPtr in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_client_unsafe,
-            nil,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: trustedChain) { __ptr_trustedChain in
+                withUnsafePointer(to: __ptr_trustedChain) { _ptr___ptr_trustedChain in
+                    withUnsafeArgumentPackPointer(_ptr___ptr_trustedChain) { __accessPtr in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_client_unsafe,
+                            nil,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_server: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "server").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "server").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36969539)!
         }
         }
@@ -66,18 +75,24 @@ open class TLSOptions: RefCounted {
         key: Godot.CryptoKey?,
         certificate: Godot.X509Certificate?
     ) -> Godot.TLSOptions? {
-        Godot.TLSOptions?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        key.withGodotUnsafeRawPointer { __ptr_key in
-        withUnsafePointer(to: __ptr_key) { _ptr___ptr_key in
-        certificate.withGodotUnsafeRawPointer { __ptr_certificate in
-        withUnsafePointer(to: __ptr_certificate) { _ptr___ptr_certificate in
-        withUnsafeArgumentPackPointer(_ptr___ptr_key, _ptr___ptr_certificate) { __accessPtr in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_server,
-            nil,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: key) { __ptr_key in
+                withUnsafePointer(to: __ptr_key) { _ptr___ptr_key in
+                    withTransferrableUnsafeRawPointer(to: certificate) { __ptr_certificate in
+                        withUnsafePointer(to: __ptr_certificate) { _ptr___ptr_certificate in
+                            withUnsafeArgumentPackPointer(_ptr___ptr_key, _ptr___ptr_certificate) { __accessPtr in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_server,
+                                    nil,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

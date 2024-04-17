@@ -18,8 +18,8 @@ open class AudioEffectSpectrumAnalyzerInstance: AudioEffectInstance {
     }
 
     internal static var __method_binding_get_magnitude_for_frequency_range: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_magnitude_for_frequency_range").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_magnitude_for_frequency_range").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 797993915)!
         }
         }
@@ -30,18 +30,24 @@ open class AudioEffectSpectrumAnalyzerInstance: AudioEffectInstance {
         toHz: Double,
         mode: Godot.AudioEffectSpectrumAnalyzerInstance.MagnitudeMode = AudioEffectSpectrumAnalyzerInstance.MagnitudeMode(rawValue: 1)!
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fromHz.withGodotUnsafeRawPointer { __ptr_fromHz in
-        toHz.withGodotUnsafeRawPointer { __ptr_toHz in
-        mode.withGodotUnsafeRawPointer { __ptr_mode in
-        withUnsafeArgumentPackPointer(__ptr_fromHz, __ptr_toHz, __ptr_mode) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_magnitude_for_frequency_range,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fromHz) { __ptr_fromHz in
+                withTransferrableUnsafeRawPointer(to: toHz) { __ptr_toHz in
+                    withTransferrableUnsafeRawPointer(to: mode) { __ptr_mode in
+                        withUnsafeArgumentPackPointer(__ptr_fromHz, __ptr_toHz, __ptr_mode) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_get_magnitude_for_frequency_range,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

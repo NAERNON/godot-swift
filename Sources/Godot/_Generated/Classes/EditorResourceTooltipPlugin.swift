@@ -21,8 +21,8 @@ open class EditorResourceTooltipPlugin: RefCounted {
     }
 
     internal static var __method_binding_request_thumbnail: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "request_thumbnail").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "request_thumbnail").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3245519720)!
         }
         }
@@ -32,17 +32,22 @@ open class EditorResourceTooltipPlugin: RefCounted {
         path: Godot.GodotString,
         control: Godot.TextureRect?
     ) {
-        path.withGodotUnsafeRawPointer { __ptr_path in
-        control.withGodotUnsafeRawPointer { __ptr_control in
-        withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
-        withUnsafeArgumentPackPointer(__ptr_path, _ptr___ptr_control) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_request_thumbnail,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: path) { __ptr_path in
+            withTransferrableUnsafeRawPointer(to: control) { __ptr_control in
+                withUnsafePointer(to: __ptr_control) { _ptr___ptr_control in
+                    withUnsafeArgumentPackPointer(__ptr_path, _ptr___ptr_control) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_request_thumbnail,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

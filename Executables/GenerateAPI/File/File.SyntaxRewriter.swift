@@ -21,6 +21,10 @@ extension File {
             
             node.attributes = attributes
             
+            if let body = node.body {
+                node.body = visit(body)
+            }
+            
             return DeclSyntax(node)
         }
         

@@ -6,7 +6,7 @@ import Utils
 /// A representation of a Godot type.
 ///
 /// This model is used to represent a type definition.
-indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLiteral, CustomStringConvertible {
+indirect enum GodotType: Equatable, Decodable, Hashable {
     // MARK: Cases
     
     /// The base of a `GodotType`.
@@ -113,7 +113,6 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     
     // MARK: Godot types
     
-    
     /// The Godot classes types.
     ///
     /// This set is used to know if a type is a Godot class.
@@ -169,10 +168,6 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         self.init(cTypeSyntax: string)
     }
     
-    init(stringLiteral value: String) {
-        self.init(cTypeSyntax: value)
-    }
-    
     // MARK: Access
     
     func optional(_ `optional`: Bool = true) -> GodotType {
@@ -182,15 +177,6 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             self
         }
     }
-    
-    var description: String {
-        syntax()
-    }
-    
-    static let variant: GodotType = "Variant"
-    static let variantStorage: GodotType = .scope(scopeType: .variant, type: "Storage")
-    static let array: GodotType = "Array"
-    static let dictionary: GodotType = "Dictionary"
     
     /// Returns `Variant.Storage` if the type is a `Variant`, or the current type otherwise.
     var storage: GodotType {
@@ -202,22 +188,22 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     }
     
     func withMetadata(_ metadata: GodotTypeMetadata) -> GodotType {
-        if self == "int" {
+        if self == .int {
             switch metadata {
-            case .int8: "int8_t"
-            case .int16: "int16_t"
-            case .int32: "int32_t"
-            case .int64: "int64_t"
-            case .uint8: "uint8_t"
-            case .uint16: "uint16_t"
-            case .uint32: "uint32_t"
-            case .uint64: "uint64_t"
+            case .int8: .int8
+            case .int16: .int16
+            case .int32: .int32
+            case .int64: .int64
+            case .uint8: .uint8
+            case .uint16: .uint16
+            case .uint32: .uint32
+            case .uint64: .uint64
             default: self
             }
-        } else if self == "float" {
+        } else if self == .float {
             switch metadata {
-            case .float: "float"
-            case .double: "double"
+            case .float: .float
+            case .double: .double
             default: self
             }
         } else {
@@ -345,6 +331,16 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         }
     }
     
+    var isVector: Bool {
+        switch self {
+        case .vector2, .vector2I, 
+                .vector3, .vector3I,
+                .vector4, .vector4I:
+            true
+        default: false
+        }
+    }
+    
     /// A Boolean value indicating whether the type
     /// is a Godot class.
     ///
@@ -385,24 +381,24 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         
         if isTypedArray { return true }
         
-        switch self.syntax() {
-        case "GodotArray": return true
-        case "Callable": return true
-        case "GodotDictionary": return true
-        case "NodePath": return true
-        case "PackedByteArray": return true
-        case "PackedColorArray": return true
-        case "PackedFloat32Array": return true
-        case "PackedFloat64Array": return true
-        case "PackedInt32Array": return true
-        case "PackedInt64Array": return true
-        case "PackedStringArray": return true
-        case "PackedVector2Array": return true
-        case "PackedVector3Array": return true
-        case "RID": return true
-        case "Signal": return true
-        case "GodotString": return true
-        case "GodotStringName": return true
+        switch self {
+        case .array: return true
+        case .callable: return true
+        case .dictionary: return true
+        case .nodePath: return true
+        case .packedByteArray: return true
+        case .packedColorArray: return true
+        case .packedFloat32Array: return true
+        case .packedFloat64Array: return true
+        case .packedInt32Array: return true
+        case .packedInt64Array: return true
+        case .packedStringArray: return true
+        case .packedVector2Array: return true
+        case .packedVector3Array: return true
+        case .rid: return true
+        case .signal: return true
+        case .string: return true
+        case .stringName: return true
         default: return false
         }
     }
@@ -410,7 +406,11 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     // MARK: - Syntax
     
     var variantRepresentationType: String? {
-        typeToGodotVariantType[syntax()]
+        if isTypedArray {
+            "GDEXTENSION_VARIANT_TYPE_ARRAY"
+        } else {
+            typeToGodotVariantType[self]
+        }
     }
     
     /// Returns the syntax of the type.
@@ -550,11 +550,11 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     ) throws -> CodeBlockItemListSyntax {
         let variableName = "__temporary"
         
-        "\(raw: prefix)\(raw: syntax(options: options)).fromInitializingMutatingGodotUnsafePointer { \(raw: variableName) in"
-        
-        try bodyBuilder(variableName)
-        
-        "}"
+        """
+        \(raw: prefix)fromInitializingTransferrableUnsafeRawPointer { \(raw: variableName) in
+            \(try bodyBuilder(variableName))
+        }
+        """
     }
     
     /// The mutability of a type.
@@ -577,7 +577,6 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
     ///   the pointer is accessed through a variant storage.
     ///   - bodyBuilder: The content syntax to access the pointer.
     ///   Use the value provided inside the closure to retrieve the pointer name.
-    @CodeBlockItemListBuilder
     func pointerAccessSyntax(
         instanceName: String,
         options: GodotTypeSyntaxOptions,
@@ -585,30 +584,38 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
         accessThroughVariantStorage: Bool = false,
         @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
-        var pointerName = "__ptr_" + removeBackticks(instanceName)
+        let pointerName = "__ptr_" + removeBackticks(instanceName)
         let newInstanceName = backticksKeyword(instanceName)
         
         if isPointer {
-            try bodyBuilder(newInstanceName)
+            return try bodyBuilder(newInstanceName)
         } else {
-            if accessThroughVariantStorage {
-                "Godot.Variant.withStorageUnsafeRawPointer(to: \(raw: newInstanceName)) { \(raw: pointerName) in"
+            let call = if accessThroughVariantStorage {
+                "Godot.Variant.withStorageUnsafeRawPointer(to: \(newInstanceName))"
             } else {
                 switch mutability {
                 case .const:
-                    "\(raw: newInstanceName).withGodotUnsafeRawPointer { \(raw: pointerName) in"
+                    "withTransferrableUnsafeRawPointer(to: \(newInstanceName))"
                 case .mutable:
-                    "\(raw: newInstanceName).withGodotUnsafeMutableRawPointer { \(raw: pointerName) in"
+                    "withTransferrableUnsafeMutableRawPointer(to: &\(newInstanceName))"
                 case .constMutablePointer:
-                    "\(raw: newInstanceName).withGodotUnsafeRawPointer { \(raw: pointerName) in"
-                    
-                    let _ = pointerName = "UnsafeMutableRawPointer(mutating: \(pointerName))"
+                    "withTransferrableUnsafeRawPointer(to: \(newInstanceName))"
                 }
             }
             
-            try bodyBuilder(pointerName)
+            let finalPointerName = if !accessThroughVariantStorage && mutability == .constMutablePointer {
+                "UnsafeMutableRawPointer(mutating: \(pointerName))"
+            } else {
+                pointerName
+            }
             
-            "}"
+            return try CodeBlockItemListSyntax {
+                """
+                \(raw: call) { \(raw: pointerName) in
+                    \(try bodyBuilder(finalPointerName))
+                }
+                """
+            }
         }
     }
     
@@ -641,11 +648,11 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
             if isGodotClass && !accessThroughVariantStorage {
                 let newPointerName = "_ptr_" + pointerName
                 
-                "withUnsafePointer(to: \(raw: pointerName)) { \(raw: newPointerName) in"
-                
-                try bodyBuilder(newPointerName)
-                
-                "}"
+                """
+                withUnsafePointer(to: \(raw: pointerName)) { \(raw: newPointerName) in
+                    \(try bodyBuilder(newPointerName))
+                }
+                """
             } else {
                 try bodyBuilder(pointerName)
             }
@@ -654,48 +661,253 @@ indirect enum GodotType: Equatable, Decodable, Hashable, ExpressibleByStringLite
 }
 
 /// The godot native variant enum value: `GDEXTENSION_VARIANT_TYPE_<type>`.
-private let typeToGodotVariantType: [String : String] = [
-    "Nil": "GDEXTENSION_VARIANT_TYPE_NIL",
-    "Variant": "GDEXTENSION_VARIANT_TYPE_NIL",
-    "bool": "GDEXTENSION_VARIANT_TYPE_BOOL",
-    "Bool": "GDEXTENSION_VARIANT_TYPE_BOOL",
-    "int": "GDEXTENSION_VARIANT_TYPE_INT",
-    "Int": "GDEXTENSION_VARIANT_TYPE_INT",
-    "float": "GDEXTENSION_VARIANT_TYPE_FLOAT",
-    "Float": "GDEXTENSION_VARIANT_TYPE_FLOAT",
-    "Double": "GDEXTENSION_VARIANT_TYPE_FLOAT",
-    "GodotString": "GDEXTENSION_VARIANT_TYPE_STRING",
-    "Vector2": "GDEXTENSION_VARIANT_TYPE_VECTOR2",
-    "Vector2I": "GDEXTENSION_VARIANT_TYPE_VECTOR2I",
-    "Rect2": "GDEXTENSION_VARIANT_TYPE_RECT2",
-    "Rect2I": "GDEXTENSION_VARIANT_TYPE_RECT2I",
-    "Vector3": "GDEXTENSION_VARIANT_TYPE_VECTOR3",
-    "Vector3I": "GDEXTENSION_VARIANT_TYPE_VECTOR3I",
-    "Transform2D": "GDEXTENSION_VARIANT_TYPE_TRANSFORM2D",
-    "Vector4": "GDEXTENSION_VARIANT_TYPE_VECTOR4",
-    "Vector4I": "GDEXTENSION_VARIANT_TYPE_VECTOR4I",
-    "Plane": "GDEXTENSION_VARIANT_TYPE_PLANE",
-    "Quaternion": "GDEXTENSION_VARIANT_TYPE_QUATERNION",
-    "AABB": "GDEXTENSION_VARIANT_TYPE_AABB",
-    "Basis": "GDEXTENSION_VARIANT_TYPE_BASIS",
-    "Transform3D": "GDEXTENSION_VARIANT_TYPE_TRANSFORM3D",
-    "Projection": "GDEXTENSION_VARIANT_TYPE_PROJECTION",
-    "Color": "GDEXTENSION_VARIANT_TYPE_COLOR",
-    "GodotStringName": "GDEXTENSION_VARIANT_TYPE_STRING_NAME",
-    "NodePath": "GDEXTENSION_VARIANT_TYPE_NODE_PATH",
-    "RID": "GDEXTENSION_VARIANT_TYPE_RID",
-    "Object": "GDEXTENSION_VARIANT_TYPE_OBJECT",
-    "Callable": "GDEXTENSION_VARIANT_TYPE_CALLABLE",
-    "Signal": "GDEXTENSION_VARIANT_TYPE_SIGNAL",
-    "GodotDictionary": "GDEXTENSION_VARIANT_TYPE_DICTIONARY",
-    "GodotArray": "GDEXTENSION_VARIANT_TYPE_ARRAY",
-    "PackedByteArray": "GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY",
-    "PackedInt32Array": "GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY",
-    "PackedInt64Array": "GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY",
-    "PackedFloat32Array": "GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY",
-    "PackedFloat64Array": "GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY",
-    "PackedStringArray": "GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY",
-    "PackedVector2Array": "GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY",
-    "PackedVector3Array": "GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY",
-    "PackedColorArray": "GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY",
+private let typeToGodotVariantType: [GodotType : String] = [
+    .nil: "GDEXTENSION_VARIANT_TYPE_NIL",
+    .variant: "GDEXTENSION_VARIANT_TYPE_NIL",
+    .bool: "GDEXTENSION_VARIANT_TYPE_BOOL",
+    .int: "GDEXTENSION_VARIANT_TYPE_INT",
+    .float: "GDEXTENSION_VARIANT_TYPE_FLOAT",
+    .double: "GDEXTENSION_VARIANT_TYPE_FLOAT",
+    .string: "GDEXTENSION_VARIANT_TYPE_STRING",
+    .vector2: "GDEXTENSION_VARIANT_TYPE_VECTOR2",
+    .vector2I: "GDEXTENSION_VARIANT_TYPE_VECTOR2I",
+    .rect2: "GDEXTENSION_VARIANT_TYPE_RECT2",
+    .rect2I: "GDEXTENSION_VARIANT_TYPE_RECT2I",
+    .vector3: "GDEXTENSION_VARIANT_TYPE_VECTOR3",
+    .vector3I: "GDEXTENSION_VARIANT_TYPE_VECTOR3I",
+    .transform2D: "GDEXTENSION_VARIANT_TYPE_TRANSFORM2D",
+    .vector4: "GDEXTENSION_VARIANT_TYPE_VECTOR4",
+    .vector4I: "GDEXTENSION_VARIANT_TYPE_VECTOR4I",
+    .plane: "GDEXTENSION_VARIANT_TYPE_PLANE",
+    .quaternion: "GDEXTENSION_VARIANT_TYPE_QUATERNION",
+    .aabb: "GDEXTENSION_VARIANT_TYPE_AABB",
+    .basis: "GDEXTENSION_VARIANT_TYPE_BASIS",
+    .transform3D: "GDEXTENSION_VARIANT_TYPE_TRANSFORM3D",
+    .projection: "GDEXTENSION_VARIANT_TYPE_PROJECTION",
+    .color: "GDEXTENSION_VARIANT_TYPE_COLOR",
+    .stringName: "GDEXTENSION_VARIANT_TYPE_STRING_NAME",
+    .nodePath: "GDEXTENSION_VARIANT_TYPE_NODE_PATH",
+    .rid: "GDEXTENSION_VARIANT_TYPE_RID",
+    .object: "GDEXTENSION_VARIANT_TYPE_OBJECT",
+    .callable: "GDEXTENSION_VARIANT_TYPE_CALLABLE",
+    .signal: "GDEXTENSION_VARIANT_TYPE_SIGNAL",
+    .dictionary: "GDEXTENSION_VARIANT_TYPE_DICTIONARY",
+    .array: "GDEXTENSION_VARIANT_TYPE_ARRAY",
+    .packedByteArray: "GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY",
+    .packedInt32Array: "GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY",
+    .packedInt64Array: "GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY",
+    .packedFloat32Array: "GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY",
+    .packedFloat64Array: "GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY",
+    .packedStringArray: "GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY",
+    .packedVector2Array: "GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY",
+    .packedVector3Array: "GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY",
+    .packedColorArray: "GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY",
 ]
+
+// MARK: - Types
+
+extension GodotType {
+    static var selfType: GodotType {
+        .base("Self")
+    }
+    
+    static var variant: GodotType {
+        .base("Variant")
+    }
+    
+    static var variantStorage: GodotType {
+        .scope(scopeType: .variant, type: .base("Storage"))
+    }
+    
+    static var `nil`: GodotType {
+        .base("Nil")
+    }
+    
+    static var bool: GodotType {
+        .base("bool")
+    }
+    
+    static var float: GodotType {
+        .base("float")
+    }
+    
+    static var double: GodotType {
+        .base("double")
+    }
+    
+    static var int: GodotType {
+        .base("int")
+    }
+    
+    static var int8: GodotType {
+        .base("int8_t")
+    }
+    
+    static var int16: GodotType {
+        .base("int16_t")
+    }
+    
+    static var int32: GodotType {
+        .base("int32_t")
+    }
+    
+    static var int64: GodotType {
+        .base("int64_t")
+    }
+    
+    static var uint8: GodotType {
+        .base("uint8_t")
+    }
+    
+    static var uint16: GodotType {
+        .base("uint16_t")
+    }
+    
+    static var uint32: GodotType {
+        .base("uint32_t")
+    }
+    
+    static var uint64: GodotType {
+        .base("uint64_t")
+    }
+    
+    static var string: GodotType {
+        .base("String")
+    }
+    
+    static var vector2: GodotType {
+        .base("Vector2")
+    }
+    
+    static var vector2I: GodotType {
+        .base("Vector2i")
+    }
+    
+    static var rect2: GodotType {
+        .base("Rect2")
+    }
+    
+    static var rect2I: GodotType {
+        .base("Rect2i")
+    }
+    
+    static var vector3: GodotType {
+        .base("Vector3")
+    }
+    
+    static var vector3I: GodotType {
+        .base("Vector3i")
+    }
+    
+    static var transform2D: GodotType {
+        .base("Transform2D")
+    }
+    
+    static var vector4: GodotType {
+        .base("Vector4")
+    }
+    
+    static var vector4I: GodotType {
+        .base("Vector4i")
+    }
+    
+    static var plane: GodotType {
+        .base("Plane")
+    }
+    
+    static var quaternion: GodotType {
+        .base("Quaternion")
+    }
+    
+    static var aabb: GodotType {
+        .base("AABB")
+    }
+    
+    static var basis: GodotType {
+        .base("Basis")
+    }
+    
+    static var transform3D: GodotType {
+        .base("Transform3D")
+    }
+    
+    static var projection: GodotType {
+        .base("Projection")
+    }
+    
+    static var color: GodotType {
+        .base("Color")
+    }
+    
+    static var stringName: GodotType {
+        .base("StringName")
+    }
+    
+    static var nodePath: GodotType {
+        .base("NodePath")
+    }
+    
+    static var rid: GodotType {
+        .base("RID")
+    }
+    
+    static var object: GodotType {
+        .base("Object")
+    }
+    
+    static var refCounted: GodotType {
+        .base("RefCounted")
+    }
+    
+    static var callable: GodotType {
+        .base("Callable")
+    }
+    
+    static var signal: GodotType {
+        .base("Signal")
+    }
+    
+    static var dictionary: GodotType {
+        .base("Dictionary")
+    }
+    
+    static var array: GodotType {
+        .base("Array")
+    }
+    
+    static var packedByteArray: GodotType {
+        .base("PackedByteArray")
+    }
+    
+    static var packedInt32Array: GodotType {
+        .base("PackedInt32Array")
+    }
+    
+    static var packedInt64Array: GodotType {
+        .base("PackedInt64Array")
+    }
+    
+    static var packedFloat32Array: GodotType {
+        .base("PackedFloat32Array")
+    }
+    
+    static var packedFloat64Array: GodotType {
+        .base("PackedFloat64Array")
+    }
+    
+    static var packedStringArray: GodotType {
+        .base("PackedStringArray")
+    }
+    
+    static var packedVector2Array: GodotType {
+        .base("PackedVector2Array")
+    }
+    
+    static var packedVector3Array: GodotType {
+        .base("PackedVector3Array")
+    }
+    
+    static var packedColorArray: GodotType {
+        .base("PackedColorArray")
+    }
+}

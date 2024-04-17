@@ -184,13 +184,13 @@ struct GodotClass: Decodable {
     /// A Boolean value indicating whether the class
     /// is the root of the hierarchy tree.
     var isRootClass: Bool {
-        name == "Object"
+        name == .object
     }
     
     /// A Boolean value indicating whether the class
     /// is the root of the ref counted classes.
     var isRefCountedRootClass: Bool {
-        name == "RefCounted"
+        name == .refCounted
     }
     
     var identifier: String {
@@ -327,14 +327,16 @@ struct GodotClass: Decodable {
         if generateBinding {
             """
             internal static var \(raw: method.ptrIdentifier): GDExtensionMethodBindPtr = {
-                _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-                GodotStringName(swiftStaticString: \(literal: method.name)).withGodotUnsafeRawPointer { __ptr__method_name in
+                _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+                GodotStringName(swiftStaticString: \(literal: method.name)).withUnsafeRawPointer { __ptr__method_name in
                 return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, \(literal: method.hash!))!
                 }
                 }
             }()
             """
         }
+        
+        let selfPtrName = "__ptr_self"
         
         try method
             .withNamePrefixed(by: methodPrefix(method))
@@ -353,17 +355,15 @@ struct GodotClass: Decodable {
                                 returnExpression: instancePtr
                             )
                         } else {
-                            try name.pointerAccessSyntax(
-                                instanceName: "self",
-                                options: syntaxOptions,
-                                mutability: .mutable
-                            ) { selfPtr in
-                                method.bindCall(
-                                    selfExpression: selfPtr,
+                            """
+                            self.withUnsafeMutableRawPointer { \(raw: selfPtrName) in
+                                \(method.bindCall(
+                                    selfExpression: selfPtrName,
                                     argsExpression: packName,
                                     returnExpression: instancePtr
-                                )
+                                ))
                             }
+                            """
                         }
                     }
                 }
@@ -376,17 +376,15 @@ struct GodotClass: Decodable {
                             returnExpression: "nil"
                         )
                     } else {
-                        try name.pointerAccessSyntax(
-                            instanceName: "self",
-                            options: syntaxOptions,
-                            mutability: .mutable
-                        ) { selfPtr in
-                            method.bindCall(
-                                selfExpression: selfPtr,
+                        """
+                        self.withUnsafeMutableRawPointer { \(raw: selfPtrName) in
+                            \(method.bindCall(
+                                selfExpression: selfPtrName,
                                 argsExpression: packName,
                                 returnExpression: "nil"
-                            )
+                            ))
                         }
+                        """
                     }
                 }
             }

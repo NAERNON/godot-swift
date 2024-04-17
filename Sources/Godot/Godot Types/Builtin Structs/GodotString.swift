@@ -13,7 +13,7 @@ extension GodotString {
     public init(swiftString: String) {
         self.init()
         
-        withGodotUnsafeMutableRawPointer { extensionPtr in
+        withUnsafeMutableRawPointer { extensionPtr in
             swiftString.withCString { cString in
                 GodotExtension.Interface.stringNewWithUtf8Chars(extensionPtr, cString)
             }
@@ -23,7 +23,7 @@ extension GodotString {
     internal init(swiftStaticString: StaticString) {
         self.init()
         
-        withGodotUnsafeMutableRawPointer { extensionPtr in
+        withUnsafeMutableRawPointer { extensionPtr in
             swiftStaticString.withUTF8Buffer { buffer in
                 buffer.baseAddress?.withMemoryRebound(to: Int8.self, capacity: buffer.count) { cString in
                     GodotExtension.Interface.stringNewWithUtf8Chars(extensionPtr, cString)

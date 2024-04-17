@@ -80,8 +80,8 @@ open class EditorNode3DGizmo: Node3DGizmo {
     }
 
     internal static var __method_binding_add_lines: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_lines").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_lines").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2910971437)!
         }
         }
@@ -93,24 +93,31 @@ open class EditorNode3DGizmo: Node3DGizmo {
         billboard: Bool = false,
         modulate: Godot.Color = .white
     ) {
-        lines.withGodotUnsafeRawPointer { __ptr_lines in
-        material.withGodotUnsafeRawPointer { __ptr_material in
-        withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
-        billboard.withGodotUnsafeRawPointer { __ptr_billboard in
-        modulate.withGodotUnsafeRawPointer { __ptr_modulate in
-        withUnsafeArgumentPackPointer(__ptr_lines, _ptr___ptr_material, __ptr_billboard, __ptr_modulate) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_lines,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}}
+        withTransferrableUnsafeRawPointer(to: lines) { __ptr_lines in
+            withTransferrableUnsafeRawPointer(to: material) { __ptr_material in
+                withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
+                    withTransferrableUnsafeRawPointer(to: billboard) { __ptr_billboard in
+                        withTransferrableUnsafeRawPointer(to: modulate) { __ptr_modulate in
+                            withUnsafeArgumentPackPointer(__ptr_lines, _ptr___ptr_material, __ptr_billboard, __ptr_modulate) { __accessPtr in
+                                self.withUnsafeMutableRawPointer { __ptr_self in
+                                    GodotExtension.Interface.objectMethodBindPtrcall(
+                                        Self.__method_binding_add_lines,
+                                        __ptr_self,
+                                        __accessPtr,
+                                        nil
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_add_mesh: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_mesh").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_mesh").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1579955111)!
         }
         }
@@ -122,26 +129,35 @@ open class EditorNode3DGizmo: Node3DGizmo {
         transform: Godot.Transform3D = .identity,
         skeleton: Godot.SkinReference? = nil
     ) {
-        mesh.withGodotUnsafeRawPointer { __ptr_mesh in
-        withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
-        material.withGodotUnsafeRawPointer { __ptr_material in
-        withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
-        transform.withGodotUnsafeRawPointer { __ptr_transform in
-        skeleton.withGodotUnsafeRawPointer { __ptr_skeleton in
-        withUnsafePointer(to: __ptr_skeleton) { _ptr___ptr_skeleton in
-        withUnsafeArgumentPackPointer(_ptr___ptr_mesh, _ptr___ptr_material, __ptr_transform, _ptr___ptr_skeleton) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_mesh,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}}}}
+        withTransferrableUnsafeRawPointer(to: mesh) { __ptr_mesh in
+            withUnsafePointer(to: __ptr_mesh) { _ptr___ptr_mesh in
+                withTransferrableUnsafeRawPointer(to: material) { __ptr_material in
+                    withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
+                        withTransferrableUnsafeRawPointer(to: transform) { __ptr_transform in
+                            withTransferrableUnsafeRawPointer(to: skeleton) { __ptr_skeleton in
+                                withUnsafePointer(to: __ptr_skeleton) { _ptr___ptr_skeleton in
+                                    withUnsafeArgumentPackPointer(_ptr___ptr_mesh, _ptr___ptr_material, __ptr_transform, _ptr___ptr_skeleton) { __accessPtr in
+                                        self.withUnsafeMutableRawPointer { __ptr_self in
+                                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                                Self.__method_binding_add_mesh,
+                                                __ptr_self,
+                                                __accessPtr,
+                                                nil
+                                            )
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_add_collision_segments: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_collision_segments").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_collision_segments").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 334873810)!
         }
         }
@@ -150,20 +166,23 @@ open class EditorNode3DGizmo: Node3DGizmo {
     public func addCollisionSegments(
         _ segments: Godot.PackedVector3Array
     ) {
-        segments.withGodotUnsafeRawPointer { __ptr_segments in
-        withUnsafeArgumentPackPointer(__ptr_segments) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_collision_segments,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: segments) { __ptr_segments in
+            withUnsafeArgumentPackPointer(__ptr_segments) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_add_collision_segments,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_add_collision_triangles: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_collision_triangles").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_collision_triangles").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 54901064)!
         }
         }
@@ -172,21 +191,25 @@ open class EditorNode3DGizmo: Node3DGizmo {
     public func addCollisionTriangles(
         _ triangles: Godot.TriangleMesh?
     ) {
-        triangles.withGodotUnsafeRawPointer { __ptr_triangles in
-        withUnsafePointer(to: __ptr_triangles) { _ptr___ptr_triangles in
-        withUnsafeArgumentPackPointer(_ptr___ptr_triangles) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_collision_triangles,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: triangles) { __ptr_triangles in
+            withUnsafePointer(to: __ptr_triangles) { _ptr___ptr_triangles in
+                withUnsafeArgumentPackPointer(_ptr___ptr_triangles) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_add_collision_triangles,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_add_unscaled_billboard: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_unscaled_billboard").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_unscaled_billboard").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 520007164)!
         }
         }
@@ -197,23 +220,29 @@ open class EditorNode3DGizmo: Node3DGizmo {
         defaultScale: Double = 1,
         modulate: Godot.Color = .white
     ) {
-        material.withGodotUnsafeRawPointer { __ptr_material in
-        withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
-        defaultScale.withGodotUnsafeRawPointer { __ptr_defaultScale in
-        modulate.withGodotUnsafeRawPointer { __ptr_modulate in
-        withUnsafeArgumentPackPointer(_ptr___ptr_material, __ptr_defaultScale, __ptr_modulate) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_unscaled_billboard,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}
+        withTransferrableUnsafeRawPointer(to: material) { __ptr_material in
+            withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
+                withTransferrableUnsafeRawPointer(to: defaultScale) { __ptr_defaultScale in
+                    withTransferrableUnsafeRawPointer(to: modulate) { __ptr_modulate in
+                        withUnsafeArgumentPackPointer(_ptr___ptr_material, __ptr_defaultScale, __ptr_modulate) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_add_unscaled_billboard,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    nil
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_add_handles: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_handles").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_handles").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2254560097)!
         }
         }
@@ -226,25 +255,33 @@ open class EditorNode3DGizmo: Node3DGizmo {
         billboard: Bool = false,
         secondary: Bool = false
     ) {
-        handles.withGodotUnsafeRawPointer { __ptr_handles in
-        material.withGodotUnsafeRawPointer { __ptr_material in
-        withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
-        ids.withGodotUnsafeRawPointer { __ptr_ids in
-        billboard.withGodotUnsafeRawPointer { __ptr_billboard in
-        secondary.withGodotUnsafeRawPointer { __ptr_secondary in
-        withUnsafeArgumentPackPointer(__ptr_handles, _ptr___ptr_material, __ptr_ids, __ptr_billboard, __ptr_secondary) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_handles,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}}}
+        withTransferrableUnsafeRawPointer(to: handles) { __ptr_handles in
+            withTransferrableUnsafeRawPointer(to: material) { __ptr_material in
+                withUnsafePointer(to: __ptr_material) { _ptr___ptr_material in
+                    withTransferrableUnsafeRawPointer(to: ids) { __ptr_ids in
+                        withTransferrableUnsafeRawPointer(to: billboard) { __ptr_billboard in
+                            withTransferrableUnsafeRawPointer(to: secondary) { __ptr_secondary in
+                                withUnsafeArgumentPackPointer(__ptr_handles, _ptr___ptr_material, __ptr_ids, __ptr_billboard, __ptr_secondary) { __accessPtr in
+                                    self.withUnsafeMutableRawPointer { __ptr_self in
+                                        GodotExtension.Interface.objectMethodBindPtrcall(
+                                            Self.__method_binding_add_handles,
+                                            __ptr_self,
+                                            __accessPtr,
+                                            nil
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_set_node_3d: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_node_3d").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_node_3d").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
         }
         }
@@ -253,77 +290,86 @@ open class EditorNode3DGizmo: Node3DGizmo {
     public func setNode3D(
         node: Godot.Node?
     ) {
-        node.withGodotUnsafeRawPointer { __ptr_node in
-        withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
-        withUnsafeArgumentPackPointer(_ptr___ptr_node) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_node_3d,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: node) { __ptr_node in
+            withUnsafePointer(to: __ptr_node) { _ptr___ptr_node in
+                withUnsafeArgumentPackPointer(_ptr___ptr_node) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_set_node_3d,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_node_3d: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_node_3d").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_node_3d").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 151077316)!
         }
         }
     }()
 
     public func node3D() -> Godot.Node3D? {
-        Godot.Node3D?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_node_3d,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_node_3d,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_get_plugin: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_plugin").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4250544552)!
         }
         }
     }()
 
     public func plugin() -> Godot.EditorNode3DGizmoPlugin? {
-        Godot.EditorNode3DGizmoPlugin?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_plugin,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_plugin,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "clear").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
         }
         }
     }()
 
     public func clear() {
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_clear,
-            __ptr_self,
-            nil,
-            nil
-        )}
+        self.withUnsafeMutableRawPointer { __ptr_self in
+            GodotExtension.Interface.objectMethodBindPtrcall(
+                Self.__method_binding_clear,
+                __ptr_self,
+                nil,
+                nil
+            )
+        }
     }
 
     internal static var __method_binding_set_hidden: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_hidden").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_hidden").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -332,20 +378,23 @@ open class EditorNode3DGizmo: Node3DGizmo {
     public func setHidden(
         _ hidden: Bool
     ) {
-        hidden.withGodotUnsafeRawPointer { __ptr_hidden in
-        withUnsafeArgumentPackPointer(__ptr_hidden) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_hidden,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: hidden) { __ptr_hidden in
+            withUnsafeArgumentPackPointer(__ptr_hidden) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_set_hidden,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_is_subgizmo_selected: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_subgizmo_selected").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_subgizmo_selected").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -354,35 +403,41 @@ open class EditorNode3DGizmo: Node3DGizmo {
     public func isSubgizmoSelected(
         id: Int32
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        id.withGodotUnsafeRawPointer { __ptr_id in
-        withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_is_subgizmo_selected,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: id) { __ptr_id in
+                withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_is_subgizmo_selected,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_subgizmo_selection: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_subgizmo_selection").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_subgizmo_selection").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1930428628)!
         }
         }
     }()
 
     public func subgizmoSelection() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_subgizmo_selection,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_subgizmo_selection,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

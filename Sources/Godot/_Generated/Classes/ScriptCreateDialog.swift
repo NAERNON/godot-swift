@@ -44,8 +44,8 @@ open class ScriptCreateDialog: ConfirmationDialog {
     }()
 
     internal static var __method_binding_config: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "config").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "config").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 869314288)!
         }
         }
@@ -57,18 +57,24 @@ open class ScriptCreateDialog: ConfirmationDialog {
         builtInEnabled: Bool = true,
         loadEnabled: Bool = true
     ) {
-        inherits.withGodotUnsafeRawPointer { __ptr_inherits in
-        path.withGodotUnsafeRawPointer { __ptr_path in
-        builtInEnabled.withGodotUnsafeRawPointer { __ptr_builtInEnabled in
-        loadEnabled.withGodotUnsafeRawPointer { __ptr_loadEnabled in
-        withUnsafeArgumentPackPointer(__ptr_inherits, __ptr_path, __ptr_builtInEnabled, __ptr_loadEnabled) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_config,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}
+        withTransferrableUnsafeRawPointer(to: inherits) { __ptr_inherits in
+            withTransferrableUnsafeRawPointer(to: path) { __ptr_path in
+                withTransferrableUnsafeRawPointer(to: builtInEnabled) { __ptr_builtInEnabled in
+                    withTransferrableUnsafeRawPointer(to: loadEnabled) { __ptr_loadEnabled in
+                        withUnsafeArgumentPackPointer(__ptr_inherits, __ptr_path, __ptr_builtInEnabled, __ptr_loadEnabled) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_config,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    nil
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

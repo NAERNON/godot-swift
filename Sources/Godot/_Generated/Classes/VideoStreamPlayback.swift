@@ -61,8 +61,8 @@ open class VideoStreamPlayback: Resource {
     }
 
     internal static var __method_binding_mix_audio: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "mix_audio").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "mix_audio").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 93876830)!
         }
         }
@@ -73,18 +73,24 @@ open class VideoStreamPlayback: Resource {
         buffer: Godot.PackedFloat32Array = PackedFloat32Array(),
         offset: Int32 = 0
     ) -> Int32 {
-        Int32.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        numFrames.withGodotUnsafeRawPointer { __ptr_numFrames in
-        buffer.withGodotUnsafeRawPointer { __ptr_buffer in
-        offset.withGodotUnsafeRawPointer { __ptr_offset in
-        withUnsafeArgumentPackPointer(__ptr_numFrames, __ptr_buffer, __ptr_offset) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_mix_audio,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: numFrames) { __ptr_numFrames in
+                withTransferrableUnsafeRawPointer(to: buffer) { __ptr_buffer in
+                    withTransferrableUnsafeRawPointer(to: offset) { __ptr_offset in
+                        withUnsafeArgumentPackPointer(__ptr_numFrames, __ptr_buffer, __ptr_offset) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_mix_audio,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

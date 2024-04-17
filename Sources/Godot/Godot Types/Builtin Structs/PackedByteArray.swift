@@ -20,7 +20,7 @@ extension PackedByteArray {
     public func withUnsafeBytes<Result>(
         _ body: (UnsafeBufferPointer<UInt8>) throws -> Result
     ) rethrows -> Result {
-        let startPointer = self.withGodotUnsafeRawPointer { extensionTypePtr in
+        let startPointer = self.withUnsafeRawPointer { extensionTypePtr in
             GodotExtension.Interface.packedByteArrayOperatorIndexConst(
                 extensionTypePtr, 0
             )
@@ -37,7 +37,7 @@ extension PackedByteArray {
     public mutating func withUnsafeMutableBytes<Result>(
         _ body: (UnsafeMutableBufferPointer<UInt8>) throws -> Result
     ) rethrows -> Result {
-        let startPointer = self.withGodotUnsafeMutableRawPointer { extensionTypePtr in
+        let startPointer = self.withUnsafeMutableRawPointer { extensionTypePtr in
             GodotExtension.Interface.packedByteArrayOperatorIndex(
                 extensionTypePtr, 0
             )

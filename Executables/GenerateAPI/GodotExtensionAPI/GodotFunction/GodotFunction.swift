@@ -315,21 +315,23 @@ extension GodotFunction {
         
         return try argumentsPointerAccessSyntax(options: options) { pointerNames in
             if isVararg {
-                if pointerNames.isEmpty {
-                    "withUnsafeArgumentPackPointer(varargs: repeat each \(raw: varargArgumentIdentifier)) { packCount, \(raw: packName) in"
+                let call = if pointerNames.isEmpty {
+                    "withUnsafeArgumentPackPointer(varargs: repeat each \(varargArgumentIdentifier)) { packCount, \(packName) in"
                 } else {
-                    "withUnsafeArgumentPackPointer(\(raw: pointerNames.joined(separator: ", ")), varargs: repeat each \(raw: varargArgumentIdentifier)) { packCount, \(raw: packName) in"
+                    "withUnsafeArgumentPackPointer(\(pointerNames.joined(separator: ", ")), varargs: repeat each \(varargArgumentIdentifier)) { packCount, \(packName) in"
                 }
                 
-                try bodyBuilder(packName)
-                
-                "}"
+                """
+                \(raw: call)
+                    \(try bodyBuilder(packName))
+                }
+                """
             } else {
-                "withUnsafeArgumentPackPointer(\(raw: pointerNames.joined(separator: ", "))) { \(raw: packName) in"
-                
-                try bodyBuilder(packName)
-                
-                "}"
+                """
+                withUnsafeArgumentPackPointer(\(raw: pointerNames.joined(separator: ", "))) { \(raw: packName) in
+                    \(try bodyBuilder(packName))
+                }
+                """
             }
         }
     }

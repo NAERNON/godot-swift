@@ -160,34 +160,6 @@ extension Variant: Exposable {
     }
 }
 
-extension Variant: GodotRawPointerAccessible {
-    /// Calls a closure with an extension type pointer of the underlying object.
-    public func withGodotUnsafeRawPointer<Result>(
-        _ body: (UnsafeRawPointer?) throws -> Result
-    ) rethrows -> Result {
-        try storage.withUnsafeRawPointer {
-            try body($0)
-        }
-    }
-    
-    /// Calls a closure with an extension type pointer of the underlying object.
-    func withGodotUnsafeMutableRawPointer<Result>(
-        _ body: (UnsafeMutableRawPointer?) throws -> Result
-    ) rethrows -> Result {
-        try storage.withUnsafeMutableRawPointer {
-            try body($0)
-        }
-    }
-    
-    static func fromInitializingMutatingGodotUnsafePointer(
-        _ body: (UnsafeMutableRawPointer) -> Void
-    ) -> Self {
-        let value = Self()
-        value.storage.withUnsafeMutableRawPointer(body)
-        return value
-    }
-}
-
 extension Variant: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(storage.hashValue)

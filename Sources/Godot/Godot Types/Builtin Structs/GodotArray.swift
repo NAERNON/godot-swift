@@ -27,9 +27,9 @@ extension GodotArray {
             return
         }
         
-        withGodotUnsafeMutableRawPointer { ptr in
-            Element._exposedClassName.withGodotUnsafeRawPointer { classNamePtr in
-                Variant().withGodotUnsafeRawPointer { scriptPtr in
+        withUnsafeMutableRawPointer { ptr in
+            Element._exposedClassName.withUnsafeRawPointer { classNamePtr in
+                Variant.Storage().withUnsafeRawPointer { scriptPtr in
                     // TODO: Check script (last parameter)
                     GodotExtension.Interface.arraySetTyped(
                         ptr,

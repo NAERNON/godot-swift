@@ -152,65 +152,71 @@ open class XRInterfaceExtension: XRInterface {
     }
 
     internal static var __method_binding_get_color_texture: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_color_texture").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_color_texture").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
         }
         }
     }()
 
     public func colorTexture() -> Godot.RID {
-        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_color_texture,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_color_texture,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_get_depth_texture: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_depth_texture").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_depth_texture").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
         }
         }
     }()
 
     public func depthTexture() -> Godot.RID {
-        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_depth_texture,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_depth_texture,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_get_velocity_texture: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_velocity_texture").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_velocity_texture").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
         }
         }
     }()
 
     public func velocityTexture() -> Godot.RID {
-        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_velocity_texture,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_velocity_texture,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_add_blit: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_blit").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_blit").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 258596971)!
         }
         }
@@ -229,30 +235,43 @@ open class XRInterfaceExtension: XRInterface {
         upscale: Double,
         aspectRatio: Double
     ) {
-        renderTarget.withGodotUnsafeRawPointer { __ptr_renderTarget in
-        srcRect.withGodotUnsafeRawPointer { __ptr_srcRect in
-        dstRect.withGodotUnsafeRawPointer { __ptr_dstRect in
-        useLayer.withGodotUnsafeRawPointer { __ptr_useLayer in
-        layer.withGodotUnsafeRawPointer { __ptr_layer in
-        applyLensDistortion.withGodotUnsafeRawPointer { __ptr_applyLensDistortion in
-        eyeCenter.withGodotUnsafeRawPointer { __ptr_eyeCenter in
-        k1.withGodotUnsafeRawPointer { __ptr_k1 in
-        k2.withGodotUnsafeRawPointer { __ptr_k2 in
-        upscale.withGodotUnsafeRawPointer { __ptr_upscale in
-        aspectRatio.withGodotUnsafeRawPointer { __ptr_aspectRatio in
-        withUnsafeArgumentPackPointer(__ptr_renderTarget, __ptr_srcRect, __ptr_dstRect, __ptr_useLayer, __ptr_layer, __ptr_applyLensDistortion, __ptr_eyeCenter, __ptr_k1, __ptr_k2, __ptr_upscale, __ptr_aspectRatio) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_blit,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}}}}}}}}
+        withTransferrableUnsafeRawPointer(to: renderTarget) { __ptr_renderTarget in
+            withTransferrableUnsafeRawPointer(to: srcRect) { __ptr_srcRect in
+                withTransferrableUnsafeRawPointer(to: dstRect) { __ptr_dstRect in
+                    withTransferrableUnsafeRawPointer(to: useLayer) { __ptr_useLayer in
+                        withTransferrableUnsafeRawPointer(to: layer) { __ptr_layer in
+                            withTransferrableUnsafeRawPointer(to: applyLensDistortion) { __ptr_applyLensDistortion in
+                                withTransferrableUnsafeRawPointer(to: eyeCenter) { __ptr_eyeCenter in
+                                    withTransferrableUnsafeRawPointer(to: k1) { __ptr_k1 in
+                                        withTransferrableUnsafeRawPointer(to: k2) { __ptr_k2 in
+                                            withTransferrableUnsafeRawPointer(to: upscale) { __ptr_upscale in
+                                                withTransferrableUnsafeRawPointer(to: aspectRatio) { __ptr_aspectRatio in
+                                                    withUnsafeArgumentPackPointer(__ptr_renderTarget, __ptr_srcRect, __ptr_dstRect, __ptr_useLayer, __ptr_layer, __ptr_applyLensDistortion, __ptr_eyeCenter, __ptr_k1, __ptr_k2, __ptr_upscale, __ptr_aspectRatio) { __accessPtr in
+                                                        self.withUnsafeMutableRawPointer { __ptr_self in
+                                                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                                                Self.__method_binding_add_blit,
+                                                                __ptr_self,
+                                                                __accessPtr,
+                                                                nil
+                                                            )
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_render_target_texture: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_render_target_texture").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_render_target_texture").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 41030802)!
         }
         }
@@ -261,16 +280,20 @@ open class XRInterfaceExtension: XRInterface {
     public func renderTargetTexture(
         renderTarget: Godot.RID
     ) -> Godot.RID {
-        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        renderTarget.withGodotUnsafeRawPointer { __ptr_renderTarget in
-        withUnsafeArgumentPackPointer(__ptr_renderTarget) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_render_target_texture,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: renderTarget) { __ptr_renderTarget in
+                withUnsafeArgumentPackPointer(__ptr_renderTarget) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_get_render_target_texture,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

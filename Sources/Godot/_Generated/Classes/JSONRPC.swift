@@ -24,8 +24,8 @@ open class JSONRPC: Object {
     }
 
     internal static var __method_binding_set_scope: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_scope").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_scope").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2572618360)!
         }
         }
@@ -35,22 +35,27 @@ open class JSONRPC: Object {
         _ scope: Godot.GodotString,
         target: Godot.Object?
     ) {
-        scope.withGodotUnsafeRawPointer { __ptr_scope in
-        target.withGodotUnsafeRawPointer { __ptr_target in
-        withUnsafePointer(to: __ptr_target) { _ptr___ptr_target in
-        withUnsafeArgumentPackPointer(__ptr_scope, _ptr___ptr_target) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_set_scope,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: scope) { __ptr_scope in
+            withTransferrableUnsafeRawPointer(to: target) { __ptr_target in
+                withUnsafePointer(to: __ptr_target) { _ptr___ptr_target in
+                    withUnsafeArgumentPackPointer(__ptr_scope, _ptr___ptr_target) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_set_scope,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_process_action: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "process_action").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "process_action").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2963479484)!
         }
         }
@@ -60,22 +65,27 @@ open class JSONRPC: Object {
         _ action: Value,
         recurse: Bool = false
     ) -> Godot.Variant {
-        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        Godot.Variant.withStorageUnsafeRawPointer(to: action) { __ptr_action in
-        recurse.withGodotUnsafeRawPointer { __ptr_recurse in
-        withUnsafeArgumentPackPointer(__ptr_action, __ptr_recurse) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_process_action,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            Godot.Variant.withStorageUnsafeRawPointer(to: action) { __ptr_action in
+                withTransferrableUnsafeRawPointer(to: recurse) { __ptr_recurse in
+                    withUnsafeArgumentPackPointer(__ptr_action, __ptr_recurse) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_process_action,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_process_string: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "process_string").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "process_string").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1703090593)!
         }
         }
@@ -84,21 +94,25 @@ open class JSONRPC: Object {
     public func processString(
         action: Godot.GodotString
     ) -> Godot.GodotString {
-        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        action.withGodotUnsafeRawPointer { __ptr_action in
-        withUnsafeArgumentPackPointer(__ptr_action) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_process_string,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: action) { __ptr_action in
+                withUnsafeArgumentPackPointer(__ptr_action) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_process_string,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_make_request: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "make_request").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "make_request").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3423508980)!
         }
         }
@@ -109,23 +123,29 @@ open class JSONRPC: Object {
         params: Value1,
         id: Value2
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        method.withGodotUnsafeRawPointer { __ptr_method in
-        Godot.Variant.withStorageUnsafeRawPointer(to: params) { __ptr_params in
-        Godot.Variant.withStorageUnsafeRawPointer(to: id) { __ptr_id in
-        withUnsafeArgumentPackPointer(__ptr_method, __ptr_params, __ptr_id) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_make_request,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: method) { __ptr_method in
+                Godot.Variant.withStorageUnsafeRawPointer(to: params) { __ptr_params in
+                    Godot.Variant.withStorageUnsafeRawPointer(to: id) { __ptr_id in
+                        withUnsafeArgumentPackPointer(__ptr_method, __ptr_params, __ptr_id) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_make_request,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_make_response: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "make_response").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "make_response").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 5053918)!
         }
         }
@@ -135,22 +155,27 @@ open class JSONRPC: Object {
         result: Value1,
         id: Value2
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        Godot.Variant.withStorageUnsafeRawPointer(to: result) { __ptr_result in
-        Godot.Variant.withStorageUnsafeRawPointer(to: id) { __ptr_id in
-        withUnsafeArgumentPackPointer(__ptr_result, __ptr_id) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_make_response,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            Godot.Variant.withStorageUnsafeRawPointer(to: result) { __ptr_result in
+                Godot.Variant.withStorageUnsafeRawPointer(to: id) { __ptr_id in
+                    withUnsafeArgumentPackPointer(__ptr_result, __ptr_id) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_make_response,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_make_notification: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "make_notification").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "make_notification").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2949127017)!
         }
         }
@@ -160,22 +185,27 @@ open class JSONRPC: Object {
         method: Godot.GodotString,
         params: Value
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        method.withGodotUnsafeRawPointer { __ptr_method in
-        Godot.Variant.withStorageUnsafeRawPointer(to: params) { __ptr_params in
-        withUnsafeArgumentPackPointer(__ptr_method, __ptr_params) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_make_notification,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: method) { __ptr_method in
+                Godot.Variant.withStorageUnsafeRawPointer(to: params) { __ptr_params in
+                    withUnsafeArgumentPackPointer(__ptr_method, __ptr_params) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_make_notification,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_make_response_error: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "make_response_error").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "make_response_error").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 928596297)!
         }
         }
@@ -186,18 +216,24 @@ open class JSONRPC: Object {
         message: Godot.GodotString,
         id: Value = Variant()
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        code.withGodotUnsafeRawPointer { __ptr_code in
-        message.withGodotUnsafeRawPointer { __ptr_message in
-        Godot.Variant.withStorageUnsafeRawPointer(to: id) { __ptr_id in
-        withUnsafeArgumentPackPointer(__ptr_code, __ptr_message, __ptr_id) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_make_response_error,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: code) { __ptr_code in
+                withTransferrableUnsafeRawPointer(to: message) { __ptr_message in
+                    Godot.Variant.withStorageUnsafeRawPointer(to: id) { __ptr_id in
+                        withUnsafeArgumentPackPointer(__ptr_code, __ptr_message, __ptr_id) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_make_response_error,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

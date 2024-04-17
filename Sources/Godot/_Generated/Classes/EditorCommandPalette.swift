@@ -7,8 +7,8 @@ import GodotExtensionHeaders
 @GodotClass
 open class EditorCommandPalette: ConfirmationDialog {
     internal static var __method_binding_add_command: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_command").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_command").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 864043298)!
         }
         }
@@ -20,23 +20,29 @@ open class EditorCommandPalette: ConfirmationDialog {
         bindedCallable: Godot.Callable,
         shortcutText: Godot.GodotString = "None"
     ) {
-        commandName.withGodotUnsafeRawPointer { __ptr_commandName in
-        keyName.withGodotUnsafeRawPointer { __ptr_keyName in
-        bindedCallable.withGodotUnsafeRawPointer { __ptr_bindedCallable in
-        shortcutText.withGodotUnsafeRawPointer { __ptr_shortcutText in
-        withUnsafeArgumentPackPointer(__ptr_commandName, __ptr_keyName, __ptr_bindedCallable, __ptr_shortcutText) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_command,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}
+        withTransferrableUnsafeRawPointer(to: commandName) { __ptr_commandName in
+            withTransferrableUnsafeRawPointer(to: keyName) { __ptr_keyName in
+                withTransferrableUnsafeRawPointer(to: bindedCallable) { __ptr_bindedCallable in
+                    withTransferrableUnsafeRawPointer(to: shortcutText) { __ptr_shortcutText in
+                        withUnsafeArgumentPackPointer(__ptr_commandName, __ptr_keyName, __ptr_bindedCallable, __ptr_shortcutText) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_add_command,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    nil
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_remove_command: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_command").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "remove_command").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -45,15 +51,18 @@ open class EditorCommandPalette: ConfirmationDialog {
     public func removeCommand(
         keyName: Godot.GodotString
     ) {
-        keyName.withGodotUnsafeRawPointer { __ptr_keyName in
-        withUnsafeArgumentPackPointer(__ptr_keyName) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_remove_command,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: keyName) { __ptr_keyName in
+            withUnsafeArgumentPackPointer(__ptr_keyName) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_remove_command,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

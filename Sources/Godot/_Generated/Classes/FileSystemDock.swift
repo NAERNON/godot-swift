@@ -299,8 +299,8 @@ open class FileSystemDock: VBoxContainer {
     }()
 
     internal static var __method_binding_navigate_to_path: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "navigate_to_path").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "navigate_to_path").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
         }
         }
@@ -309,20 +309,23 @@ open class FileSystemDock: VBoxContainer {
     public func navigateToPath(
         _ path: Godot.GodotString
     ) {
-        path.withGodotUnsafeRawPointer { __ptr_path in
-        withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_navigate_to_path,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: path) { __ptr_path in
+            withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_navigate_to_path,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_add_resource_tooltip_plugin: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_resource_tooltip_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "add_resource_tooltip_plugin").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2258356838)!
         }
         }
@@ -331,21 +334,25 @@ open class FileSystemDock: VBoxContainer {
     public func addResourceTooltipPlugin(
         _ plugin: Godot.EditorResourceTooltipPlugin?
     ) {
-        plugin.withGodotUnsafeRawPointer { __ptr_plugin in
-        withUnsafePointer(to: __ptr_plugin) { _ptr___ptr_plugin in
-        withUnsafeArgumentPackPointer(_ptr___ptr_plugin) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_add_resource_tooltip_plugin,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: plugin) { __ptr_plugin in
+            withUnsafePointer(to: __ptr_plugin) { _ptr___ptr_plugin in
+                withUnsafeArgumentPackPointer(_ptr___ptr_plugin) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_add_resource_tooltip_plugin,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_remove_resource_tooltip_plugin: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_resource_tooltip_plugin").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "remove_resource_tooltip_plugin").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2258356838)!
         }
         }
@@ -354,16 +361,20 @@ open class FileSystemDock: VBoxContainer {
     public func removeResourceTooltipPlugin(
         _ plugin: Godot.EditorResourceTooltipPlugin?
     ) {
-        plugin.withGodotUnsafeRawPointer { __ptr_plugin in
-        withUnsafePointer(to: __ptr_plugin) { _ptr___ptr_plugin in
-        withUnsafeArgumentPackPointer(_ptr___ptr_plugin) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_remove_resource_tooltip_plugin,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: plugin) { __ptr_plugin in
+            withUnsafePointer(to: __ptr_plugin) { _ptr___ptr_plugin in
+                withUnsafeArgumentPackPointer(_ptr___ptr_plugin) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_remove_resource_tooltip_plugin,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

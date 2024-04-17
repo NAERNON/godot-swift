@@ -86,7 +86,7 @@ extension GodotArray: Variant.Storable {
         var newValue = Self()
         
         storage.withUnsafeMutableRawPointer { storagePtr in
-            newValue.withGodotUnsafeMutableRawPointer { newValuePtr in
+            newValue.withUnsafeMutableRawPointer { newValuePtr in
                 toTypeVariantConstructor(newValuePtr, storagePtr)
             }
         }
@@ -132,25 +132,4 @@ extension GodotArray: Exposable where Element : Exposable {
     
     // func transferToGodot
     // implemented in GodotOpaqueBuiltinClass macro
-}
-
-extension GodotArray: GodotRawPointerAccessible {
-    func withGodotUnsafeRawPointer<Result>(
-        _ body: (UnsafeRawPointer?) throws -> Result
-    ) rethrows -> Result {
-        try self.withUnsafeRawPointer {
-            try body($0)
-        }
-    }
-    
-    mutating func withGodotUnsafeMutableRawPointer<Result>(
-        _ body: (UnsafeMutableRawPointer?) throws -> Result
-    ) rethrows -> Result {
-        try self.withUnsafeMutableRawPointer {
-            try body($0)
-        }
-    }
-    
-    // func fromInitializingMutatingGodotUnsafePointer
-    // implemented in generated bindings
 }

@@ -428,8 +428,8 @@ open class TextServer: RefCounted {
     }
 
     internal static var __method_binding_has_feature: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_feature").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has_feature").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3967367083)!
         }
         }
@@ -438,59 +438,67 @@ open class TextServer: RefCounted {
     public func hasFeature(
         _ feature: Godot.TextServer.Feature
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        feature.withGodotUnsafeRawPointer { __ptr_feature in
-        withUnsafeArgumentPackPointer(__ptr_feature) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has_feature,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: feature) { __ptr_feature in
+                withUnsafeArgumentPackPointer(__ptr_feature) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_has_feature,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_name: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_name").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_name").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
     }()
 
     public func name() -> Godot.GodotString {
-        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_name,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_name,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_get_features: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_features").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_features").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
     }()
 
     public func features() -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_features,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_features,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_load_support_data: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "load_support_data").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "load_support_data").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2323990056)!
         }
         }
@@ -499,59 +507,67 @@ open class TextServer: RefCounted {
     public func loadSupportData(
         filename: Godot.GodotString
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        filename.withGodotUnsafeRawPointer { __ptr_filename in
-        withUnsafeArgumentPackPointer(__ptr_filename) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_load_support_data,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: filename) { __ptr_filename in
+                withUnsafeArgumentPackPointer(__ptr_filename) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_load_support_data,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_support_data_filename: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_support_data_filename").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_support_data_filename").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
     }()
 
     public func supportDataFilename() -> Godot.GodotString {
-        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_support_data_filename,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_support_data_filename,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_get_support_data_info: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_support_data_info").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_support_data_info").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
     }()
 
     public func supportDataInfo() -> Godot.GodotString {
-        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_support_data_info,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_get_support_data_info,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_save_support_data: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "save_support_data").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "save_support_data").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3927539163)!
         }
         }
@@ -560,21 +576,25 @@ open class TextServer: RefCounted {
     public func saveSupportData(
         filename: Godot.GodotString
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        filename.withGodotUnsafeRawPointer { __ptr_filename in
-        withUnsafeArgumentPackPointer(__ptr_filename) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_save_support_data,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: filename) { __ptr_filename in
+                withUnsafeArgumentPackPointer(__ptr_filename) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_save_support_data,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_is_locale_right_to_left: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_locale_right_to_left").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_locale_right_to_left").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3927539163)!
         }
         }
@@ -583,21 +603,25 @@ open class TextServer: RefCounted {
     public func isLocaleRightToLeft(
         locale: Godot.GodotString
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        locale.withGodotUnsafeRawPointer { __ptr_locale in
-        withUnsafeArgumentPackPointer(__ptr_locale) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_is_locale_right_to_left,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: locale) { __ptr_locale in
+                withUnsafeArgumentPackPointer(__ptr_locale) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_is_locale_right_to_left,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_name_to_tag: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "name_to_tag").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "name_to_tag").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1321353865)!
         }
         }
@@ -606,21 +630,25 @@ open class TextServer: RefCounted {
     public func nameToTag(
         name: Godot.GodotString
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_name_to_tag,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withUnsafeArgumentPackPointer(__ptr_name) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_name_to_tag,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_tag_to_name: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "tag_to_name").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "tag_to_name").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -629,21 +657,25 @@ open class TextServer: RefCounted {
     public func tagToName(
         tag: Int64
     ) -> Godot.GodotString {
-        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        tag.withGodotUnsafeRawPointer { __ptr_tag in
-        withUnsafeArgumentPackPointer(__ptr_tag) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_tag_to_name,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: tag) { __ptr_tag in
+                withUnsafeArgumentPackPointer(__ptr_tag) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_tag_to_name,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_has: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "has").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3521089500)!
         }
         }
@@ -652,21 +684,25 @@ open class TextServer: RefCounted {
     public func has(
         rid: Godot.RID
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        rid.withGodotUnsafeRawPointer { __ptr_rid in
-        withUnsafeArgumentPackPointer(__ptr_rid) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_has,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: rid) { __ptr_rid in
+                withUnsafeArgumentPackPointer(__ptr_rid) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_has,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_free_rid: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "free_rid").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "free_rid").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
         }
         }
@@ -675,39 +711,44 @@ open class TextServer: RefCounted {
     public func freeRID(
         _ rid: Godot.RID
     ) {
-        rid.withGodotUnsafeRawPointer { __ptr_rid in
-        withUnsafeArgumentPackPointer(__ptr_rid) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_free_rid,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: rid) { __ptr_rid in
+            withUnsafeArgumentPackPointer(__ptr_rid) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_free_rid,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_create_font: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_font").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "create_font").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
         }
         }
     }()
 
     public func createFont() -> Godot.RID {
-        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_create_font,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_create_font,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_create_font_linked_variation: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_font_linked_variation").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "create_font_linked_variation").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 41030802)!
         }
         }
@@ -716,21 +757,25 @@ open class TextServer: RefCounted {
     public func createFontLinkedVariation(
         fontRID: Godot.RID
     ) -> Godot.RID {
-        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_create_font_linked_variation,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_create_font_linked_variation,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_data: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_data").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_data").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1355495400)!
         }
         }
@@ -740,21 +785,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         data: Godot.PackedByteArray
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        data.withGodotUnsafeRawPointer { __ptr_data in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_data) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_data,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: data) { __ptr_data in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_data) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_data,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_face_index: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_face_index").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_face_index").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
         }
         }
@@ -764,21 +813,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         faceIndex: Int64
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        faceIndex.withGodotUnsafeRawPointer { __ptr_faceIndex in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_faceIndex) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_face_index,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: faceIndex) { __ptr_faceIndex in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_faceIndex) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_face_index,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_face_index: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_face_index").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_face_index").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -787,21 +840,25 @@ open class TextServer: RefCounted {
     public func fontGetFaceIndex(
         fontRID: Godot.RID
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_face_index,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_face_index,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_face_count: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_face_count").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_face_count").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -810,21 +867,25 @@ open class TextServer: RefCounted {
     public func fontGetFaceCount(
         fontRID: Godot.RID
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_face_count,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_face_count,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_style: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_style").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_style").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 898466325)!
         }
         }
@@ -834,21 +895,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         style: Godot.TextServer.FontStyle
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        style.withGodotUnsafeRawPointer { __ptr_style in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_style) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_style,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: style) { __ptr_style in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_style) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_style,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_style: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_style").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_style").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3082502592)!
         }
         }
@@ -857,21 +922,25 @@ open class TextServer: RefCounted {
     public func fontGetStyle(
         fontRID: Godot.RID
     ) -> Godot.TextServer.FontStyle {
-        Godot.TextServer.FontStyle.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_style,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_style,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_name: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_name").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_name").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2726140452)!
         }
         }
@@ -881,21 +950,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         name: Godot.GodotString
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_name) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_name,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_name) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_name,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_name: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_name").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_name").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 642473191)!
         }
         }
@@ -904,21 +977,25 @@ open class TextServer: RefCounted {
     public func fontGetName(
         fontRID: Godot.RID
     ) -> Godot.GodotString {
-        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_name,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_name,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_ot_name_strings: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_ot_name_strings").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_ot_name_strings").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1882737106)!
         }
         }
@@ -927,21 +1004,25 @@ open class TextServer: RefCounted {
     public func fontGetOtNameStrings(
         fontRID: Godot.RID
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_ot_name_strings,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_ot_name_strings,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_style_name: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_style_name").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_style_name").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2726140452)!
         }
         }
@@ -951,21 +1032,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         name: Godot.GodotString
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        name.withGodotUnsafeRawPointer { __ptr_name in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_name) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_style_name,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_name) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_style_name,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_style_name: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_style_name").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_style_name").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 642473191)!
         }
         }
@@ -974,21 +1059,25 @@ open class TextServer: RefCounted {
     public func fontGetStyleName(
         fontRID: Godot.RID
     ) -> Godot.GodotString {
-        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_style_name,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_style_name,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_weight: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_weight").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_weight").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
         }
         }
@@ -998,21 +1087,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         weight: Int64
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        weight.withGodotUnsafeRawPointer { __ptr_weight in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_weight) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_weight,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: weight) { __ptr_weight in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_weight) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_weight,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_weight: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_weight").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_weight").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -1021,21 +1114,25 @@ open class TextServer: RefCounted {
     public func fontGetWeight(
         fontRID: Godot.RID
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_weight,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_weight,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_stretch: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_stretch").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_stretch").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
         }
         }
@@ -1045,21 +1142,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         weight: Int64
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        weight.withGodotUnsafeRawPointer { __ptr_weight in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_weight) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_stretch,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: weight) { __ptr_weight in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_weight) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_stretch,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_stretch: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_stretch").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_stretch").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -1068,21 +1169,25 @@ open class TextServer: RefCounted {
     public func fontGetStretch(
         fontRID: Godot.RID
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_stretch,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_stretch,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_antialiasing: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_antialiasing").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_antialiasing").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 958337235)!
         }
         }
@@ -1092,21 +1197,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         antialiasing: Godot.TextServer.FontAntialiasing
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        antialiasing.withGodotUnsafeRawPointer { __ptr_antialiasing in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_antialiasing) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_antialiasing,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: antialiasing) { __ptr_antialiasing in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_antialiasing) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_antialiasing,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_antialiasing: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_antialiasing").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_antialiasing").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3389420495)!
         }
         }
@@ -1115,21 +1224,25 @@ open class TextServer: RefCounted {
     public func fontGetAntialiasing(
         fontRID: Godot.RID
     ) -> Godot.TextServer.FontAntialiasing {
-        Godot.TextServer.FontAntialiasing.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_antialiasing,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_antialiasing,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_generate_mipmaps: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_generate_mipmaps").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_generate_mipmaps").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
         }
         }
@@ -1139,21 +1252,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         generateMipmaps: Bool
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        generateMipmaps.withGodotUnsafeRawPointer { __ptr_generateMipmaps in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_generateMipmaps) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_generate_mipmaps,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: generateMipmaps) { __ptr_generateMipmaps in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_generateMipmaps) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_generate_mipmaps,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_generate_mipmaps: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_generate_mipmaps").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_generate_mipmaps").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
         }
         }
@@ -1162,21 +1279,25 @@ open class TextServer: RefCounted {
     public func fontGetGenerateMipmaps(
         fontRID: Godot.RID
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_generate_mipmaps,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_generate_mipmaps,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_multichannel_signed_distance_field: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_multichannel_signed_distance_field").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_multichannel_signed_distance_field").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
         }
         }
@@ -1186,21 +1307,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         msdf: Bool
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        msdf.withGodotUnsafeRawPointer { __ptr_msdf in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_msdf) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_multichannel_signed_distance_field,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: msdf) { __ptr_msdf in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_msdf) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_multichannel_signed_distance_field,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_is_multichannel_signed_distance_field: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_is_multichannel_signed_distance_field").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_is_multichannel_signed_distance_field").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
         }
         }
@@ -1209,21 +1334,25 @@ open class TextServer: RefCounted {
     public func fontIsMultichannelSignedDistanceField(
         fontRID: Godot.RID
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_is_multichannel_signed_distance_field,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_is_multichannel_signed_distance_field,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_msdf_pixel_range: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_msdf_pixel_range").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_msdf_pixel_range").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
         }
         }
@@ -1233,21 +1362,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         msdfPixelRange: Int64
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        msdfPixelRange.withGodotUnsafeRawPointer { __ptr_msdfPixelRange in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_msdfPixelRange) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_msdf_pixel_range,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: msdfPixelRange) { __ptr_msdfPixelRange in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_msdfPixelRange) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_msdf_pixel_range,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_msdf_pixel_range: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_msdf_pixel_range").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_msdf_pixel_range").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -1256,21 +1389,25 @@ open class TextServer: RefCounted {
     public func fontGetMsdfPixelRange(
         fontRID: Godot.RID
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_msdf_pixel_range,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_msdf_pixel_range,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_msdf_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_msdf_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_msdf_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
         }
         }
@@ -1280,21 +1417,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         msdfSize: Int64
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        msdfSize.withGodotUnsafeRawPointer { __ptr_msdfSize in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_msdfSize) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_msdf_size,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: msdfSize) { __ptr_msdfSize in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_msdfSize) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_msdf_size,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_msdf_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_msdf_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_msdf_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -1303,21 +1444,25 @@ open class TextServer: RefCounted {
     public func fontGetMsdfSize(
         fontRID: Godot.RID
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_msdf_size,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_msdf_size,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_fixed_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_fixed_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_fixed_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
         }
         }
@@ -1327,21 +1472,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         fixedSize: Int64
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        fixedSize.withGodotUnsafeRawPointer { __ptr_fixedSize in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_fixedSize) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_fixed_size,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: fixedSize) { __ptr_fixedSize in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_fixedSize) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_fixed_size,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_fixed_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_fixed_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_fixed_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -1350,21 +1499,25 @@ open class TextServer: RefCounted {
     public func fontGetFixedSize(
         fontRID: Godot.RID
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_fixed_size,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_fixed_size,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_fixed_size_scale_mode: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_fixed_size_scale_mode").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_fixed_size_scale_mode").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1029390307)!
         }
         }
@@ -1374,21 +1527,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         fixedSizeScaleMode: Godot.TextServer.FixedSizeScaleMode
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        fixedSizeScaleMode.withGodotUnsafeRawPointer { __ptr_fixedSizeScaleMode in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_fixedSizeScaleMode) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_fixed_size_scale_mode,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: fixedSizeScaleMode) { __ptr_fixedSizeScaleMode in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_fixedSizeScaleMode) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_fixed_size_scale_mode,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_fixed_size_scale_mode: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_fixed_size_scale_mode").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_fixed_size_scale_mode").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4113120379)!
         }
         }
@@ -1397,21 +1554,25 @@ open class TextServer: RefCounted {
     public func fontGetFixedSizeScaleMode(
         fontRID: Godot.RID
     ) -> Godot.TextServer.FixedSizeScaleMode {
-        Godot.TextServer.FixedSizeScaleMode.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_fixed_size_scale_mode,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_fixed_size_scale_mode,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_allow_system_fallback: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_allow_system_fallback").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_allow_system_fallback").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
         }
         }
@@ -1421,21 +1582,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         allowSystemFallback: Bool
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        allowSystemFallback.withGodotUnsafeRawPointer { __ptr_allowSystemFallback in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_allowSystemFallback) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_allow_system_fallback,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: allowSystemFallback) { __ptr_allowSystemFallback in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_allowSystemFallback) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_allow_system_fallback,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_is_allow_system_fallback: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_is_allow_system_fallback").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_is_allow_system_fallback").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
         }
         }
@@ -1444,21 +1609,25 @@ open class TextServer: RefCounted {
     public func fontIsAllowSystemFallback(
         fontRID: Godot.RID
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_is_allow_system_fallback,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_is_allow_system_fallback,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_force_autohinter: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_force_autohinter").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_force_autohinter").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
         }
         }
@@ -1468,21 +1637,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         forceAutohinter: Bool
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        forceAutohinter.withGodotUnsafeRawPointer { __ptr_forceAutohinter in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_forceAutohinter) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_force_autohinter,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: forceAutohinter) { __ptr_forceAutohinter in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_forceAutohinter) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_force_autohinter,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_is_force_autohinter: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_is_force_autohinter").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_is_force_autohinter").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
         }
         }
@@ -1491,21 +1664,25 @@ open class TextServer: RefCounted {
     public func fontIsForceAutohinter(
         fontRID: Godot.RID
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_is_force_autohinter,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_is_force_autohinter,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_hinting: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_hinting").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_hinting").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1520010864)!
         }
         }
@@ -1515,21 +1692,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         hinting: Godot.TextServer.Hinting
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        hinting.withGodotUnsafeRawPointer { __ptr_hinting in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_hinting) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_hinting,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: hinting) { __ptr_hinting in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_hinting) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_hinting,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_hinting: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_hinting").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_hinting").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3971592737)!
         }
         }
@@ -1538,21 +1719,25 @@ open class TextServer: RefCounted {
     public func fontGetHinting(
         fontRID: Godot.RID
     ) -> Godot.TextServer.Hinting {
-        Godot.TextServer.Hinting.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_hinting,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_hinting,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_subpixel_positioning: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_subpixel_positioning").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_subpixel_positioning").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3830459669)!
         }
         }
@@ -1562,21 +1747,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         subpixelPositioning: Godot.TextServer.SubpixelPositioning
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        subpixelPositioning.withGodotUnsafeRawPointer { __ptr_subpixelPositioning in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_subpixelPositioning) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_subpixel_positioning,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: subpixelPositioning) { __ptr_subpixelPositioning in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_subpixelPositioning) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_subpixel_positioning,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_subpixel_positioning: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_subpixel_positioning").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_subpixel_positioning").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2752233671)!
         }
         }
@@ -1585,21 +1774,25 @@ open class TextServer: RefCounted {
     public func fontGetSubpixelPositioning(
         fontRID: Godot.RID
     ) -> Godot.TextServer.SubpixelPositioning {
-        Godot.TextServer.SubpixelPositioning.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_subpixel_positioning,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_subpixel_positioning,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_embolden: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_embolden").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_embolden").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
         }
         }
@@ -1609,21 +1802,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         strength: Double
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        strength.withGodotUnsafeRawPointer { __ptr_strength in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_strength) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_embolden,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: strength) { __ptr_strength in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_strength) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_embolden,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_embolden: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_embolden").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_embolden").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
         }
         }
@@ -1632,21 +1829,25 @@ open class TextServer: RefCounted {
     public func fontGetEmbolden(
         fontRID: Godot.RID
     ) -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_embolden,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_embolden,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_spacing: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_spacing").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_spacing").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1307259930)!
         }
         }
@@ -1657,22 +1858,27 @@ open class TextServer: RefCounted {
         spacing: Godot.TextServer.SpacingType,
         value: Int64
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        spacing.withGodotUnsafeRawPointer { __ptr_spacing in
-        value.withGodotUnsafeRawPointer { __ptr_value in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_spacing, __ptr_value) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_spacing,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: spacing) { __ptr_spacing in
+                withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_spacing, __ptr_value) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_set_spacing,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_spacing: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_spacing").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_spacing").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1213653558)!
         }
         }
@@ -1682,22 +1888,27 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         spacing: Godot.TextServer.SpacingType
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        spacing.withGodotUnsafeRawPointer { __ptr_spacing in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_spacing) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_spacing,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: spacing) { __ptr_spacing in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_spacing) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_get_spacing,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_transform: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_transform").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_transform").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1246044741)!
         }
         }
@@ -1707,21 +1918,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         transform: Godot.Transform2D
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        transform.withGodotUnsafeRawPointer { __ptr_transform in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_transform) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_transform,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: transform) { __ptr_transform in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_transform) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_transform,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_transform: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_transform").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_transform").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 213527486)!
         }
         }
@@ -1730,21 +1945,25 @@ open class TextServer: RefCounted {
     public func fontGetTransform(
         fontRID: Godot.RID
     ) -> Godot.Transform2D {
-        Godot.Transform2D.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_transform,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_transform,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_variation_coordinates: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_variation_coordinates").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_variation_coordinates").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1217542888)!
         }
         }
@@ -1754,21 +1973,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         variationCoordinates: Godot.GodotDictionary<Value1, Value2>
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        variationCoordinates.withGodotUnsafeRawPointer { __ptr_variationCoordinates in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_variationCoordinates) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_variation_coordinates,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: variationCoordinates) { __ptr_variationCoordinates in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_variationCoordinates) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_variation_coordinates,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_variation_coordinates: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_variation_coordinates").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_variation_coordinates").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1882737106)!
         }
         }
@@ -1777,21 +2000,25 @@ open class TextServer: RefCounted {
     public func fontGetVariationCoordinates(
         fontRID: Godot.RID
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_variation_coordinates,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_variation_coordinates,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_oversampling: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_oversampling").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_oversampling").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
         }
         }
@@ -1801,21 +2028,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         oversampling: Double
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        oversampling.withGodotUnsafeRawPointer { __ptr_oversampling in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_oversampling) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_oversampling,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: oversampling) { __ptr_oversampling in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_oversampling) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_oversampling,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_oversampling: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_oversampling").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_oversampling").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
         }
         }
@@ -1824,21 +2055,25 @@ open class TextServer: RefCounted {
     public func fontGetOversampling(
         fontRID: Godot.RID
     ) -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_oversampling,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_oversampling,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_size_cache_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_size_cache_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_size_cache_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2684255073)!
         }
         }
@@ -1847,21 +2082,25 @@ open class TextServer: RefCounted {
     public func fontGetSizeCacheList(
         fontRID: Godot.RID
     ) -> Godot.GodotArray<Godot.Vector2I> {
-        Godot.GodotArray<Godot.Vector2I> .fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_size_cache_list,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_size_cache_list,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_clear_size_cache: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_clear_size_cache").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_clear_size_cache").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
         }
         }
@@ -1870,20 +2109,23 @@ open class TextServer: RefCounted {
     public func fontClearSizeCache(
         fontRID: Godot.RID
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_clear_size_cache,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_font_clear_size_cache,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_remove_size_cache: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_remove_size_cache").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_remove_size_cache").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2450610377)!
         }
         }
@@ -1893,21 +2135,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         size: Godot.Vector2I
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_remove_size_cache,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_remove_size_cache,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_ascent: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_ascent").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_ascent").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1892459533)!
         }
         }
@@ -1918,22 +2164,27 @@ open class TextServer: RefCounted {
         size: Int64,
         ascent: Double
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        ascent.withGodotUnsafeRawPointer { __ptr_ascent in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_ascent) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_ascent,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withTransferrableUnsafeRawPointer(to: ascent) { __ptr_ascent in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_ascent) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_set_ascent,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_ascent: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_ascent").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_ascent").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 755457166)!
         }
         }
@@ -1943,22 +2194,27 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         size: Int64
     ) -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_ascent,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_get_ascent,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_descent: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_descent").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_descent").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1892459533)!
         }
         }
@@ -1969,22 +2225,27 @@ open class TextServer: RefCounted {
         size: Int64,
         descent: Double
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        descent.withGodotUnsafeRawPointer { __ptr_descent in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_descent) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_descent,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withTransferrableUnsafeRawPointer(to: descent) { __ptr_descent in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_descent) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_set_descent,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_descent: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_descent").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_descent").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 755457166)!
         }
         }
@@ -1994,22 +2255,27 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         size: Int64
     ) -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_descent,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_get_descent,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_underline_position: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_underline_position").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_underline_position").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1892459533)!
         }
         }
@@ -2020,22 +2286,27 @@ open class TextServer: RefCounted {
         size: Int64,
         underlinePosition: Double
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        underlinePosition.withGodotUnsafeRawPointer { __ptr_underlinePosition in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_underlinePosition) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_underline_position,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withTransferrableUnsafeRawPointer(to: underlinePosition) { __ptr_underlinePosition in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_underlinePosition) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_set_underline_position,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_underline_position: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_underline_position").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_underline_position").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 755457166)!
         }
         }
@@ -2045,22 +2316,27 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         size: Int64
     ) -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_underline_position,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_get_underline_position,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_underline_thickness: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_underline_thickness").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_underline_thickness").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1892459533)!
         }
         }
@@ -2071,22 +2347,27 @@ open class TextServer: RefCounted {
         size: Int64,
         underlineThickness: Double
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        underlineThickness.withGodotUnsafeRawPointer { __ptr_underlineThickness in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_underlineThickness) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_underline_thickness,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withTransferrableUnsafeRawPointer(to: underlineThickness) { __ptr_underlineThickness in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_underlineThickness) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_set_underline_thickness,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_underline_thickness: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_underline_thickness").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_underline_thickness").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 755457166)!
         }
         }
@@ -2096,22 +2377,27 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         size: Int64
     ) -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_underline_thickness,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_get_underline_thickness,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_scale: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_scale").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_scale").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1892459533)!
         }
         }
@@ -2122,22 +2408,27 @@ open class TextServer: RefCounted {
         size: Int64,
         scale: Double
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        scale.withGodotUnsafeRawPointer { __ptr_scale in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_scale) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_scale,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withTransferrableUnsafeRawPointer(to: scale) { __ptr_scale in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_scale) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_set_scale,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_scale: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_scale").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_scale").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 755457166)!
         }
         }
@@ -2147,22 +2438,27 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         size: Int64
     ) -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_scale,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_get_scale,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_texture_count: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_texture_count").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_texture_count").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1311001310)!
         }
         }
@@ -2172,22 +2468,27 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         size: Godot.Vector2I
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_texture_count,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_get_texture_count,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_clear_textures: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_clear_textures").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_clear_textures").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2450610377)!
         }
         }
@@ -2197,21 +2498,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         size: Godot.Vector2I
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_clear_textures,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_clear_textures,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_remove_texture: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_remove_texture").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_remove_texture").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3810512262)!
         }
         }
@@ -2222,22 +2527,27 @@ open class TextServer: RefCounted {
         size: Godot.Vector2I,
         textureIndex: Int64
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        textureIndex.withGodotUnsafeRawPointer { __ptr_textureIndex in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_textureIndex) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_remove_texture,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withTransferrableUnsafeRawPointer(to: textureIndex) { __ptr_textureIndex in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_textureIndex) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_remove_texture,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_texture_image: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_texture_image").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_texture_image").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2354485091)!
         }
         }
@@ -2249,24 +2559,31 @@ open class TextServer: RefCounted {
         textureIndex: Int64,
         image: Godot.Image?
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        textureIndex.withGodotUnsafeRawPointer { __ptr_textureIndex in
-        image.withGodotUnsafeRawPointer { __ptr_image in
-        withUnsafePointer(to: __ptr_image) { _ptr___ptr_image in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_textureIndex, _ptr___ptr_image) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_texture_image,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withTransferrableUnsafeRawPointer(to: textureIndex) { __ptr_textureIndex in
+                    withTransferrableUnsafeRawPointer(to: image) { __ptr_image in
+                        withUnsafePointer(to: __ptr_image) { _ptr___ptr_image in
+                            withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_textureIndex, _ptr___ptr_image) { __accessPtr in
+                                self.withUnsafeMutableRawPointer { __ptr_self in
+                                    GodotExtension.Interface.objectMethodBindPtrcall(
+                                        Self.__method_binding_font_set_texture_image,
+                                        __ptr_self,
+                                        __accessPtr,
+                                        nil
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_texture_image: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_texture_image").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_texture_image").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2451761155)!
         }
         }
@@ -2277,23 +2594,29 @@ open class TextServer: RefCounted {
         size: Godot.Vector2I,
         textureIndex: Int64
     ) -> Godot.Image? {
-        Godot.Image?.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        textureIndex.withGodotUnsafeRawPointer { __ptr_textureIndex in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_textureIndex) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_texture_image,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withTransferrableUnsafeRawPointer(to: textureIndex) { __ptr_textureIndex in
+                        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_textureIndex) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_font_get_texture_image,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_texture_offsets: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_texture_offsets").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_texture_offsets").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3005398047)!
         }
         }
@@ -2305,23 +2628,29 @@ open class TextServer: RefCounted {
         textureIndex: Int64,
         offset: Godot.PackedInt32Array
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        textureIndex.withGodotUnsafeRawPointer { __ptr_textureIndex in
-        offset.withGodotUnsafeRawPointer { __ptr_offset in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_textureIndex, __ptr_offset) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_texture_offsets,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withTransferrableUnsafeRawPointer(to: textureIndex) { __ptr_textureIndex in
+                    withTransferrableUnsafeRawPointer(to: offset) { __ptr_offset in
+                        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_textureIndex, __ptr_offset) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_font_set_texture_offsets,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    nil
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_texture_offsets: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_texture_offsets").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_texture_offsets").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3420028887)!
         }
         }
@@ -2332,23 +2661,29 @@ open class TextServer: RefCounted {
         size: Godot.Vector2I,
         textureIndex: Int64
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        textureIndex.withGodotUnsafeRawPointer { __ptr_textureIndex in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_textureIndex) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_texture_offsets,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withTransferrableUnsafeRawPointer(to: textureIndex) { __ptr_textureIndex in
+                        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_textureIndex) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_font_get_texture_offsets,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_glyph_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_glyph_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_glyph_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 46086620)!
         }
         }
@@ -2358,22 +2693,27 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         size: Godot.Vector2I
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_glyph_list,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_get_glyph_list,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_clear_glyphs: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_clear_glyphs").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_clear_glyphs").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2450610377)!
         }
         }
@@ -2383,21 +2723,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         size: Godot.Vector2I
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_clear_glyphs,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_clear_glyphs,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_remove_glyph: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_remove_glyph").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_remove_glyph").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3810512262)!
         }
         }
@@ -2408,22 +2752,27 @@ open class TextServer: RefCounted {
         size: Godot.Vector2I,
         glyph: Int64
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_remove_glyph,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withTransferrableUnsafeRawPointer(to: glyph) { __ptr_glyph in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_remove_glyph,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_glyph_advance: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_glyph_advance").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_glyph_advance").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2555689501)!
         }
         }
@@ -2434,23 +2783,29 @@ open class TextServer: RefCounted {
         size: Int64,
         glyph: Int64
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_glyph_advance,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withTransferrableUnsafeRawPointer(to: glyph) { __ptr_glyph in
+                        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_font_get_glyph_advance,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_glyph_advance: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_glyph_advance").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_glyph_advance").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3219397315)!
         }
         }
@@ -2462,23 +2817,29 @@ open class TextServer: RefCounted {
         glyph: Int64,
         advance: Godot.Vector2
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        advance.withGodotUnsafeRawPointer { __ptr_advance in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph, __ptr_advance) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_glyph_advance,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withTransferrableUnsafeRawPointer(to: glyph) { __ptr_glyph in
+                    withTransferrableUnsafeRawPointer(to: advance) { __ptr_advance in
+                        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph, __ptr_advance) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_font_set_glyph_advance,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    nil
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_glyph_offset: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_glyph_offset").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_glyph_offset").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 513728628)!
         }
         }
@@ -2489,23 +2850,29 @@ open class TextServer: RefCounted {
         size: Godot.Vector2I,
         glyph: Int64
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_glyph_offset,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withTransferrableUnsafeRawPointer(to: glyph) { __ptr_glyph in
+                        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_font_get_glyph_offset,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_glyph_offset: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_glyph_offset").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_glyph_offset").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1812632090)!
         }
         }
@@ -2517,23 +2884,29 @@ open class TextServer: RefCounted {
         glyph: Int64,
         offset: Godot.Vector2
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        offset.withGodotUnsafeRawPointer { __ptr_offset in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph, __ptr_offset) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_glyph_offset,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withTransferrableUnsafeRawPointer(to: glyph) { __ptr_glyph in
+                    withTransferrableUnsafeRawPointer(to: offset) { __ptr_offset in
+                        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph, __ptr_offset) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_font_set_glyph_offset,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    nil
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_glyph_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_glyph_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_glyph_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 513728628)!
         }
         }
@@ -2544,23 +2917,29 @@ open class TextServer: RefCounted {
         size: Godot.Vector2I,
         glyph: Int64
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_glyph_size,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withTransferrableUnsafeRawPointer(to: glyph) { __ptr_glyph in
+                        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_font_get_glyph_size,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_glyph_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_glyph_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_glyph_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1812632090)!
         }
         }
@@ -2572,23 +2951,29 @@ open class TextServer: RefCounted {
         glyph: Int64,
         glSize: Godot.Vector2
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        glSize.withGodotUnsafeRawPointer { __ptr_glSize in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph, __ptr_glSize) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_glyph_size,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withTransferrableUnsafeRawPointer(to: glyph) { __ptr_glyph in
+                    withTransferrableUnsafeRawPointer(to: glSize) { __ptr_glSize in
+                        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph, __ptr_glSize) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_font_set_glyph_size,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    nil
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_glyph_uv_rect: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_glyph_uv_rect").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_glyph_uv_rect").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2274268786)!
         }
         }
@@ -2599,23 +2984,29 @@ open class TextServer: RefCounted {
         size: Godot.Vector2I,
         glyph: Int64
     ) -> Godot.Rect2 {
-        Godot.Rect2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_glyph_uv_rect,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withTransferrableUnsafeRawPointer(to: glyph) { __ptr_glyph in
+                        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_font_get_glyph_uv_rect,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_glyph_uv_rect: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_glyph_uv_rect").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_glyph_uv_rect").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1973324081)!
         }
         }
@@ -2627,23 +3018,29 @@ open class TextServer: RefCounted {
         glyph: Int64,
         uvRect: Godot.Rect2
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        uvRect.withGodotUnsafeRawPointer { __ptr_uvRect in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph, __ptr_uvRect) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_glyph_uv_rect,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withTransferrableUnsafeRawPointer(to: glyph) { __ptr_glyph in
+                    withTransferrableUnsafeRawPointer(to: uvRect) { __ptr_uvRect in
+                        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph, __ptr_uvRect) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_font_set_glyph_uv_rect,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    nil
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_glyph_texture_idx: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_glyph_texture_idx").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_glyph_texture_idx").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4292800474)!
         }
         }
@@ -2654,23 +3051,29 @@ open class TextServer: RefCounted {
         size: Godot.Vector2I,
         glyph: Int64
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_glyph_texture_idx,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withTransferrableUnsafeRawPointer(to: glyph) { __ptr_glyph in
+                        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_font_get_glyph_texture_idx,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_glyph_texture_idx: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_glyph_texture_idx").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_glyph_texture_idx").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4254580980)!
         }
         }
@@ -2682,23 +3085,29 @@ open class TextServer: RefCounted {
         glyph: Int64,
         textureIdx: Int64
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        textureIdx.withGodotUnsafeRawPointer { __ptr_textureIdx in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph, __ptr_textureIdx) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_glyph_texture_idx,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withTransferrableUnsafeRawPointer(to: glyph) { __ptr_glyph in
+                    withTransferrableUnsafeRawPointer(to: textureIdx) { __ptr_textureIdx in
+                        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph, __ptr_textureIdx) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_font_set_glyph_texture_idx,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    nil
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_glyph_texture_rid: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_glyph_texture_rid").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_glyph_texture_rid").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1451696141)!
         }
         }
@@ -2709,23 +3118,29 @@ open class TextServer: RefCounted {
         size: Godot.Vector2I,
         glyph: Int64
     ) -> Godot.RID {
-        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_glyph_texture_rid,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withTransferrableUnsafeRawPointer(to: glyph) { __ptr_glyph in
+                        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_font_get_glyph_texture_rid,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_glyph_texture_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_glyph_texture_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_glyph_texture_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 513728628)!
         }
         }
@@ -2736,23 +3151,29 @@ open class TextServer: RefCounted {
         size: Godot.Vector2I,
         glyph: Int64
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        glyph.withGodotUnsafeRawPointer { __ptr_glyph in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_glyph_texture_size,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withTransferrableUnsafeRawPointer(to: glyph) { __ptr_glyph in
+                        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyph) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_font_get_glyph_texture_size,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_glyph_contours: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_glyph_contours").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_glyph_contours").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2903964473)!
         }
         }
@@ -2763,23 +3184,29 @@ open class TextServer: RefCounted {
         size: Int64,
         index: Int64
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        font.withGodotUnsafeRawPointer { __ptr_font in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        index.withGodotUnsafeRawPointer { __ptr_index in
-        withUnsafeArgumentPackPointer(__ptr_font, __ptr_size, __ptr_index) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_glyph_contours,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: font) { __ptr_font in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
+                        withUnsafeArgumentPackPointer(__ptr_font, __ptr_size, __ptr_index) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_font_get_glyph_contours,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_kerning_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_kerning_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_kerning_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1778388067)!
         }
         }
@@ -2789,22 +3216,27 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         size: Int64
     ) -> Godot.GodotArray<Godot.Vector2I> {
-        Godot.GodotArray<Godot.Vector2I> .fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_kerning_list,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_get_kerning_list,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_clear_kerning_map: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_clear_kerning_map").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_clear_kerning_map").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
         }
         }
@@ -2814,21 +3246,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         size: Int64
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_clear_kerning_map,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_clear_kerning_map,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_remove_kerning: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_remove_kerning").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_remove_kerning").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2141860016)!
         }
         }
@@ -2839,22 +3275,27 @@ open class TextServer: RefCounted {
         size: Int64,
         glyphPair: Godot.Vector2I
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        glyphPair.withGodotUnsafeRawPointer { __ptr_glyphPair in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyphPair) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_remove_kerning,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withTransferrableUnsafeRawPointer(to: glyphPair) { __ptr_glyphPair in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyphPair) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_remove_kerning,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_kerning: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_kerning").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_kerning").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3630965883)!
         }
         }
@@ -2866,23 +3307,29 @@ open class TextServer: RefCounted {
         glyphPair: Godot.Vector2I,
         kerning: Godot.Vector2
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        glyphPair.withGodotUnsafeRawPointer { __ptr_glyphPair in
-        kerning.withGodotUnsafeRawPointer { __ptr_kerning in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyphPair, __ptr_kerning) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_kerning,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withTransferrableUnsafeRawPointer(to: glyphPair) { __ptr_glyphPair in
+                    withTransferrableUnsafeRawPointer(to: kerning) { __ptr_kerning in
+                        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyphPair, __ptr_kerning) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_font_set_kerning,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    nil
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_kerning: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_kerning").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_kerning").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1019980169)!
         }
         }
@@ -2893,23 +3340,29 @@ open class TextServer: RefCounted {
         size: Int64,
         glyphPair: Godot.Vector2I
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        glyphPair.withGodotUnsafeRawPointer { __ptr_glyphPair in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyphPair) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_kerning,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withTransferrableUnsafeRawPointer(to: glyphPair) { __ptr_glyphPair in
+                        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyphPair) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_font_get_kerning,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_glyph_index: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_glyph_index").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_glyph_index").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1765635060)!
         }
         }
@@ -2921,24 +3374,31 @@ open class TextServer: RefCounted {
         char: Int64,
         variationSelector: Int64
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        char.withGodotUnsafeRawPointer { __ptr_char in
-        variationSelector.withGodotUnsafeRawPointer { __ptr_variationSelector in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_char, __ptr_variationSelector) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_glyph_index,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withTransferrableUnsafeRawPointer(to: char) { __ptr_char in
+                        withTransferrableUnsafeRawPointer(to: variationSelector) { __ptr_variationSelector in
+                            withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_char, __ptr_variationSelector) { __accessPtr in
+                                self.withUnsafeMutableRawPointer { __ptr_self in
+                                    GodotExtension.Interface.objectMethodBindPtrcall(
+                                        Self.__method_binding_font_get_glyph_index,
+                                        __ptr_self,
+                                        __accessPtr,
+                                        __temporary
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_char_from_glyph_index: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_char_from_glyph_index").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_char_from_glyph_index").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2156738276)!
         }
         }
@@ -2949,23 +3409,29 @@ open class TextServer: RefCounted {
         size: Int64,
         glyphIndex: Int64
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        glyphIndex.withGodotUnsafeRawPointer { __ptr_glyphIndex in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyphIndex) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_char_from_glyph_index,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withTransferrableUnsafeRawPointer(to: glyphIndex) { __ptr_glyphIndex in
+                        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_glyphIndex) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_font_get_char_from_glyph_index,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_has_char: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_has_char").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_has_char").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3120086654)!
         }
         }
@@ -2975,22 +3441,27 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         char: Int64
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        char.withGodotUnsafeRawPointer { __ptr_char in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_char) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_has_char,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: char) { __ptr_char in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_char) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_has_char,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_supported_chars: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_supported_chars").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_supported_chars").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 642473191)!
         }
         }
@@ -2999,21 +3470,25 @@ open class TextServer: RefCounted {
     public func fontGetSupportedChars(
         fontRID: Godot.RID
     ) -> Godot.GodotString {
-        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_supported_chars,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_supported_chars,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_render_range: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_render_range").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_render_range").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4254580980)!
         }
         }
@@ -3025,23 +3500,29 @@ open class TextServer: RefCounted {
         start: Int64,
         end: Int64
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        start.withGodotUnsafeRawPointer { __ptr_start in
-        end.withGodotUnsafeRawPointer { __ptr_end in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_start, __ptr_end) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_render_range,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withTransferrableUnsafeRawPointer(to: start) { __ptr_start in
+                    withTransferrableUnsafeRawPointer(to: end) { __ptr_end in
+                        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_start, __ptr_end) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_font_render_range,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    nil
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_render_glyph: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_render_glyph").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_render_glyph").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3810512262)!
         }
         }
@@ -3052,22 +3533,27 @@ open class TextServer: RefCounted {
         size: Godot.Vector2I,
         index: Int64
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        index.withGodotUnsafeRawPointer { __ptr_index in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_index) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_render_glyph,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_size, __ptr_index) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_render_glyph,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_draw_glyph: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_draw_glyph").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_draw_glyph").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1339057948)!
         }
         }
@@ -3081,25 +3567,33 @@ open class TextServer: RefCounted {
         index: Int64,
         color: Godot.Color = .white
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        canvas.withGodotUnsafeRawPointer { __ptr_canvas in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        pos.withGodotUnsafeRawPointer { __ptr_pos in
-        index.withGodotUnsafeRawPointer { __ptr_index in
-        color.withGodotUnsafeRawPointer { __ptr_color in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_canvas, __ptr_size, __ptr_pos, __ptr_index, __ptr_color) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_draw_glyph,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: canvas) { __ptr_canvas in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withTransferrableUnsafeRawPointer(to: pos) { __ptr_pos in
+                        withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
+                            withTransferrableUnsafeRawPointer(to: color) { __ptr_color in
+                                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_canvas, __ptr_size, __ptr_pos, __ptr_index, __ptr_color) { __accessPtr in
+                                    self.withUnsafeMutableRawPointer { __ptr_self in
+                                        GodotExtension.Interface.objectMethodBindPtrcall(
+                                            Self.__method_binding_font_draw_glyph,
+                                            __ptr_self,
+                                            __accessPtr,
+                                            nil
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_draw_glyph_outline: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_draw_glyph_outline").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_draw_glyph_outline").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2626165733)!
         }
         }
@@ -3114,26 +3608,35 @@ open class TextServer: RefCounted {
         index: Int64,
         color: Godot.Color = .white
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        canvas.withGodotUnsafeRawPointer { __ptr_canvas in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        outlineSize.withGodotUnsafeRawPointer { __ptr_outlineSize in
-        pos.withGodotUnsafeRawPointer { __ptr_pos in
-        index.withGodotUnsafeRawPointer { __ptr_index in
-        color.withGodotUnsafeRawPointer { __ptr_color in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_canvas, __ptr_size, __ptr_outlineSize, __ptr_pos, __ptr_index, __ptr_color) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_draw_glyph_outline,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: canvas) { __ptr_canvas in
+                withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                    withTransferrableUnsafeRawPointer(to: outlineSize) { __ptr_outlineSize in
+                        withTransferrableUnsafeRawPointer(to: pos) { __ptr_pos in
+                            withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
+                                withTransferrableUnsafeRawPointer(to: color) { __ptr_color in
+                                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_canvas, __ptr_size, __ptr_outlineSize, __ptr_pos, __ptr_index, __ptr_color) { __accessPtr in
+                                        self.withUnsafeMutableRawPointer { __ptr_self in
+                                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                                Self.__method_binding_font_draw_glyph_outline,
+                                                __ptr_self,
+                                                __accessPtr,
+                                                nil
+                                            )
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_is_language_supported: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_is_language_supported").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_is_language_supported").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3199320846)!
         }
         }
@@ -3143,22 +3646,27 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         language: Godot.GodotString
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        language.withGodotUnsafeRawPointer { __ptr_language in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_language) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_is_language_supported,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: language) { __ptr_language in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_language) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_is_language_supported,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_language_support_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_language_support_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_language_support_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2313957094)!
         }
         }
@@ -3169,22 +3677,27 @@ open class TextServer: RefCounted {
         language: Godot.GodotString,
         supported: Bool
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        language.withGodotUnsafeRawPointer { __ptr_language in
-        supported.withGodotUnsafeRawPointer { __ptr_supported in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_language, __ptr_supported) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_language_support_override,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: language) { __ptr_language in
+                withTransferrableUnsafeRawPointer(to: supported) { __ptr_supported in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_language, __ptr_supported) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_set_language_support_override,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_language_support_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_language_support_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_language_support_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2829184646)!
         }
         }
@@ -3194,22 +3707,27 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         language: Godot.GodotString
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        language.withGodotUnsafeRawPointer { __ptr_language in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_language) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_language_support_override,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: language) { __ptr_language in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_language) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_get_language_support_override,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_remove_language_support_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_remove_language_support_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_remove_language_support_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2726140452)!
         }
         }
@@ -3219,21 +3737,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         language: Godot.GodotString
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        language.withGodotUnsafeRawPointer { __ptr_language in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_language) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_remove_language_support_override,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: language) { __ptr_language in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_language) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_remove_language_support_override,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_language_support_overrides: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_language_support_overrides").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_language_support_overrides").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2801473409)!
         }
         }
@@ -3242,21 +3764,25 @@ open class TextServer: RefCounted {
     public func fontGetLanguageSupportOverrides(
         fontRID: Godot.RID
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_language_support_overrides,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_language_support_overrides,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_is_script_supported: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_is_script_supported").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_is_script_supported").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3199320846)!
         }
         }
@@ -3266,22 +3792,27 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         script: Godot.GodotString
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        script.withGodotUnsafeRawPointer { __ptr_script in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_script) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_is_script_supported,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: script) { __ptr_script in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_script) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_is_script_supported,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_script_support_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_script_support_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_script_support_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2313957094)!
         }
         }
@@ -3292,22 +3823,27 @@ open class TextServer: RefCounted {
         script: Godot.GodotString,
         supported: Bool
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        script.withGodotUnsafeRawPointer { __ptr_script in
-        supported.withGodotUnsafeRawPointer { __ptr_supported in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_script, __ptr_supported) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_script_support_override,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: script) { __ptr_script in
+                withTransferrableUnsafeRawPointer(to: supported) { __ptr_supported in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_script, __ptr_supported) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_set_script_support_override,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_script_support_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_script_support_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_script_support_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2829184646)!
         }
         }
@@ -3317,22 +3853,27 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         script: Godot.GodotString
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        script.withGodotUnsafeRawPointer { __ptr_script in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_script) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_script_support_override,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withTransferrableUnsafeRawPointer(to: script) { __ptr_script in
+                    withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_script) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_font_get_script_support_override,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_remove_script_support_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_remove_script_support_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_remove_script_support_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2726140452)!
         }
         }
@@ -3342,21 +3883,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         script: Godot.GodotString
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        script.withGodotUnsafeRawPointer { __ptr_script in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_script) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_remove_script_support_override,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: script) { __ptr_script in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_script) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_remove_script_support_override,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_script_support_overrides: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_script_support_overrides").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_script_support_overrides").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2801473409)!
         }
         }
@@ -3365,21 +3910,25 @@ open class TextServer: RefCounted {
     public func fontGetScriptSupportOverrides(
         fontRID: Godot.RID
     ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_script_support_overrides,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_script_support_overrides,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_set_opentype_feature_overrides: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_opentype_feature_overrides").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_opentype_feature_overrides").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1217542888)!
         }
         }
@@ -3389,21 +3938,25 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         overrides: Godot.GodotDictionary<Value1, Value2>
     ) {
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        overrides.withGodotUnsafeRawPointer { __ptr_overrides in
-        withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_overrides) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_opentype_feature_overrides,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+            withTransferrableUnsafeRawPointer(to: overrides) { __ptr_overrides in
+                withUnsafeArgumentPackPointer(__ptr_fontRID, __ptr_overrides) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_set_opentype_feature_overrides,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_opentype_feature_overrides: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_opentype_feature_overrides").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_opentype_feature_overrides").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1882737106)!
         }
         }
@@ -3412,21 +3965,25 @@ open class TextServer: RefCounted {
     public func fontGetOpentypeFeatureOverrides(
         fontRID: Godot.RID
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_opentype_feature_overrides,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_get_opentype_feature_overrides,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_supported_feature_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_supported_feature_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_supported_feature_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1882737106)!
         }
         }
@@ -3435,21 +3992,25 @@ open class TextServer: RefCounted {
     public func fontSupportedFeatureList(
         fontRID: Godot.RID
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_supported_feature_list,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_supported_feature_list,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_supported_variation_list: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_supported_variation_list").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_supported_variation_list").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1882737106)!
         }
         }
@@ -3458,40 +4019,46 @@ open class TextServer: RefCounted {
     public func fontSupportedVariationList(
         fontRID: Godot.RID
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        fontRID.withGodotUnsafeRawPointer { __ptr_fontRID in
-        withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_supported_variation_list,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
+                withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_font_supported_variation_list,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_font_get_global_oversampling: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_get_global_oversampling").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_get_global_oversampling").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
         }
         }
     }()
 
     public func fontGetGlobalOversampling() -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_get_global_oversampling,
-            __ptr_self,
-            nil,
-            __temporary
-        )}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            self.withUnsafeMutableRawPointer { __ptr_self in
+                GodotExtension.Interface.objectMethodBindPtrcall(
+                    Self.__method_binding_font_get_global_oversampling,
+                    __ptr_self,
+                    nil,
+                    __temporary
+                )
+            }
+        }
     }
 
     internal static var __method_binding_font_set_global_oversampling: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "font_set_global_oversampling").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "font_set_global_oversampling").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
         }
         }
@@ -3500,20 +4067,23 @@ open class TextServer: RefCounted {
     public func fontSetGlobalOversampling(
         _ oversampling: Double
     ) {
-        oversampling.withGodotUnsafeRawPointer { __ptr_oversampling in
-        withUnsafeArgumentPackPointer(__ptr_oversampling) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_font_set_global_oversampling,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: oversampling) { __ptr_oversampling in
+            withUnsafeArgumentPackPointer(__ptr_oversampling) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_font_set_global_oversampling,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_get_hex_code_box_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_hex_code_box_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_hex_code_box_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3016396712)!
         }
         }
@@ -3523,22 +4093,27 @@ open class TextServer: RefCounted {
         _ size: Int64,
         index: Int64
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        index.withGodotUnsafeRawPointer { __ptr_index in
-        withUnsafeArgumentPackPointer(__ptr_size, __ptr_index) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_get_hex_code_box_size,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
+                    withUnsafeArgumentPackPointer(__ptr_size, __ptr_index) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_get_hex_code_box_size,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_draw_hex_code_box: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_hex_code_box").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "draw_hex_code_box").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602046441)!
         }
         }
@@ -3551,24 +4126,31 @@ open class TextServer: RefCounted {
         index: Int64,
         color: Godot.Color
     ) {
-        canvas.withGodotUnsafeRawPointer { __ptr_canvas in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        pos.withGodotUnsafeRawPointer { __ptr_pos in
-        index.withGodotUnsafeRawPointer { __ptr_index in
-        color.withGodotUnsafeRawPointer { __ptr_color in
-        withUnsafeArgumentPackPointer(__ptr_canvas, __ptr_size, __ptr_pos, __ptr_index, __ptr_color) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_draw_hex_code_box,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}}
+        withTransferrableUnsafeRawPointer(to: canvas) { __ptr_canvas in
+            withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                withTransferrableUnsafeRawPointer(to: pos) { __ptr_pos in
+                    withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
+                        withTransferrableUnsafeRawPointer(to: color) { __ptr_color in
+                            withUnsafeArgumentPackPointer(__ptr_canvas, __ptr_size, __ptr_pos, __ptr_index, __ptr_color) { __accessPtr in
+                                self.withUnsafeMutableRawPointer { __ptr_self in
+                                    GodotExtension.Interface.objectMethodBindPtrcall(
+                                        Self.__method_binding_draw_hex_code_box,
+                                        __ptr_self,
+                                        __accessPtr,
+                                        nil
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_create_shaped_text: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_shaped_text").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "create_shaped_text").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1231398698)!
         }
         }
@@ -3578,22 +4160,27 @@ open class TextServer: RefCounted {
         direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!,
         orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!
     ) -> Godot.RID {
-        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        direction.withGodotUnsafeRawPointer { __ptr_direction in
-        orientation.withGodotUnsafeRawPointer { __ptr_orientation in
-        withUnsafeArgumentPackPointer(__ptr_direction, __ptr_orientation) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_create_shaped_text,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: direction) { __ptr_direction in
+                withTransferrableUnsafeRawPointer(to: orientation) { __ptr_orientation in
+                    withUnsafeArgumentPackPointer(__ptr_direction, __ptr_orientation) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_create_shaped_text,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_clear: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_clear").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_clear").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
         }
         }
@@ -3602,20 +4189,23 @@ open class TextServer: RefCounted {
     public func shapedTextClear(
         rid: Godot.RID
     ) {
-        rid.withGodotUnsafeRawPointer { __ptr_rid in
-        withUnsafeArgumentPackPointer(__ptr_rid) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_clear,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}
+        withTransferrableUnsafeRawPointer(to: rid) { __ptr_rid in
+            withUnsafeArgumentPackPointer(__ptr_rid) { __accessPtr in
+                self.withUnsafeMutableRawPointer { __ptr_self in
+                    GodotExtension.Interface.objectMethodBindPtrcall(
+                        Self.__method_binding_shaped_text_clear,
+                        __ptr_self,
+                        __accessPtr,
+                        nil
+                    )
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_set_direction: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_set_direction").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_set_direction").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1551430183)!
         }
         }
@@ -3625,21 +4215,25 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         direction: Godot.TextServer.Direction = TextServer.Direction(rawValue: 0)!
     ) {
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        direction.withGodotUnsafeRawPointer { __ptr_direction in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_direction) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_set_direction,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+            withTransferrableUnsafeRawPointer(to: direction) { __ptr_direction in
+                withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_direction) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_set_direction,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_direction: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_direction").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_direction").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3065904362)!
         }
         }
@@ -3648,21 +4242,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetDirection(
         shaped: Godot.RID
     ) -> Godot.TextServer.Direction {
-        Godot.TextServer.Direction.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_direction,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_direction,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_inferred_direction: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_inferred_direction").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_inferred_direction").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3065904362)!
         }
         }
@@ -3671,21 +4269,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetInferredDirection(
         shaped: Godot.RID
     ) -> Godot.TextServer.Direction {
-        Godot.TextServer.Direction.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_inferred_direction,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_inferred_direction,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_set_bidi_override: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_set_bidi_override").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_set_bidi_override").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 684822712)!
         }
         }
@@ -3695,21 +4297,25 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         override: Godot.GodotArray<Value>
     ) {
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        override.withGodotUnsafeRawPointer { __ptr_override in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_override) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_set_bidi_override,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+            withTransferrableUnsafeRawPointer(to: override) { __ptr_override in
+                withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_override) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_set_bidi_override,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_set_custom_punctuation: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_set_custom_punctuation").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_set_custom_punctuation").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2726140452)!
         }
         }
@@ -3719,21 +4325,25 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         punct: Godot.GodotString
     ) {
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        punct.withGodotUnsafeRawPointer { __ptr_punct in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_punct) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_set_custom_punctuation,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+            withTransferrableUnsafeRawPointer(to: punct) { __ptr_punct in
+                withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_punct) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_set_custom_punctuation,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_custom_punctuation: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_custom_punctuation").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_custom_punctuation").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 642473191)!
         }
         }
@@ -3742,21 +4352,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetCustomPunctuation(
         shaped: Godot.RID
     ) -> Godot.GodotString {
-        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_custom_punctuation,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_custom_punctuation,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_set_orientation: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_set_orientation").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_set_orientation").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3019609126)!
         }
         }
@@ -3766,21 +4380,25 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         orientation: Godot.TextServer.Orientation = TextServer.Orientation(rawValue: 0)!
     ) {
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        orientation.withGodotUnsafeRawPointer { __ptr_orientation in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_orientation) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_set_orientation,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+            withTransferrableUnsafeRawPointer(to: orientation) { __ptr_orientation in
+                withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_orientation) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_set_orientation,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_orientation: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_orientation").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_orientation").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3142708106)!
         }
         }
@@ -3789,21 +4407,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetOrientation(
         shaped: Godot.RID
     ) -> Godot.TextServer.Orientation {
-        Godot.TextServer.Orientation.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_orientation,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_orientation,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_set_preserve_invalid: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_set_preserve_invalid").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_set_preserve_invalid").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
         }
         }
@@ -3813,21 +4435,25 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         enabled: Bool
     ) {
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        enabled.withGodotUnsafeRawPointer { __ptr_enabled in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_enabled) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_set_preserve_invalid,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+            withTransferrableUnsafeRawPointer(to: enabled) { __ptr_enabled in
+                withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_enabled) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_set_preserve_invalid,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_preserve_invalid: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_preserve_invalid").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_preserve_invalid").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
         }
         }
@@ -3836,21 +4462,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetPreserveInvalid(
         shaped: Godot.RID
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_preserve_invalid,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_preserve_invalid,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_set_preserve_control: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_set_preserve_control").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_set_preserve_control").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
         }
         }
@@ -3860,21 +4490,25 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         enabled: Bool
     ) {
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        enabled.withGodotUnsafeRawPointer { __ptr_enabled in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_enabled) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_set_preserve_control,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}
+        withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+            withTransferrableUnsafeRawPointer(to: enabled) { __ptr_enabled in
+                withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_enabled) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_set_preserve_control,
+                            __ptr_self,
+                            __accessPtr,
+                            nil
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_preserve_control: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_preserve_control").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_preserve_control").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
         }
         }
@@ -3883,21 +4517,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetPreserveControl(
         shaped: Godot.RID
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_preserve_control,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_preserve_control,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_set_spacing: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_set_spacing").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_set_spacing").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1307259930)!
         }
         }
@@ -3908,22 +4546,27 @@ open class TextServer: RefCounted {
         spacing: Godot.TextServer.SpacingType,
         value: Int64
     ) {
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        spacing.withGodotUnsafeRawPointer { __ptr_spacing in
-        value.withGodotUnsafeRawPointer { __ptr_value in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_spacing, __ptr_value) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_set_spacing,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+            withTransferrableUnsafeRawPointer(to: spacing) { __ptr_spacing in
+                withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
+                    withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_spacing, __ptr_value) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_shaped_text_set_spacing,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_spacing: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_spacing").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_spacing").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1213653558)!
         }
         }
@@ -3933,22 +4576,27 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         spacing: Godot.TextServer.SpacingType
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        spacing.withGodotUnsafeRawPointer { __ptr_spacing in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_spacing) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_spacing,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withTransferrableUnsafeRawPointer(to: spacing) { __ptr_spacing in
+                    withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_spacing) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_shaped_text_get_spacing,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_add_string: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_add_string").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_add_string").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 623473029)!
         }
         }
@@ -3963,27 +4611,37 @@ open class TextServer: RefCounted {
         language: Godot.GodotString = "",
         meta: Value3 = Variant()
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        text.withGodotUnsafeRawPointer { __ptr_text in
-        fonts.withGodotUnsafeRawPointer { __ptr_fonts in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        opentypeFeatures.withGodotUnsafeRawPointer { __ptr_opentypeFeatures in
-        language.withGodotUnsafeRawPointer { __ptr_language in
-        Godot.Variant.withStorageUnsafeRawPointer(to: meta) { __ptr_meta in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_text, __ptr_fonts, __ptr_size, __ptr_opentypeFeatures, __ptr_language, __ptr_meta) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_add_string,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withTransferrableUnsafeRawPointer(to: text) { __ptr_text in
+                    withTransferrableUnsafeRawPointer(to: fonts) { __ptr_fonts in
+                        withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                            withTransferrableUnsafeRawPointer(to: opentypeFeatures) { __ptr_opentypeFeatures in
+                                withTransferrableUnsafeRawPointer(to: language) { __ptr_language in
+                                    Godot.Variant.withStorageUnsafeRawPointer(to: meta) { __ptr_meta in
+                                        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_text, __ptr_fonts, __ptr_size, __ptr_opentypeFeatures, __ptr_language, __ptr_meta) { __accessPtr in
+                                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                                    Self.__method_binding_shaped_text_add_string,
+                                                    __ptr_self,
+                                                    __accessPtr,
+                                                    __temporary
+                                                )
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_add_object: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_add_object").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_add_object").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3664424789)!
         }
         }
@@ -3997,26 +4655,35 @@ open class TextServer: RefCounted {
         length: Int64 = 1,
         baseline: Double = 0.0
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        Godot.Variant.withStorageUnsafeRawPointer(to: key) { __ptr_key in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        inlineAlign.withGodotUnsafeRawPointer { __ptr_inlineAlign in
-        length.withGodotUnsafeRawPointer { __ptr_length in
-        baseline.withGodotUnsafeRawPointer { __ptr_baseline in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_key, __ptr_size, __ptr_inlineAlign, __ptr_length, __ptr_baseline) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_add_object,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                Godot.Variant.withStorageUnsafeRawPointer(to: key) { __ptr_key in
+                    withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                        withTransferrableUnsafeRawPointer(to: inlineAlign) { __ptr_inlineAlign in
+                            withTransferrableUnsafeRawPointer(to: length) { __ptr_length in
+                                withTransferrableUnsafeRawPointer(to: baseline) { __ptr_baseline in
+                                    withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_key, __ptr_size, __ptr_inlineAlign, __ptr_length, __ptr_baseline) { __accessPtr in
+                                        self.withUnsafeMutableRawPointer { __ptr_self in
+                                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                                Self.__method_binding_shaped_text_add_object,
+                                                __ptr_self,
+                                                __accessPtr,
+                                                __temporary
+                                            )
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_resize_object: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_resize_object").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_resize_object").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 790361552)!
         }
         }
@@ -4029,25 +4696,33 @@ open class TextServer: RefCounted {
         inlineAlign: Godot.InlineAlignment = InlineAlignment(rawValue: 5)!,
         baseline: Double = 0.0
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        Godot.Variant.withStorageUnsafeRawPointer(to: key) { __ptr_key in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        inlineAlign.withGodotUnsafeRawPointer { __ptr_inlineAlign in
-        baseline.withGodotUnsafeRawPointer { __ptr_baseline in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_key, __ptr_size, __ptr_inlineAlign, __ptr_baseline) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_resize_object,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                Godot.Variant.withStorageUnsafeRawPointer(to: key) { __ptr_key in
+                    withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                        withTransferrableUnsafeRawPointer(to: inlineAlign) { __ptr_inlineAlign in
+                            withTransferrableUnsafeRawPointer(to: baseline) { __ptr_baseline in
+                                withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_key, __ptr_size, __ptr_inlineAlign, __ptr_baseline) { __accessPtr in
+                                    self.withUnsafeMutableRawPointer { __ptr_self in
+                                        GodotExtension.Interface.objectMethodBindPtrcall(
+                                            Self.__method_binding_shaped_text_resize_object,
+                                            __ptr_self,
+                                            __accessPtr,
+                                            __temporary
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_get_span_count: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_get_span_count").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_get_span_count").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -4056,21 +4731,25 @@ open class TextServer: RefCounted {
     public func shapedGetSpanCount(
         shaped: Godot.RID
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_get_span_count,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_get_span_count,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_get_span_meta: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_get_span_meta").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_get_span_meta").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4069510997)!
         }
         }
@@ -4080,22 +4759,27 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         index: Int64
     ) -> Godot.Variant {
-        Godot.Variant.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        index.withGodotUnsafeRawPointer { __ptr_index in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_index) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_get_span_meta,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
+                    withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_index) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_shaped_get_span_meta,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_set_span_update_font: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_set_span_update_font").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_set_span_update_font").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2022725822)!
         }
         }
@@ -4108,24 +4792,31 @@ open class TextServer: RefCounted {
         size: Int64,
         opentypeFeatures: Godot.GodotDictionary<Value1, Value2> = [:]
     ) {
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        index.withGodotUnsafeRawPointer { __ptr_index in
-        fonts.withGodotUnsafeRawPointer { __ptr_fonts in
-        size.withGodotUnsafeRawPointer { __ptr_size in
-        opentypeFeatures.withGodotUnsafeRawPointer { __ptr_opentypeFeatures in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_index, __ptr_fonts, __ptr_size, __ptr_opentypeFeatures) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_set_span_update_font,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}}
+        withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+            withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
+                withTransferrableUnsafeRawPointer(to: fonts) { __ptr_fonts in
+                    withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
+                        withTransferrableUnsafeRawPointer(to: opentypeFeatures) { __ptr_opentypeFeatures in
+                            withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_index, __ptr_fonts, __ptr_size, __ptr_opentypeFeatures) { __accessPtr in
+                                self.withUnsafeMutableRawPointer { __ptr_self in
+                                    GodotExtension.Interface.objectMethodBindPtrcall(
+                                        Self.__method_binding_shaped_set_span_update_font,
+                                        __ptr_self,
+                                        __accessPtr,
+                                        nil
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_substr: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_substr").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_substr").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1937682086)!
         }
         }
@@ -4136,23 +4827,29 @@ open class TextServer: RefCounted {
         start: Int64,
         length: Int64
     ) -> Godot.RID {
-        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        start.withGodotUnsafeRawPointer { __ptr_start in
-        length.withGodotUnsafeRawPointer { __ptr_length in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_start, __ptr_length) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_substr,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withTransferrableUnsafeRawPointer(to: start) { __ptr_start in
+                    withTransferrableUnsafeRawPointer(to: length) { __ptr_length in
+                        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_start, __ptr_length) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_shaped_text_substr,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_parent: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_parent").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_parent").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814569979)!
         }
         }
@@ -4161,21 +4858,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetParent(
         shaped: Godot.RID
     ) -> Godot.RID {
-        Godot.RID.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_parent,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_parent,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_fit_to_width: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_fit_to_width").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_fit_to_width").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 530670926)!
         }
         }
@@ -4186,23 +4887,29 @@ open class TextServer: RefCounted {
         width: Double,
         justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 3)
     ) -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        width.withGodotUnsafeRawPointer { __ptr_width in
-        justificationFlags.withGodotUnsafeRawPointer { __ptr_justificationFlags in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_width, __ptr_justificationFlags) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_fit_to_width,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withTransferrableUnsafeRawPointer(to: width) { __ptr_width in
+                    withTransferrableUnsafeRawPointer(to: justificationFlags) { __ptr_justificationFlags in
+                        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_width, __ptr_justificationFlags) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_shaped_text_fit_to_width,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_tab_align: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_tab_align").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_tab_align").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1283669550)!
         }
         }
@@ -4212,22 +4919,27 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         tabStops: Godot.PackedFloat32Array
     ) -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        tabStops.withGodotUnsafeRawPointer { __ptr_tabStops in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_tabStops) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_tab_align,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withTransferrableUnsafeRawPointer(to: tabStops) { __ptr_tabStops in
+                    withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_tabStops) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_shaped_text_tab_align,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_shape: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_shape").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_shape").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3521089500)!
         }
         }
@@ -4236,21 +4948,25 @@ open class TextServer: RefCounted {
     public func shapedTextShape(
         shaped: Godot.RID
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_shape,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_shape,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_is_ready: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_is_ready").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_is_ready").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
         }
         }
@@ -4259,21 +4975,25 @@ open class TextServer: RefCounted {
     public func shapedTextIsReady(
         shaped: Godot.RID
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_is_ready,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_is_ready,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_has_visible_chars: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_has_visible_chars").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_has_visible_chars").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
         }
         }
@@ -4282,21 +5002,25 @@ open class TextServer: RefCounted {
     public func shapedTextHasVisibleChars(
         shaped: Godot.RID
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_has_visible_chars,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_has_visible_chars,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_glyphs: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_glyphs").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_glyphs").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2684255073)!
         }
         }
@@ -4305,21 +5029,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetGlyphs(
         shaped: Godot.RID
     ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_glyphs,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_glyphs,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_sort_logical: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_sort_logical").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_sort_logical").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2670461153)!
         }
         }
@@ -4328,21 +5056,25 @@ open class TextServer: RefCounted {
     public func shapedTextSortLogical(
         shaped: Godot.RID
     ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_sort_logical,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_sort_logical,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_glyph_count: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_glyph_count").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_glyph_count").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -4351,21 +5083,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetGlyphCount(
         shaped: Godot.RID
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_glyph_count,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_glyph_count,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_range: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_range").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_range").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 733700038)!
         }
         }
@@ -4374,21 +5110,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetRange(
         shaped: Godot.RID
     ) -> Godot.Vector2I {
-        Godot.Vector2I.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_range,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_range,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_line_breaks_adv: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_line_breaks_adv").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_line_breaks_adv").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2376991424)!
         }
         }
@@ -4401,25 +5141,33 @@ open class TextServer: RefCounted {
         once: Bool = true,
         breakFlags: Godot.TextServer.LineBreakFlag = TextServer.LineBreakFlag(rawValue: 3)
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        width.withGodotUnsafeRawPointer { __ptr_width in
-        start.withGodotUnsafeRawPointer { __ptr_start in
-        once.withGodotUnsafeRawPointer { __ptr_once in
-        breakFlags.withGodotUnsafeRawPointer { __ptr_breakFlags in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_width, __ptr_start, __ptr_once, __ptr_breakFlags) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_line_breaks_adv,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withTransferrableUnsafeRawPointer(to: width) { __ptr_width in
+                    withTransferrableUnsafeRawPointer(to: start) { __ptr_start in
+                        withTransferrableUnsafeRawPointer(to: once) { __ptr_once in
+                            withTransferrableUnsafeRawPointer(to: breakFlags) { __ptr_breakFlags in
+                                withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_width, __ptr_start, __ptr_once, __ptr_breakFlags) { __accessPtr in
+                                    self.withUnsafeMutableRawPointer { __ptr_self in
+                                        GodotExtension.Interface.objectMethodBindPtrcall(
+                                            Self.__method_binding_shaped_text_get_line_breaks_adv,
+                                            __ptr_self,
+                                            __accessPtr,
+                                            __temporary
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_line_breaks: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_line_breaks").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_line_breaks").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2651359741)!
         }
         }
@@ -4431,24 +5179,31 @@ open class TextServer: RefCounted {
         start: Int64 = 0,
         breakFlags: Godot.TextServer.LineBreakFlag = TextServer.LineBreakFlag(rawValue: 3)
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        width.withGodotUnsafeRawPointer { __ptr_width in
-        start.withGodotUnsafeRawPointer { __ptr_start in
-        breakFlags.withGodotUnsafeRawPointer { __ptr_breakFlags in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_width, __ptr_start, __ptr_breakFlags) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_line_breaks,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withTransferrableUnsafeRawPointer(to: width) { __ptr_width in
+                    withTransferrableUnsafeRawPointer(to: start) { __ptr_start in
+                        withTransferrableUnsafeRawPointer(to: breakFlags) { __ptr_breakFlags in
+                            withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_width, __ptr_start, __ptr_breakFlags) { __accessPtr in
+                                self.withUnsafeMutableRawPointer { __ptr_self in
+                                    GodotExtension.Interface.objectMethodBindPtrcall(
+                                        Self.__method_binding_shaped_text_get_line_breaks,
+                                        __ptr_self,
+                                        __accessPtr,
+                                        __temporary
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_word_breaks: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_word_breaks").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_word_breaks").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 185957063)!
         }
         }
@@ -4458,22 +5213,27 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         graphemeFlags: Godot.TextServer.GraphemeFlag = TextServer.GraphemeFlag(rawValue: 264)
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        graphemeFlags.withGodotUnsafeRawPointer { __ptr_graphemeFlags in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_graphemeFlags) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_word_breaks,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withTransferrableUnsafeRawPointer(to: graphemeFlags) { __ptr_graphemeFlags in
+                    withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_graphemeFlags) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_shaped_text_get_word_breaks,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_trim_pos: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_trim_pos").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_trim_pos").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -4482,21 +5242,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetTrimPos(
         shaped: Godot.RID
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_trim_pos,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_trim_pos,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_ellipsis_pos: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_ellipsis_pos").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_ellipsis_pos").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -4505,21 +5269,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetEllipsisPos(
         shaped: Godot.RID
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_ellipsis_pos,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_ellipsis_pos,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_ellipsis_glyphs: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_ellipsis_glyphs").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_ellipsis_glyphs").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2684255073)!
         }
         }
@@ -4528,21 +5296,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetEllipsisGlyphs(
         shaped: Godot.RID
     ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
-        Godot.GodotArray<Godot.AnyGodotDictionary> .fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_ellipsis_glyphs,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_ellipsis_glyphs,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_ellipsis_glyph_count: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_ellipsis_glyph_count").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_ellipsis_glyph_count").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
         }
         }
@@ -4551,21 +5323,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetEllipsisGlyphCount(
         shaped: Godot.RID
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_ellipsis_glyph_count,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_ellipsis_glyph_count,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_overrun_trim_to_width: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_overrun_trim_to_width").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_overrun_trim_to_width").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2723146520)!
         }
         }
@@ -4576,22 +5352,27 @@ open class TextServer: RefCounted {
         width: Double = 0,
         overrunTrimFlags: Godot.TextServer.TextOverrunFlag = TextServer.TextOverrunFlag(rawValue: 0)
     ) {
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        width.withGodotUnsafeRawPointer { __ptr_width in
-        overrunTrimFlags.withGodotUnsafeRawPointer { __ptr_overrunTrimFlags in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_width, __ptr_overrunTrimFlags) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_overrun_trim_to_width,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}
+        withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+            withTransferrableUnsafeRawPointer(to: width) { __ptr_width in
+                withTransferrableUnsafeRawPointer(to: overrunTrimFlags) { __ptr_overrunTrimFlags in
+                    withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_width, __ptr_overrunTrimFlags) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_shaped_text_overrun_trim_to_width,
+                                __ptr_self,
+                                __accessPtr,
+                                nil
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_objects: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_objects").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_objects").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2684255073)!
         }
         }
@@ -4600,21 +5381,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetObjects(
         shaped: Godot.RID
     ) -> Godot.AnyGodotArray {
-        Godot.AnyGodotArray.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_objects,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_objects,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_object_rect: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_object_rect").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_object_rect").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 447978354)!
         }
         }
@@ -4624,22 +5409,27 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         key: Value
     ) -> Godot.Rect2 {
-        Godot.Rect2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        Godot.Variant.withStorageUnsafeRawPointer(to: key) { __ptr_key in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_key) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_object_rect,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                Godot.Variant.withStorageUnsafeRawPointer(to: key) { __ptr_key in
+                    withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_key) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_shaped_text_get_object_rect,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_size: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_size").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_size").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2440833711)!
         }
         }
@@ -4648,21 +5438,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetSize(
         shaped: Godot.RID
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_size,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_size,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_ascent: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_ascent").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_ascent").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
         }
         }
@@ -4671,21 +5465,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetAscent(
         shaped: Godot.RID
     ) -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_ascent,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_ascent,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_descent: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_descent").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_descent").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
         }
         }
@@ -4694,21 +5492,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetDescent(
         shaped: Godot.RID
     ) -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_descent,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_descent,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_width: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_width").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_width").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
         }
         }
@@ -4717,21 +5519,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetWidth(
         shaped: Godot.RID
     ) -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_width,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_width,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_underline_position: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_underline_position").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_underline_position").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
         }
         }
@@ -4740,21 +5546,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetUnderlinePosition(
         shaped: Godot.RID
     ) -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_underline_position,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_underline_position,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_underline_thickness: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_underline_thickness").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_underline_thickness").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
         }
         }
@@ -4763,21 +5573,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetUnderlineThickness(
         shaped: Godot.RID
     ) -> Double {
-        Double.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_underline_thickness,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_underline_thickness,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_carets: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_carets").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_carets").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1574219346)!
         }
         }
@@ -4787,22 +5601,27 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         position: Int64
     ) -> Godot.AnyGodotDictionary {
-        Godot.AnyGodotDictionary.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        position.withGodotUnsafeRawPointer { __ptr_position in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_position) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_carets,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withTransferrableUnsafeRawPointer(to: position) { __ptr_position in
+                    withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_position) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_shaped_text_get_carets,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_selection: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_selection").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_selection").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3714187733)!
         }
         }
@@ -4813,23 +5632,29 @@ open class TextServer: RefCounted {
         start: Int64,
         end: Int64
     ) -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        start.withGodotUnsafeRawPointer { __ptr_start in
-        end.withGodotUnsafeRawPointer { __ptr_end in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_start, __ptr_end) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_selection,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withTransferrableUnsafeRawPointer(to: start) { __ptr_start in
+                    withTransferrableUnsafeRawPointer(to: end) { __ptr_end in
+                        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_start, __ptr_end) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_shaped_text_get_selection,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_hit_test_grapheme: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_hit_test_grapheme").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_hit_test_grapheme").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3149310417)!
         }
         }
@@ -4839,22 +5664,27 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         coords: Double
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        coords.withGodotUnsafeRawPointer { __ptr_coords in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_coords) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_hit_test_grapheme,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withTransferrableUnsafeRawPointer(to: coords) { __ptr_coords in
+                    withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_coords) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_shaped_text_hit_test_grapheme,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_hit_test_position: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_hit_test_position").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_hit_test_position").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3149310417)!
         }
         }
@@ -4864,22 +5694,27 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         coords: Double
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        coords.withGodotUnsafeRawPointer { __ptr_coords in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_coords) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_hit_test_position,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withTransferrableUnsafeRawPointer(to: coords) { __ptr_coords in
+                    withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_coords) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_shaped_text_hit_test_position,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_grapheme_bounds: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_grapheme_bounds").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_grapheme_bounds").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2546185844)!
         }
         }
@@ -4889,22 +5724,27 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         pos: Int64
     ) -> Godot.Vector2 {
-        Godot.Vector2.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        pos.withGodotUnsafeRawPointer { __ptr_pos in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_pos) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_grapheme_bounds,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withTransferrableUnsafeRawPointer(to: pos) { __ptr_pos in
+                    withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_pos) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_shaped_text_get_grapheme_bounds,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_next_grapheme_pos: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_next_grapheme_pos").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_next_grapheme_pos").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1120910005)!
         }
         }
@@ -4914,22 +5754,27 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         pos: Int64
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        pos.withGodotUnsafeRawPointer { __ptr_pos in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_pos) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_next_grapheme_pos,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withTransferrableUnsafeRawPointer(to: pos) { __ptr_pos in
+                    withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_pos) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_shaped_text_next_grapheme_pos,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_prev_grapheme_pos: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_prev_grapheme_pos").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_prev_grapheme_pos").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1120910005)!
         }
         }
@@ -4939,22 +5784,27 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         pos: Int64
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        pos.withGodotUnsafeRawPointer { __ptr_pos in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_pos) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_prev_grapheme_pos,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withTransferrableUnsafeRawPointer(to: pos) { __ptr_pos in
+                    withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_pos) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_shaped_text_prev_grapheme_pos,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_character_breaks: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_character_breaks").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_character_breaks").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 788230395)!
         }
         }
@@ -4963,21 +5813,25 @@ open class TextServer: RefCounted {
     public func shapedTextGetCharacterBreaks(
         shaped: Godot.RID
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_character_breaks,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_shaped_text_get_character_breaks,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_next_character_pos: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_next_character_pos").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_next_character_pos").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1120910005)!
         }
         }
@@ -4987,22 +5841,27 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         pos: Int64
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        pos.withGodotUnsafeRawPointer { __ptr_pos in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_pos) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_next_character_pos,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withTransferrableUnsafeRawPointer(to: pos) { __ptr_pos in
+                    withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_pos) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_shaped_text_next_character_pos,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_prev_character_pos: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_prev_character_pos").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_prev_character_pos").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1120910005)!
         }
         }
@@ -5012,22 +5871,27 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         pos: Int64
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        pos.withGodotUnsafeRawPointer { __ptr_pos in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_pos) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_prev_character_pos,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withTransferrableUnsafeRawPointer(to: pos) { __ptr_pos in
+                    withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_pos) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_shaped_text_prev_character_pos,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_closest_character_pos: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_closest_character_pos").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_closest_character_pos").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1120910005)!
         }
         }
@@ -5037,22 +5901,27 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         pos: Int64
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        pos.withGodotUnsafeRawPointer { __ptr_pos in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_pos) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_closest_character_pos,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withTransferrableUnsafeRawPointer(to: pos) { __ptr_pos in
+                    withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_pos) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_shaped_text_closest_character_pos,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_draw: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_draw").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_draw").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 880389142)!
         }
         }
@@ -5066,25 +5935,33 @@ open class TextServer: RefCounted {
         clipR: Double = -1,
         color: Godot.Color = .white
     ) {
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        canvas.withGodotUnsafeRawPointer { __ptr_canvas in
-        pos.withGodotUnsafeRawPointer { __ptr_pos in
-        clipL.withGodotUnsafeRawPointer { __ptr_clipL in
-        clipR.withGodotUnsafeRawPointer { __ptr_clipR in
-        color.withGodotUnsafeRawPointer { __ptr_color in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_canvas, __ptr_pos, __ptr_clipL, __ptr_clipR, __ptr_color) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_draw,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}}}
+        withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+            withTransferrableUnsafeRawPointer(to: canvas) { __ptr_canvas in
+                withTransferrableUnsafeRawPointer(to: pos) { __ptr_pos in
+                    withTransferrableUnsafeRawPointer(to: clipL) { __ptr_clipL in
+                        withTransferrableUnsafeRawPointer(to: clipR) { __ptr_clipR in
+                            withTransferrableUnsafeRawPointer(to: color) { __ptr_color in
+                                withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_canvas, __ptr_pos, __ptr_clipL, __ptr_clipR, __ptr_color) { __accessPtr in
+                                    self.withUnsafeMutableRawPointer { __ptr_self in
+                                        GodotExtension.Interface.objectMethodBindPtrcall(
+                                            Self.__method_binding_shaped_text_draw,
+                                            __ptr_self,
+                                            __accessPtr,
+                                            nil
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_draw_outline: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_draw_outline").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_draw_outline").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2559184194)!
         }
         }
@@ -5099,26 +5976,35 @@ open class TextServer: RefCounted {
         outlineSize: Int64 = 1,
         color: Godot.Color = .white
     ) {
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        canvas.withGodotUnsafeRawPointer { __ptr_canvas in
-        pos.withGodotUnsafeRawPointer { __ptr_pos in
-        clipL.withGodotUnsafeRawPointer { __ptr_clipL in
-        clipR.withGodotUnsafeRawPointer { __ptr_clipR in
-        outlineSize.withGodotUnsafeRawPointer { __ptr_outlineSize in
-        color.withGodotUnsafeRawPointer { __ptr_color in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_canvas, __ptr_pos, __ptr_clipL, __ptr_clipR, __ptr_outlineSize, __ptr_color) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_draw_outline,
-            __ptr_self,
-            __accessPtr,
-            nil
-        )}}}}}}}}}
+        withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+            withTransferrableUnsafeRawPointer(to: canvas) { __ptr_canvas in
+                withTransferrableUnsafeRawPointer(to: pos) { __ptr_pos in
+                    withTransferrableUnsafeRawPointer(to: clipL) { __ptr_clipL in
+                        withTransferrableUnsafeRawPointer(to: clipR) { __ptr_clipR in
+                            withTransferrableUnsafeRawPointer(to: outlineSize) { __ptr_outlineSize in
+                                withTransferrableUnsafeRawPointer(to: color) { __ptr_color in
+                                    withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_canvas, __ptr_pos, __ptr_clipL, __ptr_clipR, __ptr_outlineSize, __ptr_color) { __accessPtr in
+                                        self.withUnsafeMutableRawPointer { __ptr_self in
+                                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                                Self.__method_binding_shaped_text_draw_outline,
+                                                __ptr_self,
+                                                __accessPtr,
+                                                nil
+                                            )
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_shaped_text_get_dominant_direction_in_range: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shaped_text_get_dominant_direction_in_range").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "shaped_text_get_dominant_direction_in_range").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3326907668)!
         }
         }
@@ -5129,23 +6015,29 @@ open class TextServer: RefCounted {
         start: Int64,
         end: Int64
     ) -> Godot.TextServer.Direction {
-        Godot.TextServer.Direction.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        shaped.withGodotUnsafeRawPointer { __ptr_shaped in
-        start.withGodotUnsafeRawPointer { __ptr_start in
-        end.withGodotUnsafeRawPointer { __ptr_end in
-        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_start, __ptr_end) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_shaped_text_get_dominant_direction_in_range,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
+                withTransferrableUnsafeRawPointer(to: start) { __ptr_start in
+                    withTransferrableUnsafeRawPointer(to: end) { __ptr_end in
+                        withUnsafeArgumentPackPointer(__ptr_shaped, __ptr_start, __ptr_end) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_shaped_text_get_dominant_direction_in_range,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_format_number: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "format_number").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "format_number").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2664628024)!
         }
         }
@@ -5155,22 +6047,27 @@ open class TextServer: RefCounted {
         _ number: Godot.GodotString,
         language: Godot.GodotString = ""
     ) -> Godot.GodotString {
-        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        number.withGodotUnsafeRawPointer { __ptr_number in
-        language.withGodotUnsafeRawPointer { __ptr_language in
-        withUnsafeArgumentPackPointer(__ptr_number, __ptr_language) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_format_number,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: number) { __ptr_number in
+                withTransferrableUnsafeRawPointer(to: language) { __ptr_language in
+                    withUnsafeArgumentPackPointer(__ptr_number, __ptr_language) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_format_number,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_parse_number: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "parse_number").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "parse_number").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2664628024)!
         }
         }
@@ -5180,22 +6077,27 @@ open class TextServer: RefCounted {
         _ number: Godot.GodotString,
         language: Godot.GodotString = ""
     ) -> Godot.GodotString {
-        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        number.withGodotUnsafeRawPointer { __ptr_number in
-        language.withGodotUnsafeRawPointer { __ptr_language in
-        withUnsafeArgumentPackPointer(__ptr_number, __ptr_language) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_parse_number,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: number) { __ptr_number in
+                withTransferrableUnsafeRawPointer(to: language) { __ptr_language in
+                    withUnsafeArgumentPackPointer(__ptr_number, __ptr_language) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_parse_number,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_percent_sign: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "percent_sign").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "percent_sign").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 993269549)!
         }
         }
@@ -5204,21 +6106,25 @@ open class TextServer: RefCounted {
     public func percentSign(
         language: Godot.GodotString = ""
     ) -> Godot.GodotString {
-        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        language.withGodotUnsafeRawPointer { __ptr_language in
-        withUnsafeArgumentPackPointer(__ptr_language) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_percent_sign,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: language) { __ptr_language in
+                withUnsafeArgumentPackPointer(__ptr_language) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_percent_sign,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_string_get_word_breaks: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "string_get_word_breaks").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "string_get_word_breaks").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 581857818)!
         }
         }
@@ -5229,23 +6135,29 @@ open class TextServer: RefCounted {
         language: Godot.GodotString = "",
         charsPerLine: Int64 = 0
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        string.withGodotUnsafeRawPointer { __ptr_string in
-        language.withGodotUnsafeRawPointer { __ptr_language in
-        charsPerLine.withGodotUnsafeRawPointer { __ptr_charsPerLine in
-        withUnsafeArgumentPackPointer(__ptr_string, __ptr_language, __ptr_charsPerLine) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_string_get_word_breaks,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: string) { __ptr_string in
+                withTransferrableUnsafeRawPointer(to: language) { __ptr_language in
+                    withTransferrableUnsafeRawPointer(to: charsPerLine) { __ptr_charsPerLine in
+                        withUnsafeArgumentPackPointer(__ptr_string, __ptr_language, __ptr_charsPerLine) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_string_get_word_breaks,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_string_get_character_breaks: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "string_get_character_breaks").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "string_get_character_breaks").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2333794773)!
         }
         }
@@ -5255,22 +6167,27 @@ open class TextServer: RefCounted {
         string: Godot.GodotString,
         language: Godot.GodotString = ""
     ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        string.withGodotUnsafeRawPointer { __ptr_string in
-        language.withGodotUnsafeRawPointer { __ptr_language in
-        withUnsafeArgumentPackPointer(__ptr_string, __ptr_language) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_string_get_character_breaks,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: string) { __ptr_string in
+                withTransferrableUnsafeRawPointer(to: language) { __ptr_language in
+                    withUnsafeArgumentPackPointer(__ptr_string, __ptr_language) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_string_get_character_breaks,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_is_confusable: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_confusable").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_confusable").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1433197768)!
         }
         }
@@ -5280,22 +6197,27 @@ open class TextServer: RefCounted {
         string: Godot.GodotString,
         dict: Godot.PackedStringArray
     ) -> Int64 {
-        Int64.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        string.withGodotUnsafeRawPointer { __ptr_string in
-        dict.withGodotUnsafeRawPointer { __ptr_dict in
-        withUnsafeArgumentPackPointer(__ptr_string, __ptr_dict) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_is_confusable,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: string) { __ptr_string in
+                withTransferrableUnsafeRawPointer(to: dict) { __ptr_dict in
+                    withUnsafeArgumentPackPointer(__ptr_string, __ptr_dict) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_is_confusable,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_spoof_check: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "spoof_check").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "spoof_check").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3927539163)!
         }
         }
@@ -5304,21 +6226,25 @@ open class TextServer: RefCounted {
     public func spoofCheck(
         string: Godot.GodotString
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        string.withGodotUnsafeRawPointer { __ptr_string in
-        withUnsafeArgumentPackPointer(__ptr_string) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_spoof_check,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: string) { __ptr_string in
+                withUnsafeArgumentPackPointer(__ptr_string) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_spoof_check,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_strip_diacritics: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "strip_diacritics").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "strip_diacritics").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3135753539)!
         }
         }
@@ -5327,21 +6253,25 @@ open class TextServer: RefCounted {
     public func stripDiacritics(
         string: Godot.GodotString
     ) -> Godot.GodotString {
-        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        string.withGodotUnsafeRawPointer { __ptr_string in
-        withUnsafeArgumentPackPointer(__ptr_string) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_strip_diacritics,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: string) { __ptr_string in
+                withUnsafeArgumentPackPointer(__ptr_string) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_strip_diacritics,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_is_valid_identifier: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_valid_identifier").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_valid_identifier").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3927539163)!
         }
         }
@@ -5350,21 +6280,25 @@ open class TextServer: RefCounted {
     public func isValidIdentifier(
         string: Godot.GodotString
     ) -> Bool {
-        Bool.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        string.withGodotUnsafeRawPointer { __ptr_string in
-        withUnsafeArgumentPackPointer(__ptr_string) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_is_valid_identifier,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: string) { __ptr_string in
+                withUnsafeArgumentPackPointer(__ptr_string) { __accessPtr in
+                    self.withUnsafeMutableRawPointer { __ptr_self in
+                        GodotExtension.Interface.objectMethodBindPtrcall(
+                            Self.__method_binding_is_valid_identifier,
+                            __ptr_self,
+                            __accessPtr,
+                            __temporary
+                        )
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_string_to_upper: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "string_to_upper").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "string_to_upper").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2664628024)!
         }
         }
@@ -5374,22 +6308,27 @@ open class TextServer: RefCounted {
         string: Godot.GodotString,
         language: Godot.GodotString = ""
     ) -> Godot.GodotString {
-        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        string.withGodotUnsafeRawPointer { __ptr_string in
-        language.withGodotUnsafeRawPointer { __ptr_language in
-        withUnsafeArgumentPackPointer(__ptr_string, __ptr_language) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_string_to_upper,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: string) { __ptr_string in
+                withTransferrableUnsafeRawPointer(to: language) { __ptr_language in
+                    withUnsafeArgumentPackPointer(__ptr_string, __ptr_language) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_string_to_upper,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_string_to_lower: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "string_to_lower").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "string_to_lower").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2664628024)!
         }
         }
@@ -5399,22 +6338,27 @@ open class TextServer: RefCounted {
         string: Godot.GodotString,
         language: Godot.GodotString = ""
     ) -> Godot.GodotString {
-        Godot.GodotString.fromInitializingMutatingGodotUnsafePointer { __temporary in
-        string.withGodotUnsafeRawPointer { __ptr_string in
-        language.withGodotUnsafeRawPointer { __ptr_language in
-        withUnsafeArgumentPackPointer(__ptr_string, __ptr_language) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_string_to_lower,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: string) { __ptr_string in
+                withTransferrableUnsafeRawPointer(to: language) { __ptr_language in
+                    withUnsafeArgumentPackPointer(__ptr_string, __ptr_language) { __accessPtr in
+                        self.withUnsafeMutableRawPointer { __ptr_self in
+                            GodotExtension.Interface.objectMethodBindPtrcall(
+                                Self.__method_binding_string_to_lower,
+                                __ptr_self,
+                                __accessPtr,
+                                __temporary
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
 
     internal static var __method_binding_parse_structured_text: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withGodotUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "parse_structured_text").withGodotUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "parse_structured_text").withUnsafeRawPointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3310685015)!
         }
         }
@@ -5425,18 +6369,24 @@ open class TextServer: RefCounted {
         args: Godot.GodotArray<Value>,
         text: Godot.GodotString
     ) -> Godot.GodotArray<Godot.Vector3I> {
-        Godot.GodotArray<Godot.Vector3I> .fromInitializingMutatingGodotUnsafePointer { __temporary in
-        parserType.withGodotUnsafeRawPointer { __ptr_parserType in
-        args.withGodotUnsafeRawPointer { __ptr_args in
-        text.withGodotUnsafeRawPointer { __ptr_text in
-        withUnsafeArgumentPackPointer(__ptr_parserType, __ptr_args, __ptr_text) { __accessPtr in
-        `self`.withGodotUnsafeMutableRawPointer { __ptr_self in
-        GodotExtension.Interface.objectMethodBindPtrcall(
-            Self.__method_binding_parse_structured_text,
-            __ptr_self,
-            __accessPtr,
-            __temporary
-        )}}}}}}
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: parserType) { __ptr_parserType in
+                withTransferrableUnsafeRawPointer(to: args) { __ptr_args in
+                    withTransferrableUnsafeRawPointer(to: text) { __ptr_text in
+                        withUnsafeArgumentPackPointer(__ptr_parserType, __ptr_args, __ptr_text) { __accessPtr in
+                            self.withUnsafeMutableRawPointer { __ptr_self in
+                                GodotExtension.Interface.objectMethodBindPtrcall(
+                                    Self.__method_binding_parse_structured_text,
+                                    __ptr_self,
+                                    __accessPtr,
+                                    __temporary
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
