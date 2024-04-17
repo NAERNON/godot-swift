@@ -40,7 +40,11 @@ struct FilePool {
 // MARK: - File Generation
 
 extension FilePool {
-    func generateFiles(writeFiles: Bool) async throws {
+    private static let loadingBarWidth = 60
+    
+    func generateFiles(
+        writeFiles: Bool
+    ) async throws {
         print("Generating files...")
         let generationStart = Date()
         let count = content.count
@@ -49,32 +53,67 @@ extension FilePool {
             let maxTasks = 8
             
             var index = 0
-            while index != content.endIndex {
+            var doneIndex = 0
+            while doneIndex != content.count {
                 guard !group.isCancelled else {
                     return
                 }
                 
-                printAndFlush("[\(index+1)/\(count)] Generating \(content[index].name)")
+                printAndFlush(
+                    loadingBarString(
+                        lowProgress: doneIndex,
+                        highProgress: index,
+                        count: count
+                    )
+                )
                 
                 if index >= maxTasks {
                     try await group.next()
-                }
-                
-                group.addTask { [index] in
-                    try process(
-                        fileAt: index,
-                        writeFiles: writeFiles
+                    doneIndex += 1
+                    
+                    printAndFlush(
+                        loadingBarString(
+                            lowProgress: doneIndex,
+                            highProgress: index,
+                            count: count
+                        )
                     )
                 }
                 
-                index += 1
+                if index != content.count {
+                    group.addTask { [index] in
+                        try process(
+                            fileAt: index,
+                            writeFiles: writeFiles
+                        )
+                    }
+                    
+                    index += 1
+                }
             }
-            
-            printAndFlush("[\(count+1)/\(count+1)] Finalizing files")
         }
         
         let generationDuration = Date.now.timeIntervalSince(generationStart)
         print("\nFiles generated! (\(String(format: "%.2f", generationDuration))s)")
+    }
+    
+    private func loadingBarString(
+        lowProgress: Int,
+        highProgress: Int,
+        count: Int
+    ) -> String {
+        let lowWidth = Int(Double(lowProgress) / Double(count) * Double(Self.loadingBarWidth))
+        var highWidth = Int(Double(highProgress) / Double(count) * Double(Self.loadingBarWidth))
+        
+        if lowWidth == highWidth && lowProgress < count {
+            highWidth += 1
+        }
+        
+        let lowBar = String(repeating: "#", count: lowWidth)
+        let highBar = String(repeating: "•", count: highWidth - lowWidth)
+        let emptyBar = String(repeating: "∙", count: Self.loadingBarWidth - highWidth)
+        
+        return "[\(lowBar + highBar + emptyBar)] \(lowProgress)/\(count)"
     }
     
     private func printAndFlush(_ text: String) {
