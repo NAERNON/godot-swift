@@ -49,12 +49,12 @@ open class Container: Control {
 
     public static let notificationSortChildren: Notification = .init(rawValue: 51)
 
-    open func _getAllowedSizeFlagsHorizontal() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array()
+    open func _getAllowedSizeFlagsHorizontal() -> Godot.GodotContiguousArray<Int32> {
+        Godot.GodotContiguousArray<Int32>()
     }
 
-    open func _getAllowedSizeFlagsVertical() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array()
+    open func _getAllowedSizeFlagsVertical() -> Godot.GodotContiguousArray<Int32> {
+        Godot.GodotContiguousArray<Int32>()
     }
 
     internal static var __method_binding_queue_sort: GDExtensionMethodBindPtr = {

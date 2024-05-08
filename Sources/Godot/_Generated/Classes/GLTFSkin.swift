@@ -60,7 +60,7 @@ open class GLTFSkin: Resource {
         }
     }()
 
-    private func __getJointsOriginal() -> Godot.PackedInt32Array {
+    private func __getJointsOriginal() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -82,7 +82,7 @@ open class GLTFSkin: Resource {
     }()
 
     private func __setJointsOriginal(
-        _ jointsOriginal: Godot.PackedInt32Array
+        _ jointsOriginal: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: jointsOriginal) { __ptr_jointsOriginal in
             withUnsafeArgumentPackPointer(__ptr_jointsOriginal) { __accessPtr in
@@ -152,7 +152,7 @@ open class GLTFSkin: Resource {
         }
     }()
 
-    private func __getJoints() -> Godot.PackedInt32Array {
+    private func __getJoints() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -174,7 +174,7 @@ open class GLTFSkin: Resource {
     }()
 
     private func __setJoints(
-        _ joints: Godot.PackedInt32Array
+        _ joints: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: joints) { __ptr_joints in
             withUnsafeArgumentPackPointer(__ptr_joints) { __accessPtr in
@@ -198,7 +198,7 @@ open class GLTFSkin: Resource {
         }
     }()
 
-    private func __getNonJoints() -> Godot.PackedInt32Array {
+    private func __getNonJoints() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -220,7 +220,7 @@ open class GLTFSkin: Resource {
     }()
 
     private func __setNonJoints(
-        _ nonJoints: Godot.PackedInt32Array
+        _ nonJoints: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: nonJoints) { __ptr_nonJoints in
             withUnsafeArgumentPackPointer(__ptr_nonJoints) { __accessPtr in
@@ -244,7 +244,7 @@ open class GLTFSkin: Resource {
         }
     }()
 
-    private func __getRoots() -> Godot.PackedInt32Array {
+    private func __getRoots() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -266,7 +266,7 @@ open class GLTFSkin: Resource {
     }()
 
     private func __setRoots(
-        _ roots: Godot.PackedInt32Array
+        _ roots: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: roots) { __ptr_roots in
             withUnsafeArgumentPackPointer(__ptr_roots) { __accessPtr in
@@ -479,7 +479,7 @@ open class GLTFSkin: Resource {
         }
     }
 
-    public var jointsOriginal: Godot.PackedInt32Array {
+    public var jointsOriginal: Godot.GodotContiguousArray<Int32> {
         get {
             __getJointsOriginal()
         }
@@ -501,7 +501,7 @@ open class GLTFSkin: Resource {
         }
     }
 
-    public var joints: Godot.PackedInt32Array {
+    public var joints: Godot.GodotContiguousArray<Int32> {
         get {
             __getJoints()
         }
@@ -512,7 +512,7 @@ open class GLTFSkin: Resource {
         }
     }
 
-    public var nonJoints: Godot.PackedInt32Array {
+    public var nonJoints: Godot.GodotContiguousArray<Int32> {
         get {
             __getNonJoints()
         }
@@ -523,7 +523,7 @@ open class GLTFSkin: Resource {
         }
     }
 
-    public var roots: Godot.PackedInt32Array {
+    public var roots: Godot.GodotContiguousArray<Int32> {
         get {
             __getRoots()
         }

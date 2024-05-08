@@ -15,7 +15,7 @@ open class AudioStreamOggVorbis: AudioStream {
     }()
 
     static public func loadFromBuffer(
-        _ buffer: Godot.PackedByteArray
+        _ buffer: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.AudioStreamOggVorbis? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: buffer) { __ptr_buffer in

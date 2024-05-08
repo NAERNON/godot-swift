@@ -780,7 +780,7 @@ extension Transform2D {
             case 0: x
             case 1: y
             case 2: origin
-            default: fatalError("Attempting to read column \(columnIndex) from 2D transform.")
+            default: fatalError("Attempting to read column \(columnIndex) from 2D transform")
             }
         }
         set(newValue) {
@@ -788,7 +788,7 @@ extension Transform2D {
             case 0: x = newValue
             case 1: y = newValue
             case 2: origin = newValue
-            default: fatalError("Attempting to set column \(columnIndex) on 2D transform.")
+            default: fatalError("Attempting to set column \(columnIndex) on 2D transform")
             }
         }
     }

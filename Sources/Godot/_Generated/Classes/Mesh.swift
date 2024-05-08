@@ -339,7 +339,7 @@ open class Mesh: Resource {
         }
     }()
 
-    public func faces() -> Godot.PackedVector3Array {
+    public func faces() -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

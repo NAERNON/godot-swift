@@ -669,7 +669,7 @@ open class RichTextLabel: Control {
         language: Godot.GodotString = "",
         stParser: Godot.TextServer.StructuredTextParser = TextServer.StructuredTextParser(rawValue: 0)!,
         justificationFlags: Godot.TextServer.JustificationFlag = TextServer.JustificationFlag(rawValue: 163),
-        tabStops: Godot.PackedFloat32Array = PackedFloat32Array()
+        tabStops: Godot.GodotContiguousArray<Float> = []
     ) {
         withTransferrableUnsafeRawPointer(to: alignment) { __ptr_alignment in
             withTransferrableUnsafeRawPointer(to: baseDirection) { __ptr_baseDirection in
@@ -2833,7 +2833,7 @@ open class RichTextLabel: Control {
     }()
 
     public func parseExpressionsForValues(
-        expressions: Godot.PackedStringArray
+        expressions: Godot.GodotContiguousArray<GodotString>
     ) -> Godot.AnyGodotDictionary {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: expressions) { __ptr_expressions in

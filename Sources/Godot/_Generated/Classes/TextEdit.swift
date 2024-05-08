@@ -2553,7 +2553,7 @@ open class TextEdit: Control {
         }
     }()
 
-    public func caretIndexEditOrder() -> Godot.PackedInt32Array {
+    public func caretIndexEditOrder() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -3578,7 +3578,7 @@ open class TextEdit: Control {
 
     public func lineWrappedText(
         line: Int32
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: line) { __ptr_line in
                 withUnsafeArgumentPackPointer(__ptr_line) { __accessPtr in

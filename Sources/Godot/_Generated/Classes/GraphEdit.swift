@@ -604,8 +604,8 @@ open class GraphEdit: Control {
     open func _getConnectionLine(
         fromPosition: Godot.Vector2,
         toPosition: Godot.Vector2
-    ) -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array()
+    ) -> Godot.GodotContiguousArray<Vector2> {
+        Godot.GodotContiguousArray<Vector2>()
     }
 
     open func _isNodeHoverValid(
@@ -1062,7 +1062,7 @@ open class GraphEdit: Control {
     public func connectionLine(
         fromNode: Godot.Vector2,
         toNode: Godot.Vector2
-    ) -> Godot.PackedVector2Array {
+    ) -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: fromNode) { __ptr_fromNode in
                 withTransferrableUnsafeRawPointer(to: toNode) { __ptr_toNode in

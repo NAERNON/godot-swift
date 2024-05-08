@@ -26,7 +26,7 @@ open class NavigationPathQueryResult2D: RefCounted {
     }()
 
     private func __setPath(
-        _ path: Godot.PackedVector2Array
+        _ path: Godot.GodotContiguousArray<Vector2>
     ) {
         withTransferrableUnsafeRawPointer(to: path) { __ptr_path in
             withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -50,7 +50,7 @@ open class NavigationPathQueryResult2D: RefCounted {
         }
     }()
 
-    private func __getPath() -> Godot.PackedVector2Array {
+    private func __getPath() -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -72,7 +72,7 @@ open class NavigationPathQueryResult2D: RefCounted {
     }()
 
     private func __setPathTypes(
-        _ pathTypes: Godot.PackedInt32Array
+        _ pathTypes: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: pathTypes) { __ptr_pathTypes in
             withUnsafeArgumentPackPointer(__ptr_pathTypes) { __accessPtr in
@@ -96,7 +96,7 @@ open class NavigationPathQueryResult2D: RefCounted {
         }
     }()
 
-    private func __getPathTypes() -> Godot.PackedInt32Array {
+    private func __getPathTypes() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -164,7 +164,7 @@ open class NavigationPathQueryResult2D: RefCounted {
     }()
 
     private func __setPathOwnerIds(
-        _ pathOwnerIds: Godot.PackedInt64Array
+        _ pathOwnerIds: Godot.GodotContiguousArray<Int64>
     ) {
         withTransferrableUnsafeRawPointer(to: pathOwnerIds) { __ptr_pathOwnerIds in
             withUnsafeArgumentPackPointer(__ptr_pathOwnerIds) { __accessPtr in
@@ -188,7 +188,7 @@ open class NavigationPathQueryResult2D: RefCounted {
         }
     }()
 
-    private func __getPathOwnerIds() -> Godot.PackedInt64Array {
+    private func __getPathOwnerIds() -> Godot.GodotContiguousArray<Int64> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -220,7 +220,7 @@ open class NavigationPathQueryResult2D: RefCounted {
         }
     }
 
-    public var path: Godot.PackedVector2Array {
+    public var path: Godot.GodotContiguousArray<Vector2> {
         get {
             __getPath()
         }
@@ -231,7 +231,7 @@ open class NavigationPathQueryResult2D: RefCounted {
         }
     }
 
-    public var pathTypes: Godot.PackedInt32Array {
+    public var pathTypes: Godot.GodotContiguousArray<Int32> {
         get {
             __getPathTypes()
         }
@@ -253,7 +253,7 @@ open class NavigationPathQueryResult2D: RefCounted {
         }
     }
 
-    public var pathOwnerIds: Godot.PackedInt64Array {
+    public var pathOwnerIds: Godot.GodotContiguousArray<Int64> {
         get {
             __getPathOwnerIds()
         }

@@ -61,7 +61,7 @@ open class OggPacketSequence: Resource {
     }()
 
     private func __setPacketGranulePositions(
-        _ granulePositions: Godot.PackedInt64Array
+        _ granulePositions: Godot.GodotContiguousArray<Int64>
     ) {
         withTransferrableUnsafeRawPointer(to: granulePositions) { __ptr_granulePositions in
             withUnsafeArgumentPackPointer(__ptr_granulePositions) { __accessPtr in
@@ -85,7 +85,7 @@ open class OggPacketSequence: Resource {
         }
     }()
 
-    private func __getPacketGranulePositions() -> Godot.PackedInt64Array {
+    private func __getPacketGranulePositions() -> Godot.GodotContiguousArray<Int64> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -176,7 +176,7 @@ open class OggPacketSequence: Resource {
         }
     }
 
-    public var packetGranulePositions: Godot.PackedInt64Array {
+    public var packetGranulePositions: Godot.GodotContiguousArray<Int64> {
         get {
             __getPacketGranulePositions()
         }

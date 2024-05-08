@@ -119,7 +119,7 @@ open class SpriteFrames: Resource {
         }
     }()
 
-    public func animationNames() -> Godot.PackedStringArray {
+    public func animationNames() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

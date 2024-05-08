@@ -65,12 +65,12 @@ open class EditorProperty: Container {
     }()
 
     public struct MultiplePropertiesChangedSignalInput: Godot.SignalInput {
-        public let properties: Godot.PackedStringArray
+        public let properties: Godot.GodotContiguousArray<GodotString>
 
         public let value: Godot.AnyGodotArray
 
         fileprivate init(
-            properties: Godot.PackedStringArray,
+            properties: Godot.GodotContiguousArray<GodotString>,
             value: Godot.AnyGodotArray
         ) {
             self.properties = properties
@@ -85,7 +85,7 @@ open class EditorProperty: Container {
     }
 
     public func multiplePropertiesChanged(
-        properties: Godot.PackedStringArray,
+        properties: Godot.GodotContiguousArray<GodotString>,
         value: Godot.AnyGodotArray
     ) {
         _ = multiplePropertiesChangedSignal.emit(.init(properties: properties,
@@ -95,7 +95,7 @@ open class EditorProperty: Container {
     public lazy var multiplePropertiesChangedSignal: Godot.SignalEmitter<MultiplePropertiesChangedSignalInput> = {
         .init(object: self, signalName: "multiple_properties_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<MultiplePropertiesChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(properties: Godot.PackedStringArray.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
+                .call(with: .init(properties: Godot.GodotContiguousArray<GodotString> .convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
                     value: Godot.AnyGodotArray.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<MultiplePropertiesChangedSignalInput>> .fromOpaque(callablePtr!).release()

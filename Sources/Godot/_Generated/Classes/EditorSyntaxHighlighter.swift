@@ -10,8 +10,8 @@ open class EditorSyntaxHighlighter: SyntaxHighlighter {
         Godot.GodotString()
     }
 
-    open func _getSupportedLanguages() -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    open func _getSupportedLanguages() -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil

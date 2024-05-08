@@ -56,8 +56,8 @@ open class EditorNode3DGizmo: Node3DGizmo {
     open func _subgizmosIntersectFrustum(
         camera: Godot.Camera3D?,
         frustum: Godot.GodotArray<Godot.Plane>
-    ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array()
+    ) -> Godot.GodotContiguousArray<Int32> {
+        Godot.GodotContiguousArray<Int32>()
     }
 
     open func _setSubgizmoTransform(
@@ -73,7 +73,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
     }
 
     open func _commitSubgizmos(
-        ids: Godot.PackedInt32Array,
+        ids: Godot.GodotContiguousArray<Int32>,
         restores: Godot.GodotArray<Godot.Transform3D>,
         cancel: Bool
     ) {
@@ -88,7 +88,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
     }()
 
     public func addLines(
-        _ lines: Godot.PackedVector3Array,
+        _ lines: Godot.GodotContiguousArray<Vector3>,
         material: Godot.Material?,
         billboard: Bool = false,
         modulate: Godot.Color = .white
@@ -164,7 +164,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
     }()
 
     public func addCollisionSegments(
-        _ segments: Godot.PackedVector3Array
+        _ segments: Godot.GodotContiguousArray<Vector3>
     ) {
         withTransferrableUnsafeRawPointer(to: segments) { __ptr_segments in
             withUnsafeArgumentPackPointer(__ptr_segments) { __accessPtr in
@@ -249,9 +249,9 @@ open class EditorNode3DGizmo: Node3DGizmo {
     }()
 
     public func addHandles(
-        _ handles: Godot.PackedVector3Array,
+        _ handles: Godot.GodotContiguousArray<Vector3>,
         material: Godot.Material?,
-        ids: Godot.PackedInt32Array,
+        ids: Godot.GodotContiguousArray<Int32>,
         billboard: Bool = false,
         secondary: Bool = false
     ) {
@@ -427,7 +427,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
         }
     }()
 
-    public func subgizmoSelection() -> Godot.PackedInt32Array {
+    public func subgizmoSelection() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -548,7 +548,7 @@ open class EditorNode3DGizmo: Node3DGizmo {
             }
             Unmanaged<EditorNode3DGizmo> .fromOpaque(instancePtr).takeUnretainedValue()
         ._commitSubgizmos(
-            ids: Godot.PackedInt32Array.transferFromGodot(unsafePointer: args[0]!),
+            ids: Godot.GodotContiguousArray<Int32> .transferFromGodot(unsafePointer: args[0]!),
             restores: Godot.GodotArray<Godot.Transform3D> .transferFromGodot(unsafePointer: args[1]!),
             cancel: Bool.transferFromGodot(unsafePointer: args[2]!)
         )}

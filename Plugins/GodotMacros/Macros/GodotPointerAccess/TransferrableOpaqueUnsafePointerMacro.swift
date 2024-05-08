@@ -9,7 +9,7 @@ public enum TransferrableOpaqueUnsafePointerMacro: DeclarationMacro {
         in context: some MacroExpansionContext
     ) throws -> [DeclSyntax] {
         guard let type = node.as(MacroExpansionExprSyntax.self)?.arguments.first else {
-            fatalError("Compiler error.")
+            fatalError("Compiler error")
         }
         
         return ["""

@@ -29,8 +29,8 @@ open class ResourceFormatSaver: RefCounted {
 
     open func _getRecognizedExtensions(
         resource: Godot.Resource?
-    ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    ) -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _recognizePath(

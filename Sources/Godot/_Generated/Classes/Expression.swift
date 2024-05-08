@@ -16,7 +16,7 @@ open class Expression: RefCounted {
 
     public func parse(
         _ expression: Godot.GodotString,
-        inputNames: Godot.PackedStringArray = PackedStringArray()
+        inputNames: Godot.GodotContiguousArray<GodotString> = []
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: expression) { __ptr_expression in

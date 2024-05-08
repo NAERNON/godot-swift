@@ -170,7 +170,7 @@ open class JavaScriptBridge: Object {
     }()
 
     public func downloadBuffer(
-        _ buffer: Godot.PackedByteArray,
+        _ buffer: Godot.GodotContiguousArray<UInt8>,
         name: Godot.GodotString,
         mime: Godot.GodotString = "application/octet-stream"
     ) {

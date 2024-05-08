@@ -15,7 +15,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
     }()
 
     private func __setVertices(
-        _ vertices: Godot.PackedFloat32Array
+        _ vertices: Godot.GodotContiguousArray<Float>
     ) {
         withTransferrableUnsafeRawPointer(to: vertices) { __ptr_vertices in
             withUnsafeArgumentPackPointer(__ptr_vertices) { __accessPtr in
@@ -39,7 +39,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         }
     }()
 
-    private func __getVertices() -> Godot.PackedFloat32Array {
+    private func __getVertices() -> Godot.GodotContiguousArray<Float> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -61,7 +61,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
     }()
 
     private func __setIndices(
-        _ indices: Godot.PackedInt32Array
+        _ indices: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: indices) { __ptr_indices in
             withUnsafeArgumentPackPointer(__ptr_indices) { __accessPtr in
@@ -85,7 +85,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         }
     }()
 
-    private func __getIndices() -> Godot.PackedInt32Array {
+    private func __getIndices() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -205,7 +205,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
     }()
 
     public func addFaces(
-        _ faces: Godot.PackedVector3Array,
+        _ faces: Godot.GodotContiguousArray<Vector3>,
         xform: Godot.Transform3D
     ) {
         withTransferrableUnsafeRawPointer(to: faces) { __ptr_faces in
@@ -224,7 +224,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         }
     }
 
-    public var vertices: Godot.PackedFloat32Array {
+    public var vertices: Godot.GodotContiguousArray<Float> {
         get {
             __getVertices()
         }
@@ -235,7 +235,7 @@ open class NavigationMeshSourceGeometryData3D: Resource {
         }
     }
 
-    public var indices: Godot.PackedInt32Array {
+    public var indices: Godot.GodotContiguousArray<Int32> {
         get {
             __getIndices()
         }

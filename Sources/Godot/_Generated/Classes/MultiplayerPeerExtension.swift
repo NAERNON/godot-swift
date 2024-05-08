@@ -28,12 +28,12 @@ open class MultiplayerPeerExtension: MultiplayerPeer {
         Int32()
     }
 
-    open func _getPacketScript() -> Godot.PackedByteArray {
-        Godot.PackedByteArray()
+    open func _getPacketScript() -> Godot.GodotContiguousArray<UInt8> {
+        Godot.GodotContiguousArray<UInt8>()
     }
 
     open func _putPacketScript(
-        pBuffer: Godot.PackedByteArray
+        pBuffer: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
@@ -163,7 +163,7 @@ open class MultiplayerPeerExtension: MultiplayerPeer {
             }
             Unmanaged<MultiplayerPeerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._putPacketScript(
-            pBuffer: Godot.PackedByteArray.transferFromGodot(unsafePointer: args[0]!)
+            pBuffer: Godot.GodotContiguousArray<UInt8> .transferFromGodot(unsafePointer: args[0]!)
         )
         .transferToGodot(unsafePointer: returnPtr!)}
         let _get_packet_channel_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in

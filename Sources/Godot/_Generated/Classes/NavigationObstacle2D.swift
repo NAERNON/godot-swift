@@ -220,7 +220,7 @@ open class NavigationObstacle2D: Node2D {
     }()
 
     private func __setVertices(
-        _ vertices: Godot.PackedVector2Array
+        _ vertices: Godot.GodotContiguousArray<Vector2>
     ) {
         withTransferrableUnsafeRawPointer(to: vertices) { __ptr_vertices in
             withUnsafeArgumentPackPointer(__ptr_vertices) { __accessPtr in
@@ -244,7 +244,7 @@ open class NavigationObstacle2D: Node2D {
         }
     }()
 
-    private func __getVertices() -> Godot.PackedVector2Array {
+    private func __getVertices() -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -391,7 +391,7 @@ open class NavigationObstacle2D: Node2D {
         }
     }
 
-    public var vertices: Godot.PackedVector2Array {
+    public var vertices: Godot.GodotContiguousArray<Vector2> {
         get {
             __getVertices()
         }

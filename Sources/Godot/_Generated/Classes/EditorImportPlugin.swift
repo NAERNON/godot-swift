@@ -24,8 +24,8 @@ open class EditorImportPlugin: ResourceImporter {
         Godot.GodotString()
     }
 
-    open func _getRecognizedExtensions() -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    open func _getRecognizedExtensions() -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _getImportOptions(

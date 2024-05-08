@@ -513,7 +513,7 @@ open class MeshDataTool: RefCounted {
 
     public func setVertexBones(
         idx: Int32,
-        bones: Godot.PackedInt32Array
+        bones: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: idx) { __ptr_idx in
             withTransferrableUnsafeRawPointer(to: bones) { __ptr_bones in
@@ -541,7 +541,7 @@ open class MeshDataTool: RefCounted {
 
     public func vertexBones(
         idx: Int32
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: idx) { __ptr_idx in
                 withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -568,7 +568,7 @@ open class MeshDataTool: RefCounted {
 
     public func setVertexWeights(
         idx: Int32,
-        weights: Godot.PackedFloat32Array
+        weights: Godot.GodotContiguousArray<Float>
     ) {
         withTransferrableUnsafeRawPointer(to: idx) { __ptr_idx in
             withTransferrableUnsafeRawPointer(to: weights) { __ptr_weights in
@@ -596,7 +596,7 @@ open class MeshDataTool: RefCounted {
 
     public func vertexWeights(
         idx: Int32
-    ) -> Godot.PackedFloat32Array {
+    ) -> Godot.GodotContiguousArray<Float> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: idx) { __ptr_idx in
                 withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -678,7 +678,7 @@ open class MeshDataTool: RefCounted {
 
     public func vertexEdges(
         idx: Int32
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: idx) { __ptr_idx in
                 withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -705,7 +705,7 @@ open class MeshDataTool: RefCounted {
 
     public func vertexFaces(
         idx: Int32
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: idx) { __ptr_idx in
                 withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -762,7 +762,7 @@ open class MeshDataTool: RefCounted {
 
     public func edgeFaces(
         idx: Int32
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: idx) { __ptr_idx in
                 withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in

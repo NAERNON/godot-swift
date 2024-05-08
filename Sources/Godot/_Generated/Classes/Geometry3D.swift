@@ -16,7 +16,7 @@ open class Geometry3D: Object {
 
     public func computeConvexMeshPoints(
         planes: Godot.GodotArray<Godot.Plane>
-    ) -> Godot.PackedVector3Array {
+    ) -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: planes) { __ptr_planes in
                 withUnsafeArgumentPackPointer(__ptr_planes) { __accessPtr in
@@ -148,7 +148,7 @@ open class Geometry3D: Object {
         p2: Godot.Vector3,
         q1: Godot.Vector3,
         q2: Godot.Vector3
-    ) -> Godot.PackedVector3Array {
+    ) -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: p1) { __ptr_p1 in
                 withTransferrableUnsafeRawPointer(to: p2) { __ptr_p2 in
@@ -364,7 +364,7 @@ open class Geometry3D: Object {
         to: Godot.Vector3,
         spherePosition: Godot.Vector3,
         sphereRadius: Double
-    ) -> Godot.PackedVector3Array {
+    ) -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
                 withTransferrableUnsafeRawPointer(to: to) { __ptr_to in
@@ -400,7 +400,7 @@ open class Geometry3D: Object {
         to: Godot.Vector3,
         height: Double,
         radius: Double
-    ) -> Godot.PackedVector3Array {
+    ) -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
                 withTransferrableUnsafeRawPointer(to: to) { __ptr_to in
@@ -435,7 +435,7 @@ open class Geometry3D: Object {
         from: Godot.Vector3,
         to: Godot.Vector3,
         planes: Godot.GodotArray<Godot.Plane>
-    ) -> Godot.PackedVector3Array {
+    ) -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
                 withTransferrableUnsafeRawPointer(to: to) { __ptr_to in
@@ -465,9 +465,9 @@ open class Geometry3D: Object {
     }()
 
     public func clipPolygon(
-        points: Godot.PackedVector3Array,
+        points: Godot.GodotContiguousArray<Vector3>,
         plane: Godot.Plane
-    ) -> Godot.PackedVector3Array {
+    ) -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: points) { __ptr_points in
                 withTransferrableUnsafeRawPointer(to: plane) { __ptr_plane in

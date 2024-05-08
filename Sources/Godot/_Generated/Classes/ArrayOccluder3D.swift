@@ -15,8 +15,8 @@ open class ArrayOccluder3D: Occluder3D {
     }()
 
     public func setArrays(
-        vertices: Godot.PackedVector3Array,
-        indices: Godot.PackedInt32Array
+        vertices: Godot.GodotContiguousArray<Vector3>,
+        indices: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: vertices) { __ptr_vertices in
             withTransferrableUnsafeRawPointer(to: indices) { __ptr_indices in
@@ -43,7 +43,7 @@ open class ArrayOccluder3D: Occluder3D {
     }()
 
     public func setVertices(
-        _ vertices: Godot.PackedVector3Array
+        _ vertices: Godot.GodotContiguousArray<Vector3>
     ) {
         withTransferrableUnsafeRawPointer(to: vertices) { __ptr_vertices in
             withUnsafeArgumentPackPointer(__ptr_vertices) { __accessPtr in
@@ -68,7 +68,7 @@ open class ArrayOccluder3D: Occluder3D {
     }()
 
     public func setIndices(
-        _ indices: Godot.PackedInt32Array
+        _ indices: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: indices) { __ptr_indices in
             withUnsafeArgumentPackPointer(__ptr_indices) { __accessPtr in

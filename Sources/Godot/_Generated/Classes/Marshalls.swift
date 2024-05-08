@@ -75,7 +75,7 @@ open class Marshalls: Object {
     }()
 
     public func rawToBase64(
-        array: Godot.PackedByteArray
+        array: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: array) { __ptr_array in
@@ -103,7 +103,7 @@ open class Marshalls: Object {
 
     public func base64ToRaw(
         base64Str: Godot.GodotString
-    ) -> Godot.PackedByteArray {
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: base64Str) { __ptr_base64Str in
                 withUnsafeArgumentPackPointer(__ptr_base64Str) { __accessPtr in

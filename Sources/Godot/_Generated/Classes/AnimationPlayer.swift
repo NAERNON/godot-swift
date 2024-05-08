@@ -525,7 +525,7 @@ open class AnimationPlayer: AnimationMixer {
         }
     }()
 
-    public func queue() -> Godot.PackedStringArray {
+    public func queue() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

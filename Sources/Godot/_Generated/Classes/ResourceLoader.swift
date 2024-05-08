@@ -170,7 +170,7 @@ open class ResourceLoader: Object {
 
     public func recognizedExtensionsForType(
         _ type: Godot.GodotString
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: type) { __ptr_type in
                 withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in
@@ -279,7 +279,7 @@ open class ResourceLoader: Object {
 
     public func dependencies(
         path: Godot.GodotString
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: path) { __ptr_path in
                 withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in

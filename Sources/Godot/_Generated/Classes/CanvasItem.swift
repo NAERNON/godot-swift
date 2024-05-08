@@ -772,7 +772,7 @@ open class CanvasItem: Node {
     }()
 
     public func drawPolyline(
-        points: Godot.PackedVector2Array,
+        points: Godot.GodotContiguousArray<Vector2>,
         color: Godot.Color,
         width: Double = -1.0,
         antialiased: Bool = false
@@ -806,8 +806,8 @@ open class CanvasItem: Node {
     }()
 
     public func drawPolylineColors(
-        points: Godot.PackedVector2Array,
-        colors: Godot.PackedColorArray,
+        points: Godot.GodotContiguousArray<Vector2>,
+        colors: Godot.GodotContiguousArray<Color>,
         width: Double = -1.0,
         antialiased: Bool = false
     ) {
@@ -886,7 +886,7 @@ open class CanvasItem: Node {
     }()
 
     public func drawMultiline(
-        points: Godot.PackedVector2Array,
+        points: Godot.GodotContiguousArray<Vector2>,
         color: Godot.Color,
         width: Double = -1.0
     ) {
@@ -917,8 +917,8 @@ open class CanvasItem: Node {
     }()
 
     public func drawMultilineColors(
-        points: Godot.PackedVector2Array,
-        colors: Godot.PackedColorArray,
+        points: Godot.GodotContiguousArray<Vector2>,
+        colors: Godot.GodotContiguousArray<Color>,
         width: Double = -1.0
     ) {
         withTransferrableUnsafeRawPointer(to: points) { __ptr_points in
@@ -1238,9 +1238,9 @@ open class CanvasItem: Node {
     }()
 
     public func drawPrimitive(
-        points: Godot.PackedVector2Array,
-        colors: Godot.PackedColorArray,
-        uvs: Godot.PackedVector2Array,
+        points: Godot.GodotContiguousArray<Vector2>,
+        colors: Godot.GodotContiguousArray<Color>,
+        uvs: Godot.GodotContiguousArray<Vector2>,
         texture: Godot.Texture2D? = nil
     ) {
         withTransferrableUnsafeRawPointer(to: points) { __ptr_points in
@@ -1274,9 +1274,9 @@ open class CanvasItem: Node {
     }()
 
     public func drawPolygon(
-        points: Godot.PackedVector2Array,
-        colors: Godot.PackedColorArray,
-        uvs: Godot.PackedVector2Array = PackedVector2Array(),
+        points: Godot.GodotContiguousArray<Vector2>,
+        colors: Godot.GodotContiguousArray<Color>,
+        uvs: Godot.GodotContiguousArray<Vector2> = [],
         texture: Godot.Texture2D? = nil
     ) {
         withTransferrableUnsafeRawPointer(to: points) { __ptr_points in
@@ -1310,9 +1310,9 @@ open class CanvasItem: Node {
     }()
 
     public func drawColoredPolygon(
-        points: Godot.PackedVector2Array,
+        points: Godot.GodotContiguousArray<Vector2>,
         color: Godot.Color,
-        uvs: Godot.PackedVector2Array = PackedVector2Array(),
+        uvs: Godot.GodotContiguousArray<Vector2> = [],
         texture: Godot.Texture2D? = nil
     ) {
         withTransferrableUnsafeRawPointer(to: points) { __ptr_points in

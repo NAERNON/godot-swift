@@ -2,8 +2,8 @@ import GodotExtensionHeaders
 
 extension String {
     public init(godotString: GodotString) {
-        self = godotString._toUtf8Buffer().withUnsafeBytes { bytesPtr in
-            if let baseAddress = bytesPtr.baseAddress {
+        self = godotString._toUtf8Buffer().withUnsafePointer { bytesPtr in
+            if let baseAddress = bytesPtr {
                 return .init(cString: baseAddress)
             } else {
                 return ""

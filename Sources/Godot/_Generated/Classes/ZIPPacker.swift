@@ -85,7 +85,7 @@ open class ZIPPacker: RefCounted {
     }()
 
     public func writeFile(
-        data: Godot.PackedByteArray
+        data: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: data) { __ptr_data in

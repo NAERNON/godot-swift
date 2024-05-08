@@ -1036,7 +1036,7 @@ open class AudioServer: Object {
         }
     }()
 
-    public func outputDeviceList() -> Godot.PackedStringArray {
+    public func outputDeviceList() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1166,7 +1166,7 @@ open class AudioServer: Object {
         }
     }()
 
-    public func inputDeviceList() -> Godot.PackedStringArray {
+    public func inputDeviceList() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

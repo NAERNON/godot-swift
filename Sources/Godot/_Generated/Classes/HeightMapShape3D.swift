@@ -107,7 +107,7 @@ open class HeightMapShape3D: Shape3D {
     }()
 
     private func __setMapData(
-        _ data: Godot.PackedFloat32Array
+        _ data: Godot.GodotContiguousArray<Float>
     ) {
         withTransferrableUnsafeRawPointer(to: data) { __ptr_data in
             withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
@@ -131,7 +131,7 @@ open class HeightMapShape3D: Shape3D {
         }
     }()
 
-    private func __getMapData() -> Godot.PackedFloat32Array {
+    private func __getMapData() -> Godot.GodotContiguousArray<Float> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -166,7 +166,7 @@ open class HeightMapShape3D: Shape3D {
         }
     }
 
-    public var mapData: Godot.PackedFloat32Array {
+    public var mapData: Godot.GodotContiguousArray<Float> {
         get {
             __getMapData()
         }

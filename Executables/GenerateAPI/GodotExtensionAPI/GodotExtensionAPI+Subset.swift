@@ -32,6 +32,7 @@ private let subsetClasses: Set<GodotType> = [
     .base("BoxMesh"),
     .base("TorusMesh"),
     .base("JSON"),
+    .base("FileAccess"),
 ]
 
 extension GodotExtensionAPI {

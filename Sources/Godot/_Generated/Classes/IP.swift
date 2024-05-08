@@ -81,7 +81,7 @@ open class IP: Object {
     public func resolveHostnameAddresses(
         host: Godot.GodotString,
         ipType: Godot.IP.GodotType = IP.GodotType(rawValue: 3)!
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: host) { __ptr_host in
                 withTransferrableUnsafeRawPointer(to: ipType) { __ptr_ipType in
@@ -244,7 +244,7 @@ open class IP: Object {
         }
     }()
 
-    public func localAddresses() -> Godot.PackedStringArray {
+    public func localAddresses() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

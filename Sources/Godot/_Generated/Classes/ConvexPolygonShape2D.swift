@@ -15,7 +15,7 @@ open class ConvexPolygonShape2D: Shape2D {
     }()
 
     public func setPointCloud(
-        _ pointCloud: Godot.PackedVector2Array
+        _ pointCloud: Godot.GodotContiguousArray<Vector2>
     ) {
         withTransferrableUnsafeRawPointer(to: pointCloud) { __ptr_pointCloud in
             withUnsafeArgumentPackPointer(__ptr_pointCloud) { __accessPtr in
@@ -40,7 +40,7 @@ open class ConvexPolygonShape2D: Shape2D {
     }()
 
     private func __setPoints(
-        _ points: Godot.PackedVector2Array
+        _ points: Godot.GodotContiguousArray<Vector2>
     ) {
         withTransferrableUnsafeRawPointer(to: points) { __ptr_points in
             withUnsafeArgumentPackPointer(__ptr_points) { __accessPtr in
@@ -64,7 +64,7 @@ open class ConvexPolygonShape2D: Shape2D {
         }
     }()
 
-    private func __getPoints() -> Godot.PackedVector2Array {
+    private func __getPoints() -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -77,7 +77,7 @@ open class ConvexPolygonShape2D: Shape2D {
         }
     }
 
-    public var points: Godot.PackedVector2Array {
+    public var points: Godot.GodotContiguousArray<Vector2> {
         get {
             __getPoints()
         }

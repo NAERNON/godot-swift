@@ -4,24 +4,24 @@
 
 import GodotExtensionHeaders
 
-internal enum PackedInt32ArrayBindings {
+internal enum Int32GodotContiguousArrayStorageBindings {
     static private var areBindingsLoaded = false
 
     internal static func loadBindings() {
-        precondition(!areBindingsLoaded, "PackedInt32Array bindings are already loaded.")
+        precondition(!areBindingsLoaded, "GodotContiguousArray<Int32> bindings are already loaded.")
         areBindingsLoaded = true
         destructor = GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
         constructor = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY, 0)!
-        constructorFromPackedInt32Array = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY, 1)!
+        constructorFromGodotContiguousArrayInt32 = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY, 1)!
         constructorFromGodotArray = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY, 2)!
         operatorEqualVariant = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
         operatorNotEqualVariant = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
         operatorNot = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT, GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
         operatorInGodotdictionary = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY, GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
         operatorInGodotarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
-        operatorEqualPackedint32array = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY, GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
-        operatorNotEqualPackedint32array = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY, GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
-        operatorAddPackedint32array = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_ADD, GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY, GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
+        operatorEqualGodotcontiguousarrayint32 = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY, GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
+        operatorNotEqualGodotcontiguousarrayint32 = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY, GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
+        operatorAddGodotcontiguousarrayint32 = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_ADD, GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY, GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
         indexedSetter = GodotExtension.Interface.variantGetPtrIndexedSetter(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
         indexedGetter = GodotExtension.Interface.variantGetPtrIndexedGetter(GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
         methodSize = GodotStringName(swiftStaticString: "size").withUnsafeOpaquePointer { __ptr__method_name in
@@ -93,7 +93,7 @@ internal enum PackedInt32ArrayBindings {
 
     static private (set) var constructor: GDExtensionPtrConstructor!
 
-    static private (set) var constructorFromPackedInt32Array: GDExtensionPtrConstructor!
+    static private (set) var constructorFromGodotContiguousArrayInt32: GDExtensionPtrConstructor!
 
     static private (set) var constructorFromGodotArray: GDExtensionPtrConstructor!
 
@@ -107,11 +107,11 @@ internal enum PackedInt32ArrayBindings {
 
     static private (set) var operatorInGodotarray: GDExtensionPtrOperatorEvaluator!
 
-    static private (set) var operatorEqualPackedint32array: GDExtensionPtrOperatorEvaluator!
+    static private (set) var operatorEqualGodotcontiguousarrayint32: GDExtensionPtrOperatorEvaluator!
 
-    static private (set) var operatorNotEqualPackedint32array: GDExtensionPtrOperatorEvaluator!
+    static private (set) var operatorNotEqualGodotcontiguousarrayint32: GDExtensionPtrOperatorEvaluator!
 
-    static private (set) var operatorAddPackedint32array: GDExtensionPtrOperatorEvaluator!
+    static private (set) var operatorAddGodotcontiguousarrayint32: GDExtensionPtrOperatorEvaluator!
 
     static private (set) var indexedSetter: GDExtensionPtrIndexedSetter!
 
@@ -160,29 +160,29 @@ internal enum PackedInt32ArrayBindings {
     static private (set) var methodCount: GDExtensionPtrBuiltInMethod!
 }
 
-extension PackedInt32Array {
+extension Int32.GodotContiguousArrayStorage {
     static internal func makeOpaque(
         useDestructor: Bool = true
     ) -> Opaque {
-        Opaque(size: 16, destructorPtr: useDestructor ? PackedInt32ArrayBindings.destructor : nil)
+        Opaque(size: 16, destructorPtr: useDestructor ? Int32GodotContiguousArrayStorageBindings.destructor : nil)
     }
 
     static internal func make() -> Self {
         let __temporary: Opaque = makeOpaque()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            PackedInt32ArrayBindings.constructor(__ptr___temporary, nil)
+            Int32GodotContiguousArrayStorageBindings.constructor(__ptr___temporary, nil)
         }
         return Self.init(opaque: __temporary)
     }
 
     static internal func make(
-        from: Godot.PackedInt32Array
+        from: Int32.GodotContiguousArrayStorage
     ) -> Self {
         let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    PackedInt32ArrayBindings.constructorFromPackedInt32Array(__ptr___temporary, __accessPtr)
+                    Int32GodotContiguousArrayStorageBindings.constructorFromGodotContiguousArrayInt32(__ptr___temporary, __accessPtr)
                 }
             }
         }
@@ -196,7 +196,7 @@ extension PackedInt32Array {
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    PackedInt32ArrayBindings.constructorFromGodotArray(__ptr___temporary, __accessPtr)
+                    Int32GodotContiguousArrayStorageBindings.constructorFromGodotArray(__ptr___temporary, __accessPtr)
                 }
             }
         }
@@ -204,101 +204,101 @@ extension PackedInt32Array {
     }
 
     static internal func _operatorEqual<Value: Variant.Storable>(
-        _ lhs: Godot.PackedInt32Array,
+        _ lhs: Int32.GodotContiguousArrayStorage,
         _ rhs: Value
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    PackedInt32ArrayBindings.operatorEqualVariant(__ptr_lhs, __ptr_rhs, __temporary)
+                    Int32GodotContiguousArrayStorageBindings.operatorEqualVariant(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
     }
 
     static internal func _operatorNotEqual<Value: Variant.Storable>(
-        _ lhs: Godot.PackedInt32Array,
+        _ lhs: Int32.GodotContiguousArrayStorage,
         _ rhs: Value
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    PackedInt32ArrayBindings.operatorNotEqualVariant(__ptr_lhs, __ptr_rhs, __temporary)
+                    Int32GodotContiguousArrayStorageBindings.operatorNotEqualVariant(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
     }
 
     static internal func _operatorNot(
-        _ lhs: Godot.PackedInt32Array
+        _ lhs: Int32.GodotContiguousArrayStorage
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
-                PackedInt32ArrayBindings.operatorNot(__ptr_lhs, nil, __temporary)
+                Int32GodotContiguousArrayStorageBindings.operatorNot(__ptr_lhs, nil, __temporary)
             }
         }
     }
 
     static internal func _operatorIn<Value1: Variant.Storable, Value2: Variant.Storable>(
-        _ lhs: Godot.PackedInt32Array,
+        _ lhs: Int32.GodotContiguousArrayStorage,
         _ rhs: Godot.GodotDictionary<Value1, Value2>
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    PackedInt32ArrayBindings.operatorInGodotdictionary(__ptr_lhs, __ptr_rhs, __temporary)
+                    Int32GodotContiguousArrayStorageBindings.operatorInGodotdictionary(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
     }
 
     static internal func _operatorIn<Value: Variant.Storable>(
-        _ lhs: Godot.PackedInt32Array,
+        _ lhs: Int32.GodotContiguousArrayStorage,
         _ rhs: Godot.GodotArray<Value>
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    PackedInt32ArrayBindings.operatorInGodotarray(__ptr_lhs, __ptr_rhs, __temporary)
+                    Int32GodotContiguousArrayStorageBindings.operatorInGodotarray(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
     }
 
     static internal func _operatorEqual(
-        _ lhs: Godot.PackedInt32Array,
-        _ rhs: Godot.PackedInt32Array
+        _ lhs: Int32.GodotContiguousArrayStorage,
+        _ rhs: Int32.GodotContiguousArrayStorage
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    PackedInt32ArrayBindings.operatorEqualPackedint32array(__ptr_lhs, __ptr_rhs, __temporary)
+                    Int32GodotContiguousArrayStorageBindings.operatorEqualGodotcontiguousarrayint32(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
     }
 
     static internal func _operatorNotEqual(
-        _ lhs: Godot.PackedInt32Array,
-        _ rhs: Godot.PackedInt32Array
+        _ lhs: Int32.GodotContiguousArrayStorage,
+        _ rhs: Int32.GodotContiguousArrayStorage
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    PackedInt32ArrayBindings.operatorNotEqualPackedint32array(__ptr_lhs, __ptr_rhs, __temporary)
+                    Int32GodotContiguousArrayStorageBindings.operatorNotEqualGodotcontiguousarrayint32(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
     }
 
     static internal func _operatorAdd(
-        _ lhs: Godot.PackedInt32Array,
-        _ rhs: Godot.PackedInt32Array
-    ) -> Godot.PackedInt32Array {
+        _ lhs: Int32.GodotContiguousArrayStorage,
+        _ rhs: Int32.GodotContiguousArrayStorage
+    ) -> Int32.GodotContiguousArrayStorage {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    PackedInt32ArrayBindings.operatorAddPackedint32array(__ptr_lhs, __ptr_rhs, __temporary)
+                    Int32GodotContiguousArrayStorageBindings.operatorAddGodotcontiguousarrayint32(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -309,7 +309,7 @@ extension PackedInt32Array {
     ) -> Int {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                PackedInt32ArrayBindings.indexedGetter(__ptr_self, index, __temporary)
+                Int32GodotContiguousArrayStorageBindings.indexedGetter(__ptr_self, index, __temporary)
             }
         }
     }
@@ -321,7 +321,7 @@ extension PackedInt32Array {
         makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                PackedInt32ArrayBindings.indexedSetter(__ptr_self, index, __ptr_value)
+                Int32GodotContiguousArrayStorageBindings.indexedSetter(__ptr_self, index, __ptr_value)
             }
         }
     }
@@ -329,7 +329,7 @@ extension PackedInt32Array {
     internal func _size() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                PackedInt32ArrayBindings.methodSize(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                Int32GodotContiguousArrayStorageBindings.methodSize(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -337,7 +337,7 @@ extension PackedInt32Array {
     internal func _isEmpty() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                PackedInt32ArrayBindings.methodIsEmpty(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                Int32GodotContiguousArrayStorageBindings.methodIsEmpty(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -351,7 +351,7 @@ extension PackedInt32Array {
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_index, __ptr_value) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        PackedInt32ArrayBindings.methodSet(__ptr_self, __accessPtr, nil, 2)
+                        Int32GodotContiguousArrayStorageBindings.methodSet(__ptr_self, __accessPtr, nil, 2)
                     }
                 }
             }
@@ -367,7 +367,7 @@ extension PackedInt32Array {
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        PackedInt32ArrayBindings.methodPushBack(__ptr_self, __accessPtr, __temporary, 1)
+                        Int32GodotContiguousArrayStorageBindings.methodPushBack(__ptr_self, __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -383,7 +383,7 @@ extension PackedInt32Array {
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        PackedInt32ArrayBindings.methodAppend(__ptr_self, __accessPtr, __temporary, 1)
+                        Int32GodotContiguousArrayStorageBindings.methodAppend(__ptr_self, __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -391,13 +391,13 @@ extension PackedInt32Array {
     }
 
     mutating internal func _appendArray(
-        _ array: Godot.PackedInt32Array
+        _ array: Int32.GodotContiguousArrayStorage
     ) {
         makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: array) { __ptr_array in
             withUnsafeArgumentPackPointer(__ptr_array) { __accessPtr in
                 withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    PackedInt32ArrayBindings.methodAppendArray(__ptr_self, __accessPtr, nil, 1)
+                    Int32GodotContiguousArrayStorageBindings.methodAppendArray(__ptr_self, __accessPtr, nil, 1)
                 }
             }
         }
@@ -410,7 +410,7 @@ extension PackedInt32Array {
         withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
             withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
                 withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    PackedInt32ArrayBindings.methodRemoveAt(__ptr_self, __accessPtr, nil, 1)
+                    Int32GodotContiguousArrayStorageBindings.methodRemoveAt(__ptr_self, __accessPtr, nil, 1)
                 }
             }
         }
@@ -427,7 +427,7 @@ extension PackedInt32Array {
                 withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                     withUnsafeArgumentPackPointer(__ptr_index, __ptr_value) { __accessPtr in
                         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                            PackedInt32ArrayBindings.methodInsert(__ptr_self, __accessPtr, __temporary, 2)
+                            Int32GodotContiguousArrayStorageBindings.methodInsert(__ptr_self, __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -442,7 +442,7 @@ extension PackedInt32Array {
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                 withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    PackedInt32ArrayBindings.methodFill(__ptr_self, __accessPtr, nil, 1)
+                    Int32GodotContiguousArrayStorageBindings.methodFill(__ptr_self, __accessPtr, nil, 1)
                 }
             }
         }
@@ -457,7 +457,7 @@ extension PackedInt32Array {
             withTransferrableUnsafeRawPointer(to: newSize) { __ptr_newSize in
                 withUnsafeArgumentPackPointer(__ptr_newSize) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        PackedInt32ArrayBindings.methodResize(__ptr_self, __accessPtr, __temporary, 1)
+                        Int32GodotContiguousArrayStorageBindings.methodResize(__ptr_self, __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -467,7 +467,7 @@ extension PackedInt32Array {
     mutating internal func _clear() {
         makeUniqueIfSharedOpaque()
         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            PackedInt32ArrayBindings.methodClear(__ptr_self, nil, nil, 0)
+            Int32GodotContiguousArrayStorageBindings.methodClear(__ptr_self, nil, nil, 0)
         }
     }
 
@@ -478,7 +478,7 @@ extension PackedInt32Array {
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        PackedInt32ArrayBindings.methodHas(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        Int32GodotContiguousArrayStorageBindings.methodHas(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -488,20 +488,20 @@ extension PackedInt32Array {
     mutating internal func _reverse() {
         makeUniqueIfSharedOpaque()
         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            PackedInt32ArrayBindings.methodReverse(__ptr_self, nil, nil, 0)
+            Int32GodotContiguousArrayStorageBindings.methodReverse(__ptr_self, nil, nil, 0)
         }
     }
 
     internal func _slice(
         begin: Int,
         end: Int = 2147483647
-    ) -> Godot.PackedInt32Array {
+    ) -> Int32.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: begin) { __ptr_begin in
                 withTransferrableUnsafeRawPointer(to: end) { __ptr_end in
                     withUnsafeArgumentPackPointer(__ptr_begin, __ptr_end) { __accessPtr in
                         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                            PackedInt32ArrayBindings.methodSlice(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
+                            Int32GodotContiguousArrayStorageBindings.methodSlice(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -509,10 +509,10 @@ extension PackedInt32Array {
         }
     }
 
-    internal func _toByteArray() -> Godot.PackedByteArray {
+    internal func _toByteArray() -> UInt8.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                PackedInt32ArrayBindings.methodToByteArray(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                Int32GodotContiguousArrayStorageBindings.methodToByteArray(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -520,7 +520,7 @@ extension PackedInt32Array {
     mutating internal func _sort() {
         makeUniqueIfSharedOpaque()
         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            PackedInt32ArrayBindings.methodSort(__ptr_self, nil, nil, 0)
+            Int32GodotContiguousArrayStorageBindings.methodSort(__ptr_self, nil, nil, 0)
         }
     }
 
@@ -535,7 +535,7 @@ extension PackedInt32Array {
                 withTransferrableUnsafeRawPointer(to: before) { __ptr_before in
                     withUnsafeArgumentPackPointer(__ptr_value, __ptr_before) { __accessPtr in
                         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                            PackedInt32ArrayBindings.methodBsearch(__ptr_self, __accessPtr, __temporary, 2)
+                            Int32GodotContiguousArrayStorageBindings.methodBsearch(__ptr_self, __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -544,10 +544,10 @@ extension PackedInt32Array {
     }
 
     @discardableResult
-    mutating internal func _duplicate() -> Godot.PackedInt32Array {
+    mutating internal func _duplicate() -> Int32.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                PackedInt32ArrayBindings.methodDuplicate(__ptr_self, nil, __temporary, 0)
+                Int32GodotContiguousArrayStorageBindings.methodDuplicate(__ptr_self, nil, __temporary, 0)
             }
         }
     }
@@ -561,7 +561,7 @@ extension PackedInt32Array {
                 withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
                     withUnsafeArgumentPackPointer(__ptr_value, __ptr_from) { __accessPtr in
                         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                            PackedInt32ArrayBindings.methodFind(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
+                            Int32GodotContiguousArrayStorageBindings.methodFind(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -578,7 +578,7 @@ extension PackedInt32Array {
                 withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
                     withUnsafeArgumentPackPointer(__ptr_value, __ptr_from) { __accessPtr in
                         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                            PackedInt32ArrayBindings.methodRfind(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
+                            Int32GodotContiguousArrayStorageBindings.methodRfind(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -593,7 +593,7 @@ extension PackedInt32Array {
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        PackedInt32ArrayBindings.methodCount(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        Int32GodotContiguousArrayStorageBindings.methodCount(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }

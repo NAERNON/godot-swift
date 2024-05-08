@@ -51,15 +51,6 @@ internal macro TransferrableOpaqueUnsafePointer<T>(_ type: T.Type) = #externalMa
 #TransferrableOpaqueUnsafePointer(GodotString)
 #TransferrableOpaqueUnsafePointer(GodotStringName)
 #TransferrableOpaqueUnsafePointer(NodePath)
-#TransferrableOpaqueUnsafePointer(PackedByteArray)
-#TransferrableOpaqueUnsafePointer(PackedColorArray)
-#TransferrableOpaqueUnsafePointer(PackedFloat32Array)
-#TransferrableOpaqueUnsafePointer(PackedFloat64Array)
-#TransferrableOpaqueUnsafePointer(PackedInt32Array)
-#TransferrableOpaqueUnsafePointer(PackedInt64Array)
-#TransferrableOpaqueUnsafePointer(PackedVector2Array)
-#TransferrableOpaqueUnsafePointer(PackedVector3Array)
-#TransferrableOpaqueUnsafePointer(PackedStringArray)
 #TransferrableOpaqueUnsafePointer(RID)
 #TransferrableOpaqueUnsafePointer(Signal)
 
@@ -85,6 +76,50 @@ internal func fromInitializingTransferrableUnsafeRawPointer<Element>(
     let opaque = GodotArray<Element>.makeOpaque()
     opaque.withUnsafeMutableRawPointer(body)
     return .init(opaque: opaque)
+}
+
+// MARK: - GodotContiguousArrayStorage
+
+internal func withTransferrableUnsafeRawPointer<Result, Storage>(
+    to value: Storage,
+    _ body: (UnsafeRawPointer) throws -> Result
+) rethrows -> Result where Storage : GodotContiguousArrayStorageProtocol {
+    try value.withRawTypeUnsafeRawPointer(body)
+}
+
+internal func withTransferrableUnsafeMutableRawPointer<Result, Storage>(
+    to value: inout Storage,
+    _ body: (UnsafeMutableRawPointer) throws -> Result
+) rethrows -> Result where Storage : GodotContiguousArrayStorageProtocol {
+    try value.withRawTypeUnsafeMutableRawPointer(body)
+}
+
+internal func fromInitializingTransferrableUnsafeRawPointer<Storage>(
+    _ body: (UnsafeMutableRawPointer) -> Void
+) -> Storage where Storage : GodotContiguousArrayStorageProtocol {
+    .fromInitializingTransferrableRawTypeUnsafeRawPointer(body)
+}
+
+// MARK: - GodotContiguousArray
+
+internal func withTransferrableUnsafeRawPointer<Result, Element>(
+    to value: GodotContiguousArray<Element>,
+    _ body: (UnsafeRawPointer) throws -> Result
+) rethrows -> Result {
+    try value.storage.withRawTypeUnsafeRawPointer(body)
+}
+
+internal func withTransferrableUnsafeMutableRawPointer<Result, Element>(
+    to value: inout GodotContiguousArray<Element>,
+    _ body: (UnsafeMutableRawPointer) throws -> Result
+) rethrows -> Result {
+    try value.storage.withRawTypeUnsafeMutableRawPointer(body)
+}
+
+internal func fromInitializingTransferrableUnsafeRawPointer<Element>(
+    _ body: (UnsafeMutableRawPointer) -> Void
+) -> GodotContiguousArray<Element> {
+    .init(storage: .fromInitializingTransferrableRawTypeUnsafeRawPointer(body))
 }
 
 // MARK: - GodotDictionary

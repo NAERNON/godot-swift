@@ -84,7 +84,7 @@ open class OpenXRIPBinding: Resource {
     }()
 
     private func __setPaths(
-        _ paths: Godot.PackedStringArray
+        _ paths: Godot.GodotContiguousArray<GodotString>
     ) {
         withTransferrableUnsafeRawPointer(to: paths) { __ptr_paths in
             withUnsafeArgumentPackPointer(__ptr_paths) { __accessPtr in
@@ -108,7 +108,7 @@ open class OpenXRIPBinding: Resource {
         }
     }()
 
-    private func __getPaths() -> Godot.PackedStringArray {
+    private func __getPaths() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -209,7 +209,7 @@ open class OpenXRIPBinding: Resource {
         }
     }
 
-    public var paths: Godot.PackedStringArray {
+    public var paths: Godot.GodotContiguousArray<GodotString> {
         get {
             __getPaths()
         }

@@ -162,7 +162,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         }
     }()
 
-    private func __getSupportedProtocols() -> Godot.PackedStringArray {
+    private func __getSupportedProtocols() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -184,7 +184,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
     }()
 
     private func __setSupportedProtocols(
-        _ protocols: Godot.PackedStringArray
+        _ protocols: Godot.GodotContiguousArray<GodotString>
     ) {
         withTransferrableUnsafeRawPointer(to: protocols) { __ptr_protocols in
             withUnsafeArgumentPackPointer(__ptr_protocols) { __accessPtr in
@@ -208,7 +208,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         }
     }()
 
-    private func __getHandshakeHeaders() -> Godot.PackedStringArray {
+    private func __getHandshakeHeaders() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -230,7 +230,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
     }()
 
     private func __setHandshakeHeaders(
-        protocols: Godot.PackedStringArray
+        protocols: Godot.GodotContiguousArray<GodotString>
     ) {
         withTransferrableUnsafeRawPointer(to: protocols) { __ptr_protocols in
             withUnsafeArgumentPackPointer(__ptr_protocols) { __accessPtr in
@@ -430,7 +430,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         }
     }
 
-    public var supportedProtocols: Godot.PackedStringArray {
+    public var supportedProtocols: Godot.GodotContiguousArray<GodotString> {
         get {
             __getSupportedProtocols()
         }
@@ -441,7 +441,7 @@ open class WebSocketMultiplayerPeer: MultiplayerPeer {
         }
     }
 
-    public var handshakeHeaders: Godot.PackedStringArray {
+    public var handshakeHeaders: Godot.GodotContiguousArray<GodotString> {
         get {
             __getHandshakeHeaders()
         }

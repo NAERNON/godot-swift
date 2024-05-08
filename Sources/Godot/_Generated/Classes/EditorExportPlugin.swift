@@ -9,12 +9,12 @@ open class EditorExportPlugin: RefCounted {
     open func _exportFile(
         path: Godot.GodotString,
         type: Godot.GodotString,
-        features: Godot.PackedStringArray
+        features: Godot.GodotContiguousArray<GodotString>
     ) {
     }
 
     open func _exportBegin(
-        features: Godot.PackedStringArray,
+        features: Godot.GodotContiguousArray<GodotString>,
         isDebug: Bool,
         path: Godot.GodotString,
         flags: UInt32
@@ -26,7 +26,7 @@ open class EditorExportPlugin: RefCounted {
 
     open func _beginCustomizeResources(
         platform: Godot.EditorExportPlatform?,
-        features: Godot.PackedStringArray
+        features: Godot.GodotContiguousArray<GodotString>
     ) -> Bool {
         Bool()
     }
@@ -40,7 +40,7 @@ open class EditorExportPlugin: RefCounted {
 
     open func _beginCustomizeScenes(
         platform: Godot.EditorExportPlatform?,
-        features: Godot.PackedStringArray
+        features: Godot.GodotContiguousArray<GodotString>
     ) -> Bool {
         Bool()
     }
@@ -84,8 +84,8 @@ open class EditorExportPlugin: RefCounted {
     open func _getExportFeatures(
         platform: Godot.EditorExportPlatform?,
         debug: Bool
-    ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    ) -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _getName() -> Godot.GodotString {
@@ -101,22 +101,22 @@ open class EditorExportPlugin: RefCounted {
     open func _getAndroidDependencies(
         platform: Godot.EditorExportPlatform?,
         debug: Bool
-    ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    ) -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _getAndroidDependenciesMavenRepos(
         platform: Godot.EditorExportPlatform?,
         debug: Bool
-    ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    ) -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _getAndroidLibraries(
         platform: Godot.EditorExportPlatform?,
         debug: Bool
-    ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    ) -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _getAndroidManifestActivityElementContents(
@@ -150,7 +150,7 @@ open class EditorExportPlugin: RefCounted {
 
     public func addSharedObject(
         path: Godot.GodotString,
-        tags: Godot.PackedStringArray,
+        tags: Godot.GodotContiguousArray<GodotString>,
         target: Godot.GodotString
     ) {
         withTransferrableUnsafeRawPointer(to: path) { __ptr_path in
@@ -206,7 +206,7 @@ open class EditorExportPlugin: RefCounted {
 
     public func addFile(
         path: Godot.GodotString,
-        file: Godot.PackedByteArray,
+        file: Godot.GodotContiguousArray<UInt8>,
         remap: Bool
     ) {
         withTransferrableUnsafeRawPointer(to: path) { __ptr_path in
@@ -462,7 +462,7 @@ open class EditorExportPlugin: RefCounted {
         ._exportFile(
             path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
             type: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!),
-            features: Godot.PackedStringArray.transferFromGodot(unsafePointer: args[2]!)
+            features: Godot.GodotContiguousArray<GodotString> .transferFromGodot(unsafePointer: args[2]!)
         )}
         let _export_begin_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -470,7 +470,7 @@ open class EditorExportPlugin: RefCounted {
             }
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._exportBegin(
-            features: Godot.PackedStringArray.transferFromGodot(unsafePointer: args[0]!),
+            features: Godot.GodotContiguousArray<GodotString> .transferFromGodot(unsafePointer: args[0]!),
             isDebug: Bool.transferFromGodot(unsafePointer: args[1]!),
             path: Godot.GodotString.transferFromGodot(unsafePointer: args[2]!),
             flags: UInt32.transferFromGodot(unsafePointer: args[3]!)
@@ -488,7 +488,7 @@ open class EditorExportPlugin: RefCounted {
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._beginCustomizeResources(
             platform: Godot.EditorExportPlatform?.transferFromGodot(unsafePointer: args[0]!),
-            features: Godot.PackedStringArray.transferFromGodot(unsafePointer: args[1]!)
+            features: Godot.GodotContiguousArray<GodotString> .transferFromGodot(unsafePointer: args[1]!)
         )
         .transferToGodot(unsafePointer: returnPtr!)}
         let _customize_resource_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -508,7 +508,7 @@ open class EditorExportPlugin: RefCounted {
             Unmanaged<EditorExportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._beginCustomizeScenes(
             platform: Godot.EditorExportPlatform?.transferFromGodot(unsafePointer: args[0]!),
-            features: Godot.PackedStringArray.transferFromGodot(unsafePointer: args[1]!)
+            features: Godot.GodotContiguousArray<GodotString> .transferFromGodot(unsafePointer: args[1]!)
         )
         .transferToGodot(unsafePointer: returnPtr!)}
         let _customize_scene_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in

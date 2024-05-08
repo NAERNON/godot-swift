@@ -127,7 +127,7 @@ open class FileAccess: RefCounted {
     static public func openEncrypted(
         path: Godot.GodotString,
         modeFlags: Godot.FileAccess.ModeFlags,
-        key: Godot.PackedByteArray
+        key: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.FileAccess? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: path) { __ptr_path in
@@ -238,7 +238,7 @@ open class FileAccess: RefCounted {
 
     static public func fileAsBytes(
         path: Godot.GodotString
-    ) -> Godot.PackedByteArray {
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: path) { __ptr_path in
                 withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -630,7 +630,7 @@ open class FileAccess: RefCounted {
 
     public func buffer(
         length: Int64
-    ) -> Godot.PackedByteArray {
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: length) { __ptr_length in
                 withUnsafeArgumentPackPointer(__ptr_length) { __accessPtr in
@@ -678,7 +678,7 @@ open class FileAccess: RefCounted {
 
     public func csvLine(
         delim: Godot.GodotString = ","
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: delim) { __ptr_delim in
                 withUnsafeArgumentPackPointer(__ptr_delim) { __accessPtr in
@@ -1050,7 +1050,7 @@ open class FileAccess: RefCounted {
     }()
 
     public func storeBuffer(
-        _ buffer: Godot.PackedByteArray
+        _ buffer: Godot.GodotContiguousArray<UInt8>
     ) {
         withTransferrableUnsafeRawPointer(to: buffer) { __ptr_buffer in
             withUnsafeArgumentPackPointer(__ptr_buffer) { __accessPtr in
@@ -1100,7 +1100,7 @@ open class FileAccess: RefCounted {
     }()
 
     public func storeCsvLine(
-        values: Godot.PackedStringArray,
+        values: Godot.GodotContiguousArray<GodotString>,
         delim: Godot.GodotString = ","
     ) {
         withTransferrableUnsafeRawPointer(to: values) { __ptr_values in

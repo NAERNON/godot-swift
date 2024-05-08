@@ -234,7 +234,7 @@ open class GLTFState: Resource {
         }
     }()
 
-    private func __getGlbData() -> Godot.PackedByteArray {
+    private func __getGlbData() -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -256,7 +256,7 @@ open class GLTFState: Resource {
     }()
 
     private func __setGlbData(
-        _ glbData: Godot.PackedByteArray
+        _ glbData: Godot.GodotContiguousArray<UInt8>
     ) {
         withTransferrableUnsafeRawPointer(to: glbData) { __ptr_glbData in
             withUnsafeArgumentPackPointer(__ptr_glbData) { __accessPtr in
@@ -372,7 +372,7 @@ open class GLTFState: Resource {
         }
     }()
 
-    private func __getBuffers() -> Godot.GodotArray<Godot.PackedByteArray> {
+    private func __getBuffers() -> Godot.GodotArray<Godot.GodotContiguousArray<UInt8>> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -394,7 +394,7 @@ open class GLTFState: Resource {
     }()
 
     private func __setBuffers(
-        _ buffers: Godot.GodotArray<Godot.PackedByteArray>
+        _ buffers: Godot.GodotArray<Godot.GodotContiguousArray<UInt8>>
     ) {
         withTransferrableUnsafeRawPointer(to: buffers) { __ptr_buffers in
             withUnsafeArgumentPackPointer(__ptr_buffers) { __accessPtr in
@@ -794,7 +794,7 @@ open class GLTFState: Resource {
         }
     }()
 
-    private func __getRootNodes() -> Godot.PackedInt32Array {
+    private func __getRootNodes() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -816,7 +816,7 @@ open class GLTFState: Resource {
     }()
 
     private func __setRootNodes(
-        _ rootNodes: Godot.PackedInt32Array
+        _ rootNodes: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: rootNodes) { __ptr_rootNodes in
             withUnsafeArgumentPackPointer(__ptr_rootNodes) { __accessPtr in
@@ -1539,7 +1539,7 @@ open class GLTFState: Resource {
         }
     }
 
-    public var glbData: Godot.PackedByteArray {
+    public var glbData: Godot.GodotContiguousArray<UInt8> {
         get {
             __getGlbData()
         }
@@ -1572,7 +1572,7 @@ open class GLTFState: Resource {
         }
     }
 
-    public var buffers: Godot.GodotArray<Godot.PackedByteArray> {
+    public var buffers: Godot.GodotArray<Godot.GodotContiguousArray<UInt8>> {
         get {
             __getBuffers()
         }
@@ -1660,7 +1660,7 @@ open class GLTFState: Resource {
         }
     }
 
-    public var rootNodes: Godot.PackedInt32Array {
+    public var rootNodes: Godot.GodotContiguousArray<Int32> {
         get {
             __getRootNodes()
         }

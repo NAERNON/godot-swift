@@ -413,7 +413,7 @@ open class MultiplayerAPI: RefCounted {
         }
     }()
 
-    public func peers() -> Godot.PackedInt32Array {
+    public func peers() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

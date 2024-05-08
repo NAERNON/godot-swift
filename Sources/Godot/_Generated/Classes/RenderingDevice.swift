@@ -1228,7 +1228,7 @@ open class RenderingDevice: Object {
     public func textureCreate(
         format: Godot.RDTextureFormat?,
         view: Godot.RDTextureView?,
-        data: Godot.GodotArray<Godot.PackedByteArray> = []
+        data: Godot.GodotArray<Godot.GodotContiguousArray<UInt8>> = []
     ) -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: format) { __ptr_format in
@@ -1392,7 +1392,7 @@ open class RenderingDevice: Object {
     public func textureUpdate(
         texture: Godot.RID,
         layer: UInt32,
-        data: Godot.PackedByteArray,
+        data: Godot.GodotContiguousArray<UInt8>,
         postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
@@ -1428,7 +1428,7 @@ open class RenderingDevice: Object {
     public func textureGetData(
         texture: Godot.RID,
         layer: UInt32
-    ) -> Godot.PackedByteArray {
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: texture) { __ptr_texture in
                 withTransferrableUnsafeRawPointer(to: layer) { __ptr_layer in
@@ -2062,7 +2062,7 @@ open class RenderingDevice: Object {
 
     public func vertexBufferCreate(
         sizeBytes: UInt32,
-        data: Godot.PackedByteArray = PackedByteArray(),
+        data: Godot.GodotContiguousArray<UInt8> = [],
         useAsStorage: Bool = false
     ) -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
@@ -2124,7 +2124,7 @@ open class RenderingDevice: Object {
         vertexCount: UInt32,
         vertexFormat: Int64,
         srcBuffers: Godot.GodotArray<Godot.RID>,
-        offsets: Godot.PackedInt64Array = PackedInt64Array()
+        offsets: Godot.GodotContiguousArray<Int64> = []
     ) -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: vertexCount) { __ptr_vertexCount in
@@ -2159,7 +2159,7 @@ open class RenderingDevice: Object {
     public func indexBufferCreate(
         sizeIndices: UInt32,
         format: Godot.RenderingDevice.IndexBufferFormat,
-        data: Godot.PackedByteArray = PackedByteArray(),
+        data: Godot.GodotContiguousArray<UInt8> = [],
         useRestartIndices: Bool = false
     ) -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
@@ -2260,7 +2260,7 @@ open class RenderingDevice: Object {
     public func shaderCompileBinaryFromSpirv(
         spirvData: Godot.RDShaderSPIRV?,
         name: Godot.GodotString = ""
-    ) -> Godot.PackedByteArray {
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: spirvData) { __ptr_spirvData in
                 withUnsafePointer(to: __ptr_spirvData) { _ptr___ptr_spirvData in
@@ -2322,7 +2322,7 @@ open class RenderingDevice: Object {
     }()
 
     public func shaderCreateFromBytecode(
-        binaryData: Godot.PackedByteArray,
+        binaryData: Godot.GodotContiguousArray<UInt8>,
         placeholderRID: Godot.RID = RID()
     ) -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
@@ -2401,7 +2401,7 @@ open class RenderingDevice: Object {
 
     public func uniformBufferCreate(
         sizeBytes: UInt32,
-        data: Godot.PackedByteArray = PackedByteArray()
+        data: Godot.GodotContiguousArray<UInt8> = []
     ) -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: sizeBytes) { __ptr_sizeBytes in
@@ -2431,7 +2431,7 @@ open class RenderingDevice: Object {
 
     public func storageBufferCreate(
         sizeBytes: UInt32,
-        data: Godot.PackedByteArray = PackedByteArray(),
+        data: Godot.GodotContiguousArray<UInt8> = [],
         usage: Godot.RenderingDevice.StorageBufferUsage = RenderingDevice.StorageBufferUsage(rawValue: 0)
     ) -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
@@ -2465,7 +2465,7 @@ open class RenderingDevice: Object {
     public func textureBufferCreate(
         sizeBytes: UInt32,
         format: Godot.RenderingDevice.DataFormat,
-        data: Godot.PackedByteArray = PackedByteArray()
+        data: Godot.GodotContiguousArray<UInt8> = []
     ) -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: sizeBytes) { __ptr_sizeBytes in
@@ -2559,7 +2559,7 @@ open class RenderingDevice: Object {
         buffer: Godot.RID,
         offset: UInt32,
         sizeBytes: UInt32,
-        data: Godot.PackedByteArray,
+        data: Godot.GodotContiguousArray<UInt8>,
         postBarrier: Godot.RenderingDevice.BarrierMask = RenderingDevice.BarrierMask(rawValue: 32767)
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
@@ -2634,7 +2634,7 @@ open class RenderingDevice: Object {
         buffer: Godot.RID,
         offsetBytes: UInt32 = 0,
         sizeBytes: UInt32 = 0
-    ) -> Godot.PackedByteArray {
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: buffer) { __ptr_buffer in
                 withTransferrableUnsafeRawPointer(to: offsetBytes) { __ptr_offsetBytes in
@@ -2923,7 +2923,7 @@ open class RenderingDevice: Object {
         finalColorAction: Godot.RenderingDevice.FinalAction,
         initialDepthAction: Godot.RenderingDevice.InitialAction,
         finalDepthAction: Godot.RenderingDevice.FinalAction,
-        clearColorValues: Godot.PackedColorArray = PackedColorArray(),
+        clearColorValues: Godot.GodotContiguousArray<Color> = [],
         clearDepth: Double = 1.0,
         clearStencil: UInt32 = 0,
         region: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0),
@@ -2978,12 +2978,12 @@ open class RenderingDevice: Object {
         finalColorAction: Godot.RenderingDevice.FinalAction,
         initialDepthAction: Godot.RenderingDevice.InitialAction,
         finalDepthAction: Godot.RenderingDevice.FinalAction,
-        clearColorValues: Godot.PackedColorArray = PackedColorArray(),
+        clearColorValues: Godot.GodotContiguousArray<Color> = [],
         clearDepth: Double = 1.0,
         clearStencil: UInt32 = 0,
         region: Godot.Rect2 = Rect2(x: 0, y: 0, width: 0, height: 0),
         storageTextures: Godot.GodotArray<Godot.RID> = []
-    ) -> Godot.PackedInt64Array {
+    ) -> Godot.GodotContiguousArray<Int64> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: framebuffer) { __ptr_framebuffer in
                 withTransferrableUnsafeRawPointer(to: splits) { __ptr_splits in
@@ -3173,7 +3173,7 @@ open class RenderingDevice: Object {
 
     public func drawListSetPushConstant(
         drawList: Int64,
-        buffer: Godot.PackedByteArray,
+        buffer: Godot.GodotContiguousArray<UInt8>,
         sizeBytes: UInt32
     ) {
         withTransferrableUnsafeRawPointer(to: drawList) { __ptr_drawList in
@@ -3312,7 +3312,7 @@ open class RenderingDevice: Object {
 
     public func drawListSwitchToNextPassSplit(
         splits: UInt32
-    ) -> Godot.PackedInt64Array {
+    ) -> Godot.GodotContiguousArray<Int64> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: splits) { __ptr_splits in
                 withUnsafeArgumentPackPointer(__ptr_splits) { __accessPtr in
@@ -3419,7 +3419,7 @@ open class RenderingDevice: Object {
 
     public func computeListSetPushConstant(
         computeList: Int64,
-        buffer: Godot.PackedByteArray,
+        buffer: Godot.GodotContiguousArray<UInt8>,
         sizeBytes: UInt32
     ) {
         withTransferrableUnsafeRawPointer(to: computeList) { __ptr_computeList in

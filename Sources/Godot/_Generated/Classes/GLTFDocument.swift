@@ -66,7 +66,7 @@ open class GLTFDocument: Resource {
     }()
 
     public func appendFromBuffer(
-        bytes: Godot.PackedByteArray,
+        bytes: Godot.GodotContiguousArray<UInt8>,
         basePath: Godot.GodotString,
         state: Godot.GLTFState?,
         flags: UInt32 = 0
@@ -180,7 +180,7 @@ open class GLTFDocument: Resource {
 
     public func generateBuffer(
         state: Godot.GLTFState?
-    ) -> Godot.PackedByteArray {
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: state) { __ptr_state in
                 withUnsafePointer(to: __ptr_state) { _ptr___ptr_state in

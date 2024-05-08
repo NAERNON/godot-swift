@@ -423,7 +423,7 @@ open class TileSetAtlasSource: TileSetSource {
         margins: Godot.Vector2I,
         separation: Godot.Vector2I,
         textureRegionSize: Godot.Vector2I
-    ) -> Godot.PackedVector2Array {
+    ) -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: texture) { __ptr_texture in
                 withUnsafePointer(to: __ptr_texture) { _ptr___ptr_texture in

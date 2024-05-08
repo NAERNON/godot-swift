@@ -621,7 +621,7 @@ open class Curve3D: Resource {
         }
     }()
 
-    public func bakedPoints() -> Godot.PackedVector3Array {
+    public func bakedPoints() -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -642,7 +642,7 @@ open class Curve3D: Resource {
         }
     }()
 
-    public func bakedTilts() -> Godot.PackedFloat32Array {
+    public func bakedTilts() -> Godot.GodotContiguousArray<Float> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -663,7 +663,7 @@ open class Curve3D: Resource {
         }
     }()
 
-    public func bakedUpVectors() -> Godot.PackedVector3Array {
+    public func bakedUpVectors() -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -741,7 +741,7 @@ open class Curve3D: Resource {
     public func tessellate(
         maxStages: Int32 = 5,
         toleranceDegrees: Double = 4
-    ) -> Godot.PackedVector3Array {
+    ) -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: maxStages) { __ptr_maxStages in
                 withTransferrableUnsafeRawPointer(to: toleranceDegrees) { __ptr_toleranceDegrees in
@@ -771,7 +771,7 @@ open class Curve3D: Resource {
     public func tessellateEvenLength(
         maxStages: Int32 = 5,
         toleranceLength: Double = 0.2
-    ) -> Godot.PackedVector3Array {
+    ) -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: maxStages) { __ptr_maxStages in
                 withTransferrableUnsafeRawPointer(to: toleranceLength) { __ptr_toleranceLength in

@@ -297,7 +297,7 @@ open class ENetConnection: RefCounted {
 
     public func broadcast(
         channel: Int32,
-        packet: Godot.PackedByteArray,
+        packet: Godot.GodotContiguousArray<UInt8>,
         flags: Int32
     ) {
         withTransferrableUnsafeRawPointer(to: channel) { __ptr_channel in
@@ -530,7 +530,7 @@ open class ENetConnection: RefCounted {
     public func socketSend(
         destinationAddress: Godot.GodotString,
         destinationPort: Int32,
-        packet: Godot.PackedByteArray
+        packet: Godot.GodotContiguousArray<UInt8>
     ) {
         withTransferrableUnsafeRawPointer(to: destinationAddress) { __ptr_destinationAddress in
             withTransferrableUnsafeRawPointer(to: destinationPort) { __ptr_destinationPort in

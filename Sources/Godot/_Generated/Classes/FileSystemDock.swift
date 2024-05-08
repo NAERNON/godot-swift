@@ -44,10 +44,10 @@ open class FileSystemDock: VBoxContainer {
     }()
 
     public struct InstantiateSignalInput: Godot.SignalInput {
-        public let files: Godot.PackedStringArray
+        public let files: Godot.GodotContiguousArray<GodotString>
 
         fileprivate init(
-            files: Godot.PackedStringArray
+            files: Godot.GodotContiguousArray<GodotString>
         ) {
             self.files = files
         }
@@ -60,7 +60,7 @@ open class FileSystemDock: VBoxContainer {
     }
 
     public func instantiate(
-        files: Godot.PackedStringArray
+        files: Godot.GodotContiguousArray<GodotString>
     ) {
         _ = instantiateSignal.emit(.init(files: files))
     }
@@ -68,7 +68,7 @@ open class FileSystemDock: VBoxContainer {
     public lazy var instantiateSignal: Godot.SignalEmitter<InstantiateSignalInput> = {
         .init(object: self, signalName: "instantiate") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<InstantiateSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(files: Godot.PackedStringArray.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
+                .call(with: .init(files: Godot.GodotContiguousArray<GodotString> .convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<InstantiateSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in

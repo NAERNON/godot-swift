@@ -138,7 +138,7 @@ open class TranslationServer: Object {
         }
     }()
 
-    public func allLanguages() -> Godot.PackedStringArray {
+    public func allLanguages() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -186,7 +186,7 @@ open class TranslationServer: Object {
         }
     }()
 
-    public func allScripts() -> Godot.PackedStringArray {
+    public func allScripts() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -234,7 +234,7 @@ open class TranslationServer: Object {
         }
     }()
 
-    public func allCountries() -> Godot.PackedStringArray {
+    public func allCountries() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -475,7 +475,7 @@ open class TranslationServer: Object {
         }
     }()
 
-    public func loadedLocales() -> Godot.PackedStringArray {
+    public func loadedLocales() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

@@ -52,7 +52,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
     }()
 
     private func __setPolygon(
-        _ polygon: Godot.PackedVector2Array
+        _ polygon: Godot.GodotContiguousArray<Vector2>
     ) {
         withTransferrableUnsafeRawPointer(to: polygon) { __ptr_polygon in
             withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
@@ -76,7 +76,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
     }()
 
-    private func __getPolygon() -> Godot.PackedVector2Array {
+    private func __getPolygon() -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -781,7 +781,7 @@ open class CSGPolygon3D: CSGPrimitive3D {
         }
     }
 
-    public var polygon: Godot.PackedVector2Array {
+    public var polygon: Godot.GodotContiguousArray<Vector2> {
         get {
             __getPolygon()
         }

@@ -264,7 +264,7 @@ open class EditorSettings: Resource {
     }()
 
     public func setFavorites(
-        dirs: Godot.PackedStringArray
+        dirs: Godot.GodotContiguousArray<GodotString>
     ) {
         withTransferrableUnsafeRawPointer(to: dirs) { __ptr_dirs in
             withUnsafeArgumentPackPointer(__ptr_dirs) { __accessPtr in
@@ -288,7 +288,7 @@ open class EditorSettings: Resource {
         }
     }()
 
-    public func favorites() -> Godot.PackedStringArray {
+    public func favorites() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -310,7 +310,7 @@ open class EditorSettings: Resource {
     }()
 
     public func setRecentDirs(
-        _ dirs: Godot.PackedStringArray
+        _ dirs: Godot.GodotContiguousArray<GodotString>
     ) {
         withTransferrableUnsafeRawPointer(to: dirs) { __ptr_dirs in
             withUnsafeArgumentPackPointer(__ptr_dirs) { __accessPtr in
@@ -334,7 +334,7 @@ open class EditorSettings: Resource {
         }
     }()
 
-    public func recentDirs() -> Godot.PackedStringArray {
+    public func recentDirs() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -410,7 +410,7 @@ open class EditorSettings: Resource {
         }
     }()
 
-    public func changedSettings() -> Godot.PackedStringArray {
+    public func changedSettings() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

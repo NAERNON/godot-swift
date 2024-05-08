@@ -14,7 +14,7 @@ open class ClassDB: Object {
         }
     }()
 
-    public func classList() -> Godot.PackedStringArray {
+    public func classList() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -37,7 +37,7 @@ open class ClassDB: Object {
 
     public func inheritersFromClass(
         _ `class`: Godot.GodotStringName
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `class`) { __ptr_class in
                 withUnsafeArgumentPackPointer(__ptr_class) { __accessPtr in
@@ -453,7 +453,7 @@ open class ClassDB: Object {
     public func classGetIntegerConstantList(
         `class`: Godot.GodotStringName,
         noInheritance: Bool = false
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `class`) { __ptr_class in
                 withTransferrableUnsafeRawPointer(to: noInheritance) { __ptr_noInheritance in
@@ -576,7 +576,7 @@ open class ClassDB: Object {
     public func classGetEnumList(
         `class`: Godot.GodotStringName,
         noInheritance: Bool = false
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `class`) { __ptr_class in
                 withTransferrableUnsafeRawPointer(to: noInheritance) { __ptr_noInheritance in
@@ -607,7 +607,7 @@ open class ClassDB: Object {
         `class`: Godot.GodotStringName,
         `enum`: Godot.GodotStringName,
         noInheritance: Bool = false
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `class`) { __ptr_class in
                 withTransferrableUnsafeRawPointer(to: `enum`) { __ptr_enum in

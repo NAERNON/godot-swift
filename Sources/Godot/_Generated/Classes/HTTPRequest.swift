@@ -46,15 +46,15 @@ open class HTTPRequest: Node {
 
         public let responseCode: Int
 
-        public let headers: Godot.PackedStringArray
+        public let headers: Godot.GodotContiguousArray<GodotString>
 
-        public let body: Godot.PackedByteArray
+        public let body: Godot.GodotContiguousArray<UInt8>
 
         fileprivate init(
             result: Int,
             responseCode: Int,
-            headers: Godot.PackedStringArray,
-            body: Godot.PackedByteArray
+            headers: Godot.GodotContiguousArray<GodotString>,
+            body: Godot.GodotContiguousArray<UInt8>
         ) {
             self.result = result
             self.responseCode = responseCode
@@ -72,8 +72,8 @@ open class HTTPRequest: Node {
     public func requestCompleted(
         result: Int,
         responseCode: Int,
-        headers: Godot.PackedStringArray,
-        body: Godot.PackedByteArray
+        headers: Godot.GodotContiguousArray<GodotString>,
+        body: Godot.GodotContiguousArray<UInt8>
     ) {
         _ = requestCompletedSignal.emit(.init(result: result,
                 responseCode: responseCode,
@@ -86,8 +86,8 @@ open class HTTPRequest: Node {
             Unmanaged<Godot.SignalReceiver<RequestCompletedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(result: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
                     responseCode: Int.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!),
-                    headers: Godot.PackedStringArray.convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!),
-                    body: Godot.PackedByteArray.convertFromStorage(unsafePointer: args!.advanced(by: 3).pointee!)))
+                    headers: Godot.GodotContiguousArray<GodotString> .convertFromStorage(unsafePointer: args!.advanced(by: 2).pointee!),
+                    body: Godot.GodotContiguousArray<UInt8> .convertFromStorage(unsafePointer: args!.advanced(by: 3).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<RequestCompletedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -109,7 +109,7 @@ open class HTTPRequest: Node {
 
     public func request(
         url: Godot.GodotString,
-        customHeaders: Godot.PackedStringArray = PackedStringArray(),
+        customHeaders: Godot.GodotContiguousArray<GodotString> = [],
         method: Godot.HTTPClient.Method = HTTPClient.Method(rawValue: 0)!,
         requestData: Godot.GodotString = ""
     ) -> Godot.ErrorType {
@@ -145,9 +145,9 @@ open class HTTPRequest: Node {
 
     public func requestRaw(
         url: Godot.GodotString,
-        customHeaders: Godot.PackedStringArray = PackedStringArray(),
+        customHeaders: Godot.GodotContiguousArray<GodotString> = [],
         method: Godot.HTTPClient.Method = HTTPClient.Method(rawValue: 0)!,
-        requestDataRaw: Godot.PackedByteArray = PackedByteArray()
+        requestDataRaw: Godot.GodotContiguousArray<UInt8> = []
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: url) { __ptr_url in

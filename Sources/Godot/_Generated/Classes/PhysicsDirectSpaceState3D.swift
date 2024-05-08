@@ -109,7 +109,7 @@ open class PhysicsDirectSpaceState3D: Object {
 
     public func castMotion(
         parameters: Godot.PhysicsShapeQueryParameters3D?
-    ) -> Godot.PackedFloat32Array {
+    ) -> Godot.GodotContiguousArray<Float> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: parameters) { __ptr_parameters in
                 withUnsafePointer(to: __ptr_parameters) { _ptr___ptr_parameters in

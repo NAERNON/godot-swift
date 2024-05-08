@@ -239,7 +239,7 @@ open class ArrayMesh: Mesh {
     public func surfaceUpdateVertexRegion(
         surfIdx: Int32,
         offset: Int32,
-        data: Godot.PackedByteArray
+        data: Godot.GodotContiguousArray<UInt8>
     ) {
         withTransferrableUnsafeRawPointer(to: surfIdx) { __ptr_surfIdx in
             withTransferrableUnsafeRawPointer(to: offset) { __ptr_offset in
@@ -270,7 +270,7 @@ open class ArrayMesh: Mesh {
     public func surfaceUpdateAttributeRegion(
         surfIdx: Int32,
         offset: Int32,
-        data: Godot.PackedByteArray
+        data: Godot.GodotContiguousArray<UInt8>
     ) {
         withTransferrableUnsafeRawPointer(to: surfIdx) { __ptr_surfIdx in
             withTransferrableUnsafeRawPointer(to: offset) { __ptr_offset in
@@ -301,7 +301,7 @@ open class ArrayMesh: Mesh {
     public func surfaceUpdateSkinRegion(
         surfIdx: Int32,
         offset: Int32,
-        data: Godot.PackedByteArray
+        data: Godot.GodotContiguousArray<UInt8>
     ) {
         withTransferrableUnsafeRawPointer(to: surfIdx) { __ptr_surfIdx in
             withTransferrableUnsafeRawPointer(to: offset) { __ptr_offset in

@@ -682,7 +682,7 @@ open class TileData: Object {
     public func setCollisionPolygonPoints(
         layerID: Int32,
         polygonIndex: Int32,
-        polygon: Godot.PackedVector2Array
+        polygon: Godot.GodotContiguousArray<Vector2>
     ) {
         withTransferrableUnsafeRawPointer(to: layerID) { __ptr_layerID in
             withTransferrableUnsafeRawPointer(to: polygonIndex) { __ptr_polygonIndex in
@@ -713,7 +713,7 @@ open class TileData: Object {
     public func collisionPolygonPoints(
         layerID: Int32,
         polygonIndex: Int32
-    ) -> Godot.PackedVector2Array {
+    ) -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: layerID) { __ptr_layerID in
                 withTransferrableUnsafeRawPointer(to: polygonIndex) { __ptr_polygonIndex in

@@ -71,7 +71,7 @@ open class PacketPeer: RefCounted {
         }
     }()
 
-    public func packet() -> Godot.PackedByteArray {
+    public func packet() -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -93,7 +93,7 @@ open class PacketPeer: RefCounted {
     }()
 
     public func putPacket(
-        buffer: Godot.PackedByteArray
+        buffer: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: buffer) { __ptr_buffer in

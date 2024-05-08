@@ -15,7 +15,7 @@ open class ConcavePolygonShape3D: Shape3D {
     }()
 
     private func __setFaces(
-        _ faces: Godot.PackedVector3Array
+        _ faces: Godot.GodotContiguousArray<Vector3>
     ) {
         withTransferrableUnsafeRawPointer(to: faces) { __ptr_faces in
             withUnsafeArgumentPackPointer(__ptr_faces) { __accessPtr in
@@ -39,7 +39,7 @@ open class ConcavePolygonShape3D: Shape3D {
         }
     }()
 
-    private func __getFaces() -> Godot.PackedVector3Array {
+    private func __getFaces() -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -98,7 +98,7 @@ open class ConcavePolygonShape3D: Shape3D {
         }
     }
 
-    public var faces: Godot.PackedVector3Array {
+    public var faces: Godot.GodotContiguousArray<Vector3> {
         get {
             __getFaces()
         }

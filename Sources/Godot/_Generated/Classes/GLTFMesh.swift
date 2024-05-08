@@ -62,7 +62,7 @@ open class GLTFMesh: Resource {
         }
     }()
 
-    private func __getBlendWeights() -> Godot.PackedFloat32Array {
+    private func __getBlendWeights() -> Godot.GodotContiguousArray<Float> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -84,7 +84,7 @@ open class GLTFMesh: Resource {
     }()
 
     private func __setBlendWeights(
-        _ blendWeights: Godot.PackedFloat32Array
+        _ blendWeights: Godot.GodotContiguousArray<Float>
     ) {
         withTransferrableUnsafeRawPointer(to: blendWeights) { __ptr_blendWeights in
             withUnsafeArgumentPackPointer(__ptr_blendWeights) { __accessPtr in
@@ -157,7 +157,7 @@ open class GLTFMesh: Resource {
         }
     }
 
-    public var blendWeights: Godot.PackedFloat32Array {
+    public var blendWeights: Godot.GodotContiguousArray<Float> {
         get {
             __getBlendWeights()
         }

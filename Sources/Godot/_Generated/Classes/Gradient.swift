@@ -271,7 +271,7 @@ open class Gradient: Resource {
     }()
 
     private func __setOffsets(
-        _ offsets: Godot.PackedFloat32Array
+        _ offsets: Godot.GodotContiguousArray<Float>
     ) {
         withTransferrableUnsafeRawPointer(to: offsets) { __ptr_offsets in
             withUnsafeArgumentPackPointer(__ptr_offsets) { __accessPtr in
@@ -295,7 +295,7 @@ open class Gradient: Resource {
         }
     }()
 
-    private func __getOffsets() -> Godot.PackedFloat32Array {
+    private func __getOffsets() -> Godot.GodotContiguousArray<Float> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -317,7 +317,7 @@ open class Gradient: Resource {
     }()
 
     private func __setColors(
-        _ colors: Godot.PackedColorArray
+        _ colors: Godot.GodotContiguousArray<Color>
     ) {
         withTransferrableUnsafeRawPointer(to: colors) { __ptr_colors in
             withUnsafeArgumentPackPointer(__ptr_colors) { __accessPtr in
@@ -341,7 +341,7 @@ open class Gradient: Resource {
         }
     }()
 
-    private func __getColors() -> Godot.PackedColorArray {
+    private func __getColors() -> Godot.GodotContiguousArray<Color> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -468,7 +468,7 @@ open class Gradient: Resource {
         }
     }
 
-    public var offsets: Godot.PackedFloat32Array {
+    public var offsets: Godot.GodotContiguousArray<Float> {
         get {
             __getOffsets()
         }
@@ -479,7 +479,7 @@ open class Gradient: Resource {
         }
     }
 
-    public var colors: Godot.PackedColorArray {
+    public var colors: Godot.GodotContiguousArray<Color> {
         get {
             __getColors()
         }

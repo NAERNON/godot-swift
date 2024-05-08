@@ -83,10 +83,10 @@ open class EditorFileSystem: Node {
     }()
 
     public struct ResourcesReimportedSignalInput: Godot.SignalInput {
-        public let resources: Godot.PackedStringArray
+        public let resources: Godot.GodotContiguousArray<GodotString>
 
         fileprivate init(
-            resources: Godot.PackedStringArray
+            resources: Godot.GodotContiguousArray<GodotString>
         ) {
             self.resources = resources
         }
@@ -99,7 +99,7 @@ open class EditorFileSystem: Node {
     }
 
     public func resourcesReimported(
-        resources: Godot.PackedStringArray
+        resources: Godot.GodotContiguousArray<GodotString>
     ) {
         _ = resourcesReimportedSignal.emit(.init(resources: resources))
     }
@@ -107,7 +107,7 @@ open class EditorFileSystem: Node {
     public lazy var resourcesReimportedSignal: Godot.SignalEmitter<ResourcesReimportedSignalInput> = {
         .init(object: self, signalName: "resources_reimported") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ResourcesReimportedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(resources: Godot.PackedStringArray.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
+                .call(with: .init(resources: Godot.GodotContiguousArray<GodotString> .convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ResourcesReimportedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -120,10 +120,10 @@ open class EditorFileSystem: Node {
     }()
 
     public struct ResourcesReloadSignalInput: Godot.SignalInput {
-        public let resources: Godot.PackedStringArray
+        public let resources: Godot.GodotContiguousArray<GodotString>
 
         fileprivate init(
-            resources: Godot.PackedStringArray
+            resources: Godot.GodotContiguousArray<GodotString>
         ) {
             self.resources = resources
         }
@@ -136,7 +136,7 @@ open class EditorFileSystem: Node {
     }
 
     public func resourcesReload(
-        resources: Godot.PackedStringArray
+        resources: Godot.GodotContiguousArray<GodotString>
     ) {
         _ = resourcesReloadSignal.emit(.init(resources: resources))
     }
@@ -144,7 +144,7 @@ open class EditorFileSystem: Node {
     public lazy var resourcesReloadSignal: Godot.SignalEmitter<ResourcesReloadSignalInput> = {
         .init(object: self, signalName: "resources_reload") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ResourcesReloadSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(resources: Godot.PackedStringArray.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
+                .call(with: .init(resources: Godot.GodotContiguousArray<GodotString> .convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<ResourcesReloadSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -345,7 +345,7 @@ open class EditorFileSystem: Node {
     }()
 
     public func reimportFiles(
-        _ files: Godot.PackedStringArray
+        _ files: Godot.GodotContiguousArray<GodotString>
     ) {
         withTransferrableUnsafeRawPointer(to: files) { __ptr_files in
             withUnsafeArgumentPackPointer(__ptr_files) { __accessPtr in

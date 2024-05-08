@@ -290,7 +290,7 @@ open class GLTFAccessor: Resource {
         }
     }()
 
-    private func __getMin() -> Godot.PackedFloat64Array {
+    private func __getMin() -> Godot.GodotContiguousArray<Double> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -312,7 +312,7 @@ open class GLTFAccessor: Resource {
     }()
 
     private func __setMin(
-        _ min: Godot.PackedFloat64Array
+        _ min: Godot.GodotContiguousArray<Double>
     ) {
         withTransferrableUnsafeRawPointer(to: min) { __ptr_min in
             withUnsafeArgumentPackPointer(__ptr_min) { __accessPtr in
@@ -336,7 +336,7 @@ open class GLTFAccessor: Resource {
         }
     }()
 
-    private func __getMax() -> Godot.PackedFloat64Array {
+    private func __getMax() -> Godot.GodotContiguousArray<Double> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -358,7 +358,7 @@ open class GLTFAccessor: Resource {
     }()
 
     private func __setMax(
-        _ max: Godot.PackedFloat64Array
+        _ max: Godot.GodotContiguousArray<Double>
     ) {
         withTransferrableUnsafeRawPointer(to: max) { __ptr_max in
             withUnsafeArgumentPackPointer(__ptr_max) { __accessPtr in
@@ -716,7 +716,7 @@ open class GLTFAccessor: Resource {
         }
     }
 
-    public var min: Godot.PackedFloat64Array {
+    public var min: Godot.GodotContiguousArray<Double> {
         get {
             __getMin()
         }
@@ -727,7 +727,7 @@ open class GLTFAccessor: Resource {
         }
     }
 
-    public var max: Godot.PackedFloat64Array {
+    public var max: Godot.GodotContiguousArray<Double> {
         get {
             __getMax()
         }

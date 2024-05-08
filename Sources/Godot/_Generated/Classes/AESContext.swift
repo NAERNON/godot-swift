@@ -33,8 +33,8 @@ open class AESContext: RefCounted {
 
     public func start(
         mode: Godot.AESContext.Mode,
-        key: Godot.PackedByteArray,
-        iv: Godot.PackedByteArray = PackedByteArray()
+        key: Godot.GodotContiguousArray<UInt8>,
+        iv: Godot.GodotContiguousArray<UInt8> = []
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: mode) { __ptr_mode in
@@ -65,8 +65,8 @@ open class AESContext: RefCounted {
     }()
 
     public func update(
-        src: Godot.PackedByteArray
-    ) -> Godot.PackedByteArray {
+        src: Godot.GodotContiguousArray<UInt8>
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: src) { __ptr_src in
                 withUnsafeArgumentPackPointer(__ptr_src) { __accessPtr in
@@ -91,7 +91,7 @@ open class AESContext: RefCounted {
         }
     }()
 
-    public func ivState() -> Godot.PackedByteArray {
+    public func ivState() -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

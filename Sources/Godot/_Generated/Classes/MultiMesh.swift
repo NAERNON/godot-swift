@@ -544,7 +544,7 @@ open class MultiMesh: Resource {
         }
     }()
 
-    private func __getBuffer() -> Godot.PackedFloat32Array {
+    private func __getBuffer() -> Godot.GodotContiguousArray<Float> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -566,7 +566,7 @@ open class MultiMesh: Resource {
     }()
 
     private func __setBuffer(
-        _ buffer: Godot.PackedFloat32Array
+        _ buffer: Godot.GodotContiguousArray<Float>
     ) {
         withTransferrableUnsafeRawPointer(to: buffer) { __ptr_buffer in
             withUnsafeArgumentPackPointer(__ptr_buffer) { __accessPtr in
@@ -648,7 +648,7 @@ open class MultiMesh: Resource {
         }
     }
 
-    public var buffer: Godot.PackedFloat32Array {
+    public var buffer: Godot.GodotContiguousArray<Float> {
         get {
             __getBuffer()
         }

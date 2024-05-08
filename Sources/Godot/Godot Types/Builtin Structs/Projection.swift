@@ -1094,7 +1094,7 @@ extension Projection {
             case 1: y
             case 2: z
             case 3: w
-            default: fatalError("Attempting to read column \(columnIndex) from projection.")
+            default: fatalError("Attempting to read column \(columnIndex) from projection")
             }
         }
         set(newValue) {
@@ -1103,7 +1103,7 @@ extension Projection {
             case 1: y = newValue
             case 2: z = newValue
             case 3: w = newValue
-            default: fatalError("Attempting to set column \(columnIndex) on projection.")
+            default: fatalError("Attempting to set column \(columnIndex) on projection")
             }
         }
     }

@@ -142,8 +142,8 @@ extension GodotString {
         _isSubsequenceOfn(text: other)
     }
     
-    public func bigrams() -> PackedStringArray {
-        _bigrams()
+    public func bigrams() -> GodotContiguousArray<GodotString> {
+        .init(storage: _bigrams())
     }
     
     public func similarity(to other: GodotString) -> Double {
@@ -174,8 +174,11 @@ extension GodotString {
         _toSnakeCase()
     }
     
-    public func splitFloats(separator: GodotString, allowEmpty: Bool = true) -> PackedFloat64Array {
-        _splitFloats(delimiter: separator, allowEmpty: allowEmpty)
+    public func splitFloats(
+        separator: GodotString,
+        allowEmpty: Bool = true
+    ) -> GodotContiguousArray<Double> {
+        .init(storage: _splitFloats(delimiter: separator, allowEmpty: allowEmpty))
     }
     
     public func uppercased() -> GodotString {
@@ -222,16 +225,16 @@ extension GodotString {
         _sha256Text()
     }
     
-    public func md5Buffer() -> PackedByteArray {
-        _md5Buffer()
+    public func md5Buffer() -> GodotContiguousArray<UInt8> {
+        .init(storage: _md5Buffer())
     }
     
-    public func sha1Buffer() -> PackedByteArray {
-        _sha1Buffer()
+    public func sha1Buffer() -> GodotContiguousArray<UInt8> {
+        .init(storage: _sha1Buffer())
     }
     
-    public func sha256Buffer() -> PackedByteArray {
-        _sha256Buffer()
+    public func sha256Buffer() -> GodotContiguousArray<UInt8> {
+        .init(storage: _sha256Buffer())
     }
     
     public func isAbsolutePath() -> Bool {
@@ -342,28 +345,28 @@ extension GodotString {
         _padZeros(digits: digits)
     }
     
-    public func asciiBuffer() -> PackedByteArray {
-        _toAsciiBuffer()
+    public func asciiBuffer() -> GodotContiguousArray<UInt8> {
+        .init(storage: _toAsciiBuffer())
     }
     
-    public func utf8Buffer() -> PackedByteArray {
-        _toUtf8Buffer()
+    public func utf8Buffer() -> GodotContiguousArray<UInt8> {
+        .init(storage: _toUtf8Buffer())
     }
     
-    public func utf16Buffer() -> PackedByteArray {
-        _toUtf16Buffer()
+    public func utf16Buffer() -> GodotContiguousArray<UInt8> {
+        .init(storage: _toUtf16Buffer())
     }
     
-    public func utf32Buffer() -> PackedByteArray {
-        _toUtf32Buffer()
+    public func utf32Buffer() -> GodotContiguousArray<UInt8> {
+        .init(storage: _toUtf32Buffer())
     }
     
-    public func hexDecoded() -> PackedByteArray {
-        _hexDecode()
+    public func hexDecoded() -> GodotContiguousArray<UInt8> {
+        .init(storage: _hexDecode())
     }
     
-    public func wCharBuffer() -> PackedByteArray {
-        _toWcharBuffer()
+    public func wCharBuffer() -> GodotContiguousArray<UInt8> {
+        .init(storage: _toWcharBuffer())
     }
     
     public static func scientificRepresentation(_ number: Double) -> GodotString {

@@ -70,7 +70,7 @@ open class VideoStreamPlayback: Resource {
 
     public func mixAudio(
         numFrames: Int32,
-        buffer: Godot.PackedFloat32Array = PackedFloat32Array(),
+        buffer: Godot.GodotContiguousArray<Float> = [],
         offset: Int32 = 0
     ) -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in

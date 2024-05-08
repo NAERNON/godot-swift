@@ -152,7 +152,7 @@ open class EditorResourcePicker: HBoxContainer {
         }
     }()
 
-    public func allowedTypes() -> Godot.PackedStringArray {
+    public func allowedTypes() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

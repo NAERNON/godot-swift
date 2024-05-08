@@ -24,8 +24,8 @@ open class EditorSceneFormatImporter: RefCounted {
         UInt32()
     }
 
-    open func _getExtensions() -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    open func _getExtensions() -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _importScene(

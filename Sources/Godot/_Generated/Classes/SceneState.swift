@@ -244,7 +244,7 @@ open class SceneState: RefCounted {
 
     public func nodeGroups(
         idx: Int32
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: idx) { __ptr_idx in
                 withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in

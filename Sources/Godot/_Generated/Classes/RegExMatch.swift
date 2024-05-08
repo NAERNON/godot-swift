@@ -77,7 +77,7 @@ open class RegExMatch: RefCounted {
         }
     }()
 
-    private func __getStrings() -> Godot.PackedStringArray {
+    private func __getStrings() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -183,7 +183,7 @@ open class RegExMatch: RefCounted {
         }
     }
 
-    public var strings: Godot.PackedStringArray {
+    public var strings: Godot.GodotContiguousArray<GodotString> {
         get {
             __getStrings()
         }

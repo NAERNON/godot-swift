@@ -45,8 +45,8 @@ open class XRInterfaceExtension: XRInterface {
         Bool()
     }
 
-    open func _getPlayArea() -> Godot.PackedVector3Array {
-        Godot.PackedVector3Array()
+    open func _getPlayArea() -> Godot.GodotContiguousArray<Vector3> {
+        Godot.GodotContiguousArray<Vector3>()
     }
 
     open func _getRenderTargetSize() -> Godot.Vector2 {
@@ -73,8 +73,8 @@ open class XRInterfaceExtension: XRInterface {
         aspect: Double,
         zNear: Double,
         zFar: Double
-    ) -> Godot.PackedFloat64Array {
-        Godot.PackedFloat64Array()
+    ) -> Godot.GodotContiguousArray<Double> {
+        Godot.GodotContiguousArray<Double>()
     }
 
     open func _getVrsTexture() -> Godot.RID {
@@ -102,14 +102,14 @@ open class XRInterfaceExtension: XRInterface {
     open func _endFrame() {
     }
 
-    open func _getSuggestedTrackerNames() -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    open func _getSuggestedTrackerNames() -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _getSuggestedPoseNames(
         trackerName: Godot.GodotStringName
-    ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    ) -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _getTrackingStatus() -> Godot.XRInterface.TrackingStatus {

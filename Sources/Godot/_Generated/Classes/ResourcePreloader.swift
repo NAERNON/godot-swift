@@ -151,7 +151,7 @@ open class ResourcePreloader: Node {
         }
     }()
 
-    public func resourceList() -> Godot.PackedStringArray {
+    public func resourceList() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

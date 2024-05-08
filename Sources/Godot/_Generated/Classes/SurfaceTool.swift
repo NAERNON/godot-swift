@@ -327,7 +327,7 @@ open class SurfaceTool: RefCounted {
     }()
 
     public func setBones(
-        _ bones: Godot.PackedInt32Array
+        _ bones: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: bones) { __ptr_bones in
             withUnsafeArgumentPackPointer(__ptr_bones) { __accessPtr in
@@ -352,7 +352,7 @@ open class SurfaceTool: RefCounted {
     }()
 
     public func setWeights(
-        _ weights: Godot.PackedFloat32Array
+        _ weights: Godot.GodotContiguousArray<Float>
     ) {
         withTransferrableUnsafeRawPointer(to: weights) { __ptr_weights in
             withUnsafeArgumentPackPointer(__ptr_weights) { __accessPtr in
@@ -430,11 +430,11 @@ open class SurfaceTool: RefCounted {
     }()
 
     public func addTriangleFan(
-        vertices: Godot.PackedVector3Array,
-        uvs: Godot.PackedVector2Array = PackedVector2Array(),
-        colors: Godot.PackedColorArray = PackedColorArray(),
-        uv2s: Godot.PackedVector2Array = PackedVector2Array(),
-        normals: Godot.PackedVector3Array = PackedVector3Array(),
+        vertices: Godot.GodotContiguousArray<Vector3>,
+        uvs: Godot.GodotContiguousArray<Vector2> = [],
+        colors: Godot.GodotContiguousArray<Color> = [],
+        uv2s: Godot.GodotContiguousArray<Vector2> = [],
+        normals: Godot.GodotContiguousArray<Vector3> = [],
         tangents: Godot.GodotArray<Godot.Plane> = []
     ) {
         withTransferrableUnsafeRawPointer(to: vertices) { __ptr_vertices in
@@ -619,7 +619,7 @@ open class SurfaceTool: RefCounted {
     public func generateLod(
         ndThreshold: Double,
         targetIndexCount: Int32 = 3
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: ndThreshold) { __ptr_ndThreshold in
                 withTransferrableUnsafeRawPointer(to: targetIndexCount) { __ptr_targetIndexCount in

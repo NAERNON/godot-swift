@@ -582,7 +582,7 @@ extension AABB {
             return Vector3(position.x + size.x, position.y + size.y, position.z)
         case 7:
             return Vector3(position.x + size.x, position.y + size.y, position.z + size.z)
-        default: fatalError("Attempting to retrieve endpoint \(index) of AABB.")
+        default: fatalError("Attempting to retrieve endpoint \(index) of AABB")
         }
     }
     
@@ -590,7 +590,7 @@ extension AABB {
     public func segmentIntersection(from fromPoint: Vector3, to toPoint: Vector3) -> Vector3? {
 #if MATH_CHECKS
         if size.x < 0 || size.y < 0 || size.z < 0 {
-            godotPrintError("AABB size is negative, this is not supported. Use .abs() to get an AABB with a positive size.")
+            godotPrintError("AABB size is negative, this is not supported. Use .abs() to get an AABB with a positive size")
         }
 #endif
         var min: Scalar = 0, max: Scalar = 1

@@ -360,7 +360,7 @@ open class Skeleton3D: Node3D {
 
     public func boneChildren(
         boneIdx: Int32
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: boneIdx) { __ptr_boneIdx in
                 withUnsafeArgumentPackPointer(__ptr_boneIdx) { __accessPtr in
@@ -385,7 +385,7 @@ open class Skeleton3D: Node3D {
         }
     }()
 
-    public func parentlessBones() -> Godot.PackedInt32Array {
+    public func parentlessBones() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

@@ -1313,7 +1313,7 @@ open class NavigationAgent3D: Node {
         }
     }()
 
-    public func currentNavigationPath() -> Godot.PackedVector3Array {
+    public func currentNavigationPath() -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

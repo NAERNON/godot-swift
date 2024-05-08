@@ -8,13 +8,13 @@ import GodotExtensionHeaders
 open class GLTFDocumentExtension: Resource {
     open func _importPreflight(
         state: Godot.GLTFState?,
-        extensions: Godot.PackedStringArray
+        extensions: Godot.GodotContiguousArray<GodotString>
     ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _getSupportedExtensions() -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    open func _getSupportedExtensions() -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _parseNodeExtensions(
@@ -27,7 +27,7 @@ open class GLTFDocumentExtension: Resource {
 
     open func _parseImageData(
         state: Godot.GLTFState?,
-        imageData: Godot.PackedByteArray,
+        imageData: Godot.GodotContiguousArray<UInt8>,
         mimeType: Godot.GodotString,
         retImage: Godot.Image?
     ) -> Godot.ErrorType {
@@ -96,8 +96,8 @@ open class GLTFDocumentExtension: Resource {
         Godot.ErrorType(rawValue: 0)!
     }
 
-    open func _getSaveableImageFormats() -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    open func _getSaveableImageFormats() -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _serializeImageToBytes(
@@ -106,8 +106,8 @@ open class GLTFDocumentExtension: Resource {
         imageDict: Godot.AnyGodotDictionary,
         imageFormat: Godot.GodotString,
         lossyQuality: Double
-    ) -> Godot.PackedByteArray {
-        Godot.PackedByteArray()
+    ) -> Godot.GodotContiguousArray<UInt8> {
+        Godot.GodotContiguousArray<UInt8>()
     }
 
     open func _saveImageAtPath(
@@ -157,7 +157,7 @@ open class GLTFDocumentExtension: Resource {
             Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._importPreflight(
             state: Godot.GLTFState?.transferFromGodot(unsafePointer: args[0]!),
-            extensions: Godot.PackedStringArray.transferFromGodot(unsafePointer: args[1]!)
+            extensions: Godot.GodotContiguousArray<GodotString> .transferFromGodot(unsafePointer: args[1]!)
         )
         .transferToGodot(unsafePointer: returnPtr!)}
         let _get_supported_extensions_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -185,7 +185,7 @@ open class GLTFDocumentExtension: Resource {
             Unmanaged<GLTFDocumentExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._parseImageData(
             state: Godot.GLTFState?.transferFromGodot(unsafePointer: args[0]!),
-            imageData: Godot.PackedByteArray.transferFromGodot(unsafePointer: args[1]!),
+            imageData: Godot.GodotContiguousArray<UInt8> .transferFromGodot(unsafePointer: args[1]!),
             mimeType: Godot.GodotString.transferFromGodot(unsafePointer: args[2]!),
             retImage: Godot.Image?.transferFromGodot(unsafePointer: args[3]!)
         )

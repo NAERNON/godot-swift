@@ -244,7 +244,7 @@ open class AStar2D: RefCounted {
 
     public func pointConnections(
         id: Int64
-    ) -> Godot.PackedInt64Array {
+    ) -> Godot.GodotContiguousArray<Int64> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: id) { __ptr_id in
                 withUnsafeArgumentPackPointer(__ptr_id) { __accessPtr in
@@ -269,7 +269,7 @@ open class AStar2D: RefCounted {
         }
     }()
 
-    public func pointIds() -> Godot.PackedInt64Array {
+    public func pointIds() -> Godot.GodotContiguousArray<Int64> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -586,7 +586,7 @@ open class AStar2D: RefCounted {
     public func pointPath(
         fromID: Int64,
         toID: Int64
-    ) -> Godot.PackedVector2Array {
+    ) -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: fromID) { __ptr_fromID in
                 withTransferrableUnsafeRawPointer(to: toID) { __ptr_toID in
@@ -616,7 +616,7 @@ open class AStar2D: RefCounted {
     public func idPath(
         fromID: Int64,
         toID: Int64
-    ) -> Godot.PackedInt64Array {
+    ) -> Godot.GodotContiguousArray<Int64> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: fromID) { __ptr_fromID in
                 withTransferrableUnsafeRawPointer(to: toID) { __ptr_toID in

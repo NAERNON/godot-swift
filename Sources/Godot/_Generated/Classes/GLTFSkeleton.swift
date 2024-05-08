@@ -14,7 +14,7 @@ open class GLTFSkeleton: Resource {
         }
     }()
 
-    private func __getJoints() -> Godot.PackedInt32Array {
+    private func __getJoints() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -36,7 +36,7 @@ open class GLTFSkeleton: Resource {
     }()
 
     private func __setJoints(
-        _ joints: Godot.PackedInt32Array
+        _ joints: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: joints) { __ptr_joints in
             withUnsafeArgumentPackPointer(__ptr_joints) { __accessPtr in
@@ -60,7 +60,7 @@ open class GLTFSkeleton: Resource {
         }
     }()
 
-    private func __getRoots() -> Godot.PackedInt32Array {
+    private func __getRoots() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -82,7 +82,7 @@ open class GLTFSkeleton: Resource {
     }()
 
     private func __setRoots(
-        _ roots: Godot.PackedInt32Array
+        _ roots: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: roots) { __ptr_roots in
             withUnsafeArgumentPackPointer(__ptr_roots) { __accessPtr in
@@ -259,7 +259,7 @@ open class GLTFSkeleton: Resource {
         }
     }
 
-    public var joints: Godot.PackedInt32Array {
+    public var joints: Godot.GodotContiguousArray<Int32> {
         get {
             __getJoints()
         }
@@ -270,7 +270,7 @@ open class GLTFSkeleton: Resource {
         }
     }
 
-    public var roots: Godot.PackedInt32Array {
+    public var roots: Godot.GodotContiguousArray<Int32> {
         get {
             __getRoots()
         }

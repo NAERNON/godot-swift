@@ -415,8 +415,8 @@ open class Node: Object {
     open func _ready() {
     }
 
-    open func _getConfigurationWarnings() -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    open func _getConfigurationWarnings() -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _input(

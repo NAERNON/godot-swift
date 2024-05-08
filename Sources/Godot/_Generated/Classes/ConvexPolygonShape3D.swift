@@ -15,7 +15,7 @@ open class ConvexPolygonShape3D: Shape3D {
     }()
 
     private func __setPoints(
-        _ points: Godot.PackedVector3Array
+        _ points: Godot.GodotContiguousArray<Vector3>
     ) {
         withTransferrableUnsafeRawPointer(to: points) { __ptr_points in
             withUnsafeArgumentPackPointer(__ptr_points) { __accessPtr in
@@ -39,7 +39,7 @@ open class ConvexPolygonShape3D: Shape3D {
         }
     }()
 
-    private func __getPoints() -> Godot.PackedVector3Array {
+    private func __getPoints() -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -52,7 +52,7 @@ open class ConvexPolygonShape3D: Shape3D {
         }
     }
 
-    public var points: Godot.PackedVector3Array {
+    public var points: Godot.GodotContiguousArray<Vector3> {
         get {
             __getPoints()
         }

@@ -116,7 +116,7 @@ open class EditorInspectorPlugin: RefCounted {
 
     public func addPropertyEditorForMultipleProperties(
         label: Godot.GodotString,
-        properties: Godot.PackedStringArray,
+        properties: Godot.GodotContiguousArray<GodotString>,
         editor: Godot.Control?
     ) {
         withTransferrableUnsafeRawPointer(to: label) { __ptr_label in

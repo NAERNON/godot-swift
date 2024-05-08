@@ -40,13 +40,13 @@ open class ScriptExtension: Script {
     open func _instanceCreate(
         forObject object: Godot.Object?
     ) -> UnsafeMutableRawPointer {
-        fatalError("No default value provided for pointers.")
+        fatalError("No default value provided for pointers")
     }
 
     open func _placeholderInstanceCreate(
         forObject object: Godot.Object?
     ) -> UnsafeMutableRawPointer {
-        fatalError("No default value provided for pointers.")
+        fatalError("No default value provided for pointers")
     }
 
     open func _instanceHas(

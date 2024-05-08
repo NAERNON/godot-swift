@@ -95,8 +95,8 @@ open class ScriptLanguageExtension: ScriptLanguage {
     open func _finish() {
     }
 
-    open func _getReservedWords() -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    open func _getReservedWords() -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _isControlFlowKeyword(
@@ -105,16 +105,16 @@ open class ScriptLanguageExtension: ScriptLanguage {
         Bool()
     }
 
-    open func _getCommentDelimiters() -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    open func _getCommentDelimiters() -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
-    open func _getDocCommentDelimiters() -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    open func _getDocCommentDelimiters() -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
-    open func _getStringDelimiters() -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    open func _getStringDelimiters() -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _makeTemplate(
@@ -182,7 +182,7 @@ open class ScriptLanguageExtension: ScriptLanguage {
     open func _makeFunction(
         className: Godot.GodotString,
         functionName: Godot.GodotString,
-        functionArgs: Godot.PackedStringArray
+        functionArgs: Godot.GodotContiguousArray<GodotString>
     ) -> Godot.GodotString {
         Godot.GodotString()
     }
@@ -286,7 +286,7 @@ open class ScriptLanguageExtension: ScriptLanguage {
     open func _debugGetStackLevelInstance(
         level: Int32
     ) -> UnsafeMutableRawPointer {
-        fatalError("No default value provided for pointers.")
+        fatalError("No default value provided for pointers")
     }
 
     open func _debugGetGlobals(
@@ -318,8 +318,8 @@ open class ScriptLanguageExtension: ScriptLanguage {
     ) {
     }
 
-    open func _getRecognizedExtensions() -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    open func _getRecognizedExtensions() -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _getPublicFunctions() -> Godot.GodotArray<Godot.AnyGodotDictionary> {
@@ -548,7 +548,7 @@ open class ScriptLanguageExtension: ScriptLanguage {
         ._makeFunction(
             className: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
             functionName: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!),
-            functionArgs: Godot.PackedStringArray.transferFromGodot(unsafePointer: args[2]!)
+            functionArgs: Godot.GodotContiguousArray<GodotString> .transferFromGodot(unsafePointer: args[2]!)
         )
         .transferToGodot(unsafePointer: returnPtr!)}
         let _open_in_external_editor_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in

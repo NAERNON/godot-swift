@@ -19,7 +19,7 @@ struct ArchitectureRelatedSource: FileSource {
             ofClass: .variant,
             for: configuration
         ) else {
-            fatalError("Cannot retrieve variant class size.")
+            fatalError("Cannot retrieve variant class size")
         }
         
         return try ExtensionDeclSyntax("extension Variant") {

@@ -83,11 +83,11 @@ open class SceneMultiplayer: MultiplayerAPI {
     public struct PeerPacketSignalInput: Godot.SignalInput {
         public let id: Int
 
-        public let packet: Godot.PackedByteArray
+        public let packet: Godot.GodotContiguousArray<UInt8>
 
         fileprivate init(
             id: Int,
-            packet: Godot.PackedByteArray
+            packet: Godot.GodotContiguousArray<UInt8>
         ) {
             self.id = id
             self.packet = packet
@@ -102,7 +102,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     public func peerPacket(
         id: Int,
-        packet: Godot.PackedByteArray
+        packet: Godot.GodotContiguousArray<UInt8>
     ) {
         _ = peerPacketSignal.emit(.init(id: id,
                 packet: packet))
@@ -112,7 +112,7 @@ open class SceneMultiplayer: MultiplayerAPI {
         .init(object: self, signalName: "peer_packet") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PeerPacketSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
                 .call(with: .init(id: Int.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!),
-                    packet: Godot.PackedByteArray.convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
+                    packet: Godot.GodotContiguousArray<UInt8> .convertFromStorage(unsafePointer: args!.advanced(by: 1).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<PeerPacketSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -222,7 +222,7 @@ open class SceneMultiplayer: MultiplayerAPI {
         }
     }()
 
-    public func authenticatingPeers() -> Godot.PackedInt32Array {
+    public func authenticatingPeers() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -245,7 +245,7 @@ open class SceneMultiplayer: MultiplayerAPI {
 
     public func sendAuth(
         id: Int32,
-        data: Godot.PackedByteArray
+        data: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: id) { __ptr_id in
@@ -531,7 +531,7 @@ open class SceneMultiplayer: MultiplayerAPI {
     }()
 
     public func sendBytes(
-        _ bytes: Godot.PackedByteArray,
+        _ bytes: Godot.GodotContiguousArray<UInt8>,
         id: Int32 = 0,
         mode: Godot.MultiplayerPeer.TransferMode = MultiplayerPeer.TransferMode(rawValue: 2)!,
         channel: Int32 = 0

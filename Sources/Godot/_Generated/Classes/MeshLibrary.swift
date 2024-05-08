@@ -556,7 +556,7 @@ open class MeshLibrary: Resource {
         }
     }()
 
-    public func itemList() -> Godot.PackedInt32Array {
+    public func itemList() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

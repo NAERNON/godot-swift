@@ -628,7 +628,7 @@ open class CollisionObject2D: Node2D {
         }
     }()
 
-    public func shapeOwners() -> Godot.PackedInt32Array {
+    public func shapeOwners() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

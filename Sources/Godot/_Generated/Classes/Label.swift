@@ -431,7 +431,7 @@ open class Label: Control {
     }()
 
     private func __setTabStops(
-        _ tabStops: Godot.PackedFloat32Array
+        _ tabStops: Godot.GodotContiguousArray<Float>
     ) {
         withTransferrableUnsafeRawPointer(to: tabStops) { __ptr_tabStops in
             withUnsafeArgumentPackPointer(__ptr_tabStops) { __accessPtr in
@@ -455,7 +455,7 @@ open class Label: Control {
         }
     }()
 
-    private func __getTabStops() -> Godot.PackedFloat32Array {
+    private func __getTabStops() -> Godot.GodotContiguousArray<Float> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1071,7 +1071,7 @@ open class Label: Control {
         }
     }
 
-    public var tabStops: Godot.PackedFloat32Array {
+    public var tabStops: Godot.GodotContiguousArray<Float> {
         get {
             __getTabStops()
         }

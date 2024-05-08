@@ -547,7 +547,7 @@ open class NavigationServer3D: Object {
         destination: Godot.Vector3,
         optimize: Bool,
         navigationLayers: UInt32 = 1
-    ) -> Godot.PackedVector3Array {
+    ) -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: map) { __ptr_map in
                 withTransferrableUnsafeRawPointer(to: origin) { __ptr_origin in
@@ -3015,7 +3015,7 @@ open class NavigationServer3D: Object {
 
     public func obstacleSetVertices(
         obstacle: Godot.RID,
-        vertices: Godot.PackedVector3Array
+        vertices: Godot.GodotContiguousArray<Vector3>
     ) {
         withTransferrableUnsafeRawPointer(to: obstacle) { __ptr_obstacle in
             withTransferrableUnsafeRawPointer(to: vertices) { __ptr_vertices in

@@ -17,7 +17,7 @@ open class RDFramebufferPass: RefCounted {
     }()
 
     private func __setColorAttachments(
-        pMember: Godot.PackedInt32Array
+        pMember: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: pMember) { __ptr_pMember in
             withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
@@ -41,7 +41,7 @@ open class RDFramebufferPass: RefCounted {
         }
     }()
 
-    private func __getColorAttachments() -> Godot.PackedInt32Array {
+    private func __getColorAttachments() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -63,7 +63,7 @@ open class RDFramebufferPass: RefCounted {
     }()
 
     private func __setInputAttachments(
-        pMember: Godot.PackedInt32Array
+        pMember: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: pMember) { __ptr_pMember in
             withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
@@ -87,7 +87,7 @@ open class RDFramebufferPass: RefCounted {
         }
     }()
 
-    private func __getInputAttachments() -> Godot.PackedInt32Array {
+    private func __getInputAttachments() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -109,7 +109,7 @@ open class RDFramebufferPass: RefCounted {
     }()
 
     private func __setResolveAttachments(
-        pMember: Godot.PackedInt32Array
+        pMember: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: pMember) { __ptr_pMember in
             withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
@@ -133,7 +133,7 @@ open class RDFramebufferPass: RefCounted {
         }
     }()
 
-    private func __getResolveAttachments() -> Godot.PackedInt32Array {
+    private func __getResolveAttachments() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -155,7 +155,7 @@ open class RDFramebufferPass: RefCounted {
     }()
 
     private func __setPreserveAttachments(
-        pMember: Godot.PackedInt32Array
+        pMember: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: pMember) { __ptr_pMember in
             withUnsafeArgumentPackPointer(__ptr_pMember) { __accessPtr in
@@ -179,7 +179,7 @@ open class RDFramebufferPass: RefCounted {
         }
     }()
 
-    private func __getPreserveAttachments() -> Godot.PackedInt32Array {
+    private func __getPreserveAttachments() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -238,7 +238,7 @@ open class RDFramebufferPass: RefCounted {
         }
     }
 
-    public var colorAttachments: Godot.PackedInt32Array {
+    public var colorAttachments: Godot.GodotContiguousArray<Int32> {
         get {
             __getColorAttachments()
         }
@@ -249,7 +249,7 @@ open class RDFramebufferPass: RefCounted {
         }
     }
 
-    public var inputAttachments: Godot.PackedInt32Array {
+    public var inputAttachments: Godot.GodotContiguousArray<Int32> {
         get {
             __getInputAttachments()
         }
@@ -260,7 +260,7 @@ open class RDFramebufferPass: RefCounted {
         }
     }
 
-    public var resolveAttachments: Godot.PackedInt32Array {
+    public var resolveAttachments: Godot.GodotContiguousArray<Int32> {
         get {
             __getResolveAttachments()
         }
@@ -271,7 +271,7 @@ open class RDFramebufferPass: RefCounted {
         }
     }
 
-    public var preserveAttachments: Godot.PackedInt32Array {
+    public var preserveAttachments: Godot.GodotContiguousArray<Int32> {
         get {
             __getPreserveAttachments()
         }

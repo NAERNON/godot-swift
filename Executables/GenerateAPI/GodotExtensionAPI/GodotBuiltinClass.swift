@@ -73,6 +73,7 @@ struct GodotBuiltinClass: Decodable {
             var name = "operator" + identifier.translated(from: .snake, to: .pascal)
             if let rightType {
                 name += rightType.syntax(options: [.floatAsDouble]).translated(from: .snake, to: .pascal)
+                    .plain()
             }
             
             return name
@@ -137,6 +138,7 @@ struct GodotBuiltinClass: Decodable {
                 
                 for argument in arguments {
                     string += argument.type.syntax()
+                        .plain()
                 }
             }
             
@@ -169,12 +171,16 @@ struct GodotBuiltinClass: Decodable {
         name.isBuiltinGodotClassWithOpaque
     }
     
+    var generateRawOpaque: Bool {
+        name == .string
+    }
+    
     var identifier: String {
         name.syntax()
     }
     
     var bindingsIdentifier: String {
-        name.syntax() + "Bindings"
+        name.syntax(options: .packedArrayStorage).plain() + "Bindings"
     }
     
     var syntaxOptions: GodotTypeSyntaxOptions {
@@ -183,22 +189,25 @@ struct GodotBuiltinClass: Decodable {
                 .optionalClasses,
                 .prefixByGodot,
                 .genericArrayOnVariant,
-                .genericDictionaryOnVariant
+                .genericDictionaryOnVariant,
+                .packedArrayStorage,
             ]
         } else if useOpaque {
             [
                 .optionalClasses,
                 .prefixByGodot,
                 .floatAsDouble,
+                .packedArrayStorage,
                 name == .array ? .genericArrayOnElement : .genericArrayOnVariant,
-                name == .dictionary ? .genericDictionaryOnKeyValue : .genericDictionaryOnVariant
+                name == .dictionary ? .genericDictionaryOnKeyValue : .genericDictionaryOnVariant,
             ]
         } else {
             [
                 .optionalClasses, .prefixByGodot,
                 .floatUseBuildConfiguration,
                 .genericArrayOnVariant,
-                .genericDictionaryOnVariant
+                .genericDictionaryOnVariant,
+                .packedArrayStorage,
             ]
         }
     }
@@ -296,6 +305,12 @@ struct GodotBuiltinClass: Decodable {
                 }
             }
         }
+    }
+    
+    func opaqueRawOpaqueSyntax(classSize: Int) -> DeclSyntax {
+        let rawTuple = repeatElement("UInt8", count: classSize).joined(separator: ", ")
+        
+        return "internal typealias \(raw: identifier)RawOpaque = (\(raw: rawTuple))"
     }
     
     @MemberBlockItemListBuilder
@@ -619,9 +634,13 @@ extension GodotBuiltinClass: FileSource {
         
         if useOpaque {
             try bindingsSyntax()
+            
+            if generateRawOpaque {
+                opaqueRawOpaqueSyntax(classSize: classSize)
+            }
         }
         
-        try ExtensionDeclSyntax("extension \(raw: identifier)") {
+        try ExtensionDeclSyntax("extension \(raw: name.syntax(options: .packedArrayStorage))") {
             constantsSyntax()
             try enumSyntax()
             
@@ -633,5 +652,16 @@ extension GodotBuiltinClass: FileSource {
                 try methodsSyntax()
             }
         }
+    }
+}
+
+// MARK: - String extension
+
+private extension String {
+    func plain() -> String {
+        self
+            .replacingOccurrences(of: ">", with: "")
+            .replacingOccurrences(of: "<", with: "")
+            .replacingOccurrences(of: ".", with: "")
     }
 }

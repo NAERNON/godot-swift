@@ -1,25 +1,25 @@
 
-extension ContiguousArray: Variant.Storable where Element : Variant.Storable {
+extension ContiguousArray: Variant.Storable where Element : GodotContiguousArrayElement {
     public static var variantStorageType: Variant.StorageType? {
-        .array
+        Element.GodotContiguousArrayStorage.variantStorageType
     }
     
     public static func convertToStorage(
         _ value: consuming Self
     ) -> Variant.Storage {
-        GodotArray.convertToStorage(GodotArray(value))
+        GodotContiguousArray.convertToStorage(GodotContiguousArray(value))
     }
     
     public static func convertFromStorage(
         _ storage: borrowing Variant.Storage
     ) throws -> Self {
-        try Self(GodotArray.convertFromStorage(storage))
+        try Self(GodotContiguousArray.convertFromStorage(storage))
     }
     
     public static func convertFromCheckedStorage(
         _ storage: borrowing Variant.Storage
     ) -> Self {
-        Self(GodotArray.convertFromCheckedStorage(storage))
+        Self(GodotContiguousArray.convertFromCheckedStorage(storage))
     }
     
     public static func convertFromCheckedStorage(
@@ -34,20 +34,20 @@ extension ContiguousArray: Hintable where Element : Exportable {
     public static var defaultHint: Hint<Self> { .elements(Element.defaultHint) }
 }
 
-extension ContiguousArray: Exposable where Element : Exposable {
+extension ContiguousArray: Exposable where Element : GodotContiguousArrayElement {
     public static var variantRepresentationType: Variant.RepresentationType {
-        .array
+        Element.GodotContiguousArrayStorage.variantRepresentationType
     }
     
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        Self(GodotArray.transferFromGodot(unsafePointer: unsafePointer))
+        Self(GodotContiguousArray.transferFromGodot(unsafePointer: unsafePointer))
     }
     
     public func transferToGodot(
         unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
     ) {
-        GodotArray(self).transferToGodot(unsafePointer: destinationUnsafePointer)
+        GodotContiguousArray(self).transferToGodot(unsafePointer: destinationUnsafePointer)
     }
 }

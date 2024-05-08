@@ -239,7 +239,7 @@ open class VisualShader: Shader {
 
     public func nodeList(
         type: Godot.VisualShader.GodotType
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: type) { __ptr_type in
                 withUnsafeArgumentPackPointer(__ptr_type) { __accessPtr in

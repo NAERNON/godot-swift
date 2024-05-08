@@ -89,7 +89,7 @@ open class ResourceSaver: Object {
 
     public func recognizedExtensions(
         type: Godot.Resource?
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: type) { __ptr_type in
                 withUnsafePointer(to: __ptr_type) { _ptr___ptr_type in

@@ -158,7 +158,7 @@ open class GDExtensionManager: Object {
         }
     }()
 
-    public func loadedExtensions() -> Godot.PackedStringArray {
+    public func loadedExtensions() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

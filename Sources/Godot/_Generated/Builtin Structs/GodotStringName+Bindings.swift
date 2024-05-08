@@ -60,16 +60,16 @@ internal enum GodotStringNameBindings {
         operatorInGodotdictionary = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
         operatorModuleGodotarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MODULE, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_ARRAY)!
         operatorInGodotarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_ARRAY)!
-        operatorModulePackedbytearray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MODULE, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
-        operatorModulePackedint32array = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MODULE, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
-        operatorModulePackedint64array = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MODULE, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY)!
-        operatorModulePackedfloat32array = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MODULE, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)!
-        operatorModulePackedfloat64array = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MODULE, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)!
-        operatorModulePackedstringarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MODULE, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
-        operatorInPackedstringarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
-        operatorModulePackedvector2array = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MODULE, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)!
-        operatorModulePackedvector3array = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MODULE, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)!
-        operatorModulePackedcolorarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MODULE, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)!
+        operatorModuleGodotcontiguousarrayuint8 = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MODULE, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
+        operatorModuleGodotcontiguousarrayint32 = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MODULE, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_PACKED_INT32_ARRAY)!
+        operatorModuleGodotcontiguousarrayint64 = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MODULE, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_PACKED_INT64_ARRAY)!
+        operatorModuleGodotcontiguousarrayfloat = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MODULE, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT32_ARRAY)!
+        operatorModuleGodotcontiguousarraydouble = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MODULE, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_PACKED_FLOAT64_ARRAY)!
+        operatorModuleGodotcontiguousarraygodotstring = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MODULE, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
+        operatorInGodotcontiguousarraygodotstring = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
+        operatorModuleGodotcontiguousarrayvector2 = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MODULE, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)!
+        operatorModuleGodotcontiguousarrayvector3 = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MODULE, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)!
+        operatorModuleGodotcontiguousarraycolor = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MODULE, GDEXTENSION_VARIANT_TYPE_STRING_NAME, GDEXTENSION_VARIANT_TYPE_PACKED_COLOR_ARRAY)!
         methodCasecmpTo = GodotStringName(swiftStaticString: "casecmp_to").withUnsafeOpaquePointer { __ptr__method_name in
             GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_STRING_NAME, __ptr__method_name, 2920860731)!
         }
@@ -466,25 +466,25 @@ internal enum GodotStringNameBindings {
 
     static private (set) var operatorInGodotarray: GDExtensionPtrOperatorEvaluator!
 
-    static private (set) var operatorModulePackedbytearray: GDExtensionPtrOperatorEvaluator!
+    static private (set) var operatorModuleGodotcontiguousarrayuint8: GDExtensionPtrOperatorEvaluator!
 
-    static private (set) var operatorModulePackedint32array: GDExtensionPtrOperatorEvaluator!
+    static private (set) var operatorModuleGodotcontiguousarrayint32: GDExtensionPtrOperatorEvaluator!
 
-    static private (set) var operatorModulePackedint64array: GDExtensionPtrOperatorEvaluator!
+    static private (set) var operatorModuleGodotcontiguousarrayint64: GDExtensionPtrOperatorEvaluator!
 
-    static private (set) var operatorModulePackedfloat32array: GDExtensionPtrOperatorEvaluator!
+    static private (set) var operatorModuleGodotcontiguousarrayfloat: GDExtensionPtrOperatorEvaluator!
 
-    static private (set) var operatorModulePackedfloat64array: GDExtensionPtrOperatorEvaluator!
+    static private (set) var operatorModuleGodotcontiguousarraydouble: GDExtensionPtrOperatorEvaluator!
 
-    static private (set) var operatorModulePackedstringarray: GDExtensionPtrOperatorEvaluator!
+    static private (set) var operatorModuleGodotcontiguousarraygodotstring: GDExtensionPtrOperatorEvaluator!
 
-    static private (set) var operatorInPackedstringarray: GDExtensionPtrOperatorEvaluator!
+    static private (set) var operatorInGodotcontiguousarraygodotstring: GDExtensionPtrOperatorEvaluator!
 
-    static private (set) var operatorModulePackedvector2array: GDExtensionPtrOperatorEvaluator!
+    static private (set) var operatorModuleGodotcontiguousarrayvector2: GDExtensionPtrOperatorEvaluator!
 
-    static private (set) var operatorModulePackedvector3array: GDExtensionPtrOperatorEvaluator!
+    static private (set) var operatorModuleGodotcontiguousarrayvector3: GDExtensionPtrOperatorEvaluator!
 
-    static private (set) var operatorModulePackedcolorarray: GDExtensionPtrOperatorEvaluator!
+    static private (set) var operatorModuleGodotcontiguousarraycolor: GDExtensionPtrOperatorEvaluator!
 
     static private (set) var methodCasecmpTo: GDExtensionPtrBuiltInMethod!
 
@@ -1327,12 +1327,12 @@ extension GodotStringName {
 
     static internal func _operatorModule(
         _ lhs: Godot.GodotStringName,
-        _ rhs: Godot.PackedByteArray
+        _ rhs: UInt8.GodotContiguousArrayStorage
     ) -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    GodotStringNameBindings.operatorModulePackedbytearray(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotStringNameBindings.operatorModuleGodotcontiguousarrayuint8(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -1340,12 +1340,12 @@ extension GodotStringName {
 
     static internal func _operatorModule(
         _ lhs: Godot.GodotStringName,
-        _ rhs: Godot.PackedInt32Array
+        _ rhs: Int32.GodotContiguousArrayStorage
     ) -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    GodotStringNameBindings.operatorModulePackedint32array(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotStringNameBindings.operatorModuleGodotcontiguousarrayint32(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -1353,12 +1353,12 @@ extension GodotStringName {
 
     static internal func _operatorModule(
         _ lhs: Godot.GodotStringName,
-        _ rhs: Godot.PackedInt64Array
+        _ rhs: Int64.GodotContiguousArrayStorage
     ) -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    GodotStringNameBindings.operatorModulePackedint64array(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotStringNameBindings.operatorModuleGodotcontiguousarrayint64(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -1366,12 +1366,12 @@ extension GodotStringName {
 
     static internal func _operatorModule(
         _ lhs: Godot.GodotStringName,
-        _ rhs: Godot.PackedFloat32Array
+        _ rhs: Float.GodotContiguousArrayStorage
     ) -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    GodotStringNameBindings.operatorModulePackedfloat32array(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotStringNameBindings.operatorModuleGodotcontiguousarrayfloat(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -1379,12 +1379,12 @@ extension GodotStringName {
 
     static internal func _operatorModule(
         _ lhs: Godot.GodotStringName,
-        _ rhs: Godot.PackedFloat64Array
+        _ rhs: Double.GodotContiguousArrayStorage
     ) -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    GodotStringNameBindings.operatorModulePackedfloat64array(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotStringNameBindings.operatorModuleGodotcontiguousarraydouble(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -1392,12 +1392,12 @@ extension GodotStringName {
 
     static internal func _operatorModule(
         _ lhs: Godot.GodotStringName,
-        _ rhs: Godot.PackedStringArray
+        _ rhs: GodotString.GodotContiguousArrayStorage
     ) -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    GodotStringNameBindings.operatorModulePackedstringarray(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotStringNameBindings.operatorModuleGodotcontiguousarraygodotstring(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -1405,12 +1405,12 @@ extension GodotStringName {
 
     static internal func _operatorIn(
         _ lhs: Godot.GodotStringName,
-        _ rhs: Godot.PackedStringArray
+        _ rhs: GodotString.GodotContiguousArrayStorage
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    GodotStringNameBindings.operatorInPackedstringarray(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotStringNameBindings.operatorInGodotcontiguousarraygodotstring(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -1418,12 +1418,12 @@ extension GodotStringName {
 
     static internal func _operatorModule(
         _ lhs: Godot.GodotStringName,
-        _ rhs: Godot.PackedVector2Array
+        _ rhs: Vector2.GodotContiguousArrayStorage
     ) -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    GodotStringNameBindings.operatorModulePackedvector2array(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotStringNameBindings.operatorModuleGodotcontiguousarrayvector2(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -1431,12 +1431,12 @@ extension GodotStringName {
 
     static internal func _operatorModule(
         _ lhs: Godot.GodotStringName,
-        _ rhs: Godot.PackedVector3Array
+        _ rhs: Vector3.GodotContiguousArrayStorage
     ) -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    GodotStringNameBindings.operatorModulePackedvector3array(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotStringNameBindings.operatorModuleGodotcontiguousarrayvector3(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -1444,12 +1444,12 @@ extension GodotStringName {
 
     static internal func _operatorModule(
         _ lhs: Godot.GodotStringName,
-        _ rhs: Godot.PackedColorArray
+        _ rhs: Color.GodotContiguousArrayStorage
     ) -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    GodotStringNameBindings.operatorModulePackedcolorarray(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotStringNameBindings.operatorModuleGodotcontiguousarraycolor(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -1776,7 +1776,7 @@ extension GodotStringName {
         }
     }
 
-    internal func _bigrams() -> Godot.PackedStringArray {
+    internal func _bigrams() -> GodotString.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
                 GodotStringNameBindings.methodBigrams(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
@@ -1941,7 +1941,7 @@ extension GodotStringName {
         delimiter: Godot.GodotString = "",
         allowEmpty: Bool = true,
         maxsplit: Int = 0
-    ) -> Godot.PackedStringArray {
+    ) -> GodotString.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: delimiter) { __ptr_delimiter in
                 withTransferrableUnsafeRawPointer(to: allowEmpty) { __ptr_allowEmpty in
@@ -1961,7 +1961,7 @@ extension GodotStringName {
         delimiter: Godot.GodotString = "",
         allowEmpty: Bool = true,
         maxsplit: Int = 0
-    ) -> Godot.PackedStringArray {
+    ) -> GodotString.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: delimiter) { __ptr_delimiter in
                 withTransferrableUnsafeRawPointer(to: allowEmpty) { __ptr_allowEmpty in
@@ -1980,7 +1980,7 @@ extension GodotStringName {
     internal func _splitFloats(
         delimiter: Godot.GodotString,
         allowEmpty: Bool = true
-    ) -> Godot.PackedFloat64Array {
+    ) -> Double.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: delimiter) { __ptr_delimiter in
                 withTransferrableUnsafeRawPointer(to: allowEmpty) { __ptr_allowEmpty in
@@ -1995,7 +1995,7 @@ extension GodotStringName {
     }
 
     internal func _join(
-        parts: Godot.PackedStringArray
+        parts: GodotString.GodotContiguousArrayStorage
     ) -> Godot.GodotString {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: parts) { __ptr_parts in
@@ -2195,7 +2195,7 @@ extension GodotStringName {
         }
     }
 
-    internal func _md5Buffer() -> Godot.PackedByteArray {
+    internal func _md5Buffer() -> UInt8.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
                 GodotStringNameBindings.methodMd5Buffer(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
@@ -2203,7 +2203,7 @@ extension GodotStringName {
         }
     }
 
-    internal func _sha1Buffer() -> Godot.PackedByteArray {
+    internal func _sha1Buffer() -> UInt8.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
                 GodotStringNameBindings.methodSha1Buffer(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
@@ -2211,7 +2211,7 @@ extension GodotStringName {
         }
     }
 
-    internal func _sha256Buffer() -> Godot.PackedByteArray {
+    internal func _sha256Buffer() -> UInt8.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
                 GodotStringNameBindings.methodSha256Buffer(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
@@ -2543,7 +2543,7 @@ extension GodotStringName {
         }
     }
 
-    internal func _toAsciiBuffer() -> Godot.PackedByteArray {
+    internal func _toAsciiBuffer() -> UInt8.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
                 GodotStringNameBindings.methodToAsciiBuffer(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
@@ -2551,7 +2551,7 @@ extension GodotStringName {
         }
     }
 
-    internal func _toUtf8Buffer() -> Godot.PackedByteArray {
+    internal func _toUtf8Buffer() -> UInt8.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
                 GodotStringNameBindings.methodToUtf8Buffer(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
@@ -2559,7 +2559,7 @@ extension GodotStringName {
         }
     }
 
-    internal func _toUtf16Buffer() -> Godot.PackedByteArray {
+    internal func _toUtf16Buffer() -> UInt8.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
                 GodotStringNameBindings.methodToUtf16Buffer(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
@@ -2567,7 +2567,7 @@ extension GodotStringName {
         }
     }
 
-    internal func _toUtf32Buffer() -> Godot.PackedByteArray {
+    internal func _toUtf32Buffer() -> UInt8.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
                 GodotStringNameBindings.methodToUtf32Buffer(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
@@ -2575,7 +2575,7 @@ extension GodotStringName {
         }
     }
 
-    internal func _hexDecode() -> Godot.PackedByteArray {
+    internal func _hexDecode() -> UInt8.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
                 GodotStringNameBindings.methodHexDecode(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
@@ -2583,7 +2583,7 @@ extension GodotStringName {
         }
     }
 
-    internal func _toWcharBuffer() -> Godot.PackedByteArray {
+    internal func _toWcharBuffer() -> UInt8.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
                 GodotStringNameBindings.methodToWcharBuffer(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)

@@ -6,8 +6,8 @@ import GodotExtensionHeaders
 
 @GodotRefCountedClass
 open class ImageFormatLoaderExtension: ImageFormatLoader {
-    open func _getRecognizedExtensions() -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    open func _getRecognizedExtensions() -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _loadImage(

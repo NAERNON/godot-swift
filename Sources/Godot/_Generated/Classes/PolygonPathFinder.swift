@@ -15,8 +15,8 @@ open class PolygonPathFinder: Resource {
     }()
 
     public func setup(
-        points: Godot.PackedVector2Array,
-        connections: Godot.PackedInt32Array
+        points: Godot.GodotContiguousArray<Vector2>,
+        connections: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: points) { __ptr_points in
             withTransferrableUnsafeRawPointer(to: connections) { __ptr_connections in
@@ -45,7 +45,7 @@ open class PolygonPathFinder: Resource {
     public func findPath(
         from: Godot.Vector2,
         to: Godot.Vector2
-    ) -> Godot.PackedVector2Array {
+    ) -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
                 withTransferrableUnsafeRawPointer(to: to) { __ptr_to in
@@ -75,7 +75,7 @@ open class PolygonPathFinder: Resource {
     public func intersections(
         from: Godot.Vector2,
         to: Godot.Vector2
-    ) -> Godot.PackedVector2Array {
+    ) -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
                 withTransferrableUnsafeRawPointer(to: to) { __ptr_to in

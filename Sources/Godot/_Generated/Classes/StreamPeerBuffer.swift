@@ -107,7 +107,7 @@ open class StreamPeerBuffer: StreamPeer {
     }()
 
     private func __setDataArray(
-        data: Godot.PackedByteArray
+        data: Godot.GodotContiguousArray<UInt8>
     ) {
         withTransferrableUnsafeRawPointer(to: data) { __ptr_data in
             withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
@@ -131,7 +131,7 @@ open class StreamPeerBuffer: StreamPeer {
         }
     }()
 
-    private func __getDataArray() -> Godot.PackedByteArray {
+    private func __getDataArray() -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -184,7 +184,7 @@ open class StreamPeerBuffer: StreamPeer {
         }
     }
 
-    public var dataArray: Godot.PackedByteArray {
+    public var dataArray: Godot.GodotContiguousArray<UInt8> {
         get {
             __getDataArray()
         }

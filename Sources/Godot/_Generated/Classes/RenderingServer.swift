@@ -3136,7 +3136,7 @@ open class RenderingServer: Object {
         mesh: Godot.RID,
         surface: Int32,
         offset: Int32,
-        data: Godot.PackedByteArray
+        data: Godot.GodotContiguousArray<UInt8>
     ) {
         withTransferrableUnsafeRawPointer(to: mesh) { __ptr_mesh in
             withTransferrableUnsafeRawPointer(to: surface) { __ptr_surface in
@@ -3170,7 +3170,7 @@ open class RenderingServer: Object {
         mesh: Godot.RID,
         surface: Int32,
         offset: Int32,
-        data: Godot.PackedByteArray
+        data: Godot.GodotContiguousArray<UInt8>
     ) {
         withTransferrableUnsafeRawPointer(to: mesh) { __ptr_mesh in
             withTransferrableUnsafeRawPointer(to: surface) { __ptr_surface in
@@ -3204,7 +3204,7 @@ open class RenderingServer: Object {
         mesh: Godot.RID,
         surface: Int32,
         offset: Int32,
-        data: Godot.PackedByteArray
+        data: Godot.GodotContiguousArray<UInt8>
     ) {
         withTransferrableUnsafeRawPointer(to: mesh) { __ptr_mesh in
             withTransferrableUnsafeRawPointer(to: surface) { __ptr_surface in
@@ -3730,7 +3730,7 @@ open class RenderingServer: Object {
 
     public func multimeshSetBuffer(
         multimesh: Godot.RID,
-        buffer: Godot.PackedFloat32Array
+        buffer: Godot.GodotContiguousArray<Float>
     ) {
         withTransferrableUnsafeRawPointer(to: multimesh) { __ptr_multimesh in
             withTransferrableUnsafeRawPointer(to: buffer) { __ptr_buffer in
@@ -3758,7 +3758,7 @@ open class RenderingServer: Object {
 
     public func multimeshGetBuffer(
         multimesh: Godot.RID
-    ) -> Godot.PackedFloat32Array {
+    ) -> Godot.GodotContiguousArray<Float> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: multimesh) { __ptr_multimesh in
                 withUnsafeArgumentPackPointer(__ptr_multimesh) { __accessPtr in
@@ -5356,10 +5356,10 @@ open class RenderingServer: Object {
         toCellXform cellXform: Godot.Transform3D,
         aabb: Godot.AABB,
         octreeSize: Godot.Vector3I,
-        octreeCells: Godot.PackedByteArray,
-        dataCells: Godot.PackedByteArray,
-        distanceField: Godot.PackedByteArray,
-        levelCounts: Godot.PackedInt32Array
+        octreeCells: Godot.GodotContiguousArray<UInt8>,
+        dataCells: Godot.GodotContiguousArray<UInt8>,
+        distanceField: Godot.GodotContiguousArray<UInt8>,
+        levelCounts: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: voxelGi) { __ptr_voxelGi in
             withTransferrableUnsafeRawPointer(to: cellXform) { __ptr_cellXform in
@@ -5426,7 +5426,7 @@ open class RenderingServer: Object {
 
     public func voxelGiGetOctreeCells(
         voxelGi: Godot.RID
-    ) -> Godot.PackedByteArray {
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: voxelGi) { __ptr_voxelGi in
                 withUnsafeArgumentPackPointer(__ptr_voxelGi) { __accessPtr in
@@ -5453,7 +5453,7 @@ open class RenderingServer: Object {
 
     public func voxelGiGetDataCells(
         voxelGi: Godot.RID
-    ) -> Godot.PackedByteArray {
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: voxelGi) { __ptr_voxelGi in
                 withUnsafeArgumentPackPointer(__ptr_voxelGi) { __accessPtr in
@@ -5480,7 +5480,7 @@ open class RenderingServer: Object {
 
     public func voxelGiGetDistanceField(
         voxelGi: Godot.RID
-    ) -> Godot.PackedByteArray {
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: voxelGi) { __ptr_voxelGi in
                 withUnsafeArgumentPackPointer(__ptr_voxelGi) { __accessPtr in
@@ -5507,7 +5507,7 @@ open class RenderingServer: Object {
 
     public func voxelGiGetLevelCounts(
         voxelGi: Godot.RID
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: voxelGi) { __ptr_voxelGi in
                 withUnsafeArgumentPackPointer(__ptr_voxelGi) { __accessPtr in
@@ -5918,10 +5918,10 @@ open class RenderingServer: Object {
 
     public func lightmapSetProbeCaptureData(
         lightmap: Godot.RID,
-        points: Godot.PackedVector3Array,
-        pointSh: Godot.PackedColorArray,
-        tetrahedra: Godot.PackedInt32Array,
-        bspTree: Godot.PackedInt32Array
+        points: Godot.GodotContiguousArray<Vector3>,
+        pointSh: Godot.GodotContiguousArray<Color>,
+        tetrahedra: Godot.GodotContiguousArray<Int32>,
+        bspTree: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: lightmap) { __ptr_lightmap in
             withTransferrableUnsafeRawPointer(to: points) { __ptr_points in
@@ -5955,7 +5955,7 @@ open class RenderingServer: Object {
 
     public func lightmapGetProbeCapturePoints(
         lightmap: Godot.RID
-    ) -> Godot.PackedVector3Array {
+    ) -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lightmap) { __ptr_lightmap in
                 withUnsafeArgumentPackPointer(__ptr_lightmap) { __accessPtr in
@@ -5982,7 +5982,7 @@ open class RenderingServer: Object {
 
     public func lightmapGetProbeCaptureSh(
         lightmap: Godot.RID
-    ) -> Godot.PackedColorArray {
+    ) -> Godot.GodotContiguousArray<Color> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lightmap) { __ptr_lightmap in
                 withUnsafeArgumentPackPointer(__ptr_lightmap) { __accessPtr in
@@ -6009,7 +6009,7 @@ open class RenderingServer: Object {
 
     public func lightmapGetProbeCaptureTetrahedra(
         lightmap: Godot.RID
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lightmap) { __ptr_lightmap in
                 withUnsafeArgumentPackPointer(__ptr_lightmap) { __accessPtr in
@@ -6036,7 +6036,7 @@ open class RenderingServer: Object {
 
     public func lightmapGetProbeCaptureBspTree(
         lightmap: Godot.RID
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lightmap) { __ptr_lightmap in
                 withUnsafeArgumentPackPointer(__ptr_lightmap) { __accessPtr in
@@ -7574,8 +7574,8 @@ open class RenderingServer: Object {
 
     public func occluderSetMesh(
         occluder: Godot.RID,
-        vertices: Godot.PackedVector3Array,
-        indices: Godot.PackedInt32Array
+        vertices: Godot.GodotContiguousArray<Vector3>,
+        indices: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: occluder) { __ptr_occluder in
             withTransferrableUnsafeRawPointer(to: vertices) { __ptr_vertices in
@@ -9685,7 +9685,7 @@ open class RenderingServer: Object {
     public func environmentSetGlow(
         env: Godot.RID,
         enable: Bool,
-        levels: Godot.PackedFloat32Array,
+        levels: Godot.GodotContiguousArray<Float>,
         intensity: Double,
         strength: Double,
         mix: Double,
@@ -11572,7 +11572,7 @@ open class RenderingServer: Object {
     public func instancesCullAABB(
         _ aabb: Godot.AABB,
         scenario: Godot.RID = RID()
-    ) -> Godot.PackedInt64Array {
+    ) -> Godot.GodotContiguousArray<Int64> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: aabb) { __ptr_aabb in
                 withTransferrableUnsafeRawPointer(to: scenario) { __ptr_scenario in
@@ -11603,7 +11603,7 @@ open class RenderingServer: Object {
         from: Godot.Vector3,
         to: Godot.Vector3,
         scenario: Godot.RID = RID()
-    ) -> Godot.PackedInt64Array {
+    ) -> Godot.GodotContiguousArray<Int64> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
                 withTransferrableUnsafeRawPointer(to: to) { __ptr_to in
@@ -11635,7 +11635,7 @@ open class RenderingServer: Object {
     public func instancesCullConvex(
         _ convex: Godot.GodotArray<Godot.Plane>,
         scenario: Godot.RID = RID()
-    ) -> Godot.PackedInt64Array {
+    ) -> Godot.GodotContiguousArray<Int64> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: convex) { __ptr_convex in
                 withTransferrableUnsafeRawPointer(to: scenario) { __ptr_scenario in
@@ -12369,8 +12369,8 @@ open class RenderingServer: Object {
 
     public func canvasItemAddPolyline(
         item: Godot.RID,
-        points: Godot.PackedVector2Array,
-        colors: Godot.PackedColorArray,
+        points: Godot.GodotContiguousArray<Vector2>,
+        colors: Godot.GodotContiguousArray<Color>,
         width: Double = -1.0,
         antialiased: Bool = false
     ) {
@@ -12406,8 +12406,8 @@ open class RenderingServer: Object {
 
     public func canvasItemAddMultiline(
         item: Godot.RID,
-        points: Godot.PackedVector2Array,
-        colors: Godot.PackedColorArray,
+        points: Godot.GodotContiguousArray<Vector2>,
+        colors: Godot.GodotContiguousArray<Color>,
         width: Double = -1.0
     ) {
         withTransferrableUnsafeRawPointer(to: item) { __ptr_item in
@@ -12723,9 +12723,9 @@ open class RenderingServer: Object {
 
     public func canvasItemAddPrimitive(
         item: Godot.RID,
-        points: Godot.PackedVector2Array,
-        colors: Godot.PackedColorArray,
-        uvs: Godot.PackedVector2Array,
+        points: Godot.GodotContiguousArray<Vector2>,
+        colors: Godot.GodotContiguousArray<Color>,
+        uvs: Godot.GodotContiguousArray<Vector2>,
         texture: Godot.RID
     ) {
         withTransferrableUnsafeRawPointer(to: item) { __ptr_item in
@@ -12760,9 +12760,9 @@ open class RenderingServer: Object {
 
     public func canvasItemAddPolygon(
         item: Godot.RID,
-        points: Godot.PackedVector2Array,
-        colors: Godot.PackedColorArray,
-        uvs: Godot.PackedVector2Array = PackedVector2Array(),
+        points: Godot.GodotContiguousArray<Vector2>,
+        colors: Godot.GodotContiguousArray<Color>,
+        uvs: Godot.GodotContiguousArray<Vector2> = [],
         texture: Godot.RID = RID()
     ) {
         withTransferrableUnsafeRawPointer(to: item) { __ptr_item in
@@ -12797,12 +12797,12 @@ open class RenderingServer: Object {
 
     public func canvasItemAddTriangleArray(
         item: Godot.RID,
-        indices: Godot.PackedInt32Array,
-        points: Godot.PackedVector2Array,
-        colors: Godot.PackedColorArray,
-        uvs: Godot.PackedVector2Array = PackedVector2Array(),
-        bones: Godot.PackedInt32Array = PackedInt32Array(),
-        weights: Godot.PackedFloat32Array = PackedFloat32Array(),
+        indices: Godot.GodotContiguousArray<Int32>,
+        points: Godot.GodotContiguousArray<Vector2>,
+        colors: Godot.GodotContiguousArray<Color>,
+        uvs: Godot.GodotContiguousArray<Vector2> = [],
+        bones: Godot.GodotContiguousArray<Int32> = [],
+        weights: Godot.GodotContiguousArray<Float> = [],
         texture: Godot.RID = RID(),
         count: Int32 = -1
     ) {
@@ -14108,7 +14108,7 @@ open class RenderingServer: Object {
 
     public func canvasOccluderPolygonSetShape(
         occluderPolygon: Godot.RID,
-        shape: Godot.PackedVector2Array,
+        shape: Godot.GodotContiguousArray<Vector2>,
         closed: Bool
     ) {
         withTransferrableUnsafeRawPointer(to: occluderPolygon) { __ptr_occluderPolygon in

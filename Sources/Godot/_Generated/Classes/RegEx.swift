@@ -253,7 +253,7 @@ open class RegEx: RefCounted {
         }
     }()
 
-    public func names() -> Godot.PackedStringArray {
+    public func names() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

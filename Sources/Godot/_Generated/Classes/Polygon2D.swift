@@ -15,7 +15,7 @@ open class Polygon2D: Node2D {
     }()
 
     private func __setPolygon(
-        _ polygon: Godot.PackedVector2Array
+        _ polygon: Godot.GodotContiguousArray<Vector2>
     ) {
         withTransferrableUnsafeRawPointer(to: polygon) { __ptr_polygon in
             withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
@@ -39,7 +39,7 @@ open class Polygon2D: Node2D {
         }
     }()
 
-    private func __getPolygon() -> Godot.PackedVector2Array {
+    private func __getPolygon() -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -61,7 +61,7 @@ open class Polygon2D: Node2D {
     }()
 
     private func __setUv(
-        _ uv: Godot.PackedVector2Array
+        _ uv: Godot.GodotContiguousArray<Vector2>
     ) {
         withTransferrableUnsafeRawPointer(to: uv) { __ptr_uv in
             withUnsafeArgumentPackPointer(__ptr_uv) { __accessPtr in
@@ -85,7 +85,7 @@ open class Polygon2D: Node2D {
         }
     }()
 
-    private func __getUv() -> Godot.PackedVector2Array {
+    private func __getUv() -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -199,7 +199,7 @@ open class Polygon2D: Node2D {
     }()
 
     private func __setVertexColors(
-        _ vertexColors: Godot.PackedColorArray
+        _ vertexColors: Godot.GodotContiguousArray<Color>
     ) {
         withTransferrableUnsafeRawPointer(to: vertexColors) { __ptr_vertexColors in
             withUnsafeArgumentPackPointer(__ptr_vertexColors) { __accessPtr in
@@ -223,7 +223,7 @@ open class Polygon2D: Node2D {
         }
     }()
 
-    private func __getVertexColors() -> Godot.PackedColorArray {
+    private func __getVertexColors() -> Godot.GodotContiguousArray<Color> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -616,7 +616,7 @@ open class Polygon2D: Node2D {
 
     public func addBone(
         path: Godot.NodePath,
-        weights: Godot.PackedFloat32Array
+        weights: Godot.GodotContiguousArray<Float>
     ) {
         withTransferrableUnsafeRawPointer(to: path) { __ptr_path in
             withTransferrableUnsafeRawPointer(to: weights) { __ptr_weights in
@@ -692,7 +692,7 @@ open class Polygon2D: Node2D {
 
     public func boneWeights(
         index: Int32
-    ) -> Godot.PackedFloat32Array {
+    ) -> Godot.GodotContiguousArray<Float> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
                 withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
@@ -791,7 +791,7 @@ open class Polygon2D: Node2D {
 
     public func setBoneWeights(
         index: Int32,
-        weights: Godot.PackedFloat32Array
+        weights: Godot.GodotContiguousArray<Float>
     ) {
         withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
             withTransferrableUnsafeRawPointer(to: weights) { __ptr_weights in
@@ -1011,7 +1011,7 @@ open class Polygon2D: Node2D {
         }
     }
 
-    public var polygon: Godot.PackedVector2Array {
+    public var polygon: Godot.GodotContiguousArray<Vector2> {
         get {
             __getPolygon()
         }
@@ -1022,7 +1022,7 @@ open class Polygon2D: Node2D {
         }
     }
 
-    public var uv: Godot.PackedVector2Array {
+    public var uv: Godot.GodotContiguousArray<Vector2> {
         get {
             __getUv()
         }
@@ -1033,7 +1033,7 @@ open class Polygon2D: Node2D {
         }
     }
 
-    public var vertexColors: Godot.PackedColorArray {
+    public var vertexColors: Godot.GodotContiguousArray<Color> {
         get {
             __getVertexColors()
         }

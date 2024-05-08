@@ -412,7 +412,7 @@ open class XMLParser: RefCounted {
     }()
 
     public func openBuffer(
-        _ buffer: Godot.PackedByteArray
+        _ buffer: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: buffer) { __ptr_buffer in

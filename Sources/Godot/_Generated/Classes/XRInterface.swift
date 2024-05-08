@@ -467,7 +467,7 @@ open class XRInterface: RefCounted {
         }
     }()
 
-    public func playArea() -> Godot.PackedVector3Array {
+    public func playArea() -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

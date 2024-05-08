@@ -944,7 +944,7 @@ open class CodeEdit: TextEdit {
         }
     }()
 
-    public func breakpointedLines() -> Godot.PackedInt32Array {
+    public func breakpointedLines() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1039,7 +1039,7 @@ open class CodeEdit: TextEdit {
         }
     }()
 
-    public func bookmarkedLines() -> Godot.PackedInt32Array {
+    public func bookmarkedLines() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1134,7 +1134,7 @@ open class CodeEdit: TextEdit {
         }
     }()
 
-    public func executingLines() -> Godot.PackedInt32Array {
+    public func executingLines() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

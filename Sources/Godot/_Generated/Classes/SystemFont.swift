@@ -474,7 +474,7 @@ open class SystemFont: Font {
         }
     }()
 
-    private func __getFontNames() -> Godot.PackedStringArray {
+    private func __getFontNames() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -496,7 +496,7 @@ open class SystemFont: Font {
     }()
 
     private func __setFontNames(
-        _ names: Godot.PackedStringArray
+        _ names: Godot.GodotContiguousArray<GodotString>
     ) {
         withTransferrableUnsafeRawPointer(to: names) { __ptr_names in
             withUnsafeArgumentPackPointer(__ptr_names) { __accessPtr in
@@ -608,7 +608,7 @@ open class SystemFont: Font {
         }
     }
 
-    public var fontNames: Godot.PackedStringArray {
+    public var fontNames: Godot.GodotContiguousArray<GodotString> {
         get {
             __getFontNames()
         }

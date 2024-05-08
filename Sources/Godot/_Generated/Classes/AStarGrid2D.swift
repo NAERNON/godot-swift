@@ -742,7 +742,7 @@ open class AStarGrid2D: RefCounted {
     public func pointPath(
         fromID: Godot.Vector2I,
         toID: Godot.Vector2I
-    ) -> Godot.PackedVector2Array {
+    ) -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: fromID) { __ptr_fromID in
                 withTransferrableUnsafeRawPointer(to: toID) { __ptr_toID in

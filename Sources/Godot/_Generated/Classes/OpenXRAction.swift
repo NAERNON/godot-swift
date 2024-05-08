@@ -122,7 +122,7 @@ open class OpenXRAction: Resource {
     }()
 
     private func __setToplevelPaths(
-        _ toplevelPaths: Godot.PackedStringArray
+        _ toplevelPaths: Godot.GodotContiguousArray<GodotString>
     ) {
         withTransferrableUnsafeRawPointer(to: toplevelPaths) { __ptr_toplevelPaths in
             withUnsafeArgumentPackPointer(__ptr_toplevelPaths) { __accessPtr in
@@ -146,7 +146,7 @@ open class OpenXRAction: Resource {
         }
     }()
 
-    private func __getToplevelPaths() -> Godot.PackedStringArray {
+    private func __getToplevelPaths() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -181,7 +181,7 @@ open class OpenXRAction: Resource {
         }
     }
 
-    public var toplevelPaths: Godot.PackedStringArray {
+    public var toplevelPaths: Godot.GodotContiguousArray<GodotString> {
         get {
             __getToplevelPaths()
         }

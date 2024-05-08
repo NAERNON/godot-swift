@@ -327,8 +327,8 @@ open class EditorPlugin: Node {
     open func _applyChanges() {
     }
 
-    open func _getBreakpoints() -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    open func _getBreakpoints() -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _setWindowLayout(

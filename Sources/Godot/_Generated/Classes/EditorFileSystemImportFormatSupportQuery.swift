@@ -10,8 +10,8 @@ open class EditorFileSystemImportFormatSupportQuery: RefCounted {
         Bool()
     }
 
-    open func _getFileExtensions() -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    open func _getFileExtensions() -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _query() -> Bool {

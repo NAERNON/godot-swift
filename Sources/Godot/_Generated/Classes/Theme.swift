@@ -189,7 +189,7 @@ open class Theme: Resource {
 
     public func iconList(
         themeType: Godot.GodotString
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
                 withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
@@ -214,7 +214,7 @@ open class Theme: Resource {
         }
     }()
 
-    public func iconTypeList() -> Godot.PackedStringArray {
+    public func iconTypeList() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -389,7 +389,7 @@ open class Theme: Resource {
 
     public func styleboxList(
         themeType: Godot.GodotString
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
                 withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
@@ -414,7 +414,7 @@ open class Theme: Resource {
         }
     }()
 
-    public func styleboxTypeList() -> Godot.PackedStringArray {
+    public func styleboxTypeList() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -589,7 +589,7 @@ open class Theme: Resource {
 
     public func fontList(
         themeType: Godot.GodotString
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
                 withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
@@ -614,7 +614,7 @@ open class Theme: Resource {
         }
     }()
 
-    public func fontTypeList() -> Godot.PackedStringArray {
+    public func fontTypeList() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -787,7 +787,7 @@ open class Theme: Resource {
 
     public func fontSizeList(
         themeType: Godot.GodotString
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
                 withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
@@ -812,7 +812,7 @@ open class Theme: Resource {
         }
     }()
 
-    public func fontSizeTypeList() -> Godot.PackedStringArray {
+    public func fontSizeTypeList() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -985,7 +985,7 @@ open class Theme: Resource {
 
     public func colorList(
         themeType: Godot.GodotString
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
                 withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
@@ -1010,7 +1010,7 @@ open class Theme: Resource {
         }
     }()
 
-    public func colorTypeList() -> Godot.PackedStringArray {
+    public func colorTypeList() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1183,7 +1183,7 @@ open class Theme: Resource {
 
     public func constantList(
         themeType: Godot.GodotString
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
                 withUnsafeArgumentPackPointer(__ptr_themeType) { __accessPtr in
@@ -1208,7 +1208,7 @@ open class Theme: Resource {
         }
     }()
 
-    public func constantTypeList() -> Godot.PackedStringArray {
+    public func constantTypeList() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1600,7 +1600,7 @@ open class Theme: Resource {
     public func themeItemList(
         dataType: Godot.Theme.DataType,
         themeType: Godot.GodotString
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: dataType) { __ptr_dataType in
                 withTransferrableUnsafeRawPointer(to: themeType) { __ptr_themeType in
@@ -1629,7 +1629,7 @@ open class Theme: Resource {
 
     public func themeItemTypeList(
         dataType: Godot.Theme.DataType
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: dataType) { __ptr_dataType in
                 withUnsafeArgumentPackPointer(__ptr_dataType) { __accessPtr in
@@ -1766,7 +1766,7 @@ open class Theme: Resource {
 
     public func typeVariationList(
         baseType: Godot.GodotStringName
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: baseType) { __ptr_baseType in
                 withUnsafeArgumentPackPointer(__ptr_baseType) { __accessPtr in
@@ -1841,7 +1841,7 @@ open class Theme: Resource {
         }
     }()
 
-    public func typeList() -> Godot.PackedStringArray {
+    public func typeList() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

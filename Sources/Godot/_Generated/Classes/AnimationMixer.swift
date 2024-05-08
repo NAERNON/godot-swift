@@ -412,7 +412,7 @@ open class AnimationMixer: Node {
         }
     }()
 
-    public func animationList() -> Godot.PackedStringArray {
+    public func animationList() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

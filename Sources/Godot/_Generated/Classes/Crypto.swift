@@ -16,7 +16,7 @@ open class Crypto: RefCounted {
 
     public func generateRandomBytes(
         size: Int32
-    ) -> Godot.PackedByteArray {
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
                 withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
@@ -108,9 +108,9 @@ open class Crypto: RefCounted {
 
     public func sign(
         hashType: Godot.HashingContext.HashType,
-        hash: Godot.PackedByteArray,
+        hash: Godot.GodotContiguousArray<UInt8>,
         key: Godot.CryptoKey?
-    ) -> Godot.PackedByteArray {
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: hashType) { __ptr_hashType in
                 withTransferrableUnsafeRawPointer(to: hash) { __ptr_hash in
@@ -143,8 +143,8 @@ open class Crypto: RefCounted {
 
     public func verify(
         hashType: Godot.HashingContext.HashType,
-        hash: Godot.PackedByteArray,
-        signature: Godot.PackedByteArray,
+        hash: Godot.GodotContiguousArray<UInt8>,
+        signature: Godot.GodotContiguousArray<UInt8>,
         key: Godot.CryptoKey?
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
@@ -181,8 +181,8 @@ open class Crypto: RefCounted {
 
     public func encrypt(
         key: Godot.CryptoKey?,
-        plaintext: Godot.PackedByteArray
-    ) -> Godot.PackedByteArray {
+        plaintext: Godot.GodotContiguousArray<UInt8>
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: key) { __ptr_key in
                 withUnsafePointer(to: __ptr_key) { _ptr___ptr_key in
@@ -213,8 +213,8 @@ open class Crypto: RefCounted {
 
     public func decrypt(
         key: Godot.CryptoKey?,
-        ciphertext: Godot.PackedByteArray
-    ) -> Godot.PackedByteArray {
+        ciphertext: Godot.GodotContiguousArray<UInt8>
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: key) { __ptr_key in
                 withUnsafePointer(to: __ptr_key) { _ptr___ptr_key in
@@ -245,9 +245,9 @@ open class Crypto: RefCounted {
 
     public func hmacDigest(
         hashType: Godot.HashingContext.HashType,
-        key: Godot.PackedByteArray,
-        msg: Godot.PackedByteArray
-    ) -> Godot.PackedByteArray {
+        key: Godot.GodotContiguousArray<UInt8>,
+        msg: Godot.GodotContiguousArray<UInt8>
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: hashType) { __ptr_hashType in
                 withTransferrableUnsafeRawPointer(to: key) { __ptr_key in
@@ -277,8 +277,8 @@ open class Crypto: RefCounted {
     }()
 
     public func constantTimeCompare(
-        trusted: Godot.PackedByteArray,
-        received: Godot.PackedByteArray
+        trusted: Godot.GodotContiguousArray<UInt8>,
+        received: Godot.GodotContiguousArray<UInt8>
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: trusted) { __ptr_trusted in

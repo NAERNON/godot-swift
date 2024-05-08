@@ -332,7 +332,7 @@ open class BitMap: Resource {
     public func opaqueToPolygons(
         rect: Godot.Rect2I,
         epsilon: Double = 2.0
-    ) -> Godot.GodotArray<Godot.PackedVector2Array> {
+    ) -> Godot.GodotArray<Godot.GodotContiguousArray<Vector2>> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: rect) { __ptr_rect in
                 withTransferrableUnsafeRawPointer(to: epsilon) { __ptr_epsilon in

@@ -689,7 +689,7 @@ open class EditorInterface: Object {
         }
     }()
 
-    public func selectedPaths() -> Godot.PackedStringArray {
+    public func selectedPaths() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -946,7 +946,7 @@ open class EditorInterface: Object {
         }
     }()
 
-    public func openScenes() -> Godot.PackedStringArray {
+    public func openScenes() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

@@ -45,7 +45,7 @@ open class NavigationPolygon: Resource {
     }()
 
     private func __setVertices(
-        _ vertices: Godot.PackedVector2Array
+        _ vertices: Godot.GodotContiguousArray<Vector2>
     ) {
         withTransferrableUnsafeRawPointer(to: vertices) { __ptr_vertices in
             withUnsafeArgumentPackPointer(__ptr_vertices) { __accessPtr in
@@ -69,7 +69,7 @@ open class NavigationPolygon: Resource {
         }
     }()
 
-    private func __getVertices() -> Godot.PackedVector2Array {
+    private func __getVertices() -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -91,7 +91,7 @@ open class NavigationPolygon: Resource {
     }()
 
     public func addPolygon(
-        _ polygon: Godot.PackedInt32Array
+        _ polygon: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: polygon) { __ptr_polygon in
             withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
@@ -138,7 +138,7 @@ open class NavigationPolygon: Resource {
 
     public func polygon(
         idx: Int32
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: idx) { __ptr_idx in
                 withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -204,7 +204,7 @@ open class NavigationPolygon: Resource {
     }()
 
     public func addOutline(
-        _ outline: Godot.PackedVector2Array
+        _ outline: Godot.GodotContiguousArray<Vector2>
     ) {
         withTransferrableUnsafeRawPointer(to: outline) { __ptr_outline in
             withUnsafeArgumentPackPointer(__ptr_outline) { __accessPtr in
@@ -229,7 +229,7 @@ open class NavigationPolygon: Resource {
     }()
 
     public func addOutlineAtIndex(
-        outline: Godot.PackedVector2Array,
+        outline: Godot.GodotContiguousArray<Vector2>,
         index: Int32
     ) {
         withTransferrableUnsafeRawPointer(to: outline) { __ptr_outline in
@@ -279,7 +279,7 @@ open class NavigationPolygon: Resource {
 
     public func setOutline(
         idx: Int32,
-        outline: Godot.PackedVector2Array
+        outline: Godot.GodotContiguousArray<Vector2>
     ) {
         withTransferrableUnsafeRawPointer(to: idx) { __ptr_idx in
             withTransferrableUnsafeRawPointer(to: outline) { __ptr_outline in
@@ -307,7 +307,7 @@ open class NavigationPolygon: Resource {
 
     public func outline(
         idx: Int32
-    ) -> Godot.PackedVector2Array {
+    ) -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: idx) { __ptr_idx in
                 withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -737,7 +737,7 @@ open class NavigationPolygon: Resource {
         }
     }
 
-    public var vertices: Godot.PackedVector2Array {
+    public var vertices: Godot.GodotContiguousArray<Vector2> {
         get {
             __getVertices()
         }

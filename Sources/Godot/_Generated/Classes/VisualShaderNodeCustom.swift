@@ -84,8 +84,8 @@ open class VisualShaderNodeCustom: VisualShaderNode {
 
     open func _getPropertyOptions(
         index: Int32
-    ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    ) -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _getCode(

@@ -109,7 +109,7 @@ open class Translation: Resource {
 
     public func addPluralMessage(
         srcMessage: Godot.GodotStringName,
-        xlatedMessages: Godot.PackedStringArray,
+        xlatedMessages: Godot.GodotContiguousArray<GodotString>,
         context: Godot.GodotStringName = ""
     ) {
         withTransferrableUnsafeRawPointer(to: srcMessage) { __ptr_srcMessage in
@@ -232,7 +232,7 @@ open class Translation: Resource {
         }
     }()
 
-    public func messageList() -> Godot.PackedStringArray {
+    public func messageList() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -253,7 +253,7 @@ open class Translation: Resource {
         }
     }()
 
-    public func translatedMessageList() -> Godot.PackedStringArray {
+    public func translatedMessageList() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

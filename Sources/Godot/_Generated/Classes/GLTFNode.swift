@@ -474,7 +474,7 @@ open class GLTFNode: Resource {
         }
     }()
 
-    private func __getChildren() -> Godot.PackedInt32Array {
+    private func __getChildren() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -496,7 +496,7 @@ open class GLTFNode: Resource {
     }()
 
     private func __setChildren(
-        _ children: Godot.PackedInt32Array
+        _ children: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: children) { __ptr_children in
             withUnsafeArgumentPackPointer(__ptr_children) { __accessPtr in
@@ -723,7 +723,7 @@ open class GLTFNode: Resource {
         }
     }
 
-    public var children: Godot.PackedInt32Array {
+    public var children: Godot.GodotContiguousArray<Int32> {
         get {
             __getChildren()
         }

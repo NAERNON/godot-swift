@@ -1173,7 +1173,7 @@ open class NavigationMesh: Resource {
     }()
 
     private func __setVertices(
-        _ vertices: Godot.PackedVector3Array
+        _ vertices: Godot.GodotContiguousArray<Vector3>
     ) {
         withTransferrableUnsafeRawPointer(to: vertices) { __ptr_vertices in
             withUnsafeArgumentPackPointer(__ptr_vertices) { __accessPtr in
@@ -1197,7 +1197,7 @@ open class NavigationMesh: Resource {
         }
     }()
 
-    private func __getVertices() -> Godot.PackedVector3Array {
+    private func __getVertices() -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1219,7 +1219,7 @@ open class NavigationMesh: Resource {
     }()
 
     public func addPolygon(
-        _ polygon: Godot.PackedInt32Array
+        _ polygon: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: polygon) { __ptr_polygon in
             withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
@@ -1266,7 +1266,7 @@ open class NavigationMesh: Resource {
 
     public func polygon(
         idx: Int32
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: idx) { __ptr_idx in
                 withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
@@ -1348,7 +1348,7 @@ open class NavigationMesh: Resource {
         }
     }
 
-    public var vertices: Godot.PackedVector3Array {
+    public var vertices: Godot.GodotContiguousArray<Vector3> {
         get {
             __getVertices()
         }

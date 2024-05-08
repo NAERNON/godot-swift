@@ -487,7 +487,7 @@ open class Curve2D: Resource {
         }
     }()
 
-    public func bakedPoints() -> Godot.PackedVector2Array {
+    public func bakedPoints() -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -565,7 +565,7 @@ open class Curve2D: Resource {
     public func tessellate(
         maxStages: Int32 = 5,
         toleranceDegrees: Double = 4
-    ) -> Godot.PackedVector2Array {
+    ) -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: maxStages) { __ptr_maxStages in
                 withTransferrableUnsafeRawPointer(to: toleranceDegrees) { __ptr_toleranceDegrees in
@@ -595,7 +595,7 @@ open class Curve2D: Resource {
     public func tessellateEvenLength(
         maxStages: Int32 = 5,
         toleranceLength: Double = 20.0
-    ) -> Godot.PackedVector2Array {
+    ) -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: maxStages) { __ptr_maxStages in
                 withTransferrableUnsafeRawPointer(to: toleranceLength) { __ptr_toleranceLength in

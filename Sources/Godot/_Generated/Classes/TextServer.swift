@@ -783,7 +783,7 @@ open class TextServer: RefCounted {
 
     public func fontSetData(
         fontRID: Godot.RID,
-        data: Godot.PackedByteArray
+        data: Godot.GodotContiguousArray<UInt8>
     ) {
         withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
             withTransferrableUnsafeRawPointer(to: data) { __ptr_data in
@@ -2626,7 +2626,7 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         size: Godot.Vector2I,
         textureIndex: Int64,
-        offset: Godot.PackedInt32Array
+        offset: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
             withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
@@ -2660,7 +2660,7 @@ open class TextServer: RefCounted {
         fontRID: Godot.RID,
         size: Godot.Vector2I,
         textureIndex: Int64
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
                 withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
@@ -2692,7 +2692,7 @@ open class TextServer: RefCounted {
     public func fontGetGlyphList(
         fontRID: Godot.RID,
         size: Godot.Vector2I
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
                 withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
@@ -3763,7 +3763,7 @@ open class TextServer: RefCounted {
 
     public func fontGetLanguageSupportOverrides(
         fontRID: Godot.RID
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
                 withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
@@ -3909,7 +3909,7 @@ open class TextServer: RefCounted {
 
     public func fontGetScriptSupportOverrides(
         fontRID: Godot.RID
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: fontRID) { __ptr_fontRID in
                 withUnsafeArgumentPackPointer(__ptr_fontRID) { __accessPtr in
@@ -4917,7 +4917,7 @@ open class TextServer: RefCounted {
 
     public func shapedTextTabAlign(
         shaped: Godot.RID,
-        tabStops: Godot.PackedFloat32Array
+        tabStops: Godot.GodotContiguousArray<Float>
     ) -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
@@ -5136,11 +5136,11 @@ open class TextServer: RefCounted {
 
     public func shapedTextGetLineBreaksAdv(
         shaped: Godot.RID,
-        width: Godot.PackedFloat32Array,
+        width: Godot.GodotContiguousArray<Float>,
         start: Int64 = 0,
         once: Bool = true,
         breakFlags: Godot.TextServer.LineBreakFlag = TextServer.LineBreakFlag(rawValue: 3)
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
                 withTransferrableUnsafeRawPointer(to: width) { __ptr_width in
@@ -5178,7 +5178,7 @@ open class TextServer: RefCounted {
         width: Double,
         start: Int64 = 0,
         breakFlags: Godot.TextServer.LineBreakFlag = TextServer.LineBreakFlag(rawValue: 3)
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
                 withTransferrableUnsafeRawPointer(to: width) { __ptr_width in
@@ -5212,7 +5212,7 @@ open class TextServer: RefCounted {
     public func shapedTextGetWordBreaks(
         shaped: Godot.RID,
         graphemeFlags: Godot.TextServer.GraphemeFlag = TextServer.GraphemeFlag(rawValue: 264)
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
                 withTransferrableUnsafeRawPointer(to: graphemeFlags) { __ptr_graphemeFlags in
@@ -5631,7 +5631,7 @@ open class TextServer: RefCounted {
         shaped: Godot.RID,
         start: Int64,
         end: Int64
-    ) -> Godot.PackedVector2Array {
+    ) -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
                 withTransferrableUnsafeRawPointer(to: start) { __ptr_start in
@@ -5812,7 +5812,7 @@ open class TextServer: RefCounted {
 
     public func shapedTextGetCharacterBreaks(
         shaped: Godot.RID
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: shaped) { __ptr_shaped in
                 withUnsafeArgumentPackPointer(__ptr_shaped) { __accessPtr in
@@ -6134,7 +6134,7 @@ open class TextServer: RefCounted {
         string: Godot.GodotString,
         language: Godot.GodotString = "",
         charsPerLine: Int64 = 0
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: string) { __ptr_string in
                 withTransferrableUnsafeRawPointer(to: language) { __ptr_language in
@@ -6166,7 +6166,7 @@ open class TextServer: RefCounted {
     public func stringGetCharacterBreaks(
         string: Godot.GodotString,
         language: Godot.GodotString = ""
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: string) { __ptr_string in
                 withTransferrableUnsafeRawPointer(to: language) { __ptr_language in
@@ -6195,7 +6195,7 @@ open class TextServer: RefCounted {
 
     public func isConfusable(
         string: Godot.GodotString,
-        dict: Godot.PackedStringArray
+        dict: Godot.GodotContiguousArray<GodotString>
     ) -> Int64 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: string) { __ptr_string in

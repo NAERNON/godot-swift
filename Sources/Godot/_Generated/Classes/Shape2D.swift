@@ -140,7 +140,7 @@ open class Shape2D: Resource {
         localXform: Godot.Transform2D,
         withShape shape: Godot.Shape2D?,
         shapeXform: Godot.Transform2D
-    ) -> Godot.PackedVector2Array {
+    ) -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: localXform) { __ptr_localXform in
                 withTransferrableUnsafeRawPointer(to: shape) { __ptr_shape in
@@ -177,7 +177,7 @@ open class Shape2D: Resource {
         withShape shape: Godot.Shape2D?,
         shapeXform: Godot.Transform2D,
         shapeMotion: Godot.Vector2
-    ) -> Godot.PackedVector2Array {
+    ) -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: localXform) { __ptr_localXform in
                 withTransferrableUnsafeRawPointer(to: localMotion) { __ptr_localMotion in

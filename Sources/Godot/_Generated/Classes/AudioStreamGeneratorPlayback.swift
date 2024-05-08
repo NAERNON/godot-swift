@@ -69,7 +69,7 @@ open class AudioStreamGeneratorPlayback: AudioStreamPlaybackResampled {
     }()
 
     public func pushBuffer(
-        frames: Godot.PackedVector2Array
+        frames: Godot.GodotContiguousArray<Vector2>
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: frames) { __ptr_frames in

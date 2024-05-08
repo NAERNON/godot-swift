@@ -81,7 +81,7 @@ open class TextServerExtension: TextServer {
 
     open func _fontSetData(
         fontRID: Godot.RID,
-        data: Godot.PackedByteArray
+        data: Godot.GodotContiguousArray<UInt8>
     ) {
     }
 
@@ -497,7 +497,7 @@ open class TextServerExtension: TextServer {
         fontRID: Godot.RID,
         size: Godot.Vector2I,
         textureIndex: Int64,
-        offset: Godot.PackedInt32Array
+        offset: Godot.GodotContiguousArray<Int32>
     ) {
     }
 
@@ -505,15 +505,15 @@ open class TextServerExtension: TextServer {
         fontRID: Godot.RID,
         size: Godot.Vector2I,
         textureIndex: Int64
-    ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array()
+    ) -> Godot.GodotContiguousArray<Int32> {
+        Godot.GodotContiguousArray<Int32>()
     }
 
     open func _fontGetGlyphList(
         fontRID: Godot.RID,
         size: Godot.Vector2I
-    ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array()
+    ) -> Godot.GodotContiguousArray<Int32> {
+        Godot.GodotContiguousArray<Int32>()
     }
 
     open func _fontClearGlyphs(
@@ -764,8 +764,8 @@ open class TextServerExtension: TextServer {
 
     open func _fontGetLanguageSupportOverrides(
         fontRID: Godot.RID
-    ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    ) -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _fontIsScriptSupported(
@@ -797,8 +797,8 @@ open class TextServerExtension: TextServer {
 
     open func _fontGetScriptSupportOverrides(
         fontRID: Godot.RID
-    ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    ) -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _fontSetOpentypeFeatureOverrides(
@@ -1027,7 +1027,7 @@ open class TextServerExtension: TextServer {
 
     open func _shapedTextTabAlign(
         shaped: Godot.RID,
-        tabStops: Godot.PackedFloat32Array
+        tabStops: Godot.GodotContiguousArray<Float>
     ) -> Double {
         Double()
     }
@@ -1059,13 +1059,13 @@ open class TextServerExtension: TextServer {
     open func _shapedTextGetGlyphs(
         shaped: Godot.RID
     ) -> UnsafePointer<Glyph> {
-        fatalError("No default value provided for pointers.")
+        fatalError("No default value provided for pointers")
     }
 
     open func _shapedTextSortLogical(
         shaped: Godot.RID
     ) -> UnsafePointer<Glyph> {
-        fatalError("No default value provided for pointers.")
+        fatalError("No default value provided for pointers")
     }
 
     open func _shapedTextGetGlyphCount(
@@ -1082,12 +1082,12 @@ open class TextServerExtension: TextServer {
 
     open func _shapedTextGetLineBreaksAdv(
         shaped: Godot.RID,
-        width: Godot.PackedFloat32Array,
+        width: Godot.GodotContiguousArray<Float>,
         start: Int64,
         once: Bool,
         breakFlags: Godot.TextServer.LineBreakFlag
-    ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array()
+    ) -> Godot.GodotContiguousArray<Int32> {
+        Godot.GodotContiguousArray<Int32>()
     }
 
     open func _shapedTextGetLineBreaks(
@@ -1095,15 +1095,15 @@ open class TextServerExtension: TextServer {
         width: Double,
         start: Int64,
         breakFlags: Godot.TextServer.LineBreakFlag
-    ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array()
+    ) -> Godot.GodotContiguousArray<Int32> {
+        Godot.GodotContiguousArray<Int32>()
     }
 
     open func _shapedTextGetWordBreaks(
         shaped: Godot.RID,
         graphemeFlags: Godot.TextServer.GraphemeFlag
-    ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array()
+    ) -> Godot.GodotContiguousArray<Int32> {
+        Godot.GodotContiguousArray<Int32>()
     }
 
     open func _shapedTextGetTrimPos(
@@ -1127,7 +1127,7 @@ open class TextServerExtension: TextServer {
     open func _shapedTextGetEllipsisGlyphs(
         shaped: Godot.RID
     ) -> UnsafePointer<Glyph> {
-        fatalError("No default value provided for pointers.")
+        fatalError("No default value provided for pointers")
     }
 
     open func _shapedTextOverrunTrimToWidth(
@@ -1205,8 +1205,8 @@ open class TextServerExtension: TextServer {
         shaped: Godot.RID,
         start: Int64,
         end: Int64
-    ) -> Godot.PackedVector2Array {
-        Godot.PackedVector2Array()
+    ) -> Godot.GodotContiguousArray<Vector2> {
+        Godot.GodotContiguousArray<Vector2>()
     }
 
     open func _shapedTextHitTestGrapheme(
@@ -1267,8 +1267,8 @@ open class TextServerExtension: TextServer {
 
     open func _shapedTextGetCharacterBreaks(
         shaped: Godot.RID
-    ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array()
+    ) -> Godot.GodotContiguousArray<Int32> {
+        Godot.GodotContiguousArray<Int32>()
     }
 
     open func _shapedTextNextCharacterPos(
@@ -1328,20 +1328,20 @@ open class TextServerExtension: TextServer {
         string: Godot.GodotString,
         language: Godot.GodotString,
         charsPerLine: Int64
-    ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array()
+    ) -> Godot.GodotContiguousArray<Int32> {
+        Godot.GodotContiguousArray<Int32>()
     }
 
     open func _stringGetCharacterBreaks(
         string: Godot.GodotString,
         language: Godot.GodotString
-    ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array()
+    ) -> Godot.GodotContiguousArray<Int32> {
+        Godot.GodotContiguousArray<Int32>()
     }
 
     open func _isConfusable(
         string: Godot.GodotString,
-        dict: Godot.PackedStringArray
+        dict: Godot.GodotContiguousArray<GodotString>
     ) -> Int64 {
         Int64()
     }
@@ -1505,7 +1505,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._fontSetData(
             fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            data: Godot.PackedByteArray.transferFromGodot(unsafePointer: args[1]!)
+            data: Godot.GodotContiguousArray<UInt8> .transferFromGodot(unsafePointer: args[1]!)
         )}
         let _font_set_data_ptr_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -2119,7 +2119,7 @@ open class TextServerExtension: TextServer {
             fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
             size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
             textureIndex: Int64.transferFromGodot(unsafePointer: args[2]!),
-            offset: Godot.PackedInt32Array.transferFromGodot(unsafePointer: args[3]!)
+            offset: Godot.GodotContiguousArray<Int32> .transferFromGodot(unsafePointer: args[3]!)
         )}
         let _font_get_texture_offsets_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
             guard let instancePtr, let args else {
@@ -2871,7 +2871,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextTabAlign(
             shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            tabStops: Godot.PackedFloat32Array.transferFromGodot(unsafePointer: args[1]!)
+            tabStops: Godot.GodotContiguousArray<Float> .transferFromGodot(unsafePointer: args[1]!)
         )
         .transferToGodot(unsafePointer: returnPtr!)}
         let _shaped_text_shape_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
@@ -2953,7 +2953,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._shapedTextGetLineBreaksAdv(
             shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            width: Godot.PackedFloat32Array.transferFromGodot(unsafePointer: args[1]!),
+            width: Godot.GodotContiguousArray<Float> .transferFromGodot(unsafePointer: args[1]!),
             start: Int64.transferFromGodot(unsafePointer: args[2]!),
             once: Bool.transferFromGodot(unsafePointer: args[3]!),
             breakFlags: Godot.TextServer.LineBreakFlag.transferFromGodot(unsafePointer: args[4]!)
@@ -3323,7 +3323,7 @@ open class TextServerExtension: TextServer {
             Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
         ._isConfusable(
             string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
-            dict: Godot.PackedStringArray.transferFromGodot(unsafePointer: args[1]!)
+            dict: Godot.GodotContiguousArray<GodotString> .transferFromGodot(unsafePointer: args[1]!)
         )
         .transferToGodot(unsafePointer: returnPtr!)}
         let _spoof_check_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in

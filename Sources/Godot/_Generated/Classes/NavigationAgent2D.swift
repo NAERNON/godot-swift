@@ -1129,7 +1129,7 @@ open class NavigationAgent2D: Node {
         }
     }()
 
-    public func currentNavigationPath() -> Godot.PackedVector2Array {
+    public func currentNavigationPath() -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

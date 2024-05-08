@@ -402,7 +402,7 @@ struct GodotClass: Decodable {
                 } else if returnType.isEnum {
                     "\(raw: returnType.syntax(options: syntaxOptions))(rawValue: 0)!"
                 } else if returnType.isPointer {
-                    "fatalError(\"No default value provided for pointers.\")"
+                    "fatalError(\"No default value provided for pointers\")"
                 } else {
                     "\(raw: returnType.syntax(options: syntaxOptions))()"
                 }

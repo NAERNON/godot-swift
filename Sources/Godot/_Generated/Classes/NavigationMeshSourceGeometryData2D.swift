@@ -55,7 +55,7 @@ open class NavigationMeshSourceGeometryData2D: Resource {
     }()
 
     private func __setTraversableOutlines(
-        _ traversableOutlines: Godot.GodotArray<Godot.PackedVector2Array>
+        _ traversableOutlines: Godot.GodotArray<Godot.GodotContiguousArray<Vector2>>
     ) {
         withTransferrableUnsafeRawPointer(to: traversableOutlines) { __ptr_traversableOutlines in
             withUnsafeArgumentPackPointer(__ptr_traversableOutlines) { __accessPtr in
@@ -79,7 +79,7 @@ open class NavigationMeshSourceGeometryData2D: Resource {
         }
     }()
 
-    private func __getTraversableOutlines() -> Godot.GodotArray<Godot.PackedVector2Array> {
+    private func __getTraversableOutlines() -> Godot.GodotArray<Godot.GodotContiguousArray<Vector2>> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -101,7 +101,7 @@ open class NavigationMeshSourceGeometryData2D: Resource {
     }()
 
     private func __setObstructionOutlines(
-        _ obstructionOutlines: Godot.GodotArray<Godot.PackedVector2Array>
+        _ obstructionOutlines: Godot.GodotArray<Godot.GodotContiguousArray<Vector2>>
     ) {
         withTransferrableUnsafeRawPointer(to: obstructionOutlines) { __ptr_obstructionOutlines in
             withUnsafeArgumentPackPointer(__ptr_obstructionOutlines) { __accessPtr in
@@ -125,7 +125,7 @@ open class NavigationMeshSourceGeometryData2D: Resource {
         }
     }()
 
-    private func __getObstructionOutlines() -> Godot.GodotArray<Godot.PackedVector2Array> {
+    private func __getObstructionOutlines() -> Godot.GodotArray<Godot.GodotContiguousArray<Vector2>> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -147,7 +147,7 @@ open class NavigationMeshSourceGeometryData2D: Resource {
     }()
 
     public func addTraversableOutline(
-        shapeOutline: Godot.PackedVector2Array
+        shapeOutline: Godot.GodotContiguousArray<Vector2>
     ) {
         withTransferrableUnsafeRawPointer(to: shapeOutline) { __ptr_shapeOutline in
             withUnsafeArgumentPackPointer(__ptr_shapeOutline) { __accessPtr in
@@ -172,7 +172,7 @@ open class NavigationMeshSourceGeometryData2D: Resource {
     }()
 
     public func addObstructionOutline(
-        shapeOutline: Godot.PackedVector2Array
+        shapeOutline: Godot.GodotContiguousArray<Vector2>
     ) {
         withTransferrableUnsafeRawPointer(to: shapeOutline) { __ptr_shapeOutline in
             withUnsafeArgumentPackPointer(__ptr_shapeOutline) { __accessPtr in
@@ -188,7 +188,7 @@ open class NavigationMeshSourceGeometryData2D: Resource {
         }
     }
 
-    public var traversableOutlines: Godot.GodotArray<Godot.PackedVector2Array> {
+    public var traversableOutlines: Godot.GodotArray<Godot.GodotContiguousArray<Vector2>> {
         get {
             __getTraversableOutlines()
         }
@@ -199,7 +199,7 @@ open class NavigationMeshSourceGeometryData2D: Resource {
         }
     }
 
-    public var obstructionOutlines: Godot.GodotArray<Godot.PackedVector2Array> {
+    public var obstructionOutlines: Godot.GodotArray<Godot.GodotContiguousArray<Vector2>> {
         get {
             __getObstructionOutlines()
         }

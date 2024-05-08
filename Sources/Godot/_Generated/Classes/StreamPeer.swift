@@ -15,7 +15,7 @@ open class StreamPeer: RefCounted {
     }()
 
     public func putData(
-        _ data: Godot.PackedByteArray
+        _ data: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: data) { __ptr_data in
@@ -42,7 +42,7 @@ open class StreamPeer: RefCounted {
     }()
 
     public func putPartialData(
-        _ data: Godot.PackedByteArray
+        _ data: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.AnyGodotArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: data) { __ptr_data in

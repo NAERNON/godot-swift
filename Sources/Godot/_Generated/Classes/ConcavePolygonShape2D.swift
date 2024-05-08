@@ -15,7 +15,7 @@ open class ConcavePolygonShape2D: Shape2D {
     }()
 
     private func __setSegments(
-        _ segments: Godot.PackedVector2Array
+        _ segments: Godot.GodotContiguousArray<Vector2>
     ) {
         withTransferrableUnsafeRawPointer(to: segments) { __ptr_segments in
             withUnsafeArgumentPackPointer(__ptr_segments) { __accessPtr in
@@ -39,7 +39,7 @@ open class ConcavePolygonShape2D: Shape2D {
         }
     }()
 
-    private func __getSegments() -> Godot.PackedVector2Array {
+    private func __getSegments() -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -52,7 +52,7 @@ open class ConcavePolygonShape2D: Shape2D {
         }
     }
 
-    public var segments: Godot.PackedVector2Array {
+    public var segments: Godot.GodotContiguousArray<Vector2> {
         get {
             __getSegments()
         }

@@ -18,10 +18,10 @@ open class VoxelGIData: Resource {
         toCellXform cellXform: Godot.Transform3D,
         aabb: Godot.AABB,
         octreeSize: Godot.Vector3,
-        octreeCells: Godot.PackedByteArray,
-        dataCells: Godot.PackedByteArray,
-        distanceField: Godot.PackedByteArray,
-        levelCounts: Godot.PackedInt32Array
+        octreeCells: Godot.GodotContiguousArray<UInt8>,
+        dataCells: Godot.GodotContiguousArray<UInt8>,
+        distanceField: Godot.GodotContiguousArray<UInt8>,
+        levelCounts: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: cellXform) { __ptr_cellXform in
             withTransferrableUnsafeRawPointer(to: aabb) { __ptr_aabb in
@@ -120,7 +120,7 @@ open class VoxelGIData: Resource {
         }
     }()
 
-    public func octreeCells() -> Godot.PackedByteArray {
+    public func octreeCells() -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -141,7 +141,7 @@ open class VoxelGIData: Resource {
         }
     }()
 
-    public func dataCells() -> Godot.PackedByteArray {
+    public func dataCells() -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -162,7 +162,7 @@ open class VoxelGIData: Resource {
         }
     }()
 
-    public func levelCounts() -> Godot.PackedInt32Array {
+    public func levelCounts() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

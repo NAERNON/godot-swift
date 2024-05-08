@@ -23,8 +23,8 @@ open class MultiplayerAPIExtension: MultiplayerAPI {
         Int32()
     }
 
-    open func _getPeerIds() -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array()
+    open func _getPeerIds() -> Godot.GodotContiguousArray<Int32> {
+        Godot.GodotContiguousArray<Int32>()
     }
 
     open func _rpc(

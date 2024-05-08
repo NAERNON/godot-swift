@@ -55,7 +55,7 @@ open class HashingContext: RefCounted {
     }()
 
     public func update(
-        chunk: Godot.PackedByteArray
+        chunk: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: chunk) { __ptr_chunk in
@@ -81,7 +81,7 @@ open class HashingContext: RefCounted {
         }
     }()
 
-    public func finish() -> Godot.PackedByteArray {
+    public func finish() -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

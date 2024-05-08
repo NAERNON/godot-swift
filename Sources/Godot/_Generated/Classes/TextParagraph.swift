@@ -511,7 +511,7 @@ open class TextParagraph: RefCounted {
     }()
 
     public func tabAlign(
-        tabStops: Godot.PackedFloat32Array
+        tabStops: Godot.GodotContiguousArray<Float>
     ) {
         withTransferrableUnsafeRawPointer(to: tabStops) { __ptr_tabStops in
             withUnsafeArgumentPackPointer(__ptr_tabStops) { __accessPtr in

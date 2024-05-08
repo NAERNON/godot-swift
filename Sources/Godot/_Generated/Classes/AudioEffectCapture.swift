@@ -43,7 +43,7 @@ open class AudioEffectCapture: AudioEffect {
 
     public func buffer(
         frames: Int32
-    ) -> Godot.PackedVector2Array {
+    ) -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: frames) { __ptr_frames in
                 withUnsafeArgumentPackPointer(__ptr_frames) { __accessPtr in

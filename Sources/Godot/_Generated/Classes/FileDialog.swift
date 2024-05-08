@@ -74,10 +74,10 @@ open class FileDialog: ConfirmationDialog {
     }()
 
     public struct FilesSelectedSignalInput: Godot.SignalInput {
-        public let paths: Godot.PackedStringArray
+        public let paths: Godot.GodotContiguousArray<GodotString>
 
         fileprivate init(
-            paths: Godot.PackedStringArray
+            paths: Godot.GodotContiguousArray<GodotString>
         ) {
             self.paths = paths
         }
@@ -90,7 +90,7 @@ open class FileDialog: ConfirmationDialog {
     }
 
     public func filesSelected(
-        paths: Godot.PackedStringArray
+        paths: Godot.GodotContiguousArray<GodotString>
     ) {
         _ = filesSelectedSignal.emit(.init(paths: paths))
     }
@@ -98,7 +98,7 @@ open class FileDialog: ConfirmationDialog {
     public lazy var filesSelectedSignal: Godot.SignalEmitter<FilesSelectedSignalInput> = {
         .init(object: self, signalName: "files_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<FilesSelectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(paths: Godot.PackedStringArray.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
+                .call(with: .init(paths: Godot.GodotContiguousArray<GodotString> .convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<FilesSelectedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -203,7 +203,7 @@ open class FileDialog: ConfirmationDialog {
     }()
 
     private func __setFilters(
-        _ filters: Godot.PackedStringArray
+        _ filters: Godot.GodotContiguousArray<GodotString>
     ) {
         withTransferrableUnsafeRawPointer(to: filters) { __ptr_filters in
             withUnsafeArgumentPackPointer(__ptr_filters) { __accessPtr in
@@ -227,7 +227,7 @@ open class FileDialog: ConfirmationDialog {
         }
     }()
 
-    private func __getFilters() -> Godot.PackedStringArray {
+    private func __getFilters() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -778,7 +778,7 @@ open class FileDialog: ConfirmationDialog {
         }
     }
 
-    public var filters: Godot.PackedStringArray {
+    public var filters: Godot.GodotContiguousArray<GodotString> {
         get {
             __getFilters()
         }

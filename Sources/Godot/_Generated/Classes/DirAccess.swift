@@ -140,7 +140,7 @@ open class DirAccess: RefCounted {
         }
     }()
 
-    public func files() -> Godot.PackedStringArray {
+    public func files() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -163,7 +163,7 @@ open class DirAccess: RefCounted {
 
     static public func filesAt(
         path: Godot.GodotString
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: path) { __ptr_path in
                 withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in
@@ -186,7 +186,7 @@ open class DirAccess: RefCounted {
         }
     }()
 
-    public func directories() -> Godot.PackedStringArray {
+    public func directories() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -209,7 +209,7 @@ open class DirAccess: RefCounted {
 
     static public func directoriesAt(
         path: Godot.GodotString
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: path) { __ptr_path in
                 withUnsafeArgumentPackPointer(__ptr_path) { __accessPtr in

@@ -302,7 +302,7 @@ open class Image: Resource {
         }
     }()
 
-    public func data() -> Godot.PackedByteArray {
+    public func data() -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -625,7 +625,7 @@ open class Image: Resource {
         height: Int32,
         useMipmaps: Bool,
         format: Godot.Image.Format,
-        data: Godot.PackedByteArray
+        data: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.Image? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: width) { __ptr_width in
@@ -662,7 +662,7 @@ open class Image: Resource {
         height: Int32,
         useMipmaps: Bool,
         format: Godot.Image.Format,
-        data: Godot.PackedByteArray
+        data: Godot.GodotContiguousArray<UInt8>
     ) {
         withTransferrableUnsafeRawPointer(to: width) { __ptr_width in
             withTransferrableUnsafeRawPointer(to: height) { __ptr_height in
@@ -794,7 +794,7 @@ open class Image: Resource {
         }
     }()
 
-    public func savePngToBuffer() -> Godot.PackedByteArray {
+    public func savePngToBuffer() -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -847,7 +847,7 @@ open class Image: Resource {
 
     public func saveJpgToBuffer(
         quality: Double = 0.75
-    ) -> Godot.PackedByteArray {
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: quality) { __ptr_quality in
                 withUnsafeArgumentPackPointer(__ptr_quality) { __accessPtr in
@@ -904,7 +904,7 @@ open class Image: Resource {
 
     public func saveExrToBuffer(
         grayscale: Bool = false
-    ) -> Godot.PackedByteArray {
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: grayscale) { __ptr_grayscale in
                 withUnsafeArgumentPackPointer(__ptr_grayscale) { __accessPtr in
@@ -965,7 +965,7 @@ open class Image: Resource {
     public func saveWebpToBuffer(
         lossy: Bool = false,
         quality: Double = 0.75
-    ) -> Godot.PackedByteArray {
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lossy) { __ptr_lossy in
                 withTransferrableUnsafeRawPointer(to: quality) { __ptr_quality in
@@ -1785,7 +1785,7 @@ open class Image: Resource {
     }()
 
     public func loadPngFromBuffer(
-        _ buffer: Godot.PackedByteArray
+        _ buffer: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: buffer) { __ptr_buffer in
@@ -1812,7 +1812,7 @@ open class Image: Resource {
     }()
 
     public func loadJpgFromBuffer(
-        _ buffer: Godot.PackedByteArray
+        _ buffer: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: buffer) { __ptr_buffer in
@@ -1839,7 +1839,7 @@ open class Image: Resource {
     }()
 
     public func loadWebpFromBuffer(
-        _ buffer: Godot.PackedByteArray
+        _ buffer: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: buffer) { __ptr_buffer in
@@ -1866,7 +1866,7 @@ open class Image: Resource {
     }()
 
     public func loadTgaFromBuffer(
-        _ buffer: Godot.PackedByteArray
+        _ buffer: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: buffer) { __ptr_buffer in
@@ -1893,7 +1893,7 @@ open class Image: Resource {
     }()
 
     public func loadBmpFromBuffer(
-        _ buffer: Godot.PackedByteArray
+        _ buffer: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: buffer) { __ptr_buffer in
@@ -1920,7 +1920,7 @@ open class Image: Resource {
     }()
 
     public func loadKtxFromBuffer(
-        _ buffer: Godot.PackedByteArray
+        _ buffer: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: buffer) { __ptr_buffer in
@@ -1947,7 +1947,7 @@ open class Image: Resource {
     }()
 
     public func loadSvgFromBuffer(
-        _ buffer: Godot.PackedByteArray,
+        _ buffer: Godot.GodotContiguousArray<UInt8>,
         scale: Double = 1.0
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in

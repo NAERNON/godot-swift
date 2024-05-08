@@ -48,7 +48,7 @@ open class OS: Object {
         }
     }()
 
-    public func connectedMidiInputs() -> Godot.PackedStringArray {
+    public func connectedMidiInputs() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -340,7 +340,7 @@ open class OS: Object {
         }
     }()
 
-    public func systemFonts() -> Godot.PackedStringArray {
+    public func systemFonts() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -405,7 +405,7 @@ open class OS: Object {
         weight: Int32 = 400,
         stretch: Int32 = 100,
         italic: Bool = false
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: fontName) { __ptr_fontName in
                 withTransferrableUnsafeRawPointer(to: text) { __ptr_text in
@@ -486,7 +486,7 @@ open class OS: Object {
 
     public func execute<Value: Variant.Storable>(
         path: Godot.GodotString,
-        arguments: Godot.PackedStringArray,
+        arguments: Godot.GodotContiguousArray<GodotString>,
         output: Godot.GodotArray<Value> = [],
         readStderr: Bool = false,
         openConsole: Bool = false
@@ -525,7 +525,7 @@ open class OS: Object {
 
     public func createProcess(
         path: Godot.GodotString,
-        arguments: Godot.PackedStringArray,
+        arguments: Godot.GodotContiguousArray<GodotString>,
         openConsole: Bool = false
     ) -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
@@ -557,7 +557,7 @@ open class OS: Object {
     }()
 
     public func createInstance(
-        arguments: Godot.PackedStringArray
+        arguments: Godot.GodotContiguousArray<GodotString>
     ) -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: arguments) { __ptr_arguments in
@@ -885,7 +885,7 @@ open class OS: Object {
         }
     }()
 
-    public func cmdlineArgs() -> Godot.PackedStringArray {
+    public func cmdlineArgs() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -906,7 +906,7 @@ open class OS: Object {
         }
     }()
 
-    public func cmdlineUserArgs() -> Godot.PackedStringArray {
+    public func cmdlineUserArgs() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -927,7 +927,7 @@ open class OS: Object {
         }
     }()
 
-    public func videoAdapterDriverInfo() -> Godot.PackedStringArray {
+    public func videoAdapterDriverInfo() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -950,7 +950,7 @@ open class OS: Object {
 
     public func setRestartOnExit(
         restart: Bool,
-        arguments: Godot.PackedStringArray = PackedStringArray()
+        arguments: Godot.GodotContiguousArray<GodotString> = []
     ) {
         withTransferrableUnsafeRawPointer(to: restart) { __ptr_restart in
             withTransferrableUnsafeRawPointer(to: arguments) { __ptr_arguments in
@@ -997,7 +997,7 @@ open class OS: Object {
         }
     }()
 
-    public func restartOnExitArguments() -> Godot.PackedStringArray {
+    public func restartOnExitArguments() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1690,7 +1690,7 @@ open class OS: Object {
         }
     }()
 
-    public func grantedPermissions() -> Godot.PackedStringArray {
+    public func grantedPermissions() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

@@ -667,7 +667,7 @@ open class ColorPicker: VBoxContainer {
         }
     }()
 
-    public func presets() -> Godot.PackedColorArray {
+    public func presets() -> Godot.GodotContiguousArray<Color> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -738,7 +738,7 @@ open class ColorPicker: VBoxContainer {
         }
     }()
 
-    public func recentPresets() -> Godot.PackedColorArray {
+    public func recentPresets() -> Godot.GodotContiguousArray<Color> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

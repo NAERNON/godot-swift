@@ -1217,7 +1217,7 @@ open class ItemList: Control {
         }
     }()
 
-    public func selectedItems() -> Godot.PackedInt32Array {
+    public func selectedItems() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

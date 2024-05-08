@@ -647,7 +647,7 @@ open class Engine: Object {
         }
     }()
 
-    public func singletonList() -> Godot.PackedStringArray {
+    public func singletonList() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

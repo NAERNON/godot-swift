@@ -69,7 +69,7 @@ open class FontFile: Font {
     }()
 
     private func __setData(
-        _ data: Godot.PackedByteArray
+        _ data: Godot.GodotContiguousArray<UInt8>
     ) {
         withTransferrableUnsafeRawPointer(to: data) { __ptr_data in
             withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
@@ -93,7 +93,7 @@ open class FontFile: Font {
         }
     }()
 
-    private func __getData() -> Godot.PackedByteArray {
+    private func __getData() -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1684,7 +1684,7 @@ open class FontFile: Font {
         cacheIndex: Int32,
         size: Godot.Vector2I,
         textureIndex: Int32,
-        offset: Godot.PackedInt32Array
+        offset: Godot.GodotContiguousArray<Int32>
     ) {
         withTransferrableUnsafeRawPointer(to: cacheIndex) { __ptr_cacheIndex in
             withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
@@ -1718,7 +1718,7 @@ open class FontFile: Font {
         cacheIndex: Int32,
         size: Godot.Vector2I,
         textureIndex: Int32
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: cacheIndex) { __ptr_cacheIndex in
                 withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
@@ -1750,7 +1750,7 @@ open class FontFile: Font {
     public func glyphList(
         cacheIndex: Int32,
         size: Godot.Vector2I
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: cacheIndex) { __ptr_cacheIndex in
                 withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
@@ -2472,7 +2472,7 @@ open class FontFile: Font {
         }
     }()
 
-    public func languageSupportOverrides() -> Godot.PackedStringArray {
+    public func languageSupportOverrides() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -2573,7 +2573,7 @@ open class FontFile: Font {
         }
     }()
 
-    public func scriptSupportOverrides() -> Godot.PackedStringArray {
+    public func scriptSupportOverrides() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -2695,7 +2695,7 @@ open class FontFile: Font {
         }
     }
 
-    public var data: Godot.PackedByteArray {
+    public var data: Godot.GodotContiguousArray<UInt8> {
         get {
             __getData()
         }

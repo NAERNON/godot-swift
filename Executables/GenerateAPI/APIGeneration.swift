@@ -21,7 +21,7 @@ struct APIGeneration: AsyncParsableCommand {
             forResource: "extension_api",
             withExtension: "json"
         ) else {
-            fatalError("Cannot find 'extension_api.json' file.")
+            fatalError("Cannot find 'extension_api.json' file")
         }
         
         let generatedFolderURL = URL(filePath: #file)
@@ -99,7 +99,7 @@ struct APIGeneration: AsyncParsableCommand {
         for builtinClass in extensionAPI.builtinClasses {
             pool.append(
                 source: builtinClass,
-                nameURLComponent: "Builtin Structs/" + builtinClass.name.syntax() + "+Bindings.swift"
+                nameURLComponent: "Builtin Structs/" + builtinClass.name.syntax(options: .packedArrayStorage) + "+Bindings.swift"
             )
         }
         

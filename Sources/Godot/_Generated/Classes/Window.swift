@@ -161,10 +161,10 @@ open class Window: Viewport {
     }()
 
     public struct FilesDroppedSignalInput: Godot.SignalInput {
-        public let files: Godot.PackedStringArray
+        public let files: Godot.GodotContiguousArray<GodotString>
 
         fileprivate init(
-            files: Godot.PackedStringArray
+            files: Godot.GodotContiguousArray<GodotString>
         ) {
             self.files = files
         }
@@ -177,7 +177,7 @@ open class Window: Viewport {
     }
 
     public func filesDropped(
-        files: Godot.PackedStringArray
+        files: Godot.GodotContiguousArray<GodotString>
     ) {
         _ = filesDroppedSignal.emit(.init(files: files))
     }
@@ -185,7 +185,7 @@ open class Window: Viewport {
     public lazy var filesDroppedSignal: Godot.SignalEmitter<FilesDroppedSignalInput> = {
         .init(object: self, signalName: "files_dropped") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<FilesDroppedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
-                .call(with: .init(files: Godot.PackedStringArray.convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
+                .call(with: .init(files: Godot.GodotContiguousArray<GodotString> .convertFromStorage(unsafePointer: args!.advanced(by: 0).pointee!)))
         } freeFunc: { callablePtr in
             Unmanaged<Godot.SignalReceiver<FilesDroppedSignalInput>> .fromOpaque(callablePtr!).release()
         } toStringFunc: { callablePtr, resultPtr, stringResultPtr in
@@ -1682,7 +1682,7 @@ open class Window: Viewport {
     }()
 
     private func __setMousePassthroughPolygon(
-        _ polygon: Godot.PackedVector2Array
+        _ polygon: Godot.GodotContiguousArray<Vector2>
     ) {
         withTransferrableUnsafeRawPointer(to: polygon) { __ptr_polygon in
             withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
@@ -1706,7 +1706,7 @@ open class Window: Viewport {
         }
     }()
 
-    private func __getMousePassthroughPolygon() -> Godot.PackedVector2Array {
+    private func __getMousePassthroughPolygon() -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -3285,7 +3285,7 @@ open class Window: Viewport {
         }
     }
 
-    public var mousePassthroughPolygon: Godot.PackedVector2Array {
+    public var mousePassthroughPolygon: Godot.GodotContiguousArray<Vector2> {
         get {
             __getMousePassthroughPolygon()
         }

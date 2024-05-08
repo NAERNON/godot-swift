@@ -226,7 +226,7 @@ open class ENetPacketPeer: PacketPeer {
 
     public func send(
         channel: Int32,
-        packet: Godot.PackedByteArray,
+        packet: Godot.GodotContiguousArray<UInt8>,
         flags: Int32
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in

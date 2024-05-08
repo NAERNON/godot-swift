@@ -132,8 +132,8 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
 
     open func _spaceGetContacts(
         space: Godot.RID
-    ) -> Godot.PackedVector3Array {
-        Godot.PackedVector3Array()
+    ) -> Godot.GodotContiguousArray<Vector3> {
+        Godot.GodotContiguousArray<Vector3>()
     }
 
     open func _spaceGetContactCount(

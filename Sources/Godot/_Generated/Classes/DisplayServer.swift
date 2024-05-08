@@ -2001,7 +2001,7 @@ open class DisplayServer: Object {
 
     public func ttsGetVoicesForLanguage(
         _ language: Godot.GodotString
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: language) { __ptr_language in
                 withUnsafeArgumentPackPointer(__ptr_language) { __accessPtr in
@@ -2976,7 +2976,7 @@ open class DisplayServer: Object {
         }
     }()
 
-    public func windowList() -> Godot.PackedInt32Array {
+    public func windowList() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -3189,7 +3189,7 @@ open class DisplayServer: Object {
     }()
 
     public func windowSetMousePassthrough(
-        region: Godot.PackedVector2Array,
+        region: Godot.GodotContiguousArray<Vector2>,
         windowID: Int32 = 0
     ) {
         withTransferrableUnsafeRawPointer(to: region) { __ptr_region in
@@ -4473,7 +4473,7 @@ open class DisplayServer: Object {
     public func dialogShow(
         title: Godot.GodotString,
         description: Godot.GodotString,
-        buttons: Godot.PackedStringArray,
+        buttons: Godot.GodotContiguousArray<GodotString>,
         callback: Godot.Callable
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
@@ -4548,7 +4548,7 @@ open class DisplayServer: Object {
         filename: Godot.GodotString,
         showHidden: Bool,
         mode: Godot.DisplayServer.FileDialogMode,
-        filters: Godot.PackedStringArray,
+        filters: Godot.GodotContiguousArray<GodotString>,
         callback: Godot.Callable
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in

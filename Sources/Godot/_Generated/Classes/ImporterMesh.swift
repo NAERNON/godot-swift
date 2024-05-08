@@ -370,7 +370,7 @@ open class ImporterMesh: Resource {
     public func surfaceLodIndices(
         surfaceIdx: Int32,
         lodIdx: Int32
-    ) -> Godot.PackedInt32Array {
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: surfaceIdx) { __ptr_surfaceIdx in
                 withTransferrableUnsafeRawPointer(to: lodIdx) { __ptr_lodIdx in

@@ -16,7 +16,7 @@ open class RDShaderSPIRV: Resource {
 
     public func setStageBytecode(
         stage: Godot.RenderingDevice.ShaderStage,
-        bytecode: Godot.PackedByteArray
+        bytecode: Godot.GodotContiguousArray<UInt8>
     ) {
         withTransferrableUnsafeRawPointer(to: stage) { __ptr_stage in
             withTransferrableUnsafeRawPointer(to: bytecode) { __ptr_bytecode in
@@ -44,7 +44,7 @@ open class RDShaderSPIRV: Resource {
 
     private func __getStageBytecode(
         stage: Godot.RenderingDevice.ShaderStage
-    ) -> Godot.PackedByteArray {
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: stage) { __ptr_stage in
                 withUnsafeArgumentPackPointer(__ptr_stage) { __accessPtr in
@@ -116,7 +116,7 @@ open class RDShaderSPIRV: Resource {
         }
     }
 
-    public var bytecodeVertex: Godot.PackedByteArray {
+    public var bytecodeVertex: Godot.GodotContiguousArray<UInt8> {
         get {
             __getStageBytecode(
                 stage: .init(rawValue: 0)!
@@ -124,7 +124,7 @@ open class RDShaderSPIRV: Resource {
         }
     }
 
-    public var bytecodeFragment: Godot.PackedByteArray {
+    public var bytecodeFragment: Godot.GodotContiguousArray<UInt8> {
         get {
             __getStageBytecode(
                 stage: .init(rawValue: 1)!
@@ -132,7 +132,7 @@ open class RDShaderSPIRV: Resource {
         }
     }
 
-    public var bytecodeTesselationControl: Godot.PackedByteArray {
+    public var bytecodeTesselationControl: Godot.GodotContiguousArray<UInt8> {
         get {
             __getStageBytecode(
                 stage: .init(rawValue: 2)!
@@ -140,7 +140,7 @@ open class RDShaderSPIRV: Resource {
         }
     }
 
-    public var bytecodeTesselationEvaluation: Godot.PackedByteArray {
+    public var bytecodeTesselationEvaluation: Godot.GodotContiguousArray<UInt8> {
         get {
             __getStageBytecode(
                 stage: .init(rawValue: 3)!
@@ -148,7 +148,7 @@ open class RDShaderSPIRV: Resource {
         }
     }
 
-    public var bytecodeCompute: Godot.PackedByteArray {
+    public var bytecodeCompute: Godot.GodotContiguousArray<UInt8> {
         get {
             __getStageBytecode(
                 stage: .init(rawValue: 4)!

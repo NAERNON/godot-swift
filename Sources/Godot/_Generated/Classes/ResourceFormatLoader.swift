@@ -19,8 +19,8 @@ open class ResourceFormatLoader: RefCounted {
         }
     }
 
-    open func _getRecognizedExtensions() -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    open func _getRecognizedExtensions() -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _recognizePath(
@@ -57,8 +57,8 @@ open class ResourceFormatLoader: RefCounted {
     open func _getDependencies(
         path: Godot.GodotString,
         addTypes: Bool
-    ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    ) -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _renameDependencies(
@@ -76,8 +76,8 @@ open class ResourceFormatLoader: RefCounted {
 
     open func _getClassesUsed(
         path: Godot.GodotString
-    ) -> Godot.PackedStringArray {
-        Godot.PackedStringArray()
+    ) -> Godot.GodotContiguousArray<GodotString> {
+        Godot.GodotContiguousArray<GodotString>()
     }
 
     open func _load(

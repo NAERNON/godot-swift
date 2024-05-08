@@ -135,7 +135,7 @@ open class ConfigFile: RefCounted {
         }
     }()
 
-    public func sections() -> Godot.PackedStringArray {
+    public func sections() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -158,7 +158,7 @@ open class ConfigFile: RefCounted {
 
     public func sectionKeys(
         section: Godot.GodotString
-    ) -> Godot.PackedStringArray {
+    ) -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: section) { __ptr_section in
                 withUnsafeArgumentPackPointer(__ptr_section) { __accessPtr in
@@ -340,7 +340,7 @@ open class ConfigFile: RefCounted {
 
     public func loadEncrypted(
         path: Godot.GodotString,
-        key: Godot.PackedByteArray
+        key: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: path) { __ptr_path in
@@ -400,7 +400,7 @@ open class ConfigFile: RefCounted {
 
     public func saveEncrypted(
         path: Godot.GodotString,
-        key: Godot.PackedByteArray
+        key: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: path) { __ptr_path in

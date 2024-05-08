@@ -283,8 +283,8 @@ open class HTTPClient: RefCounted {
     public func requestRaw(
         method: Godot.HTTPClient.Method,
         url: Godot.GodotString,
-        headers: Godot.PackedStringArray,
-        body: Godot.PackedByteArray
+        headers: Godot.GodotContiguousArray<GodotString>,
+        body: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: method) { __ptr_method in
@@ -319,7 +319,7 @@ open class HTTPClient: RefCounted {
     public func request(
         method: Godot.HTTPClient.Method,
         url: Godot.GodotString,
-        headers: Godot.PackedStringArray,
+        headers: Godot.GodotContiguousArray<GodotString>,
         body: Godot.GodotString = ""
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
@@ -434,7 +434,7 @@ open class HTTPClient: RefCounted {
         }
     }()
 
-    public func responseHeaders() -> Godot.PackedStringArray {
+    public func responseHeaders() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -497,7 +497,7 @@ open class HTTPClient: RefCounted {
         }
     }()
 
-    public func readResponseBodyChunk() -> Godot.PackedByteArray {
+    public func readResponseBodyChunk() -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

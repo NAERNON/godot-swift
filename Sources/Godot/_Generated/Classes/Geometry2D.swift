@@ -205,7 +205,7 @@ open class Geometry2D: Object {
         q1: Godot.Vector2,
         p2: Godot.Vector2,
         q2: Godot.Vector2
-    ) -> Godot.PackedVector2Array {
+    ) -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: p1) { __ptr_p1 in
                 withTransferrableUnsafeRawPointer(to: q1) { __ptr_q1 in
@@ -339,7 +339,7 @@ open class Geometry2D: Object {
     }()
 
     public func isPolygonClockwise(
-        polygon: Godot.PackedVector2Array
+        polygon: Godot.GodotContiguousArray<Vector2>
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: polygon) { __ptr_polygon in
@@ -367,7 +367,7 @@ open class Geometry2D: Object {
 
     public func isPointInPolygon(
         point: Godot.Vector2,
-        polygon: Godot.PackedVector2Array
+        polygon: Godot.GodotContiguousArray<Vector2>
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: point) { __ptr_point in
@@ -396,8 +396,8 @@ open class Geometry2D: Object {
     }()
 
     public func triangulatePolygon(
-        _ polygon: Godot.PackedVector2Array
-    ) -> Godot.PackedInt32Array {
+        _ polygon: Godot.GodotContiguousArray<Vector2>
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: polygon) { __ptr_polygon in
                 withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
@@ -423,8 +423,8 @@ open class Geometry2D: Object {
     }()
 
     public func triangulateDelaunay(
-        points: Godot.PackedVector2Array
-    ) -> Godot.PackedInt32Array {
+        points: Godot.GodotContiguousArray<Vector2>
+    ) -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: points) { __ptr_points in
                 withUnsafeArgumentPackPointer(__ptr_points) { __accessPtr in
@@ -450,8 +450,8 @@ open class Geometry2D: Object {
     }()
 
     public func convexHull(
-        points: Godot.PackedVector2Array
-    ) -> Godot.PackedVector2Array {
+        points: Godot.GodotContiguousArray<Vector2>
+    ) -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: points) { __ptr_points in
                 withUnsafeArgumentPackPointer(__ptr_points) { __accessPtr in
@@ -477,8 +477,8 @@ open class Geometry2D: Object {
     }()
 
     public func decomposePolygonInConvex(
-        polygon: Godot.PackedVector2Array
-    ) -> Godot.GodotArray<Godot.PackedVector2Array> {
+        polygon: Godot.GodotContiguousArray<Vector2>
+    ) -> Godot.GodotArray<Godot.GodotContiguousArray<Vector2>> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: polygon) { __ptr_polygon in
                 withUnsafeArgumentPackPointer(__ptr_polygon) { __accessPtr in
@@ -504,9 +504,9 @@ open class Geometry2D: Object {
     }()
 
     public func mergePolygons(
-        polygonA: Godot.PackedVector2Array,
-        polygonB: Godot.PackedVector2Array
-    ) -> Godot.GodotArray<Godot.PackedVector2Array> {
+        polygonA: Godot.GodotContiguousArray<Vector2>,
+        polygonB: Godot.GodotContiguousArray<Vector2>
+    ) -> Godot.GodotArray<Godot.GodotContiguousArray<Vector2>> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: polygonA) { __ptr_polygonA in
                 withTransferrableUnsafeRawPointer(to: polygonB) { __ptr_polygonB in
@@ -534,9 +534,9 @@ open class Geometry2D: Object {
     }()
 
     public func clipPolygons(
-        polygonA: Godot.PackedVector2Array,
-        polygonB: Godot.PackedVector2Array
-    ) -> Godot.GodotArray<Godot.PackedVector2Array> {
+        polygonA: Godot.GodotContiguousArray<Vector2>,
+        polygonB: Godot.GodotContiguousArray<Vector2>
+    ) -> Godot.GodotArray<Godot.GodotContiguousArray<Vector2>> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: polygonA) { __ptr_polygonA in
                 withTransferrableUnsafeRawPointer(to: polygonB) { __ptr_polygonB in
@@ -564,9 +564,9 @@ open class Geometry2D: Object {
     }()
 
     public func intersectPolygons(
-        polygonA: Godot.PackedVector2Array,
-        polygonB: Godot.PackedVector2Array
-    ) -> Godot.GodotArray<Godot.PackedVector2Array> {
+        polygonA: Godot.GodotContiguousArray<Vector2>,
+        polygonB: Godot.GodotContiguousArray<Vector2>
+    ) -> Godot.GodotArray<Godot.GodotContiguousArray<Vector2>> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: polygonA) { __ptr_polygonA in
                 withTransferrableUnsafeRawPointer(to: polygonB) { __ptr_polygonB in
@@ -594,9 +594,9 @@ open class Geometry2D: Object {
     }()
 
     public func excludePolygons(
-        polygonA: Godot.PackedVector2Array,
-        polygonB: Godot.PackedVector2Array
-    ) -> Godot.GodotArray<Godot.PackedVector2Array> {
+        polygonA: Godot.GodotContiguousArray<Vector2>,
+        polygonB: Godot.GodotContiguousArray<Vector2>
+    ) -> Godot.GodotArray<Godot.GodotContiguousArray<Vector2>> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: polygonA) { __ptr_polygonA in
                 withTransferrableUnsafeRawPointer(to: polygonB) { __ptr_polygonB in
@@ -624,9 +624,9 @@ open class Geometry2D: Object {
     }()
 
     public func clipPolylineWithPolygon(
-        polyline: Godot.PackedVector2Array,
-        polygon: Godot.PackedVector2Array
-    ) -> Godot.GodotArray<Godot.PackedVector2Array> {
+        polyline: Godot.GodotContiguousArray<Vector2>,
+        polygon: Godot.GodotContiguousArray<Vector2>
+    ) -> Godot.GodotArray<Godot.GodotContiguousArray<Vector2>> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: polyline) { __ptr_polyline in
                 withTransferrableUnsafeRawPointer(to: polygon) { __ptr_polygon in
@@ -654,9 +654,9 @@ open class Geometry2D: Object {
     }()
 
     public func intersectPolylineWithPolygon(
-        polyline: Godot.PackedVector2Array,
-        polygon: Godot.PackedVector2Array
-    ) -> Godot.GodotArray<Godot.PackedVector2Array> {
+        polyline: Godot.GodotContiguousArray<Vector2>,
+        polygon: Godot.GodotContiguousArray<Vector2>
+    ) -> Godot.GodotArray<Godot.GodotContiguousArray<Vector2>> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: polyline) { __ptr_polyline in
                 withTransferrableUnsafeRawPointer(to: polygon) { __ptr_polygon in
@@ -684,10 +684,10 @@ open class Geometry2D: Object {
     }()
 
     public func offsetPolygon(
-        _ polygon: Godot.PackedVector2Array,
+        _ polygon: Godot.GodotContiguousArray<Vector2>,
         delta: Double,
         joinType: Godot.Geometry2D.PolyJoinType = Geometry2D.PolyJoinType(rawValue: 0)!
-    ) -> Godot.GodotArray<Godot.PackedVector2Array> {
+    ) -> Godot.GodotArray<Godot.GodotContiguousArray<Vector2>> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: polygon) { __ptr_polygon in
                 withTransferrableUnsafeRawPointer(to: delta) { __ptr_delta in
@@ -717,11 +717,11 @@ open class Geometry2D: Object {
     }()
 
     public func offsetPolyline(
-        _ polyline: Godot.PackedVector2Array,
+        _ polyline: Godot.GodotContiguousArray<Vector2>,
         delta: Double,
         joinType: Godot.Geometry2D.PolyJoinType = Geometry2D.PolyJoinType(rawValue: 0)!,
         endType: Godot.Geometry2D.PolyEndType = Geometry2D.PolyEndType(rawValue: 3)!
-    ) -> Godot.GodotArray<Godot.PackedVector2Array> {
+    ) -> Godot.GodotArray<Godot.GodotContiguousArray<Vector2>> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: polyline) { __ptr_polyline in
                 withTransferrableUnsafeRawPointer(to: delta) { __ptr_delta in
@@ -753,7 +753,7 @@ open class Geometry2D: Object {
     }()
 
     public func makeAtlas(
-        sizes: Godot.PackedVector2Array
+        sizes: Godot.GodotContiguousArray<Vector2>
     ) -> Godot.AnyGodotDictionary {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: sizes) { __ptr_sizes in

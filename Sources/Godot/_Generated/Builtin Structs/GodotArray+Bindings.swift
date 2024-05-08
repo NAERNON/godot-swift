@@ -14,15 +14,15 @@ internal enum GodotArrayBindings {
         constructor = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 0)!
         constructorFromGodotArray = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 1)!
         constructorFromGodotArrayIntGodotStringNameVariant = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 2)!
-        constructorFromPackedByteArray = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 3)!
-        constructorFromPackedInt32Array = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 4)!
-        constructorFromPackedInt64Array = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 5)!
-        constructorFromPackedFloat32Array = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 6)!
-        constructorFromPackedFloat64Array = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 7)!
-        constructorFromPackedStringArray = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 8)!
-        constructorFromPackedVector2Array = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 9)!
-        constructorFromPackedVector3Array = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 10)!
-        constructorFromPackedColorArray = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 11)!
+        constructorFromGodotContiguousArrayUInt8 = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 3)!
+        constructorFromGodotContiguousArrayInt32 = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 4)!
+        constructorFromGodotContiguousArrayInt64 = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 5)!
+        constructorFromGodotContiguousArrayFloat = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 6)!
+        constructorFromGodotContiguousArrayDouble = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 7)!
+        constructorFromGodotContiguousArrayGodotString = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 8)!
+        constructorFromGodotContiguousArrayVector2 = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 9)!
+        constructorFromGodotContiguousArrayVector3 = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 10)!
+        constructorFromGodotContiguousArrayColor = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 11)!
         operatorEqualVariant = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
         operatorNotEqualVariant = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
         operatorNot = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
@@ -185,23 +185,23 @@ internal enum GodotArrayBindings {
 
     static private (set) var constructorFromGodotArrayIntGodotStringNameVariant: GDExtensionPtrConstructor!
 
-    static private (set) var constructorFromPackedByteArray: GDExtensionPtrConstructor!
+    static private (set) var constructorFromGodotContiguousArrayUInt8: GDExtensionPtrConstructor!
 
-    static private (set) var constructorFromPackedInt32Array: GDExtensionPtrConstructor!
+    static private (set) var constructorFromGodotContiguousArrayInt32: GDExtensionPtrConstructor!
 
-    static private (set) var constructorFromPackedInt64Array: GDExtensionPtrConstructor!
+    static private (set) var constructorFromGodotContiguousArrayInt64: GDExtensionPtrConstructor!
 
-    static private (set) var constructorFromPackedFloat32Array: GDExtensionPtrConstructor!
+    static private (set) var constructorFromGodotContiguousArrayFloat: GDExtensionPtrConstructor!
 
-    static private (set) var constructorFromPackedFloat64Array: GDExtensionPtrConstructor!
+    static private (set) var constructorFromGodotContiguousArrayDouble: GDExtensionPtrConstructor!
 
-    static private (set) var constructorFromPackedStringArray: GDExtensionPtrConstructor!
+    static private (set) var constructorFromGodotContiguousArrayGodotString: GDExtensionPtrConstructor!
 
-    static private (set) var constructorFromPackedVector2Array: GDExtensionPtrConstructor!
+    static private (set) var constructorFromGodotContiguousArrayVector2: GDExtensionPtrConstructor!
 
-    static private (set) var constructorFromPackedVector3Array: GDExtensionPtrConstructor!
+    static private (set) var constructorFromGodotContiguousArrayVector3: GDExtensionPtrConstructor!
 
-    static private (set) var constructorFromPackedColorArray: GDExtensionPtrConstructor!
+    static private (set) var constructorFromGodotContiguousArrayColor: GDExtensionPtrConstructor!
 
     static private (set) var operatorEqualVariant: GDExtensionPtrOperatorEvaluator!
 
@@ -377,13 +377,13 @@ extension GodotArray {
     }
 
     static internal func make(
-        from: Godot.PackedByteArray
+        from: UInt8.GodotContiguousArrayStorage
     ) -> Self {
         let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    GodotArrayBindings.constructorFromPackedByteArray(__ptr___temporary, __accessPtr)
+                    GodotArrayBindings.constructorFromGodotContiguousArrayUInt8(__ptr___temporary, __accessPtr)
                 }
             }
         }
@@ -391,13 +391,13 @@ extension GodotArray {
     }
 
     static internal func make(
-        from: Godot.PackedInt32Array
+        from: Int32.GodotContiguousArrayStorage
     ) -> Self {
         let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    GodotArrayBindings.constructorFromPackedInt32Array(__ptr___temporary, __accessPtr)
+                    GodotArrayBindings.constructorFromGodotContiguousArrayInt32(__ptr___temporary, __accessPtr)
                 }
             }
         }
@@ -405,13 +405,13 @@ extension GodotArray {
     }
 
     static internal func make(
-        from: Godot.PackedInt64Array
+        from: Int64.GodotContiguousArrayStorage
     ) -> Self {
         let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    GodotArrayBindings.constructorFromPackedInt64Array(__ptr___temporary, __accessPtr)
+                    GodotArrayBindings.constructorFromGodotContiguousArrayInt64(__ptr___temporary, __accessPtr)
                 }
             }
         }
@@ -419,13 +419,13 @@ extension GodotArray {
     }
 
     static internal func make(
-        from: Godot.PackedFloat32Array
+        from: Float.GodotContiguousArrayStorage
     ) -> Self {
         let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    GodotArrayBindings.constructorFromPackedFloat32Array(__ptr___temporary, __accessPtr)
+                    GodotArrayBindings.constructorFromGodotContiguousArrayFloat(__ptr___temporary, __accessPtr)
                 }
             }
         }
@@ -433,13 +433,13 @@ extension GodotArray {
     }
 
     static internal func make(
-        from: Godot.PackedFloat64Array
+        from: Double.GodotContiguousArrayStorage
     ) -> Self {
         let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    GodotArrayBindings.constructorFromPackedFloat64Array(__ptr___temporary, __accessPtr)
+                    GodotArrayBindings.constructorFromGodotContiguousArrayDouble(__ptr___temporary, __accessPtr)
                 }
             }
         }
@@ -447,13 +447,13 @@ extension GodotArray {
     }
 
     static internal func make(
-        from: Godot.PackedStringArray
+        from: GodotString.GodotContiguousArrayStorage
     ) -> Self {
         let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    GodotArrayBindings.constructorFromPackedStringArray(__ptr___temporary, __accessPtr)
+                    GodotArrayBindings.constructorFromGodotContiguousArrayGodotString(__ptr___temporary, __accessPtr)
                 }
             }
         }
@@ -461,13 +461,13 @@ extension GodotArray {
     }
 
     static internal func make(
-        from: Godot.PackedVector2Array
+        from: Vector2.GodotContiguousArrayStorage
     ) -> Self {
         let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    GodotArrayBindings.constructorFromPackedVector2Array(__ptr___temporary, __accessPtr)
+                    GodotArrayBindings.constructorFromGodotContiguousArrayVector2(__ptr___temporary, __accessPtr)
                 }
             }
         }
@@ -475,13 +475,13 @@ extension GodotArray {
     }
 
     static internal func make(
-        from: Godot.PackedVector3Array
+        from: Vector3.GodotContiguousArrayStorage
     ) -> Self {
         let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    GodotArrayBindings.constructorFromPackedVector3Array(__ptr___temporary, __accessPtr)
+                    GodotArrayBindings.constructorFromGodotContiguousArrayVector3(__ptr___temporary, __accessPtr)
                 }
             }
         }
@@ -489,13 +489,13 @@ extension GodotArray {
     }
 
     static internal func make(
-        from: Godot.PackedColorArray
+        from: Color.GodotContiguousArrayStorage
     ) -> Self {
         let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    GodotArrayBindings.constructorFromPackedColorArray(__ptr___temporary, __accessPtr)
+                    GodotArrayBindings.constructorFromGodotContiguousArrayColor(__ptr___temporary, __accessPtr)
                 }
             }
         }

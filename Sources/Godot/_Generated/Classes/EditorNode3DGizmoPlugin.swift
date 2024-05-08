@@ -93,8 +93,8 @@ open class EditorNode3DGizmoPlugin: Resource {
         gizmo: Godot.EditorNode3DGizmo?,
         camera: Godot.Camera3D?,
         frustumPlanes: Godot.GodotArray<Godot.Plane>
-    ) -> Godot.PackedInt32Array {
-        Godot.PackedInt32Array()
+    ) -> Godot.GodotContiguousArray<Int32> {
+        Godot.GodotContiguousArray<Int32>()
     }
 
     open func _getSubgizmoTransform(
@@ -113,7 +113,7 @@ open class EditorNode3DGizmoPlugin: Resource {
 
     open func _commitSubgizmos(
         gizmo: Godot.EditorNode3DGizmo?,
-        ids: Godot.PackedInt32Array,
+        ids: Godot.GodotContiguousArray<Int32>,
         restores: Godot.GodotArray<Godot.Transform3D>,
         cancel: Bool
     ) {
@@ -453,7 +453,7 @@ open class EditorNode3DGizmoPlugin: Resource {
             Unmanaged<EditorNode3DGizmoPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
         ._commitSubgizmos(
             gizmo: Godot.EditorNode3DGizmo?.transferFromGodot(unsafePointer: args[0]!),
-            ids: Godot.PackedInt32Array.transferFromGodot(unsafePointer: args[1]!),
+            ids: Godot.GodotContiguousArray<Int32> .transferFromGodot(unsafePointer: args[1]!),
             restores: Godot.GodotArray<Godot.Transform3D> .transferFromGodot(unsafePointer: args[2]!),
             cancel: Bool.transferFromGodot(unsafePointer: args[3]!)
         )}

@@ -4,88 +4,89 @@
 
 import GodotExtensionHeaders
 
-internal enum PackedStringArrayBindings {
+internal enum Vector3GodotContiguousArrayStorageBindings {
     static private var areBindingsLoaded = false
 
     internal static func loadBindings() {
-        precondition(!areBindingsLoaded, "PackedStringArray bindings are already loaded.")
+        precondition(!areBindingsLoaded, "GodotContiguousArray<Vector3> bindings are already loaded.")
         areBindingsLoaded = true
-        destructor = GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
-        constructor = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, 0)!
-        constructorFromPackedStringArray = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, 1)!
-        constructorFromGodotArray = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, 2)!
-        operatorEqualVariant = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
-        operatorNotEqualVariant = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
-        operatorNot = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT, GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
-        operatorInGodotdictionary = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
-        operatorInGodotarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
-        operatorEqualPackedstringarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
-        operatorNotEqualPackedstringarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
-        operatorAddPackedstringarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_ADD, GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
-        indexedSetter = GodotExtension.Interface.variantGetPtrIndexedSetter(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
-        indexedGetter = GodotExtension.Interface.variantGetPtrIndexedGetter(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY)!
+        destructor = GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)!
+        constructor = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, 0)!
+        constructorFromGodotContiguousArrayVector3 = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, 1)!
+        constructorFromGodotArray = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, 2)!
+        operatorEqualVariant = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
+        operatorNotEqualVariant = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
+        operatorNot = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT, GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
+        operatorMultiplyTransform3d = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_MULTIPLY, GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, GDEXTENSION_VARIANT_TYPE_TRANSFORM3D)!
+        operatorInGodotdictionary = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
+        operatorInGodotarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
+        operatorEqualGodotcontiguousarrayvector3 = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)!
+        operatorNotEqualGodotcontiguousarrayvector3 = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)!
+        operatorAddGodotcontiguousarrayvector3 = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_ADD, GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)!
+        indexedSetter = GodotExtension.Interface.variantGetPtrIndexedSetter(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)!
+        indexedGetter = GodotExtension.Interface.variantGetPtrIndexedGetter(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY)!
         methodSize = GodotStringName(swiftStaticString: "size").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 3173160232)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 3173160232)!
         }
         methodIsEmpty = GodotStringName(swiftStaticString: "is_empty").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 3918633141)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 3918633141)!
         }
         methodSet = GodotStringName(swiftStaticString: "set").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 725585539)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 3975343409)!
         }
         methodPushBack = GodotStringName(swiftStaticString: "push_back").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 816187996)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 3295363524)!
         }
         methodAppend = GodotStringName(swiftStaticString: "append").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 816187996)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 3295363524)!
         }
         methodAppendArray = GodotStringName(swiftStaticString: "append_array").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 1120103966)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 203538016)!
         }
         methodRemoveAt = GodotStringName(swiftStaticString: "remove_at").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 2823966027)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 2823966027)!
         }
         methodInsert = GodotStringName(swiftStaticString: "insert").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 2432393153)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 3892262309)!
         }
         methodFill = GodotStringName(swiftStaticString: "fill").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 3174917410)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 3726392409)!
         }
         methodResize = GodotStringName(swiftStaticString: "resize").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 848867239)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 848867239)!
         }
         methodClear = GodotStringName(swiftStaticString: "clear").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 3218959716)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 3218959716)!
         }
         methodHas = GodotStringName(swiftStaticString: "has").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 2566493496)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 1749054343)!
         }
         methodReverse = GodotStringName(swiftStaticString: "reverse").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 3218959716)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 3218959716)!
         }
         methodSlice = GodotStringName(swiftStaticString: "slice").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 2094601407)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 2086131305)!
         }
         methodToByteArray = GodotStringName(swiftStaticString: "to_byte_array").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 247621236)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 247621236)!
         }
         methodSort = GodotStringName(swiftStaticString: "sort").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 3218959716)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 3218959716)!
         }
         methodBsearch = GodotStringName(swiftStaticString: "bsearch").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 328976671)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 219263630)!
         }
         methodDuplicate = GodotStringName(swiftStaticString: "duplicate").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 2991231410)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 2754175465)!
         }
         methodFind = GodotStringName(swiftStaticString: "find").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 1760645412)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 3718155780)!
         }
         methodRfind = GodotStringName(swiftStaticString: "rfind").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 1760645412)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 3718155780)!
         }
         methodCount = GodotStringName(swiftStaticString: "count").withUnsafeOpaquePointer { __ptr__method_name in
-            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_STRING_ARRAY, __ptr__method_name, 2920860731)!
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR3_ARRAY, __ptr__method_name, 194580386)!
         }
     }
 
@@ -93,7 +94,7 @@ internal enum PackedStringArrayBindings {
 
     static private (set) var constructor: GDExtensionPtrConstructor!
 
-    static private (set) var constructorFromPackedStringArray: GDExtensionPtrConstructor!
+    static private (set) var constructorFromGodotContiguousArrayVector3: GDExtensionPtrConstructor!
 
     static private (set) var constructorFromGodotArray: GDExtensionPtrConstructor!
 
@@ -103,15 +104,17 @@ internal enum PackedStringArrayBindings {
 
     static private (set) var operatorNot: GDExtensionPtrOperatorEvaluator!
 
+    static private (set) var operatorMultiplyTransform3d: GDExtensionPtrOperatorEvaluator!
+
     static private (set) var operatorInGodotdictionary: GDExtensionPtrOperatorEvaluator!
 
     static private (set) var operatorInGodotarray: GDExtensionPtrOperatorEvaluator!
 
-    static private (set) var operatorEqualPackedstringarray: GDExtensionPtrOperatorEvaluator!
+    static private (set) var operatorEqualGodotcontiguousarrayvector3: GDExtensionPtrOperatorEvaluator!
 
-    static private (set) var operatorNotEqualPackedstringarray: GDExtensionPtrOperatorEvaluator!
+    static private (set) var operatorNotEqualGodotcontiguousarrayvector3: GDExtensionPtrOperatorEvaluator!
 
-    static private (set) var operatorAddPackedstringarray: GDExtensionPtrOperatorEvaluator!
+    static private (set) var operatorAddGodotcontiguousarrayvector3: GDExtensionPtrOperatorEvaluator!
 
     static private (set) var indexedSetter: GDExtensionPtrIndexedSetter!
 
@@ -160,29 +163,29 @@ internal enum PackedStringArrayBindings {
     static private (set) var methodCount: GDExtensionPtrBuiltInMethod!
 }
 
-extension PackedStringArray {
+extension Vector3.GodotContiguousArrayStorage {
     static internal func makeOpaque(
         useDestructor: Bool = true
     ) -> Opaque {
-        Opaque(size: 16, destructorPtr: useDestructor ? PackedStringArrayBindings.destructor : nil)
+        Opaque(size: 16, destructorPtr: useDestructor ? Vector3GodotContiguousArrayStorageBindings.destructor : nil)
     }
 
     static internal func make() -> Self {
         let __temporary: Opaque = makeOpaque()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            PackedStringArrayBindings.constructor(__ptr___temporary, nil)
+            Vector3GodotContiguousArrayStorageBindings.constructor(__ptr___temporary, nil)
         }
         return Self.init(opaque: __temporary)
     }
 
     static internal func make(
-        from: Godot.PackedStringArray
+        from: Vector3.GodotContiguousArrayStorage
     ) -> Self {
         let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    PackedStringArrayBindings.constructorFromPackedStringArray(__ptr___temporary, __accessPtr)
+                    Vector3GodotContiguousArrayStorageBindings.constructorFromGodotContiguousArrayVector3(__ptr___temporary, __accessPtr)
                 }
             }
         }
@@ -196,7 +199,7 @@ extension PackedStringArray {
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    PackedStringArrayBindings.constructorFromGodotArray(__ptr___temporary, __accessPtr)
+                    Vector3GodotContiguousArrayStorageBindings.constructorFromGodotArray(__ptr___temporary, __accessPtr)
                 }
             }
         }
@@ -204,101 +207,114 @@ extension PackedStringArray {
     }
 
     static internal func _operatorEqual<Value: Variant.Storable>(
-        _ lhs: Godot.PackedStringArray,
+        _ lhs: Vector3.GodotContiguousArrayStorage,
         _ rhs: Value
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    PackedStringArrayBindings.operatorEqualVariant(__ptr_lhs, __ptr_rhs, __temporary)
+                    Vector3GodotContiguousArrayStorageBindings.operatorEqualVariant(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
     }
 
     static internal func _operatorNotEqual<Value: Variant.Storable>(
-        _ lhs: Godot.PackedStringArray,
+        _ lhs: Vector3.GodotContiguousArrayStorage,
         _ rhs: Value
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    PackedStringArrayBindings.operatorNotEqualVariant(__ptr_lhs, __ptr_rhs, __temporary)
+                    Vector3GodotContiguousArrayStorageBindings.operatorNotEqualVariant(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
     }
 
     static internal func _operatorNot(
-        _ lhs: Godot.PackedStringArray
+        _ lhs: Vector3.GodotContiguousArrayStorage
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
-                PackedStringArrayBindings.operatorNot(__ptr_lhs, nil, __temporary)
+                Vector3GodotContiguousArrayStorageBindings.operatorNot(__ptr_lhs, nil, __temporary)
+            }
+        }
+    }
+
+    static internal func _operatorMultiply(
+        _ lhs: Vector3.GodotContiguousArrayStorage,
+        _ rhs: Godot.Transform3D
+    ) -> Vector3.GodotContiguousArrayStorage {
+        fromInitializingTransferrableUnsafeRawPointer { __temporary in
+            withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
+                withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
+                    Vector3GodotContiguousArrayStorageBindings.operatorMultiplyTransform3d(__ptr_lhs, __ptr_rhs, __temporary)
+                }
             }
         }
     }
 
     static internal func _operatorIn<Value1: Variant.Storable, Value2: Variant.Storable>(
-        _ lhs: Godot.PackedStringArray,
+        _ lhs: Vector3.GodotContiguousArrayStorage,
         _ rhs: Godot.GodotDictionary<Value1, Value2>
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    PackedStringArrayBindings.operatorInGodotdictionary(__ptr_lhs, __ptr_rhs, __temporary)
+                    Vector3GodotContiguousArrayStorageBindings.operatorInGodotdictionary(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
     }
 
     static internal func _operatorIn<Value: Variant.Storable>(
-        _ lhs: Godot.PackedStringArray,
+        _ lhs: Vector3.GodotContiguousArrayStorage,
         _ rhs: Godot.GodotArray<Value>
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    PackedStringArrayBindings.operatorInGodotarray(__ptr_lhs, __ptr_rhs, __temporary)
+                    Vector3GodotContiguousArrayStorageBindings.operatorInGodotarray(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
     }
 
     static internal func _operatorEqual(
-        _ lhs: Godot.PackedStringArray,
-        _ rhs: Godot.PackedStringArray
+        _ lhs: Vector3.GodotContiguousArrayStorage,
+        _ rhs: Vector3.GodotContiguousArrayStorage
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    PackedStringArrayBindings.operatorEqualPackedstringarray(__ptr_lhs, __ptr_rhs, __temporary)
+                    Vector3GodotContiguousArrayStorageBindings.operatorEqualGodotcontiguousarrayvector3(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
     }
 
     static internal func _operatorNotEqual(
-        _ lhs: Godot.PackedStringArray,
-        _ rhs: Godot.PackedStringArray
+        _ lhs: Vector3.GodotContiguousArrayStorage,
+        _ rhs: Vector3.GodotContiguousArrayStorage
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    PackedStringArrayBindings.operatorNotEqualPackedstringarray(__ptr_lhs, __ptr_rhs, __temporary)
+                    Vector3GodotContiguousArrayStorageBindings.operatorNotEqualGodotcontiguousarrayvector3(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
     }
 
     static internal func _operatorAdd(
-        _ lhs: Godot.PackedStringArray,
-        _ rhs: Godot.PackedStringArray
-    ) -> Godot.PackedStringArray {
+        _ lhs: Vector3.GodotContiguousArrayStorage,
+        _ rhs: Vector3.GodotContiguousArrayStorage
+    ) -> Vector3.GodotContiguousArrayStorage {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    PackedStringArrayBindings.operatorAddPackedstringarray(__ptr_lhs, __ptr_rhs, __temporary)
+                    Vector3GodotContiguousArrayStorageBindings.operatorAddGodotcontiguousarrayvector3(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -306,22 +322,22 @@ extension PackedStringArray {
 
     internal func _getValue(
         at index: GDExtensionInt
-    ) -> Godot.GodotString {
+    ) -> Godot.Vector3 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                PackedStringArrayBindings.indexedGetter(__ptr_self, index, __temporary)
+                Vector3GodotContiguousArrayStorageBindings.indexedGetter(__ptr_self, index, __temporary)
             }
         }
     }
 
     mutating internal func _setValue(
-        _ value: Godot.GodotString,
+        _ value: Godot.Vector3,
         at index: GDExtensionInt
     ) {
         makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                PackedStringArrayBindings.indexedSetter(__ptr_self, index, __ptr_value)
+                Vector3GodotContiguousArrayStorageBindings.indexedSetter(__ptr_self, index, __ptr_value)
             }
         }
     }
@@ -329,7 +345,7 @@ extension PackedStringArray {
     internal func _size() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                PackedStringArrayBindings.methodSize(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                Vector3GodotContiguousArrayStorageBindings.methodSize(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -337,21 +353,21 @@ extension PackedStringArray {
     internal func _isEmpty() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                PackedStringArrayBindings.methodIsEmpty(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                Vector3GodotContiguousArrayStorageBindings.methodIsEmpty(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
 
     mutating internal func _set(
         index: Int,
-        value: Godot.GodotString
+        value: Godot.Vector3
     ) {
         makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_index, __ptr_value) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        PackedStringArrayBindings.methodSet(__ptr_self, __accessPtr, nil, 2)
+                        Vector3GodotContiguousArrayStorageBindings.methodSet(__ptr_self, __accessPtr, nil, 2)
                     }
                 }
             }
@@ -360,14 +376,14 @@ extension PackedStringArray {
 
     @discardableResult
     mutating internal func _pushBack(
-        value: Godot.GodotString
+        value: Godot.Vector3
     ) -> Bool {
         makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        PackedStringArrayBindings.methodPushBack(__ptr_self, __accessPtr, __temporary, 1)
+                        Vector3GodotContiguousArrayStorageBindings.methodPushBack(__ptr_self, __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -376,14 +392,14 @@ extension PackedStringArray {
 
     @discardableResult
     mutating internal func _append(
-        value: Godot.GodotString
+        value: Godot.Vector3
     ) -> Bool {
         makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        PackedStringArrayBindings.methodAppend(__ptr_self, __accessPtr, __temporary, 1)
+                        Vector3GodotContiguousArrayStorageBindings.methodAppend(__ptr_self, __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -391,13 +407,13 @@ extension PackedStringArray {
     }
 
     mutating internal func _appendArray(
-        _ array: Godot.PackedStringArray
+        _ array: Vector3.GodotContiguousArrayStorage
     ) {
         makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: array) { __ptr_array in
             withUnsafeArgumentPackPointer(__ptr_array) { __accessPtr in
                 withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    PackedStringArrayBindings.methodAppendArray(__ptr_self, __accessPtr, nil, 1)
+                    Vector3GodotContiguousArrayStorageBindings.methodAppendArray(__ptr_self, __accessPtr, nil, 1)
                 }
             }
         }
@@ -410,7 +426,7 @@ extension PackedStringArray {
         withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
             withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
                 withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    PackedStringArrayBindings.methodRemoveAt(__ptr_self, __accessPtr, nil, 1)
+                    Vector3GodotContiguousArrayStorageBindings.methodRemoveAt(__ptr_self, __accessPtr, nil, 1)
                 }
             }
         }
@@ -419,7 +435,7 @@ extension PackedStringArray {
     @discardableResult
     mutating internal func _insert(
         atIndex index: Int,
-        value: Godot.GodotString
+        value: Godot.Vector3
     ) -> Int {
         makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
@@ -427,7 +443,7 @@ extension PackedStringArray {
                 withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                     withUnsafeArgumentPackPointer(__ptr_index, __ptr_value) { __accessPtr in
                         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                            PackedStringArrayBindings.methodInsert(__ptr_self, __accessPtr, __temporary, 2)
+                            Vector3GodotContiguousArrayStorageBindings.methodInsert(__ptr_self, __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -436,13 +452,13 @@ extension PackedStringArray {
     }
 
     mutating internal func _fill(
-        value: Godot.GodotString
+        value: Godot.Vector3
     ) {
         makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                 withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    PackedStringArrayBindings.methodFill(__ptr_self, __accessPtr, nil, 1)
+                    Vector3GodotContiguousArrayStorageBindings.methodFill(__ptr_self, __accessPtr, nil, 1)
                 }
             }
         }
@@ -457,7 +473,7 @@ extension PackedStringArray {
             withTransferrableUnsafeRawPointer(to: newSize) { __ptr_newSize in
                 withUnsafeArgumentPackPointer(__ptr_newSize) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        PackedStringArrayBindings.methodResize(__ptr_self, __accessPtr, __temporary, 1)
+                        Vector3GodotContiguousArrayStorageBindings.methodResize(__ptr_self, __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -467,18 +483,18 @@ extension PackedStringArray {
     mutating internal func _clear() {
         makeUniqueIfSharedOpaque()
         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            PackedStringArrayBindings.methodClear(__ptr_self, nil, nil, 0)
+            Vector3GodotContiguousArrayStorageBindings.methodClear(__ptr_self, nil, nil, 0)
         }
     }
 
     internal func _has(
-        value: Godot.GodotString
+        value: Godot.Vector3
     ) -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        PackedStringArrayBindings.methodHas(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        Vector3GodotContiguousArrayStorageBindings.methodHas(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -488,20 +504,20 @@ extension PackedStringArray {
     mutating internal func _reverse() {
         makeUniqueIfSharedOpaque()
         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            PackedStringArrayBindings.methodReverse(__ptr_self, nil, nil, 0)
+            Vector3GodotContiguousArrayStorageBindings.methodReverse(__ptr_self, nil, nil, 0)
         }
     }
 
     internal func _slice(
         begin: Int,
         end: Int = 2147483647
-    ) -> Godot.PackedStringArray {
+    ) -> Vector3.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: begin) { __ptr_begin in
                 withTransferrableUnsafeRawPointer(to: end) { __ptr_end in
                     withUnsafeArgumentPackPointer(__ptr_begin, __ptr_end) { __accessPtr in
                         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                            PackedStringArrayBindings.methodSlice(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
+                            Vector3GodotContiguousArrayStorageBindings.methodSlice(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -509,10 +525,10 @@ extension PackedStringArray {
         }
     }
 
-    internal func _toByteArray() -> Godot.PackedByteArray {
+    internal func _toByteArray() -> UInt8.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                PackedStringArrayBindings.methodToByteArray(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                Vector3GodotContiguousArrayStorageBindings.methodToByteArray(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -520,13 +536,13 @@ extension PackedStringArray {
     mutating internal func _sort() {
         makeUniqueIfSharedOpaque()
         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            PackedStringArrayBindings.methodSort(__ptr_self, nil, nil, 0)
+            Vector3GodotContiguousArrayStorageBindings.methodSort(__ptr_self, nil, nil, 0)
         }
     }
 
     @discardableResult
     mutating internal func _bsearch(
-        value: Godot.GodotString,
+        value: Godot.Vector3,
         before: Bool = true
     ) -> Int {
         makeUniqueIfSharedOpaque()
@@ -535,7 +551,7 @@ extension PackedStringArray {
                 withTransferrableUnsafeRawPointer(to: before) { __ptr_before in
                     withUnsafeArgumentPackPointer(__ptr_value, __ptr_before) { __accessPtr in
                         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                            PackedStringArrayBindings.methodBsearch(__ptr_self, __accessPtr, __temporary, 2)
+                            Vector3GodotContiguousArrayStorageBindings.methodBsearch(__ptr_self, __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -544,16 +560,16 @@ extension PackedStringArray {
     }
 
     @discardableResult
-    mutating internal func _duplicate() -> Godot.PackedStringArray {
+    mutating internal func _duplicate() -> Vector3.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                PackedStringArrayBindings.methodDuplicate(__ptr_self, nil, __temporary, 0)
+                Vector3GodotContiguousArrayStorageBindings.methodDuplicate(__ptr_self, nil, __temporary, 0)
             }
         }
     }
 
     internal func _find(
-        value: Godot.GodotString,
+        value: Godot.Vector3,
         from: Int = 0
     ) -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
@@ -561,7 +577,7 @@ extension PackedStringArray {
                 withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
                     withUnsafeArgumentPackPointer(__ptr_value, __ptr_from) { __accessPtr in
                         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                            PackedStringArrayBindings.methodFind(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
+                            Vector3GodotContiguousArrayStorageBindings.methodFind(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -570,7 +586,7 @@ extension PackedStringArray {
     }
 
     internal func _rfind(
-        value: Godot.GodotString,
+        value: Godot.Vector3,
         from: Int = -1
     ) -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
@@ -578,7 +594,7 @@ extension PackedStringArray {
                 withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
                     withUnsafeArgumentPackPointer(__ptr_value, __ptr_from) { __accessPtr in
                         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                            PackedStringArrayBindings.methodRfind(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
+                            Vector3GodotContiguousArrayStorageBindings.methodRfind(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -587,13 +603,13 @@ extension PackedStringArray {
     }
 
     internal func _count(
-        value: Godot.GodotString
+        value: Godot.Vector3
     ) -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        PackedStringArrayBindings.methodCount(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        Vector3GodotContiguousArrayStorageBindings.methodCount(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }

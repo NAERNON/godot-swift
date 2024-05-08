@@ -1104,7 +1104,7 @@ extension Basis {
             case 0: x
             case 1: y
             case 2: z
-            default: fatalError("Attempting to read column \(columnIndex) from basis.")
+            default: fatalError("Attempting to read column \(columnIndex) from basis")
             }
         }
         set(newValue) {
@@ -1112,7 +1112,7 @@ extension Basis {
             case 0: x = newValue
             case 1: y = newValue
             case 2: z = newValue
-            default: fatalError("Attempting to set column \(columnIndex) on basis.")
+            default: fatalError("Attempting to set column \(columnIndex) on basis")
             }
         }
     }
@@ -1204,7 +1204,7 @@ extension Basis {
                 case 0: x
                 case 1: y
                 case 2: z
-                default: fatalError("Attempting to read row \(rowIndex) from basis.")
+                default: fatalError("Attempting to read row \(rowIndex) from basis")
                 }
             }
             set(newValue) {
@@ -1212,7 +1212,7 @@ extension Basis {
                 case 0: x = newValue
                 case 1: y = newValue
                 case 2: z = newValue
-                default: fatalError("Attempting to set row \(rowIndex) on basis.")
+                default: fatalError("Attempting to set row \(rowIndex) on basis")
                 }
             }
         }

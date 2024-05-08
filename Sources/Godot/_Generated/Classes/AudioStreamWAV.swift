@@ -43,7 +43,7 @@ open class AudioStreamWAV: AudioStream {
     }()
 
     private func __setData(
-        _ data: Godot.PackedByteArray
+        _ data: Godot.GodotContiguousArray<UInt8>
     ) {
         withTransferrableUnsafeRawPointer(to: data) { __ptr_data in
             withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
@@ -67,7 +67,7 @@ open class AudioStreamWAV: AudioStream {
         }
     }()
 
-    private func __getData() -> Godot.PackedByteArray {
+    private func __getData() -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -383,7 +383,7 @@ open class AudioStreamWAV: AudioStream {
         }
     }
 
-    public var data: Godot.PackedByteArray {
+    public var data: Godot.GodotContiguousArray<UInt8> {
         get {
             __getData()
         }

@@ -1765,7 +1765,7 @@ private var __function_binding_rand_from_seed: GDExtensionPtrUtilityFunction = {
 
 internal func _randFromSeed(
     _ seed: Int
-) -> PackedInt64Array {
+) -> GodotContiguousArray<Int64> {
     fromInitializingTransferrableUnsafeRawPointer { __temporary in
         withTransferrableUnsafeRawPointer(to: seed) { __ptr_seed in
             withUnsafeArgumentPackPointer(__ptr_seed) { __accessPtr in
@@ -2084,7 +2084,7 @@ private var __function_binding_var_to_bytes: GDExtensionPtrUtilityFunction = {
 
 internal func _varToBytes<Value: Variant.Storable>(
     variable: Value
-) -> PackedByteArray {
+) -> GodotContiguousArray<UInt8> {
     fromInitializingTransferrableUnsafeRawPointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: variable) { __ptr_variable in
             withUnsafeArgumentPackPointer(__ptr_variable) { __accessPtr in
@@ -2101,7 +2101,7 @@ private var __function_binding_bytes_to_var: GDExtensionPtrUtilityFunction = {
 }()
 
 internal func _bytesToVar(
-    bytes: PackedByteArray
+    bytes: GodotContiguousArray<UInt8>
 ) -> Variant {
     fromInitializingTransferrableUnsafeRawPointer { __temporary in
         withTransferrableUnsafeRawPointer(to: bytes) { __ptr_bytes in
@@ -2120,7 +2120,7 @@ private var __function_binding_var_to_bytes_with_objects: GDExtensionPtrUtilityF
 
 internal func _varToBytesWithObjects<Value: Variant.Storable>(
     variable: Value
-) -> PackedByteArray {
+) -> GodotContiguousArray<UInt8> {
     fromInitializingTransferrableUnsafeRawPointer { __temporary in
         Godot.Variant.withStorageUnsafeRawPointer(to: variable) { __ptr_variable in
             withUnsafeArgumentPackPointer(__ptr_variable) { __accessPtr in
@@ -2137,7 +2137,7 @@ private var __function_binding_bytes_to_var_with_objects: GDExtensionPtrUtilityF
 }()
 
 internal func _bytesToVarWithObjects(
-    bytes: PackedByteArray
+    bytes: GodotContiguousArray<UInt8>
 ) -> Variant {
     fromInitializingTransferrableUnsafeRawPointer { __temporary in
         withTransferrableUnsafeRawPointer(to: bytes) { __ptr_bytes in

@@ -14,7 +14,7 @@ open class Occluder3D: Resource {
         }
     }()
 
-    public func vertices() -> Godot.PackedVector3Array {
+    public func vertices() -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -35,7 +35,7 @@ open class Occluder3D: Resource {
         }
     }()
 
-    public func indices() -> Godot.PackedInt32Array {
+    public func indices() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(

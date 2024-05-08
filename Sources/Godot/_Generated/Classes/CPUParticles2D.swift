@@ -1373,7 +1373,7 @@ open class CPUParticles2D: Node2D {
     }()
 
     private func __setEmissionPoints(
-        array: Godot.PackedVector2Array
+        array: Godot.GodotContiguousArray<Vector2>
     ) {
         withTransferrableUnsafeRawPointer(to: array) { __ptr_array in
             withUnsafeArgumentPackPointer(__ptr_array) { __accessPtr in
@@ -1397,7 +1397,7 @@ open class CPUParticles2D: Node2D {
         }
     }()
 
-    private func __getEmissionPoints() -> Godot.PackedVector2Array {
+    private func __getEmissionPoints() -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1419,7 +1419,7 @@ open class CPUParticles2D: Node2D {
     }()
 
     private func __setEmissionNormals(
-        array: Godot.PackedVector2Array
+        array: Godot.GodotContiguousArray<Vector2>
     ) {
         withTransferrableUnsafeRawPointer(to: array) { __ptr_array in
             withUnsafeArgumentPackPointer(__ptr_array) { __accessPtr in
@@ -1443,7 +1443,7 @@ open class CPUParticles2D: Node2D {
         }
     }()
 
-    private func __getEmissionNormals() -> Godot.PackedVector2Array {
+    private func __getEmissionNormals() -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1465,7 +1465,7 @@ open class CPUParticles2D: Node2D {
     }()
 
     private func __setEmissionColors(
-        array: Godot.PackedColorArray
+        array: Godot.GodotContiguousArray<Color>
     ) {
         withTransferrableUnsafeRawPointer(to: array) { __ptr_array in
             withUnsafeArgumentPackPointer(__ptr_array) { __accessPtr in
@@ -1489,7 +1489,7 @@ open class CPUParticles2D: Node2D {
         }
     }()
 
-    private func __getEmissionColors() -> Godot.PackedColorArray {
+    private func __getEmissionColors() -> Godot.GodotContiguousArray<Color> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1904,7 +1904,7 @@ open class CPUParticles2D: Node2D {
         }
     }
 
-    public var emissionPoints: Godot.PackedVector2Array {
+    public var emissionPoints: Godot.GodotContiguousArray<Vector2> {
         get {
             __getEmissionPoints()
         }
@@ -1915,7 +1915,7 @@ open class CPUParticles2D: Node2D {
         }
     }
 
-    public var emissionNormals: Godot.PackedVector2Array {
+    public var emissionNormals: Godot.GodotContiguousArray<Vector2> {
         get {
             __getEmissionNormals()
         }
@@ -1926,7 +1926,7 @@ open class CPUParticles2D: Node2D {
         }
     }
 
-    public var emissionColors: Godot.PackedColorArray {
+    public var emissionColors: Godot.GodotContiguousArray<Color> {
         get {
             __getEmissionColors()
         }

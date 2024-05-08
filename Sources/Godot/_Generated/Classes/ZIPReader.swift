@@ -62,7 +62,7 @@ open class ZIPReader: RefCounted {
         }
     }()
 
-    public func files() -> Godot.PackedStringArray {
+    public func files() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -86,7 +86,7 @@ open class ZIPReader: RefCounted {
     public func readFile(
         path: Godot.GodotString,
         caseSensitive: Bool = true
-    ) -> Godot.PackedByteArray {
+    ) -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: path) { __ptr_path in
                 withTransferrableUnsafeRawPointer(to: caseSensitive) { __ptr_caseSensitive in
