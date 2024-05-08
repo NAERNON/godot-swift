@@ -403,6 +403,21 @@ indirect enum GodotType: Equatable, Decodable, Hashable {
         }
     }
     
+    var packedArrayGenericType: GodotType? {
+        switch self {
+        case .packedByteArray: .uint8
+        case .packedInt32Array: .int32
+        case .packedInt64Array: .int64
+        case .packedFloat32Array: .float
+        case .packedFloat64Array: .double
+        case .packedStringArray: .string
+        case .packedVector2Array: .vector2
+        case .packedVector3Array: .vector3
+        case .packedColorArray: .color
+        default: nil
+        }
+    }
+    
     // MARK: - Syntax
     
     var variantRepresentationType: String? {
@@ -433,12 +448,19 @@ indirect enum GodotType: Equatable, Decodable, Hashable {
            scopeIndex == 0,
             isGodotClass ||
             isBuiltinGodotClass ||
-            isTypedArray ||
             isEnum ||
             isBitfield ||
             self == .variant
         {
             return "Godot." + self._syntax(options: options, scopeIndex: scopeIndex+1)
+        }
+        
+        if let packedArrayGenericType {
+            if options.contains(.packedArrayStorage) {
+                return "\(packedArrayGenericType.syntax()).GodotContiguousArrayStorage"
+            } else {
+                return "GodotContiguousArray<\(packedArrayGenericType.syntax())>"
+            }
         }
         
         switch self {

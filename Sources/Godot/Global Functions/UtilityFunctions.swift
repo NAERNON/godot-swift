@@ -1,13 +1,13 @@
 
-public func varToBytes<Value : Variant.Storable>(_ variable: Value) -> PackedByteArray {
+public func varToBytes<Value : Variant.Storable>(_ variable: Value) -> GodotContiguousArray<UInt8> {
     _varToBytes(variable: variable)
 }
 
-public func bytesToVar(_ bytes: PackedByteArray) -> Variant {
+public func bytesToVar(_ bytes: GodotContiguousArray<UInt8>) -> Variant {
     _bytesToVar(bytes: bytes)
 }
 
-public func bytesToVarWithObjects(_ bytes: PackedByteArray) -> Variant {
+public func bytesToVarWithObjects(_ bytes: GodotContiguousArray<UInt8>) -> Variant {
     _bytesToVarWithObjects(bytes: bytes)
 }
 

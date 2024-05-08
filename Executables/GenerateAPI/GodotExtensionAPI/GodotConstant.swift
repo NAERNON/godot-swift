@@ -56,6 +56,10 @@ struct GodotConstant: Decodable, Equatable {
             return "[]"
         }
         
+        if type.packedArrayGenericType != nil && string.contains("Array()") {
+            return "[]"
+        }
+        
         if type == .float && string.last == "f" {
             return string.dropLast() + "0"
         }

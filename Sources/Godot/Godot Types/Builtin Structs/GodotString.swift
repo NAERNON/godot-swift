@@ -146,7 +146,7 @@ extension GodotString {
         _isSubsequenceOfn(text: other)
     }
     
-    public func bigrams() -> PackedStringArray {
+    public func bigrams() -> GodotContiguousArray<GodotString> {
         _bigrams()
     }
     
@@ -178,7 +178,10 @@ extension GodotString {
         _toSnakeCase()
     }
     
-    public func splitFloats(separator: GodotString, allowEmpty: Bool = true) -> PackedFloat64Array {
+    public func splitFloats(
+        separator: GodotString,
+        allowEmpty: Bool = true
+    ) -> GodotContiguousArray<Double> {
         _splitFloats(delimiter: separator, allowEmpty: allowEmpty)
     }
     
@@ -226,15 +229,15 @@ extension GodotString {
         _sha256Text()
     }
     
-    public func md5Buffer() -> PackedByteArray {
+    public func md5Buffer() -> GodotContiguousArray<UInt8> {
         _md5Buffer()
     }
     
-    public func sha1Buffer() -> PackedByteArray {
+    public func sha1Buffer() -> GodotContiguousArray<UInt8> {
         _sha1Buffer()
     }
     
-    public func sha256Buffer() -> PackedByteArray {
+    public func sha256Buffer() -> GodotContiguousArray<UInt8> {
         _sha256Buffer()
     }
     
@@ -346,27 +349,27 @@ extension GodotString {
         _padZeros(digits: digits)
     }
     
-    public func asciiBuffer() -> PackedByteArray {
+    public func asciiBuffer() -> GodotContiguousArray<UInt8> {
         _toAsciiBuffer()
     }
     
-    public func utf8Buffer() -> PackedByteArray {
+    public func utf8Buffer() -> GodotContiguousArray<UInt8> {
         _toUtf8Buffer()
     }
     
-    public func utf16Buffer() -> PackedByteArray {
+    public func utf16Buffer() -> GodotContiguousArray<UInt8> {
         _toUtf16Buffer()
     }
     
-    public func utf32Buffer() -> PackedByteArray {
+    public func utf32Buffer() -> GodotContiguousArray<UInt8> {
         _toUtf32Buffer()
     }
     
-    public func hexDecoded() -> PackedByteArray {
+    public func hexDecoded() -> GodotContiguousArray<UInt8> {
         _hexDecode()
     }
     
-    public func wCharBuffer() -> PackedByteArray {
+    public func wCharBuffer() -> GodotContiguousArray<UInt8> {
         _toWcharBuffer()
     }
     

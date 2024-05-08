@@ -1,53 +1,55 @@
-
-extension ContiguousArray: Variant.Storable where Element : Variant.Storable {
-    public static var variantStorageType: Variant.StorageType? {
-        .array
-    }
-    
-    public static func convertToStorage(
-        _ value: consuming Self
-    ) -> Variant.Storage {
-        GodotArray.convertToStorage(GodotArray(value))
-    }
-    
-    public static func convertFromStorage(
-        _ storage: borrowing Variant.Storage
-    ) throws -> Self {
-        try Self(GodotArray.convertFromStorage(storage))
-    }
-    
-    public static func convertFromCheckedStorage(
-        _ storage: borrowing Variant.Storage
-    ) -> Self {
-        Self(GodotArray.convertFromCheckedStorage(storage))
-    }
-    
-    public static func convertFromCheckedStorage(
-        consuming storage: consuming Variant.Storage
-    ) -> Self {
-        convertFromCheckedStorage(storage)
-    }
-}
-
-extension ContiguousArray: Hintable where Element : Exportable {
-    public typealias HintingValue = Self
-    public static var defaultHint: Hint<Self> { .elements(Element.defaultHint) }
-}
-
-extension ContiguousArray: Exposable where Element : Exposable {
-    public static var variantRepresentationType: Variant.RepresentationType {
-        .array
-    }
-    
-    public static func transferFromGodot(
-        unsafePointer: UnsafeRawPointer?
-    ) -> Self {
-        Self(GodotArray.transferFromGodot(unsafePointer: unsafePointer))
-    }
-    
-    public func transferToGodot(
-        unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
-    ) {
-        GodotArray(self).transferToGodot(unsafePointer: destinationUnsafePointer)
-    }
-}
+//
+//extension ContiguousArray: Variant.Storable where Element : GodotContiguousArrayElement {
+//    public static var variantStorageType: Variant.StorageType? {
+//        Element.GodotContiguousArrayStorage.variantStorageType
+//    }
+//    
+//    public static func convertToStorage(
+//        _ value: consuming Self
+//    ) -> Variant.Storage {
+//        GodotArray.convertToStorage(GodotArray(value))
+//    }
+//    
+//    public static func convertFromStorage(
+//        _ storage: borrowing Variant.Storage
+//    ) throws -> Self {
+//        try Self(GodotArray.convertFromStorage(storage))
+//    }
+//    
+//    public static func convertFromCheckedStorage(
+//        _ storage: borrowing Variant.Storage
+//    ) -> Self {
+//        Self(GodotArray.convertFromCheckedStorage(storage))
+//    }
+//    
+//    public static func convertFromCheckedStorage(
+//        consuming storage: consuming Variant.Storage
+//    ) -> Self {
+//        convertFromCheckedStorage(storage)
+//    }
+//}
+//
+//extension ContiguousArray: Hintable where Element : Exportable {
+//    public typealias HintingValue = Self
+//    public static var defaultHint: Hint<Self> { .elements(Element.defaultHint) }
+//}
+//
+//extension ContiguousArray: Exposable where Element : Exposable {
+//    public static var variantRepresentationType: Variant.RepresentationType {
+//        .array
+//    }
+//    
+//    public static func transferFromGodot(
+//        unsafePointer: UnsafeRawPointer?
+//    ) -> Self {
+//        Self(GodotArray.transferFromGodot(unsafePointer: unsafePointer))
+//    }
+//    
+//    public func transferToGodot(
+//        unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
+//    ) {
+//        GodotArray(self).transferToGodot(unsafePointer: destinationUnsafePointer)
+//    }
+//}
+//
+//Should fall back to GodotContiguousArray // TODO: This

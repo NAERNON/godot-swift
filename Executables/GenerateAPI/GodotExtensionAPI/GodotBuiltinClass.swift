@@ -73,6 +73,8 @@ struct GodotBuiltinClass: Decodable {
             var name = "__operator_binding_" + identifier
             if let rightType {
                 name += "_" + rightType.syntax(options: [.floatAsDouble])
+                    .replacingOccurrences(of: ">", with: "")
+                    .replacingOccurrences(of: "<", with: "")
             }
             
             return name.lowercased()
@@ -137,6 +139,8 @@ struct GodotBuiltinClass: Decodable {
                 
                 for argument in arguments {
                     string += argument.type.syntax()
+                        .replacingOccurrences(of: ">", with: "")
+                        .replacingOccurrences(of: "<", with: "")
                 }
             }
             
@@ -181,6 +185,8 @@ struct GodotBuiltinClass: Decodable {
                 
                 for argument in arguments {
                     string += argument.type.syntax()
+                        .replacingOccurrences(of: ">", with: "")
+                        .replacingOccurrences(of: "<", with: "")
                 }
             }
             
@@ -687,7 +693,7 @@ extension GodotBuiltinClass: FileSource {
             lazyVariablesSyntax()
         }
         
-        try ExtensionDeclSyntax("extension \(raw: identifier)") {
+        try ExtensionDeclSyntax("extension \(raw: name.syntax(options: .packedArrayStorage))") {
             constantsSyntax()
             try enumSyntax()
             

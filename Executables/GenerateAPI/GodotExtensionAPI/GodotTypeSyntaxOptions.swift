@@ -45,4 +45,8 @@ struct GodotTypeSyntaxOptions: OptionSet {
     /// `GodotDictionary` is suffixed by `<Key, AssociatedValue>`.
     static let genericDictionaryOnKeyValue =
         GodotTypeSyntaxOptions(rawValue: 1 << 9)
+    
+    /// `GodotContiguousArray<T>` is replaced by `T.GodotContiguousArrayStorage`.
+    static let packedArrayStorage =
+        GodotTypeSyntaxOptions(rawValue: 1 << 10)
 }

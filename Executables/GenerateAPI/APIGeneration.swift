@@ -99,7 +99,7 @@ struct APIGeneration: AsyncParsableCommand {
         for builtinClass in extensionAPI.builtinClasses {
             pool.append(
                 source: builtinClass,
-                nameURLComponent: "Builtin Structs/" + builtinClass.name.syntax() + "+Bindings.swift"
+                nameURLComponent: "Builtin Structs/" + builtinClass.name.syntax(options: .packedArrayStorage) + "+Bindings.swift"
             )
         }
         
