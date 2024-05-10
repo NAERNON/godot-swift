@@ -15,7 +15,24 @@ extension GodotStringName {
     }
     
     public init(swiftStaticString: StaticString) {
-        self = Self._make(from: GodotString(swiftStaticString: swiftStaticString))
+        if swiftStaticString.isASCII {
+            self.init(opaque: Self.makeOpaque(useDestructor: false))
+            
+            withUnsafeMutableRawPointer { extensionPtr in
+                swiftStaticString.utf8Start.withMemoryRebound(
+                    to: Int8.self,
+                    capacity: swiftStaticString.utf8CodeUnitCount
+                ) { pointer in
+                    GodotExtension.Interface.stringNameNewWithLatin1Chars(
+                        extensionPtr,
+                        pointer,
+                        1
+                    )
+                }
+            }
+        } else {
+            self = Self._make(from: GodotString(swiftStaticString: swiftStaticString))
+        }
     }
     
     public init<Subject>(describing instance: Subject) {

@@ -25,7 +25,7 @@ extension GodotString {
         
         withUnsafeMutableRawPointer { extensionPtr in
             swiftStaticString.withUTF8Buffer { buffer in
-                buffer.baseAddress?.withMemoryRebound(to: Int8.self, capacity: buffer.count) { cString in
+                buffer.baseAddress!.withMemoryRebound(to: Int8.self, capacity: buffer.count) { cString in
                     GodotExtension.Interface.stringNewWithUtf8Chars(extensionPtr, cString)
                 }
             }
