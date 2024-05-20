@@ -18,8 +18,8 @@ open class CurveTexture: Texture2D {
     }
 
     internal static var __method_binding_set_width: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_width").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_width").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
         }
         }
@@ -43,8 +43,8 @@ open class CurveTexture: Texture2D {
     }
 
     internal static var __method_binding_set_curve: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_curve").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_curve").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 270443179)!
         }
         }
@@ -70,8 +70,8 @@ open class CurveTexture: Texture2D {
     }
 
     internal static var __method_binding_get_curve: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_curve").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_curve").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2460114913)!
         }
         }
@@ -91,8 +91,8 @@ open class CurveTexture: Texture2D {
     }
 
     internal static var __method_binding_set_texture_mode: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_mode").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_texture_mode").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1321955367)!
         }
         }
@@ -116,8 +116,8 @@ open class CurveTexture: Texture2D {
     }
 
     internal static var __method_binding_get_texture_mode: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_mode").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_texture_mode").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 715756376)!
         }
         }

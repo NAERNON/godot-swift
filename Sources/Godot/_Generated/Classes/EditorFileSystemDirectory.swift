@@ -7,8 +7,8 @@ import GodotExtensionHeaders
 @GodotClass
 open class EditorFileSystemDirectory: Object {
     internal static var __method_binding_get_subdir_count: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_subdir_count").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_subdir_count").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -28,8 +28,8 @@ open class EditorFileSystemDirectory: Object {
     }
 
     internal static var __method_binding_get_subdir: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_subdir").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_subdir").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2330964164)!
         }
         }
@@ -55,8 +55,8 @@ open class EditorFileSystemDirectory: Object {
     }
 
     internal static var __method_binding_get_file_count: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_file_count").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_file_count").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -76,8 +76,8 @@ open class EditorFileSystemDirectory: Object {
     }
 
     internal static var __method_binding_get_file: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_file").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_file").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -103,8 +103,8 @@ open class EditorFileSystemDirectory: Object {
     }
 
     internal static var __method_binding_get_file_path: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_file_path").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_file_path").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -130,8 +130,8 @@ open class EditorFileSystemDirectory: Object {
     }
 
     internal static var __method_binding_get_file_type: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_file_type").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_file_type").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 659327637)!
         }
         }
@@ -157,8 +157,8 @@ open class EditorFileSystemDirectory: Object {
     }
 
     internal static var __method_binding_get_file_script_class_name: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_file_script_class_name").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_file_script_class_name").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -184,8 +184,8 @@ open class EditorFileSystemDirectory: Object {
     }
 
     internal static var __method_binding_get_file_script_class_extends: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_file_script_class_extends").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_file_script_class_extends").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
         }
         }
@@ -211,8 +211,8 @@ open class EditorFileSystemDirectory: Object {
     }
 
     internal static var __method_binding_get_file_import_is_valid: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_file_import_is_valid").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_file_import_is_valid").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }
@@ -238,8 +238,8 @@ open class EditorFileSystemDirectory: Object {
     }
 
     internal static var __method_binding_get_name: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_name").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_name").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2841200299)!
         }
         }
@@ -259,8 +259,8 @@ open class EditorFileSystemDirectory: Object {
     }
 
     internal static var __method_binding_get_path: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_path").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_path").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
         }
         }
@@ -280,8 +280,8 @@ open class EditorFileSystemDirectory: Object {
     }
 
     internal static var __method_binding_get_parent: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_parent").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_parent").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 842323275)!
         }
         }
@@ -301,8 +301,8 @@ open class EditorFileSystemDirectory: Object {
     }
 
     internal static var __method_binding_find_file_index: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "find_file_index").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "find_file_index").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1321353865)!
         }
         }
@@ -328,8 +328,8 @@ open class EditorFileSystemDirectory: Object {
     }
 
     internal static var __method_binding_find_dir_index: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "find_dir_index").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "find_dir_index").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1321353865)!
         }
         }

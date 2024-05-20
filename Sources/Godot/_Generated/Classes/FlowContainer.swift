@@ -20,8 +20,8 @@ open class FlowContainer: Container {
     }
 
     internal static var __method_binding_get_line_count: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_line_count").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_line_count").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
         }
         }
@@ -41,8 +41,8 @@ open class FlowContainer: Container {
     }
 
     internal static var __method_binding_set_alignment: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_alignment").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_alignment").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 575250951)!
         }
         }
@@ -66,8 +66,8 @@ open class FlowContainer: Container {
     }
 
     internal static var __method_binding_get_alignment: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_alignment").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "get_alignment").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3749743559)!
         }
         }
@@ -87,8 +87,8 @@ open class FlowContainer: Container {
     }
 
     internal static var __method_binding_set_vertical: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_vertical").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "set_vertical").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
         }
         }
@@ -112,8 +112,8 @@ open class FlowContainer: Container {
     }
 
     internal static var __method_binding_is_vertical: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_vertical").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_vertical").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
         }
         }

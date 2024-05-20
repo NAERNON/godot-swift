@@ -5,8 +5,9 @@ internal final class Opaque: CustomDebugStringConvertible {
     
     /// The destructor pointer for the opaque type.
     /// If `nil`, no destructor will be called in the `deinit`.
-    var destructorPtr: GDExtensionPtrDestructor?
+    private var destructorPtr: GDExtensionPtrDestructor?
     
+    /// The size, in bytes, of this opaque raw data.
     var size: Int {
         rawData.count
     }
@@ -25,6 +26,10 @@ internal final class Opaque: CustomDebugStringConvertible {
         }
         
         rawData.deallocate()
+    }
+    
+    func removeDestructor() {
+        destructorPtr = nil
     }
     
     func withUnsafeRawBufferPointer<Result>(

@@ -1,23 +1,25 @@
 import GodotExtensionHeaders
 
-@GodotOpaqueBuiltinClass
-public struct NodePath {}
+@BuiltinOpaque
+public struct NodePath {
+    internal mutating func makeUniqueIfSharedOpaque() {
+        guard !isKnownUniquelyReferenced(&opaque) else {
+            return
+        }
+        
+        self = Self.make(from: self)
+    }
+}
 
 extension NodePath {
     // MARK: Constructors
     
     public init() {
-        self = Self._make()
+        self = Self.make()
     }
     
     public init(string: GodotString) {
-        self = Self._make(from: string)
-    }
-    
-    // MARK: Copy
-    
-    internal mutating func withCopiedOpaque() -> Self {
-        Self._make(from: self)
+        self = Self.make(from: string)
     }
     
     // MARK: Methods & variables

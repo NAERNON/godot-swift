@@ -85,7 +85,7 @@ private func withUnsafeVarargArgumentPointers(
         return
     }
     
-    first.storage.withUnsafeMutableRawPointer { ptr in
+    first.withStorageUnsafeMutableRawPointer { ptr in
         withUnsafeVarargArgumentPointers(to: arguments.dropFirst()) { pointers in
             body([ptr] + pointers)
         }

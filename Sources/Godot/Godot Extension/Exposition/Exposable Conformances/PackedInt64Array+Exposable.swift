@@ -8,7 +8,7 @@ extension PackedInt64Array: Variant.Storable {
         let storage = Variant.Storage()
         
         storage.withUnsafeMutableRawPointer { storagePtr in
-            value.withUnsafeMutableRawPointer { valuePtr in
+            value.withUnsafeMutableOpaquePointer { valuePtr in
                 fromTypeVariantConstructor(storagePtr, valuePtr)
             }
         }
@@ -22,7 +22,7 @@ extension PackedInt64Array: Variant.Storable {
         var newValue = Self()
         
         storage.withUnsafeMutableRawPointer { storagePtr in
-            newValue.withUnsafeMutableRawPointer { newValuePtr in
+            newValue.withUnsafeMutableOpaquePointer { newValuePtr in
                 toTypeVariantConstructor(newValuePtr, storagePtr)
             }
         }
@@ -45,12 +45,25 @@ extension PackedInt64Array: Hintable {
 extension PackedInt64Array: Exposable {
     public static let variantRepresentationType: Variant.RepresentationType = .packedInt64Array
     
+    public consuming func transferToGodot(
+        unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
+    ) {
+        withUnsafeOpaquePointer { selfPtr in
+            withUnsafeArgumentPackPointer(selfPtr) { accessPtr in
+                PackedInt64ArrayBindings.constructorFromPackedInt64Array(destinationUnsafePointer, accessPtr)
+            }
+        }
+    }
+
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        Self._makeFromPackedInt64ArrayPointer(from: unsafePointer!)
+        let opaque: Opaque = makeOpaque()
+        withUnsafeArgumentPackPointer(unsafePointer!) { accessPtr in
+            opaque.withUnsafeMutableRawPointer { opaquePtr in
+                PackedInt64ArrayBindings.constructorFromPackedInt64Array(opaquePtr, accessPtr)
+            }
+        }
+        return Self.init(opaque: opaque)
     }
-    
-    // func transferToGodot
-    // implemented in GodotOpaqueBuiltinClass macro
 }

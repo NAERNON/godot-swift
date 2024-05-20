@@ -1,23 +1,25 @@
 import GodotExtensionHeaders
 
-@GodotOpaqueBuiltinClass
-public struct Callable {}
+@BuiltinOpaque
+public struct Callable {
+    internal mutating func makeUniqueIfSharedOpaque() {
+        guard !isKnownUniquelyReferenced(&opaque) else {
+            return
+        }
+        
+        self = Self.make(from: self)
+    }
+}
 
 extension Callable {
     // MARK: Constructors
     
     internal init() {
-        self = Self._make()
+        self = Self.make()
     }
     
     internal init(object: Object, method: GodotStringName) {
-        self = Self._make(object: object, method: method)
-    }
-    
-    // MARK: Copy
-    
-    internal mutating func withCopiedOpaque() -> Self {
-        Self._make(from: self)
+        self = Self.make(object: object, method: method)
     }
     
     // MARK: Methods & variables

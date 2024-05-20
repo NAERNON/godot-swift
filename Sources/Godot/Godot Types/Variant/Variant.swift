@@ -1,11 +1,11 @@
 import GodotExtensionHeaders
 
-/// A type used to transform Swift types to and from Godot types.
+/// A type capable of containing several kinds of Godot types.
 public final class Variant {
     // MARK: Inits
     
     /// The storage containing the variant data.
-    public private(set) var storage: Storage
+    internal var storage: Storage
     
     public init(storage: consuming Storage) {
         self.storage = storage
@@ -29,10 +29,34 @@ public final class Variant {
     
     private(set) static var fromTypeConstructors: Constructors!
     private(set) static var toTypeConstructors: Constructors!
+    private static var areBindingsLoaded = false
     
-    internal static func loadConstructors() {
+    /// Loads all builtin classes constructors and destructors,
+    /// as well as all their bindings.
+    internal static func loadBindings() {
+        precondition(!areBindingsLoaded, "Variant bindings are already loaded.")
+        areBindingsLoaded = true
+        
         fromTypeConstructors = .init({ GodotExtension.Interface.getVariantFromTypeConstructor($0)! })
         toTypeConstructors = .init({ GodotExtension.Interface.getVariantToTypeConstructor($0)! })
+        
+        CallableBindings.loadBindings()
+        GodotArrayBindings.loadBindings()
+        GodotDictionaryBindings.loadBindings()
+        GodotStringBindings.loadBindings()
+        GodotStringNameBindings.loadBindings()
+        NodePathBindings.loadBindings()
+        PackedByteArrayBindings.loadBindings()
+        PackedColorArrayBindings.loadBindings()
+        PackedFloat32ArrayBindings.loadBindings()
+        PackedFloat64ArrayBindings.loadBindings()
+        PackedInt32ArrayBindings.loadBindings()
+        PackedInt64ArrayBindings.loadBindings()
+        PackedStringArrayBindings.loadBindings()
+        PackedVector2ArrayBindings.loadBindings()
+        PackedVector3ArrayBindings.loadBindings()
+        RIDBindings.loadBindings()
+        SignalBindings.loadBindings()
     }
     
     // MARK: Getters
@@ -63,6 +87,23 @@ public final class Variant {
     public var type: StorageType {
         storage.type
     }
+    
+    /// A Boolean value indicating whether this `Variant` is nil.
+    public var isEmpty: Bool {
+        storage.isEmpty
+    }
+    
+    func withStorageUnsafeRawPointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeRawPointer(body)
+    }
+    
+    func withStorageUnsafeMutableRawPointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeMutableRawPointer(body)
+    }
 }
 
 // MARK: - Extensions
@@ -75,7 +116,7 @@ extension Variant: CustomStringConvertible {
 
 extension Variant: CustomDebugStringConvertible {
     public var debugDescription: String {
-        "Variant(type: \(type), value: \(storage.description))"
+        storage.description
     }
 }
 

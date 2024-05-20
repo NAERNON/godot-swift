@@ -167,7 +167,7 @@ extension ClassRegistrar {
                 return
             }
             
-            arguments[index].storage.withUnsafeMutableRawPointer { variantPtr in
+            arguments[index].withStorageUnsafeMutableRawPointer { variantPtr in
                 withLastDefaultArguments(arguments, index: index + 1) { variantPtrs in
                     body([variantPtr] + variantPtrs)
                 }

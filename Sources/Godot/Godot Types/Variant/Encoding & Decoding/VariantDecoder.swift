@@ -35,7 +35,7 @@ private class VariantRootDecoder {
     }
     
     func checkVariantIsNotNil(_ variant: Variant, for type: Any.Type) throws {
-        if variant.storage.isNil {
+        if variant.isEmpty {
             throw DecodingError.valueNotFound(type, .init(
                 codingPath: codingPath,
                 debugDescription: "Expected to decode \(type) but no value was found."
@@ -180,7 +180,7 @@ where Key : CodingKey {
     
     func decodeNil(forKey key: Key) throws -> Bool {
         let variant = try variant(for: key)
-        return variant.storage.isNil
+        return variant.isEmpty
     }
     
     func decode(_ type: Bool.Type, forKey key: Key) throws -> Bool {
@@ -317,7 +317,7 @@ private final class VariantUnkeyedContainer: VariantRootDecoder, UnkeyedDecoding
     
     func decodeNil() throws -> Bool {
         let variant = try currentVariantAndGoToNext(forType: Never.self)
-        return variant.storage.isNil
+        return variant.isEmpty
     }
     
     func decode(_ type: Bool.Type) throws -> Bool {
@@ -423,7 +423,7 @@ private final class VariantSingleValueContainer: VariantRootDecoder, SingleValue
     }
     
     func decodeNil() -> Bool {
-        variant.storage.isNil
+        variant.isEmpty
     }
 
     func decode(_ type: Bool.Type) throws -> Bool {

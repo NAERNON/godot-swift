@@ -4,170 +4,136 @@
 
 import GodotExtensionHeaders
 
-private var __destructor: GDExtensionPtrDestructor = {
-    return GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_SIGNAL)!
-}()
+internal enum SignalBindings {
+    static private var areBindingsLoaded = false
 
-private var __constructor: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_SIGNAL, 0)!
-}()
-
-private var __constructorFromSignal: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_SIGNAL, 1)!
-}()
-
-private var __constructorFromObjectGodotStringName: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_SIGNAL, 2)!
-}()
-
-private var __operator_binding_equal_variant: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_SIGNAL, GDEXTENSION_VARIANT_TYPE_NIL)!
-}()
-
-private var __operator_binding_not_equal_variant: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_SIGNAL, GDEXTENSION_VARIANT_TYPE_NIL)!
-}()
-
-private var __operator_binding_not: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT, GDEXTENSION_VARIANT_TYPE_SIGNAL, GDEXTENSION_VARIANT_TYPE_NIL)!
-}()
-
-private var __operator_binding_equal_signal: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_SIGNAL, GDEXTENSION_VARIANT_TYPE_SIGNAL)!
-}()
-
-private var __operator_binding_not_equal_signal: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_SIGNAL, GDEXTENSION_VARIANT_TYPE_SIGNAL)!
-}()
-
-private var __operator_binding_in_godotdictionary: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_SIGNAL, GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
-}()
-
-private var __operator_binding_in_godotarray: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_SIGNAL, GDEXTENSION_VARIANT_TYPE_ARRAY)!
-}()
-
-private var __method_binding_is_null: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "is_null").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 3918633141)!
+    internal static func loadBindings() {
+        precondition(!areBindingsLoaded, "Signal bindings are already loaded.")
+        areBindingsLoaded = true
+        destructor = GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_SIGNAL)!
+        constructor = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_SIGNAL, 0)!
+        constructorFromSignal = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_SIGNAL, 1)!
+        constructorFromObjectGodotStringName = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_SIGNAL, 2)!
+        operatorEqualVariant = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_SIGNAL, GDEXTENSION_VARIANT_TYPE_NIL)!
+        operatorNotEqualVariant = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_SIGNAL, GDEXTENSION_VARIANT_TYPE_NIL)!
+        operatorNot = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT, GDEXTENSION_VARIANT_TYPE_SIGNAL, GDEXTENSION_VARIANT_TYPE_NIL)!
+        operatorEqualSignal = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_SIGNAL, GDEXTENSION_VARIANT_TYPE_SIGNAL)!
+        operatorNotEqualSignal = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_SIGNAL, GDEXTENSION_VARIANT_TYPE_SIGNAL)!
+        operatorInGodotdictionary = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_SIGNAL, GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
+        operatorInGodotarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_SIGNAL, GDEXTENSION_VARIANT_TYPE_ARRAY)!
+        methodIsNull = GodotStringName(swiftStaticString: "is_null").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 3918633141)!
+        }
+        methodGetObject = GodotStringName(swiftStaticString: "get_object").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 4008621732)!
+        }
+        methodGetObjectID = GodotStringName(swiftStaticString: "get_object_id").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 3173160232)!
+        }
+        methodGetName = GodotStringName(swiftStaticString: "get_name").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 1825232092)!
+        }
+        methodConnect = GodotStringName(swiftStaticString: "connect").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 979702392)!
+        }
+        methodDisconnect = GodotStringName(swiftStaticString: "disconnect").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 3470848906)!
+        }
+        methodIsConnected = GodotStringName(swiftStaticString: "is_connected").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 4129521963)!
+        }
+        methodGetConnections = GodotStringName(swiftStaticString: "get_connections").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 4144163970)!
+        }
+        methodEmit = GodotStringName(swiftStaticString: "emit").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 3286317445)!
+        }
     }
-}()
 
-private var __method_binding_get_object: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_object").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 4008621732)!
-    }
-}()
+    static private (set) var destructor: GDExtensionPtrDestructor!
 
-private var __method_binding_get_object_id: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_object_id").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 3173160232)!
-    }
-}()
+    static private (set) var constructor: GDExtensionPtrConstructor!
 
-private var __method_binding_get_name: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_name").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 1825232092)!
-    }
-}()
+    static private (set) var constructorFromSignal: GDExtensionPtrConstructor!
 
-private var __method_binding_connect: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "connect").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 979702392)!
-    }
-}()
+    static private (set) var constructorFromObjectGodotStringName: GDExtensionPtrConstructor!
 
-private var __method_binding_disconnect: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "disconnect").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 3470848906)!
-    }
-}()
+    static private (set) var operatorEqualVariant: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_is_connected: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "is_connected").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 4129521963)!
-    }
-}()
+    static private (set) var operatorNotEqualVariant: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_get_connections: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_connections").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 4144163970)!
-    }
-}()
+    static private (set) var operatorNot: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_emit: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "emit").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 3286317445)!
-    }
-}()
+    static private (set) var operatorEqualSignal: GDExtensionPtrOperatorEvaluator!
+
+    static private (set) var operatorNotEqualSignal: GDExtensionPtrOperatorEvaluator!
+
+    static private (set) var operatorInGodotdictionary: GDExtensionPtrOperatorEvaluator!
+
+    static private (set) var operatorInGodotarray: GDExtensionPtrOperatorEvaluator!
+
+    static private (set) var methodIsNull: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodGetObject: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodGetObjectID: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodGetName: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodConnect: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodDisconnect: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodIsConnected: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodGetConnections: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodEmit: GDExtensionPtrBuiltInMethod!
+}
 
 extension Signal {
-    static internal func makeOpaque() -> Opaque {
-        Opaque(size: 16, destructorPtr: __destructor)
+    static internal func makeOpaque(
+        useDestructor: Bool = true
+    ) -> Opaque {
+        Opaque(size: 16, destructorPtr: useDestructor ? SignalBindings.destructor : nil)
     }
 
-    static internal func _make() -> Self {
-        let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
+    static internal func make() -> Self {
+        let __temporary: Opaque = makeOpaque()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor(__ptr___temporary, nil)
+            SignalBindings.constructor(__ptr___temporary, nil)
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _make(
+    static internal func make(
         from: Godot.Signal
     ) -> Self {
-        let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
+        let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    __constructorFromSignal(__ptr___temporary, __accessPtr)
+                    SignalBindings.constructorFromSignal(__ptr___temporary, __accessPtr)
                 }
             }
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _makeFromSignalPointer(
-        from: UnsafeRawPointer
-    ) -> Self {
-        let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
-        withUnsafeArgumentPackPointer(from) { __accessPtr in
-            __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                __constructorFromSignal(__ptr___temporary, __accessPtr)
-            }
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _make(
+    static internal func make(
         object: Godot.Object?,
         signal: Godot.GodotStringName
     ) -> Self {
-        let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
+        let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: object) { __ptr_object in
             withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
                 withTransferrableUnsafeRawPointer(to: signal) { __ptr_signal in
                     withUnsafeArgumentPackPointer(_ptr___ptr_object, __ptr_signal) { __accessPtr in
                         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                            __constructorFromObjectGodotStringName(__ptr___temporary, __accessPtr)
+                            SignalBindings.constructorFromObjectGodotStringName(__ptr___temporary, __accessPtr)
                         }
                     }
                 }
-            }
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _makeFromObjectGodotStringNamePointer(
-        object: UnsafeRawPointer,
-        signal: UnsafeRawPointer
-    ) -> Self {
-        let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
-        withUnsafeArgumentPackPointer(object, signal) { __accessPtr in
-            __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                __constructorFromObjectGodotStringName(__ptr___temporary, __accessPtr)
             }
         }
         return Self.init(opaque: __temporary)
@@ -180,7 +146,7 @@ extension Signal {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)
+                    SignalBindings.operatorEqualVariant(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -193,7 +159,7 @@ extension Signal {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)
+                    SignalBindings.operatorNotEqualVariant(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -204,7 +170,7 @@ extension Signal {
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
-                __operator_binding_not(__ptr_lhs, nil, __temporary)
+                SignalBindings.operatorNot(__ptr_lhs, nil, __temporary)
             }
         }
     }
@@ -216,7 +182,7 @@ extension Signal {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_equal_signal(__ptr_lhs, __ptr_rhs, __temporary)
+                    SignalBindings.operatorEqualSignal(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -229,7 +195,7 @@ extension Signal {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_not_equal_signal(__ptr_lhs, __ptr_rhs, __temporary)
+                    SignalBindings.operatorNotEqualSignal(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -242,7 +208,7 @@ extension Signal {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_in_godotdictionary(__ptr_lhs, __ptr_rhs, __temporary)
+                    SignalBindings.operatorInGodotdictionary(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -255,7 +221,7 @@ extension Signal {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_in_godotarray(__ptr_lhs, __ptr_rhs, __temporary)
+                    SignalBindings.operatorInGodotarray(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -264,7 +230,7 @@ extension Signal {
     internal func _isNull() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_is_null(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                SignalBindings.methodIsNull(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -272,7 +238,7 @@ extension Signal {
     internal func _object() -> Godot.Object? {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_get_object(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                SignalBindings.methodGetObject(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -280,7 +246,7 @@ extension Signal {
     internal func _objectID() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_get_object_id(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                SignalBindings.methodGetObjectID(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -288,7 +254,7 @@ extension Signal {
     internal func _name() -> Godot.GodotStringName {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_get_name(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                SignalBindings.methodGetName(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -298,13 +264,13 @@ extension Signal {
         callable: Godot.Callable,
         flags: Int = 0
     ) -> Int {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: callable) { __ptr_callable in
                 withTransferrableUnsafeRawPointer(to: flags) { __ptr_flags in
                     withUnsafeArgumentPackPointer(__ptr_callable, __ptr_flags) { __accessPtr in
                         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                            __method_binding_connect(__ptr_self, __accessPtr, __temporary, 2)
+                            SignalBindings.methodConnect(__ptr_self, __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -315,11 +281,11 @@ extension Signal {
     mutating internal func _disconnect(
         callable: Godot.Callable
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: callable) { __ptr_callable in
             withUnsafeArgumentPackPointer(__ptr_callable) { __accessPtr in
                 withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    __method_binding_disconnect(__ptr_self, __accessPtr, nil, 1)
+                    SignalBindings.methodDisconnect(__ptr_self, __accessPtr, nil, 1)
                 }
             }
         }
@@ -332,7 +298,7 @@ extension Signal {
             withTransferrableUnsafeRawPointer(to: callable) { __ptr_callable in
                 withUnsafeArgumentPackPointer(__ptr_callable) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_is_connected(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        SignalBindings.methodIsConnected(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -342,7 +308,7 @@ extension Signal {
     internal func _connections() -> Godot.AnyGodotArray {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_get_connections(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                SignalBindings.methodGetConnections(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -352,7 +318,7 @@ extension Signal {
     ) {
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { packCount, __accessPtr in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_emit(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, Int32(packCount))
+                SignalBindings.methodEmit(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, Int32(packCount))
             }
         }
     }

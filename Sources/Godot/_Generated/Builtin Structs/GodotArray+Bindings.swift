@@ -4,443 +4,369 @@
 
 import GodotExtensionHeaders
 
-private var __destructor: GDExtensionPtrDestructor = {
-    return GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_ARRAY)!
-}()
+internal enum GodotArrayBindings {
+    static private var areBindingsLoaded = false
 
-private var __constructor: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 0)!
-}()
-
-private var __constructorFromGodotArray: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 1)!
-}()
-
-private var __constructorFromGodotArrayIntGodotStringNameVariant: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 2)!
-}()
-
-private var __constructorFromPackedByteArray: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 3)!
-}()
-
-private var __constructorFromPackedInt32Array: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 4)!
-}()
-
-private var __constructorFromPackedInt64Array: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 5)!
-}()
-
-private var __constructorFromPackedFloat32Array: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 6)!
-}()
-
-private var __constructorFromPackedFloat64Array: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 7)!
-}()
-
-private var __constructorFromPackedStringArray: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 8)!
-}()
-
-private var __constructorFromPackedVector2Array: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 9)!
-}()
-
-private var __constructorFromPackedVector3Array: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 10)!
-}()
-
-private var __constructorFromPackedColorArray: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 11)!
-}()
-
-private var __operator_binding_equal_variant: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
-}()
-
-private var __operator_binding_not_equal_variant: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
-}()
-
-private var __operator_binding_not: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
-}()
-
-private var __operator_binding_in_godotdictionary: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
-}()
-
-private var __operator_binding_equal_godotarray: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
-}()
-
-private var __operator_binding_not_equal_godotarray: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
-}()
-
-private var __operator_binding_less_godotarray: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_LESS, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
-}()
-
-private var __operator_binding_less_equal_godotarray: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_LESS_EQUAL, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
-}()
-
-private var __operator_binding_greater_godotarray: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_GREATER, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
-}()
-
-private var __operator_binding_greater_equal_godotarray: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_GREATER_EQUAL, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
-}()
-
-private var __operator_binding_add_godotarray: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_ADD, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
-}()
-
-private var __operator_binding_in_godotarray: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
-}()
-
-private var __indexed_setter: GDExtensionPtrIndexedSetter = {
-    return GodotExtension.Interface.variantGetPtrIndexedSetter(GDEXTENSION_VARIANT_TYPE_ARRAY)!
-}()
-
-private var __indexed_getter: GDExtensionPtrIndexedGetter = {
-    return GodotExtension.Interface.variantGetPtrIndexedGetter(GDEXTENSION_VARIANT_TYPE_ARRAY)!
-}()
-
-private var __method_binding_size: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "size").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3173160232)!
+    internal static func loadBindings() {
+        precondition(!areBindingsLoaded, "GodotArray bindings are already loaded.")
+        areBindingsLoaded = true
+        destructor = GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_ARRAY)!
+        constructor = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 0)!
+        constructorFromGodotArray = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 1)!
+        constructorFromGodotArrayIntGodotStringNameVariant = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 2)!
+        constructorFromPackedByteArray = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 3)!
+        constructorFromPackedInt32Array = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 4)!
+        constructorFromPackedInt64Array = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 5)!
+        constructorFromPackedFloat32Array = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 6)!
+        constructorFromPackedFloat64Array = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 7)!
+        constructorFromPackedStringArray = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 8)!
+        constructorFromPackedVector2Array = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 9)!
+        constructorFromPackedVector3Array = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 10)!
+        constructorFromPackedColorArray = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 11)!
+        operatorEqualVariant = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
+        operatorNotEqualVariant = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
+        operatorNot = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
+        operatorInGodotdictionary = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
+        operatorEqualGodotarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
+        operatorNotEqualGodotarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
+        operatorLessGodotarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_LESS, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
+        operatorLessEqualGodotarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_LESS_EQUAL, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
+        operatorGreaterGodotarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_GREATER, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
+        operatorGreaterEqualGodotarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_GREATER_EQUAL, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
+        operatorAddGodotarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_ADD, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
+        operatorInGodotarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
+        indexedSetter = GodotExtension.Interface.variantGetPtrIndexedSetter(GDEXTENSION_VARIANT_TYPE_ARRAY)!
+        indexedGetter = GodotExtension.Interface.variantGetPtrIndexedGetter(GDEXTENSION_VARIANT_TYPE_ARRAY)!
+        methodSize = GodotStringName(swiftStaticString: "size").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3173160232)!
+        }
+        methodIsEmpty = GodotStringName(swiftStaticString: "is_empty").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3918633141)!
+        }
+        methodClear = GodotStringName(swiftStaticString: "clear").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3218959716)!
+        }
+        methodHash = GodotStringName(swiftStaticString: "hash").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3173160232)!
+        }
+        methodAssign = GodotStringName(swiftStaticString: "assign").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 2307260970)!
+        }
+        methodPushBack = GodotStringName(swiftStaticString: "push_back").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3316032543)!
+        }
+        methodPushFront = GodotStringName(swiftStaticString: "push_front").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3316032543)!
+        }
+        methodAppend = GodotStringName(swiftStaticString: "append").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3316032543)!
+        }
+        methodAppendArray = GodotStringName(swiftStaticString: "append_array").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 2307260970)!
+        }
+        methodResize = GodotStringName(swiftStaticString: "resize").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 848867239)!
+        }
+        methodInsert = GodotStringName(swiftStaticString: "insert").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3176316662)!
+        }
+        methodRemoveAt = GodotStringName(swiftStaticString: "remove_at").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 2823966027)!
+        }
+        methodFill = GodotStringName(swiftStaticString: "fill").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3316032543)!
+        }
+        methodErase = GodotStringName(swiftStaticString: "erase").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3316032543)!
+        }
+        methodFront = GodotStringName(swiftStaticString: "front").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1460142086)!
+        }
+        methodBack = GodotStringName(swiftStaticString: "back").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1460142086)!
+        }
+        methodPickRandom = GodotStringName(swiftStaticString: "pick_random").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1460142086)!
+        }
+        methodFind = GodotStringName(swiftStaticString: "find").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 2336346817)!
+        }
+        methodRfind = GodotStringName(swiftStaticString: "rfind").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 2336346817)!
+        }
+        methodCount = GodotStringName(swiftStaticString: "count").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1481661226)!
+        }
+        methodHas = GodotStringName(swiftStaticString: "has").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3680194679)!
+        }
+        methodPopBack = GodotStringName(swiftStaticString: "pop_back").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1321915136)!
+        }
+        methodPopFront = GodotStringName(swiftStaticString: "pop_front").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1321915136)!
+        }
+        methodPopAt = GodotStringName(swiftStaticString: "pop_at").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3518259424)!
+        }
+        methodSort = GodotStringName(swiftStaticString: "sort").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3218959716)!
+        }
+        methodSortCustom = GodotStringName(swiftStaticString: "sort_custom").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3470848906)!
+        }
+        methodShuffle = GodotStringName(swiftStaticString: "shuffle").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3218959716)!
+        }
+        methodBsearch = GodotStringName(swiftStaticString: "bsearch").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3372222236)!
+        }
+        methodBsearchCustom = GodotStringName(swiftStaticString: "bsearch_custom").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 161317131)!
+        }
+        methodReverse = GodotStringName(swiftStaticString: "reverse").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3218959716)!
+        }
+        methodDuplicate = GodotStringName(swiftStaticString: "duplicate").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 636440122)!
+        }
+        methodSlice = GodotStringName(swiftStaticString: "slice").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1393718243)!
+        }
+        methodFilter = GodotStringName(swiftStaticString: "filter").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 4075186556)!
+        }
+        methodMap = GodotStringName(swiftStaticString: "map").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 4075186556)!
+        }
+        methodReduce = GodotStringName(swiftStaticString: "reduce").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 4272450342)!
+        }
+        methodAny = GodotStringName(swiftStaticString: "any").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 4129521963)!
+        }
+        methodAll = GodotStringName(swiftStaticString: "all").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 4129521963)!
+        }
+        methodMax = GodotStringName(swiftStaticString: "max").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1460142086)!
+        }
+        methodMin = GodotStringName(swiftStaticString: "min").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1460142086)!
+        }
+        methodIsTyped = GodotStringName(swiftStaticString: "is_typed").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3918633141)!
+        }
+        methodIsSameTyped = GodotStringName(swiftStaticString: "is_same_typed").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 2988181878)!
+        }
+        methodGetTypedBuiltin = GodotStringName(swiftStaticString: "get_typed_builtin").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3173160232)!
+        }
+        methodGetTypedClassName = GodotStringName(swiftStaticString: "get_typed_class_name").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1825232092)!
+        }
+        methodGetTypedScript = GodotStringName(swiftStaticString: "get_typed_script").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1460142086)!
+        }
+        methodMakeReadOnly = GodotStringName(swiftStaticString: "make_read_only").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3218959716)!
+        }
+        methodIsReadOnly = GodotStringName(swiftStaticString: "is_read_only").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3918633141)!
+        }
     }
-}()
 
-private var __method_binding_is_empty: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "is_empty").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3918633141)!
-    }
-}()
+    static private (set) var destructor: GDExtensionPtrDestructor!
 
-private var __method_binding_clear: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "clear").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3218959716)!
-    }
-}()
+    static private (set) var constructor: GDExtensionPtrConstructor!
 
-private var __method_binding_hash: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "hash").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3173160232)!
-    }
-}()
+    static private (set) var constructorFromGodotArray: GDExtensionPtrConstructor!
 
-private var __method_binding_assign: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "assign").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 2307260970)!
-    }
-}()
+    static private (set) var constructorFromGodotArrayIntGodotStringNameVariant: GDExtensionPtrConstructor!
 
-private var __method_binding_push_back: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "push_back").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3316032543)!
-    }
-}()
+    static private (set) var constructorFromPackedByteArray: GDExtensionPtrConstructor!
 
-private var __method_binding_push_front: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "push_front").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3316032543)!
-    }
-}()
+    static private (set) var constructorFromPackedInt32Array: GDExtensionPtrConstructor!
 
-private var __method_binding_append: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "append").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3316032543)!
-    }
-}()
+    static private (set) var constructorFromPackedInt64Array: GDExtensionPtrConstructor!
 
-private var __method_binding_append_array: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "append_array").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 2307260970)!
-    }
-}()
+    static private (set) var constructorFromPackedFloat32Array: GDExtensionPtrConstructor!
 
-private var __method_binding_resize: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "resize").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 848867239)!
-    }
-}()
+    static private (set) var constructorFromPackedFloat64Array: GDExtensionPtrConstructor!
 
-private var __method_binding_insert: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "insert").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3176316662)!
-    }
-}()
+    static private (set) var constructorFromPackedStringArray: GDExtensionPtrConstructor!
 
-private var __method_binding_remove_at: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "remove_at").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 2823966027)!
-    }
-}()
+    static private (set) var constructorFromPackedVector2Array: GDExtensionPtrConstructor!
 
-private var __method_binding_fill: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "fill").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3316032543)!
-    }
-}()
+    static private (set) var constructorFromPackedVector3Array: GDExtensionPtrConstructor!
 
-private var __method_binding_erase: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "erase").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3316032543)!
-    }
-}()
+    static private (set) var constructorFromPackedColorArray: GDExtensionPtrConstructor!
 
-private var __method_binding_front: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "front").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1460142086)!
-    }
-}()
+    static private (set) var operatorEqualVariant: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_back: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "back").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1460142086)!
-    }
-}()
+    static private (set) var operatorNotEqualVariant: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_pick_random: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "pick_random").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1460142086)!
-    }
-}()
+    static private (set) var operatorNot: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_find: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "find").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 2336346817)!
-    }
-}()
+    static private (set) var operatorInGodotdictionary: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_rfind: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "rfind").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 2336346817)!
-    }
-}()
+    static private (set) var operatorEqualGodotarray: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_count: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "count").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1481661226)!
-    }
-}()
+    static private (set) var operatorNotEqualGodotarray: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_has: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "has").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3680194679)!
-    }
-}()
+    static private (set) var operatorLessGodotarray: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_pop_back: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "pop_back").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1321915136)!
-    }
-}()
+    static private (set) var operatorLessEqualGodotarray: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_pop_front: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "pop_front").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1321915136)!
-    }
-}()
+    static private (set) var operatorGreaterGodotarray: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_pop_at: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "pop_at").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3518259424)!
-    }
-}()
+    static private (set) var operatorGreaterEqualGodotarray: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_sort: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "sort").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3218959716)!
-    }
-}()
+    static private (set) var operatorAddGodotarray: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_sort_custom: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "sort_custom").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3470848906)!
-    }
-}()
+    static private (set) var operatorInGodotarray: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_shuffle: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "shuffle").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3218959716)!
-    }
-}()
+    static private (set) var indexedSetter: GDExtensionPtrIndexedSetter!
 
-private var __method_binding_bsearch: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "bsearch").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3372222236)!
-    }
-}()
+    static private (set) var indexedGetter: GDExtensionPtrIndexedGetter!
 
-private var __method_binding_bsearch_custom: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "bsearch_custom").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 161317131)!
-    }
-}()
+    static private (set) var methodSize: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_reverse: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "reverse").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3218959716)!
-    }
-}()
+    static private (set) var methodIsEmpty: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_duplicate: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "duplicate").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 636440122)!
-    }
-}()
+    static private (set) var methodClear: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_slice: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "slice").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1393718243)!
-    }
-}()
+    static private (set) var methodHash: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_filter: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "filter").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 4075186556)!
-    }
-}()
+    static private (set) var methodAssign: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_map: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "map").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 4075186556)!
-    }
-}()
+    static private (set) var methodPushBack: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_reduce: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "reduce").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 4272450342)!
-    }
-}()
+    static private (set) var methodPushFront: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_any: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "any").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 4129521963)!
-    }
-}()
+    static private (set) var methodAppend: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_all: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "all").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 4129521963)!
-    }
-}()
+    static private (set) var methodAppendArray: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_max: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "max").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1460142086)!
-    }
-}()
+    static private (set) var methodResize: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_min: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "min").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1460142086)!
-    }
-}()
+    static private (set) var methodInsert: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_is_typed: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "is_typed").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3918633141)!
-    }
-}()
+    static private (set) var methodRemoveAt: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_is_same_typed: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "is_same_typed").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 2988181878)!
-    }
-}()
+    static private (set) var methodFill: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_get_typed_builtin: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_typed_builtin").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3173160232)!
-    }
-}()
+    static private (set) var methodErase: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_get_typed_class_name: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_typed_class_name").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1825232092)!
-    }
-}()
+    static private (set) var methodFront: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_get_typed_script: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_typed_script").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 1460142086)!
-    }
-}()
+    static private (set) var methodBack: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_make_read_only: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "make_read_only").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3218959716)!
-    }
-}()
+    static private (set) var methodPickRandom: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_is_read_only: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "is_read_only").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3918633141)!
-    }
-}()
+    static private (set) var methodFind: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodRfind: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodCount: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodHas: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodPopBack: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodPopFront: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodPopAt: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodSort: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodSortCustom: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodShuffle: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodBsearch: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodBsearchCustom: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodReverse: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodDuplicate: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodSlice: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodFilter: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodMap: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodReduce: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodAny: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodAll: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodMax: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodMin: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodIsTyped: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodIsSameTyped: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodGetTypedBuiltin: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodGetTypedClassName: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodGetTypedScript: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodMakeReadOnly: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodIsReadOnly: GDExtensionPtrBuiltInMethod!
+}
 
 extension GodotArray {
-    static internal func makeOpaque() -> Opaque {
-        Opaque(size: 8, destructorPtr: __destructor)
+    static internal func makeOpaque(
+        useDestructor: Bool = true
+    ) -> Opaque {
+        Opaque(size: 8, destructorPtr: useDestructor ? GodotArrayBindings.destructor : nil)
     }
 
-    static internal func _make() -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
+    static internal func make() -> Self {
+        let __temporary: Opaque = makeOpaque()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor(__ptr___temporary, nil)
+            GodotArrayBindings.constructor(__ptr___temporary, nil)
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _make<Value: Variant.Storable>(
+    static internal func make<Value: Variant.Storable>(
         from: Godot.GodotArray<Value>
     ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
+        let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    __constructorFromGodotArray(__ptr___temporary, __accessPtr)
+                    GodotArrayBindings.constructorFromGodotArray(__ptr___temporary, __accessPtr)
                 }
             }
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _makeFromGodotArrayPointer(
-        from: UnsafeRawPointer
-    ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
-        withUnsafeArgumentPackPointer(from) { __accessPtr in
-            __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                __constructorFromGodotArray(__ptr___temporary, __accessPtr)
-            }
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _make<Value1: Variant.Storable, Value2: Variant.Storable>(
+    static internal func make<Value1: Variant.Storable, Value2: Variant.Storable>(
         base: Godot.GodotArray<Value1>,
         type: Int,
         className: Godot.GodotStringName,
         script: Value2
     ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
+        let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: base) { __ptr_base in
             withTransferrableUnsafeRawPointer(to: type) { __ptr_type in
                 withTransferrableUnsafeRawPointer(to: className) { __ptr_className in
                     Godot.Variant.withStorageUnsafeRawPointer(to: script) { __ptr_script in
                         withUnsafeArgumentPackPointer(__ptr_base, __ptr_type, __ptr_className, __ptr_script) { __accessPtr in
                             __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                                __constructorFromGodotArrayIntGodotStringNameVariant(__ptr___temporary, __accessPtr)
+                                GodotArrayBindings.constructorFromGodotArrayIntGodotStringNameVariant(__ptr___temporary, __accessPtr)
                             }
                         }
                     }
@@ -450,250 +376,127 @@ extension GodotArray {
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _makeFromGodotArrayIntGodotStringNameVariantPointer(
-        base: UnsafeRawPointer,
-        type: UnsafeRawPointer,
-        className: UnsafeRawPointer,
-        script: UnsafeRawPointer
-    ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
-        withUnsafeArgumentPackPointer(base, type, className, script) { __accessPtr in
-            __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                __constructorFromGodotArrayIntGodotStringNameVariant(__ptr___temporary, __accessPtr)
-            }
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _make(
+    static internal func make(
         from: Godot.PackedByteArray
     ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
+        let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    __constructorFromPackedByteArray(__ptr___temporary, __accessPtr)
+                    GodotArrayBindings.constructorFromPackedByteArray(__ptr___temporary, __accessPtr)
                 }
             }
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _makeFromPackedByteArrayPointer(
-        from: UnsafeRawPointer
-    ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
-        withUnsafeArgumentPackPointer(from) { __accessPtr in
-            __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                __constructorFromPackedByteArray(__ptr___temporary, __accessPtr)
-            }
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _make(
+    static internal func make(
         from: Godot.PackedInt32Array
     ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
+        let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    __constructorFromPackedInt32Array(__ptr___temporary, __accessPtr)
+                    GodotArrayBindings.constructorFromPackedInt32Array(__ptr___temporary, __accessPtr)
                 }
             }
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _makeFromPackedInt32ArrayPointer(
-        from: UnsafeRawPointer
-    ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
-        withUnsafeArgumentPackPointer(from) { __accessPtr in
-            __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                __constructorFromPackedInt32Array(__ptr___temporary, __accessPtr)
-            }
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _make(
+    static internal func make(
         from: Godot.PackedInt64Array
     ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
+        let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    __constructorFromPackedInt64Array(__ptr___temporary, __accessPtr)
+                    GodotArrayBindings.constructorFromPackedInt64Array(__ptr___temporary, __accessPtr)
                 }
             }
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _makeFromPackedInt64ArrayPointer(
-        from: UnsafeRawPointer
-    ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
-        withUnsafeArgumentPackPointer(from) { __accessPtr in
-            __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                __constructorFromPackedInt64Array(__ptr___temporary, __accessPtr)
-            }
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _make(
+    static internal func make(
         from: Godot.PackedFloat32Array
     ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
+        let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    __constructorFromPackedFloat32Array(__ptr___temporary, __accessPtr)
+                    GodotArrayBindings.constructorFromPackedFloat32Array(__ptr___temporary, __accessPtr)
                 }
             }
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _makeFromPackedFloat32ArrayPointer(
-        from: UnsafeRawPointer
-    ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
-        withUnsafeArgumentPackPointer(from) { __accessPtr in
-            __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                __constructorFromPackedFloat32Array(__ptr___temporary, __accessPtr)
-            }
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _make(
+    static internal func make(
         from: Godot.PackedFloat64Array
     ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
+        let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    __constructorFromPackedFloat64Array(__ptr___temporary, __accessPtr)
+                    GodotArrayBindings.constructorFromPackedFloat64Array(__ptr___temporary, __accessPtr)
                 }
             }
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _makeFromPackedFloat64ArrayPointer(
-        from: UnsafeRawPointer
-    ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
-        withUnsafeArgumentPackPointer(from) { __accessPtr in
-            __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                __constructorFromPackedFloat64Array(__ptr___temporary, __accessPtr)
-            }
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _make(
+    static internal func make(
         from: Godot.PackedStringArray
     ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
+        let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    __constructorFromPackedStringArray(__ptr___temporary, __accessPtr)
+                    GodotArrayBindings.constructorFromPackedStringArray(__ptr___temporary, __accessPtr)
                 }
             }
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _makeFromPackedStringArrayPointer(
-        from: UnsafeRawPointer
-    ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
-        withUnsafeArgumentPackPointer(from) { __accessPtr in
-            __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                __constructorFromPackedStringArray(__ptr___temporary, __accessPtr)
-            }
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _make(
+    static internal func make(
         from: Godot.PackedVector2Array
     ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
+        let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    __constructorFromPackedVector2Array(__ptr___temporary, __accessPtr)
+                    GodotArrayBindings.constructorFromPackedVector2Array(__ptr___temporary, __accessPtr)
                 }
             }
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _makeFromPackedVector2ArrayPointer(
-        from: UnsafeRawPointer
-    ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
-        withUnsafeArgumentPackPointer(from) { __accessPtr in
-            __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                __constructorFromPackedVector2Array(__ptr___temporary, __accessPtr)
-            }
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _make(
+    static internal func make(
         from: Godot.PackedVector3Array
     ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
+        let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    __constructorFromPackedVector3Array(__ptr___temporary, __accessPtr)
+                    GodotArrayBindings.constructorFromPackedVector3Array(__ptr___temporary, __accessPtr)
                 }
             }
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _makeFromPackedVector3ArrayPointer(
-        from: UnsafeRawPointer
-    ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
-        withUnsafeArgumentPackPointer(from) { __accessPtr in
-            __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                __constructorFromPackedVector3Array(__ptr___temporary, __accessPtr)
-            }
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _make(
+    static internal func make(
         from: Godot.PackedColorArray
     ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
+        let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    __constructorFromPackedColorArray(__ptr___temporary, __accessPtr)
+                    GodotArrayBindings.constructorFromPackedColorArray(__ptr___temporary, __accessPtr)
                 }
-            }
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _makeFromPackedColorArrayPointer(
-        from: UnsafeRawPointer
-    ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
-        withUnsafeArgumentPackPointer(from) { __accessPtr in
-            __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                __constructorFromPackedColorArray(__ptr___temporary, __accessPtr)
             }
         }
         return Self.init(opaque: __temporary)
@@ -706,7 +509,7 @@ extension GodotArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotArrayBindings.operatorEqualVariant(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -719,7 +522,7 @@ extension GodotArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotArrayBindings.operatorNotEqualVariant(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -730,7 +533,7 @@ extension GodotArray {
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
-                __operator_binding_not(__ptr_lhs, nil, __temporary)
+                GodotArrayBindings.operatorNot(__ptr_lhs, nil, __temporary)
             }
         }
     }
@@ -742,7 +545,7 @@ extension GodotArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_in_godotdictionary(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotArrayBindings.operatorInGodotdictionary(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -755,7 +558,7 @@ extension GodotArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_equal_godotarray(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotArrayBindings.operatorEqualGodotarray(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -768,7 +571,7 @@ extension GodotArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_not_equal_godotarray(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotArrayBindings.operatorNotEqualGodotarray(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -781,7 +584,7 @@ extension GodotArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_less_godotarray(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotArrayBindings.operatorLessGodotarray(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -794,7 +597,7 @@ extension GodotArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_less_equal_godotarray(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotArrayBindings.operatorLessEqualGodotarray(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -807,7 +610,7 @@ extension GodotArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_greater_godotarray(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotArrayBindings.operatorGreaterGodotarray(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -820,7 +623,7 @@ extension GodotArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_greater_equal_godotarray(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotArrayBindings.operatorGreaterEqualGodotarray(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -833,7 +636,7 @@ extension GodotArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_add_godotarray(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotArrayBindings.operatorAddGodotarray(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -846,7 +649,7 @@ extension GodotArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_in_godotarray(__ptr_lhs, __ptr_rhs, __temporary)
+                    GodotArrayBindings.operatorInGodotarray(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -857,7 +660,7 @@ extension GodotArray {
     ) -> Godot.Variant.Storage {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __indexed_getter(__ptr_self, index, __temporary)
+                GodotArrayBindings.indexedGetter(__ptr_self, index, __temporary)
             }
         }
     }
@@ -866,10 +669,10 @@ extension GodotArray {
         _ value: borrowing Godot.Variant.Storage,
         at index: GDExtensionInt
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                __indexed_setter(__ptr_self, index, __ptr_value)
+                GodotArrayBindings.indexedSetter(__ptr_self, index, __ptr_value)
             }
         }
     }
@@ -877,7 +680,7 @@ extension GodotArray {
     internal func _size() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_size(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                GodotArrayBindings.methodSize(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -885,22 +688,22 @@ extension GodotArray {
     internal func _isEmpty() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_is_empty(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                GodotArrayBindings.methodIsEmpty(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
 
     mutating internal func _clear() {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            __method_binding_clear(__ptr_self, nil, nil, 0)
+            GodotArrayBindings.methodClear(__ptr_self, nil, nil, 0)
         }
     }
 
     internal func _hash() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_hash(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                GodotArrayBindings.methodHash(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -908,11 +711,11 @@ extension GodotArray {
     mutating internal func _assign<Value: Variant.Storable>(
         array: Godot.GodotArray<Value>
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: array) { __ptr_array in
             withUnsafeArgumentPackPointer(__ptr_array) { __accessPtr in
                 withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    __method_binding_assign(__ptr_self, __accessPtr, nil, 1)
+                    GodotArrayBindings.methodAssign(__ptr_self, __accessPtr, nil, 1)
                 }
             }
         }
@@ -921,11 +724,11 @@ extension GodotArray {
     mutating internal func _pushBack(
         value: borrowing Godot.Variant.Storage
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                 withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    __method_binding_push_back(__ptr_self, __accessPtr, nil, 1)
+                    GodotArrayBindings.methodPushBack(__ptr_self, __accessPtr, nil, 1)
                 }
             }
         }
@@ -934,11 +737,11 @@ extension GodotArray {
     mutating internal func _pushFront(
         value: borrowing Godot.Variant.Storage
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                 withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    __method_binding_push_front(__ptr_self, __accessPtr, nil, 1)
+                    GodotArrayBindings.methodPushFront(__ptr_self, __accessPtr, nil, 1)
                 }
             }
         }
@@ -947,11 +750,11 @@ extension GodotArray {
     mutating internal func _append(
         value: borrowing Godot.Variant.Storage
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                 withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    __method_binding_append(__ptr_self, __accessPtr, nil, 1)
+                    GodotArrayBindings.methodAppend(__ptr_self, __accessPtr, nil, 1)
                 }
             }
         }
@@ -960,11 +763,11 @@ extension GodotArray {
     mutating internal func _appendArray<Value: Variant.Storable>(
         _ array: Godot.GodotArray<Value>
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: array) { __ptr_array in
             withUnsafeArgumentPackPointer(__ptr_array) { __accessPtr in
                 withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    __method_binding_append_array(__ptr_self, __accessPtr, nil, 1)
+                    GodotArrayBindings.methodAppendArray(__ptr_self, __accessPtr, nil, 1)
                 }
             }
         }
@@ -974,12 +777,12 @@ extension GodotArray {
     mutating internal func _resize(
         size: Int
     ) -> Int {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
                 withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        __method_binding_resize(__ptr_self, __accessPtr, __temporary, 1)
+                        GodotArrayBindings.methodResize(__ptr_self, __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -991,13 +794,13 @@ extension GodotArray {
         position: Int,
         value: borrowing Godot.Variant.Storage
     ) -> Int {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: position) { __ptr_position in
                 withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                     withUnsafeArgumentPackPointer(__ptr_position, __ptr_value) { __accessPtr in
                         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                            __method_binding_insert(__ptr_self, __accessPtr, __temporary, 2)
+                            GodotArrayBindings.methodInsert(__ptr_self, __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -1008,11 +811,11 @@ extension GodotArray {
     mutating internal func _removeAt(
         position: Int
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: position) { __ptr_position in
             withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
                 withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    __method_binding_remove_at(__ptr_self, __accessPtr, nil, 1)
+                    GodotArrayBindings.methodRemoveAt(__ptr_self, __accessPtr, nil, 1)
                 }
             }
         }
@@ -1021,11 +824,11 @@ extension GodotArray {
     mutating internal func _fill(
         value: borrowing Godot.Variant.Storage
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                 withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    __method_binding_fill(__ptr_self, __accessPtr, nil, 1)
+                    GodotArrayBindings.methodFill(__ptr_self, __accessPtr, nil, 1)
                 }
             }
         }
@@ -1034,11 +837,11 @@ extension GodotArray {
     mutating internal func _erase(
         value: borrowing Godot.Variant.Storage
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                 withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    __method_binding_erase(__ptr_self, __accessPtr, nil, 1)
+                    GodotArrayBindings.methodErase(__ptr_self, __accessPtr, nil, 1)
                 }
             }
         }
@@ -1047,7 +850,7 @@ extension GodotArray {
     internal func _front() -> Godot.Variant.Storage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_front(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                GodotArrayBindings.methodFront(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -1055,7 +858,7 @@ extension GodotArray {
     internal func _back() -> Godot.Variant.Storage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_back(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                GodotArrayBindings.methodBack(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -1063,7 +866,7 @@ extension GodotArray {
     internal func _pickRandom() -> Godot.Variant.Storage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_pick_random(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                GodotArrayBindings.methodPickRandom(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -1077,7 +880,7 @@ extension GodotArray {
                 withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
                     withUnsafeArgumentPackPointer(__ptr_what, __ptr_from) { __accessPtr in
                         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                            __method_binding_find(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
+                            GodotArrayBindings.methodFind(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -1094,7 +897,7 @@ extension GodotArray {
                 withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
                     withUnsafeArgumentPackPointer(__ptr_what, __ptr_from) { __accessPtr in
                         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                            __method_binding_rfind(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
+                            GodotArrayBindings.methodRfind(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -1109,7 +912,7 @@ extension GodotArray {
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_count(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        GodotArrayBindings.methodCount(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -1123,7 +926,7 @@ extension GodotArray {
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_has(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        GodotArrayBindings.methodHas(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -1132,20 +935,20 @@ extension GodotArray {
 
     @discardableResult
     mutating internal func _popBack() -> Godot.Variant.Storage {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                __method_binding_pop_back(__ptr_self, nil, __temporary, 0)
+                GodotArrayBindings.methodPopBack(__ptr_self, nil, __temporary, 0)
             }
         }
     }
 
     @discardableResult
     mutating internal func _popFront() -> Godot.Variant.Storage {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                __method_binding_pop_front(__ptr_self, nil, __temporary, 0)
+                GodotArrayBindings.methodPopFront(__ptr_self, nil, __temporary, 0)
             }
         }
     }
@@ -1154,12 +957,12 @@ extension GodotArray {
     mutating internal func _popAt(
         position: Int
     ) -> Godot.Variant.Storage {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: position) { __ptr_position in
                 withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        __method_binding_pop_at(__ptr_self, __accessPtr, __temporary, 1)
+                        GodotArrayBindings.methodPopAt(__ptr_self, __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -1167,29 +970,29 @@ extension GodotArray {
     }
 
     mutating internal func _sort() {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            __method_binding_sort(__ptr_self, nil, nil, 0)
+            GodotArrayBindings.methodSort(__ptr_self, nil, nil, 0)
         }
     }
 
     mutating internal func _sortCustom(
         `func`: Godot.Callable
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: `func`) { __ptr_func in
             withUnsafeArgumentPackPointer(__ptr_func) { __accessPtr in
                 withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    __method_binding_sort_custom(__ptr_self, __accessPtr, nil, 1)
+                    GodotArrayBindings.methodSortCustom(__ptr_self, __accessPtr, nil, 1)
                 }
             }
         }
     }
 
     mutating internal func _shuffle() {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            __method_binding_shuffle(__ptr_self, nil, nil, 0)
+            GodotArrayBindings.methodShuffle(__ptr_self, nil, nil, 0)
         }
     }
 
@@ -1202,7 +1005,7 @@ extension GodotArray {
                 withTransferrableUnsafeRawPointer(to: before) { __ptr_before in
                     withUnsafeArgumentPackPointer(__ptr_value, __ptr_before) { __accessPtr in
                         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                            __method_binding_bsearch(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
+                            GodotArrayBindings.methodBsearch(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -1221,7 +1024,7 @@ extension GodotArray {
                     withTransferrableUnsafeRawPointer(to: before) { __ptr_before in
                         withUnsafeArgumentPackPointer(__ptr_value, __ptr_func, __ptr_before) { __accessPtr in
                             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                                __method_binding_bsearch_custom(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 3)
+                                GodotArrayBindings.methodBsearchCustom(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 3)
                             }
                         }
                     }
@@ -1231,9 +1034,9 @@ extension GodotArray {
     }
 
     mutating internal func _reverse() {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            __method_binding_reverse(__ptr_self, nil, nil, 0)
+            GodotArrayBindings.methodReverse(__ptr_self, nil, nil, 0)
         }
     }
 
@@ -1244,7 +1047,7 @@ extension GodotArray {
             withTransferrableUnsafeRawPointer(to: deep) { __ptr_deep in
                 withUnsafeArgumentPackPointer(__ptr_deep) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_duplicate(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        GodotArrayBindings.methodDuplicate(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -1264,7 +1067,7 @@ extension GodotArray {
                         withTransferrableUnsafeRawPointer(to: deep) { __ptr_deep in
                             withUnsafeArgumentPackPointer(__ptr_begin, __ptr_end, __ptr_step, __ptr_deep) { __accessPtr in
                                 withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                                    __method_binding_slice(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 4)
+                                    GodotArrayBindings.methodSlice(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 4)
                                 }
                             }
                         }
@@ -1281,7 +1084,7 @@ extension GodotArray {
             withTransferrableUnsafeRawPointer(to: method) { __ptr_method in
                 withUnsafeArgumentPackPointer(__ptr_method) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_filter(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        GodotArrayBindings.methodFilter(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -1295,7 +1098,7 @@ extension GodotArray {
             withTransferrableUnsafeRawPointer(to: method) { __ptr_method in
                 withUnsafeArgumentPackPointer(__ptr_method) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_map(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        GodotArrayBindings.methodMap(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -1311,7 +1114,7 @@ extension GodotArray {
                 withTransferrableUnsafeRawPointer(to: accum) { __ptr_accum in
                     withUnsafeArgumentPackPointer(__ptr_method, __ptr_accum) { __accessPtr in
                         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                            __method_binding_reduce(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
+                            GodotArrayBindings.methodReduce(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -1326,7 +1129,7 @@ extension GodotArray {
             withTransferrableUnsafeRawPointer(to: method) { __ptr_method in
                 withUnsafeArgumentPackPointer(__ptr_method) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_any(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        GodotArrayBindings.methodAny(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -1340,7 +1143,7 @@ extension GodotArray {
             withTransferrableUnsafeRawPointer(to: method) { __ptr_method in
                 withUnsafeArgumentPackPointer(__ptr_method) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_all(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        GodotArrayBindings.methodAll(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -1350,7 +1153,7 @@ extension GodotArray {
     internal func _max() -> Godot.Variant.Storage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_max(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                GodotArrayBindings.methodMax(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -1358,7 +1161,7 @@ extension GodotArray {
     internal func _min() -> Godot.Variant.Storage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_min(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                GodotArrayBindings.methodMin(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -1366,7 +1169,7 @@ extension GodotArray {
     internal func _isTyped() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_is_typed(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                GodotArrayBindings.methodIsTyped(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -1378,7 +1181,7 @@ extension GodotArray {
             withTransferrableUnsafeRawPointer(to: array) { __ptr_array in
                 withUnsafeArgumentPackPointer(__ptr_array) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_is_same_typed(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        GodotArrayBindings.methodIsSameTyped(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -1388,7 +1191,7 @@ extension GodotArray {
     internal func _typedBuiltin() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_get_typed_builtin(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                GodotArrayBindings.methodGetTypedBuiltin(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -1396,7 +1199,7 @@ extension GodotArray {
     internal func _typedClassName() -> Godot.GodotStringName {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_get_typed_class_name(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                GodotArrayBindings.methodGetTypedClassName(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -1404,22 +1207,22 @@ extension GodotArray {
     internal func _typedScript() -> Godot.Variant.Storage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_get_typed_script(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                GodotArrayBindings.methodGetTypedScript(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
 
     mutating internal func _makeReadOnly() {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            __method_binding_make_read_only(__ptr_self, nil, nil, 0)
+            GodotArrayBindings.methodMakeReadOnly(__ptr_self, nil, nil, 0)
         }
     }
 
     internal func _isReadOnly() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_is_read_only(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                GodotArrayBindings.methodIsReadOnly(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }

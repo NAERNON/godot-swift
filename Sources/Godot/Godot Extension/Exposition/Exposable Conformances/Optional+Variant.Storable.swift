@@ -28,7 +28,7 @@ extension Optional: Variant.Storable where Wrapped : Variant.Storable {
     public static func convertFromStorage(
         _ storage: borrowing Variant.Storage
     ) throws -> Optional<Wrapped> {
-        if storage.isNil {
+        if storage.isEmpty {
             return nil
         } else {
             return try Wrapped.convertFromStorage(storage)
@@ -38,7 +38,7 @@ extension Optional: Variant.Storable where Wrapped : Variant.Storable {
     public static func convertFromCheckedStorage(
         _ storage: borrowing Variant.Storage
     ) -> Self {
-        if storage.isNil {
+        if storage.isEmpty {
             nil
         } else {
             Wrapped.convertFromCheckedStorage(storage)
@@ -48,7 +48,7 @@ extension Optional: Variant.Storable where Wrapped : Variant.Storable {
     public static func convertFromCheckedStorage(
         consuming storage: consuming Variant.Storage
     ) -> Self {
-        if storage.isNil {
+        if storage.isEmpty {
             nil
         } else {
             Wrapped.convertFromCheckedStorage(consuming: storage)

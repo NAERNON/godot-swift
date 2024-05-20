@@ -4,96 +4,82 @@
 
 import GodotExtensionHeaders
 
-private var __constructor: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_RID, 0)!
-}()
+internal enum RIDBindings {
+    static private var areBindingsLoaded = false
 
-private var __constructorFromRID: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_RID, 1)!
-}()
-
-private var __operator_binding_equal_variant: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_RID, GDEXTENSION_VARIANT_TYPE_NIL)!
-}()
-
-private var __operator_binding_not_equal_variant: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_RID, GDEXTENSION_VARIANT_TYPE_NIL)!
-}()
-
-private var __operator_binding_not: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT, GDEXTENSION_VARIANT_TYPE_RID, GDEXTENSION_VARIANT_TYPE_NIL)!
-}()
-
-private var __operator_binding_equal_rid: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_RID, GDEXTENSION_VARIANT_TYPE_RID)!
-}()
-
-private var __operator_binding_not_equal_rid: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_RID, GDEXTENSION_VARIANT_TYPE_RID)!
-}()
-
-private var __operator_binding_less_rid: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_LESS, GDEXTENSION_VARIANT_TYPE_RID, GDEXTENSION_VARIANT_TYPE_RID)!
-}()
-
-private var __operator_binding_less_equal_rid: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_LESS_EQUAL, GDEXTENSION_VARIANT_TYPE_RID, GDEXTENSION_VARIANT_TYPE_RID)!
-}()
-
-private var __operator_binding_greater_rid: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_GREATER, GDEXTENSION_VARIANT_TYPE_RID, GDEXTENSION_VARIANT_TYPE_RID)!
-}()
-
-private var __operator_binding_greater_equal_rid: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_GREATER_EQUAL, GDEXTENSION_VARIANT_TYPE_RID, GDEXTENSION_VARIANT_TYPE_RID)!
-}()
-
-private var __method_binding_is_valid: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "is_valid").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_RID, __ptr__method_name, 3918633141)!
+    internal static func loadBindings() {
+        precondition(!areBindingsLoaded, "RID bindings are already loaded.")
+        areBindingsLoaded = true
+        constructor = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_RID, 0)!
+        constructorFromRID = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_RID, 1)!
+        operatorEqualVariant = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_RID, GDEXTENSION_VARIANT_TYPE_NIL)!
+        operatorNotEqualVariant = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_RID, GDEXTENSION_VARIANT_TYPE_NIL)!
+        operatorNot = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT, GDEXTENSION_VARIANT_TYPE_RID, GDEXTENSION_VARIANT_TYPE_NIL)!
+        operatorEqualRID = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_RID, GDEXTENSION_VARIANT_TYPE_RID)!
+        operatorNotEqualRID = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_RID, GDEXTENSION_VARIANT_TYPE_RID)!
+        operatorLessRID = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_LESS, GDEXTENSION_VARIANT_TYPE_RID, GDEXTENSION_VARIANT_TYPE_RID)!
+        operatorLessEqualRID = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_LESS_EQUAL, GDEXTENSION_VARIANT_TYPE_RID, GDEXTENSION_VARIANT_TYPE_RID)!
+        operatorGreaterRID = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_GREATER, GDEXTENSION_VARIANT_TYPE_RID, GDEXTENSION_VARIANT_TYPE_RID)!
+        operatorGreaterEqualRID = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_GREATER_EQUAL, GDEXTENSION_VARIANT_TYPE_RID, GDEXTENSION_VARIANT_TYPE_RID)!
+        methodIsValid = GodotStringName(swiftStaticString: "is_valid").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_RID, __ptr__method_name, 3918633141)!
+        }
+        methodGetID = GodotStringName(swiftStaticString: "get_id").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_RID, __ptr__method_name, 3173160232)!
+        }
     }
-}()
 
-private var __method_binding_get_id: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_id").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_RID, __ptr__method_name, 3173160232)!
-    }
-}()
+    static private (set) var constructor: GDExtensionPtrConstructor!
+
+    static private (set) var constructorFromRID: GDExtensionPtrConstructor!
+
+    static private (set) var operatorEqualVariant: GDExtensionPtrOperatorEvaluator!
+
+    static private (set) var operatorNotEqualVariant: GDExtensionPtrOperatorEvaluator!
+
+    static private (set) var operatorNot: GDExtensionPtrOperatorEvaluator!
+
+    static private (set) var operatorEqualRID: GDExtensionPtrOperatorEvaluator!
+
+    static private (set) var operatorNotEqualRID: GDExtensionPtrOperatorEvaluator!
+
+    static private (set) var operatorLessRID: GDExtensionPtrOperatorEvaluator!
+
+    static private (set) var operatorLessEqualRID: GDExtensionPtrOperatorEvaluator!
+
+    static private (set) var operatorGreaterRID: GDExtensionPtrOperatorEvaluator!
+
+    static private (set) var operatorGreaterEqualRID: GDExtensionPtrOperatorEvaluator!
+
+    static private (set) var methodIsValid: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodGetID: GDExtensionPtrBuiltInMethod!
+}
 
 extension RID {
-    static internal func makeOpaque() -> Opaque {
-        Opaque(size: 8, destructorPtr: nil)
+    static internal func makeOpaque(
+        useDestructor: Bool = true
+    ) -> Opaque {
+        Opaque(size: 8, destructorPtr: useDestructor ? nil : nil)
     }
 
-    static internal func _make() -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: nil)
+    static internal func make() -> Self {
+        let __temporary: Opaque = makeOpaque()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor(__ptr___temporary, nil)
+            RIDBindings.constructor(__ptr___temporary, nil)
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _make(
+    static internal func make(
         from: Godot.RID
     ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: nil)
+        let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    __constructorFromRID(__ptr___temporary, __accessPtr)
+                    RIDBindings.constructorFromRID(__ptr___temporary, __accessPtr)
                 }
-            }
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _makeFromRIDPointer(
-        from: UnsafeRawPointer
-    ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: nil)
-        withUnsafeArgumentPackPointer(from) { __accessPtr in
-            __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                __constructorFromRID(__ptr___temporary, __accessPtr)
             }
         }
         return Self.init(opaque: __temporary)
@@ -106,7 +92,7 @@ extension RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)
+                    RIDBindings.operatorEqualVariant(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -119,7 +105,7 @@ extension RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)
+                    RIDBindings.operatorNotEqualVariant(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -130,7 +116,7 @@ extension RID {
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
-                __operator_binding_not(__ptr_lhs, nil, __temporary)
+                RIDBindings.operatorNot(__ptr_lhs, nil, __temporary)
             }
         }
     }
@@ -142,7 +128,7 @@ extension RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_equal_rid(__ptr_lhs, __ptr_rhs, __temporary)
+                    RIDBindings.operatorEqualRID(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -155,7 +141,7 @@ extension RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_not_equal_rid(__ptr_lhs, __ptr_rhs, __temporary)
+                    RIDBindings.operatorNotEqualRID(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -168,7 +154,7 @@ extension RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_less_rid(__ptr_lhs, __ptr_rhs, __temporary)
+                    RIDBindings.operatorLessRID(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -181,7 +167,7 @@ extension RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_less_equal_rid(__ptr_lhs, __ptr_rhs, __temporary)
+                    RIDBindings.operatorLessEqualRID(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -194,7 +180,7 @@ extension RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_greater_rid(__ptr_lhs, __ptr_rhs, __temporary)
+                    RIDBindings.operatorGreaterRID(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -207,7 +193,7 @@ extension RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_greater_equal_rid(__ptr_lhs, __ptr_rhs, __temporary)
+                    RIDBindings.operatorGreaterEqualRID(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -216,7 +202,7 @@ extension RID {
     internal func _isValid() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_is_valid(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                RIDBindings.methodIsValid(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -224,7 +210,7 @@ extension RID {
     internal func _id() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_get_id(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                RIDBindings.methodGetID(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }

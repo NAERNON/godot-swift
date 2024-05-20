@@ -1,8 +1,16 @@
 import GodotExtensionHeaders
 
-@GodotOpaqueBuiltinClass
+@BuiltinOpaque
 @GodotPackedArray
-public struct PackedByteArray {}
+public struct PackedByteArray {
+    internal mutating func makeUniqueIfSharedOpaque() {
+        guard !isKnownUniquelyReferenced(&opaque) else {
+            return
+        }
+        
+        self = Self.make(from: self)
+    }
+}
 
 extension PackedByteArray {
     public typealias Element = UInt8
@@ -10,17 +18,17 @@ extension PackedByteArray {
     // MARK: Constructors
     
     public init() {
-        self = Self._make()
+        self = Self.make()
     }
     
     public init(array: GodotArray<Element>) {
-        self = Self._make(from: array)
+        self = Self.make(from: array)
     }
     
     public func withUnsafeBytes<Result>(
         _ body: (UnsafeBufferPointer<UInt8>) throws -> Result
     ) rethrows -> Result {
-        let startPointer = self.withUnsafeRawPointer { extensionTypePtr in
+        let startPointer = self.withUnsafeOpaquePointer { extensionTypePtr in
             GodotExtension.Interface.packedByteArrayOperatorIndexConst(
                 extensionTypePtr, 0
             )
@@ -37,7 +45,7 @@ extension PackedByteArray {
     public mutating func withUnsafeMutableBytes<Result>(
         _ body: (UnsafeMutableBufferPointer<UInt8>) throws -> Result
     ) rethrows -> Result {
-        let startPointer = self.withUnsafeMutableRawPointer { extensionTypePtr in
+        let startPointer = self.withUnsafeMutableOpaquePointer { extensionTypePtr in
             GodotExtension.Interface.packedByteArrayOperatorIndex(
                 extensionTypePtr, 0
             )
@@ -49,12 +57,6 @@ extension PackedByteArray {
         )
         
         return try body(buffer)
-    }
-    
-    // MARK: Copy
-    
-    internal mutating func withCopiedOpaque() -> Self {
-        self._duplicate()
     }
     
     // MARK: Methods & variables

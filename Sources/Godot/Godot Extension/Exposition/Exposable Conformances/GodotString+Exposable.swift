@@ -8,7 +8,7 @@ extension GodotString: Variant.Storable {
         let storage = Variant.Storage()
         
         storage.withUnsafeMutableRawPointer { storagePtr in
-            value.withUnsafeMutableRawPointer { valuePtr in
+            value.withUnsafeMutableOpaquePointer { valuePtr in
                 fromTypeVariantConstructor(storagePtr, valuePtr)
             }
         }
@@ -22,7 +22,7 @@ extension GodotString: Variant.Storable {
         var newValue = Self()
         
         storage.withUnsafeMutableRawPointer { storagePtr in
-            newValue.withUnsafeMutableRawPointer { newValuePtr in
+            newValue.withUnsafeMutableOpaquePointer { newValuePtr in
                 toTypeVariantConstructor(newValuePtr, storagePtr)
             }
         }
@@ -45,12 +45,25 @@ extension GodotString: Hintable {
 extension GodotString: Exposable {
     public static let variantRepresentationType: Variant.RepresentationType = .string
     
+    public consuming func transferToGodot(
+        unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
+    ) {
+        withUnsafeOpaquePointer { selfPtr in
+            withUnsafeArgumentPackPointer(selfPtr) { accessPtr in
+                GodotStringBindings.constructorFromGodotString(destinationUnsafePointer, accessPtr)
+            }
+        }
+    }
+
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        Self._makeFromGodotStringPointer(from: unsafePointer!)
+        let opaque: Opaque = makeOpaque()
+        withUnsafeArgumentPackPointer(unsafePointer!) { accessPtr in
+            opaque.withUnsafeMutableRawPointer { opaquePtr in
+                GodotStringBindings.constructorFromGodotString(opaquePtr, accessPtr)
+            }
+        }
+        return Self.init(opaque: opaque)
     }
-    
-    // func transferToGodot
-    // implemented in GodotOpaqueBuiltinClass macro
 }

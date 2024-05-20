@@ -9,10 +9,12 @@ where Key == Variant, AssociatedValue == Variant
     public static func convertToStorage(
         _ value: consuming Self
     ) -> Variant.Storage {
+        value.makeUniqueIfSharedOpaque()
+        
         let storage = Variant.Storage()
         
         storage.withUnsafeMutableRawPointer { storagePtr in
-            value.withUnsafeMutableRawPointer { valuePtr in
+            value.withUnsafeMutableOpaquePointer { valuePtr in
                 fromTypeVariantConstructor(storagePtr, valuePtr)
             }
         }
@@ -26,7 +28,7 @@ where Key == Variant, AssociatedValue == Variant
         var newValue = Self()
         
         storage.withUnsafeMutableRawPointer { storagePtr in
-            newValue.withUnsafeMutableRawPointer { newValuePtr in
+            newValue.withUnsafeMutableOpaquePointer { newValuePtr in
                 toTypeVariantConstructor(newValuePtr, storagePtr)
             }
         }
@@ -58,9 +60,12 @@ where Key == Variant, AssociatedValue == Variant
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        Self._makeFromGodotDictionaryPointer(from: unsafePointer!)
+        let opaque: Opaque = makeOpaque()
+        withUnsafeArgumentPackPointer(unsafePointer!) { accessPtr in
+            opaque.withUnsafeMutableRawPointer { opaquePtr in
+                GodotDictionaryBindings.constructorFromGodotDictionary(opaquePtr, accessPtr)
+            }
+        }
+        return Self.init(opaque: opaque)._duplicate(deep: false)
     }
-    
-    // func transferToGodot
-    // implemented in GodotOpaqueBuiltinClass macro
 }

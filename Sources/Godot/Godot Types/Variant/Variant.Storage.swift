@@ -132,8 +132,8 @@ extension Variant {
             .init(rawValue: extensionType.rawValue)!
         }
         
-        /// Returns a Boolean value indicating whether the storage is nil.
-        public var isNil: Bool {
+        /// A Boolean value indicating whether this storage is nil.
+        public var isEmpty: Bool {
             extensionType == GDEXTENSION_VARIANT_TYPE_NIL
         }
         
@@ -144,7 +144,7 @@ extension Variant {
         public var description: String {
             var string = GodotString()
             
-            string.withUnsafeMutableRawPointer { stringNativeTypePtr in
+            string.withUnsafeMutableOpaquePointer { stringNativeTypePtr in
                 GodotExtension.Interface.variantStringify(
                     rawData.baseAddress!,
                     stringNativeTypePtr

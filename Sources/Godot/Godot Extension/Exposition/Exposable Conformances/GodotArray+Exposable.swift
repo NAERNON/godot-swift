@@ -27,10 +27,12 @@ extension GodotArray: Variant.Storable {
     public static func convertToStorage(
         _ value: consuming Self
     ) -> Variant.Storage {
+        value.makeUniqueIfSharedOpaque()
+        
         let storage = Variant.Storage()
         
         storage.withUnsafeMutableRawPointer { storagePtr in
-            value.withUnsafeMutableRawPointer { valuePtr in
+            value.withUnsafeMutableOpaquePointer { valuePtr in
                 fromTypeVariantConstructor(storagePtr, valuePtr)
             }
         }
@@ -86,7 +88,7 @@ extension GodotArray: Variant.Storable {
         var newValue = Self()
         
         storage.withUnsafeMutableRawPointer { storagePtr in
-            newValue.withUnsafeMutableRawPointer { newValuePtr in
+            newValue.withUnsafeMutableOpaquePointer { newValuePtr in
                 toTypeVariantConstructor(newValuePtr, storagePtr)
             }
         }
@@ -96,7 +98,7 @@ extension GodotArray: Variant.Storable {
         // This is performed in O(1).
         if Element.variantStorageType == nil {
             let emptyScript: Object? = nil
-            return Self._make(
+            return Self.make(
                 base: newValue,
                 type: 0,
                 className: GodotStringName(),
@@ -127,9 +129,12 @@ extension GodotArray: Exposable where Element : Exposable {
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        Self._makeFromGodotArrayPointer(from: unsafePointer!)
+        let opaque: Opaque = makeOpaque()
+        withUnsafeArgumentPackPointer(unsafePointer!) { accessPtr in
+            opaque.withUnsafeMutableRawPointer { opaquePtr in
+                GodotArrayBindings.constructorFromGodotArray(opaquePtr, accessPtr)
+            }
+        }
+        return Self.init(opaque: opaque)._duplicate(deep: false)
     }
-    
-    // func transferToGodot
-    // implemented in GodotOpaqueBuiltinClass macro
 }

@@ -48,7 +48,7 @@ public final class ClassRegistrar {
         for className in classesToUnregister {
             let classBinding = customClassNameToClassBinding.removeValue(forKey: className)!
             
-            classBinding.name.withUnsafeRawPointer { namePtr in
+            classBinding.name.withUnsafeOpaquePointer { namePtr in
                 GodotExtension.Interface.classdbUnregisterExtensionClass(
                     GodotExtension.libraryPtr,
                     namePtr
@@ -189,8 +189,8 @@ public final class ClassRegistrar {
             class_userdata: Unmanaged.passUnretained(classBinding).toOpaque()
         )
         
-        className.withUnsafeRawPointer { namePtr in
-            superclassName.withUnsafeRawPointer { superclassNamePtr in
+        className.withUnsafeOpaquePointer { namePtr in
+            superclassName.withUnsafeOpaquePointer { superclassNamePtr in
                 withUnsafePointer(to: godotClassInfo) { classInfoPtr in
                     GodotExtension.Interface.classdbRegisterExtensionClass2(
                         GodotExtension.libraryPtr,
@@ -255,7 +255,7 @@ public final class ClassRegistrar {
         )
         classBinding.appendFunction(functionBinding)
         
-        functionName.withUnsafeRawPointer { functionNamePtr in
+        functionName.withUnsafeOpaquePointer { functionNamePtr in
             functionBinding.withGodotExtensionPropertiesInfo { propertiesInfo in
                 functionBinding.withGodotExtensionArgumentsMetadata { argumentsMetadata in
                     functionBinding.withLastDefaultArguments { defaultArguments in
@@ -274,7 +274,7 @@ public final class ClassRegistrar {
                             default_argument_count: UInt32(functionBinding.lastDefaultArgumentsCount),
                             default_arguments: defaultArguments)
                         
-                        className.withUnsafeRawPointer { namePtr in
+                        className.withUnsafeOpaquePointer { namePtr in
                             withUnsafePointer(to: godotMethodInfo) { methodInfoPtr in
                                 GodotExtension.Interface.classdbRegisterExtensionClassMethod(
                                     GodotExtension.libraryPtr,
@@ -533,12 +533,12 @@ public final class ClassRegistrar {
             parameter.isExported = true
         }
         
-        getterName.withUnsafeRawPointer { getterPtr in
-            (setterName ?? GodotStringName()).withUnsafeRawPointer { setterPtr in
+        getterName.withUnsafeOpaquePointer { getterPtr in
+            (setterName ?? GodotStringName()).withUnsafeOpaquePointer { setterPtr in
                 var propertyInfo = parameter.propertyInfo
                 propertyInfo.withGodotExtensionPropertyInfo { propertyInfo in
                     withUnsafePointer(to: propertyInfo) { propertyInfoPtr in
-                        className.withUnsafeRawPointer { namePtr in
+                        className.withUnsafeOpaquePointer { namePtr in
                             GodotExtension.Interface.classdbRegisterExtensionClassProperty(
                                 GodotExtension.libraryPtr,
                                 namePtr,
@@ -579,9 +579,9 @@ public final class ClassRegistrar {
             return false
         }
         
-        prefix.withUnsafeRawPointer { prefixPtr in
-            groupName.withUnsafeRawPointer { groupNamePtr in
-                className.withUnsafeRawPointer { namePtr in
+        prefix.withUnsafeOpaquePointer { prefixPtr in
+            groupName.withUnsafeOpaquePointer { groupNamePtr in
+                className.withUnsafeOpaquePointer { namePtr in
                     GodotExtension.Interface.classdbRegisterExtensionClassPropertyGroup(
                         GodotExtension.libraryPtr,
                         namePtr,
@@ -617,9 +617,9 @@ public final class ClassRegistrar {
             return false
         }
         
-        prefix.withUnsafeRawPointer { prefixPtr in
-            subgroupName.withUnsafeRawPointer { subgroupNamePtr in
-                className.withUnsafeRawPointer { namePtr in
+        prefix.withUnsafeOpaquePointer { prefixPtr in
+            subgroupName.withUnsafeOpaquePointer { subgroupNamePtr in
+                className.withUnsafeOpaquePointer { namePtr in
                     GodotExtension.Interface.classdbRegisterExtensionClassPropertySubgroup(
                         GodotExtension.libraryPtr,
                         namePtr,
@@ -671,10 +671,10 @@ public final class ClassRegistrar {
         )
         classBinding.appendEnum(enumBinding)
         
-        enumName.withUnsafeRawPointer { namePtr in
-            className.withUnsafeRawPointer { classNamePtr in
+        enumName.withUnsafeOpaquePointer { namePtr in
+            className.withUnsafeOpaquePointer { classNamePtr in
                 for (caseName, value) in values {
-                    caseName.withUnsafeRawPointer { caseNamePtr in
+                    caseName.withUnsafeOpaquePointer { caseNamePtr in
                         GodotExtension.Interface.classdbRegisterExtensionClassIntegerConstant(
                             GodotExtension.libraryPtr, 
                             classNamePtr,
@@ -728,9 +728,9 @@ public final class ClassRegistrar {
         )
         classBinding.appendSignal(signalBinding)
         
-        signalName.withUnsafeRawPointer { signalNamePtr in
+        signalName.withUnsafeOpaquePointer { signalNamePtr in
             signalBinding.withGodotExtensionPropertiesInfo { propertiesInfo in
-                className.withUnsafeRawPointer { namePtr in
+                className.withUnsafeOpaquePointer { namePtr in
                     GodotExtension.Interface.classdbRegisterExtensionClassSignal(
                         GodotExtension.libraryPtr, 
                         namePtr,

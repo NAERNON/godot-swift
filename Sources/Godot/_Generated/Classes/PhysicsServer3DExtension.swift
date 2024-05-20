@@ -1159,8 +1159,8 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
     }
 
     internal static var __method_binding_body_test_motion_is_excluding_body: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_test_motion_is_excluding_body").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "body_test_motion_is_excluding_body").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
         }
         }
@@ -1186,8 +1186,8 @@ open class PhysicsServer3DExtension: PhysicsServer3D {
     }
 
     internal static var __method_binding_body_test_motion_is_excluding_object: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_test_motion_is_excluding_object").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "body_test_motion_is_excluding_object").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
         }
         }

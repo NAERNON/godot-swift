@@ -8,7 +8,7 @@ extension PackedVector3Array: Variant.Storable {
         let storage = Variant.Storage()
         
         storage.withUnsafeMutableRawPointer { storagePtr in
-            value.withUnsafeMutableRawPointer { valuePtr in
+            value.withUnsafeMutableOpaquePointer { valuePtr in
                 fromTypeVariantConstructor(storagePtr, valuePtr)
             }
         }
@@ -22,7 +22,7 @@ extension PackedVector3Array: Variant.Storable {
         var newValue = Self()
         
         storage.withUnsafeMutableRawPointer { storagePtr in
-            newValue.withUnsafeMutableRawPointer { newValuePtr in
+            newValue.withUnsafeMutableOpaquePointer { newValuePtr in
                 toTypeVariantConstructor(newValuePtr, storagePtr)
             }
         }
@@ -45,12 +45,25 @@ extension PackedVector3Array: Hintable {
 extension PackedVector3Array: Exposable {
     public static let variantRepresentationType: Variant.RepresentationType = .packedVector3Array
     
+    public consuming func transferToGodot(
+        unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
+    ) {
+        withUnsafeOpaquePointer { selfPtr in
+            withUnsafeArgumentPackPointer(selfPtr) { accessPtr in
+                PackedVector3ArrayBindings.constructorFromPackedVector3Array(destinationUnsafePointer, accessPtr)
+            }
+        }
+    }
+
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        Self._makeFromPackedVector3ArrayPointer(from: unsafePointer!)
+        let opaque: Opaque = makeOpaque()
+        withUnsafeArgumentPackPointer(unsafePointer!) { accessPtr in
+            opaque.withUnsafeMutableRawPointer { opaquePtr in
+                PackedVector3ArrayBindings.constructorFromPackedVector3Array(opaquePtr, accessPtr)
+            }
+        }
+        return Self.init(opaque: opaque)
     }
-    
-    // func transferToGodot
-    // implemented in GodotOpaqueBuiltinClass macro
 }

@@ -1,8 +1,27 @@
 import GodotExtensionHeaders
 
-@GodotOpaqueBuiltinClass
+@BuiltinOpaque
 public struct GodotArray<Element>
-where Element : Variant.Storable {}
+where Element : Variant.Storable {
+    internal mutating func makeUniqueIfSharedOpaque() {
+        guard !isKnownUniquelyReferenced(&opaque) else {
+            return
+        }
+        
+        self = self._duplicate(deep: false)
+    }
+    
+    public consuming func transferToGodot(
+        unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
+    ) {
+        var new = consume self
+        new.makeUniqueIfSharedOpaque()
+        new.opaque.withUnsafeMutableRawPointer { ptr in
+            destinationUnsafePointer.copyMemory(from: ptr, byteCount: new.opaque.size)
+        }
+        new.opaque.removeDestructor()
+    }
+}
 
 public typealias AnyGodotArray = GodotArray<Variant>
 
@@ -10,14 +29,8 @@ extension GodotArray {
     // MARK: Constructors
     
     public init() {
-        self = Self._make()
+        self = Self.make()
         setTypedIfApplicable()
-    }
-    
-    // MARK: Copy
-    
-    internal mutating func withCopiedOpaque() -> Self {
-        self._duplicate(deep: true)
     }
     
     // MARK: Type
@@ -27,8 +40,8 @@ extension GodotArray {
             return
         }
         
-        withUnsafeMutableRawPointer { ptr in
-            Element._exposedClassName.withUnsafeRawPointer { classNamePtr in
+        withUnsafeMutableOpaquePointer { ptr in
+            Element._exposedClassName.withUnsafeOpaquePointer { classNamePtr in
                 Variant.Storage().withUnsafeRawPointer { scriptPtr in
                     // TODO: Check script (last parameter)
                     GodotExtension.Interface.arraySetTyped(
@@ -45,7 +58,7 @@ extension GodotArray {
     public func eraseToAnyArray() -> AnyGodotArray {
         // This is performed in O(1).
         let emptyScript: Object? = nil
-        return AnyGodotArray._make(
+        return AnyGodotArray.make(
             base: self,
             type: 0,
             className: GodotStringName(),
@@ -139,7 +152,7 @@ extension GodotArray: RangeReplaceableCollection {
     
     public mutating func popLast() -> Element? {
         let element = _popBack()
-        if element.isNil {
+        if element.isEmpty {
             return nil
         } else {
             return Element.convertFromCheckedStorage(consuming: _popBack())

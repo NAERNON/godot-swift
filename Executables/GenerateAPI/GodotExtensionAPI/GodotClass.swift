@@ -327,8 +327,8 @@ struct GodotClass: Decodable {
         if generateBinding {
             """
             internal static var \(raw: method.ptrIdentifier): GDExtensionMethodBindPtr = {
-                _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-                GodotStringName(swiftStaticString: \(literal: method.name)).withUnsafeRawPointer { __ptr__method_name in
+                _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+                GodotStringName(swiftStaticString: \(literal: method.name)).withUnsafeOpaquePointer { __ptr__method_name in
                 return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, \(literal: method.hash!))!
                 }
                 }

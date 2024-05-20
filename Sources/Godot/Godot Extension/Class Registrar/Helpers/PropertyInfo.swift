@@ -48,9 +48,9 @@ extension ClassRegistrar {
         }
         
         mutating func withGodotExtensionPropertyInfo(_ body: (GDExtensionPropertyInfo) -> Void) {
-            name.withUnsafeMutableRawPointer { namePtr in
-                className.withUnsafeMutableRawPointer { classNamePtr in
-                    hintString.withUnsafeMutableRawPointer { hintStringPtr in
+            name.withUnsafeMutableOpaquePointer { namePtr in
+                className.withUnsafeMutableOpaquePointer { classNamePtr in
+                    hintString.withUnsafeMutableOpaquePointer { hintStringPtr in
                         let info = GDExtensionPropertyInfo(
                             type: variantRepresentationType.storageType.extensionType,
                             name: namePtr,

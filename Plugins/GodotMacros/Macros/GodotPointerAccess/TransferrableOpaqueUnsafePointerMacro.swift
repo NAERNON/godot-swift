@@ -17,14 +17,14 @@ public enum TransferrableOpaqueUnsafePointerMacro: DeclarationMacro {
             to value: \(type),
             _ body: (UnsafeRawPointer) throws -> Result
         ) rethrows -> Result {
-            try value.withUnsafeRawPointer(body)
+            try value.withUnsafeOpaquePointer(body)
         }
         
         internal func withTransferrableUnsafeMutableRawPointer<Result>(
             to value: inout \(type),
             _ body: (UnsafeMutableRawPointer) throws -> Result
         ) rethrows -> Result {
-            try value.withUnsafeMutableRawPointer(body)
+            try value.withUnsafeMutableOpaquePointer(body)
         }
         
         internal func fromInitializingTransferrableUnsafeRawPointer(

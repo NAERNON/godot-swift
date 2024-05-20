@@ -69,14 +69,14 @@ internal func withTransferrableUnsafeRawPointer<Result, Element>(
     to value: GodotArray<Element>,
     _ body: (UnsafeRawPointer) throws -> Result
 ) rethrows -> Result {
-    try value.withUnsafeRawPointer(body)
+    try value.withUnsafeOpaquePointer(body)
 }
 
 internal func withTransferrableUnsafeMutableRawPointer<Result, Element>(
     to value: inout GodotArray<Element>,
     _ body: (UnsafeMutableRawPointer) throws -> Result
 ) rethrows -> Result {
-    try value.withUnsafeMutableRawPointer(body)
+    try value.withUnsafeMutableOpaquePointer(body)
 }
 
 internal func fromInitializingTransferrableUnsafeRawPointer<Element>(
@@ -93,14 +93,14 @@ internal func withTransferrableUnsafeRawPointer<Result, Key, AssociatedValue>(
     to value: GodotDictionary<Key, AssociatedValue>,
     _ body: (UnsafeRawPointer) throws -> Result
 ) rethrows -> Result {
-    try value.withUnsafeRawPointer(body)
+    try value.withUnsafeOpaquePointer(body)
 }
 
 internal func withTransferrableUnsafeMutableRawPointer<Result, Key, AssociatedValue>(
     to value: inout GodotDictionary<Key, AssociatedValue>,
     _ body: (UnsafeMutableRawPointer) throws -> Result
 ) rethrows -> Result {
-    try value.withUnsafeMutableRawPointer(body)
+    try value.withUnsafeMutableOpaquePointer(body)
 }
 
 internal func fromInitializingTransferrableUnsafeRawPointer<Key, AssociatedValue>(
@@ -153,21 +153,21 @@ internal func withTransferrableUnsafeRawPointer<Result>(
     to value: Variant,
     _ body: (UnsafeRawPointer) throws -> Result
 ) rethrows -> Result {
-    try value.storage.withUnsafeRawPointer(body)
+    try value.withStorageUnsafeRawPointer(body)
 }
 
 internal func withTransferrableUnsafeMutableRawPointer<Result>(
     to value: Variant,
     _ body: (UnsafeMutableRawPointer) throws -> Result
 ) rethrows -> Result {
-    try value.storage.withUnsafeMutableRawPointer(body)
+    try value.withStorageUnsafeMutableRawPointer(body)
 }
 
 internal func fromInitializingTransferrableUnsafeRawPointer(
     _ body: (UnsafeMutableRawPointer) -> Void
 ) -> Variant {
     let value = Variant()
-    value.storage.withUnsafeMutableRawPointer(body)
+    value.withStorageUnsafeMutableRawPointer(body)
     return value
 }
 

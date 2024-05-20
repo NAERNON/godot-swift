@@ -1,24 +1,26 @@
 import GodotExtensionHeaders
 
-@GodotOpaqueBuiltinClass
-public struct GodotStringName {}
+@BuiltinOpaque
+public struct GodotStringName {
+    internal mutating func makeUniqueIfSharedOpaque() {}
+}
 
 extension GodotStringName {
     // MARK: Constructors
     
     public init() {
-        self = Self._make()
+        self = Self.make()
     }
     
     public init(swiftString: String) {
-        self = Self._make(from: GodotString(swiftString: swiftString))
+        self = Self.make(from: GodotString(swiftString: swiftString))
     }
     
     public init(swiftStaticString: StaticString) {
         if swiftStaticString.isASCII {
             self.init(opaque: Self.makeOpaque(useDestructor: false))
             
-            withUnsafeMutableRawPointer { extensionPtr in
+            opaque.withUnsafeMutableRawPointer { extensionPtr in
                 swiftStaticString.utf8Start.withMemoryRebound(
                     to: Int8.self,
                     capacity: swiftStaticString.utf8CodeUnitCount
@@ -31,7 +33,7 @@ extension GodotStringName {
                 }
             }
         } else {
-            self = Self._make(from: GodotString(swiftStaticString: swiftStaticString))
+            self = Self.make(from: GodotString(swiftStaticString: swiftStaticString))
         }
     }
     
@@ -40,14 +42,14 @@ extension GodotStringName {
     }
     
     public init(string: GodotString) {
-        self = Self._make(from: string)
+        self = Self.make(from: string)
     }
     
     public static func className(
         forObjectPointer instancePtr: GDExtensionObjectPtr
     ) -> GodotStringName? {
-        var className = Self._make()
-        let classNameRetrieved = className.withUnsafeMutableRawPointer { ptr in
+        var className = Self.make()
+        let classNameRetrieved = className.withUnsafeMutableOpaquePointer { ptr in
             GodotExtension.Interface.objectGetClassName(instancePtr, GodotExtension.libraryPtr, ptr) != 0
         }
         
@@ -56,12 +58,6 @@ extension GodotStringName {
         }
         
         return className
-    }
-    
-    // MARK: Copy
-    
-    internal mutating func withCopiedOpaque() -> Self {
-        Self._make(from: self)
     }
     
     // MARK: Operators

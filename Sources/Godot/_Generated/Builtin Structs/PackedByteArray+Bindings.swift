@@ -4,476 +4,390 @@
 
 import GodotExtensionHeaders
 
-private var __destructor: GDExtensionPtrDestructor = {
-    return GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
-}()
+internal enum PackedByteArrayBindings {
+    static private var areBindingsLoaded = false
 
-private var __constructor: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, 0)!
-}()
-
-private var __constructorFromPackedByteArray: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, 1)!
-}()
-
-private var __constructorFromGodotArray: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, 2)!
-}()
-
-private var __operator_binding_equal_variant: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
-}()
-
-private var __operator_binding_not_equal_variant: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
-}()
-
-private var __operator_binding_not: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
-}()
-
-private var __operator_binding_in_godotdictionary: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
-}()
-
-private var __operator_binding_in_godotarray: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
-}()
-
-private var __operator_binding_equal_packedbytearray: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
-}()
-
-private var __operator_binding_not_equal_packedbytearray: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
-}()
-
-private var __operator_binding_add_packedbytearray: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_ADD, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
-}()
-
-private var __indexed_setter: GDExtensionPtrIndexedSetter = {
-    return GodotExtension.Interface.variantGetPtrIndexedSetter(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
-}()
-
-private var __indexed_getter: GDExtensionPtrIndexedGetter = {
-    return GodotExtension.Interface.variantGetPtrIndexedGetter(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
-}()
-
-private var __method_binding_size: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "size").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3173160232)!
+    internal static func loadBindings() {
+        precondition(!areBindingsLoaded, "PackedByteArray bindings are already loaded.")
+        areBindingsLoaded = true
+        destructor = GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
+        constructor = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, 0)!
+        constructorFromPackedByteArray = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, 1)!
+        constructorFromGodotArray = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, 2)!
+        operatorEqualVariant = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
+        operatorNotEqualVariant = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
+        operatorNot = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, GDEXTENSION_VARIANT_TYPE_NIL)!
+        operatorInGodotdictionary = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
+        operatorInGodotarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, GDEXTENSION_VARIANT_TYPE_ARRAY)!
+        operatorEqualPackedbytearray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
+        operatorNotEqualPackedbytearray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
+        operatorAddPackedbytearray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_ADD, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
+        indexedSetter = GodotExtension.Interface.variantGetPtrIndexedSetter(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
+        indexedGetter = GodotExtension.Interface.variantGetPtrIndexedGetter(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
+        methodSize = GodotStringName(swiftStaticString: "size").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3173160232)!
+        }
+        methodIsEmpty = GodotStringName(swiftStaticString: "is_empty").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3918633141)!
+        }
+        methodSet = GodotStringName(swiftStaticString: "set").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
+        }
+        methodPushBack = GodotStringName(swiftStaticString: "push_back").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 694024632)!
+        }
+        methodAppend = GodotStringName(swiftStaticString: "append").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 694024632)!
+        }
+        methodAppendArray = GodotStringName(swiftStaticString: "append_array").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 791097111)!
+        }
+        methodRemoveAt = GodotStringName(swiftStaticString: "remove_at").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2823966027)!
+        }
+        methodInsert = GodotStringName(swiftStaticString: "insert").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1487112728)!
+        }
+        methodFill = GodotStringName(swiftStaticString: "fill").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2823966027)!
+        }
+        methodResize = GodotStringName(swiftStaticString: "resize").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 848867239)!
+        }
+        methodClear = GodotStringName(swiftStaticString: "clear").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3218959716)!
+        }
+        methodHas = GodotStringName(swiftStaticString: "has").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 931488181)!
+        }
+        methodReverse = GodotStringName(swiftStaticString: "reverse").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3218959716)!
+        }
+        methodSlice = GodotStringName(swiftStaticString: "slice").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2278869132)!
+        }
+        methodSort = GodotStringName(swiftStaticString: "sort").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3218959716)!
+        }
+        methodBsearch = GodotStringName(swiftStaticString: "bsearch").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3380005890)!
+        }
+        methodDuplicate = GodotStringName(swiftStaticString: "duplicate").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 851781288)!
+        }
+        methodFind = GodotStringName(swiftStaticString: "find").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2984303840)!
+        }
+        methodRfind = GodotStringName(swiftStaticString: "rfind").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2984303840)!
+        }
+        methodCount = GodotStringName(swiftStaticString: "count").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
+        }
+        methodGetStringFromAscii = GodotStringName(swiftStaticString: "get_string_from_ascii").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3942272618)!
+        }
+        methodGetStringFromUtf8 = GodotStringName(swiftStaticString: "get_string_from_utf8").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3942272618)!
+        }
+        methodGetStringFromUtf16 = GodotStringName(swiftStaticString: "get_string_from_utf16").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3942272618)!
+        }
+        methodGetStringFromUtf32 = GodotStringName(swiftStaticString: "get_string_from_utf32").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3942272618)!
+        }
+        methodGetStringFromWchar = GodotStringName(swiftStaticString: "get_string_from_wchar").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3942272618)!
+        }
+        methodHexEncode = GodotStringName(swiftStaticString: "hex_encode").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3942272618)!
+        }
+        methodCompress = GodotStringName(swiftStaticString: "compress").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1845905913)!
+        }
+        methodDecompress = GodotStringName(swiftStaticString: "decompress").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2278869132)!
+        }
+        methodDecompressDynamic = GodotStringName(swiftStaticString: "decompress_dynamic").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2278869132)!
+        }
+        methodDecodeU8 = GodotStringName(swiftStaticString: "decode_u8").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
+        }
+        methodDecodeS8 = GodotStringName(swiftStaticString: "decode_s8").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
+        }
+        methodDecodeU16 = GodotStringName(swiftStaticString: "decode_u16").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
+        }
+        methodDecodeS16 = GodotStringName(swiftStaticString: "decode_s16").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
+        }
+        methodDecodeU32 = GodotStringName(swiftStaticString: "decode_u32").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
+        }
+        methodDecodeS32 = GodotStringName(swiftStaticString: "decode_s32").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
+        }
+        methodDecodeU64 = GodotStringName(swiftStaticString: "decode_u64").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
+        }
+        methodDecodeS64 = GodotStringName(swiftStaticString: "decode_s64").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
+        }
+        methodDecodeHalf = GodotStringName(swiftStaticString: "decode_half").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1401583798)!
+        }
+        methodDecodeFloat = GodotStringName(swiftStaticString: "decode_float").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1401583798)!
+        }
+        methodDecodeDouble = GodotStringName(swiftStaticString: "decode_double").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1401583798)!
+        }
+        methodHasEncodedVar = GodotStringName(swiftStaticString: "has_encoded_var").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2914632957)!
+        }
+        methodDecodeVar = GodotStringName(swiftStaticString: "decode_var").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1740420038)!
+        }
+        methodDecodeVarSize = GodotStringName(swiftStaticString: "decode_var_size").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 954237325)!
+        }
+        methodToInt32Array = GodotStringName(swiftStaticString: "to_int32_array").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3158844420)!
+        }
+        methodToInt64Array = GodotStringName(swiftStaticString: "to_int64_array").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1961294120)!
+        }
+        methodToFloat32Array = GodotStringName(swiftStaticString: "to_float32_array").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3575107827)!
+        }
+        methodToFloat64Array = GodotStringName(swiftStaticString: "to_float64_array").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1627308337)!
+        }
+        methodEncodeU8 = GodotStringName(swiftStaticString: "encode_u8").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
+        }
+        methodEncodeS8 = GodotStringName(swiftStaticString: "encode_s8").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
+        }
+        methodEncodeU16 = GodotStringName(swiftStaticString: "encode_u16").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
+        }
+        methodEncodeS16 = GodotStringName(swiftStaticString: "encode_s16").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
+        }
+        methodEncodeU32 = GodotStringName(swiftStaticString: "encode_u32").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
+        }
+        methodEncodeS32 = GodotStringName(swiftStaticString: "encode_s32").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
+        }
+        methodEncodeU64 = GodotStringName(swiftStaticString: "encode_u64").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
+        }
+        methodEncodeS64 = GodotStringName(swiftStaticString: "encode_s64").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
+        }
+        methodEncodeHalf = GodotStringName(swiftStaticString: "encode_half").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1113000516)!
+        }
+        methodEncodeFloat = GodotStringName(swiftStaticString: "encode_float").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1113000516)!
+        }
+        methodEncodeDouble = GodotStringName(swiftStaticString: "encode_double").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1113000516)!
+        }
+        methodEncodeVar = GodotStringName(swiftStaticString: "encode_var").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2604460497)!
+        }
     }
-}()
 
-private var __method_binding_is_empty: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "is_empty").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3918633141)!
-    }
-}()
+    static private (set) var destructor: GDExtensionPtrDestructor!
 
-private var __method_binding_set: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "set").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
-    }
-}()
+    static private (set) var constructor: GDExtensionPtrConstructor!
 
-private var __method_binding_push_back: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "push_back").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 694024632)!
-    }
-}()
+    static private (set) var constructorFromPackedByteArray: GDExtensionPtrConstructor!
 
-private var __method_binding_append: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "append").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 694024632)!
-    }
-}()
+    static private (set) var constructorFromGodotArray: GDExtensionPtrConstructor!
 
-private var __method_binding_append_array: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "append_array").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 791097111)!
-    }
-}()
+    static private (set) var operatorEqualVariant: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_remove_at: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "remove_at").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2823966027)!
-    }
-}()
+    static private (set) var operatorNotEqualVariant: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_insert: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "insert").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1487112728)!
-    }
-}()
+    static private (set) var operatorNot: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_fill: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "fill").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2823966027)!
-    }
-}()
+    static private (set) var operatorInGodotdictionary: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_resize: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "resize").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 848867239)!
-    }
-}()
+    static private (set) var operatorInGodotarray: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_clear: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "clear").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3218959716)!
-    }
-}()
+    static private (set) var operatorEqualPackedbytearray: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_has: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "has").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 931488181)!
-    }
-}()
+    static private (set) var operatorNotEqualPackedbytearray: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_reverse: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "reverse").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3218959716)!
-    }
-}()
+    static private (set) var operatorAddPackedbytearray: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_slice: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "slice").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2278869132)!
-    }
-}()
+    static private (set) var indexedSetter: GDExtensionPtrIndexedSetter!
 
-private var __method_binding_sort: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "sort").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3218959716)!
-    }
-}()
+    static private (set) var indexedGetter: GDExtensionPtrIndexedGetter!
 
-private var __method_binding_bsearch: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "bsearch").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3380005890)!
-    }
-}()
+    static private (set) var methodSize: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_duplicate: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "duplicate").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 851781288)!
-    }
-}()
+    static private (set) var methodIsEmpty: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_find: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "find").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2984303840)!
-    }
-}()
+    static private (set) var methodSet: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_rfind: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "rfind").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2984303840)!
-    }
-}()
+    static private (set) var methodPushBack: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_count: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "count").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
-    }
-}()
+    static private (set) var methodAppend: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_get_string_from_ascii: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_string_from_ascii").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3942272618)!
-    }
-}()
+    static private (set) var methodAppendArray: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_get_string_from_utf8: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_string_from_utf8").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3942272618)!
-    }
-}()
+    static private (set) var methodRemoveAt: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_get_string_from_utf16: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_string_from_utf16").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3942272618)!
-    }
-}()
+    static private (set) var methodInsert: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_get_string_from_utf32: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_string_from_utf32").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3942272618)!
-    }
-}()
+    static private (set) var methodFill: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_get_string_from_wchar: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_string_from_wchar").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3942272618)!
-    }
-}()
+    static private (set) var methodResize: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_hex_encode: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "hex_encode").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3942272618)!
-    }
-}()
+    static private (set) var methodClear: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_compress: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "compress").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1845905913)!
-    }
-}()
+    static private (set) var methodHas: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_decompress: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "decompress").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2278869132)!
-    }
-}()
+    static private (set) var methodReverse: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_decompress_dynamic: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "decompress_dynamic").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2278869132)!
-    }
-}()
+    static private (set) var methodSlice: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_decode_u8: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "decode_u8").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
-    }
-}()
+    static private (set) var methodSort: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_decode_s8: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "decode_s8").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
-    }
-}()
+    static private (set) var methodBsearch: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_decode_u16: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "decode_u16").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
-    }
-}()
+    static private (set) var methodDuplicate: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_decode_s16: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "decode_s16").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
-    }
-}()
+    static private (set) var methodFind: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_decode_u32: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "decode_u32").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
-    }
-}()
+    static private (set) var methodRfind: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_decode_s32: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "decode_s32").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
-    }
-}()
+    static private (set) var methodCount: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_decode_u64: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "decode_u64").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
-    }
-}()
+    static private (set) var methodGetStringFromAscii: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_decode_s64: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "decode_s64").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 4103005248)!
-    }
-}()
+    static private (set) var methodGetStringFromUtf8: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_decode_half: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "decode_half").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1401583798)!
-    }
-}()
+    static private (set) var methodGetStringFromUtf16: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_decode_float: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "decode_float").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1401583798)!
-    }
-}()
+    static private (set) var methodGetStringFromUtf32: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_decode_double: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "decode_double").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1401583798)!
-    }
-}()
+    static private (set) var methodGetStringFromWchar: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_has_encoded_var: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "has_encoded_var").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2914632957)!
-    }
-}()
+    static private (set) var methodHexEncode: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_decode_var: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "decode_var").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1740420038)!
-    }
-}()
+    static private (set) var methodCompress: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_decode_var_size: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "decode_var_size").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 954237325)!
-    }
-}()
+    static private (set) var methodDecompress: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_to_int32_array: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "to_int32_array").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3158844420)!
-    }
-}()
+    static private (set) var methodDecompressDynamic: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_to_int64_array: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "to_int64_array").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1961294120)!
-    }
-}()
+    static private (set) var methodDecodeU8: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_to_float32_array: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "to_float32_array").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3575107827)!
-    }
-}()
+    static private (set) var methodDecodeS8: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_to_float64_array: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "to_float64_array").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1627308337)!
-    }
-}()
+    static private (set) var methodDecodeU16: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_encode_u8: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "encode_u8").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
-    }
-}()
+    static private (set) var methodDecodeS16: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_encode_s8: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "encode_s8").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
-    }
-}()
+    static private (set) var methodDecodeU32: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_encode_u16: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "encode_u16").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
-    }
-}()
+    static private (set) var methodDecodeS32: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_encode_s16: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "encode_s16").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
-    }
-}()
+    static private (set) var methodDecodeU64: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_encode_u32: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "encode_u32").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
-    }
-}()
+    static private (set) var methodDecodeS64: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_encode_s32: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "encode_s32").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
-    }
-}()
+    static private (set) var methodDecodeHalf: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_encode_u64: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "encode_u64").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
-    }
-}()
+    static private (set) var methodDecodeFloat: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_encode_s64: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "encode_s64").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 3638975848)!
-    }
-}()
+    static private (set) var methodDecodeDouble: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_encode_half: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "encode_half").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1113000516)!
-    }
-}()
+    static private (set) var methodHasEncodedVar: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_encode_float: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "encode_float").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1113000516)!
-    }
-}()
+    static private (set) var methodDecodeVar: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_encode_double: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "encode_double").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 1113000516)!
-    }
-}()
+    static private (set) var methodDecodeVarSize: GDExtensionPtrBuiltInMethod!
 
-private var __method_binding_encode_var: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "encode_var").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2604460497)!
-    }
-}()
+    static private (set) var methodToInt32Array: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodToInt64Array: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodToFloat32Array: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodToFloat64Array: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodEncodeU8: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodEncodeS8: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodEncodeU16: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodEncodeS16: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodEncodeU32: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodEncodeS32: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodEncodeU64: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodEncodeS64: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodEncodeHalf: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodEncodeFloat: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodEncodeDouble: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodEncodeVar: GDExtensionPtrBuiltInMethod!
+}
 
 extension PackedByteArray {
-    static internal func makeOpaque() -> Opaque {
-        Opaque(size: 16, destructorPtr: __destructor)
+    static internal func makeOpaque(
+        useDestructor: Bool = true
+    ) -> Opaque {
+        Opaque(size: 16, destructorPtr: useDestructor ? PackedByteArrayBindings.destructor : nil)
     }
 
-    static internal func _make() -> Self {
-        let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
+    static internal func make() -> Self {
+        let __temporary: Opaque = makeOpaque()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor(__ptr___temporary, nil)
+            PackedByteArrayBindings.constructor(__ptr___temporary, nil)
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _make(
+    static internal func make(
         from: Godot.PackedByteArray
     ) -> Self {
-        let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
+        let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    __constructorFromPackedByteArray(__ptr___temporary, __accessPtr)
+                    PackedByteArrayBindings.constructorFromPackedByteArray(__ptr___temporary, __accessPtr)
                 }
             }
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _makeFromPackedByteArrayPointer(
-        from: UnsafeRawPointer
-    ) -> Self {
-        let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
-        withUnsafeArgumentPackPointer(from) { __accessPtr in
-            __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                __constructorFromPackedByteArray(__ptr___temporary, __accessPtr)
-            }
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _make<Value: Variant.Storable>(
+    static internal func make<Value: Variant.Storable>(
         from: Godot.GodotArray<Value>
     ) -> Self {
-        let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
+        let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    __constructorFromGodotArray(__ptr___temporary, __accessPtr)
+                    PackedByteArrayBindings.constructorFromGodotArray(__ptr___temporary, __accessPtr)
                 }
-            }
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _makeFromGodotArrayPointer(
-        from: UnsafeRawPointer
-    ) -> Self {
-        let __temporary: Opaque = .init(size: 16, destructorPtr: __destructor)
-        withUnsafeArgumentPackPointer(from) { __accessPtr in
-            __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                __constructorFromGodotArray(__ptr___temporary, __accessPtr)
             }
         }
         return Self.init(opaque: __temporary)
@@ -486,7 +400,7 @@ extension PackedByteArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)
+                    PackedByteArrayBindings.operatorEqualVariant(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -499,7 +413,7 @@ extension PackedByteArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)
+                    PackedByteArrayBindings.operatorNotEqualVariant(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -510,7 +424,7 @@ extension PackedByteArray {
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
-                __operator_binding_not(__ptr_lhs, nil, __temporary)
+                PackedByteArrayBindings.operatorNot(__ptr_lhs, nil, __temporary)
             }
         }
     }
@@ -522,7 +436,7 @@ extension PackedByteArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_in_godotdictionary(__ptr_lhs, __ptr_rhs, __temporary)
+                    PackedByteArrayBindings.operatorInGodotdictionary(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -535,7 +449,7 @@ extension PackedByteArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_in_godotarray(__ptr_lhs, __ptr_rhs, __temporary)
+                    PackedByteArrayBindings.operatorInGodotarray(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -548,7 +462,7 @@ extension PackedByteArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_equal_packedbytearray(__ptr_lhs, __ptr_rhs, __temporary)
+                    PackedByteArrayBindings.operatorEqualPackedbytearray(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -561,7 +475,7 @@ extension PackedByteArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_not_equal_packedbytearray(__ptr_lhs, __ptr_rhs, __temporary)
+                    PackedByteArrayBindings.operatorNotEqualPackedbytearray(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -574,7 +488,7 @@ extension PackedByteArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_add_packedbytearray(__ptr_lhs, __ptr_rhs, __temporary)
+                    PackedByteArrayBindings.operatorAddPackedbytearray(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -585,7 +499,7 @@ extension PackedByteArray {
     ) -> Int {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __indexed_getter(__ptr_self, index, __temporary)
+                PackedByteArrayBindings.indexedGetter(__ptr_self, index, __temporary)
             }
         }
     }
@@ -594,10 +508,10 @@ extension PackedByteArray {
         _ value: Int,
         at index: GDExtensionInt
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                __indexed_setter(__ptr_self, index, __ptr_value)
+                PackedByteArrayBindings.indexedSetter(__ptr_self, index, __ptr_value)
             }
         }
     }
@@ -605,7 +519,7 @@ extension PackedByteArray {
     internal func _size() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_size(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                PackedByteArrayBindings.methodSize(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -613,7 +527,7 @@ extension PackedByteArray {
     internal func _isEmpty() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_is_empty(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                PackedByteArrayBindings.methodIsEmpty(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -622,12 +536,12 @@ extension PackedByteArray {
         index: Int,
         value: Int
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_index, __ptr_value) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        __method_binding_set(__ptr_self, __accessPtr, nil, 2)
+                        PackedByteArrayBindings.methodSet(__ptr_self, __accessPtr, nil, 2)
                     }
                 }
             }
@@ -638,12 +552,12 @@ extension PackedByteArray {
     mutating internal func _pushBack(
         value: Int
     ) -> Bool {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        __method_binding_push_back(__ptr_self, __accessPtr, __temporary, 1)
+                        PackedByteArrayBindings.methodPushBack(__ptr_self, __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -654,12 +568,12 @@ extension PackedByteArray {
     mutating internal func _append(
         value: Int
     ) -> Bool {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        __method_binding_append(__ptr_self, __accessPtr, __temporary, 1)
+                        PackedByteArrayBindings.methodAppend(__ptr_self, __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -669,11 +583,11 @@ extension PackedByteArray {
     mutating internal func _appendArray(
         _ array: Godot.PackedByteArray
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: array) { __ptr_array in
             withUnsafeArgumentPackPointer(__ptr_array) { __accessPtr in
                 withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    __method_binding_append_array(__ptr_self, __accessPtr, nil, 1)
+                    PackedByteArrayBindings.methodAppendArray(__ptr_self, __accessPtr, nil, 1)
                 }
             }
         }
@@ -682,11 +596,11 @@ extension PackedByteArray {
     mutating internal func _removeAt(
         index: Int
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
             withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
                 withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    __method_binding_remove_at(__ptr_self, __accessPtr, nil, 1)
+                    PackedByteArrayBindings.methodRemoveAt(__ptr_self, __accessPtr, nil, 1)
                 }
             }
         }
@@ -697,13 +611,13 @@ extension PackedByteArray {
         atIndex index: Int,
         value: Int
     ) -> Int {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
                 withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                     withUnsafeArgumentPackPointer(__ptr_index, __ptr_value) { __accessPtr in
                         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                            __method_binding_insert(__ptr_self, __accessPtr, __temporary, 2)
+                            PackedByteArrayBindings.methodInsert(__ptr_self, __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -714,11 +628,11 @@ extension PackedByteArray {
     mutating internal func _fill(
         value: Int
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                 withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    __method_binding_fill(__ptr_self, __accessPtr, nil, 1)
+                    PackedByteArrayBindings.methodFill(__ptr_self, __accessPtr, nil, 1)
                 }
             }
         }
@@ -728,12 +642,12 @@ extension PackedByteArray {
     mutating internal func _resize(
         newSize: Int
     ) -> Int {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: newSize) { __ptr_newSize in
                 withUnsafeArgumentPackPointer(__ptr_newSize) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        __method_binding_resize(__ptr_self, __accessPtr, __temporary, 1)
+                        PackedByteArrayBindings.methodResize(__ptr_self, __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -741,9 +655,9 @@ extension PackedByteArray {
     }
 
     mutating internal func _clear() {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            __method_binding_clear(__ptr_self, nil, nil, 0)
+            PackedByteArrayBindings.methodClear(__ptr_self, nil, nil, 0)
         }
     }
 
@@ -754,7 +668,7 @@ extension PackedByteArray {
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_has(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        PackedByteArrayBindings.methodHas(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -762,9 +676,9 @@ extension PackedByteArray {
     }
 
     mutating internal func _reverse() {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            __method_binding_reverse(__ptr_self, nil, nil, 0)
+            PackedByteArrayBindings.methodReverse(__ptr_self, nil, nil, 0)
         }
     }
 
@@ -777,7 +691,7 @@ extension PackedByteArray {
                 withTransferrableUnsafeRawPointer(to: end) { __ptr_end in
                     withUnsafeArgumentPackPointer(__ptr_begin, __ptr_end) { __accessPtr in
                         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                            __method_binding_slice(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
+                            PackedByteArrayBindings.methodSlice(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -786,9 +700,9 @@ extension PackedByteArray {
     }
 
     mutating internal func _sort() {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            __method_binding_sort(__ptr_self, nil, nil, 0)
+            PackedByteArrayBindings.methodSort(__ptr_self, nil, nil, 0)
         }
     }
 
@@ -797,13 +711,13 @@ extension PackedByteArray {
         value: Int,
         before: Bool = true
     ) -> Int {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withTransferrableUnsafeRawPointer(to: before) { __ptr_before in
                     withUnsafeArgumentPackPointer(__ptr_value, __ptr_before) { __accessPtr in
                         withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                            __method_binding_bsearch(__ptr_self, __accessPtr, __temporary, 2)
+                            PackedByteArrayBindings.methodBsearch(__ptr_self, __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -815,7 +729,7 @@ extension PackedByteArray {
     mutating internal func _duplicate() -> Godot.PackedByteArray {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                __method_binding_duplicate(__ptr_self, nil, __temporary, 0)
+                PackedByteArrayBindings.methodDuplicate(__ptr_self, nil, __temporary, 0)
             }
         }
     }
@@ -829,7 +743,7 @@ extension PackedByteArray {
                 withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
                     withUnsafeArgumentPackPointer(__ptr_value, __ptr_from) { __accessPtr in
                         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                            __method_binding_find(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
+                            PackedByteArrayBindings.methodFind(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -846,7 +760,7 @@ extension PackedByteArray {
                 withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
                     withUnsafeArgumentPackPointer(__ptr_value, __ptr_from) { __accessPtr in
                         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                            __method_binding_rfind(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
+                            PackedByteArrayBindings.methodRfind(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -861,7 +775,7 @@ extension PackedByteArray {
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_count(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        PackedByteArrayBindings.methodCount(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -871,7 +785,7 @@ extension PackedByteArray {
     internal func _stringFromAscii() -> Godot.GodotString {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_get_string_from_ascii(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                PackedByteArrayBindings.methodGetStringFromAscii(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -879,7 +793,7 @@ extension PackedByteArray {
     internal func _stringFromUtf8() -> Godot.GodotString {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_get_string_from_utf8(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                PackedByteArrayBindings.methodGetStringFromUtf8(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -887,7 +801,7 @@ extension PackedByteArray {
     internal func _stringFromUtf16() -> Godot.GodotString {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_get_string_from_utf16(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                PackedByteArrayBindings.methodGetStringFromUtf16(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -895,7 +809,7 @@ extension PackedByteArray {
     internal func _stringFromUtf32() -> Godot.GodotString {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_get_string_from_utf32(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                PackedByteArrayBindings.methodGetStringFromUtf32(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -903,7 +817,7 @@ extension PackedByteArray {
     internal func _stringFromWchar() -> Godot.GodotString {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_get_string_from_wchar(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                PackedByteArrayBindings.methodGetStringFromWchar(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -911,7 +825,7 @@ extension PackedByteArray {
     internal func _hexEncode() -> Godot.GodotString {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_hex_encode(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                PackedByteArrayBindings.methodHexEncode(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -923,7 +837,7 @@ extension PackedByteArray {
             withTransferrableUnsafeRawPointer(to: compressionMode) { __ptr_compressionMode in
                 withUnsafeArgumentPackPointer(__ptr_compressionMode) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_compress(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        PackedByteArrayBindings.methodCompress(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -939,7 +853,7 @@ extension PackedByteArray {
                 withTransferrableUnsafeRawPointer(to: compressionMode) { __ptr_compressionMode in
                     withUnsafeArgumentPackPointer(__ptr_bufferSize, __ptr_compressionMode) { __accessPtr in
                         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                            __method_binding_decompress(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
+                            PackedByteArrayBindings.methodDecompress(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -956,7 +870,7 @@ extension PackedByteArray {
                 withTransferrableUnsafeRawPointer(to: compressionMode) { __ptr_compressionMode in
                     withUnsafeArgumentPackPointer(__ptr_maxOutputSize, __ptr_compressionMode) { __accessPtr in
                         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                            __method_binding_decompress_dynamic(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
+                            PackedByteArrayBindings.methodDecompressDynamic(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -971,7 +885,7 @@ extension PackedByteArray {
             withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_decode_u8(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        PackedByteArrayBindings.methodDecodeU8(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -985,7 +899,7 @@ extension PackedByteArray {
             withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_decode_s8(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        PackedByteArrayBindings.methodDecodeS8(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -999,7 +913,7 @@ extension PackedByteArray {
             withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_decode_u16(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        PackedByteArrayBindings.methodDecodeU16(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -1013,7 +927,7 @@ extension PackedByteArray {
             withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_decode_s16(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        PackedByteArrayBindings.methodDecodeS16(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -1027,7 +941,7 @@ extension PackedByteArray {
             withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_decode_u32(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        PackedByteArrayBindings.methodDecodeU32(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -1041,7 +955,7 @@ extension PackedByteArray {
             withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_decode_s32(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        PackedByteArrayBindings.methodDecodeS32(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -1055,7 +969,7 @@ extension PackedByteArray {
             withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_decode_u64(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        PackedByteArrayBindings.methodDecodeU64(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -1069,7 +983,7 @@ extension PackedByteArray {
             withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_decode_s64(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        PackedByteArrayBindings.methodDecodeS64(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -1083,7 +997,7 @@ extension PackedByteArray {
             withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_decode_half(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        PackedByteArrayBindings.methodDecodeHalf(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -1097,7 +1011,7 @@ extension PackedByteArray {
             withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_decode_float(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        PackedByteArrayBindings.methodDecodeFloat(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -1111,7 +1025,7 @@ extension PackedByteArray {
             withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_decode_double(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        PackedByteArrayBindings.methodDecodeDouble(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -1127,7 +1041,7 @@ extension PackedByteArray {
                 withTransferrableUnsafeRawPointer(to: allowObjects) { __ptr_allowObjects in
                     withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_allowObjects) { __accessPtr in
                         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                            __method_binding_has_encoded_var(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
+                            PackedByteArrayBindings.methodHasEncodedVar(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -1144,7 +1058,7 @@ extension PackedByteArray {
                 withTransferrableUnsafeRawPointer(to: allowObjects) { __ptr_allowObjects in
                     withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_allowObjects) { __accessPtr in
                         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                            __method_binding_decode_var(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
+                            PackedByteArrayBindings.methodDecodeVar(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -1161,7 +1075,7 @@ extension PackedByteArray {
                 withTransferrableUnsafeRawPointer(to: allowObjects) { __ptr_allowObjects in
                     withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_allowObjects) { __accessPtr in
                         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                            __method_binding_decode_var_size(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
+                            PackedByteArrayBindings.methodDecodeVarSize(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -1172,7 +1086,7 @@ extension PackedByteArray {
     internal func _toInt32Array() -> Godot.PackedInt32Array {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_to_int32_array(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                PackedByteArrayBindings.methodToInt32Array(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -1180,7 +1094,7 @@ extension PackedByteArray {
     internal func _toInt64Array() -> Godot.PackedInt64Array {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_to_int64_array(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                PackedByteArrayBindings.methodToInt64Array(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -1188,7 +1102,7 @@ extension PackedByteArray {
     internal func _toFloat32Array() -> Godot.PackedFloat32Array {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_to_float32_array(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                PackedByteArrayBindings.methodToFloat32Array(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -1196,7 +1110,7 @@ extension PackedByteArray {
     internal func _toFloat64Array() -> Godot.PackedFloat64Array {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_to_float64_array(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                PackedByteArrayBindings.methodToFloat64Array(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -1205,12 +1119,12 @@ extension PackedByteArray {
         byteOffset: Int,
         value: Int
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        __method_binding_encode_u8(__ptr_self, __accessPtr, nil, 2)
+                        PackedByteArrayBindings.methodEncodeU8(__ptr_self, __accessPtr, nil, 2)
                     }
                 }
             }
@@ -1221,12 +1135,12 @@ extension PackedByteArray {
         byteOffset: Int,
         value: Int
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        __method_binding_encode_s8(__ptr_self, __accessPtr, nil, 2)
+                        PackedByteArrayBindings.methodEncodeS8(__ptr_self, __accessPtr, nil, 2)
                     }
                 }
             }
@@ -1237,12 +1151,12 @@ extension PackedByteArray {
         byteOffset: Int,
         value: Int
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        __method_binding_encode_u16(__ptr_self, __accessPtr, nil, 2)
+                        PackedByteArrayBindings.methodEncodeU16(__ptr_self, __accessPtr, nil, 2)
                     }
                 }
             }
@@ -1253,12 +1167,12 @@ extension PackedByteArray {
         byteOffset: Int,
         value: Int
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        __method_binding_encode_s16(__ptr_self, __accessPtr, nil, 2)
+                        PackedByteArrayBindings.methodEncodeS16(__ptr_self, __accessPtr, nil, 2)
                     }
                 }
             }
@@ -1269,12 +1183,12 @@ extension PackedByteArray {
         byteOffset: Int,
         value: Int
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        __method_binding_encode_u32(__ptr_self, __accessPtr, nil, 2)
+                        PackedByteArrayBindings.methodEncodeU32(__ptr_self, __accessPtr, nil, 2)
                     }
                 }
             }
@@ -1285,12 +1199,12 @@ extension PackedByteArray {
         byteOffset: Int,
         value: Int
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        __method_binding_encode_s32(__ptr_self, __accessPtr, nil, 2)
+                        PackedByteArrayBindings.methodEncodeS32(__ptr_self, __accessPtr, nil, 2)
                     }
                 }
             }
@@ -1301,12 +1215,12 @@ extension PackedByteArray {
         byteOffset: Int,
         value: Int
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        __method_binding_encode_u64(__ptr_self, __accessPtr, nil, 2)
+                        PackedByteArrayBindings.methodEncodeU64(__ptr_self, __accessPtr, nil, 2)
                     }
                 }
             }
@@ -1317,12 +1231,12 @@ extension PackedByteArray {
         byteOffset: Int,
         value: Int
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        __method_binding_encode_s64(__ptr_self, __accessPtr, nil, 2)
+                        PackedByteArrayBindings.methodEncodeS64(__ptr_self, __accessPtr, nil, 2)
                     }
                 }
             }
@@ -1333,12 +1247,12 @@ extension PackedByteArray {
         byteOffset: Int,
         value: Double
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        __method_binding_encode_half(__ptr_self, __accessPtr, nil, 2)
+                        PackedByteArrayBindings.methodEncodeHalf(__ptr_self, __accessPtr, nil, 2)
                     }
                 }
             }
@@ -1349,12 +1263,12 @@ extension PackedByteArray {
         byteOffset: Int,
         value: Double
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        __method_binding_encode_float(__ptr_self, __accessPtr, nil, 2)
+                        PackedByteArrayBindings.methodEncodeFloat(__ptr_self, __accessPtr, nil, 2)
                     }
                 }
             }
@@ -1365,12 +1279,12 @@ extension PackedByteArray {
         byteOffset: Int,
         value: Double
     ) {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
                     withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        __method_binding_encode_double(__ptr_self, __accessPtr, nil, 2)
+                        PackedByteArrayBindings.methodEncodeDouble(__ptr_self, __accessPtr, nil, 2)
                     }
                 }
             }
@@ -1383,14 +1297,14 @@ extension PackedByteArray {
         value: borrowing Godot.Variant.Storage,
         allowObjects: Bool = false
     ) -> Int {
-        replaceOpaqueValueIfNecessary()
+        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
                 withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                     withTransferrableUnsafeRawPointer(to: allowObjects) { __ptr_allowObjects in
                         withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value, __ptr_allowObjects) { __accessPtr in
                             withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                                __method_binding_encode_var(__ptr_self, __accessPtr, __temporary, 3)
+                                PackedByteArrayBindings.methodEncodeVar(__ptr_self, __accessPtr, __temporary, 3)
                             }
                         }
                     }

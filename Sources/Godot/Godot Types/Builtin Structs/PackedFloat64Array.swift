@@ -1,8 +1,16 @@
 import GodotExtensionHeaders
 
-@GodotOpaqueBuiltinClass
+@BuiltinOpaque
 @GodotPackedArray
-public struct PackedFloat64Array {}
+public struct PackedFloat64Array {
+    internal mutating func makeUniqueIfSharedOpaque() {
+        guard !isKnownUniquelyReferenced(&opaque) else {
+            return
+        }
+        
+        self = Self.make(from: self)
+    }
+}
 
 extension PackedFloat64Array {
     public typealias Element = Double
@@ -10,17 +18,11 @@ extension PackedFloat64Array {
     // MARK: Constructors
     
     public init() {
-        self = Self._make()
+        self = Self.make()
     }
     
     public init(array: GodotArray<Element>) {
-        self = Self._make(from: array)
-    }
-    
-    // MARK: Copy
-    
-    internal mutating func withCopiedOpaque() -> Self {
-        self._duplicate()
+        self = Self.make(from: array)
     }
     
     // MARK: Methods & variables

@@ -1,8 +1,27 @@
 import GodotExtensionHeaders
 
-@GodotOpaqueBuiltinClass
+@BuiltinOpaque
 public struct GodotDictionary<Key, AssociatedValue>
-where Key : Variant.Storable, AssociatedValue : Variant.Storable {}
+where Key : Variant.Storable, AssociatedValue : Variant.Storable {
+    internal mutating func makeUniqueIfSharedOpaque() {
+        guard !isKnownUniquelyReferenced(&opaque) else {
+            return
+        }
+        
+        self = self._duplicate(deep: false)
+    }
+    
+    public consuming func transferToGodot(
+        unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
+    ) {
+        var new = consume self
+        new.makeUniqueIfSharedOpaque()
+        new.opaque.withUnsafeMutableRawPointer { ptr in
+            destinationUnsafePointer.copyMemory(from: ptr, byteCount: new.opaque.size)
+        }
+        new.opaque.removeDestructor()
+    }
+}
 
 public typealias AnyGodotDictionary = GodotDictionary<Variant, Variant>
 
@@ -10,13 +29,7 @@ extension GodotDictionary {
     // MARK: Constructors
     
     public init() {
-        self = Self._make()
-    }
-    
-    // MARK: Copy
-    
-    internal mutating func withCopiedOpaque() -> Self {
-        self._duplicate(deep: true)
+        self = Self.make()
     }
     
     // MARK: Operators

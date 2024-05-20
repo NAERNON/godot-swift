@@ -161,7 +161,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
                 )
                 
                 if self is CustomObject {
-                    Self._exposedClassName.withUnsafeRawPointer { classNamePtr in
+                    Self._exposedClassName.withUnsafeOpaquePointer { classNamePtr in
                         GodotExtension.Interface.objectSetInstance(extensionObjectPtr, classNamePtr, Unmanaged.passUnretained(self).toOpaque())
                     }
                 }
@@ -182,7 +182,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             }
             
             private class func makeNewExtensionObjectPtr() -> UnsafeMutableRawPointer {
-                Self.lastDerivedExposedClassName.withUnsafeRawPointer { namePtr in
+                Self.lastDerivedExposedClassName.withUnsafeOpaquePointer { namePtr in
                     GodotExtension.Interface.classdbConstructObject(namePtr)!
                 }
             }

@@ -96,8 +96,8 @@ open class PhysicsDirectSpaceState3DExtension: PhysicsDirectSpaceState3D {
     }
 
     internal static var __method_binding_is_body_excluded_from_query: GDExtensionMethodBindPtr = {
-        _$exposedClassName.withUnsafeRawPointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_body_excluded_from_query").withUnsafeRawPointer { __ptr__method_name in
+        _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+        GodotStringName(swiftStaticString: "is_body_excluded_from_query").withUnsafeOpaquePointer { __ptr__method_name in
         return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
         }
         }

@@ -5,7 +5,7 @@
 import GodotExtensionHeaders
 
 private var __function_binding_sin: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "sin").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "sin").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -23,7 +23,7 @@ internal func _sin(
 }
 
 private var __function_binding_cos: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "cos").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "cos").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -41,7 +41,7 @@ internal func _cos(
 }
 
 private var __function_binding_tan: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "tan").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "tan").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -59,7 +59,7 @@ internal func _tan(
 }
 
 private var __function_binding_sinh: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "sinh").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "sinh").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -77,7 +77,7 @@ internal func _sinh(
 }
 
 private var __function_binding_cosh: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "cosh").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "cosh").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -95,7 +95,7 @@ internal func _cosh(
 }
 
 private var __function_binding_tanh: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "tanh").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "tanh").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -113,7 +113,7 @@ internal func _tanh(
 }
 
 private var __function_binding_asin: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "asin").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "asin").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -131,7 +131,7 @@ internal func _asin(
 }
 
 private var __function_binding_acos: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "acos").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "acos").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -149,7 +149,7 @@ internal func _acos(
 }
 
 private var __function_binding_atan: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "atan").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "atan").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -167,7 +167,7 @@ internal func _atan(
 }
 
 private var __function_binding_atan2: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "atan2").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "atan2").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
@@ -188,7 +188,7 @@ internal func _atan2(
 }
 
 private var __function_binding_asinh: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "asinh").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "asinh").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -206,7 +206,7 @@ internal func _asinh(
 }
 
 private var __function_binding_acosh: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "acosh").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "acosh").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -224,7 +224,7 @@ internal func _acosh(
 }
 
 private var __function_binding_atanh: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "atanh").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "atanh").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -242,7 +242,7 @@ internal func _atanh(
 }
 
 private var __function_binding_sqrt: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "sqrt").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "sqrt").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -260,7 +260,7 @@ internal func _sqrt(
 }
 
 private var __function_binding_fmod: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "fmod").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "fmod").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
@@ -281,7 +281,7 @@ internal func _fmod(
 }
 
 private var __function_binding_fposmod: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "fposmod").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "fposmod").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
@@ -302,7 +302,7 @@ internal func _fposmod(
 }
 
 private var __function_binding_posmod: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "posmod").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "posmod").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3133453818)!
     }
 }()
@@ -323,7 +323,7 @@ internal func _posmod(
 }
 
 private var __function_binding_floor: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "floor").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "floor").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 4776452)!
     }
 }()
@@ -341,7 +341,7 @@ internal func _floor<Value: Variant.Storable>(
 }
 
 private var __function_binding_floorf: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "floorf").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "floorf").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -359,7 +359,7 @@ internal func _floorf(
 }
 
 private var __function_binding_floori: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "floori").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "floori").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2780425386)!
     }
 }()
@@ -377,7 +377,7 @@ internal func _floori(
 }
 
 private var __function_binding_ceil: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "ceil").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "ceil").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 4776452)!
     }
 }()
@@ -395,7 +395,7 @@ internal func _ceil<Value: Variant.Storable>(
 }
 
 private var __function_binding_ceilf: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "ceilf").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "ceilf").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -413,7 +413,7 @@ internal func _ceilf(
 }
 
 private var __function_binding_ceili: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "ceili").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "ceili").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2780425386)!
     }
 }()
@@ -431,7 +431,7 @@ internal func _ceili(
 }
 
 private var __function_binding_round: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "round").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "round").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 4776452)!
     }
 }()
@@ -449,7 +449,7 @@ internal func _round<Value: Variant.Storable>(
 }
 
 private var __function_binding_roundf: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "roundf").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "roundf").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -467,7 +467,7 @@ internal func _roundf(
 }
 
 private var __function_binding_roundi: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "roundi").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "roundi").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2780425386)!
     }
 }()
@@ -485,7 +485,7 @@ internal func _roundi(
 }
 
 private var __function_binding_abs: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "abs").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "abs").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 4776452)!
     }
 }()
@@ -503,7 +503,7 @@ internal func _abs<Value: Variant.Storable>(
 }
 
 private var __function_binding_absf: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "absf").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "absf").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -521,7 +521,7 @@ internal func _absf(
 }
 
 private var __function_binding_absi: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "absi").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "absi").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2157319888)!
     }
 }()
@@ -539,7 +539,7 @@ internal func _absi(
 }
 
 private var __function_binding_sign: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "sign").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "sign").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 4776452)!
     }
 }()
@@ -557,7 +557,7 @@ internal func _sign<Value: Variant.Storable>(
 }
 
 private var __function_binding_signf: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "signf").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "signf").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -575,7 +575,7 @@ internal func _signf(
 }
 
 private var __function_binding_signi: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "signi").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "signi").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2157319888)!
     }
 }()
@@ -593,7 +593,7 @@ internal func _signi(
 }
 
 private var __function_binding_snapped: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "snapped").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "snapped").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 459914704)!
     }
 }()
@@ -614,7 +614,7 @@ internal func _snapped<Value1: Variant.Storable, Value2: Variant.Storable>(
 }
 
 private var __function_binding_snappedf: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "snappedf").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "snappedf").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
@@ -635,7 +635,7 @@ internal func _snappedf(
 }
 
 private var __function_binding_snappedi: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "snappedi").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "snappedi").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3570758393)!
     }
 }()
@@ -656,7 +656,7 @@ internal func _snappedi(
 }
 
 private var __function_binding_pow: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "pow").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "pow").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
@@ -677,7 +677,7 @@ internal func _pow(
 }
 
 private var __function_binding_log: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "log").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "log").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -695,7 +695,7 @@ internal func _log(
 }
 
 private var __function_binding_exp: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "exp").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "exp").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -713,7 +713,7 @@ internal func _exp(
 }
 
 private var __function_binding_is_nan: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "is_nan").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "is_nan").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3569215213)!
     }
 }()
@@ -731,7 +731,7 @@ internal func _isNan(
 }
 
 private var __function_binding_is_inf: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "is_inf").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "is_inf").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3569215213)!
     }
 }()
@@ -749,7 +749,7 @@ internal func _isInf(
 }
 
 private var __function_binding_is_equal_approx: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "is_equal_approx").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "is_equal_approx").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1400789633)!
     }
 }()
@@ -770,7 +770,7 @@ internal func _isEqualApprox(
 }
 
 private var __function_binding_is_zero_approx: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "is_zero_approx").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "is_zero_approx").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3569215213)!
     }
 }()
@@ -788,7 +788,7 @@ internal func _isZeroApprox(
 }
 
 private var __function_binding_is_finite: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "is_finite").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "is_finite").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3569215213)!
     }
 }()
@@ -806,7 +806,7 @@ internal func _isFinite(
 }
 
 private var __function_binding_ease: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "ease").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "ease").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
@@ -827,7 +827,7 @@ internal func _ease(
 }
 
 private var __function_binding_step_decimals: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "step_decimals").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "step_decimals").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2780425386)!
     }
 }()
@@ -845,7 +845,7 @@ internal func _stepDecimals(
 }
 
 private var __function_binding_lerp: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "lerp").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "lerp").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3389874542)!
     }
 }()
@@ -869,7 +869,7 @@ internal func _lerp<Value1: Variant.Storable, Value2: Variant.Storable, Value3: 
 }
 
 private var __function_binding_lerpf: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "lerpf").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "lerpf").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 998901048)!
     }
 }()
@@ -893,7 +893,7 @@ internal func _lerpf(
 }
 
 private var __function_binding_cubic_interpolate: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "cubic_interpolate").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "cubic_interpolate").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1090965791)!
     }
 }()
@@ -923,7 +923,7 @@ internal func _cubicInterpolate(
 }
 
 private var __function_binding_cubic_interpolate_angle: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "cubic_interpolate_angle").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "cubic_interpolate_angle").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1090965791)!
     }
 }()
@@ -953,7 +953,7 @@ internal func _cubicInterpolateAngle(
 }
 
 private var __function_binding_cubic_interpolate_in_time: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "cubic_interpolate_in_time").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "cubic_interpolate_in_time").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 388121036)!
     }
 }()
@@ -992,7 +992,7 @@ internal func _cubicInterpolateInTime(
 }
 
 private var __function_binding_cubic_interpolate_angle_in_time: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "cubic_interpolate_angle_in_time").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "cubic_interpolate_angle_in_time").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 388121036)!
     }
 }()
@@ -1031,7 +1031,7 @@ internal func _cubicInterpolateAngleInTime(
 }
 
 private var __function_binding_bezier_interpolate: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "bezier_interpolate").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "bezier_interpolate").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1090965791)!
     }
 }()
@@ -1061,7 +1061,7 @@ internal func _bezierInterpolate(
 }
 
 private var __function_binding_bezier_derivative: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "bezier_derivative").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "bezier_derivative").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1090965791)!
     }
 }()
@@ -1091,7 +1091,7 @@ internal func _bezierDerivative(
 }
 
 private var __function_binding_angle_difference: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "angle_difference").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "angle_difference").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
@@ -1112,7 +1112,7 @@ internal func _angleDifference(
 }
 
 private var __function_binding_lerp_angle: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "lerp_angle").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "lerp_angle").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 998901048)!
     }
 }()
@@ -1136,7 +1136,7 @@ internal func _lerpAngle(
 }
 
 private var __function_binding_inverse_lerp: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "inverse_lerp").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "inverse_lerp").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 998901048)!
     }
 }()
@@ -1160,7 +1160,7 @@ internal func _inverseLerp(
 }
 
 private var __function_binding_remap: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "remap").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "remap").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1090965791)!
     }
 }()
@@ -1190,7 +1190,7 @@ internal func _remap(
 }
 
 private var __function_binding_smoothstep: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "smoothstep").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "smoothstep").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 998901048)!
     }
 }()
@@ -1214,7 +1214,7 @@ internal func _smoothstep(
 }
 
 private var __function_binding_move_toward: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "move_toward").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "move_toward").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 998901048)!
     }
 }()
@@ -1238,7 +1238,7 @@ internal func _moveToward(
 }
 
 private var __function_binding_rotate_toward: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "rotate_toward").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "rotate_toward").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 998901048)!
     }
 }()
@@ -1262,7 +1262,7 @@ internal func _rotateToward(
 }
 
 private var __function_binding_deg_to_rad: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "deg_to_rad").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "deg_to_rad").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -1280,7 +1280,7 @@ internal func _degToRad(
 }
 
 private var __function_binding_rad_to_deg: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "rad_to_deg").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "rad_to_deg").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -1298,7 +1298,7 @@ internal func _radToDeg(
 }
 
 private var __function_binding_linear_to_db: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "linear_to_db").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "linear_to_db").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -1316,7 +1316,7 @@ internal func _linearToDb(
 }
 
 private var __function_binding_db_to_linear: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "db_to_linear").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "db_to_linear").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2140049587)!
     }
 }()
@@ -1334,7 +1334,7 @@ internal func _dbToLinear(
 }
 
 private var __function_binding_wrap: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "wrap").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "wrap").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3389874542)!
     }
 }()
@@ -1358,7 +1358,7 @@ internal func _wrap<Value1: Variant.Storable, Value2: Variant.Storable, Value3: 
 }
 
 private var __function_binding_wrapi: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "wrapi").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "wrapi").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 650295447)!
     }
 }()
@@ -1382,7 +1382,7 @@ internal func _wrapi(
 }
 
 private var __function_binding_wrapf: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "wrapf").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "wrapf").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 998901048)!
     }
 }()
@@ -1406,7 +1406,7 @@ internal func _wrapf(
 }
 
 private var __function_binding_max: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "max").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "max").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3896050336)!
     }
 }()
@@ -1428,7 +1428,7 @@ internal func _max<Value1: Variant.Storable, Value2: Variant.Storable, each Vari
 }
 
 private var __function_binding_maxi: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "maxi").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "maxi").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3133453818)!
     }
 }()
@@ -1449,7 +1449,7 @@ internal func _maxi(
 }
 
 private var __function_binding_maxf: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "maxf").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "maxf").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
@@ -1470,7 +1470,7 @@ internal func _maxf(
 }
 
 private var __function_binding_min: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "min").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "min").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3896050336)!
     }
 }()
@@ -1492,7 +1492,7 @@ internal func _min<Value1: Variant.Storable, Value2: Variant.Storable, each Vari
 }
 
 private var __function_binding_mini: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "mini").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "mini").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3133453818)!
     }
 }()
@@ -1513,7 +1513,7 @@ internal func _mini(
 }
 
 private var __function_binding_minf: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "minf").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "minf").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
@@ -1534,7 +1534,7 @@ internal func _minf(
 }
 
 private var __function_binding_clamp: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "clamp").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "clamp").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3389874542)!
     }
 }()
@@ -1558,7 +1558,7 @@ internal func _clamp<Value1: Variant.Storable, Value2: Variant.Storable, Value3:
 }
 
 private var __function_binding_clampi: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "clampi").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "clampi").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 650295447)!
     }
 }()
@@ -1582,7 +1582,7 @@ internal func _clampi(
 }
 
 private var __function_binding_clampf: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "clampf").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "clampf").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 998901048)!
     }
 }()
@@ -1606,7 +1606,7 @@ internal func _clampf(
 }
 
 private var __function_binding_nearest_po2: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "nearest_po2").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "nearest_po2").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2157319888)!
     }
 }()
@@ -1624,7 +1624,7 @@ internal func _nearestPo2(
 }
 
 private var __function_binding_pingpong: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "pingpong").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "pingpong").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
@@ -1645,7 +1645,7 @@ internal func _pingpong(
 }
 
 private var __function_binding_randomize: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "randomize").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "randomize").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1691721052)!
     }
 }()
@@ -1655,7 +1655,7 @@ internal func _randomize() {
 }
 
 private var __function_binding_randi: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "randi").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "randi").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 701202648)!
     }
 }()
@@ -1667,7 +1667,7 @@ internal func _randi() -> Int {
 }
 
 private var __function_binding_randf: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "randf").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "randf").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2086227845)!
     }
 }()
@@ -1679,7 +1679,7 @@ internal func _randf() -> Double {
 }
 
 private var __function_binding_randi_range: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "randi_range").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "randi_range").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3133453818)!
     }
 }()
@@ -1700,7 +1700,7 @@ internal func _randiRange(
 }
 
 private var __function_binding_randf_range: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "randf_range").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "randf_range").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
@@ -1721,7 +1721,7 @@ internal func _randfRange(
 }
 
 private var __function_binding_randfn: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "randfn").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "randfn").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 92296394)!
     }
 }()
@@ -1742,7 +1742,7 @@ internal func _randfn(
 }
 
 private var __function_binding_seed: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "seed").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "seed").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 382931173)!
     }
 }()
@@ -1758,7 +1758,7 @@ internal func _seed(
 }
 
 private var __function_binding_rand_from_seed: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "rand_from_seed").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "rand_from_seed").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1391063685)!
     }
 }()
@@ -1776,7 +1776,7 @@ internal func _randFromSeed(
 }
 
 private var __function_binding_weakref: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "weakref").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "weakref").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 4776452)!
     }
 }()
@@ -1794,7 +1794,7 @@ internal func _weakref<Value: Variant.Storable>(
 }
 
 private var __function_binding_typeof: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "typeof").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "typeof").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 326422594)!
     }
 }()
@@ -1812,7 +1812,7 @@ internal func _typeof<Value: Variant.Storable>(
 }
 
 private var __function_binding_type_convert: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "type_convert").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "type_convert").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2453062746)!
     }
 }()
@@ -1833,7 +1833,7 @@ internal func _typeConvert<Value: Variant.Storable>(
 }
 
 private var __function_binding_str: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "str").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "str").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 32569176)!
     }
 }()
@@ -1852,7 +1852,7 @@ internal func _str<Value: Variant.Storable, each VariantRest : Variant.Storable>
 }
 
 private var __function_binding_error_string: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "error_string").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "error_string").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 942708242)!
     }
 }()
@@ -1870,7 +1870,7 @@ internal func _errorString(
 }
 
 private var __function_binding_type_string: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "type_string").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "type_string").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 942708242)!
     }
 }()
@@ -1888,7 +1888,7 @@ internal func _typeString(
 }
 
 private var __function_binding_print: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "print").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "print").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2648703342)!
     }
 }()
@@ -1905,7 +1905,7 @@ internal func _print<Value: Variant.Storable, each VariantRest : Variant.Storabl
 }
 
 private var __function_binding_print_rich: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "print_rich").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "print_rich").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2648703342)!
     }
 }()
@@ -1922,7 +1922,7 @@ internal func _printRich<Value: Variant.Storable, each VariantRest : Variant.Sto
 }
 
 private var __function_binding_printerr: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "printerr").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "printerr").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2648703342)!
     }
 }()
@@ -1939,7 +1939,7 @@ internal func _printerr<Value: Variant.Storable, each VariantRest : Variant.Stor
 }
 
 private var __function_binding_printt: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "printt").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "printt").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2648703342)!
     }
 }()
@@ -1956,7 +1956,7 @@ internal func _printt<Value: Variant.Storable, each VariantRest : Variant.Storab
 }
 
 private var __function_binding_prints: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "prints").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "prints").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2648703342)!
     }
 }()
@@ -1973,7 +1973,7 @@ internal func _prints<Value: Variant.Storable, each VariantRest : Variant.Storab
 }
 
 private var __function_binding_printraw: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "printraw").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "printraw").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2648703342)!
     }
 }()
@@ -1990,7 +1990,7 @@ internal func _printraw<Value: Variant.Storable, each VariantRest : Variant.Stor
 }
 
 private var __function_binding_print_verbose: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "print_verbose").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "print_verbose").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2648703342)!
     }
 }()
@@ -2007,7 +2007,7 @@ internal func _printVerbose<Value: Variant.Storable, each VariantRest : Variant.
 }
 
 private var __function_binding_push_error: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "push_error").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "push_error").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2648703342)!
     }
 }()
@@ -2024,7 +2024,7 @@ internal func _pushError<Value: Variant.Storable, each VariantRest : Variant.Sto
 }
 
 private var __function_binding_push_warning: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "push_warning").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "push_warning").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2648703342)!
     }
 }()
@@ -2041,7 +2041,7 @@ internal func _pushWarning<Value: Variant.Storable, each VariantRest : Variant.S
 }
 
 private var __function_binding_var_to_str: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "var_to_str").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "var_to_str").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 866625479)!
     }
 }()
@@ -2059,7 +2059,7 @@ internal func _varToStr<Value: Variant.Storable>(
 }
 
 private var __function_binding_str_to_var: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "str_to_var").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "str_to_var").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1891498491)!
     }
 }()
@@ -2077,7 +2077,7 @@ internal func _strToVar(
 }
 
 private var __function_binding_var_to_bytes: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "var_to_bytes").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "var_to_bytes").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2947269930)!
     }
 }()
@@ -2095,7 +2095,7 @@ internal func _varToBytes<Value: Variant.Storable>(
 }
 
 private var __function_binding_bytes_to_var: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "bytes_to_var").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "bytes_to_var").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 4249819452)!
     }
 }()
@@ -2113,7 +2113,7 @@ internal func _bytesToVar(
 }
 
 private var __function_binding_var_to_bytes_with_objects: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "var_to_bytes_with_objects").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "var_to_bytes_with_objects").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2947269930)!
     }
 }()
@@ -2131,7 +2131,7 @@ internal func _varToBytesWithObjects<Value: Variant.Storable>(
 }
 
 private var __function_binding_bytes_to_var_with_objects: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "bytes_to_var_with_objects").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "bytes_to_var_with_objects").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 4249819452)!
     }
 }()
@@ -2149,7 +2149,7 @@ internal func _bytesToVarWithObjects(
 }
 
 private var __function_binding_hash: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "hash").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "hash").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 326422594)!
     }
 }()
@@ -2167,7 +2167,7 @@ internal func _hash<Value: Variant.Storable>(
 }
 
 private var __function_binding_instance_from_id: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "instance_from_id").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "instance_from_id").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1156694636)!
     }
 }()
@@ -2185,7 +2185,7 @@ internal func _instanceFromID(
 }
 
 private var __function_binding_is_instance_id_valid: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "is_instance_id_valid").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "is_instance_id_valid").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 2232439758)!
     }
 }()
@@ -2203,7 +2203,7 @@ internal func _isInstanceIDValid(
 }
 
 private var __function_binding_is_instance_valid: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "is_instance_valid").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "is_instance_valid").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 996128841)!
     }
 }()
@@ -2221,7 +2221,7 @@ internal func _isInstanceValid<Value: Variant.Storable>(
 }
 
 private var __function_binding_rid_allocate_id: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "rid_allocate_id").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "rid_allocate_id").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 701202648)!
     }
 }()
@@ -2233,7 +2233,7 @@ internal func _ridAllocateID() -> Int {
 }
 
 private var __function_binding_rid_from_int64: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "rid_from_int64").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "rid_from_int64").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 3426892196)!
     }
 }()
@@ -2251,7 +2251,7 @@ internal func _ridFromInt64(
 }
 
 private var __function_binding_is_same: GDExtensionPtrUtilityFunction = {
-    GodotStringName(swiftStaticString: "is_same").withUnsafeRawPointer { __ptr__method_name in
+    GodotStringName(swiftStaticString: "is_same").withUnsafeOpaquePointer { __ptr__method_name in
     return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, 1409423524)!
     }
 }()

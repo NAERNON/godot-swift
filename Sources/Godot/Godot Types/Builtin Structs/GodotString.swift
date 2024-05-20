@@ -1,19 +1,21 @@
 import GodotExtensionHeaders
 
-@GodotOpaqueBuiltinClass
-public struct GodotString {}
+@BuiltinOpaque
+public struct GodotString {
+    internal mutating func makeUniqueIfSharedOpaque() {}
+}
 
 extension GodotString {
     // MARK: Constructors
     
     public init() {
-        self = Self._make()
+        self = Self.make()
     }
     
     public init(swiftString: String) {
         self.init()
         
-        withUnsafeMutableRawPointer { extensionPtr in
+        withUnsafeMutableOpaquePointer { extensionPtr in
             swiftString.withCString { cString in
                 GodotExtension.Interface.stringNewWithUtf8Chars(extensionPtr, cString)
             }
@@ -23,7 +25,7 @@ extension GodotString {
     internal init(swiftStaticString: StaticString) {
         self.init()
         
-        withUnsafeMutableRawPointer { extensionPtr in
+        withUnsafeMutableOpaquePointer { extensionPtr in
             swiftStaticString.withUTF8Buffer { buffer in
                 buffer.baseAddress!.withMemoryRebound(to: Int8.self, capacity: buffer.count) { cString in
                     GodotExtension.Interface.stringNewWithUtf8Chars(extensionPtr, cString)
@@ -37,21 +39,15 @@ extension GodotString {
     }
     
     public init(stringName: GodotStringName) {
-        self = Self._make(from: stringName)
+        self = Self.make(from: stringName)
     }
     
     public init(nodePath: NodePath) {
-        self = Self._make(from: nodePath)
+        self = Self.make(from: nodePath)
     }
     
     public init(_ c: Character) {
         self = GodotString(swiftString: .init(c))
-    }
-    
-    // MARK: Copy
-    
-    internal mutating func withCopiedOpaque() -> Self {
-        Self._make(from: self)
     }
     
     // MARK: Operators

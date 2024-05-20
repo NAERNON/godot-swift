@@ -1,8 +1,16 @@
 import GodotExtensionHeaders
 
-@GodotOpaqueBuiltinClass
+@BuiltinOpaque
 @GodotPackedArray
-public struct PackedVector3Array {}
+public struct PackedVector3Array {
+    internal mutating func makeUniqueIfSharedOpaque() {
+        guard !isKnownUniquelyReferenced(&opaque) else {
+            return
+        }
+        
+        self = Self.make(from: self)
+    }
+}
 
 extension PackedVector3Array {
     public typealias Element = Vector3
@@ -10,17 +18,11 @@ extension PackedVector3Array {
     // MARK: Constructors
     
     public init() {
-        self = Self._make()
+        self = Self.make()
     }
     
     public init(array: GodotArray<Element>) {
-        self = Self._make(from: array)
-    }
-    
-    // MARK: Copy
-    
-    internal mutating func withCopiedOpaque() -> Self {
-        self._duplicate()
+        self = Self.make(from: array)
     }
     
     // MARK: Methods & variables

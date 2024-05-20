@@ -1,8 +1,16 @@
 import GodotExtensionHeaders
 
-@GodotOpaqueBuiltinClass
+@BuiltinOpaque
 @GodotPackedArray
-public struct PackedInt64Array {}
+public struct PackedInt64Array {
+    internal mutating func makeUniqueIfSharedOpaque() {
+        guard !isKnownUniquelyReferenced(&opaque) else {
+            return
+        }
+        
+        self = Self.make(from: self)
+    }
+}
 
 extension PackedInt64Array {
     public typealias Element = Int64
@@ -10,17 +18,11 @@ extension PackedInt64Array {
     // MARK: Constructors
     
     public init() {
-        self = Self._make()
+        self = Self.make()
     }
     
     public init(array: GodotArray<Element>) {
-        self = Self._make(from: array)
-    }
-    
-    // MARK: Copy
-    
-    internal mutating func withCopiedOpaque() -> Self {
-        self._duplicate()
+        self = Self.make(from: array)
     }
     
     // MARK: Methods & variables

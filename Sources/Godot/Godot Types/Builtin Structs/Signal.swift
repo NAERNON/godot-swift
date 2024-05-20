@@ -1,23 +1,25 @@
 import GodotExtensionHeaders
 
-@GodotOpaqueBuiltinClass
-public struct Signal {}
+@BuiltinOpaque
+public struct Signal {
+    internal mutating func makeUniqueIfSharedOpaque() {
+        guard !isKnownUniquelyReferenced(&opaque) else {
+            return
+        }
+        
+        self = Self.make(from: self)
+    }
+}
 
 extension Signal {
     // MARK: Constructors
     
     internal init() {
-        self = Self._make()
+        self = Self.make()
     }
     
     internal init(object: Object, signal: GodotStringName) {
-        self = Self._make(object: object, signal: signal)
-    }
-    
-    // MARK: Copy
-    
-    internal mutating func withCopiedOpaque() -> Self {
-        Self._make(from: self)
+        self = Self.make(object: object, signal: signal)
     }
     
     // MARK: Methods & variables
@@ -30,7 +32,7 @@ extension Signal {
         _object()
     }
     
-    public var objectID: Int {
+    public var objectID: Int { // TODO: Use ObjectID ?
         _objectID()
     }
     

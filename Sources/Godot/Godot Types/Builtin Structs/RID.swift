@@ -1,19 +1,21 @@
 import GodotExtensionHeaders
 
-@GodotOpaqueBuiltinClass
-public struct RID {}
+@BuiltinOpaque
+public struct RID {
+    internal mutating func makeUniqueIfSharedOpaque() {
+        guard !isKnownUniquelyReferenced(&opaque) else {
+            return
+        }
+        
+        self = Self.make(from: self)
+    }
+}
 
 extension RID {
     // MARK: Constructors
     
     public init() {
-        self = Self._make()
-    }
-    
-    // MARK: Copy
-    
-    internal mutating func withCopiedOpaque() -> Self {
-        Self._make(from: self)
+        self = Self.make()
     }
     
     // MARK: Methods & variables

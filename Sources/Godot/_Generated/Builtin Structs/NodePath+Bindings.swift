@@ -4,170 +4,136 @@
 
 import GodotExtensionHeaders
 
-private var __destructor: GDExtensionPtrDestructor = {
-    return GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH)!
-}()
+internal enum NodePathBindings {
+    static private var areBindingsLoaded = false
 
-private var __constructor: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH, 0)!
-}()
-
-private var __constructorFromNodePath: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH, 1)!
-}()
-
-private var __constructorFromGodotString: GDExtensionPtrConstructor = {
-    return GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH, 2)!
-}()
-
-private var __operator_binding_equal_variant: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_NODE_PATH, GDEXTENSION_VARIANT_TYPE_NIL)!
-}()
-
-private var __operator_binding_not_equal_variant: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_NODE_PATH, GDEXTENSION_VARIANT_TYPE_NIL)!
-}()
-
-private var __operator_binding_not: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT, GDEXTENSION_VARIANT_TYPE_NODE_PATH, GDEXTENSION_VARIANT_TYPE_NIL)!
-}()
-
-private var __operator_binding_equal_nodepath: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_NODE_PATH, GDEXTENSION_VARIANT_TYPE_NODE_PATH)!
-}()
-
-private var __operator_binding_not_equal_nodepath: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_NODE_PATH, GDEXTENSION_VARIANT_TYPE_NODE_PATH)!
-}()
-
-private var __operator_binding_in_godotdictionary: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_NODE_PATH, GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
-}()
-
-private var __operator_binding_in_godotarray: GDExtensionPtrOperatorEvaluator = {
-    return GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_NODE_PATH, GDEXTENSION_VARIANT_TYPE_ARRAY)!
-}()
-
-private var __method_binding_is_absolute: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "is_absolute").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 3918633141)!
+    internal static func loadBindings() {
+        precondition(!areBindingsLoaded, "NodePath bindings are already loaded.")
+        areBindingsLoaded = true
+        destructor = GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH)!
+        constructor = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH, 0)!
+        constructorFromNodePath = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH, 1)!
+        constructorFromGodotString = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_NODE_PATH, 2)!
+        operatorEqualVariant = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_NODE_PATH, GDEXTENSION_VARIANT_TYPE_NIL)!
+        operatorNotEqualVariant = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_NODE_PATH, GDEXTENSION_VARIANT_TYPE_NIL)!
+        operatorNot = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT, GDEXTENSION_VARIANT_TYPE_NODE_PATH, GDEXTENSION_VARIANT_TYPE_NIL)!
+        operatorEqualNodepath = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_NODE_PATH, GDEXTENSION_VARIANT_TYPE_NODE_PATH)!
+        operatorNotEqualNodepath = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_NOT_EQUAL, GDEXTENSION_VARIANT_TYPE_NODE_PATH, GDEXTENSION_VARIANT_TYPE_NODE_PATH)!
+        operatorInGodotdictionary = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_NODE_PATH, GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
+        operatorInGodotarray = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_IN, GDEXTENSION_VARIANT_TYPE_NODE_PATH, GDEXTENSION_VARIANT_TYPE_ARRAY)!
+        methodIsAbsolute = GodotStringName(swiftStaticString: "is_absolute").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 3918633141)!
+        }
+        methodGetNameCount = GodotStringName(swiftStaticString: "get_name_count").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 3173160232)!
+        }
+        methodGetName = GodotStringName(swiftStaticString: "get_name").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 2948586938)!
+        }
+        methodGetSubnameCount = GodotStringName(swiftStaticString: "get_subname_count").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 3173160232)!
+        }
+        methodHash = GodotStringName(swiftStaticString: "hash").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 3173160232)!
+        }
+        methodGetSubname = GodotStringName(swiftStaticString: "get_subname").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 2948586938)!
+        }
+        methodGetConcatenatedNames = GodotStringName(swiftStaticString: "get_concatenated_names").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 1825232092)!
+        }
+        methodGetConcatenatedSubnames = GodotStringName(swiftStaticString: "get_concatenated_subnames").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 1825232092)!
+        }
+        methodGetAsPropertyPath = GodotStringName(swiftStaticString: "get_as_property_path").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 1598598043)!
+        }
+        methodIsEmpty = GodotStringName(swiftStaticString: "is_empty").withUnsafeOpaquePointer { __ptr__method_name in
+            GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 3918633141)!
+        }
     }
-}()
 
-private var __method_binding_get_name_count: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_name_count").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 3173160232)!
-    }
-}()
+    static private (set) var destructor: GDExtensionPtrDestructor!
 
-private var __method_binding_get_name: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_name").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 2948586938)!
-    }
-}()
+    static private (set) var constructor: GDExtensionPtrConstructor!
 
-private var __method_binding_get_subname_count: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_subname_count").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 3173160232)!
-    }
-}()
+    static private (set) var constructorFromNodePath: GDExtensionPtrConstructor!
 
-private var __method_binding_hash: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "hash").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 3173160232)!
-    }
-}()
+    static private (set) var constructorFromGodotString: GDExtensionPtrConstructor!
 
-private var __method_binding_get_subname: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_subname").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 2948586938)!
-    }
-}()
+    static private (set) var operatorEqualVariant: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_get_concatenated_names: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_concatenated_names").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 1825232092)!
-    }
-}()
+    static private (set) var operatorNotEqualVariant: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_get_concatenated_subnames: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_concatenated_subnames").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 1825232092)!
-    }
-}()
+    static private (set) var operatorNot: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_get_as_property_path: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "get_as_property_path").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 1598598043)!
-    }
-}()
+    static private (set) var operatorEqualNodepath: GDExtensionPtrOperatorEvaluator!
 
-private var __method_binding_is_empty: GDExtensionPtrBuiltInMethod = {
-    GodotStringName(swiftStaticString: "is_empty").withUnsafeRawPointer { __ptr__method_name in
-    return GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_NODE_PATH, __ptr__method_name, 3918633141)!
-    }
-}()
+    static private (set) var operatorNotEqualNodepath: GDExtensionPtrOperatorEvaluator!
+
+    static private (set) var operatorInGodotdictionary: GDExtensionPtrOperatorEvaluator!
+
+    static private (set) var operatorInGodotarray: GDExtensionPtrOperatorEvaluator!
+
+    static private (set) var methodIsAbsolute: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodGetNameCount: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodGetName: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodGetSubnameCount: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodHash: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodGetSubname: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodGetConcatenatedNames: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodGetConcatenatedSubnames: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodGetAsPropertyPath: GDExtensionPtrBuiltInMethod!
+
+    static private (set) var methodIsEmpty: GDExtensionPtrBuiltInMethod!
+}
 
 extension NodePath {
-    static internal func makeOpaque() -> Opaque {
-        Opaque(size: 8, destructorPtr: __destructor)
+    static internal func makeOpaque(
+        useDestructor: Bool = true
+    ) -> Opaque {
+        Opaque(size: 8, destructorPtr: useDestructor ? NodePathBindings.destructor : nil)
     }
 
-    static internal func _make() -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
+    static internal func make() -> Self {
+        let __temporary: Opaque = makeOpaque()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-            __constructor(__ptr___temporary, nil)
+            NodePathBindings.constructor(__ptr___temporary, nil)
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _make(
+    static internal func make(
         from: Godot.NodePath
     ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
+        let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    __constructorFromNodePath(__ptr___temporary, __accessPtr)
+                    NodePathBindings.constructorFromNodePath(__ptr___temporary, __accessPtr)
                 }
             }
         }
         return Self.init(opaque: __temporary)
     }
 
-    static internal func _makeFromNodePathPointer(
-        from: UnsafeRawPointer
-    ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
-        withUnsafeArgumentPackPointer(from) { __accessPtr in
-            __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                __constructorFromNodePath(__ptr___temporary, __accessPtr)
-            }
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _make(
+    static internal func make(
         from: Godot.GodotString
     ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
+        let __temporary: Opaque = makeOpaque()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                    __constructorFromGodotString(__ptr___temporary, __accessPtr)
+                    NodePathBindings.constructorFromGodotString(__ptr___temporary, __accessPtr)
                 }
-            }
-        }
-        return Self.init(opaque: __temporary)
-    }
-
-    static internal func _makeFromGodotStringPointer(
-        from: UnsafeRawPointer
-    ) -> Self {
-        let __temporary: Opaque = .init(size: 8, destructorPtr: __destructor)
-        withUnsafeArgumentPackPointer(from) { __accessPtr in
-            __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                __constructorFromGodotString(__ptr___temporary, __accessPtr)
             }
         }
         return Self.init(opaque: __temporary)
@@ -180,7 +146,7 @@ extension NodePath {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)
+                    NodePathBindings.operatorEqualVariant(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -193,7 +159,7 @@ extension NodePath {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 Godot.Variant.withStorageUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_not_equal_variant(__ptr_lhs, __ptr_rhs, __temporary)
+                    NodePathBindings.operatorNotEqualVariant(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -204,7 +170,7 @@ extension NodePath {
     ) -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
-                __operator_binding_not(__ptr_lhs, nil, __temporary)
+                NodePathBindings.operatorNot(__ptr_lhs, nil, __temporary)
             }
         }
     }
@@ -216,7 +182,7 @@ extension NodePath {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_equal_nodepath(__ptr_lhs, __ptr_rhs, __temporary)
+                    NodePathBindings.operatorEqualNodepath(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -229,7 +195,7 @@ extension NodePath {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_not_equal_nodepath(__ptr_lhs, __ptr_rhs, __temporary)
+                    NodePathBindings.operatorNotEqualNodepath(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -242,7 +208,7 @@ extension NodePath {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_in_godotdictionary(__ptr_lhs, __ptr_rhs, __temporary)
+                    NodePathBindings.operatorInGodotdictionary(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -255,7 +221,7 @@ extension NodePath {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: lhs) { __ptr_lhs in
                 withTransferrableUnsafeRawPointer(to: rhs) { __ptr_rhs in
-                    __operator_binding_in_godotarray(__ptr_lhs, __ptr_rhs, __temporary)
+                    NodePathBindings.operatorInGodotarray(__ptr_lhs, __ptr_rhs, __temporary)
                 }
             }
         }
@@ -264,7 +230,7 @@ extension NodePath {
     internal func _isAbsolute() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_is_absolute(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                NodePathBindings.methodIsAbsolute(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -272,7 +238,7 @@ extension NodePath {
     internal func _nameCount() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_get_name_count(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                NodePathBindings.methodGetNameCount(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -284,7 +250,7 @@ extension NodePath {
             withTransferrableUnsafeRawPointer(to: idx) { __ptr_idx in
                 withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_get_name(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        NodePathBindings.methodGetName(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -294,7 +260,7 @@ extension NodePath {
     internal func _subnameCount() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_get_subname_count(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                NodePathBindings.methodGetSubnameCount(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -302,7 +268,7 @@ extension NodePath {
     internal func _hash() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_hash(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                NodePathBindings.methodHash(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -314,7 +280,7 @@ extension NodePath {
             withTransferrableUnsafeRawPointer(to: idx) { __ptr_idx in
                 withUnsafeArgumentPackPointer(__ptr_idx) { __accessPtr in
                     withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                        __method_binding_get_subname(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
+                        NodePathBindings.methodGetSubname(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -324,7 +290,7 @@ extension NodePath {
     internal func _concatenatedNames() -> Godot.GodotStringName {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_get_concatenated_names(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                NodePathBindings.methodGetConcatenatedNames(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -332,7 +298,7 @@ extension NodePath {
     internal func _concatenatedSubnames() -> Godot.GodotStringName {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_get_concatenated_subnames(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                NodePathBindings.methodGetConcatenatedSubnames(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -340,7 +306,7 @@ extension NodePath {
     internal func _asPropertyPath() -> Godot.NodePath {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_get_as_property_path(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                NodePathBindings.methodGetAsPropertyPath(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -348,7 +314,7 @@ extension NodePath {
     internal func _isEmpty() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
-                __method_binding_is_empty(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
+                NodePathBindings.methodIsEmpty(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }

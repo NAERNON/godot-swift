@@ -4,7 +4,7 @@ import SwiftSyntaxMacros
 import SwiftDiagnostics
 import Foundation
 
-public enum GodotOpaqueBuiltinClassMacro: MemberMacro {
+public enum BuiltinOpaqueMacro: MemberMacro {
     // MARK: Member
     
     public static func expansion(
@@ -27,54 +27,25 @@ public enum GodotOpaqueBuiltinClassMacro: MemberMacro {
             self.opaque = opaque
         }
         
-        /// When a function modifies the opaque array or any value associated,
-        /// we should check that the `Opaque` value is uniquely referenced and if not,
-        /// duplicate its value.
-        internal mutating func replaceOpaqueValueIfNecessary() {
-            guard !isKnownUniquelyReferenced(&opaque) else {
-                return
-            }
-            
-            self.opaque = self.withCopiedOpaque().opaque
-        }
-        
-        public consuming func transferToGodot(
-            unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
-        ) {
-            var copy = consume self
-            if isKnownUniquelyReferenced(&copy.opaque) {
-                copy.opaque.withUnsafeMutableRawPointer { ptr in
-                    destinationUnsafePointer.copyMemory(from: ptr, byteCount: copy.opaque.size)
-                }
-                copy.opaque.destructorPtr = nil
-            } else {
-                let newOpaque = copy.withCopiedOpaque().opaque
-                newOpaque.withUnsafeMutableRawPointer { ptr in
-                    destinationUnsafePointer.copyMemory(from: ptr, byteCount: newOpaque.size)
-                }
-                newOpaque.destructorPtr = nil
-            }
-        }
-        
-        func withUnsafeRawBufferPointer<Result>(
+        func withUnsafeOpaqueBufferPointer<Result>(
             _ body: (UnsafeRawBufferPointer) throws -> Result
         ) rethrows -> Result {
             try opaque.withUnsafeRawBufferPointer(body)
         }
         
-        mutating func withUnsafeMutableRawBufferPointer<Result>(
+        mutating func withUnsafeMutableOpaqueBufferPointer<Result>(
             _ body: (UnsafeMutableRawBufferPointer) throws -> Result
         ) rethrows -> Result {
             try opaque.withUnsafeMutableRawBufferPointer(body)
         }
         
-        func withUnsafeRawPointer<Result>(
+        func withUnsafeOpaquePointer<Result>(
             _ body: (UnsafeRawPointer) throws -> Result
         ) rethrows -> Result {
             try opaque.withUnsafeRawPointer(body)
         }
         
-        mutating func withUnsafeMutableRawPointer<Result>(
+        mutating func withUnsafeMutableOpaquePointer<Result>(
             _ body: (UnsafeMutableRawPointer) throws -> Result
         ) rethrows -> Result {
             try opaque.withUnsafeMutableRawPointer(body)
