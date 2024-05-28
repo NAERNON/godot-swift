@@ -18,6 +18,8 @@
 /// For instance, when a `PackedInt32Array` is used in Godot, you use a
 /// `GodotContiguousArray<Int32>` in Godot Swift.
 ///
+/// Here are all the Godot types and their Swift equivalent:
+///
 /// | Godot type | Swift generic type |
 /// | - | - |
 /// | `PackedByteArray` | `UInt8` |
@@ -30,12 +32,22 @@
 /// | `PackedVector3Array` | `Vector3` |
 /// | `PackedStringArray` | `GodotString` |
 ///
+/// ### Resizing
+///
+/// Due to the limited number of types it can hold, `GodotContiguousArray`
+/// has the unique ability in Swift collection to be resizable, via the
+/// ``GodotContiguousArray/resize(count:)`` function.
+///
 /// ## Topics
 ///
 /// ### Initializers
 ///
 /// - ``GodotContiguousArray/init()``
 /// - ``GodotContiguousArray/init(storage:)``
+///
+/// ### Resizing
+///
+/// - ``GodotContiguousArray/resize(count:)``
 ///
 /// ### Accessing Buffer
 ///
@@ -137,6 +149,17 @@ where Element : GodotContiguousArrayElement
             try body(UnsafeMutableBufferPointer(start: ptr, count: size))
         }
     }
+    
+    /// Updates the number of elements in the array.
+    ///
+    /// If the number of elements increases, new default values
+    /// are added at the end of the array.
+    /// If the number of elements decreases, end values are deinitialized.
+    public mutating func resize(count: Int) {
+        precondition(count >= 0, "The number of elements in a collection cannot be negative")
+        
+        storage.resize(count)
+    }
 }
 
 extension GodotContiguousArray: ExpressibleByArrayLiteral {
@@ -186,9 +209,7 @@ extension GodotContiguousArray: Collection {
     
     public subscript(index: Int) -> Element {
         get {
-            guard index >= 0 && index < endIndex else {
-                fatalError("Index out of range")
-            }
+            precondition(index >= 0 && index < endIndex, "Index out of range")
             
             let source = storage.withUnsafePointer { pointer in
                 pointer![index]
@@ -197,9 +218,7 @@ extension GodotContiguousArray: Collection {
             return Element.readGodotContiguousArrayValue(from: source)
         }
         set(newValue) {
-            guard index >= 0 && index < endIndex else {
-                fatalError("Index out of range")
-            }
+            precondition(index >= 0 && index < endIndex, "Index out of range")
             
             storage.withUnsafeMutablePointer { pointer in
                 Element.writeGodotContiguousArray(
@@ -209,9 +228,7 @@ extension GodotContiguousArray: Collection {
             }
         }
         _modify {
-            guard index >= 0 && index < endIndex else {
-                fatalError("Index out of range")
-            }
+            precondition(index >= 0 && index < endIndex, "Index out of range")
             
             let source = storage.withUnsafePointer { pointer in
                 pointer![index]
@@ -242,70 +259,76 @@ extension GodotContiguousArray: RandomAccessCollection {}
 extension GodotContiguousArray: RangeReplaceableCollection {
     public mutating func replaceSubrange<C>(_ subrange: Swift.Range<Int>, with newElements: C)
     where C : Collection, Element == C.Element {
+        let previousSize = storage.size
+        
+        precondition(subrange.lowerBound >= 0, "GodotContiguousArray replace: subrange start is negative")
+        precondition(subrange.upperBound <= previousSize, "GodotContiguousArray replace: subrange extends past the end")
+        
         let subrangeCount = subrange.count
         let newElementsCount = newElements.count
-        let currentSize = storage.size
         
-        guard subrange.lowerBound >= 0 else {
-            fatalError("GodotContiguousArray replace: subrange start is negative")
-        }
-        guard subrange.upperBound <= currentSize else {
-            fatalError("GodotContiguousArray replace: subrange extends past the end")
-        }
+        let sizeDelta = newElementsCount - subrangeCount
+        let newSize = previousSize + sizeDelta
         
-        if subrangeCount == newElementsCount {
-            storage.withUnsafeMutablePointer { pointer in
-                var index = subrange.lowerBound
-                for element in newElements {
-                    Element.writeGodotContiguousArray(
-                        value: element,
-                        to: &pointer![index]
-                    )
-                    index += 1
-                }
-            }
-        } else if subrangeCount < newElementsCount {
-            let newSize = storage.size + (newElementsCount - subrangeCount)
+        if subrangeCount < newElementsCount {
             storage.resize(newSize)
             
             storage.withUnsafeMutablePointer { pointer in
-                pointer!
-                    .advanced(by: subrange.lowerBound + newElementsCount)
-                    .moveInitialize(
-                        from: pointer!.advanced(by: subrange.upperBound),
-                        count: currentSize - subrange.lowerBound
-                    )
+                guard let pointer else { return }
                 
-                var index = subrange.lowerBound
+                var index = previousSize
+                
+                while index > subrange.lowerBound {
+                    swap(&pointer[index - 1], &pointer[index + sizeDelta - 1])
+                    
+                    index -= 1
+                }
+                
                 for element in newElements {
                     Element.writeGodotContiguousArray(
                         value: element,
-                        to: &pointer![index]
+                        to: &pointer[index]
                     )
                     index += 1
                 }
             }
+        } else if subrangeCount > newElementsCount {
+            storage.withUnsafeMutablePointer { pointer in
+                guard let pointer else { return }
+                
+                var index = subrange.upperBound
+                
+                while index < previousSize {
+                    swap(&pointer[index], &pointer[index + sizeDelta])
+                    
+                    index += 1
+                }
+                
+                index = subrange.lowerBound
+                
+                for element in newElements {
+                    Element.writeGodotContiguousArray(
+                        value: element,
+                        to: &pointer[index]
+                    )
+                    index += 1
+                }
+            }
+            
+            storage.resize(newSize)
         } else {
             storage.withUnsafeMutablePointer { pointer in
-                pointer!
-                    .advanced(by: subrange.lowerBound + newElementsCount)
-                    .moveInitialize(
-                        from: pointer!.advanced(by: subrange.upperBound),
-                        count: currentSize - subrange.lowerBound
-                    )
+                guard let pointer else { return }
                 
                 var index = subrange.lowerBound
                 for element in newElements {
                     Element.writeGodotContiguousArray(
                         value: element,
-                        to: &pointer![index]
+                        to: &pointer[index]
                     )
                     index += 1
                 }
             }
-            
-            let newSize = storage.size + (newElementsCount - subrangeCount)
-            storage.resize(newSize)
         }
     }
 }
