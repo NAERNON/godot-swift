@@ -10,6 +10,3 @@ internal macro GodotRootClass() = #externalMacro(module: "GodotMacros", type: "G
 
 @attached(member, names: arbitrary)
 internal macro GodotRefCountedRootClass() = #externalMacro(module: "GodotMacros", type: "GodotRefCountedRootClassMacro")
-
-@attached(member, names: arbitrary)
-internal macro BuiltinOpaque() = #externalMacro(module: "GodotMacros", type: "BuiltinOpaqueMacro")

@@ -92,24 +92,24 @@ internal enum SignalBindings {
 }
 
 extension Signal {
-    static internal func makeOpaque(
+    static internal func makeOpaqueStorage(
         useDestructor: Bool = true
-    ) -> Opaque {
-        Opaque(size: 16, destructorPtr: useDestructor ? SignalBindings.destructor : nil)
+    ) -> Opaque.Storage {
+        Opaque.Storage(size: 16, destructorPtr: useDestructor ? SignalBindings.destructor : nil)
     }
 
-    static internal func make() -> Self {
-        let __temporary: Opaque = makeOpaque()
+    static internal func make() -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
             SignalBindings.constructor(__ptr___temporary, nil)
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make(
         from: Godot.Signal
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -117,14 +117,14 @@ extension Signal {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make(
         object: Godot.Object?,
         signal: Godot.GodotStringName
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: object) { __ptr_object in
             withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
                 withTransferrableUnsafeRawPointer(to: signal) { __ptr_signal in
@@ -136,7 +136,7 @@ extension Signal {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func _operatorEqual<Value: Variant.Storable>(
@@ -259,18 +259,16 @@ extension Signal {
         }
     }
 
-    @discardableResult
-    mutating internal func _connect(
+    internal func _connect(
         callable: Godot.Callable,
         flags: Int = 0
     ) -> Int {
-        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: callable) { __ptr_callable in
                 withTransferrableUnsafeRawPointer(to: flags) { __ptr_flags in
                     withUnsafeArgumentPackPointer(__ptr_callable, __ptr_flags) { __accessPtr in
-                        withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                            SignalBindings.methodConnect(__ptr_self, __accessPtr, __temporary, 2)
+                        withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                            SignalBindings.methodConnect(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -278,14 +276,13 @@ extension Signal {
         }
     }
 
-    mutating internal func _disconnect(
+    internal func _disconnect(
         callable: Godot.Callable
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: callable) { __ptr_callable in
             withUnsafeArgumentPackPointer(__ptr_callable) { __accessPtr in
-                withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    SignalBindings.methodDisconnect(__ptr_self, __accessPtr, nil, 1)
+                withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                    SignalBindings.methodDisconnect(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 1)
                 }
             }
         }

@@ -1,36 +1,51 @@
 
-extension Vector3: GodotContiguousArrayElement {
-    /// Contiguous array storage of 3D vectors.
-    @BuiltinOpaque
+extension Int32: GodotContiguousArrayElement {
+    /// Contiguous array storage of colors 32 bit integers.
     public struct GodotContiguousArrayStorage {
-        public typealias Element = Vector3
+        public typealias Element = Int32
         
-        internal mutating func makeUniqueIfSharedOpaque() {
-            guard !isKnownUniquelyReferenced(&opaque) else {
-                return
+        private var opaque: Opaque
+
+        internal init(storage: consuming Opaque.Storage) {
+            self.opaque = .init(storage)
+        }
+        
+        fileprivate mutating func makeUniqueIfSharedOpaque() {
+            if !isKnownUniquelyReferenced(&opaque) {
+                self.opaque = .init(Self.make(from: self))
             }
-            
-            self = Self.make(from: self)
+        }
+        
+        public func withUnsafeOpaquePointer<Result>(
+            _ body: (UnsafeRawPointer) throws -> Result
+        ) rethrows -> Result {
+            try opaque.withUnsafeRawPointer(body)
+        }
+
+        public mutating func withUnsafeMutableOpaquePointer<Result>(
+            _ body: (UnsafeMutableRawPointer) throws -> Result
+        ) rethrows -> Result {
+            try opaque.withUnsafeMutableRawPointer(body)
         }
     }
     
     public static func readGodotContiguousArrayValue(
-        from source: Vector3
-    ) -> Vector3 {
+        from source: Int32
+    ) -> Int32 {
         source
     }
     
     public static func writeGodotContiguousArray(
-        value: Vector3,
-        to source: inout Vector3
+        value: Int32,
+        to source: inout Int32
     ) {
         source = value
     }
 }
 
-extension Vector3.GodotContiguousArrayStorage: GodotContiguousArrayStorageProtocol {
+extension Int32.GodotContiguousArrayStorage: GodotContiguousArrayStorageProtocol {
     public init() {
-        self = Self.make()
+        self.init(storage: Self.make())
     }
     
     public var size: Int {
@@ -38,7 +53,9 @@ extension Vector3.GodotContiguousArrayStorage: GodotContiguousArrayStorageProtoc
     }
     
     public mutating func resize(_ newSize: Int) {
-        _resize(newSize: newSize)
+        makeUniqueIfSharedOpaque()
+        
+        _ = _resize(newSize: newSize)
     }
     
     public func bytes() -> UInt8.GodotContiguousArrayStorage {
@@ -46,37 +63,37 @@ extension Vector3.GodotContiguousArrayStorage: GodotContiguousArrayStorageProtoc
     }
     
     public func withUnsafePointer<R>(
-        _ body: (UnsafePointer<Vector3>?) throws -> R
+        _ body: (UnsafePointer<Int32>?) throws -> R
     ) rethrows -> R {
         try withUnsafeOpaquePointer { pointer in
-            let ptr = GodotExtension.Interface.packedVector3ArrayOperatorIndexConst(
+            let ptr = GodotExtension.Interface.packedInt32ArrayOperatorIndexConst(
                 pointer,
                 0
             )
             
-            return try body(ptr?.assumingMemoryBound(to: Vector3.self))
+            return try body(ptr)
         }
     }
     
     public mutating func withUnsafeMutablePointer<R>(
-        _ body: (UnsafeMutablePointer<Vector3>?) throws -> R
+        _ body: (UnsafeMutablePointer<Int32>?) throws -> R
     ) rethrows -> R {
         makeUniqueIfSharedOpaque()
         
         return try withUnsafeMutableOpaquePointer { pointer in
-            let ptr = GodotExtension.Interface.packedVector3ArrayOperatorIndex(
+            let ptr = GodotExtension.Interface.packedInt32ArrayOperatorIndex(
                 pointer,
                 0
             )
             
-            return try body(ptr?.assumingMemoryBound(to: Vector3.self))
+            return try body(ptr)
         }
     }
     
     // MARK: Variant.Storable
     
     public static var variantStorageType: Variant.StorageType? {
-        .packedVector3Array
+        .packedInt32Array
     }
     
     public static func convertToStorage(
@@ -115,30 +132,18 @@ extension Vector3.GodotContiguousArrayStorage: GodotContiguousArrayStorageProtoc
     
     // MARK: Pointer
     
-    public func withRawTypeUnsafeRawPointer<Result>(
-        _ body: (UnsafeRawPointer) throws -> Result
-    ) rethrows -> Result {
-        try withUnsafeOpaquePointer(body)
-    }
-
-    public mutating func withRawTypeUnsafeMutableRawPointer<Result>(
-        _ body: (UnsafeMutableRawPointer) throws -> Result
-    ) rethrows -> Result {
-        try withUnsafeMutableOpaquePointer(body)
-    }
-    
     public static func fromInitializingTransferrableRawTypeUnsafeRawPointer(
         _ body: (UnsafeMutableRawPointer) -> Void
     ) -> Self {
-        let opaque = Self.makeOpaque()
-        opaque.withUnsafeMutableRawPointer(body)
-        return .init(opaque: opaque)
+        var storage = Self.makeOpaqueStorage()
+        storage.withUnsafeMutableRawPointer(body)
+        return .init(storage: storage)
     }
     
     // MARK: Exposable
     
     public static var variantRepresentationType: Variant.RepresentationType {
-        .packedVector3Array
+        .packedInt32Array
     }
     
     public consuming func transferToGodot(
@@ -146,8 +151,8 @@ extension Vector3.GodotContiguousArrayStorage: GodotContiguousArrayStorageProtoc
     ) {
         withUnsafeOpaquePointer { selfPtr in
             withUnsafeArgumentPackPointer(selfPtr) { accessPtr in
-                Vector3GodotContiguousArrayStorageBindings
-                    .constructorFromGodotContiguousArrayVector3(destinationUnsafePointer, accessPtr)
+                Int32GodotContiguousArrayStorageBindings
+                    .constructorFromGodotContiguousArrayInt32(destinationUnsafePointer, accessPtr)
             }
         }
     }
@@ -155,13 +160,13 @@ extension Vector3.GodotContiguousArrayStorage: GodotContiguousArrayStorageProtoc
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        let opaque: Opaque = makeOpaque()
+        var storage = makeOpaqueStorage()
         withUnsafeArgumentPackPointer(unsafePointer!) { accessPtr in
-            opaque.withUnsafeMutableRawPointer { opaquePtr in
-                Vector3GodotContiguousArrayStorageBindings
-                    .constructorFromGodotContiguousArrayVector3(opaquePtr, accessPtr)
+            storage.withUnsafeMutableRawPointer { opaquePtr in
+                Int32GodotContiguousArrayStorageBindings
+                    .constructorFromGodotContiguousArrayInt32(opaquePtr, accessPtr)
             }
         }
-        return Self.init(opaque: opaque)
+        return Self.init(storage: storage)
     }
 }

@@ -11,23 +11,19 @@ struct GodotEnum: Decodable {
     var isBitfield: Bool?
     var values: [Value]
     
-    // MARK: Value
-    
     struct Value: Decodable {
         var name: String
         var value: Int
     }
-    
-    // MARK: Case
-    
+}
+
+extension GodotEnum {
     private struct Case<T : FixedWidthInteger> {
         var name: String
         var value: T
     }
     
-    // MARK: - Syntax
-    
-    func syntax() throws -> DeclSyntax {
+    func declSyntax() throws -> DeclSyntax {
         if isBitfield == true {
             try DeclSyntax(optionSetSyntax(forType: Int64.self))
         } else {
@@ -50,7 +46,7 @@ struct GodotEnum: Decodable {
         
         var cases = [Case<T>]()
         for i in 0..<values.count {
-            let translatedCase = backticksKeyword(translatedEnum.cases[i])
+            let translatedCase = translatedEnum.cases[i].backticksKeyword()
             cases.append(.init(name: translatedCase, value: T(values[i].value)))
         }
         

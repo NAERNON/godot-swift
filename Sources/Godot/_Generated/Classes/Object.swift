@@ -635,32 +635,11 @@ open class Object {
             Godot.Variant.withStorageUnsafeRawPointer(to: signal) { __ptr_signal in
                 withUnsafeArgumentPackPointer(__ptr_signal, varargs: repeat each rest) { packCount, __accessPtr in
                     self.withUnsafeMutableRawPointer { __ptr_self in
-                            GodotExtension.Interface.objectMethodBindCall(
+                        GodotExtension.Interface.objectMethodBindCall(
                             Self.__method_binding_emit_signal,
                             __ptr_self,
                             __accessPtr,
                             Int64(packCount),
-                            __temporary,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
-    }
-
-    internal func __emitSignal(
-        _ signal: Godot.GodotStringName
-    ) -> Godot.ErrorType {
-        fromInitializingTransferrableUnsafeRawPointer { __temporary in
-            Godot.Variant.withStorageUnsafeRawPointer(to: signal) { __ptr_signal in
-                withUnsafeArgumentPackPointer(__ptr_signal) { __accessPtr in
-                    self.withUnsafeMutableRawPointer { __ptr_self in
-                            GodotExtension.Interface.objectMethodBindCall(
-                            Self.__method_binding_emit_signal,
-                            __ptr_self,
-                            __accessPtr,
-                            1,
                             __temporary,
                             nil
                         )
@@ -686,32 +665,11 @@ open class Object {
             Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
                 withUnsafeArgumentPackPointer(__ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
                     self.withUnsafeMutableRawPointer { __ptr_self in
-                            GodotExtension.Interface.objectMethodBindCall(
+                        GodotExtension.Interface.objectMethodBindCall(
                             Self.__method_binding_call,
                             __ptr_self,
                             __accessPtr,
                             Int64(packCount),
-                            __temporary,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
-    }
-
-    internal func __call(
-        method: Godot.GodotStringName
-    ) -> Godot.Variant {
-        fromInitializingTransferrableUnsafeRawPointer { __temporary in
-            Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
-                withUnsafeArgumentPackPointer(__ptr_method) { __accessPtr in
-                    self.withUnsafeMutableRawPointer { __ptr_self in
-                            GodotExtension.Interface.objectMethodBindCall(
-                            Self.__method_binding_call,
-                            __ptr_self,
-                            __accessPtr,
-                            1,
                             __temporary,
                             nil
                         )
@@ -737,32 +695,11 @@ open class Object {
             Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
                 withUnsafeArgumentPackPointer(__ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
                     self.withUnsafeMutableRawPointer { __ptr_self in
-                            GodotExtension.Interface.objectMethodBindCall(
+                        GodotExtension.Interface.objectMethodBindCall(
                             Self.__method_binding_call_deferred,
                             __ptr_self,
                             __accessPtr,
                             Int64(packCount),
-                            __temporary,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
-    }
-
-    internal func __callDeferred(
-        method: Godot.GodotStringName
-    ) -> Godot.Variant {
-        fromInitializingTransferrableUnsafeRawPointer { __temporary in
-            Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
-                withUnsafeArgumentPackPointer(__ptr_method) { __accessPtr in
-                    self.withUnsafeMutableRawPointer { __ptr_self in
-                            GodotExtension.Interface.objectMethodBindCall(
-                            Self.__method_binding_call_deferred,
-                            __ptr_self,
-                            __accessPtr,
-                            1,
                             __temporary,
                             nil
                         )

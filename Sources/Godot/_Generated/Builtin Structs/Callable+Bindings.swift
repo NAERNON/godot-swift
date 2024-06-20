@@ -137,24 +137,24 @@ internal enum CallableBindings {
 }
 
 extension Callable {
-    static internal func makeOpaque(
+    static internal func makeOpaqueStorage(
         useDestructor: Bool = true
-    ) -> Opaque {
-        Opaque(size: 16, destructorPtr: useDestructor ? CallableBindings.destructor : nil)
+    ) -> Opaque.Storage {
+        Opaque.Storage(size: 16, destructorPtr: useDestructor ? CallableBindings.destructor : nil)
     }
 
-    static internal func make() -> Self {
-        let __temporary: Opaque = makeOpaque()
+    static internal func make() -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
             CallableBindings.constructor(__ptr___temporary, nil)
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make(
         from: Godot.Callable
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -162,14 +162,14 @@ extension Callable {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make(
         object: Godot.Object?,
         method: Godot.GodotStringName
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: object) { __ptr_object in
             withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
                 withTransferrableUnsafeRawPointer(to: method) { __ptr_method in
@@ -181,7 +181,7 @@ extension Callable {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func _operatorEqual<Value: Variant.Storable>(
@@ -366,16 +366,14 @@ extension Callable {
         }
     }
 
-    @discardableResult
-    mutating internal func _bindv<Value: Variant.Storable>(
+    internal func _bindv<Value: Variant.Storable>(
         arguments: Godot.GodotArray<Value>
     ) -> Godot.Callable {
-        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: arguments) { __ptr_arguments in
                 withUnsafeArgumentPackPointer(__ptr_arguments) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        CallableBindings.methodBindv(__ptr_self, __accessPtr, __temporary, 1)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        CallableBindings.methodBindv(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }

@@ -1937,7 +1937,7 @@ open class CPUParticles2D: Node2D {
         }
     }
 
-    public var particleFlag: Bool {
+    public var particleFlagAlignY: Bool {
         get {
             __getParticleFlag(
                 .init(rawValue: 0)!

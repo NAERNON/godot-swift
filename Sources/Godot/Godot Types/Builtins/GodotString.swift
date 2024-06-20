@@ -1,18 +1,45 @@
 import GodotExtensionHeaders
 
-@BuiltinOpaque
-public struct GodotString {
-    internal mutating func makeUniqueIfSharedOpaque() {}
+public final class GodotString {
+    private var storage: Opaque.Storage
+
+    internal init(storage: consuming Opaque.Storage) {
+        self.storage = storage
+    }
+
+    func withUnsafeOpaqueBufferPointer<Result>(
+        _ body: (UnsafeRawBufferPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeRawBufferPointer(body)
+    }
+
+    func withUnsafeMutableOpaqueBufferPointer<Result>(
+        _ body: (UnsafeMutableRawBufferPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeMutableRawBufferPointer(body)
+    }
+
+    func withUnsafeOpaquePointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeRawPointer(body)
+    }
+
+    func withUnsafeMutableOpaquePointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeMutableRawPointer(body)
+    }
 }
 
 extension GodotString {
     // MARK: Constructors
     
-    public init() {
-        self = Self.make()
+    public convenience init() {
+        self.init(storage: Self.make())
     }
     
-    public init(swiftString: String) {
+    public convenience init(swiftString: String) {
         self.init()
         
         withUnsafeMutableOpaquePointer { extensionPtr in
@@ -22,7 +49,7 @@ extension GodotString {
         }
     }
     
-    internal init(swiftStaticString: StaticString) {
+    internal convenience init(swiftStaticString: StaticString) {
         self.init()
         
         withUnsafeMutableOpaquePointer { extensionPtr in
@@ -34,20 +61,20 @@ extension GodotString {
         }
     }
     
-    public init<Subject>(describing instance: Subject) {
+    public convenience init<Subject>(describing instance: Subject) {
         self.init(swiftString: .init(describing: instance))
     }
     
-    public init(stringName: GodotStringName) {
-        self = Self.make(from: stringName)
+    public convenience init(stringName: GodotStringName) {
+        self.init(storage: Self.make(from: stringName))
     }
     
-    public init(nodePath: NodePath) {
-        self = Self.make(from: nodePath)
+    public convenience init(nodePath: NodePath) {
+        self.init(storage: Self.make(from: nodePath))
     }
     
-    public init(_ c: Character) {
-        self = GodotString(swiftString: .init(c))
+    public convenience init(_ c: Character) {
+        self.init(swiftString: .init(c))
     }
     
     // MARK: Operators
@@ -395,7 +422,7 @@ extension GodotString {
 }
 
 extension GodotString: ExpressibleByStringLiteral, ExpressibleByStringInterpolation {
-    public init(stringLiteral value: String) {
+    public convenience init(stringLiteral value: String) {
         self.init(swiftString: value)
     }
 }
@@ -434,7 +461,7 @@ extension GodotString: RangeReplaceableCollection {
         }
     }
     
-    public mutating func replaceSubrange<C>(_ subrange: Swift.Range<Int>, with newElements: C)
+    public func replaceSubrange<C>(_ subrange: Swift.Range<Int>, with newElements: C)
     where C : Collection, Character == C.Element {
         if subrange.isEmpty {
             var new = self
@@ -497,8 +524,8 @@ extension GodotString: TextOutputStreamable {
 }
 
 extension GodotString: TextOutputStream {
-    public mutating func write(_ string: String) {
-        self += GodotString(swiftString: string)
+    public func write(_ string: String) {
+        self.append(contentsOf: string)
     }
 }
 
@@ -507,7 +534,7 @@ extension GodotString: Codable {
         try String(godotString: self).encode(to: encoder)
     }
     
-    public init(from decoder: Decoder) throws {
+    public convenience init(from decoder: Decoder) throws {
         self.init(swiftString: try String(from: decoder))
     }
 }

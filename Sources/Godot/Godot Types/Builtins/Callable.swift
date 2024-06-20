@@ -1,25 +1,46 @@
 import GodotExtensionHeaders
 
-@BuiltinOpaque
-public struct Callable {
-    internal mutating func makeUniqueIfSharedOpaque() {
-        guard !isKnownUniquelyReferenced(&opaque) else {
-            return
-        }
-        
-        self = Self.make(from: self)
+public final class Callable {
+    private var storage: Opaque.Storage
+
+    internal init(storage: consuming Opaque.Storage) {
+        self.storage = storage
+    }
+
+    func withUnsafeOpaqueBufferPointer<Result>(
+        _ body: (UnsafeRawBufferPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeRawBufferPointer(body)
+    }
+
+    func withUnsafeMutableOpaqueBufferPointer<Result>(
+        _ body: (UnsafeMutableRawBufferPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeMutableRawBufferPointer(body)
+    }
+
+    func withUnsafeOpaquePointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeRawPointer(body)
+    }
+
+    func withUnsafeMutableOpaquePointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeMutableRawPointer(body)
     }
 }
 
 extension Callable {
     // MARK: Constructors
     
-    internal init() {
-        self = Self.make()
+    internal convenience init() {
+        self.init(storage: Self.make())
     }
     
-    internal init(object: Object, method: GodotStringName) {
-        self = Self.make(object: object, method: method)
+    internal convenience init(object: Object, method: GodotStringName) {
+        self.init(storage: Self.make(object: object, method: method))
     }
     
     // MARK: Methods & variables
@@ -65,7 +86,7 @@ extension Callable {
         _boundArguments()
     }
     
-    internal mutating func bindv<Value>(arguments: GodotArray<Value>) -> Callable
+    internal func bindv<Value>(arguments: GodotArray<Value>) -> Callable
     where Value : Variant.Storable {
         _bindv(arguments: arguments)
     }

@@ -20,7 +20,7 @@ open class GDScript: Script {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withUnsafeArgumentPackPointer(varargs: repeat each rest) { packCount, __accessPtr in
                 self.withUnsafeMutableRawPointer { __ptr_self in
-                        GodotExtension.Interface.objectMethodBindCall(
+                    GodotExtension.Interface.objectMethodBindCall(
                         Self.__method_binding_new,
                         __ptr_self,
                         __accessPtr,
@@ -29,21 +29,6 @@ open class GDScript: Script {
                         nil
                     )
                 }
-            }
-        }
-    }
-
-    public func new() -> Godot.Variant {
-        fromInitializingTransferrableUnsafeRawPointer { __temporary in
-            self.withUnsafeMutableRawPointer { __ptr_self in
-                    GodotExtension.Interface.objectMethodBindCall(
-                    Self.__method_binding_new,
-                    __ptr_self,
-                    nil,
-                    0,
-                    __temporary,
-                    nil
-                )
             }
         }
     }

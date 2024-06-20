@@ -2,23 +2,6 @@ import SwiftSyntax
 import SwiftSyntaxBuilder
 import Utils
 
-private enum Accessibility {
-    case `public`
-    case `internal`
-    case `private`
-    
-    var keyword: Keyword {
-        switch self {
-        case .public:
-            .public
-        case .internal:
-            .internal
-        case .private:
-            .private
-        }
-    }
-}
-
 /// A representation of a Godot class.
 ///
 /// It can be decoded from the `extension_api.json` file.
@@ -28,13 +11,38 @@ struct GodotClass: Decodable {
     var isInstantiable: Bool
     var inherits: GodotType?
     var apiType: APIType
-    var enums: [GodotEnum]?
-    var methods: [Method]?
-    var properties: [Property]?
-    var signals: [Signal]?
-    var constants: [Constant]?
+    var enums: [GodotEnum]
+    var methods: [Method]
+    var properties: [Property]
+    var signals: [Signal]
+    var constants: [Constant]
     
-    // MARK: APIType
+    enum CodingKeys: CodingKey {
+        case name
+        case isRefcounted
+        case isInstantiable
+        case inherits
+        case apiType
+        case enums
+        case methods
+        case properties
+        case signals
+        case constants
+    }
+    
+    init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.name = try container.decode(GodotType.self, forKey: .name)
+        self.isRefcounted = try container.decode(Bool.self, forKey: .isRefcounted)
+        self.isInstantiable = try container.decode(Bool.self, forKey: .isInstantiable)
+        self.inherits = try container.decodeIfPresent(GodotType.self, forKey: .inherits)
+        self.apiType = try container.decode(GodotClass.APIType.self, forKey: .apiType)
+        self.enums = try container.decodeIfPresent([GodotEnum].self, forKey: .enums) ?? []
+        self.methods = try container.decodeIfPresent([GodotClass.Method].self, forKey: .methods) ?? []
+        self.properties = try container.decodeIfPresent([GodotClass.Property].self, forKey: .properties) ?? []
+        self.signals = try container.decodeIfPresent([GodotClass.Signal].self, forKey: .signals) ?? []
+        self.constants = try container.decodeIfPresent([GodotClass.Constant].self, forKey: .constants) ?? []
+    }
     
     enum APIType: String, Decodable, Equatable {
         case core
@@ -44,9 +52,7 @@ struct GodotClass: Decodable {
         case level
     }
     
-    // MARK: Method
-    
-    struct Method: Decodable, GodotFunction {
+    struct Method: Decodable, Hashable {
         var name: String
         var isConst: Bool
         var isVararg: Bool
@@ -54,30 +60,32 @@ struct GodotClass: Decodable {
         var isVirtual: Bool
         var hash: Int?
         var returnValue: ReturnValue?
-        var arguments: [GodotArgument]?
+        var arguments: [GodotArgument]
         
-        var returnType: GodotType? { returnValue?.type }
-        
-        private var prefersStandardCall: Bool?
-        private var usesStandardCall: Bool { isVararg == true || prefersStandardCall == true }
-        
-        var usesVariantGeneric: Bool { !isVirtual }
-        var convertsAllParameterToVariant: Bool { usesStandardCall }
-        
-        func nonVararg() -> Method {
-            guard isVararg else {
-                return self
-            }
-            
-            var new = self
-            new.prefersStandardCall = true
-            new.isVararg = false
-            return new
+        enum CodingKeys: CodingKey {
+            case name
+            case isConst
+            case isVararg
+            case isStatic
+            case isVirtual
+            case hash
+            case returnValue
+            case arguments
         }
         
-        // MARK: Return value
+        init(from decoder: any Decoder) throws {
+            let container: KeyedDecodingContainer<GodotClass.Method.CodingKeys> = try decoder.container(keyedBy: GodotClass.Method.CodingKeys.self)
+            self.name = try container.decode(String.self, forKey: GodotClass.Method.CodingKeys.name)
+            self.isConst = try container.decode(Bool.self, forKey: GodotClass.Method.CodingKeys.isConst)
+            self.isVararg = try container.decode(Bool.self, forKey: GodotClass.Method.CodingKeys.isVararg)
+            self.isStatic = try container.decode(Bool.self, forKey: GodotClass.Method.CodingKeys.isStatic)
+            self.isVirtual = try container.decode(Bool.self, forKey: GodotClass.Method.CodingKeys.isVirtual)
+            self.hash = try container.decodeIfPresent(Int.self, forKey: GodotClass.Method.CodingKeys.hash)
+            self.returnValue = try container.decodeIfPresent(GodotClass.Method.ReturnValue.self, forKey: GodotClass.Method.CodingKeys.returnValue)
+            self.arguments = try container.decodeIfPresent([GodotArgument].self, forKey: GodotClass.Method.CodingKeys.arguments) ?? []
+        }
         
-        struct ReturnValue: Decodable {
+        struct ReturnValue: Decodable, Hashable {
             var type: GodotType
             
             enum CodingKeys: CodingKey {
@@ -102,37 +110,7 @@ struct GodotClass: Decodable {
                 )
             }
         }
-        
-        var ptrIdentifier: String {
-            "__method_binding_\(name)"
-        }
-        
-        func bindCall(selfExpression: String, argsExpression: String, returnExpression: String) -> ExprSyntax {
-            if usesStandardCall {
-                """
-                    GodotExtension.Interface.objectMethodBindCall(
-                    Self.\(raw: ptrIdentifier),
-                    \(raw: selfExpression),
-                    \(raw: argsExpression),
-                    \(raw: argumentsCountSyntax(type: Int64.self)),
-                    \(raw: returnExpression),
-                    nil
-                )
-                """
-            } else {
-                """
-                GodotExtension.Interface.objectMethodBindPtrcall(
-                    Self.\(raw: ptrIdentifier),
-                    \(raw: selfExpression),
-                    \(raw: argsExpression),
-                    \(raw: returnExpression)
-                )
-                """
-            }
-        }
     }
-    
-    // MARK: Property
     
     struct Property: Decodable {
         var type: GodotType
@@ -140,47 +118,278 @@ struct GodotClass: Decodable {
         var getter: String
         var setter: String?
         var index: Int?
-        
-        func getterMethod(in methods: [Method]?) -> Method? {
-            methods?.first(where: methodIsAssociatedGetter)
-        }
-        
-        func methodIsAssociatedGetter(_ method: Method) -> Bool {
-            method.name == getter && method.returnType != nil
-        }
-        
-        func setterMethod(in methods: [Method]?, forGetter getter: Method) -> Method? {
-            methods?.first(where: { methodIsAssociatedSetter($0, forGetter: getter) })
-        }
-        
-        func methodIsAssociatedSetter(_ method: Method, forGetter getter: Method) -> Bool {
-            method.name == setter
-            && method.arguments?.count == 1
-            && method.arguments?.first?.type == getter.returnType
-            && method.returnType == nil
-        }
     }
-    
-    // MARK: Signal
     
     struct Signal: Decodable {
-        let name: String
-        let arguments: [GodotArgument]?
-    }
-    
-    // MARK: Constant
-    
-    struct Constant: Decodable {
-        let name: String
-        let value: Int
+        var name: String
+        var arguments: [GodotArgument]
         
-        var isNotification: Bool {
-            name.starts(with: "NOTIFICATION")
+        enum CodingKeys: CodingKey {
+            case name
+            case arguments
+        }
+        
+        init(from decoder: any Decoder) throws {
+            let container: KeyedDecodingContainer<GodotClass.Signal.CodingKeys> = try decoder.container(keyedBy: GodotClass.Signal.CodingKeys.self)
+            self.name = try container.decode(String.self, forKey: GodotClass.Signal.CodingKeys.name)
+            self.arguments = try container.decodeIfPresent([GodotArgument].self, forKey: GodotClass.Signal.CodingKeys.arguments) ?? []
         }
     }
     
-    // MARK: - Syntax
+    struct Constant: Decodable {
+        var name: String
+        var value: Int
+    }
+}
+
+// MARK: - Method
+
+extension GodotClass.Method {
+    var ptrIdentifier: String {
+        "__method_binding_\(name)"
+    }
     
+    private func bindCall(
+        `class`: GodotClass,
+        selfExpression: String,
+        argsExpression: String,
+        returnExpression: String
+    ) -> ExprSyntax {
+        if isVararg {
+            """
+            GodotExtension.Interface.objectMethodBindCall(
+                Self.\(raw: ptrIdentifier),
+                \(raw: selfExpression),
+                \(raw: argsExpression),
+                \(raw: godotFunction(class: `class`, isGetterSetter: false).argumentsCountSyntax(type: Int64.self)),
+                \(raw: returnExpression),
+                nil
+            )
+            """
+        } else {
+            """
+            GodotExtension.Interface.objectMethodBindPtrcall(
+                Self.\(raw: ptrIdentifier),
+                \(raw: selfExpression),
+                \(raw: argsExpression),
+                \(raw: returnExpression)
+            )
+            """
+        }
+    }
+    
+    func bindingDeclSyntax() -> DeclSyntax? {
+        if isVirtual { return nil }
+        
+        return """
+        internal static var \(raw: ptrIdentifier): GDExtensionMethodBindPtr = {
+            _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
+            GodotStringName(swiftStaticString: \(literal: name)).withUnsafeOpaquePointer { __ptr__method_name in
+            return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, \(literal: hash!))!
+            }
+            }
+        }()
+        """
+    }
+    
+    func godotFunction(
+        `class`: GodotClass,
+        isGetterSetter: Bool
+    ) -> GodotFunction {
+        let accessControl: AccessControl
+        if isVirtual {
+            accessControl = .open
+        } else {
+            if `class`.isRootClass {
+                accessControl = .internal
+            } else if `class`.isRefCountedRootClass {
+                accessControl = .private
+            } else {
+                accessControl = .public
+            }
+        }
+        
+        return GodotFunction(
+            name: isGetterSetter || accessControl < .public ? "__" + name : name,
+            arguments: arguments,
+            returnType: returnValue?.type,
+            isVararg: isVararg,
+            isStatic: isStatic,
+            isMutating: false,
+            usesVariantGeneric: !isVirtual,
+            convertsAllParameterToVariant: isVararg,
+            accessControl: isGetterSetter ? .private : accessControl
+        ).translated(typeName: `class`.name.syntax())
+    }
+    
+    func declSyntax(
+        `class`: GodotClass,
+        isGetterSetter: Bool
+    ) throws -> FunctionDeclSyntax {
+        let syntaxOptions = `class`.syntaxOptions
+        let selfPtrName = "__ptr_self"
+        
+        let function = godotFunction(
+            class: `class`,
+            isGetterSetter: isGetterSetter
+        )
+        
+        return try function.declSyntax(options: syntaxOptions) {
+            if isVirtual {
+                if let returnType = returnValue?.type {
+                    if returnType.isGodotClass || returnType.isOptional {
+                        "nil"
+                    } else if returnType == .variant {
+                        "Variant()"
+                    } else if returnType.isEnum {
+                        "\(raw: returnType.syntax(options: syntaxOptions))(rawValue: 0)!"
+                    } else if returnType.isPointer {
+                        "fatalError(\"No default value provided for pointers\")"
+                    } else {
+                        "\(raw: returnType.syntax(options: syntaxOptions))()"
+                    }
+                }
+            } else {
+                if let returnType = returnValue?.type {
+                    try returnType.instantiationSyntax(options: syntaxOptions) { instancePtr in
+                        try function.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
+                            if isStatic {
+                                bindCall(
+                                    class: `class`,
+                                    selfExpression: "nil",
+                                    argsExpression: packName,
+                                    returnExpression: instancePtr
+                                )
+                            } else {
+                                """
+                                self.withUnsafeMutableRawPointer { \(raw: selfPtrName) in
+                                    \(bindCall(
+                                        class: `class`,
+                                        selfExpression: selfPtrName,
+                                        argsExpression: packName,
+                                        returnExpression: instancePtr
+                                    ))
+                                }
+                                """
+                            }
+                        }
+                    }
+                } else {
+                    try function.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
+                        if isStatic {
+                            bindCall(
+                                class: `class`,
+                                selfExpression: "nil",
+                                argsExpression: packName,
+                                returnExpression: "nil"
+                            )
+                        } else {
+                            """
+                            self.withUnsafeMutableRawPointer { \(raw: selfPtrName) in
+                                \(bindCall(
+                                    class: `class`,
+                                    selfExpression: selfPtrName,
+                                    argsExpression: packName,
+                                    returnExpression: "nil"
+                                ))
+                            }
+                            """
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// MARK: - Property
+
+extension GodotClass.Property {
+    func declSyntax(
+        `class`: GodotClass,
+        getter: GodotClass.Method,
+        setter: GodotClass.Method?
+    ) throws -> VariableDeclSyntax {
+        var name: String
+        let returnType = getter.returnValue!.type
+        let getterParameters: [String]
+        
+        if let input = getter.arguments.first,
+           let index {
+            name = self.name.translated(from: .snake, to: .camel).backticksKeyword()
+            
+            if input.type.isEnum {
+                getterParameters = [".init(rawValue: \(index))!"]
+            } else {
+                getterParameters = [String(index)]
+            }
+        } else {
+            name = getter.godotFunction(class: `class`, isGetterSetter: false).name.backticksKeyword()
+            getterParameters = []
+        }
+        
+        if name == "description" {
+            name = "godotDescription"
+        }
+        
+        return try VariableDeclSyntax("public var \(raw: name): \(raw: returnType.syntax(options: `class`.syntaxOptions))") {
+            AccessorDeclSyntax(accessorSpecifier: .keyword(.get)) {
+                getter.godotFunction(class: `class`, isGetterSetter: true).callSyntax(
+                    withParameters: getterParameters
+                )
+            }
+            
+            if let setter {
+                AccessorDeclSyntax(accessorSpecifier: .keyword(.set)) {
+                    setter.godotFunction(class: `class`, isGetterSetter: true).callSyntax(
+                        withParameters: ["newValue"]
+                    )
+                }
+            }
+        }
+    }
+}
+
+// MARK: - Signal
+
+extension GodotClass.Signal {
+    @MemberBlockItemListBuilder
+    func declSyntax(
+        `class`: GodotClass
+    ) throws -> MemberBlockItemListSyntax {
+        let signalInspector = SignalInspector(
+            functionName: name.translated(from: .snake, to: .camel),
+            signalCName: name,
+            arguments: arguments.map { (
+                $0.name.translated(from: .snake, to: .camel),
+                $0.type.syntax(options: `class`.syntaxOptions)
+            ) },
+            isPublic: true
+        )
+        
+        try signalInspector.signalInputDeclSyntax()
+        try signalInspector.signalFunctionDeclSyntax()
+        signalInspector.emitterDeclSyntax()
+    }
+}
+
+// MARK: - Constant
+
+extension GodotClass.Constant {
+    func declSyntax() -> DeclSyntax {
+        let propertyName = name.lowercased().translated(from: .snake, to: .camel)
+        
+        return if name.starts(with: "NOTIFICATION") {
+            "public static let \(raw: propertyName): Notification = .init(rawValue: \(literal: value))"
+        } else {
+            "public static let \(raw: propertyName): Int = \(literal: value)"
+        }
+    }
+}
+
+// MARK: - FileSource
+
+extension GodotClass: FileSource {
     /// A Boolean value indicating whether the class
     /// is the root of the hierarchy tree.
     var isRootClass: Bool {
@@ -207,301 +416,6 @@ struct GodotClass: Decodable {
         ]
     }
     
-    var methodPrefixIfPrivate: String {
-        "__" // Not "_" because might clash with virtual funcs
-    }
-    
-    @MemberBlockItemListBuilder
-    func enumSyntax() throws -> MemberBlockItemListSyntax {
-        if let enums {
-            for `enum` in enums {
-                try `enum`.syntax()
-            }
-        }
-    }
-    
-    @MemberBlockItemListBuilder
-    func signalsSyntax() throws -> MemberBlockItemListSyntax {
-        if let signals {
-            for signal in signals {
-                try signalSyntax(signal)
-            }
-        }
-    }
-    
-    @MemberBlockItemListBuilder
-    func signalSyntax(_ signal: Signal) throws -> MemberBlockItemListSyntax {
-        let signalInspector = SignalInspector(
-            functionName: signal.name.translated(from: .snake, to: .camel),
-            signalCName: signal.name,
-            arguments: (signal.arguments ?? []).map { (
-                $0.name.translated(from: .snake, to: .camel),
-                $0.type.syntax(options: syntaxOptions)
-            ) },
-            isPublic: true
-        )
-        
-        try signalInspector.signalInputDeclSyntax()
-        try signalInspector.signalFunctionDeclSyntax()
-        signalInspector.emitterDeclSyntax()
-    }
-    
-    @MemberBlockItemListBuilder
-    func constantsSyntax() -> MemberBlockItemListSyntax {
-        if let constants {
-            for constant in constants {
-                let propertyName = constant.name.lowercased().translated(from: .snake, to: .camel)
-                
-                if constant.isNotification {
-                    "public static let \(raw: propertyName): Notification = .init(rawValue: \(literal: constant.value))"
-                } else {
-                    "public static let \(raw: propertyName): Int = \(literal: constant.value)"
-                }
-            }
-        }
-    }
-    
-    @MemberBlockItemListBuilder
-    func methodsSyntax() throws -> MemberBlockItemListSyntax {
-        if let methods {
-            for method in methods {
-                try methodSyntax(method)
-            }
-        }
-    }
-    
-    @MemberBlockItemListBuilder
-    private func methodSyntax(_ method: Method) throws -> MemberBlockItemListSyntax {
-        if method.isVirtual {
-            try virtualMethodSyntax(method)
-        } else {
-            try standardMethodSyntax(method)
-            
-            // TODO: Remove this non vararg version. There is a bug in the Swift beta with parameter packs.
-            if method.isVararg {
-                try standardMethodSyntax(method.nonVararg(), generateBinding: false)
-            }
-        }
-    }
-    
-    private func methodAccessibility(_ method: Method) -> Accessibility {
-        if isRootClass {
-            return .internal
-        } else if isRefCountedRootClass {
-            return .private
-        } else if method.isStatic {
-            return .public
-        } else {
-            for property in properties ?? [] {
-                if let getter = property.getterMethod(in: methods) {
-                    if getter.name == method.name {
-                        return .private
-                    }
-                    
-                    if let setter = property.setterMethod(in: methods, forGetter: getter) {
-                        if setter.name == method.name {
-                            return .private
-                        }
-                    }
-                }
-            }
-            
-            return .public
-        }
-    }
-    
-    private func methodPrefix(_ method: Method) -> String {
-        switch methodAccessibility(method) {
-        case .public:
-            ""
-        case .internal, .private:
-            methodPrefixIfPrivate
-        }
-    }
-    
-    @MemberBlockItemListBuilder
-    private func standardMethodSyntax(
-        _ method: Method,
-        generateBinding: Bool = true
-    ) throws -> MemberBlockItemListSyntax {
-        if generateBinding {
-            """
-            internal static var \(raw: method.ptrIdentifier): GDExtensionMethodBindPtr = {
-                _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-                GodotStringName(swiftStaticString: \(literal: method.name)).withUnsafeOpaquePointer { __ptr__method_name in
-                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, \(literal: method.hash!))!
-                }
-                }
-            }()
-            """
-        }
-        
-        let selfPtrName = "__ptr_self"
-        
-        try method
-            .withNamePrefixed(by: methodPrefix(method))
-            .translated(typeName: name.syntax())
-            .declSyntax(
-            options: syntaxOptions,
-            keywords: methodAccessibility(method).keyword
-        ) {
-            if let returnType = method.returnType {
-                try returnType.instantiationSyntax(options: syntaxOptions) { instancePtr in
-                    try method.translated().argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
-                        if method.isStatic {
-                            method.bindCall(
-                                selfExpression: "nil",
-                                argsExpression: packName,
-                                returnExpression: instancePtr
-                            )
-                        } else {
-                            """
-                            self.withUnsafeMutableRawPointer { \(raw: selfPtrName) in
-                                \(method.bindCall(
-                                    selfExpression: selfPtrName,
-                                    argsExpression: packName,
-                                    returnExpression: instancePtr
-                                ))
-                            }
-                            """
-                        }
-                    }
-                }
-            } else {
-                try method.translated().argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
-                    if method.isStatic {
-                        method.bindCall(
-                            selfExpression: "nil",
-                            argsExpression: packName,
-                            returnExpression: "nil"
-                        )
-                    } else {
-                        """
-                        self.withUnsafeMutableRawPointer { \(raw: selfPtrName) in
-                            \(method.bindCall(
-                                selfExpression: selfPtrName,
-                                argsExpression: packName,
-                                returnExpression: "nil"
-                            ))
-                        }
-                        """
-                    }
-                }
-            }
-        }
-    }
-    
-    @MemberBlockItemListBuilder
-    private func virtualMethodSyntax(_ method: Method) throws -> MemberBlockItemListSyntax {
-        try method.translated().declSyntax(options: syntaxOptions, keywords: .open) {
-            if let returnType = method.returnType {
-                if returnType.isGodotClass || returnType.isOptional {
-                    "nil"
-                } else if returnType == .variant {
-                    "Variant()"
-                } else if returnType.isEnum {
-                    "\(raw: returnType.syntax(options: syntaxOptions))(rawValue: 0)!"
-                } else if returnType.isPointer {
-                    "fatalError(\"No default value provided for pointers\")"
-                } else {
-                    "\(raw: returnType.syntax(options: syntaxOptions))()"
-                }
-            }
-        }
-    }
-    
-    private func propertiesGetterCount(for properties: [Property]) -> [String : Int] {
-        // Counts the number of properties that have the same getter
-        var propertiesGetter = [String : Int]()
-        
-        for property in properties {
-            if let count = propertiesGetter[property.getter] {
-                propertiesGetter[property.getter] = count + 1
-            } else {
-                propertiesGetter[property.getter] = 1
-            }
-        }
-        
-        return propertiesGetter
-    }
-    
-    @MemberBlockItemListBuilder
-    func propertiesSyntax() throws -> MemberBlockItemListSyntax {
-        if let properties {
-            let propertiesGetter = propertiesGetterCount(for: properties)
-            
-            for property in properties {
-                if let syntax = try propertySyntax(
-                    property,
-                    hasSameGetterAsOtherProperty: propertiesGetter[property.getter]! > 1
-                ) {
-                    syntax
-                }
-            }
-        }
-    }
-    
-    private func propertySyntax(
-        _ property: Property,
-        hasSameGetterAsOtherProperty: Bool
-    ) throws -> VariableDeclSyntax? {
-        guard let getter = property.getterMethod(in: methods),
-              let type = getter.returnType else {
-            return nil
-        }
-        
-        let typeSyntax = type.syntax(options: syntaxOptions)
-        let setter = property.setterMethod(in: methods, forGetter: getter)
-        
-        var propertyName: String
-        if hasSameGetterAsOtherProperty {
-            propertyName = property.name
-        } else if property.getter.starts(with: "get_") {
-            propertyName = String(property.getter.dropFirst(4))
-        } else {
-            propertyName = property.getter
-        }
-        
-        propertyName = backticksKeyword(propertyName.translated(from: .snake, to: .camel))
-        if propertyName == "description" {
-            propertyName = "godotDescription"
-        }
-        
-        let getterParameter: String?
-        if let index = property.index,
-           let getterInput = getter.arguments?.first {
-            if getterInput.type.isEnum {
-                getterParameter = ".init(rawValue: \(index))!"
-            } else {
-                getterParameter = String(index)
-            }
-        } else {
-            getterParameter = nil
-        }
-        
-        return try VariableDeclSyntax("public var \(raw: propertyName): \(raw: typeSyntax)") {
-            let getterSyntax = getter.withNamePrefixed(by: methodPrefixIfPrivate)
-                .translated().callSyntax(withParameters: [getterParameter].compactMap { $0 })
-            
-            """
-            get {
-                \(getterSyntax)
-            }
-            """
-            
-            if let setter {
-                let setterSyntax = setter.withNamePrefixed(by: methodPrefixIfPrivate)
-                    .translated().callSyntax(withParameters: ["newValue"])
-                
-                """
-                set {
-                    \(setterSyntax)
-                }
-                """
-            }
-        }
-    }
-    
     @MemberBlockItemListBuilder
     func setVirtualFunctionBindingsSyntax() throws -> MemberBlockItemListSyntax {
         // The return type is a dictionary with the swift function name as key,
@@ -516,34 +430,30 @@ struct GodotClass: Decodable {
             
             var arrayElements = [String]()
             
-            if let methods {
-                let methodsToRegister = methods.filter(\.isVirtual)
+            for method in methods.filter(\.isVirtual) {
+                let virtualFuncVarName = "\(method.name)_call"
                 
-                for method in methodsToRegister {
-                    let arguments = method.arguments ?? []
-                    
-                    let virtualFuncVarName = "\(method.name)_call"
-                    
-                    """
-                    let \(raw: virtualFuncVarName): GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-                    guard let instancePtr\(raw: arguments.isEmpty ? "" : ", let args") else { return }
-                    Unmanaged<\(raw: name.syntax())>.fromOpaque(instancePtr).takeUnretainedValue()
-                    """
-                    
-                    let parameters: [String] = arguments.enumerated().map { (index, argument) in
-                        "\(argument.type.syntax(options: syntaxOptions)).transferFromGodot(unsafePointer: args[\(index)]!)"
-                    }
-                    
-                    ".\(method.translated().callSyntax(withParameters: parameters))"
-                    
-                    if method.returnValue != nil {
-                        ".transferToGodot(unsafePointer: returnPtr!)"
-                    }
-                    
-                    "}"
-                    
-                    let _ = arrayElements.append("\"\(method.translated().name)\" : (\"\(method.name)\", \(virtualFuncVarName))")
+                """
+                let \(raw: virtualFuncVarName): GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
+                guard let instancePtr\(raw: method.arguments.isEmpty ? "" : ", let args") else { return }
+                Unmanaged<\(raw: name.syntax())>.fromOpaque(instancePtr).takeUnretainedValue()
+                """
+                
+                let parameters: [String] = method.arguments.enumerated().map { (index, argument) in
+                    "\(argument.type.syntax(options: syntaxOptions)).transferFromGodot(unsafePointer: args[\(index)]!)"
                 }
+                
+                let godotFunction = method.godotFunction(class: self, isGetterSetter: false)
+                
+                ".\(godotFunction.callSyntax(withParameters: parameters))"
+                
+                if method.returnValue != nil {
+                    ".transferToGodot(unsafePointer: returnPtr!)"
+                }
+                
+                "}"
+                
+                let _ = arrayElements.append("\"\(godotFunction.name)\" : (\"\(method.name)\", \(virtualFuncVarName))")
             }
             
             """
@@ -561,24 +471,6 @@ struct GodotClass: Decodable {
             }
             
             "return _virtualFunctions!"
-        }
-    }
-}
-
-extension GodotClass: FileSource {
-    func fileCodeContent(
-        for extensionAPI: GodotExtensionAPI,
-        with configuration: BuildConfiguration
-    ) throws -> CodeBlockItemListSyntax {
-        "import GodotExtensionHeaders"
-        
-        try ClassDeclSyntax("\(raw: classHeader())") {
-            try enumSyntax()
-            try signalsSyntax()
-            constantsSyntax()
-            try methodsSyntax()
-            try propertiesSyntax()
-            try setVirtualFunctionBindingsSyntax()
         }
     }
     
@@ -599,5 +491,88 @@ extension GodotClass: FileSource {
             header += ": \(superclass.syntax())"
         }
         return header
+    }
+    
+    func fileCodeContent(
+        for extensionAPI: GodotExtensionAPI,
+        with configuration: BuildConfiguration
+    ) throws -> CodeBlockItemListSyntax {
+        var propertiesWithMethod = [(property: Property, getter: Method, setter: Method?)]()
+        var getterSetterMethods = Set<Method>()
+        
+        for property in self.properties {
+            var getter: Method?
+            var setter: Method?
+            
+            for method in methods {
+                if method.name == property.getter,
+                   method.arguments.count <= 1,
+                   method.returnValue != nil
+                {
+                    getter = method
+                    getterSetterMethods.insert(method)
+                    break
+                }
+            }
+            
+            guard let getter else {
+                continue
+            }
+            
+            if property.setter != nil {
+                for method in methods {
+                    if method.name == property.setter,
+                       method.arguments.count == 1,
+                       method.arguments[0].type == getter.returnValue?.type,
+                       method.returnValue?.type == nil
+                    {
+                        setter = method
+                        getterSetterMethods.insert(method)
+                        break
+                    }
+                }
+            }
+            
+            propertiesWithMethod.append((property, getter, setter))
+        }
+        
+        return try CodeBlockItemListSyntax {
+            "import GodotExtensionHeaders"
+            
+            try ClassDeclSyntax("\(raw: classHeader())") {
+                for `enum` in enums {
+                    try `enum`.declSyntax()
+                }
+                
+                for signal in signals {
+                    try signal.declSyntax(class: self)
+                }
+                
+                for constant in constants {
+                    constant.declSyntax()
+                }
+                
+                for method in methods {
+                    if let binding = method.bindingDeclSyntax() {
+                        binding
+                    }
+                    
+                    try method.declSyntax(
+                        class: self,
+                        isGetterSetter: getterSetterMethods.contains(method)
+                    )
+                }
+                
+                for propertyWithMethod in propertiesWithMethod {
+                    try propertyWithMethod.property.declSyntax(
+                        class: self,
+                        getter: propertyWithMethod.getter,
+                        setter: propertyWithMethod.setter
+                    )
+                }
+                
+                try setVirtualFunctionBindingsSyntax()
+            }
+        }
     }
 }

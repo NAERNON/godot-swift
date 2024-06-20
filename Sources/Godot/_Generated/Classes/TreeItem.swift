@@ -2900,30 +2900,11 @@ open class TreeItem: Object {
         Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
             withUnsafeArgumentPackPointer(__ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
                 self.withUnsafeMutableRawPointer { __ptr_self in
-                        GodotExtension.Interface.objectMethodBindCall(
+                    GodotExtension.Interface.objectMethodBindCall(
                         Self.__method_binding_call_recursive,
                         __ptr_self,
                         __accessPtr,
                         Int64(packCount),
-                        nil,
-                        nil
-                    )
-                }
-            }
-        }
-    }
-
-    public func callRecursive(
-        method: Godot.GodotStringName
-    ) {
-        Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
-            withUnsafeArgumentPackPointer(__ptr_method) { __accessPtr in
-                self.withUnsafeMutableRawPointer { __ptr_self in
-                        GodotExtension.Interface.objectMethodBindCall(
-                        Self.__method_binding_call_recursive,
-                        __ptr_self,
-                        __accessPtr,
-                        1,
                         nil,
                         nil
                     )

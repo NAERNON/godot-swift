@@ -5,63 +5,61 @@ import Foundation
 /// It can be decoded from the `extension_api.json` file.
 ///
 /// A constant is a type expression such as "`Vector2(a, b)`".
-struct GodotConstant: Decodable, Equatable {
+struct GodotConstant: Decodable, Equatable, Hashable {
     /// The constant `String` such as `"Vector2(a, b)"`.
-    let string: String
+    let rawString: String
     
     static let `nil` = GodotConstant(string: "null")
     
-    // MARK: Init
-    
     init(string: String) {
-        self.string = string
+        self.rawString = string
     }
     
     init(from decoder: Decoder) throws {
-        string = try String(from: decoder)
+        rawString = try String(from: decoder)
     }
-    
-    // MARK: - Syntax
-    
+}
+
+extension GodotConstant {
     func syntax(forType type: GodotType, useStaticVariables: Bool) -> String {
-        if string.isEmpty {
+        if rawString.isEmpty {
             return type.syntax() + "()"
         }
         
-        if string == "null" && type == .variant {
+        if rawString == "null" && type == .variant {
             return "Variant()"
         }
         
-        if string == "null" {
+        if rawString == "null" {
             return "nil"
         }
         
         if type.isEnum {
-            return type.syntax() + "(rawValue: \(string))!"
+            return type.syntax() + "(rawValue: \(rawString))!"
         }
         
         if type.isBitfield {
-            return type.syntax() + "(rawValue: \(string))"
+            return type.syntax() + "(rawValue: \(rawString))"
         }
         
         if type == .stringName {
-            return "\"\(string.components(separatedBy: "\"")[1])\""
+            return "\"\(rawString.components(separatedBy: "\"")[1])\""
         }
         
-        if type == .dictionary && string == "{}" {
+        if type == .dictionary && rawString == "{}" {
             return "[:]"
         }
         
-        if (type.isTypedArray || type == .array) && string.contains("([])") {
+        if (type.isTypedArray || type == .array) && rawString.contains("([])") {
             return "[]"
         }
         
-        if type.packedArrayGenericType != nil && string.contains("Array()") {
+        if type.packedArrayGenericType != nil && rawString.contains("Array()") {
             return "[]"
         }
         
-        if type == .float && string.last == "f" {
-            return string.dropLast() + "0"
+        if type == .float && rawString.last == "f" {
+            return rawString.dropLast() + "0"
         }
         
         // Decompose initializers types.
@@ -160,13 +158,13 @@ struct GodotConstant: Decodable, Equatable {
             break
         }
         
-        return string
+        return rawString
     }
     
     /// Decomposes the parameters of an init. For instance, the String "`Rect(1, 3, 2, 0)`"
     /// would return `(type: "Rect", parameters: ["1", "3", "2", "0"])`.
     private func decomposeInitParameters() -> (type: String, parameters: [String]) {
-        let scanner = Scanner(string: string)
+        let scanner = Scanner(string: rawString)
         let type = scanner.scanUpToString("(") ?? ""
         _ = scanner.scanString("(")
         

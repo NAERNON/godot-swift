@@ -808,36 +808,11 @@ open class SceneTree: MainLoop {
                 Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
                     withUnsafeArgumentPackPointer(__ptr_flags, __ptr_group, __ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
                         self.withUnsafeMutableRawPointer { __ptr_self in
-                                GodotExtension.Interface.objectMethodBindCall(
+                            GodotExtension.Interface.objectMethodBindCall(
                                 Self.__method_binding_call_group_flags,
                                 __ptr_self,
                                 __accessPtr,
                                 Int64(packCount),
-                                nil,
-                                nil
-                            )
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    public func callGroupFlags(
-        _ flags: Int,
-        group: Godot.GodotStringName,
-        method: Godot.GodotStringName
-    ) {
-        Godot.Variant.withStorageUnsafeRawPointer(to: flags) { __ptr_flags in
-            Godot.Variant.withStorageUnsafeRawPointer(to: group) { __ptr_group in
-                Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
-                    withUnsafeArgumentPackPointer(__ptr_flags, __ptr_group, __ptr_method) { __accessPtr in
-                        self.withUnsafeMutableRawPointer { __ptr_self in
-                                GodotExtension.Interface.objectMethodBindCall(
-                                Self.__method_binding_call_group_flags,
-                                __ptr_self,
-                                __accessPtr,
-                                3,
                                 nil,
                                 nil
                             )
@@ -930,33 +905,11 @@ open class SceneTree: MainLoop {
             Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
                 withUnsafeArgumentPackPointer(__ptr_group, __ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
                     self.withUnsafeMutableRawPointer { __ptr_self in
-                            GodotExtension.Interface.objectMethodBindCall(
+                        GodotExtension.Interface.objectMethodBindCall(
                             Self.__method_binding_call_group,
                             __ptr_self,
                             __accessPtr,
                             Int64(packCount),
-                            nil,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
-    }
-
-    public func callGroup(
-        _ group: Godot.GodotStringName,
-        method: Godot.GodotStringName
-    ) {
-        Godot.Variant.withStorageUnsafeRawPointer(to: group) { __ptr_group in
-            Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
-                withUnsafeArgumentPackPointer(__ptr_group, __ptr_method) { __accessPtr in
-                    self.withUnsafeMutableRawPointer { __ptr_self in
-                            GodotExtension.Interface.objectMethodBindCall(
-                            Self.__method_binding_call_group,
-                            __ptr_self,
-                            __accessPtr,
-                            2,
                             nil,
                             nil
                         )

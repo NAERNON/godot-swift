@@ -725,24 +725,24 @@ internal enum GodotStringBindings {
 internal typealias GodotStringRawOpaque = (UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8, UInt8)
 
 extension GodotString {
-    static internal func makeOpaque(
+    static internal func makeOpaqueStorage(
         useDestructor: Bool = true
-    ) -> Opaque {
-        Opaque(size: 8, destructorPtr: useDestructor ? GodotStringBindings.destructor : nil)
+    ) -> Opaque.Storage {
+        Opaque.Storage(size: 8, destructorPtr: useDestructor ? GodotStringBindings.destructor : nil)
     }
 
-    static internal func make() -> Self {
-        let __temporary: Opaque = makeOpaque()
+    static internal func make() -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
             GodotStringBindings.constructor(__ptr___temporary, nil)
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make(
         from: Godot.GodotString
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -750,13 +750,13 @@ extension GodotString {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make(
         from: Godot.GodotStringName
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -764,13 +764,13 @@ extension GodotString {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make(
         from: Godot.NodePath
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -778,7 +778,7 @@ extension GodotString {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func _operatorEqual<Value: Variant.Storable>(
@@ -1520,14 +1520,13 @@ extension GodotString {
         }
     }
 
-    mutating internal func _setValue(
+    internal func _setValue(
         _ value: Godot.GodotString,
         at index: GDExtensionInt
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
-            withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                GodotStringBindings.indexedSetter(__ptr_self, index, __ptr_value)
+            withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                GodotStringBindings.indexedSetter(UnsafeMutableRawPointer(mutating: __ptr_self), index, __ptr_value)
             }
         }
     }

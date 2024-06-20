@@ -1,21 +1,42 @@
 import GodotExtensionHeaders
 
-@BuiltinOpaque
-public struct RID {
-    internal mutating func makeUniqueIfSharedOpaque() {
-        guard !isKnownUniquelyReferenced(&opaque) else {
-            return
-        }
-        
-        self = Self.make(from: self)
+public final class RID {
+    private var storage: Opaque.Storage
+
+    internal init(storage: consuming Opaque.Storage) {
+        self.storage = storage
+    }
+
+    func withUnsafeOpaqueBufferPointer<Result>(
+        _ body: (UnsafeRawBufferPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeRawBufferPointer(body)
+    }
+
+    func withUnsafeMutableOpaqueBufferPointer<Result>(
+        _ body: (UnsafeMutableRawBufferPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeMutableRawBufferPointer(body)
+    }
+
+    func withUnsafeOpaquePointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeRawPointer(body)
+    }
+
+    func withUnsafeMutableOpaquePointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeMutableRawPointer(body)
     }
 }
 
 extension RID {
     // MARK: Constructors
     
-    public init() {
-        self = Self.make()
+    public convenience init() {
+        self.init(storage: Self.make())
     }
     
     // MARK: Methods & variables

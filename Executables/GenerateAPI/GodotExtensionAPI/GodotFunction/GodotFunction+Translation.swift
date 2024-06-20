@@ -1,25 +1,8 @@
 import Utils
 
-struct GodotTranslatedFunction<Source>: GodotFunction where Source : GodotFunction {
-    let source: Source
-    let translateName: Bool
-    let translateArguments: Bool
-    let typeName: String?
-    
-    init(
-        _ source: Source,
-        translateName: Bool,
-        translateArguments: Bool,
-        typeName: String? = nil
-    ) {
-        self.source = source
-        self.translateName = translateName
-        self.translateArguments = translateArguments
-        self.typeName = typeName
-    }
-    
-    private func translatedFunction() -> (name: String, parameters: [FunctionParameter]) {
-        var functionName = source.name
+extension GodotFunction {
+    mutating func translate(typeName: String? = nil) {
+        var functionName = self.name
         
         if functionName.hasPrefix("get_"),
            functionName.count > 4,
@@ -28,71 +11,33 @@ struct GodotTranslatedFunction<Source>: GodotFunction where Source : GodotFuncti
             functionName = String(functionName.dropFirst(4))
         }
         
-        return generate_api.translatedFunction(
+        let translation = translation(
             name: functionName,
-            parameters: (source.arguments ?? []).map { .init(
+            parameters: self.arguments.map { .init(
                 name: $0.name,
                 label: nil,
                 isLabelHidden: $0.isLabelHidden
             )},
             typeName: typeName
         )
-    }
-    
-    var name: String {
-        if translateName {
-            translatedFunction().name
-        } else {
-            source.name
+        
+        self.name = translation.name
+        
+        for (index, argument) in arguments.enumerated() {
+            var argument = argument
+            
+            argument.name = translation.parameters[index].name
+            argument.label = translation.parameters[index].label
+            argument.isLabelHidden = translation.parameters[index].isLabelHidden
+            
+            self.arguments[index] = argument
         }
     }
     
-    var arguments: [GodotArgument]? {
-        if translateArguments {
-            guard var arguments = source.arguments else { return [] }
-            
-            let parameters = translatedFunction().parameters
-            
-            for (index, argument) in arguments.enumerated() {
-                var argument = argument
-                argument.name = parameters[index].name
-                argument.label = parameters[index].label
-                argument.isLabelHidden = parameters[index].isLabelHidden
-                
-                arguments[index] = argument
-            }
-            
-            return arguments
-        } else {
-            return source.arguments
-        }
-    }
-    
-    var returnType: GodotType? { source.returnType }
-    
-    var isVararg: Bool { source.isVararg }
-    var usesVariantGeneric: Bool { source.usesVariantGeneric }
-    var convertsAllParameterToVariant: Bool { source.convertsAllParameterToVariant }
-    var isStatic: Bool { source.isStatic }
-    var isConst: Bool { source.isConst }
-    var isMutating: Bool { source.isMutating }
-}
-
-extension GodotFunction {
-    func translated() -> GodotTranslatedFunction<Self> {
-        GodotTranslatedFunction(self, translateName: true, translateArguments: true)
-    }
-    
-    func translated(typeName: String) -> GodotTranslatedFunction<Self> {
-        GodotTranslatedFunction(self, translateName: true, translateArguments: true, typeName: typeName)
-    }
-    
-    func translatedName() -> GodotTranslatedFunction<Self> {
-        GodotTranslatedFunction(self, translateName: true, translateArguments: false)
-    }
-    
-    func translatedArguments() -> GodotTranslatedFunction<Self> {
-        GodotTranslatedFunction(self, translateName: false, translateArguments: true)
+    func translated(typeName: String? = nil) -> GodotFunction {
+        var copy = self
+        copy.translate(typeName: typeName)
+        return copy
     }
 }
 
@@ -115,7 +60,7 @@ private let preParameterNameKeywords: Set<String> = [
     "for", "from", "to", "in", "by", "at", "with", "of"
 ]
 
-private func translatedFunction(
+private func translation(
     name: String,
     parameters: [FunctionParameter],
     typeName: String?

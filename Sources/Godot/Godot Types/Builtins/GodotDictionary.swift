@@ -1,25 +1,35 @@
 import GodotExtensionHeaders
 
-@BuiltinOpaque
-public struct GodotDictionary<Key, AssociatedValue>
+public final class GodotDictionary<Key, AssociatedValue>
 where Key : Variant.Storable, AssociatedValue : Variant.Storable {
-    internal mutating func makeUniqueIfSharedOpaque() {
-        guard !isKnownUniquelyReferenced(&opaque) else {
-            return
-        }
-        
-        self = self._duplicate(deep: false)
+    private var storage: Opaque.Storage
+
+    internal init(storage: consuming Opaque.Storage) {
+        self.storage = storage
     }
-    
-    public consuming func transferToGodot(
-        unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
-    ) {
-        var new = consume self
-        new.makeUniqueIfSharedOpaque()
-        new.opaque.withUnsafeMutableRawPointer { ptr in
-            destinationUnsafePointer.copyMemory(from: ptr, byteCount: new.opaque.size)
-        }
-        new.opaque.removeDestructor()
+
+    func withUnsafeOpaqueBufferPointer<Result>(
+        _ body: (UnsafeRawBufferPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeRawBufferPointer(body)
+    }
+
+    func withUnsafeMutableOpaqueBufferPointer<Result>(
+        _ body: (UnsafeMutableRawBufferPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeMutableRawBufferPointer(body)
+    }
+
+    func withUnsafeOpaquePointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeRawPointer(body)
+    }
+
+    func withUnsafeMutableOpaquePointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeMutableRawPointer(body)
     }
 }
 
@@ -28,8 +38,8 @@ public typealias AnyGodotDictionary = GodotDictionary<Variant, Variant>
 extension GodotDictionary {
     // MARK: Constructors
     
-    public init() {
-        self = Self.make()
+    public convenience init() {
+        self.init(storage: Self.make())
     }
     
     // MARK: Operators
@@ -47,7 +57,7 @@ extension GodotDictionary {
         set(newValue) {
             Key.convertToStorageTemporarily(key) { keyStorage in
                 guard let newValue else {
-                    self._erase(key: keyStorage)
+                    _ = self._erase(key: keyStorage)
                     return
                 }
                 
@@ -67,7 +77,7 @@ extension GodotDictionary {
             yield &newValue
             
             guard let newValue else {
-                self._erase(key: keyStorage)
+                _ = self._erase(key: keyStorage)
                 return
             }
             
@@ -123,7 +133,7 @@ extension GodotDictionary {
     }
     
     public func eraseToAnyDictionary() -> AnyGodotDictionary {
-        AnyGodotDictionary(opaque: opaque)
+        AnyGodotDictionary(storage: AnyGodotDictionary.make(from: self))
     }
 }
 
@@ -176,12 +186,11 @@ extension GodotDictionary: Sequence {
 }
 
 extension GodotDictionary: ExpressibleByDictionaryLiteral {
-    public init(dictionaryLiteral elements: (Key, AssociatedValue)...) {
-        var newDictionary = GodotDictionary()
+    public convenience init(dictionaryLiteral elements: (Key, AssociatedValue)...) {
+        self.init()
         for (key, value) in elements {
-            newDictionary[key] = value
+            self[key] = value
         }
-        self = newDictionary
     }
 }
 

@@ -3,7 +3,7 @@ extension NodePath: Variant.Storable {
     public static let variantStorageType: Variant.StorageType? = .nodePath
     
     public static func convertToStorage(
-        _ value: consuming Self
+        _ value: consuming NodePath
     ) -> Variant.Storage {
         let storage = Variant.Storage()
         
@@ -18,8 +18,8 @@ extension NodePath: Variant.Storable {
     
     public static func convertFromCheckedStorage(
         _ storage: borrowing Variant.Storage
-    ) -> Self {
-        var newValue = Self()
+    ) -> NodePath {
+        let newValue = Self()
         
         storage.withUnsafeMutableRawPointer { storagePtr in
             newValue.withUnsafeMutableOpaquePointer { newValuePtr in
@@ -32,14 +32,14 @@ extension NodePath: Variant.Storable {
     
     public static func convertFromCheckedStorage(
         consuming storage: consuming Variant.Storage
-    ) -> Self {
+    ) -> NodePath {
         convertFromCheckedStorage(storage)
     }
 }
 
 extension NodePath: Hintable {
-    public typealias HintingValue = Self
-    public static var defaultHint: Hint<Self> { .typed }
+    public typealias HintingValue = NodePath
+    public static var defaultHint: Hint<NodePath> { .typed }
 }
 
 extension NodePath: Exposable {
@@ -58,12 +58,12 @@ extension NodePath: Exposable {
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        let opaque: Opaque = makeOpaque()
+        var storage = makeOpaqueStorage()
         withUnsafeArgumentPackPointer(unsafePointer!) { accessPtr in
-            opaque.withUnsafeMutableRawPointer { opaquePtr in
+            storage.withUnsafeMutableRawPointer { opaquePtr in
                 NodePathBindings.constructorFromNodePath(opaquePtr, accessPtr)
             }
         }
-        return Self.init(opaque: opaque)
+        return Self.init(storage: storage)
     }
 }

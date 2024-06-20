@@ -2784,32 +2784,11 @@ open class Node: Object {
             Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
                 withUnsafeArgumentPackPointer(__ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
                     self.withUnsafeMutableRawPointer { __ptr_self in
-                            GodotExtension.Interface.objectMethodBindCall(
+                        GodotExtension.Interface.objectMethodBindCall(
                             Self.__method_binding_rpc,
                             __ptr_self,
                             __accessPtr,
                             Int64(packCount),
-                            __temporary,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
-    }
-
-    public func rpc(
-        method: Godot.GodotStringName
-    ) -> Godot.ErrorType {
-        fromInitializingTransferrableUnsafeRawPointer { __temporary in
-            Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
-                withUnsafeArgumentPackPointer(__ptr_method) { __accessPtr in
-                    self.withUnsafeMutableRawPointer { __ptr_self in
-                            GodotExtension.Interface.objectMethodBindCall(
-                            Self.__method_binding_rpc,
-                            __ptr_self,
-                            __accessPtr,
-                            1,
                             __temporary,
                             nil
                         )
@@ -2837,35 +2816,11 @@ open class Node: Object {
                 Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
                     withUnsafeArgumentPackPointer(__ptr_peerID, __ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
                         self.withUnsafeMutableRawPointer { __ptr_self in
-                                GodotExtension.Interface.objectMethodBindCall(
+                            GodotExtension.Interface.objectMethodBindCall(
                                 Self.__method_binding_rpc_id,
                                 __ptr_self,
                                 __accessPtr,
                                 Int64(packCount),
-                                __temporary,
-                                nil
-                            )
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    public func rpcID(
-        peerID: Int,
-        method: Godot.GodotStringName
-    ) -> Godot.ErrorType {
-        fromInitializingTransferrableUnsafeRawPointer { __temporary in
-            Godot.Variant.withStorageUnsafeRawPointer(to: peerID) { __ptr_peerID in
-                Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
-                    withUnsafeArgumentPackPointer(__ptr_peerID, __ptr_method) { __accessPtr in
-                        self.withUnsafeMutableRawPointer { __ptr_self in
-                                GodotExtension.Interface.objectMethodBindCall(
-                                Self.__method_binding_rpc_id,
-                                __ptr_self,
-                                __accessPtr,
-                                2,
                                 __temporary,
                                 nil
                             )
@@ -2911,32 +2866,11 @@ open class Node: Object {
             Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
                 withUnsafeArgumentPackPointer(__ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
                     self.withUnsafeMutableRawPointer { __ptr_self in
-                            GodotExtension.Interface.objectMethodBindCall(
+                        GodotExtension.Interface.objectMethodBindCall(
                             Self.__method_binding_call_deferred_thread_group,
                             __ptr_self,
                             __accessPtr,
                             Int64(packCount),
-                            __temporary,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
-    }
-
-    public func callDeferredThreadGroup(
-        method: Godot.GodotStringName
-    ) -> Godot.Variant {
-        fromInitializingTransferrableUnsafeRawPointer { __temporary in
-            Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
-                withUnsafeArgumentPackPointer(__ptr_method) { __accessPtr in
-                    self.withUnsafeMutableRawPointer { __ptr_self in
-                            GodotExtension.Interface.objectMethodBindCall(
-                            Self.__method_binding_call_deferred_thread_group,
-                            __ptr_self,
-                            __accessPtr,
-                            1,
                             __temporary,
                             nil
                         )
@@ -3015,32 +2949,11 @@ open class Node: Object {
             Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
                 withUnsafeArgumentPackPointer(__ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
                     self.withUnsafeMutableRawPointer { __ptr_self in
-                            GodotExtension.Interface.objectMethodBindCall(
+                        GodotExtension.Interface.objectMethodBindCall(
                             Self.__method_binding_call_thread_safe,
                             __ptr_self,
                             __accessPtr,
                             Int64(packCount),
-                            __temporary,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
-    }
-
-    public func callThreadSafe(
-        method: Godot.GodotStringName
-    ) -> Godot.Variant {
-        fromInitializingTransferrableUnsafeRawPointer { __temporary in
-            Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
-                withUnsafeArgumentPackPointer(__ptr_method) { __accessPtr in
-                    self.withUnsafeMutableRawPointer { __ptr_self in
-                            GodotExtension.Interface.objectMethodBindCall(
-                            Self.__method_binding_call_thread_safe,
-                            __ptr_self,
-                            __accessPtr,
-                            1,
                             __temporary,
                             nil
                         )

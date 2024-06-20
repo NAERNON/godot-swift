@@ -73,7 +73,7 @@ public enum BridgeMacro: ExtensionMacro, PeerMacro {
         identifier: TokenSyntax,
         cFunctionName: String
     ) -> DeclSyntax {
-        let functionName = "initializeGodotModule" + removeBackticks(identifier.trimmedDescription)
+        let functionName = "initializeGodotModule" + identifier.trimmedDescription.backticksRemoved()
         
         return DeclSyntax(
             """

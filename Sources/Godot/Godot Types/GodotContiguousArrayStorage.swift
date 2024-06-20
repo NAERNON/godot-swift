@@ -36,11 +36,11 @@ public protocol GodotContiguousArrayStorageProtocol: Exposable {
     
     // MARK: Transferring
     
-    func withRawTypeUnsafeRawPointer<Result>(
+    func withUnsafeOpaquePointer<Result>(
         _ body: (UnsafeRawPointer) throws -> Result
     ) rethrows -> Result
     
-    mutating func withRawTypeUnsafeMutableRawPointer<Result>(
+    mutating func withUnsafeMutableOpaquePointer<Result>(
         _ body: (UnsafeMutableRawPointer) throws -> Result
     ) rethrows -> Result
     

@@ -12,9 +12,9 @@ struct GodotExtensionAPI: Decodable {
     var classes: [GodotClass]
     var singletons: [GodotSingleton]
     var nativeStructures: [GodotNativeStructure]
-    
-    // MARK: Filter
-    
+}
+
+extension GodotExtensionAPI {
     func filter(classFilter: (GodotType) -> Bool) -> GodotExtensionAPI {
         var newAPIs = self
         
@@ -28,9 +28,9 @@ struct GodotExtensionAPI: Decodable {
                 continue
             }
             
-            godotClass.methods = godotClass.methods?.filter {
+            godotClass.methods = godotClass.methods.filter {
                 $0.isInFilter(classFilter: classFilter)
-            } ?? []
+            }
             
             newAPIs.classes.append(godotClass)
         }
@@ -43,7 +43,7 @@ struct GodotExtensionAPI: Decodable {
     }
 }
 
-private extension GodotFunction {
+private extension GodotUtilityFunction {
     func isInFilter(classFilter: (GodotType) -> Bool) -> Bool {
         if let returnType,
            !returnType.isInFilter(classFilter: classFilter)
@@ -51,13 +51,19 @@ private extension GodotFunction {
             return false
         }
         
-        if let arguments,
-           arguments.contains(where: { !$0.type.isInFilter(classFilter: classFilter) })
+        return !arguments.contains(where: { !$0.type.isInFilter(classFilter: classFilter) })
+    }
+}
+
+private extension GodotClass.Method {
+    func isInFilter(classFilter: (GodotType) -> Bool) -> Bool {
+        if let returnValue,
+           !returnValue.type.isInFilter(classFilter: classFilter)
         {
             return false
         }
         
-        return true
+        return !arguments.contains(where: { !$0.type.isInFilter(classFilter: classFilter) })
     }
 }
 

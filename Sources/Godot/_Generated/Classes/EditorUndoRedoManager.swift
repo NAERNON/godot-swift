@@ -156,33 +156,11 @@ open class EditorUndoRedoManager: Object {
             Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
                 withUnsafeArgumentPackPointer(__ptr_object, __ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
                     self.withUnsafeMutableRawPointer { __ptr_self in
-                            GodotExtension.Interface.objectMethodBindCall(
+                        GodotExtension.Interface.objectMethodBindCall(
                             Self.__method_binding_add_do_method,
                             __ptr_self,
                             __accessPtr,
                             Int64(packCount),
-                            nil,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
-    }
-
-    public func addDoMethod(
-        object: Godot.Object?,
-        method: Godot.GodotStringName
-    ) {
-        Godot.Variant.withStorageUnsafeRawPointer(to: object) { __ptr_object in
-            Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
-                withUnsafeArgumentPackPointer(__ptr_object, __ptr_method) { __accessPtr in
-                    self.withUnsafeMutableRawPointer { __ptr_self in
-                            GodotExtension.Interface.objectMethodBindCall(
-                            Self.__method_binding_add_do_method,
-                            __ptr_self,
-                            __accessPtr,
-                            2,
                             nil,
                             nil
                         )
@@ -209,33 +187,11 @@ open class EditorUndoRedoManager: Object {
             Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
                 withUnsafeArgumentPackPointer(__ptr_object, __ptr_method, varargs: repeat each rest) { packCount, __accessPtr in
                     self.withUnsafeMutableRawPointer { __ptr_self in
-                            GodotExtension.Interface.objectMethodBindCall(
+                        GodotExtension.Interface.objectMethodBindCall(
                             Self.__method_binding_add_undo_method,
                             __ptr_self,
                             __accessPtr,
                             Int64(packCount),
-                            nil,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
-    }
-
-    public func addUndoMethod(
-        object: Godot.Object?,
-        method: Godot.GodotStringName
-    ) {
-        Godot.Variant.withStorageUnsafeRawPointer(to: object) { __ptr_object in
-            Godot.Variant.withStorageUnsafeRawPointer(to: method) { __ptr_method in
-                withUnsafeArgumentPackPointer(__ptr_object, __ptr_method) { __accessPtr in
-                    self.withUnsafeMutableRawPointer { __ptr_self in
-                            GodotExtension.Interface.objectMethodBindCall(
-                            Self.__method_binding_add_undo_method,
-                            __ptr_self,
-                            __accessPtr,
-                            2,
                             nil,
                             nil
                         )

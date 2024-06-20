@@ -3,7 +3,7 @@ extension Callable: Variant.Storable {
     public static let variantStorageType: Variant.StorageType? = .callable
     
     public static func convertToStorage(
-        _ value: consuming Self
+        _ value: consuming Callable
     ) -> Variant.Storage {
         let storage = Variant.Storage()
         
@@ -18,8 +18,8 @@ extension Callable: Variant.Storable {
     
     public static func convertFromCheckedStorage(
         _ storage: borrowing Variant.Storage
-    ) -> Self {
-        var newValue = Self()
+    ) -> Callable {
+        let newValue = Self()
         
         storage.withUnsafeMutableRawPointer { storagePtr in
             newValue.withUnsafeMutableOpaquePointer { newValuePtr in
@@ -32,14 +32,14 @@ extension Callable: Variant.Storable {
     
     public static func convertFromCheckedStorage(
         consuming storage: consuming Variant.Storage
-    ) -> Self {
+    ) -> Callable {
         convertFromCheckedStorage(storage)
     }
 }
 
 extension Callable: Hintable {
-    public typealias HintingValue = Self
-    public static var defaultHint: Hint<Self> { .typed }
+    public typealias HintingValue = Callable
+    public static var defaultHint: Hint<Callable> { .typed }
 }
 
 extension Callable: Exposable {
@@ -58,12 +58,12 @@ extension Callable: Exposable {
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        let opaque: Opaque = makeOpaque()
+        var storage = makeOpaqueStorage()
         withUnsafeArgumentPackPointer(unsafePointer!) { accessPtr in
-            opaque.withUnsafeMutableRawPointer { opaquePtr in
+            storage.withUnsafeMutableRawPointer { opaquePtr in
                 CallableBindings.constructorFromCallable(opaquePtr, accessPtr)
             }
         }
-        return Self.init(opaque: opaque)
+        return Self.init(storage: storage)
     }
 }

@@ -34,7 +34,7 @@ public enum ExposableMacro: MemberMacro, ExtensionMacro, MemberAttributeMacro {
         })
         
         let isPublic = classDeclSyntax.accessModifierInspector.isPublic()
-        let className = removeBackticks(classDeclSyntax.name.trimmedDescription)
+        let className = classDeclSyntax.name.trimmedDescription.backticksRemoved()
         
         // Syntax
         let provider = ClassMacroDeclProvider.customClass(

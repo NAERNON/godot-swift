@@ -1,85 +1,36 @@
-import GodotExtensionHeaders
 
 internal final class Opaque: CustomDebugStringConvertible {
-    private let rawData: UnsafeMutableRawBufferPointer
+    private var storage: Storage
     
-    /// The destructor pointer for the opaque type.
-    /// If `nil`, no destructor will be called in the `deinit`.
-    private var destructorPtr: GDExtensionPtrDestructor?
-    
-    /// The size, in bytes, of this opaque raw data.
-    var size: Int {
-        rawData.count
-    }
-    
-    init(size: Int, destructorPtr: GDExtensionPtrDestructor? = nil) {
-        self.rawData = .allocate(
-            byteCount: size,
-            alignment: 1
-        )
-        self.destructorPtr = destructorPtr
-    }
-    
-    deinit {
-        if let destructorPtr {
-            destructorPtr(rawData.baseAddress!)
-        }
-        
-        rawData.deallocate()
-    }
-    
-    func removeDestructor() {
-        destructorPtr = nil
+    init(_ storage: consuming Storage) {
+        self.storage = storage
     }
     
     func withUnsafeRawBufferPointer<Result>(
         _ body: (UnsafeRawBufferPointer) throws -> Result
     ) rethrows -> Result {
-        try body(UnsafeRawBufferPointer(rawData))
+        try storage.withUnsafeRawBufferPointer(body)
     }
     
     func withUnsafeMutableRawBufferPointer<Result>(
         _ body: (UnsafeMutableRawBufferPointer) throws -> Result
     ) rethrows -> Result {
-        try body(rawData)
+        try storage.withUnsafeMutableRawBufferPointer(body)
     }
     
     func withUnsafeRawPointer<Result>(
         _ body: (UnsafeRawPointer) throws -> Result
     ) rethrows -> Result {
-        try body(rawData.baseAddress!)
+        try storage.withUnsafeRawPointer(body)
     }
     
     func withUnsafeMutableRawPointer<Result>(
         _ body: (UnsafeMutableRawPointer) throws -> Result
     ) rethrows -> Result {
-        try body(rawData.baseAddress!)
-    }
-    
-    func isZero() -> Bool {
-        rawData.allSatisfy { $0 == 0 }
+        try storage.withUnsafeMutableRawPointer(body)
     }
     
     var debugDescription: String {
-        var string = "["
-        var index = 0
-        while index < rawData.count {
-            let data = rawData[index]
-            let dataString = String(data, radix: 16, uppercase: true)
-            
-            if data < 16 {
-                string += "0" + dataString
-            } else {
-                string += dataString
-            }
-            
-            if index < rawData.count-1 {
-                string += "|"
-            }
-            
-            index += 1
-        }
-        string += "]"
-        return string
+        storage.debugDescription
     }
 }

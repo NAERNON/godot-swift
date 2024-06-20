@@ -7,8 +7,6 @@ import Utils
 ///
 /// This model is used to represent a type definition.
 indirect enum GodotType: Equatable, Decodable, Hashable {
-    // MARK: Cases
-    
     /// The base of a `GodotType`.
     ///
     /// In order to define a type named "`some_class`", use:
@@ -110,7 +108,9 @@ indirect enum GodotType: Equatable, Decodable, Hashable {
     
     /// A typed pointer type.
     case typedPointer(GodotType)
-    
+}
+
+extension GodotType {
     // MARK: Godot types
     
     /// The Godot classes types.
@@ -607,8 +607,8 @@ indirect enum GodotType: Equatable, Decodable, Hashable {
         accessThroughVariantStorage: Bool = false,
         @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
-        let pointerName = "__ptr_" + removeBackticks(instanceName)
-        let newInstanceName = backticksKeyword(instanceName)
+        let pointerName = "__ptr_" + instanceName.backticksRemoved()
+        let newInstanceName = instanceName.backticksKeyword()
         
         if isPointer {
             return try bodyBuilder(newInstanceName)

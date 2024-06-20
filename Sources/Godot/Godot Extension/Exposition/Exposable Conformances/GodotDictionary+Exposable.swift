@@ -7,10 +7,8 @@ where Key == Variant, AssociatedValue == Variant
     }
     
     public static func convertToStorage(
-        _ value: consuming Self
+        _ value: consuming GodotDictionary
     ) -> Variant.Storage {
-        value.makeUniqueIfSharedOpaque()
-        
         let storage = Variant.Storage()
         
         storage.withUnsafeMutableRawPointer { storagePtr in
@@ -24,8 +22,8 @@ where Key == Variant, AssociatedValue == Variant
     
     public static func convertFromCheckedStorage(
         _ storage: borrowing Variant.Storage
-    ) -> Self {
-        var newValue = Self()
+    ) -> GodotDictionary {
+        let newValue = Self()
         
         storage.withUnsafeMutableRawPointer { storagePtr in
             newValue.withUnsafeMutableOpaquePointer { newValuePtr in
@@ -38,7 +36,7 @@ where Key == Variant, AssociatedValue == Variant
     
     public static func convertFromCheckedStorage(
         consuming storage: consuming Variant.Storage
-    ) -> Self {
+    ) -> GodotDictionary {
         convertFromCheckedStorage(storage)
     }
 }
@@ -46,8 +44,8 @@ where Key == Variant, AssociatedValue == Variant
 extension GodotDictionary: Hintable
 where Key == Variant, AssociatedValue == Variant
 {
-    public typealias HintingValue = Self
-    public static var defaultHint: Hint<Self> { .typed }
+    public typealias HintingValue = GodotDictionary
+    public static var defaultHint: Hint<GodotDictionary> { .typed }
 }
 
 extension GodotDictionary: Exposable
@@ -57,15 +55,25 @@ where Key == Variant, AssociatedValue == Variant
         .dictionary
     }
     
+    public consuming func transferToGodot(
+        unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
+    ) {
+        withUnsafeOpaquePointer { selfPtr in
+            withUnsafeArgumentPackPointer(selfPtr) { accessPtr in
+                GodotDictionaryBindings.constructorFromGodotDictionary(destinationUnsafePointer, accessPtr)
+            }
+        }
+    }
+    
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        let opaque: Opaque = makeOpaque()
+        var storage = makeOpaqueStorage()
         withUnsafeArgumentPackPointer(unsafePointer!) { accessPtr in
-            opaque.withUnsafeMutableRawPointer { opaquePtr in
+            storage.withUnsafeMutableRawPointer { opaquePtr in
                 GodotDictionaryBindings.constructorFromGodotDictionary(opaquePtr, accessPtr)
             }
         }
-        return Self.init(opaque: opaque)._duplicate(deep: false)
+        return Self.init(storage: storage)
     }
 }

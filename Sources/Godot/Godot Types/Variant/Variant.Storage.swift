@@ -142,7 +142,7 @@ extension Variant {
         }
         
         public var description: String {
-            var string = GodotString()
+            let string = GodotString()
             
             string.withUnsafeMutableOpaquePointer { stringNativeTypePtr in
                 GodotExtension.Interface.variantStringify(

@@ -1,25 +1,35 @@
 import GodotExtensionHeaders
 
-@BuiltinOpaque
-public struct GodotArray<Element>
+public final class GodotArray<Element>
 where Element : Variant.Storable {
-    internal mutating func makeUniqueIfSharedOpaque() {
-        guard !isKnownUniquelyReferenced(&opaque) else {
-            return
-        }
-        
-        self = self._duplicate(deep: false)
+    private var storage: Opaque.Storage
+
+    internal init(storage: consuming Opaque.Storage) {
+        self.storage = storage
     }
-    
-    public consuming func transferToGodot(
-        unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
-    ) {
-        var new = consume self
-        new.makeUniqueIfSharedOpaque()
-        new.opaque.withUnsafeMutableRawPointer { ptr in
-            destinationUnsafePointer.copyMemory(from: ptr, byteCount: new.opaque.size)
-        }
-        new.opaque.removeDestructor()
+
+    func withUnsafeOpaqueBufferPointer<Result>(
+        _ body: (UnsafeRawBufferPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeRawBufferPointer(body)
+    }
+
+    func withUnsafeMutableOpaqueBufferPointer<Result>(
+        _ body: (UnsafeMutableRawBufferPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeMutableRawBufferPointer(body)
+    }
+
+    func withUnsafeOpaquePointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeRawPointer(body)
+    }
+
+    func withUnsafeMutableOpaquePointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeMutableRawPointer(body)
     }
 }
 
@@ -28,14 +38,14 @@ public typealias AnyGodotArray = GodotArray<Variant>
 extension GodotArray {
     // MARK: Constructors
     
-    public init() {
-        self = Self.make()
+    public convenience init() {
+        self.init(storage: Self.make())
         setTypedIfApplicable()
     }
     
     // MARK: Type
     
-    private mutating func setTypedIfApplicable() {
+    private func setTypedIfApplicable() {
         guard let storageType = Element.variantStorageType else {
             return
         }
@@ -58,12 +68,12 @@ extension GodotArray {
     public func eraseToAnyArray() -> AnyGodotArray {
         // This is performed in O(1).
         let emptyScript: Object? = nil
-        return AnyGodotArray.make(
+        return .init(storage: AnyGodotArray.make(
             base: self,
             type: 0,
             className: GodotStringName(),
             script: emptyScript
-        )
+        ))
     }
 }
 
@@ -117,7 +127,7 @@ extension GodotArray: RangeReplaceableCollection {
         }
     }
     
-    public mutating func replaceSubrange<C>(_ subrange: Swift.Range<Int>, with newElements: C)
+    public func replaceSubrange<C>(_ subrange: Swift.Range<Int>, with newElements: C)
     where C : Collection, Element == C.Element {
         var rangeIndex = subrange.lowerBound
         for (collectionIndex, element) in newElements.enumerated() {
@@ -138,19 +148,19 @@ extension GodotArray: RangeReplaceableCollection {
         }
     }
     
-    public mutating func append(_ newElement: Element) {
+    public func append(_ newElement: Element) {
         Element.convertToStorageTemporarily(newElement) { storage in
             _append(value: storage)
         }
     }
     
-    public mutating func insert(_ newElement: Element, at i: Int) {
+    public func insert(_ newElement: Element, at i: Int) {
         Element.convertToStorageTemporarily(newElement) { storage in
             _ = _insert(position: i, value: storage)
         }
     }
     
-    public mutating func popLast() -> Element? {
+    public func popLast() -> Element? {
         let element = _popBack()
         if element.isEmpty {
             return nil
@@ -160,23 +170,23 @@ extension GodotArray: RangeReplaceableCollection {
     }
     
     @discardableResult
-    public mutating func remove(at i: Int) -> Element {
+    public func remove(at i: Int) -> Element {
         let element = self[i]
         _removeAt(position: i)
         return element
     }
     
-    public mutating func removeAll(keepingCapacity keepCapacity: Bool) {
+    public func removeAll(keepingCapacity keepCapacity: Bool) {
         _clear()
     }
     
     @discardableResult
-    public mutating func removeFirst() -> Element {
+    public func removeFirst() -> Element {
         Element.convertFromCheckedStorage(consuming: _popFront())
     }
     
     @discardableResult
-    public mutating func removeLast() -> Element {
+    public func removeLast() -> Element {
         Element.convertFromCheckedStorage(consuming: _popBack())
     }
 }
@@ -184,7 +194,7 @@ extension GodotArray: RangeReplaceableCollection {
 extension GodotArray: MutableCollection {}
 
 extension GodotArray: ExpressibleByArrayLiteral {
-    public init(arrayLiteral elements: Element...) {
+    public convenience init(arrayLiteral elements: Element...) {
         self.init(elements)
     }
 }

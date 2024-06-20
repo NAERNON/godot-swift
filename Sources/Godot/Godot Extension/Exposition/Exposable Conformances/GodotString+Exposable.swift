@@ -3,7 +3,7 @@ extension GodotString: Variant.Storable {
     public static let variantStorageType: Variant.StorageType? = .string
     
     public static func convertToStorage(
-        _ value: consuming Self
+        _ value: consuming GodotString
     ) -> Variant.Storage {
         let storage = Variant.Storage()
         
@@ -18,8 +18,8 @@ extension GodotString: Variant.Storable {
     
     public static func convertFromCheckedStorage(
         _ storage: borrowing Variant.Storage
-    ) -> Self {
-        var newValue = Self()
+    ) -> GodotString {
+        let newValue = Self()
         
         storage.withUnsafeMutableRawPointer { storagePtr in
             newValue.withUnsafeMutableOpaquePointer { newValuePtr in
@@ -32,14 +32,14 @@ extension GodotString: Variant.Storable {
     
     public static func convertFromCheckedStorage(
         consuming storage: consuming Variant.Storage
-    ) -> Self {
+    ) -> GodotString {
         convertFromCheckedStorage(storage)
     }
 }
 
 extension GodotString: Hintable {
-    public typealias HintingValue = Self
-    public static var defaultHint: Hint<Self> { .typed }
+    public typealias HintingValue = GodotString
+    public static var defaultHint: Hint<GodotString> { .typed }
 }
 
 extension GodotString: Exposable {
@@ -58,12 +58,12 @@ extension GodotString: Exposable {
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        let opaque: Opaque = makeOpaque()
+        var storage = makeOpaqueStorage()
         withUnsafeArgumentPackPointer(unsafePointer!) { accessPtr in
-            opaque.withUnsafeMutableRawPointer { opaquePtr in
+            storage.withUnsafeMutableRawPointer { opaquePtr in
                 GodotStringBindings.constructorFromGodotString(opaquePtr, accessPtr)
             }
         }
-        return Self.init(opaque: opaque)
+        return Self.init(storage: storage)
     }
 }

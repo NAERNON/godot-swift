@@ -351,24 +351,24 @@ internal enum UInt8GodotContiguousArrayStorageBindings {
 }
 
 extension UInt8.GodotContiguousArrayStorage {
-    static internal func makeOpaque(
+    static internal func makeOpaqueStorage(
         useDestructor: Bool = true
-    ) -> Opaque {
-        Opaque(size: 16, destructorPtr: useDestructor ? UInt8GodotContiguousArrayStorageBindings.destructor : nil)
+    ) -> Opaque.Storage {
+        Opaque.Storage(size: 16, destructorPtr: useDestructor ? UInt8GodotContiguousArrayStorageBindings.destructor : nil)
     }
 
-    static internal func make() -> Self {
-        let __temporary: Opaque = makeOpaque()
+    static internal func make() -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
             UInt8GodotContiguousArrayStorageBindings.constructor(__ptr___temporary, nil)
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make(
         from: UInt8.GodotContiguousArrayStorage
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -376,13 +376,13 @@ extension UInt8.GodotContiguousArrayStorage {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make<Value: Variant.Storable>(
         from: Godot.GodotArray<Value>
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -390,7 +390,7 @@ extension UInt8.GodotContiguousArrayStorage {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func _operatorEqual<Value: Variant.Storable>(
@@ -504,14 +504,13 @@ extension UInt8.GodotContiguousArrayStorage {
         }
     }
 
-    mutating internal func _setValue(
+    internal func _setValue(
         _ value: Int,
         at index: GDExtensionInt
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
-            withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                UInt8GodotContiguousArrayStorageBindings.indexedSetter(__ptr_self, index, __ptr_value)
+            withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                UInt8GodotContiguousArrayStorageBindings.indexedSetter(UnsafeMutableRawPointer(mutating: __ptr_self), index, __ptr_value)
             }
         }
     }
@@ -532,92 +531,83 @@ extension UInt8.GodotContiguousArrayStorage {
         }
     }
 
-    mutating internal func _set(
+    internal func _set(
         index: Int,
         value: Int
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_index, __ptr_value) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        UInt8GodotContiguousArrayStorageBindings.methodSet(__ptr_self, __accessPtr, nil, 2)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        UInt8GodotContiguousArrayStorageBindings.methodSet(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 2)
                     }
                 }
             }
         }
     }
 
-    @discardableResult
-    mutating internal func _pushBack(
+    internal func _pushBack(
         value: Int
     ) -> Bool {
-        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        UInt8GodotContiguousArrayStorageBindings.methodPushBack(__ptr_self, __accessPtr, __temporary, 1)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        UInt8GodotContiguousArrayStorageBindings.methodPushBack(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
         }
     }
 
-    @discardableResult
-    mutating internal func _append(
+    internal func _append(
         value: Int
     ) -> Bool {
-        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        UInt8GodotContiguousArrayStorageBindings.methodAppend(__ptr_self, __accessPtr, __temporary, 1)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        UInt8GodotContiguousArrayStorageBindings.methodAppend(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
         }
     }
 
-    mutating internal func _appendArray(
+    internal func _appendArray(
         _ array: UInt8.GodotContiguousArrayStorage
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: array) { __ptr_array in
             withUnsafeArgumentPackPointer(__ptr_array) { __accessPtr in
-                withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    UInt8GodotContiguousArrayStorageBindings.methodAppendArray(__ptr_self, __accessPtr, nil, 1)
+                withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                    UInt8GodotContiguousArrayStorageBindings.methodAppendArray(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 1)
                 }
             }
         }
     }
 
-    mutating internal func _removeAt(
+    internal func _removeAt(
         index: Int
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
             withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
-                withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    UInt8GodotContiguousArrayStorageBindings.methodRemoveAt(__ptr_self, __accessPtr, nil, 1)
+                withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                    UInt8GodotContiguousArrayStorageBindings.methodRemoveAt(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 1)
                 }
             }
         }
     }
 
-    @discardableResult
-    mutating internal func _insert(
+    internal func _insert(
         atIndex index: Int,
         value: Int
     ) -> Int {
-        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
                 withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                     withUnsafeArgumentPackPointer(__ptr_index, __ptr_value) { __accessPtr in
-                        withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                            UInt8GodotContiguousArrayStorageBindings.methodInsert(__ptr_self, __accessPtr, __temporary, 2)
+                        withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                            UInt8GodotContiguousArrayStorageBindings.methodInsert(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -625,39 +615,35 @@ extension UInt8.GodotContiguousArrayStorage {
         }
     }
 
-    mutating internal func _fill(
+    internal func _fill(
         value: Int
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
-                withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    UInt8GodotContiguousArrayStorageBindings.methodFill(__ptr_self, __accessPtr, nil, 1)
+                withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                    UInt8GodotContiguousArrayStorageBindings.methodFill(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 1)
                 }
             }
         }
     }
 
-    @discardableResult
-    mutating internal func _resize(
+    internal func _resize(
         newSize: Int
     ) -> Int {
-        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: newSize) { __ptr_newSize in
                 withUnsafeArgumentPackPointer(__ptr_newSize) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        UInt8GodotContiguousArrayStorageBindings.methodResize(__ptr_self, __accessPtr, __temporary, 1)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        UInt8GodotContiguousArrayStorageBindings.methodResize(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
         }
     }
 
-    mutating internal func _clear() {
-        makeUniqueIfSharedOpaque()
-        withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            UInt8GodotContiguousArrayStorageBindings.methodClear(__ptr_self, nil, nil, 0)
+    internal func _clear() {
+        withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+            UInt8GodotContiguousArrayStorageBindings.methodClear(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
 
@@ -675,10 +661,9 @@ extension UInt8.GodotContiguousArrayStorage {
         }
     }
 
-    mutating internal func _reverse() {
-        makeUniqueIfSharedOpaque()
-        withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            UInt8GodotContiguousArrayStorageBindings.methodReverse(__ptr_self, nil, nil, 0)
+    internal func _reverse() {
+        withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+            UInt8GodotContiguousArrayStorageBindings.methodReverse(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
 
@@ -699,25 +684,22 @@ extension UInt8.GodotContiguousArrayStorage {
         }
     }
 
-    mutating internal func _sort() {
-        makeUniqueIfSharedOpaque()
-        withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            UInt8GodotContiguousArrayStorageBindings.methodSort(__ptr_self, nil, nil, 0)
+    internal func _sort() {
+        withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+            UInt8GodotContiguousArrayStorageBindings.methodSort(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
 
-    @discardableResult
-    mutating internal func _bsearch(
+    internal func _bsearch(
         value: Int,
         before: Bool = true
     ) -> Int {
-        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withTransferrableUnsafeRawPointer(to: before) { __ptr_before in
                     withUnsafeArgumentPackPointer(__ptr_value, __ptr_before) { __accessPtr in
-                        withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                            UInt8GodotContiguousArrayStorageBindings.methodBsearch(__ptr_self, __accessPtr, __temporary, 2)
+                        withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                            UInt8GodotContiguousArrayStorageBindings.methodBsearch(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -725,11 +707,10 @@ extension UInt8.GodotContiguousArrayStorage {
         }
     }
 
-    @discardableResult
-    mutating internal func _duplicate() -> UInt8.GodotContiguousArrayStorage {
+    internal func _duplicate() -> UInt8.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
-            withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                UInt8GodotContiguousArrayStorageBindings.methodDuplicate(__ptr_self, nil, __temporary, 0)
+            withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                UInt8GodotContiguousArrayStorageBindings.methodDuplicate(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
@@ -1115,196 +1096,183 @@ extension UInt8.GodotContiguousArrayStorage {
         }
     }
 
-    mutating internal func _encodeU8(
+    internal func _encodeU8(
         byteOffset: Int,
         value: Int
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        UInt8GodotContiguousArrayStorageBindings.methodEncodeU8(__ptr_self, __accessPtr, nil, 2)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        UInt8GodotContiguousArrayStorageBindings.methodEncodeU8(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 2)
                     }
                 }
             }
         }
     }
 
-    mutating internal func _encodeS8(
+    internal func _encodeS8(
         byteOffset: Int,
         value: Int
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        UInt8GodotContiguousArrayStorageBindings.methodEncodeS8(__ptr_self, __accessPtr, nil, 2)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        UInt8GodotContiguousArrayStorageBindings.methodEncodeS8(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 2)
                     }
                 }
             }
         }
     }
 
-    mutating internal func _encodeU16(
+    internal func _encodeU16(
         byteOffset: Int,
         value: Int
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        UInt8GodotContiguousArrayStorageBindings.methodEncodeU16(__ptr_self, __accessPtr, nil, 2)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        UInt8GodotContiguousArrayStorageBindings.methodEncodeU16(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 2)
                     }
                 }
             }
         }
     }
 
-    mutating internal func _encodeS16(
+    internal func _encodeS16(
         byteOffset: Int,
         value: Int
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        UInt8GodotContiguousArrayStorageBindings.methodEncodeS16(__ptr_self, __accessPtr, nil, 2)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        UInt8GodotContiguousArrayStorageBindings.methodEncodeS16(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 2)
                     }
                 }
             }
         }
     }
 
-    mutating internal func _encodeU32(
+    internal func _encodeU32(
         byteOffset: Int,
         value: Int
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        UInt8GodotContiguousArrayStorageBindings.methodEncodeU32(__ptr_self, __accessPtr, nil, 2)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        UInt8GodotContiguousArrayStorageBindings.methodEncodeU32(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 2)
                     }
                 }
             }
         }
     }
 
-    mutating internal func _encodeS32(
+    internal func _encodeS32(
         byteOffset: Int,
         value: Int
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        UInt8GodotContiguousArrayStorageBindings.methodEncodeS32(__ptr_self, __accessPtr, nil, 2)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        UInt8GodotContiguousArrayStorageBindings.methodEncodeS32(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 2)
                     }
                 }
             }
         }
     }
 
-    mutating internal func _encodeU64(
+    internal func _encodeU64(
         byteOffset: Int,
         value: Int
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        UInt8GodotContiguousArrayStorageBindings.methodEncodeU64(__ptr_self, __accessPtr, nil, 2)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        UInt8GodotContiguousArrayStorageBindings.methodEncodeU64(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 2)
                     }
                 }
             }
         }
     }
 
-    mutating internal func _encodeS64(
+    internal func _encodeS64(
         byteOffset: Int,
         value: Int
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        UInt8GodotContiguousArrayStorageBindings.methodEncodeS64(__ptr_self, __accessPtr, nil, 2)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        UInt8GodotContiguousArrayStorageBindings.methodEncodeS64(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 2)
                     }
                 }
             }
         }
     }
 
-    mutating internal func _encodeHalf(
+    internal func _encodeHalf(
         byteOffset: Int,
         value: Double
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        UInt8GodotContiguousArrayStorageBindings.methodEncodeHalf(__ptr_self, __accessPtr, nil, 2)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        UInt8GodotContiguousArrayStorageBindings.methodEncodeHalf(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 2)
                     }
                 }
             }
         }
     }
 
-    mutating internal func _encodeFloat(
+    internal func _encodeFloat(
         byteOffset: Int,
         value: Double
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        UInt8GodotContiguousArrayStorageBindings.methodEncodeFloat(__ptr_self, __accessPtr, nil, 2)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        UInt8GodotContiguousArrayStorageBindings.methodEncodeFloat(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 2)
                     }
                 }
             }
         }
     }
 
-    mutating internal func _encodeDouble(
+    internal func _encodeDouble(
         byteOffset: Int,
         value: Double
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        UInt8GodotContiguousArrayStorageBindings.methodEncodeDouble(__ptr_self, __accessPtr, nil, 2)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        UInt8GodotContiguousArrayStorageBindings.methodEncodeDouble(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 2)
                     }
                 }
             }
         }
     }
 
-    @discardableResult
-    mutating internal func _encodeVar(
+    internal func _encodeVar(
         byteOffset: Int,
         value: borrowing Godot.Variant.Storage,
         allowObjects: Bool = false
     ) -> Int {
-        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: byteOffset) { __ptr_byteOffset in
                 withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                     withTransferrableUnsafeRawPointer(to: allowObjects) { __ptr_allowObjects in
                         withUnsafeArgumentPackPointer(__ptr_byteOffset, __ptr_value, __ptr_allowObjects) { __accessPtr in
-                            withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                                UInt8GodotContiguousArrayStorageBindings.methodEncodeVar(__ptr_self, __accessPtr, __temporary, 3)
+                            withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                                UInt8GodotContiguousArrayStorageBindings.methodEncodeVar(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 3)
                             }
                         }
                     }

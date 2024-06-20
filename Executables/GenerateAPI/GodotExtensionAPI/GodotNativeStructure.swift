@@ -8,13 +8,6 @@ import Utils
 struct GodotNativeStructure: Decodable {
     var name: String
     var format: StructureFormat
-    
-    @MemberBlockItemListBuilder
-    func propertiesSyntax() -> MemberBlockItemListSyntax {
-        for element in format.elements {
-            element.propertyDecl
-        }
-    }
 }
 
 // MARK: - StructureFormat
@@ -56,8 +49,8 @@ extension GodotNativeStructure {
                 self.name = String(name)
             }
             
-            var propertyDecl: DeclSyntax {
-                let translatedName = backticksKeyword(name.translated(from: .snake, to: .camel))
+            func declSyntax() -> DeclSyntax {
+                let translatedName = name.translated(from: .snake, to: .camel).backticksKeyword()
                 var varString = "public var \(translatedName): \(type.removeGodotClassPointers.syntax(options: .floatAsDouble))"
                 if let defaultValue {
                     varString += " = " + defaultValue.syntax(
@@ -90,7 +83,9 @@ extension GodotNativeStructure: FileSource {
         with configuration: BuildConfiguration
     ) throws -> CodeBlockItemListSyntax {
         try StructDeclSyntax("public struct \(raw: name)") {
-            propertiesSyntax()
+            for element in format.elements {
+                element.declSyntax()
+            }
         }
     }
 }

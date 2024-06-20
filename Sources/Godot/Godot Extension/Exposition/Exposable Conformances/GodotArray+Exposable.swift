@@ -25,10 +25,8 @@ extension GodotArray: Variant.Storable {
     }
     
     public static func convertToStorage(
-        _ value: consuming Self
+        _ value: consuming GodotArray
     ) -> Variant.Storage {
-        value.makeUniqueIfSharedOpaque()
-        
         let storage = Variant.Storage()
         
         storage.withUnsafeMutableRawPointer { storagePtr in
@@ -42,7 +40,7 @@ extension GodotArray: Variant.Storable {
     
     public static func convertFromStorage(
         _ storage: borrowing Variant.Storage
-    ) throws -> Self {
+    ) throws -> GodotArray {
         try storage.checkIsConvertible(to: .array)
         
         let array = GodotArray.convertFromCheckedStorage(storage)
@@ -84,8 +82,8 @@ extension GodotArray: Variant.Storable {
     
     public static func convertFromCheckedStorage(
         _ storage: borrowing Variant.Storage
-    ) -> Self {
-        var newValue = Self()
+    ) -> GodotArray {
+        let newValue = Self()
         
         storage.withUnsafeMutableRawPointer { storagePtr in
             newValue.withUnsafeMutableOpaquePointer { newValuePtr in
@@ -98,12 +96,12 @@ extension GodotArray: Variant.Storable {
         // This is performed in O(1).
         if Element.variantStorageType == nil {
             let emptyScript: Object? = nil
-            return Self.make(
+            return .init(storage: Self.make(
                 base: newValue,
                 type: 0,
                 className: GodotStringName(),
                 script: emptyScript
-            )
+            ))
         } else {
             return newValue
         }
@@ -111,14 +109,14 @@ extension GodotArray: Variant.Storable {
     
     public static func convertFromCheckedStorage(
         consuming storage: consuming Variant.Storage
-    ) -> Self {
+    ) -> GodotArray {
         convertFromCheckedStorage(storage)
     }
 }
 
 extension GodotArray: Hintable where Element : Exportable {
-    public typealias HintingValue = Self
-    public static var defaultHint: Hint<Self> { .elements(Element.defaultHint) }
+    public typealias HintingValue = GodotArray
+    public static var defaultHint: Hint<GodotArray> { .elements(Element.defaultHint) }
 }
 
 extension GodotArray: Exposable where Element : Exposable {
@@ -126,15 +124,25 @@ extension GodotArray: Exposable where Element : Exposable {
         .array
     }
     
+    public consuming func transferToGodot(
+        unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
+    ) {
+        withUnsafeOpaquePointer { selfPtr in
+            withUnsafeArgumentPackPointer(selfPtr) { accessPtr in
+                GodotArrayBindings.constructorFromGodotArray(destinationUnsafePointer, accessPtr)
+            }
+        }
+    }
+    
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        let opaque: Opaque = makeOpaque()
+        var storage = makeOpaqueStorage()
         withUnsafeArgumentPackPointer(unsafePointer!) { accessPtr in
-            opaque.withUnsafeMutableRawPointer { opaquePtr in
+            storage.withUnsafeMutableRawPointer { opaquePtr in
                 GodotArrayBindings.constructorFromGodotArray(opaquePtr, accessPtr)
             }
         }
-        return Self.init(opaque: opaque)._duplicate(deep: false)
+        return Self.init(storage: storage)
     }
 }

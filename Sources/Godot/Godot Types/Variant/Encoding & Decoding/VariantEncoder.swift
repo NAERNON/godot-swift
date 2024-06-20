@@ -121,7 +121,7 @@ where Key : CodingKey {
     private var containers = [String : VariantRootEncoder]()
     
     override func generateVariantStorage() -> Variant.Storage {
-        var dictionary = AnyGodotDictionary()
+        let dictionary = AnyGodotDictionary()
         for (name, container) in containers {
             String.convertToStorageTemporarily(name) { nameStorage in
                 dictionary._set(
@@ -261,7 +261,7 @@ private final class VariantUnkeyedContainer: VariantRootEncoder, UnkeyedEncoding
     private var containers = [VariantRootEncoder]()
     
     override func generateVariantStorage() -> Variant.Storage {
-        var array = AnyGodotArray()
+        let array = AnyGodotArray()
         for container in containers {
             array._append(value: container.generateVariantStorage())
         }

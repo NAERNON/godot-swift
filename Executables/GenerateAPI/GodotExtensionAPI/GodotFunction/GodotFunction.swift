@@ -2,45 +2,53 @@ import SwiftSyntax
 import SwiftSyntaxBuilder
 import Utils
 
-/// A protocol representing a Godot function.
-///
-/// Conform your type to the protocol to gain access
-/// to useful syntax declarations.
-protocol GodotFunction {
-    var name: String { get }
-    var arguments: [GodotArgument]? { get }
-    var returnType: GodotType? { get }
+/// A type representing a Godot function.
+struct GodotFunction {
+    var name: String
+    var arguments: [GodotArgument]
+    var returnType: GodotType?
     
-    var isVararg: Bool { get }
-    var isStatic: Bool { get }
-    var isConst: Bool { get }
-    var isMutating: Bool { get }
+    var isVararg: Bool
+    var isStatic: Bool
+    var isMutating: Bool
     
     /// A Boolean value indicating whether the function uses generics instead
     /// of variants.
     ///
     /// If the function is vararg, a parameter pack is used at the end.
-    var usesVariantGeneric: Bool { get }
+    var usesVariantGeneric: Bool
     
     /// A Boolean value indicating whether all parameters are converted to variants.
-    var convertsAllParameterToVariant: Bool { get }
+    var convertsAllParameterToVariant: Bool
+    
+    var accessControl: AccessControl
+    
+    init(
+        name: String,
+        arguments: [GodotArgument],
+        returnType: GodotType?,
+        isVararg: Bool,
+        isStatic: Bool,
+        isMutating: Bool,
+        usesVariantGeneric: Bool,
+        convertsAllParameterToVariant: Bool,
+        accessControl: AccessControl
+    ) {
+        self.name = name
+        self.arguments = arguments
+        self.returnType = returnType
+        self.isVararg = isVararg
+        self.isStatic = isStatic
+        self.isMutating = isMutating
+        self.usesVariantGeneric = usesVariantGeneric
+        self.convertsAllParameterToVariant = convertsAllParameterToVariant
+        self.accessControl = accessControl
+    }
 }
 
 private struct GenericType {
     let name: String
     let constraint: String
-}
-
-// MARK: - Default behavior
-
-extension GodotFunction {
-    var isVararg: Bool { false }
-    var isStatic: Bool { false }
-    var isConst: Bool { false }
-    var isMutating: Bool { false }
-    
-    var usesVariantGeneric: Bool { false }
-    var convertsAllParameterToVariant: Bool { false }
 }
 
 // MARK: - Extensions
@@ -63,10 +71,8 @@ extension GodotFunction {
     }
     
     private func genericTypesCount() -> Int {
-        guard let arguments else { return 0 }
-        
-        return arguments.reduce(0) { partialResult, argument in
-            return partialResult + genericTypeConstraints(for: argument).count
+        arguments.reduce(0) { partialResult, argument in
+            partialResult + genericTypeConstraints(for: argument).count
         }
     }
     
@@ -78,9 +84,7 @@ extension GodotFunction {
             }
         }
         
-        guard let argument = arguments?[index] else {
-            return []
-        }
+        let argument = arguments[index]
         let genericCount = genericTypesCount()
         
         return genericTypeConstraints(for: argument).enumerated()
@@ -98,11 +102,9 @@ extension GodotFunction {
     /// Returns the syntax to place inside the generic function signature.
     private func genericSyntax() -> String? {
         var genericArguments = [String]()
-        if let arguments {
-            for index in 0..<arguments.count {
-                for genericType in genericTypes(forArgumentAt: index) {
-                    genericArguments.append("\(genericType.name): \(genericType.constraint)")
-                }
+        for index in 0..<arguments.count {
+            for genericType in genericTypes(forArgumentAt: index) {
+                genericArguments.append("\(genericType.name): \(genericType.constraint)")
             }
         }
         
@@ -125,11 +127,13 @@ extension GodotFunction {
     /// 
     /// For a vararg function with 3 arguments and a `Int32` type,
     /// it will return "`3 + Int32(rest.count)`".
-    func argumentsCountSyntax<IntegerType: BinaryInteger>(type: IntegerType.Type) -> String {
+    func argumentsCountSyntax<IntegerType: BinaryInteger>(
+        type: IntegerType.Type
+    ) -> String {
         if isVararg {
             return "\(IntegerType.self)(packCount)"
         } else {
-            return String(arguments?.count ?? 0)
+            return String(arguments.count)
         }
     }
     
@@ -137,16 +141,13 @@ extension GodotFunction {
     func declSyntax(
         hideAllLabels: Bool = false,
         options: GodotTypeSyntaxOptions = [],
-        keywords: Keyword...,
         @CodeBlockItemListBuilder bodyBuilder: () throws -> CodeBlockItemListSyntax
     ) throws -> FunctionDeclSyntax {
-        let arguments = self.arguments ?? []
-        
         var functionHeader = String()
         
         functionHeader.append("func ")
         
-        functionHeader.append(backticksKeyword(name))
+        functionHeader.append(name.backticksKeyword())
         
         if usesVariantGeneric,
            let genericSyntax = genericSyntax() 
@@ -165,7 +166,7 @@ extension GodotFunction {
                 parameterString.append(label)
                 parameterString.append(" ")
             }
-            parameterString.append(backticksKeyword(argument.name))
+            parameterString.append(argument.name.backticksKeyword())
             parameterString.append(": ")
             
             let genericNames = genericTypes(forArgumentAt: index).map { $0.name }
@@ -240,9 +241,7 @@ extension GodotFunction {
                 DeclModifierSyntax(name: .keyword(.mutating))
             }
             
-            for keyword in keywords {
-                DeclModifierSyntax(name: .keyword(keyword))
-            }
+            DeclModifierSyntax(name: .keyword(accessControl.keyword))
         }
         
         return try FunctionDeclSyntax("\(raw: functionHeader)", bodyBuilder: bodyBuilder)
@@ -269,7 +268,7 @@ extension GodotFunction {
     ) throws -> CodeBlockItemListSyntax {
         try argumentsPointerAccessSyntax(
             options: options,
-            indexes: 0..<(arguments?.count ?? 0),
+            indexes: 0..<arguments.count,
             bodyBuilder: bodyBuilder
         )
     }
@@ -309,7 +308,7 @@ extension GodotFunction {
         let packName = "__accessPtr"
         
         // No argument and vararg. Return no pack is created.
-        if !forcePackCreation && (arguments == nil || arguments?.isEmpty == true) && !isVararg {
+        if !forcePackCreation && arguments.isEmpty == true && !isVararg {
             return try bodyBuilder("nil")
         }
         
@@ -349,12 +348,12 @@ extension GodotFunction {
         @CodeBlockItemListBuilder bodyBuilder: ([String]) throws -> CodeBlockItemListSyntax
     ) throws -> CodeBlockItemListSyntax {
         if let index = indexes.first {
-            let argument = arguments![index]
+            let argument = arguments[index]
             let accessThroughVariantStorage = convertsAllParameterToVariant ||
                 (usesVariantGeneric && argument.type == .variant)
             
             try argument.type.argumentPointerAccessSyntax(
-                instanceName: backticksKeyword(argument.name),
+                instanceName: argument.name.backticksKeyword(),
                 options: options,
                 mutability: .const,
                 accessThroughVariantStorage: accessThroughVariantStorage
@@ -371,7 +370,7 @@ extension GodotFunction {
     func callSyntax(
         withParameters parameterValues: [String]
     ) -> FunctionCallExprSyntax {
-        let parameterStrings = (arguments ?? []).enumerated().map { (index, argument) in
+        let parameterStrings = arguments.enumerated().map { (index, argument) in
             if argument.isLabelHidden {
                 parameterValues[index]
             } else if let label = argument.label {
@@ -381,7 +380,7 @@ extension GodotFunction {
             }
         }
         
-        let functionName = backticksKeyword(name)
+        let functionName = name.backticksKeyword()
         
         let exprSyntax = if parameterStrings.isEmpty {
             ExprSyntax("\(raw: functionName)()")

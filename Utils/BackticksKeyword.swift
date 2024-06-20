@@ -57,20 +57,23 @@ private let keywords: Set<String> = [
     "while",
 ]
 
-/// Places backticks around the given string if is a Swift keyword.
-public func backticksKeyword(_ string: String) -> String {
-    if keywords.contains(string) {
-        return "`" + string + "`"
+extension StringProtocol {
+    /// Places backticks around the string if it is a Swift keyword.
+    public func backticksKeyword() -> String {
+        let string = String(self)
+        if keywords.contains(string) {
+            return "`" + self + "`"
+        }
+        
+        return string
     }
     
-    return string
-}
-
-/// Removes backticks around the given string if has them.
-public func removeBackticks(_ string: some StringProtocol) -> String {
-    if string.count >= 2 && string.first == "`" && string.last == "`" {
-        return String(string.dropLast(1).dropFirst(1))
+    /// Removes backticks around the given string if has them.
+    public func backticksRemoved() -> String {
+        if self.count >= 2 && self.first == "`" && self.last == "`" {
+            return String(self.dropLast(1).dropFirst(1))
+        }
+        
+        return String(self)
     }
-    
-    return String(string)
 }

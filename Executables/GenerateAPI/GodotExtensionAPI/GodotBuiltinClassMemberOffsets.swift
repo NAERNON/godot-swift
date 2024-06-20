@@ -5,14 +5,10 @@
 struct GodotBuiltinClassMemberOffsets: Decodable {
     var members: [BuildConfiguration : [GodotType : [Member]]]
     
-    // MARK: Member
-    
     struct Member: Decodable {
         var member: String
         var offset: Int
     }
-    
-    // MARK: Init
     
     init(from decoder: Decoder) throws {
         let builtinClassMemberOffsets = try Array<_GodotBuiltinClassMemberOffsets>(from: decoder)
@@ -29,9 +25,9 @@ struct GodotBuiltinClassMemberOffsets: Decodable {
         
         self.members = members
     }
-    
-    // MARK: Access
-    
+}
+
+extension GodotBuiltinClassMemberOffsets {
     func members(ofClass classType: GodotType, for configuration: BuildConfiguration) -> [Member]? {
         members[configuration]?[classType]
     }

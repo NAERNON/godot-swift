@@ -57,7 +57,7 @@ struct ClassMacroDeclProvider<Context> where Context : MacroExpansionContext {
             exposeToGodotCustomDecl: nil,
             context: context,
             isClassVisible: true,
-            exposedClassName: removeBackticks(classDecl.name.trimmedDescription)
+            exposedClassName: classDecl.name.trimmedDescription.backticksRemoved()
         )
     }
     

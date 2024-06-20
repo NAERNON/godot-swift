@@ -7,14 +7,13 @@ import SwiftSyntaxBuilder
 struct GodotSingleton: Decodable {
     var name: String
     var type: GodotType
-    
-    // MARK: Syntax
-    
-    @CodeBlockItemListBuilder
-    func syntax() -> CodeBlockItemListSyntax {
+}
+
+extension GodotSingleton {
+    func declSyntax() -> CodeBlockItemListSyntax {
         let typeSyntax = ExprSyntax("\(raw: type.syntax())")
         
-        """
+        return """
         private var _shared\(raw: name) = {
             \(typeSyntax)._exposedClassName.withUnsafeOpaquePointer { namePtr in
                 let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)

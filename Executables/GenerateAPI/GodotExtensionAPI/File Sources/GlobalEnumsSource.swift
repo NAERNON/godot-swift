@@ -11,11 +11,11 @@ struct GlobalEnumSource: FileSource {
                 // they are already generated.
                 if scope != .variant {
                     try ExtensionDeclSyntax("extension \(raw: scope.syntax())") {
-                        try enumValue.syntax()
+                        try enumValue.declSyntax()
                     }
                 }
             } else {
-                try enumValue.syntax()
+                try enumValue.declSyntax()
             }
         }
     }

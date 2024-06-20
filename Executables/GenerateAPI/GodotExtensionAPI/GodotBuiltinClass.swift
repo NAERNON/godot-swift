@@ -9,15 +9,40 @@ struct GodotBuiltinClass: Decodable {
     var name: GodotType
     var indexingReturnType: GodotType?
     var isKeyed: Bool
-    var members: [GodotArgument]?
-    var constants: [Constant]?
-    var enums: [GodotEnum]?
+    var members: [GodotArgument]
+    var constants: [Constant]
+    var enums: [GodotEnum]
     var operators: [Operator]
-    var methods: [Method]?
+    var methods: [Method]
     var constructors: [Constructor]
     var hasDestructor: Bool
     
-    // MARK: Constant
+    enum CodingKeys: CodingKey {
+        case name
+        case indexingReturnType
+        case isKeyed
+        case members
+        case constants
+        case enums
+        case operators
+        case methods
+        case constructors
+        case hasDestructor
+    }
+    
+    init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.name = try container.decode(GodotType.self, forKey: .name)
+        self.indexingReturnType = try container.decodeIfPresent(GodotType.self, forKey: .indexingReturnType)
+        self.isKeyed = try container.decode(Bool.self, forKey: .isKeyed)
+        self.members = try container.decodeIfPresent([GodotArgument].self, forKey: .members) ?? []
+        self.constants = try container.decodeIfPresent([GodotBuiltinClass.Constant].self, forKey: .constants) ?? []
+        self.enums = try container.decodeIfPresent([GodotEnum].self, forKey: .enums) ?? []
+        self.operators = try container.decode([GodotBuiltinClass.Operator].self, forKey: .operators)
+        self.methods = try container.decodeIfPresent([GodotBuiltinClass.Method].self, forKey: .methods) ?? []
+        self.constructors = try container.decode([GodotBuiltinClass.Constructor].self, forKey: .constructors)
+        self.hasDestructor = try container.decode(Bool.self, forKey: .hasDestructor)
+    }
     
     struct Constant: Decodable {
         var name: String
@@ -25,193 +50,63 @@ struct GodotBuiltinClass: Decodable {
         var value: GodotConstant
     }
     
-    // MARK: Operator
-    
     struct Operator: Decodable {
         var name: String
         var rightType: GodotType?
         var returnType: GodotType
-        
-        /// Returns an usable String for the operator ``name``.
-        var identifier: String {
-            switch name {
-            case "==": "equal"
-            case "!=": "not_equal"
-            case "<": "less"
-            case "<=": "less_equal"
-            case ">": "greater"
-            case ">=": "greater_equal"
-                
-            // mathematic
-            case "+": "add"
-            case "-": "subtract"
-            case "*": "multiply"
-            case "/": "divide"
-            case "unary-": "negate"
-            case "unary+": "positive"
-            case "%": "module"
-                
-            // bitwise
-            case "<<": "shift_left"
-            case ">>": "shift_right"
-            case "&": "bit_and"
-            case "|": "bit_or"
-            case "^": "bit_x_or"
-            case "~": "bit_negate"
-                
-            // containment
-            case "in": "in"
-            default: name
-            }
-        }
-        
-        var extensionSyntax: String {
-            "GDEXTENSION_VARIANT_OP_" + identifier.uppercased()
-        }
-        
-        var ptrIdentifier: String {
-            var name = "operator" + identifier.translated(from: .snake, to: .pascal)
-            if let rightType {
-                name += rightType.syntax(options: [.floatAsDouble]).translated(from: .snake, to: .pascal)
-                    .plain()
-            }
-            
-            return name
-        }
     }
     
-    // MARK: Method
-    
-    struct Method: Decodable, GodotFunction {
+    struct Method: Decodable {
         var name: String
         var returnType: GodotType?
         var isVararg: Bool
         var isConst: Bool
         var isStatic: Bool
         var hash: Int
-        var arguments: [GodotArgument]?
+        var arguments: [GodotArgument]
         
-        var ptrIdentifier: String {
-            "method\(name.translated(from: .snake, to: .pascal))"
+        enum CodingKeys: CodingKey {
+            case name
+            case returnType
+            case isVararg
+            case isConst
+            case isStatic
+            case hash
+            case arguments
         }
         
-        var usesVariantGeneric: Bool { 
-            true
-        }
-        
-        var isMutating: Bool {
-            !isConst && !isStatic
-        }
-        
-        var isResultDiscardable: Bool {
-            isMutating && returnType != nil
-        }
-        
-        var shouldReplaceOpaqueIfNecessary: Bool {
-            isMutating && name != "duplicate"
+        init(from decoder: any Decoder) throws {
+            let container: KeyedDecodingContainer<GodotBuiltinClass.Method.CodingKeys> = try decoder.container(keyedBy: GodotBuiltinClass.Method.CodingKeys.self)
+            self.name = try container.decode(String.self, forKey: GodotBuiltinClass.Method.CodingKeys.name)
+            self.returnType = try container.decodeIfPresent(GodotType.self, forKey: GodotBuiltinClass.Method.CodingKeys.returnType)
+            self.isVararg = try container.decode(Bool.self, forKey: GodotBuiltinClass.Method.CodingKeys.isVararg)
+            self.isConst = try container.decode(Bool.self, forKey: GodotBuiltinClass.Method.CodingKeys.isConst)
+            self.isStatic = try container.decode(Bool.self, forKey: GodotBuiltinClass.Method.CodingKeys.isStatic)
+            self.hash = try container.decode(Int.self, forKey: GodotBuiltinClass.Method.CodingKeys.hash)
+            self.arguments = try container.decodeIfPresent([GodotArgument].self, forKey: GodotBuiltinClass.Method.CodingKeys.arguments) ?? []
         }
     }
     
-    // MARK: Constructor
-    
-    struct Constructor: Decodable, GodotFunction {
+    struct Constructor: Decodable {
         var index: Int
-        var arguments: [GodotArgument]?
+        var arguments: [GodotArgument]
         
-        var name: String {
-            "make"
-        }
-        
-        var returnType: GodotType? {
-            .selfType
+        enum CodingKeys: CodingKey {
+            case index
+            case arguments
         }
         
-        var isStatic: Bool {
-            true
-        }
-        
-        var ptrIdentifier: String {
-            var string = "constructor"
-            
-            if let arguments {
-                string += "From"
-                
-                for argument in arguments {
-                    string += argument.type.syntax()
-                        .plain()
-                }
-            }
-            
-            return string
-        }
-        
-        var usesVariantGeneric: Bool {
-            true
+        init(from decoder: any Decoder) throws {
+            let container: KeyedDecodingContainer<GodotBuiltinClass.Constructor.CodingKeys> = try decoder.container(keyedBy: GodotBuiltinClass.Constructor.CodingKeys.self)
+            self.index = try container.decode(Int.self, forKey: GodotBuiltinClass.Constructor.CodingKeys.index)
+            self.arguments = try container.decodeIfPresent([GodotArgument].self, forKey: GodotBuiltinClass.Constructor.CodingKeys.arguments) ?? []
         }
     }
-    
-    // MARK: - Syntax
-    
-    var generatesConstants: Bool {
-        name == .color
-    }
-    
-    var generatesEnums: Bool {
-        !name.isVector
-    }
-    
-    var isCoveredByStandardLibrary: Bool {
-        return switch name {
-        case .bool, .float, .int, .nil: true
-        default: false
-        }
-    }
-    
-    var useOpaque: Bool {
-        name.isBuiltinGodotClassWithOpaque
-    }
-    
-    var generateRawOpaque: Bool {
-        name == .string
-    }
-    
-    var identifier: String {
-        name.syntax()
-    }
-    
-    var bindingsIdentifier: String {
-        name.syntax(options: .packedArrayStorage).plain() + "Bindings"
-    }
-    
-    var syntaxOptions: GodotTypeSyntaxOptions {
-        if name == .color {
-            [
-                .optionalClasses,
-                .prefixByGodot,
-                .genericArrayOnVariant,
-                .genericDictionaryOnVariant,
-                .packedArrayStorage,
-            ]
-        } else if useOpaque {
-            [
-                .optionalClasses,
-                .prefixByGodot,
-                .floatAsDouble,
-                .packedArrayStorage,
-                name == .array ? .genericArrayOnElement : .genericArrayOnVariant,
-                name == .dictionary ? .genericDictionaryOnKeyValue : .genericDictionaryOnVariant,
-            ]
-        } else {
-            [
-                .optionalClasses, .prefixByGodot,
-                .floatUseBuildConfiguration,
-                .genericArrayOnVariant,
-                .genericDictionaryOnVariant,
-                .packedArrayStorage,
-            ]
-        }
-    }
-    
+}
+
+// MARK: - Bindings
+
+extension GodotBuiltinClass {
     @CodeBlockItemListBuilder
     func bindingsSyntax() throws -> CodeBlockItemListSyntax {
         try EnumDeclSyntax("internal enum \(raw: bindingsIdentifier)") {
@@ -253,14 +148,12 @@ struct GodotBuiltinClass: Decodable {
                     "keyedChecker = GodotExtension.Interface.variantGetPtrKeyedChecker(\(raw: name.variantRepresentationType!))!"
                 }
                 
-                if let methods {
-                    for method in methods {
-                        """
-                        \(raw: method.ptrIdentifier) = GodotStringName(swiftStaticString: \(literal: method.name)).withUnsafeOpaquePointer { __ptr__method_name in
-                            GodotExtension.Interface.variantGetPtrBuiltinMethod(\(raw: name.variantRepresentationType!), __ptr__method_name, \(literal: method.hash))!
-                        }
-                        """
+                for method in methods {
+                    """
+                    \(raw: method.ptrIdentifier) = GodotStringName(swiftStaticString: \(literal: method.name)).withUnsafeOpaquePointer { __ptr__method_name in
+                        GodotExtension.Interface.variantGetPtrBuiltinMethod(\(raw: name.variantRepresentationType!), __ptr__method_name, \(literal: method.hash))!
                     }
+                    """
                 }
             }
             
@@ -297,132 +190,262 @@ struct GodotBuiltinClass: Decodable {
                 """
             }
             
-            if let methods {
-                for method in methods {
-                    """
-                    static private(set) var \(raw: method.ptrIdentifier): GDExtensionPtrBuiltInMethod!
-                    """
+            for method in methods {
+                """
+                static private(set) var \(raw: method.ptrIdentifier): GDExtensionPtrBuiltInMethod!
+                """
+            }
+        }
+    }
+}
+
+// MARK: - Constant
+
+extension GodotBuiltinClass.Constant {
+    func declSyntax() -> DeclSyntax {
+        let name = name.lowercased().translated(from: .snake, to: .camel)
+        
+        return """
+        public static var \(raw: name): \(raw: type.syntax()) {
+            \(raw: value.syntax(forType: type, useStaticVariables: false))
+        }
+        """
+    }
+}
+
+// MARK: - Operator
+
+extension GodotBuiltinClass.Operator {
+    /// Returns an usable String for the operator ``name``.
+    var identifier: String {
+        switch name {
+        case "==": "equal"
+        case "!=": "not_equal"
+        case "<": "less"
+        case "<=": "less_equal"
+        case ">": "greater"
+        case ">=": "greater_equal"
+            
+            // mathematic
+        case "+": "add"
+        case "-": "subtract"
+        case "*": "multiply"
+        case "/": "divide"
+        case "unary-": "negate"
+        case "unary+": "positive"
+        case "%": "module"
+            
+            // bitwise
+        case "<<": "shift_left"
+        case ">>": "shift_right"
+        case "&": "bit_and"
+        case "|": "bit_or"
+        case "^": "bit_x_or"
+        case "~": "bit_negate"
+            
+            // containment
+        case "in": "in"
+        default: name
+        }
+    }
+    
+    var extensionSyntax: String {
+        "GDEXTENSION_VARIANT_OP_" + identifier.uppercased()
+    }
+    
+    var ptrIdentifier: String {
+        var name = "operator" + identifier.translated(from: .snake, to: .pascal)
+        if let rightType {
+            name += rightType.syntax(options: [.floatAsDouble]).translated(from: .snake, to: .pascal)
+                .plain()
+        }
+        
+        return name
+    }
+    
+    func declSyntax(
+        builtinClass: GodotBuiltinClass
+    ) throws -> FunctionDeclSyntax {
+        var arguments = [GodotArgument(name: "lhs", type: builtinClass.name)]
+        if let rightType = rightType {
+            arguments.append(GodotArgument(name: "rhs", type: rightType))
+        }
+        
+        let function = GodotFunction(
+            name: "_operator_" + identifier,
+            arguments: arguments,
+            returnType: returnType.storage,
+            isVararg: false,
+            isStatic: true,
+            isMutating: false,
+            usesVariantGeneric: true,
+            convertsAllParameterToVariant: false, 
+            accessControl: .internal
+        ).translated()
+        
+        return try function.declSyntax(
+            hideAllLabels: true,
+            options: builtinClass.syntaxOptions
+        ) {
+            try returnType.instantiationSyntax { instancePtr in
+                try function.argumentsPointerAccessSyntax(options: builtinClass.syntaxOptions) { pointerNames in
+                    let lhsPointer = pointerNames[0]
+                    let rhsPointer = rightType == nil ? "nil" : pointerNames[1]
+                    
+                        """
+                        \(raw: builtinClass.bindingsIdentifier).\(raw: ptrIdentifier)(\(raw: lhsPointer), \(raw: rhsPointer), \(raw: instancePtr))
+                        """
                 }
             }
         }
     }
+}
+
+// MARK: - Method
+
+extension GodotBuiltinClass.Method {
+    var ptrIdentifier: String {
+        "method\(name.translated(from: .snake, to: .pascal))"
+    }
     
-    func opaqueRawOpaqueSyntax(classSize: Int) -> DeclSyntax {
+    func declSyntax(
+        builtinClass: GodotBuiltinClass
+    ) throws -> FunctionDeclSyntax {
+        let syntaxOptions = builtinClass.syntaxOptions
+        var arguments = arguments
+        
+        for index in 0..<arguments.count {
+            if arguments[index].type == .variant {
+                arguments[index].type = .variantStorage
+                arguments[index].attributes.append("borrowing")
+                arguments[index].defaultValue = nil
+            }
+        }
+        
+        var function = GodotFunction(
+            name: name,
+            arguments: arguments,
+            returnType: returnType?.storage,
+            isVararg: isVararg,
+            isStatic: isStatic,
+            isMutating: false,
+            usesVariantGeneric: true,
+            convertsAllParameterToVariant: false,
+            accessControl: .internal
+        ).translated()
+        
+        function.name.insert("_", at: function.name.startIndex)
+        
+        return try function.declSyntax(options: syntaxOptions) {
+            if let returnType {
+                try returnType.instantiationSyntax(options: syntaxOptions, prefix: "return ") { instancePtr in
+                    try function.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
+                        if isStatic {
+                            "\(raw: builtinClass.bindingsIdentifier).\(raw: ptrIdentifier)(nil, \(raw: packName), \(raw: instancePtr), \(raw: function.argumentsCountSyntax(type: Int32.self)))"
+                        } else {
+                            try builtinClass.name.pointerAccessSyntax(
+                                instanceName: "self",
+                                options: syntaxOptions,
+                                mutability: .constMutablePointer
+                            ) { selfPtr in
+                                "\(raw: builtinClass.bindingsIdentifier).\(raw: ptrIdentifier)(\(raw: selfPtr), \(raw: packName), \(raw: instancePtr), \(raw: function.argumentsCountSyntax(type: Int32.self)))"
+                            }
+                        }
+                    }
+                }
+            } else {
+                try function.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
+                    if isStatic {
+                        "\(raw: builtinClass.bindingsIdentifier).\(raw: ptrIdentifier)(nil, \(raw: packName), nil, \(raw: function.argumentsCountSyntax(type: Int32.self)))"
+                    } else {
+                        try builtinClass.name.pointerAccessSyntax(
+                            instanceName: "self",
+                            options: syntaxOptions,
+                            mutability: .constMutablePointer
+                        ) { selfPtr in
+                            "\(raw: builtinClass.bindingsIdentifier).\(raw: ptrIdentifier)(\(raw: selfPtr), \(raw: packName), nil, \(raw: function.argumentsCountSyntax(type: Int32.self)))"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// MARK: - Constructor
+
+extension GodotBuiltinClass.Constructor {
+    var ptrIdentifier: String {
+        var string = "constructor"
+        
+        if !arguments.isEmpty {
+            string += "From"
+            
+            for argument in arguments {
+                string += argument.type.syntax()
+                    .plain()
+            }
+        }
+        
+        return string
+    }
+    
+    func declSyntax(
+        builtinClass: GodotBuiltinClass
+    ) throws -> FunctionDeclSyntax {
+        let function = GodotFunction(
+            name: "make",
+            arguments: arguments,
+            returnType: .scope(scopeType: .base("Opaque"), type: .base("Storage")),
+            isVararg: false,
+            isStatic: true,
+            isMutating: false,
+            usesVariantGeneric: true,
+            convertsAllParameterToVariant: false,
+            accessControl: .internal
+        ).translated()
+        
+        return try function.declSyntax(options: builtinClass.syntaxOptions) {
+            "var __temporary: Opaque.Storage = makeOpaqueStorage()"
+            
+            try function.argumentsPackPointerAccessSyntax(options: builtinClass.syntaxOptions) { packName in
+                """
+                __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
+                    \(raw: builtinClass.bindingsIdentifier).\(raw: ptrIdentifier)(__ptr___temporary, \(raw: packName))
+                }
+                """
+            }
+            
+            "return __temporary"
+        }
+    }
+    
+    static func opaqueStorageDeclSyntax(
+        builtinClass: GodotBuiltinClass,
+        classSize: Int
+    ) -> DeclSyntax {
+        let destructorPtr = builtinClass.hasDestructor ? "\(builtinClass.bindingsIdentifier).destructor" : "nil"
+        
+        return """
+        static internal func makeOpaqueStorage(useDestructor: Bool = true) -> Opaque.Storage {
+            Opaque.Storage(size: \(literal: classSize), destructorPtr: useDestructor ? \(raw: destructorPtr) : nil)
+        }
+        """
+    }
+    
+    static func opaqueRawOpaqueSyntax(
+        builtinClass: GodotBuiltinClass,
+        classSize: Int
+    ) -> DeclSyntax {
         let rawTuple = repeatElement("UInt8", count: classSize).joined(separator: ", ")
         
-        return "internal typealias \(raw: identifier)RawOpaque = (\(raw: rawTuple))"
+        return "internal typealias \(raw: builtinClass.identifier)RawOpaque = (\(raw: rawTuple))"
     }
-    
-    @MemberBlockItemListBuilder
-    func constantsSyntax() -> MemberBlockItemListSyntax {
-        if let constants, generatesConstants {
-            for constant in constants {
-                let name = constant.name.lowercased().translated(from: .snake, to: .camel)
-                
-                """
-                public static var \(raw: name): \(raw: constant.type.syntax()) {
-                    \(raw: constant.value.syntax(forType: constant.type, useStaticVariables: false))
-                }
-                """
-            }
-        }
-    }
-    
-    @MemberBlockItemListBuilder
-    func enumSyntax() throws -> MemberBlockItemListSyntax {
-        if let enums, generatesEnums {
-            for `enum` in enums {
-                try `enum`.syntax()
-            }
-        }
-    }
-    
-    @MemberBlockItemListBuilder
-    func constructorsSyntax(classSize: Int) throws -> MemberBlockItemListSyntax {
-        if useOpaque {
-            let destructorPtr = hasDestructor ? "\(bindingsIdentifier).destructor" : "nil"
-            
-            """
-            static internal func makeOpaque(useDestructor: Bool = true) -> Opaque {
-                Opaque(size: \(literal: classSize), destructorPtr: useDestructor ? \(raw: destructorPtr) : nil)
-            }
-            """
-        }
-        
-        for constructor in constructors {
-            try constructorSyntax(constructor)
-        }
-    }
-    
-    @MemberBlockItemListBuilder
-    private func constructorSyntax(
-        _ constructor: Constructor
-    ) throws -> MemberBlockItemListSyntax {
-        try constructor.translatedArguments().declSyntax(
-            options: syntaxOptions,
-            keywords: .internal
-        ) {
-            if useOpaque {
-                "let __temporary: Opaque = makeOpaque()"
-            } else {
-                "var __temporary = \(raw: name.syntax())()"
-            }
-            
-            try constructor.translatedArguments().argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
-                if name.isBuiltinGodotClassWithOpaque {
-                    """
-                    __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
-                        \(raw: bindingsIdentifier).\(raw: constructor.ptrIdentifier)(__ptr___temporary, \(raw: packName))
-                    }
-                    """
-                } else {
-                    """
-                    withUnsafeMutablePointer(to: &__temporary) { __ptr___temporary in
-                        \(raw: bindingsIdentifier).\(raw: constructor.ptrIdentifier)(__ptr___temporary, \(raw: packName))
-                    }
-                    """
-                }
-            }
-            
-            if useOpaque {
-                "return Self.init(opaque: __temporary)"
-            } else {
-                "return __temporary"
-            }
-        }
-    }
-    
-    @MemberBlockItemListBuilder
-    func operatorsSyntax() throws -> MemberBlockItemListSyntax {
-        for `operator` in operators {
-            try operatorSyntax(`operator`)
-        }
-    }
-    
-    @MemberBlockItemListBuilder
-    private func operatorSyntax(_ `operator`: Operator) throws -> MemberBlockItemListSyntax {
-        let operatorFunction = OperatorFunction(operator: `operator`, type: name)
-            .withVariantStorageReturnType()
-            .translated()
-        
-        try operatorFunction.declSyntax(
-            hideAllLabels: true,
-            options: syntaxOptions,
-            keywords: .internal
-        ) {
-            try `operator`.returnType.instantiationSyntax { instancePtr in
-                try operatorFunction.argumentsPointerAccessSyntax(options: syntaxOptions) { pointerNames in
-                    let lhsPointer = pointerNames[0]
-                    let rhsPointer = `operator`.rightType == nil ? "nil" : pointerNames[1]
-                    
-                    """
-                    \(raw: bindingsIdentifier).\(raw: `operator`.ptrIdentifier)(\(raw: lhsPointer), \(raw: rhsPointer), \(raw: instancePtr))
-                    """
-                }
-            }
-        }
-    }
-    
+}
+
+// MARK: - Getter Setter
+
+extension GodotBuiltinClass {
     @MemberBlockItemListBuilder
     func getterSetterSyntax() throws -> MemberBlockItemListSyntax {
         if let indexingReturnType, !isKeyed {
@@ -441,11 +464,7 @@ struct GodotBuiltinClass: Decodable {
                 }
             }
             
-            try FunctionDeclSyntax("mutating internal func _setValue(_ value: \(raw: borrows ? "borrowing " : "")\(raw: indexingReturnType.syntax(options: syntaxOptions)), at index: GDExtensionInt)") {
-                if useOpaque {
-                    "makeUniqueIfSharedOpaque()"
-                }
-                
+            try FunctionDeclSyntax("internal func _setValue(_ value: \(raw: borrows ? "borrowing " : "")\(raw: indexingReturnType.syntax(options: syntaxOptions)), at index: GDExtensionInt)") {
                 try indexingReturnType.pointerAccessSyntax(
                     instanceName: "value",
                     options: syntaxOptions,
@@ -454,7 +473,7 @@ struct GodotBuiltinClass: Decodable {
                     try name.pointerAccessSyntax(
                         instanceName: "self",
                         options: syntaxOptions,
-                        mutability: .mutable
+                        mutability: .constMutablePointer
                     ) { selfPtr in
                         "\(raw: bindingsIdentifier).indexedSetter(\(raw: selfPtr), index, \(raw: valuePtr))"
                     }
@@ -462,7 +481,11 @@ struct GodotBuiltinClass: Decodable {
             }
         }
     }
-    
+}
+
+// MARK: - Key Getter Setter
+
+extension GodotBuiltinClass {
     @MemberBlockItemListBuilder
     func keyGetterSetterSyntax() -> MemberBlockItemListSyntax {
         if isKeyed {
@@ -483,9 +506,7 @@ struct GodotBuiltinClass: Decodable {
             """
             
             """
-            internal mutating func _set(value: borrowing Variant.Storage, forKey key: borrowing Variant.Storage) {
-                makeUniqueIfSharedOpaque()
-                
+            internal func _set(value: borrowing Variant.Storage, forKey key: borrowing Variant.Storage) {
                 value.withUnsafeRawPointer { __ptr_value in
                     key.withUnsafeRawPointer { __ptr_key in
                         self.withUnsafeMutableOpaquePointer { __ptr_self in
@@ -511,115 +532,70 @@ struct GodotBuiltinClass: Decodable {
             """
         }
     }
-    
-    @MemberBlockItemListBuilder
-    func methodsSyntax() throws -> MemberBlockItemListSyntax {
-        if let methods {
-            for method in methods {
-                try methodSyntax(method)
-            }
-        }
-    }
-    
-    @MemberBlockItemListBuilder
-    private func methodSyntax(_ method: Method) throws -> MemberBlockItemListSyntax {
-        let mutability: GodotType.Mutability = method.isMutating ? .mutable : .constMutablePointer
-        let translatedMethod = method.withVariantStorageParameters().translated()
-        let functionDecl = try translatedMethod.withNamePrefixed(by: "_").declSyntax(
-            options: syntaxOptions,
-            keywords: .internal
-        ) {
-            if method.shouldReplaceOpaqueIfNecessary && useOpaque {
-                "makeUniqueIfSharedOpaque()"
-            }
-            
-            if let returnType = translatedMethod.returnType {
-                try returnType.instantiationSyntax(options: syntaxOptions, prefix: "return ") { instancePtr in
-                    try translatedMethod.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
-                        if method.isStatic {
-                            "\(raw: bindingsIdentifier).\(raw: method.ptrIdentifier)(nil, \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax(type: Int32.self)))"
-                        } else {
-                            try name.pointerAccessSyntax(
-                                instanceName: "self",
-                                options: syntaxOptions,
-                                mutability: mutability
-                            ) { selfPtr in
-                                "\(raw: bindingsIdentifier).\(raw: method.ptrIdentifier)(\(raw: selfPtr), \(raw: packName), \(raw: instancePtr), \(raw: method.argumentsCountSyntax(type: Int32.self)))"
-                            }
-                        }
-                    }
-                }
-            } else {
-                try translatedMethod.argumentsPackPointerAccessSyntax(options: syntaxOptions) { packName in
-                    if method.isStatic {
-                        "\(raw: bindingsIdentifier).\(raw: method.ptrIdentifier)(nil, \(raw: packName), nil, \(raw: method.argumentsCountSyntax(type: Int32.self)))"
-                    } else {
-                        try name.pointerAccessSyntax(
-                            instanceName: "self",
-                            options: syntaxOptions,
-                            mutability: mutability
-                        ) { selfPtr in
-                            "\(raw: bindingsIdentifier).\(raw: method.ptrIdentifier)(\(raw: selfPtr), \(raw: packName), nil, \(raw: method.argumentsCountSyntax(type: Int32.self)))"
-                        }
-                    }
-                }
-            }
-        }
-        
-        if method.isResultDiscardable {
-            let attributes = AttributeListSyntax {
-                AttributeSyntax(
-                    atSign: .atSignToken(),
-                    attributeName: IdentifierTypeSyntax(name: .identifier("discardableResult"))
-                )
-            }
-            functionDecl.with(\.attributes, attributes)
-        } else {
-            functionDecl
-        }
-    }
 }
 
-// MARK: - OperatorFunction
-
-/// An operator function.
-///
-/// Because ``GodotBuiltinClass/Operator`` cannot conform to
-/// the ``GodotFunction`` protocol, use this type to gain access to
-/// all the function declarations for the operator.
-private struct OperatorFunction: GodotFunction {
-    let op: GodotBuiltinClass.Operator
-    let type: GodotType
-    let isStatic = true
-    
-    init(`operator`: GodotBuiltinClass.Operator, type: GodotType) {
-        self.op = `operator`
-        self.type = type
-    }
-    
-    var name: String {
-        "_operator_" + op.identifier
-    }
-    
-    var returnType: GodotType? {
-        op.returnType
-    }
-    
-    var arguments: [GodotArgument]? {
-        let lhsArgument = GodotArgument(name: "lhs", type: type)
-        
-        if let rightType = op.rightType {
-            let rhsArgument = GodotArgument(name: "rhs", type: rightType)
-            return [lhsArgument, rhsArgument]
-        } else {
-            return [lhsArgument]
-        }
-    }
-    
-    var usesVariantGeneric: Bool { true }
-}
+// MARK: - FileSource
 
 extension GodotBuiltinClass: FileSource {
+    var isCoveredByStandardLibrary: Bool {
+        return switch name {
+        case .bool, .float, .int, .nil: true
+        default: false
+        }
+    }
+    
+    var useOpaque: Bool {
+        name.isBuiltinGodotClassWithOpaque
+    }
+    
+    var isReferenceType: Bool {
+        name == .callable ||
+        name == .array ||
+        name == .dictionary ||
+        name == .string ||
+        name == .stringName ||
+        name == .nodePath ||
+        name == .rid ||
+        name == .signal
+    }
+    
+    var identifier: String {
+        name.syntax()
+    }
+    
+    var bindingsIdentifier: String {
+        name.syntax(options: .packedArrayStorage).plain() + "Bindings"
+    }
+    
+    var syntaxOptions: GodotTypeSyntaxOptions {
+        if name == .color {
+            [
+                .optionalClasses,
+                .prefixByGodot,
+                .genericArrayOnVariant,
+                .genericDictionaryOnVariant,
+                .packedArrayStorage,
+            ]
+        } else if useOpaque {
+            [
+                .optionalClasses,
+                .prefixByGodot,
+                .floatAsDouble,
+                .packedArrayStorage,
+                name == .array ? .genericArrayOnElement : .genericArrayOnVariant,
+                name == .dictionary ? .genericDictionaryOnKeyValue : .genericDictionaryOnVariant,
+            ]
+        } else {
+            [
+                .optionalClasses, .prefixByGodot,
+                .floatUseBuildConfiguration,
+                .genericArrayOnVariant,
+                .genericDictionaryOnVariant,
+                .packedArrayStorage,
+            ]
+        }
+    }
+    
     var isFileContentAvailable: Bool {
         !isCoveredByStandardLibrary
     }
@@ -635,21 +611,41 @@ extension GodotBuiltinClass: FileSource {
         if useOpaque {
             try bindingsSyntax()
             
-            if generateRawOpaque {
-                opaqueRawOpaqueSyntax(classSize: classSize)
+            if name == .string {
+                Constructor.opaqueRawOpaqueSyntax(builtinClass: self, classSize: classSize)
             }
         }
         
         try ExtensionDeclSyntax("extension \(raw: name.syntax(options: .packedArrayStorage))") {
-            constantsSyntax()
-            try enumSyntax()
+            if name == .color {
+                for constant in constants {
+                    constant.declSyntax()
+                }
+            }
+            
+            if !name.isVector {
+                for `enum` in enums {
+                    try `enum`.declSyntax()
+                }
+            }
             
             if useOpaque {
-                try constructorsSyntax(classSize: classSize)
-                try operatorsSyntax()
+                Constructor.opaqueStorageDeclSyntax(builtinClass: self, classSize: classSize)
+                
+                for constructor in constructors {
+                    try constructor.declSyntax(builtinClass: self)
+                }
+                
+                for `operator` in operators {
+                    try `operator`.declSyntax(builtinClass: self)
+                }
+                
                 try getterSetterSyntax()
                 keyGetterSetterSyntax()
-                try methodsSyntax()
+                
+                for method in methods {
+                    try method.declSyntax(builtinClass: self)
+                }
             }
         }
     }

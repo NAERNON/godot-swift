@@ -1,25 +1,46 @@
 import GodotExtensionHeaders
 
-@BuiltinOpaque
-public struct Signal {
-    internal mutating func makeUniqueIfSharedOpaque() {
-        guard !isKnownUniquelyReferenced(&opaque) else {
-            return
-        }
-        
-        self = Self.make(from: self)
+public final class Signal {
+    private var storage: Opaque.Storage
+
+    internal init(storage: consuming Opaque.Storage) {
+        self.storage = storage
+    }
+
+    func withUnsafeOpaqueBufferPointer<Result>(
+        _ body: (UnsafeRawBufferPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeRawBufferPointer(body)
+    }
+
+    func withUnsafeMutableOpaqueBufferPointer<Result>(
+        _ body: (UnsafeMutableRawBufferPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeMutableRawBufferPointer(body)
+    }
+
+    func withUnsafeOpaquePointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeRawPointer(body)
+    }
+
+    func withUnsafeMutableOpaquePointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeMutableRawPointer(body)
     }
 }
 
 extension Signal {
     // MARK: Constructors
     
-    internal init() {
-        self = Self.make()
+    internal convenience init() {
+        self.init(storage: Self.make())
     }
     
-    internal init(object: Object, signal: GodotStringName) {
-        self = Self.make(object: object, signal: signal)
+    internal convenience init(object: Object, signal: GodotStringName) {
+        self.init(storage: Self.make(object: object, signal: signal))
     }
     
     // MARK: Methods & variables
@@ -41,14 +62,14 @@ extension Signal {
     }
     
     @discardableResult
-    internal mutating func connect(
+    internal func connect(
         _ callable: Callable,
         flags: Int = 0
     ) -> Int {
         _connect(callable: callable, flags: flags)
     }
     
-    internal mutating func disconnect(_ callable: Callable) {
+    internal func disconnect(_ callable: Callable) {
         _disconnect(callable: callable)
     }
     

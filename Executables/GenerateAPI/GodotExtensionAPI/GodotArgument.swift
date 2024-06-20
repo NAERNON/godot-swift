@@ -2,7 +2,7 @@
 /// A representation of a Godot argument.
 ///
 /// It can be decoded from the `extension_api.json` file.
-struct GodotArgument: Decodable {
+struct GodotArgument: Decodable, Hashable {
     var name: String
     var type: GodotType
     var defaultValue: GodotConstant?

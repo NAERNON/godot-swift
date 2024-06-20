@@ -3,7 +3,7 @@ extension RID: Variant.Storable {
     public static let variantStorageType: Variant.StorageType? = .rid
     
     public static func convertToStorage(
-        _ value: consuming Self
+        _ value: consuming RID
     ) -> Variant.Storage {
         let storage = Variant.Storage()
         
@@ -18,8 +18,8 @@ extension RID: Variant.Storable {
     
     public static func convertFromCheckedStorage(
         _ storage: borrowing Variant.Storage
-    ) -> Self {
-        var newValue = Self()
+    ) -> RID {
+        let newValue = Self()
         
         storage.withUnsafeMutableRawPointer { storagePtr in
             newValue.withUnsafeMutableOpaquePointer { newValuePtr in
@@ -32,14 +32,14 @@ extension RID: Variant.Storable {
     
     public static func convertFromCheckedStorage(
         consuming storage: consuming Variant.Storage
-    ) -> Self {
+    ) -> RID {
         convertFromCheckedStorage(storage)
     }
 }
 
 extension RID: Hintable {
-    public typealias HintingValue = Self
-    public static var defaultHint: Hint<Self> { .typed }
+    public typealias HintingValue = RID
+    public static var defaultHint: Hint<RID> { .typed }
 }
 
 extension RID: Exposable {
@@ -58,12 +58,12 @@ extension RID: Exposable {
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        let opaque: Opaque = makeOpaque()
+        var storage = makeOpaqueStorage()
         withUnsafeArgumentPackPointer(unsafePointer!) { accessPtr in
-            opaque.withUnsafeMutableRawPointer { opaquePtr in
+            storage.withUnsafeMutableRawPointer { opaquePtr in
                 RIDBindings.constructorFromRID(opaquePtr, accessPtr)
             }
         }
-        return Self.init(opaque: opaque)
+        return Self.init(storage: storage)
     }
 }

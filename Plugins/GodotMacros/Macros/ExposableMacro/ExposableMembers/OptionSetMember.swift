@@ -43,7 +43,7 @@ struct OptionSetMember: ExposableMember {
         namePrefix: String,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
-        let optionSetName = removeBackticks(structDeclSyntax.name.trimmedDescription)
+        let optionSetName = structDeclSyntax.name.trimmedDescription.backticksRemoved()
         
         return """
         Godot.GodotExtension.classRegistrar.registerEnumOrOptionSet(

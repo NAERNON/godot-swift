@@ -32,7 +32,7 @@ struct FunctionOverrideMember: ExposableMember {
         namePrefix: String,
         in context: some MacroExpansionContext
     ) -> ExprSyntax? {
-        let functionName = removeBackticks(functionDeclSyntax.name.trimmedDescription)
+        let functionName = functionDeclSyntax.name.trimmedDescription.backticksRemoved()
         
         return ExprSyntax("""
         Godot.GodotExtension.classRegistrar.registerFunctionOverride(

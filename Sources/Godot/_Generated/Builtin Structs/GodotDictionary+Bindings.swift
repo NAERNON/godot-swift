@@ -128,24 +128,24 @@ internal enum GodotDictionaryBindings {
 }
 
 extension GodotDictionary {
-    static internal func makeOpaque(
+    static internal func makeOpaqueStorage(
         useDestructor: Bool = true
-    ) -> Opaque {
-        Opaque(size: 8, destructorPtr: useDestructor ? GodotDictionaryBindings.destructor : nil)
+    ) -> Opaque.Storage {
+        Opaque.Storage(size: 8, destructorPtr: useDestructor ? GodotDictionaryBindings.destructor : nil)
     }
 
-    static internal func make() -> Self {
-        let __temporary: Opaque = makeOpaque()
+    static internal func make() -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
             GodotDictionaryBindings.constructor(__ptr___temporary, nil)
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make<Value1: Variant.Storable, Value2: Variant.Storable>(
         from: Godot.GodotDictionary<Value1, Value2>
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -153,7 +153,7 @@ extension GodotDictionary {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func _operatorEqual<Value1: Variant.Storable, Value2: Variant.Storable, Value3: Variant.Storable>(
@@ -260,12 +260,10 @@ extension GodotDictionary {
         return __returnValue
     }
 
-    internal mutating func _set(
+    internal func _set(
         value: borrowing Variant.Storage,
         forKey key: borrowing Variant.Storage
     ) {
-        makeUniqueIfSharedOpaque()
-
         value.withUnsafeRawPointer { __ptr_value in
             key.withUnsafeRawPointer { __ptr_key in
                 self.withUnsafeMutableOpaquePointer { __ptr_self in
@@ -305,23 +303,21 @@ extension GodotDictionary {
         }
     }
 
-    mutating internal func _clear() {
-        makeUniqueIfSharedOpaque()
-        withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            GodotDictionaryBindings.methodClear(__ptr_self, nil, nil, 0)
+    internal func _clear() {
+        withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+            GodotDictionaryBindings.methodClear(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
 
-    mutating internal func _merge<Value1: Variant.Storable, Value2: Variant.Storable>(
+    internal func _merge<Value1: Variant.Storable, Value2: Variant.Storable>(
         dictionary: Godot.GodotDictionary<Value1, Value2>,
         overwrite: Bool = false
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: dictionary) { __ptr_dictionary in
             withTransferrableUnsafeRawPointer(to: overwrite) { __ptr_overwrite in
                 withUnsafeArgumentPackPointer(__ptr_dictionary, __ptr_overwrite) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        GodotDictionaryBindings.methodMerge(__ptr_self, __accessPtr, nil, 2)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        GodotDictionaryBindings.methodMerge(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 2)
                     }
                 }
             }
@@ -370,16 +366,14 @@ extension GodotDictionary {
         }
     }
 
-    @discardableResult
-    mutating internal func _erase(
+    internal func _erase(
         key: borrowing Godot.Variant.Storage
     ) -> Bool {
-        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: key) { __ptr_key in
                 withUnsafeArgumentPackPointer(__ptr_key) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        GodotDictionaryBindings.methodErase(__ptr_self, __accessPtr, __temporary, 1)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        GodotDictionaryBindings.methodErase(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
@@ -441,10 +435,9 @@ extension GodotDictionary {
         }
     }
 
-    mutating internal func _makeReadOnly() {
-        makeUniqueIfSharedOpaque()
-        withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            GodotDictionaryBindings.methodMakeReadOnly(__ptr_self, nil, nil, 0)
+    internal func _makeReadOnly() {
+        withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+            GodotDictionaryBindings.methodMakeReadOnly(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
 

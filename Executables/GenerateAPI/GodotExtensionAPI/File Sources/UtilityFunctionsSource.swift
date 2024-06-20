@@ -8,8 +8,8 @@ struct UtilityFunctionsSource: FileSource {
         "import GodotExtensionHeaders"
         
         for function in extensionAPI.utilityFunctions {
-            function.extensionFunctionPointerSyntax()
-            try function.syntax()
+            function.bindingDeclSyntax()
+            try function.declSyntax()
         }
     }
 }

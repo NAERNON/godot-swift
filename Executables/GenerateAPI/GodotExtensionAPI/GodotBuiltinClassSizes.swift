@@ -8,8 +8,6 @@
 struct GodotBuiltinClassSizes: Decodable {
     var sizes: [BuildConfiguration : [GodotType : Int]]
     
-    // MARK: Init
-    
     init(from decoder: Decoder) throws {
         let builtinClassSizes = try Array<_BuiltinClassSizes>(from: decoder)
         
@@ -25,9 +23,9 @@ struct GodotBuiltinClassSizes: Decodable {
         
         self.sizes = sizes
     }
-    
-    // MARK: Access
-    
+}
+
+extension GodotBuiltinClassSizes {
     func size(ofClass classType: GodotType, for configuration: BuildConfiguration) -> Int? {
         sizes[configuration]?[classType]
     }

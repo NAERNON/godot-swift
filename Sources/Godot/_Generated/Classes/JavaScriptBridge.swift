@@ -126,32 +126,11 @@ open class JavaScriptBridge: Object {
             Godot.Variant.withStorageUnsafeRawPointer(to: object) { __ptr_object in
                 withUnsafeArgumentPackPointer(__ptr_object, varargs: repeat each rest) { packCount, __accessPtr in
                     self.withUnsafeMutableRawPointer { __ptr_self in
-                            GodotExtension.Interface.objectMethodBindCall(
+                        GodotExtension.Interface.objectMethodBindCall(
                             Self.__method_binding_create_object,
                             __ptr_self,
                             __accessPtr,
                             Int64(packCount),
-                            __temporary,
-                            nil
-                        )
-                    }
-                }
-            }
-        }
-    }
-
-    public func createObject(
-        _ object: Godot.GodotString
-    ) -> Godot.Variant {
-        fromInitializingTransferrableUnsafeRawPointer { __temporary in
-            Godot.Variant.withStorageUnsafeRawPointer(to: object) { __ptr_object in
-                withUnsafeArgumentPackPointer(__ptr_object) { __accessPtr in
-                    self.withUnsafeMutableRawPointer { __ptr_self in
-                            GodotExtension.Interface.objectMethodBindCall(
-                            Self.__method_binding_create_object,
-                            __ptr_self,
-                            __accessPtr,
-                            1,
                             __temporary,
                             nil
                         )

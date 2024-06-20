@@ -1,16 +1,31 @@
 
 extension GodotString: GodotContiguousArrayElement {
     /// Contiguous array storage of strings.
-    @BuiltinOpaque
     public struct GodotContiguousArrayStorage {
         public typealias Element = GodotString
         
-        internal mutating func makeUniqueIfSharedOpaque() {
-            guard !isKnownUniquelyReferenced(&opaque) else {
-                return
+        private var opaque: Opaque
+
+        internal init(storage: consuming Opaque.Storage) {
+            self.opaque = .init(storage)
+        }
+        
+        fileprivate mutating func makeUniqueIfSharedOpaque() {
+            if !isKnownUniquelyReferenced(&opaque) {
+                self.opaque = .init(Self.make(from: self))
             }
-            
-            self = Self.make(from: self)
+        }
+        
+        public func withUnsafeOpaquePointer<Result>(
+            _ body: (UnsafeRawPointer) throws -> Result
+        ) rethrows -> Result {
+            try opaque.withUnsafeRawPointer(body)
+        }
+
+        public mutating func withUnsafeMutableOpaquePointer<Result>(
+            _ body: (UnsafeMutableRawPointer) throws -> Result
+        ) rethrows -> Result {
+            try opaque.withUnsafeMutableRawPointer(body)
         }
     }
     
@@ -31,15 +46,15 @@ extension GodotString: GodotContiguousArrayElement {
         }
         
         public func read() -> GodotString {
-            let opaque: Opaque = GodotString.makeOpaque()
+            var storage = GodotString.makeOpaqueStorage()
             withUnsafePointer(to: rawData) { rawPointer in
                 withUnsafeArgumentPackPointer(rawPointer) { accessPtr in
-                    opaque.withUnsafeMutableRawPointer { opaquePtr in
+                    storage.withUnsafeMutableRawPointer { opaquePtr in
                         GodotStringBindings.constructorFromGodotString(opaquePtr, accessPtr)
                     }
                 }
             }
-            return GodotString(opaque: opaque)
+            return GodotString(storage: storage)
         }
     }
     
@@ -59,7 +74,7 @@ extension GodotString: GodotContiguousArrayElement {
 
 extension GodotString.GodotContiguousArrayStorage: GodotContiguousArrayStorageProtocol {
     public init() {
-        self = Self.make()
+        self.init(storage: Self.make())
     }
     
     public var size: Int {
@@ -67,7 +82,9 @@ extension GodotString.GodotContiguousArrayStorage: GodotContiguousArrayStoragePr
     }
     
     public mutating func resize(_ newSize: Int) {
-        _resize(newSize: newSize)
+        makeUniqueIfSharedOpaque()
+        
+        _ = _resize(newSize: newSize)
     }
     
     public func bytes() -> UInt8.GodotContiguousArrayStorage {
@@ -152,24 +169,12 @@ extension GodotString.GodotContiguousArrayStorage: GodotContiguousArrayStoragePr
     
     // MARK: Pointer
     
-    public func withRawTypeUnsafeRawPointer<Result>(
-        _ body: (UnsafeRawPointer) throws -> Result
-    ) rethrows -> Result {
-        try withUnsafeOpaquePointer(body)
-    }
-
-    public mutating func withRawTypeUnsafeMutableRawPointer<Result>(
-        _ body: (UnsafeMutableRawPointer) throws -> Result
-    ) rethrows -> Result {
-        try withUnsafeMutableOpaquePointer(body)
-    }
-    
     public static func fromInitializingTransferrableRawTypeUnsafeRawPointer(
         _ body: (UnsafeMutableRawPointer) -> Void
     ) -> Self {
-        let opaque = Self.makeOpaque()
-        opaque.withUnsafeMutableRawPointer(body)
-        return .init(opaque: opaque)
+        var storage = Self.makeOpaqueStorage()
+        storage.withUnsafeMutableRawPointer(body)
+        return .init(storage: storage)
     }
     
     // MARK: Exposable
@@ -192,13 +197,13 @@ extension GodotString.GodotContiguousArrayStorage: GodotContiguousArrayStoragePr
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        let opaque: Opaque = makeOpaque()
+        var storage = makeOpaqueStorage()
         withUnsafeArgumentPackPointer(unsafePointer!) { accessPtr in
-            opaque.withUnsafeMutableRawPointer { opaquePtr in
+            storage.withUnsafeMutableRawPointer { opaquePtr in
                 GodotStringGodotContiguousArrayStorageBindings
                     .constructorFromGodotContiguousArrayGodotString(opaquePtr, accessPtr)
             }
         }
-        return Self.init(opaque: opaque)
+        return Self.init(storage: storage)
     }
 }

@@ -325,24 +325,24 @@ internal enum GodotArrayBindings {
 }
 
 extension GodotArray {
-    static internal func makeOpaque(
+    static internal func makeOpaqueStorage(
         useDestructor: Bool = true
-    ) -> Opaque {
-        Opaque(size: 8, destructorPtr: useDestructor ? GodotArrayBindings.destructor : nil)
+    ) -> Opaque.Storage {
+        Opaque.Storage(size: 8, destructorPtr: useDestructor ? GodotArrayBindings.destructor : nil)
     }
 
-    static internal func make() -> Self {
-        let __temporary: Opaque = makeOpaque()
+    static internal func make() -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
             GodotArrayBindings.constructor(__ptr___temporary, nil)
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make<Value: Variant.Storable>(
         from: Godot.GodotArray<Value>
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -350,7 +350,7 @@ extension GodotArray {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make<Value1: Variant.Storable, Value2: Variant.Storable>(
@@ -358,8 +358,8 @@ extension GodotArray {
         type: Int,
         className: Godot.GodotStringName,
         script: Value2
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: base) { __ptr_base in
             withTransferrableUnsafeRawPointer(to: type) { __ptr_type in
                 withTransferrableUnsafeRawPointer(to: className) { __ptr_className in
@@ -373,13 +373,13 @@ extension GodotArray {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make(
         from: UInt8.GodotContiguousArrayStorage
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -387,13 +387,13 @@ extension GodotArray {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make(
         from: Int32.GodotContiguousArrayStorage
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -401,13 +401,13 @@ extension GodotArray {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make(
         from: Int64.GodotContiguousArrayStorage
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -415,13 +415,13 @@ extension GodotArray {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make(
         from: Float.GodotContiguousArrayStorage
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -429,13 +429,13 @@ extension GodotArray {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make(
         from: Double.GodotContiguousArrayStorage
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -443,13 +443,13 @@ extension GodotArray {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make(
         from: GodotString.GodotContiguousArrayStorage
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -457,13 +457,13 @@ extension GodotArray {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make(
         from: Vector2.GodotContiguousArrayStorage
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -471,13 +471,13 @@ extension GodotArray {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make(
         from: Vector3.GodotContiguousArrayStorage
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -485,13 +485,13 @@ extension GodotArray {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make(
         from: Color.GodotContiguousArrayStorage
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -499,7 +499,7 @@ extension GodotArray {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func _operatorEqual<Value1: Variant.Storable, Value2: Variant.Storable>(
@@ -665,14 +665,13 @@ extension GodotArray {
         }
     }
 
-    mutating internal func _setValue(
+    internal func _setValue(
         _ value: borrowing Godot.Variant.Storage,
         at index: GDExtensionInt
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
-            withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                GodotArrayBindings.indexedSetter(__ptr_self, index, __ptr_value)
+            withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                GodotArrayBindings.indexedSetter(UnsafeMutableRawPointer(mutating: __ptr_self), index, __ptr_value)
             }
         }
     }
@@ -693,10 +692,9 @@ extension GodotArray {
         }
     }
 
-    mutating internal func _clear() {
-        makeUniqueIfSharedOpaque()
-        withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            GodotArrayBindings.methodClear(__ptr_self, nil, nil, 0)
+    internal func _clear() {
+        withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+            GodotArrayBindings.methodClear(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
 
@@ -708,99 +706,90 @@ extension GodotArray {
         }
     }
 
-    mutating internal func _assign<Value: Variant.Storable>(
+    internal func _assign<Value: Variant.Storable>(
         array: Godot.GodotArray<Value>
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: array) { __ptr_array in
             withUnsafeArgumentPackPointer(__ptr_array) { __accessPtr in
-                withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    GodotArrayBindings.methodAssign(__ptr_self, __accessPtr, nil, 1)
+                withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                    GodotArrayBindings.methodAssign(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 1)
                 }
             }
         }
     }
 
-    mutating internal func _pushBack(
+    internal func _pushBack(
         value: borrowing Godot.Variant.Storage
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
-                withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    GodotArrayBindings.methodPushBack(__ptr_self, __accessPtr, nil, 1)
+                withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                    GodotArrayBindings.methodPushBack(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 1)
                 }
             }
         }
     }
 
-    mutating internal func _pushFront(
+    internal func _pushFront(
         value: borrowing Godot.Variant.Storage
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
-                withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    GodotArrayBindings.methodPushFront(__ptr_self, __accessPtr, nil, 1)
+                withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                    GodotArrayBindings.methodPushFront(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 1)
                 }
             }
         }
     }
 
-    mutating internal func _append(
+    internal func _append(
         value: borrowing Godot.Variant.Storage
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
-                withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    GodotArrayBindings.methodAppend(__ptr_self, __accessPtr, nil, 1)
+                withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                    GodotArrayBindings.methodAppend(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 1)
                 }
             }
         }
     }
 
-    mutating internal func _appendArray<Value: Variant.Storable>(
+    internal func _appendArray<Value: Variant.Storable>(
         _ array: Godot.GodotArray<Value>
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: array) { __ptr_array in
             withUnsafeArgumentPackPointer(__ptr_array) { __accessPtr in
-                withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    GodotArrayBindings.methodAppendArray(__ptr_self, __accessPtr, nil, 1)
+                withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                    GodotArrayBindings.methodAppendArray(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 1)
                 }
             }
         }
     }
 
-    @discardableResult
-    mutating internal func _resize(
+    internal func _resize(
         size: Int
     ) -> Int {
-        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: size) { __ptr_size in
                 withUnsafeArgumentPackPointer(__ptr_size) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        GodotArrayBindings.methodResize(__ptr_self, __accessPtr, __temporary, 1)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        GodotArrayBindings.methodResize(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
         }
     }
 
-    @discardableResult
-    mutating internal func _insert(
+    internal func _insert(
         position: Int,
         value: borrowing Godot.Variant.Storage
     ) -> Int {
-        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: position) { __ptr_position in
                 withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                     withUnsafeArgumentPackPointer(__ptr_position, __ptr_value) { __accessPtr in
-                        withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                            GodotArrayBindings.methodInsert(__ptr_self, __accessPtr, __temporary, 2)
+                        withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                            GodotArrayBindings.methodInsert(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -808,40 +797,37 @@ extension GodotArray {
         }
     }
 
-    mutating internal func _removeAt(
+    internal func _removeAt(
         position: Int
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: position) { __ptr_position in
             withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
-                withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    GodotArrayBindings.methodRemoveAt(__ptr_self, __accessPtr, nil, 1)
+                withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                    GodotArrayBindings.methodRemoveAt(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 1)
                 }
             }
         }
     }
 
-    mutating internal func _fill(
+    internal func _fill(
         value: borrowing Godot.Variant.Storage
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
-                withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    GodotArrayBindings.methodFill(__ptr_self, __accessPtr, nil, 1)
+                withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                    GodotArrayBindings.methodFill(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 1)
                 }
             }
         }
     }
 
-    mutating internal func _erase(
+    internal func _erase(
         value: borrowing Godot.Variant.Storage
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
-                withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    GodotArrayBindings.methodErase(__ptr_self, __accessPtr, nil, 1)
+                withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                    GodotArrayBindings.methodErase(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 1)
                 }
             }
         }
@@ -933,66 +919,57 @@ extension GodotArray {
         }
     }
 
-    @discardableResult
-    mutating internal func _popBack() -> Godot.Variant.Storage {
-        makeUniqueIfSharedOpaque()
+    internal func _popBack() -> Godot.Variant.Storage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
-            withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                GodotArrayBindings.methodPopBack(__ptr_self, nil, __temporary, 0)
+            withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                GodotArrayBindings.methodPopBack(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
 
-    @discardableResult
-    mutating internal func _popFront() -> Godot.Variant.Storage {
-        makeUniqueIfSharedOpaque()
+    internal func _popFront() -> Godot.Variant.Storage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
-            withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                GodotArrayBindings.methodPopFront(__ptr_self, nil, __temporary, 0)
+            withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                GodotArrayBindings.methodPopFront(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }
 
-    @discardableResult
-    mutating internal func _popAt(
+    internal func _popAt(
         position: Int
     ) -> Godot.Variant.Storage {
-        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: position) { __ptr_position in
                 withUnsafeArgumentPackPointer(__ptr_position) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        GodotArrayBindings.methodPopAt(__ptr_self, __accessPtr, __temporary, 1)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        GodotArrayBindings.methodPopAt(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
         }
     }
 
-    mutating internal func _sort() {
-        makeUniqueIfSharedOpaque()
-        withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            GodotArrayBindings.methodSort(__ptr_self, nil, nil, 0)
+    internal func _sort() {
+        withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+            GodotArrayBindings.methodSort(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
 
-    mutating internal func _sortCustom(
+    internal func _sortCustom(
         `func`: Godot.Callable
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: `func`) { __ptr_func in
             withUnsafeArgumentPackPointer(__ptr_func) { __accessPtr in
-                withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    GodotArrayBindings.methodSortCustom(__ptr_self, __accessPtr, nil, 1)
+                withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                    GodotArrayBindings.methodSortCustom(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 1)
                 }
             }
         }
     }
 
-    mutating internal func _shuffle() {
-        makeUniqueIfSharedOpaque()
-        withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            GodotArrayBindings.methodShuffle(__ptr_self, nil, nil, 0)
+    internal func _shuffle() {
+        withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+            GodotArrayBindings.methodShuffle(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
 
@@ -1033,10 +1010,9 @@ extension GodotArray {
         }
     }
 
-    mutating internal func _reverse() {
-        makeUniqueIfSharedOpaque()
-        withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            GodotArrayBindings.methodReverse(__ptr_self, nil, nil, 0)
+    internal func _reverse() {
+        withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+            GodotArrayBindings.methodReverse(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
 
@@ -1212,10 +1188,9 @@ extension GodotArray {
         }
     }
 
-    mutating internal func _makeReadOnly() {
-        makeUniqueIfSharedOpaque()
-        withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            GodotArrayBindings.methodMakeReadOnly(__ptr_self, nil, nil, 0)
+    internal func _makeReadOnly() {
+        withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+            GodotArrayBindings.methodMakeReadOnly(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
 

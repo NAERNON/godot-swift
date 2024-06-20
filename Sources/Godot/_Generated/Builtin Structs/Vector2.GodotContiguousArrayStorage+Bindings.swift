@@ -164,24 +164,24 @@ internal enum Vector2GodotContiguousArrayStorageBindings {
 }
 
 extension Vector2.GodotContiguousArrayStorage {
-    static internal func makeOpaque(
+    static internal func makeOpaqueStorage(
         useDestructor: Bool = true
-    ) -> Opaque {
-        Opaque(size: 16, destructorPtr: useDestructor ? Vector2GodotContiguousArrayStorageBindings.destructor : nil)
+    ) -> Opaque.Storage {
+        Opaque.Storage(size: 16, destructorPtr: useDestructor ? Vector2GodotContiguousArrayStorageBindings.destructor : nil)
     }
 
-    static internal func make() -> Self {
-        let __temporary: Opaque = makeOpaque()
+    static internal func make() -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
             Vector2GodotContiguousArrayStorageBindings.constructor(__ptr___temporary, nil)
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make(
         from: Vector2.GodotContiguousArrayStorage
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -189,13 +189,13 @@ extension Vector2.GodotContiguousArrayStorage {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func make<Value: Variant.Storable>(
         from: Godot.GodotArray<Value>
-    ) -> Self {
-        let __temporary: Opaque = makeOpaque()
+    ) -> Opaque.Storage {
+        var __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -203,7 +203,7 @@ extension Vector2.GodotContiguousArrayStorage {
                 }
             }
         }
-        return Self.init(opaque: __temporary)
+        return __temporary
     }
 
     static internal func _operatorEqual<Value: Variant.Storable>(
@@ -330,14 +330,13 @@ extension Vector2.GodotContiguousArrayStorage {
         }
     }
 
-    mutating internal func _setValue(
+    internal func _setValue(
         _ value: Godot.Vector2,
         at index: GDExtensionInt
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
-            withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                Vector2GodotContiguousArrayStorageBindings.indexedSetter(__ptr_self, index, __ptr_value)
+            withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                Vector2GodotContiguousArrayStorageBindings.indexedSetter(UnsafeMutableRawPointer(mutating: __ptr_self), index, __ptr_value)
             }
         }
     }
@@ -358,92 +357,83 @@ extension Vector2.GodotContiguousArrayStorage {
         }
     }
 
-    mutating internal func _set(
+    internal func _set(
         index: Int,
         value: Godot.Vector2
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_index, __ptr_value) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        Vector2GodotContiguousArrayStorageBindings.methodSet(__ptr_self, __accessPtr, nil, 2)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        Vector2GodotContiguousArrayStorageBindings.methodSet(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 2)
                     }
                 }
             }
         }
     }
 
-    @discardableResult
-    mutating internal func _pushBack(
+    internal func _pushBack(
         value: Godot.Vector2
     ) -> Bool {
-        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        Vector2GodotContiguousArrayStorageBindings.methodPushBack(__ptr_self, __accessPtr, __temporary, 1)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        Vector2GodotContiguousArrayStorageBindings.methodPushBack(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
         }
     }
 
-    @discardableResult
-    mutating internal func _append(
+    internal func _append(
         value: Godot.Vector2
     ) -> Bool {
-        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        Vector2GodotContiguousArrayStorageBindings.methodAppend(__ptr_self, __accessPtr, __temporary, 1)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        Vector2GodotContiguousArrayStorageBindings.methodAppend(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
         }
     }
 
-    mutating internal func _appendArray(
+    internal func _appendArray(
         _ array: Vector2.GodotContiguousArrayStorage
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: array) { __ptr_array in
             withUnsafeArgumentPackPointer(__ptr_array) { __accessPtr in
-                withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    Vector2GodotContiguousArrayStorageBindings.methodAppendArray(__ptr_self, __accessPtr, nil, 1)
+                withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                    Vector2GodotContiguousArrayStorageBindings.methodAppendArray(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 1)
                 }
             }
         }
     }
 
-    mutating internal func _removeAt(
+    internal func _removeAt(
         index: Int
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
             withUnsafeArgumentPackPointer(__ptr_index) { __accessPtr in
-                withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    Vector2GodotContiguousArrayStorageBindings.methodRemoveAt(__ptr_self, __accessPtr, nil, 1)
+                withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                    Vector2GodotContiguousArrayStorageBindings.methodRemoveAt(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 1)
                 }
             }
         }
     }
 
-    @discardableResult
-    mutating internal func _insert(
+    internal func _insert(
         atIndex index: Int,
         value: Godot.Vector2
     ) -> Int {
-        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: index) { __ptr_index in
                 withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                     withUnsafeArgumentPackPointer(__ptr_index, __ptr_value) { __accessPtr in
-                        withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                            Vector2GodotContiguousArrayStorageBindings.methodInsert(__ptr_self, __accessPtr, __temporary, 2)
+                        withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                            Vector2GodotContiguousArrayStorageBindings.methodInsert(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -451,39 +441,35 @@ extension Vector2.GodotContiguousArrayStorage {
         }
     }
 
-    mutating internal func _fill(
+    internal func _fill(
         value: Godot.Vector2
     ) {
-        makeUniqueIfSharedOpaque()
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withUnsafeArgumentPackPointer(__ptr_value) { __accessPtr in
-                withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                    Vector2GodotContiguousArrayStorageBindings.methodFill(__ptr_self, __accessPtr, nil, 1)
+                withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                    Vector2GodotContiguousArrayStorageBindings.methodFill(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, nil, 1)
                 }
             }
         }
     }
 
-    @discardableResult
-    mutating internal func _resize(
+    internal func _resize(
         newSize: Int
     ) -> Int {
-        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: newSize) { __ptr_newSize in
                 withUnsafeArgumentPackPointer(__ptr_newSize) { __accessPtr in
-                    withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                        Vector2GodotContiguousArrayStorageBindings.methodResize(__ptr_self, __accessPtr, __temporary, 1)
+                    withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                        Vector2GodotContiguousArrayStorageBindings.methodResize(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 1)
                     }
                 }
             }
         }
     }
 
-    mutating internal func _clear() {
-        makeUniqueIfSharedOpaque()
-        withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            Vector2GodotContiguousArrayStorageBindings.methodClear(__ptr_self, nil, nil, 0)
+    internal func _clear() {
+        withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+            Vector2GodotContiguousArrayStorageBindings.methodClear(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
 
@@ -501,10 +487,9 @@ extension Vector2.GodotContiguousArrayStorage {
         }
     }
 
-    mutating internal func _reverse() {
-        makeUniqueIfSharedOpaque()
-        withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            Vector2GodotContiguousArrayStorageBindings.methodReverse(__ptr_self, nil, nil, 0)
+    internal func _reverse() {
+        withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+            Vector2GodotContiguousArrayStorageBindings.methodReverse(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
 
@@ -533,25 +518,22 @@ extension Vector2.GodotContiguousArrayStorage {
         }
     }
 
-    mutating internal func _sort() {
-        makeUniqueIfSharedOpaque()
-        withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-            Vector2GodotContiguousArrayStorageBindings.methodSort(__ptr_self, nil, nil, 0)
+    internal func _sort() {
+        withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+            Vector2GodotContiguousArrayStorageBindings.methodSort(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
 
-    @discardableResult
-    mutating internal func _bsearch(
+    internal func _bsearch(
         value: Godot.Vector2,
         before: Bool = true
     ) -> Int {
-        makeUniqueIfSharedOpaque()
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
                 withTransferrableUnsafeRawPointer(to: before) { __ptr_before in
                     withUnsafeArgumentPackPointer(__ptr_value, __ptr_before) { __accessPtr in
-                        withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                            Vector2GodotContiguousArrayStorageBindings.methodBsearch(__ptr_self, __accessPtr, __temporary, 2)
+                        withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                            Vector2GodotContiguousArrayStorageBindings.methodBsearch(UnsafeMutableRawPointer(mutating: __ptr_self), __accessPtr, __temporary, 2)
                         }
                     }
                 }
@@ -559,11 +541,10 @@ extension Vector2.GodotContiguousArrayStorage {
         }
     }
 
-    @discardableResult
-    mutating internal func _duplicate() -> Vector2.GodotContiguousArrayStorage {
+    internal func _duplicate() -> Vector2.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
-            withTransferrableUnsafeMutableRawPointer(to: &`self`) { __ptr_self in
-                Vector2GodotContiguousArrayStorageBindings.methodDuplicate(__ptr_self, nil, __temporary, 0)
+            withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
+                Vector2GodotContiguousArrayStorageBindings.methodDuplicate(UnsafeMutableRawPointer(mutating: __ptr_self), nil, __temporary, 0)
             }
         }
     }

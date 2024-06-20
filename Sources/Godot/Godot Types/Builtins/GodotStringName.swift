@@ -1,26 +1,53 @@
 import GodotExtensionHeaders
 
-@BuiltinOpaque
-public struct GodotStringName {
-    internal mutating func makeUniqueIfSharedOpaque() {}
+public final class GodotStringName {
+    private var storage: Opaque.Storage
+
+    internal init(storage: consuming Opaque.Storage) {
+        self.storage = storage
+    }
+
+    func withUnsafeOpaqueBufferPointer<Result>(
+        _ body: (UnsafeRawBufferPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeRawBufferPointer(body)
+    }
+
+    func withUnsafeMutableOpaqueBufferPointer<Result>(
+        _ body: (UnsafeMutableRawBufferPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeMutableRawBufferPointer(body)
+    }
+
+    func withUnsafeOpaquePointer<Result>(
+        _ body: (UnsafeRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeRawPointer(body)
+    }
+
+    func withUnsafeMutableOpaquePointer<Result>(
+        _ body: (UnsafeMutableRawPointer) throws -> Result
+    ) rethrows -> Result {
+        try storage.withUnsafeMutableRawPointer(body)
+    }
 }
 
 extension GodotStringName {
     // MARK: Constructors
     
-    public init() {
-        self = Self.make()
+    public convenience init() {
+        self.init(storage: Self.make())
     }
     
-    public init(swiftString: String) {
-        self = Self.make(from: GodotString(swiftString: swiftString))
+    public convenience init(swiftString: String) {
+        self.init(storage: Self.make(from: GodotString(swiftString: swiftString)))
     }
     
-    public init(swiftStaticString: StaticString) {
+    public convenience init(swiftStaticString: StaticString) {
         if swiftStaticString.isASCII {
-            self.init(opaque: Self.makeOpaque(useDestructor: false))
+            self.init(storage: Self.makeOpaqueStorage(useDestructor: false))
             
-            opaque.withUnsafeMutableRawPointer { extensionPtr in
+            storage.withUnsafeMutableRawPointer { extensionPtr in
                 swiftStaticString.utf8Start.withMemoryRebound(
                     to: Int8.self,
                     capacity: swiftStaticString.utf8CodeUnitCount
@@ -33,23 +60,23 @@ extension GodotStringName {
                 }
             }
         } else {
-            self = Self.make(from: GodotString(swiftStaticString: swiftStaticString))
+            self.init(storage: Self.make(from: GodotString(swiftStaticString: swiftStaticString)))
         }
     }
     
-    public init<Subject>(describing instance: Subject) {
+    public convenience init<Subject>(describing instance: Subject) {
         self.init(swiftString: .init(describing: instance))
     }
     
-    public init(string: GodotString) {
-        self = Self.make(from: string)
+    public convenience init(string: GodotString) {
+        self.init(storage: Self.make(from: string))
     }
     
     public static func className(
         forObjectPointer instancePtr: GDExtensionObjectPtr
     ) -> GodotStringName? {
-        var className = Self.make()
-        let classNameRetrieved = className.withUnsafeMutableOpaquePointer { ptr in
+        var storage = Self.make()
+        let classNameRetrieved = storage.withUnsafeMutableRawPointer { ptr in
             GodotExtension.Interface.objectGetClassName(instancePtr, GodotExtension.libraryPtr, ptr) != 0
         }
         
@@ -57,7 +84,7 @@ extension GodotStringName {
             return nil
         }
         
-        return className
+        return .init(storage: storage)
     }
     
     // MARK: Operators
@@ -366,7 +393,7 @@ extension GodotStringName {
 }
 
 extension GodotStringName: ExpressibleByStringLiteral {
-    public init(stringLiteral value: StaticString) {
+    public convenience init(stringLiteral value: StaticString) {
         self.init(swiftStaticString: value)
     }
 }
@@ -394,7 +421,7 @@ extension GodotStringName: Codable {
         try String(godotStringName: self).encode(to: encoder)
     }
     
-    public init(from decoder: Decoder) throws {
+    public convenience init(from decoder: Decoder) throws {
         self.init(swiftString: try String(from: decoder))
     }
 }

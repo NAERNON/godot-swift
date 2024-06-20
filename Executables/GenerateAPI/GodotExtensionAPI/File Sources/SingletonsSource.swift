@@ -8,7 +8,7 @@ struct SingletonsSource: FileSource {
         "import GodotExtensionHeaders"
         
         for singleton in extensionAPI.singletons {
-            singleton.syntax()
+            singleton.declSyntax()
         }
     }
 }

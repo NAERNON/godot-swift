@@ -1,16 +1,31 @@
 
 extension UInt8: GodotContiguousArrayElement {
     /// Contiguous array storage of bytes.
-    @BuiltinOpaque
     public struct GodotContiguousArrayStorage {
         public typealias Element = UInt8
         
-        internal mutating func makeUniqueIfSharedOpaque() {
-            guard !isKnownUniquelyReferenced(&opaque) else {
-                return
+        private var opaque: Opaque
+
+        internal init(storage: consuming Opaque.Storage) {
+            self.opaque = .init(storage)
+        }
+        
+        fileprivate mutating func makeUniqueIfSharedOpaque() {
+            if !isKnownUniquelyReferenced(&opaque) {
+                self.opaque = .init(Self.make(from: self))
             }
-            
-            self = Self.make(from: self)
+        }
+
+        public func withUnsafeOpaquePointer<Result>(
+            _ body: (UnsafeRawPointer) throws -> Result
+        ) rethrows -> Result {
+            try opaque.withUnsafeRawPointer(body)
+        }
+
+        public mutating func withUnsafeMutableOpaquePointer<Result>(
+            _ body: (UnsafeMutableRawPointer) throws -> Result
+        ) rethrows -> Result {
+            try opaque.withUnsafeMutableRawPointer(body)
         }
     }
     
@@ -30,7 +45,7 @@ extension UInt8: GodotContiguousArrayElement {
 
 extension UInt8.GodotContiguousArrayStorage: GodotContiguousArrayStorageProtocol {
     public init() {
-        self = Self.make()
+        self.init(storage: Self.make())
     }
     
     public var size: Int {
@@ -38,7 +53,9 @@ extension UInt8.GodotContiguousArrayStorage: GodotContiguousArrayStorageProtocol
     }
     
     public mutating func resize(_ newSize: Int) {
-        _resize(newSize: newSize)
+        makeUniqueIfSharedOpaque()
+        
+        _ = _resize(newSize: newSize)
     }
     
     public func bytes() -> UInt8.GodotContiguousArrayStorage {
@@ -115,24 +132,12 @@ extension UInt8.GodotContiguousArrayStorage: GodotContiguousArrayStorageProtocol
     
     // MARK: Pointer
     
-    public func withRawTypeUnsafeRawPointer<Result>(
-        _ body: (UnsafeRawPointer) throws -> Result
-    ) rethrows -> Result {
-        try withUnsafeOpaquePointer(body)
-    }
-
-    public mutating func withRawTypeUnsafeMutableRawPointer<Result>(
-        _ body: (UnsafeMutableRawPointer) throws -> Result
-    ) rethrows -> Result {
-        try withUnsafeMutableOpaquePointer(body)
-    }
-    
     public static func fromInitializingTransferrableRawTypeUnsafeRawPointer(
         _ body: (UnsafeMutableRawPointer) -> Void
     ) -> Self {
-        let opaque = Self.makeOpaque()
-        opaque.withUnsafeMutableRawPointer(body)
-        return .init(opaque: opaque)
+        var storage = Self.makeOpaqueStorage()
+        storage.withUnsafeMutableRawPointer(body)
+        return .init(storage: storage)
     }
     
     // MARK: Exposable
@@ -155,13 +160,13 @@ extension UInt8.GodotContiguousArrayStorage: GodotContiguousArrayStorageProtocol
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        let opaque: Opaque = makeOpaque()
+        var storage = makeOpaqueStorage()
         withUnsafeArgumentPackPointer(unsafePointer!) { accessPtr in
-            opaque.withUnsafeMutableRawPointer { opaquePtr in
+            storage.withUnsafeMutableRawPointer { opaquePtr in
                 UInt8GodotContiguousArrayStorageBindings
                     .constructorFromGodotContiguousArrayUInt8(opaquePtr, accessPtr)
             }
         }
-        return Self.init(opaque: opaque)
+        return Self.init(storage: storage)
     }
 }
