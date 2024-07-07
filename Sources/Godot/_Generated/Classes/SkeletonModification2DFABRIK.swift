@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class SkeletonModification2DFABRIK: SkeletonModification2D {
     internal static var __method_binding_set_target_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_target_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
-        }
+            GodotStringName(swiftStaticString: "set_target_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
+            }
         }
     }()
-
+    
     private func __setTargetNode(
         targetNodepath: Godot.NodePath
     ) {
@@ -30,15 +30,15 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_target_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_target_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
-        }
+            GodotStringName(swiftStaticString: "get_target_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
+            }
         }
     }()
-
+    
     private func __getTargetNode() -> Godot.NodePath {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -51,15 +51,15 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_fabrik_data_chain_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_fabrik_data_chain_length").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_fabrik_data_chain_length").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setFabrikDataChainLength(
         _ length: Int32
     ) {
@@ -76,15 +76,15 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_fabrik_data_chain_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_fabrik_data_chain_length").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
-        }
+            GodotStringName(swiftStaticString: "get_fabrik_data_chain_length").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
+            }
         }
     }()
-
+    
     private func __getFabrikDataChainLength() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -97,15 +97,15 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_fabrik_joint_bone2d_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_fabrik_joint_bone2d_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2761262315)!
-        }
+            GodotStringName(swiftStaticString: "set_fabrik_joint_bone2d_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2761262315)!
+            }
         }
     }()
-
+    
     public func setFabrikJointBone2dNode(
         jointIdx: Int32,
         bone2dNodepath: Godot.NodePath
@@ -125,15 +125,15 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_fabrik_joint_bone2d_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_fabrik_joint_bone2d_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 408788394)!
-        }
+            GodotStringName(swiftStaticString: "get_fabrik_joint_bone2d_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 408788394)!
+            }
         }
     }()
-
+    
     public func fabrikJointBone2dNode(
         jointIdx: Int32
     ) -> Godot.NodePath {
@@ -152,15 +152,15 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_fabrik_joint_bone_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_fabrik_joint_bone_index").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
-        }
+            GodotStringName(swiftStaticString: "set_fabrik_joint_bone_index").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
+            }
         }
     }()
-
+    
     public func setFabrikJointBoneIndex(
         jointIdx: Int32,
         boneIdx: Int32
@@ -180,15 +180,15 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_fabrik_joint_bone_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_fabrik_joint_bone_index").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
-        }
+            GodotStringName(swiftStaticString: "get_fabrik_joint_bone_index").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
+            }
         }
     }()
-
+    
     public func fabrikJointBoneIndex(
         jointIdx: Int32
     ) -> Int32 {
@@ -207,15 +207,15 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_fabrik_joint_magnet_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_fabrik_joint_magnet_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 163021252)!
-        }
+            GodotStringName(swiftStaticString: "set_fabrik_joint_magnet_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 163021252)!
+            }
         }
     }()
-
+    
     public func setFabrikJointMagnetPosition(
         jointIdx: Int32,
         magnetPosition: Godot.Vector2
@@ -235,15 +235,15 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_fabrik_joint_magnet_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_fabrik_joint_magnet_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2299179447)!
-        }
+            GodotStringName(swiftStaticString: "get_fabrik_joint_magnet_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2299179447)!
+            }
         }
     }()
-
+    
     public func fabrikJointMagnetPosition(
         jointIdx: Int32
     ) -> Godot.Vector2 {
@@ -262,15 +262,15 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_fabrik_joint_use_target_rotation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_fabrik_joint_use_target_rotation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "set_fabrik_joint_use_target_rotation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func setFabrikJointUseTargetRotation(
         jointIdx: Int32,
         useTargetRotation: Bool
@@ -290,15 +290,15 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_fabrik_joint_use_target_rotation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_fabrik_joint_use_target_rotation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "get_fabrik_joint_use_target_rotation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func fabrikJointUseTargetRotation(
         jointIdx: Int32
     ) -> Bool {
@@ -317,40 +317,37 @@ open class SkeletonModification2DFABRIK: SkeletonModification2D {
             }
         }
     }
-
+    
     public var targetNode: Godot.NodePath {
         get {
             __getTargetNode()
         }
-        set {
+        set(newValue) {
             __setTargetNode(
                 targetNodepath: newValue
             )
         }
     }
-
+    
     public var fabrikDataChainLength: Int32 {
         get {
             __getFabrikDataChainLength()
         }
-        set {
+        set(newValue) {
             __setFabrikDataChainLength(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

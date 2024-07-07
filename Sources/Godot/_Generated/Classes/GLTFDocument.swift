@@ -10,23 +10,24 @@ open class GLTFDocument: Resource {
         case singleRoot = 0
         case keepRoot = 1
         case multiRoot = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Single Root", 0),
-            ("Keep Root", 1),
-            ("Multi Root", 2),]
+               ("Single Root", 0),
+               ("Keep Root", 1),
+               ("Multi Root", 2),
+            ]
         }
     }
-
+    
     internal static var __method_binding_append_from_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "append_from_file").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866380864)!
-        }
+            GodotStringName(swiftStaticString: "append_from_file").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866380864)!
+            }
         }
     }()
-
+    
     public func appendFromFile(
         path: Godot.GodotString,
         state: Godot.GLTFState?,
@@ -56,15 +57,15 @@ open class GLTFDocument: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_append_from_buffer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "append_from_buffer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1616081266)!
-        }
+            GodotStringName(swiftStaticString: "append_from_buffer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1616081266)!
+            }
         }
     }()
-
+    
     public func appendFromBuffer(
         bytes: Godot.GodotContiguousArray<UInt8>,
         basePath: Godot.GodotString,
@@ -94,15 +95,15 @@ open class GLTFDocument: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_append_from_scene: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "append_from_scene").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1622574258)!
-        }
+            GodotStringName(swiftStaticString: "append_from_scene").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1622574258)!
+            }
         }
     }()
-
+    
     public func appendFromScene(
         node: Godot.Node?,
         state: Godot.GLTFState?,
@@ -131,15 +132,15 @@ open class GLTFDocument: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_generate_scene: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "generate_scene").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 596118388)!
-        }
+            GodotStringName(swiftStaticString: "generate_scene").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 596118388)!
+            }
         }
     }()
-
+    
     public func generateScene(
         state: Godot.GLTFState?,
         bakeFps: Double = 30,
@@ -169,15 +170,15 @@ open class GLTFDocument: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_generate_buffer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "generate_buffer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 741783455)!
-        }
+            GodotStringName(swiftStaticString: "generate_buffer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 741783455)!
+            }
         }
     }()
-
+    
     public func generateBuffer(
         state: Godot.GLTFState?
     ) -> Godot.GodotContiguousArray<UInt8> {
@@ -198,15 +199,15 @@ open class GLTFDocument: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_write_to_filesystem: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "write_to_filesystem").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1784551478)!
-        }
+            GodotStringName(swiftStaticString: "write_to_filesystem").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1784551478)!
+            }
         }
     }()
-
+    
     public func writeToFilesystem(
         state: Godot.GLTFState?,
         path: Godot.GodotString
@@ -230,15 +231,15 @@ open class GLTFDocument: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_image_format: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_image_format").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_image_format").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setImageFormat(
         _ imageFormat: Godot.GodotString
     ) {
@@ -255,15 +256,15 @@ open class GLTFDocument: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_image_format: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_image_format").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_image_format").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getImageFormat() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -276,15 +277,15 @@ open class GLTFDocument: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_lossy_quality: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_lossy_quality").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_lossy_quality").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setLossyQuality(
         _ lossyQuality: Double
     ) {
@@ -301,15 +302,15 @@ open class GLTFDocument: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_lossy_quality: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_lossy_quality").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_lossy_quality").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getLossyQuality() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -322,15 +323,15 @@ open class GLTFDocument: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_root_node_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_root_node_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 463633402)!
-        }
+            GodotStringName(swiftStaticString: "set_root_node_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 463633402)!
+            }
         }
     }()
-
+    
     private func __setRootNodeMode(
         _ rootNodeMode: Godot.GLTFDocument.RootNodeMode
     ) {
@@ -347,15 +348,15 @@ open class GLTFDocument: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_root_node_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_root_node_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 948057992)!
-        }
+            GodotStringName(swiftStaticString: "get_root_node_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 948057992)!
+            }
         }
     }()
-
+    
     private func __getRootNodeMode() -> Godot.GLTFDocument.RootNodeMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -368,15 +369,15 @@ open class GLTFDocument: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_register_gltf_document_extension: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "register_gltf_document_extension").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3752678331)!
-        }
+            GodotStringName(swiftStaticString: "register_gltf_document_extension").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3752678331)!
+            }
         }
     }()
-
+    
     static public func registerGltfDocumentExtension(
         _ `extension`: Godot.GLTFDocumentExtension?,
         firstPriority: Bool = false
@@ -396,15 +397,15 @@ open class GLTFDocument: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_unregister_gltf_document_extension: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "unregister_gltf_document_extension").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2684415758)!
-        }
+            GodotStringName(swiftStaticString: "unregister_gltf_document_extension").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2684415758)!
+            }
         }
     }()
-
+    
     static public func unregisterGltfDocumentExtension(
         _ `extension`: Godot.GLTFDocumentExtension?
     ) {
@@ -421,51 +422,48 @@ open class GLTFDocument: Resource {
             }
         }
     }
-
+    
     public var imageFormat: Godot.GodotString {
         get {
             __getImageFormat()
         }
-        set {
+        set(newValue) {
             __setImageFormat(
                 newValue
             )
         }
     }
-
+    
     public var lossyQuality: Double {
         get {
             __getLossyQuality()
         }
-        set {
+        set(newValue) {
             __setLossyQuality(
                 newValue
             )
         }
     }
-
+    
     public var rootNodeMode: Godot.GLTFDocument.RootNodeMode {
         get {
             __getRootNodeMode()
         }
-        set {
+        set(newValue) {
             __setRootNodeMode(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

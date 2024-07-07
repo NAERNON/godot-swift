@@ -46,3 +46,35 @@ struct GodotArgument: Decodable, Hashable {
         )
     }
 }
+
+extension GodotArgument {
+    func functionParameterSyntax(
+        hideLabel: Bool,
+        type: Syntax? = nil,
+        options: GodotTypeSyntaxOptions = []
+    ) -> Syntax {
+        let isLabelHidden = hideLabel || isLabelHidden
+        
+        let label: Syntax? = if isLabelHidden {
+            "_"
+        } else if let label = self.label {
+            .init(label)
+        } else {
+            nil
+        }
+        
+        let name = Syntax(self.name.backticksKeyword())
+        
+        var defaultValueSyntax = defaultValue?.syntax(
+            forType: self.type,
+            useStaticVariables: true
+        )
+        if let syntax = defaultValueSyntax {
+            defaultValueSyntax = " = \(syntax)"
+        }
+        
+        let attributes = attributes.map { Syntax($0) }.map { $0 + " " }.joined()
+        
+        return "\(label ?? name)\(label == nil ? nil : " " + name): \(attributes)\(type ?? self.type.syntax(options: options))\(defaultValueSyntax)"
+    }
+}

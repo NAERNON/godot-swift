@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class InputEventScreenTouch: InputEventFromWindow {
     internal static var __method_binding_set_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_index").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_index").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setIndex(
         _ index: Int32
     ) {
@@ -30,15 +30,15 @@ open class InputEventScreenTouch: InputEventFromWindow {
             }
         }
     }
-
+    
     internal static var __method_binding_get_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_index").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_index").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getIndex() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -51,15 +51,15 @@ open class InputEventScreenTouch: InputEventFromWindow {
             }
         }
     }
-
+    
     internal static var __method_binding_set_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setPosition(
         _ position: Godot.Vector2
     ) {
@@ -76,15 +76,15 @@ open class InputEventScreenTouch: InputEventFromWindow {
             }
         }
     }
-
+    
     internal static var __method_binding_get_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getPosition() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -97,15 +97,15 @@ open class InputEventScreenTouch: InputEventFromWindow {
             }
         }
     }
-
+    
     internal static var __method_binding_set_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_pressed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_pressed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     public func setPressed(
         _ pressed: Bool
     ) {
@@ -122,15 +122,15 @@ open class InputEventScreenTouch: InputEventFromWindow {
             }
         }
     }
-
+    
     internal static var __method_binding_set_canceled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_canceled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_canceled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     public func setCanceled(
         _ canceled: Bool
     ) {
@@ -147,15 +147,15 @@ open class InputEventScreenTouch: InputEventFromWindow {
             }
         }
     }
-
+    
     internal static var __method_binding_set_double_tap: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_double_tap").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_double_tap").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setDoubleTap(
         _ doubleTap: Bool
     ) {
@@ -172,15 +172,15 @@ open class InputEventScreenTouch: InputEventFromWindow {
             }
         }
     }
-
+    
     internal static var __method_binding_is_double_tap: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_double_tap").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_double_tap").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isDoubleTap() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -193,51 +193,48 @@ open class InputEventScreenTouch: InputEventFromWindow {
             }
         }
     }
-
+    
     public var index: Int32 {
         get {
             __getIndex()
         }
-        set {
+        set(newValue) {
             __setIndex(
                 newValue
             )
         }
     }
-
+    
     public var position: Godot.Vector2 {
         get {
             __getPosition()
         }
-        set {
+        set(newValue) {
             __setPosition(
                 newValue
             )
         }
     }
-
+    
     public var isDoubleTap: Bool {
         get {
             __isDoubleTap()
         }
-        set {
+        set(newValue) {
             __setDoubleTap(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

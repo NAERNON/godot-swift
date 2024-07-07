@@ -14,7 +14,7 @@ extension Object: Variant.Storable {
     public static let variantStorageType: Variant.StorageType? = .object
     
     public static func convertToStorage(
-        _ value: consuming Object
+        _ value: Object
     ) -> Variant.Storage {
         let storage = Variant.Storage()
         

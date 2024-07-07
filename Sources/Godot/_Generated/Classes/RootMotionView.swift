@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class RootMotionView: VisualInstance3D {
     internal static var __method_binding_set_animation_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_animation_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
-        }
+            GodotStringName(swiftStaticString: "set_animation_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
+            }
         }
     }()
-
+    
     private func __setAnimationPath(
         _ path: Godot.NodePath
     ) {
@@ -30,15 +30,15 @@ open class RootMotionView: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_animation_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_animation_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
-        }
+            GodotStringName(swiftStaticString: "get_animation_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
+            }
         }
     }()
-
+    
     private func __getAnimationPath() -> Godot.NodePath {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -51,15 +51,15 @@ open class RootMotionView: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
-        }
+            GodotStringName(swiftStaticString: "set_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
+            }
         }
     }()
-
+    
     private func __setColor(
         _ color: Godot.Color
     ) {
@@ -76,15 +76,15 @@ open class RootMotionView: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
-        }
+            GodotStringName(swiftStaticString: "get_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
+            }
         }
     }()
-
+    
     private func __getColor() -> Godot.Color {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -97,15 +97,15 @@ open class RootMotionView: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_cell_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_cell_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_cell_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setCellSize(
         _ size: Double
     ) {
@@ -122,15 +122,15 @@ open class RootMotionView: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_cell_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_cell_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_cell_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getCellSize() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -143,15 +143,15 @@ open class RootMotionView: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_radius").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_radius").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setRadius(
         size: Double
     ) {
@@ -168,15 +168,15 @@ open class RootMotionView: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_radius").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_radius").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getRadius() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -189,15 +189,15 @@ open class RootMotionView: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_zero_y: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_zero_y").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_zero_y").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setZeroY(
         enable: Bool
     ) {
@@ -214,15 +214,15 @@ open class RootMotionView: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_zero_y: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_zero_y").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_zero_y").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getZeroY() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -235,73 +235,70 @@ open class RootMotionView: VisualInstance3D {
             }
         }
     }
-
+    
     public var animationPath: Godot.NodePath {
         get {
             __getAnimationPath()
         }
-        set {
+        set(newValue) {
             __setAnimationPath(
                 newValue
             )
         }
     }
-
+    
     public var color: Godot.Color {
         get {
             __getColor()
         }
-        set {
+        set(newValue) {
             __setColor(
                 newValue
             )
         }
     }
-
+    
     public var cellSize: Double {
         get {
             __getCellSize()
         }
-        set {
+        set(newValue) {
             __setCellSize(
                 newValue
             )
         }
     }
-
+    
     public var radius: Double {
         get {
             __getRadius()
         }
-        set {
+        set(newValue) {
             __setRadius(
                 size: newValue
             )
         }
     }
-
+    
     public var zeroY: Bool {
         get {
             __getZeroY()
         }
-        set {
+        set(newValue) {
             __setZeroY(
                 enable: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

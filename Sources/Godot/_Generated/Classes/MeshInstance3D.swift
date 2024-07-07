@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class MeshInstance3D: GeometryInstance3D {
     internal static var __method_binding_set_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_mesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 194775623)!
-        }
+            GodotStringName(swiftStaticString: "set_mesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 194775623)!
+            }
         }
     }()
-
+    
     private func __setMesh(
         _ mesh: Godot.Mesh?
     ) {
@@ -32,15 +32,15 @@ open class MeshInstance3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_mesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1808005922)!
-        }
+            GodotStringName(swiftStaticString: "get_mesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1808005922)!
+            }
         }
     }()
-
+    
     private func __getMesh() -> Godot.Mesh? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -53,15 +53,15 @@ open class MeshInstance3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_skeleton_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_skeleton_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
-        }
+            GodotStringName(swiftStaticString: "set_skeleton_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
+            }
         }
     }()
-
+    
     private func __setSkeletonPath(
         _ skeletonPath: Godot.NodePath
     ) {
@@ -78,15 +78,15 @@ open class MeshInstance3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_skeleton_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_skeleton_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 277076166)!
-        }
+            GodotStringName(swiftStaticString: "get_skeleton_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 277076166)!
+            }
         }
     }()
-
+    
     private func __getSkeletonPath() -> Godot.NodePath {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -99,15 +99,15 @@ open class MeshInstance3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_skin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_skin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3971435618)!
-        }
+            GodotStringName(swiftStaticString: "set_skin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3971435618)!
+            }
         }
     }()
-
+    
     private func __setSkin(
         _ skin: Godot.Skin?
     ) {
@@ -126,15 +126,15 @@ open class MeshInstance3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_skin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_skin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2074563878)!
-        }
+            GodotStringName(swiftStaticString: "get_skin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2074563878)!
+            }
         }
     }()
-
+    
     private func __getSkin() -> Godot.Skin? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -147,15 +147,15 @@ open class MeshInstance3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_surface_override_material_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_surface_override_material_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_surface_override_material_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func surfaceOverrideMaterialCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -168,15 +168,15 @@ open class MeshInstance3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_surface_override_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_surface_override_material").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3671737478)!
-        }
+            GodotStringName(swiftStaticString: "set_surface_override_material").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3671737478)!
+            }
         }
     }()
-
+    
     public func setSurfaceOverrideMaterial(
         surface: Int32,
         material: Godot.Material?
@@ -198,15 +198,15 @@ open class MeshInstance3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_surface_override_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_surface_override_material").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2897466400)!
-        }
+            GodotStringName(swiftStaticString: "get_surface_override_material").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2897466400)!
+            }
         }
     }()
-
+    
     public func surfaceOverrideMaterial(
         surface: Int32
     ) -> Godot.Material? {
@@ -225,15 +225,15 @@ open class MeshInstance3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_active_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_active_material").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2897466400)!
-        }
+            GodotStringName(swiftStaticString: "get_active_material").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2897466400)!
+            }
         }
     }()
-
+    
     public func activeMaterial(
         surface: Int32
     ) -> Godot.Material? {
@@ -252,15 +252,15 @@ open class MeshInstance3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_create_trimesh_collision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_trimesh_collision").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "create_trimesh_collision").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func createTrimeshCollision() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -271,15 +271,15 @@ open class MeshInstance3D: GeometryInstance3D {
             )
         }
     }
-
+    
     internal static var __method_binding_create_convex_collision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_convex_collision").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2751962654)!
-        }
+            GodotStringName(swiftStaticString: "create_convex_collision").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2751962654)!
+            }
         }
     }()
-
+    
     public func createConvexCollision(
         clean: Bool = true,
         simplify: Bool = false
@@ -299,15 +299,15 @@ open class MeshInstance3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_create_multiple_convex_collisions: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_multiple_convex_collisions").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 628789669)!
-        }
+            GodotStringName(swiftStaticString: "create_multiple_convex_collisions").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 628789669)!
+            }
         }
     }()
-
+    
     public func createMultipleConvexCollisions(
         settings: Godot.MeshConvexDecompositionSettings? = nil
     ) {
@@ -326,15 +326,15 @@ open class MeshInstance3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_blend_shape_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_blend_shape_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_blend_shape_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func blendShapeCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -347,15 +347,15 @@ open class MeshInstance3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_find_blend_shape_by_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "find_blend_shape_by_name").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4150868206)!
-        }
+            GodotStringName(swiftStaticString: "find_blend_shape_by_name").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4150868206)!
+            }
         }
     }()
-
+    
     public func findBlendShapeByName(
         _ name: Godot.GodotStringName
     ) -> Int32 {
@@ -374,15 +374,15 @@ open class MeshInstance3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_blend_shape_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_blend_shape_value").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
-        }
+            GodotStringName(swiftStaticString: "get_blend_shape_value").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
+            }
         }
     }()
-
+    
     public func blendShapeValue(
         blendShapeIdx: Int32
     ) -> Double {
@@ -401,15 +401,15 @@ open class MeshInstance3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_blend_shape_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_blend_shape_value").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
-        }
+            GodotStringName(swiftStaticString: "set_blend_shape_value").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
+            }
         }
     }()
-
+    
     public func setBlendShapeValue(
         blendShapeIdx: Int32,
         value: Double
@@ -429,15 +429,15 @@ open class MeshInstance3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_create_debug_tangents: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_debug_tangents").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "create_debug_tangents").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func createDebugTangents() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -448,51 +448,48 @@ open class MeshInstance3D: GeometryInstance3D {
             )
         }
     }
-
+    
     public var mesh: Godot.Mesh? {
         get {
             __getMesh()
         }
-        set {
+        set(newValue) {
             __setMesh(
                 newValue
             )
         }
     }
-
+    
     public var skin: Godot.Skin? {
         get {
             __getSkin()
         }
-        set {
+        set(newValue) {
             __setSkin(
                 newValue
             )
         }
     }
-
+    
     public var skeletonPath: Godot.NodePath {
         get {
             __getSkeletonPath()
         }
-        set {
+        set(newValue) {
             __setSkeletonPath(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

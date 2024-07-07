@@ -36,49 +36,50 @@ open class UPNP: RefCounted {
         case noGateway = 26
         case noDevices = 27
         case unknownError = 28
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Success", 0),
-            ("Not Authorized", 1),
-            ("Port Mapping Not Found", 2),
-            ("Inconsistent Parameters", 3),
-            ("No Such Entry In Array", 4),
-            ("Action Failed", 5),
-            ("Src Ip Wildcard Not Permitted", 6),
-            ("Ext Port Wildcard Not Permitted", 7),
-            ("Int Port Wildcard Not Permitted", 8),
-            ("Remote Host Must Be Wildcard", 9),
-            ("Ext Port Must Be Wildcard", 10),
-            ("No Port Maps Available", 11),
-            ("Conflict With Other Mechanism", 12),
-            ("Conflict With Other Mapping", 13),
-            ("Same Port Values Required", 14),
-            ("Only Permanent Lease Supported", 15),
-            ("Invalid Gateway", 16),
-            ("Invalid Port", 17),
-            ("Invalid Protocol", 18),
-            ("Invalid Duration", 19),
-            ("Invalid Args", 20),
-            ("Invalid Response", 21),
-            ("Invalid Param", 22),
-            ("Http Error", 23),
-            ("Socket Error", 24),
-            ("Mem Alloc Error", 25),
-            ("No Gateway", 26),
-            ("No Devices", 27),
-            ("Unknown Error", 28),]
+               ("Success", 0),
+               ("Not Authorized", 1),
+               ("Port Mapping Not Found", 2),
+               ("Inconsistent Parameters", 3),
+               ("No Such Entry In Array", 4),
+               ("Action Failed", 5),
+               ("Src Ip Wildcard Not Permitted", 6),
+               ("Ext Port Wildcard Not Permitted", 7),
+               ("Int Port Wildcard Not Permitted", 8),
+               ("Remote Host Must Be Wildcard", 9),
+               ("Ext Port Must Be Wildcard", 10),
+               ("No Port Maps Available", 11),
+               ("Conflict With Other Mechanism", 12),
+               ("Conflict With Other Mapping", 13),
+               ("Same Port Values Required", 14),
+               ("Only Permanent Lease Supported", 15),
+               ("Invalid Gateway", 16),
+               ("Invalid Port", 17),
+               ("Invalid Protocol", 18),
+               ("Invalid Duration", 19),
+               ("Invalid Args", 20),
+               ("Invalid Response", 21),
+               ("Invalid Param", 22),
+               ("Http Error", 23),
+               ("Socket Error", 24),
+               ("Mem Alloc Error", 25),
+               ("No Gateway", 26),
+               ("No Devices", 27),
+               ("Unknown Error", 28),
+            ]
         }
     }
-
+    
     internal static var __method_binding_get_device_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_device_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_device_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func deviceCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -91,15 +92,15 @@ open class UPNP: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_device: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_device").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2193290270)!
-        }
+            GodotStringName(swiftStaticString: "get_device").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2193290270)!
+            }
         }
     }()
-
+    
     public func device(
         index: Int32
     ) -> Godot.UPNPDevice? {
@@ -118,15 +119,15 @@ open class UPNP: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_add_device: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_device").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 986715920)!
-        }
+            GodotStringName(swiftStaticString: "add_device").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 986715920)!
+            }
         }
     }()
-
+    
     public func addDevice(
         _ device: Godot.UPNPDevice?
     ) {
@@ -145,15 +146,15 @@ open class UPNP: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_device: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_device").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3015133723)!
-        }
+            GodotStringName(swiftStaticString: "set_device").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3015133723)!
+            }
         }
     }()
-
+    
     public func setDevice(
         index: Int32,
         device: Godot.UPNPDevice?
@@ -175,15 +176,15 @@ open class UPNP: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_device: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_device").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "remove_device").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func removeDevice(
         index: Int32
     ) {
@@ -200,15 +201,15 @@ open class UPNP: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_clear_devices: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear_devices").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "clear_devices").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func clearDevices() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -219,15 +220,15 @@ open class UPNP: RefCounted {
             )
         }
     }
-
+    
     internal static var __method_binding_get_gateway: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_gateway").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2276800779)!
-        }
+            GodotStringName(swiftStaticString: "get_gateway").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2276800779)!
+            }
         }
     }()
-
+    
     public func gateway() -> Godot.UPNPDevice? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -240,15 +241,15 @@ open class UPNP: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_discover: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "discover").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1575334765)!
-        }
+            GodotStringName(swiftStaticString: "discover").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1575334765)!
+            }
         }
     }()
-
+    
     public func discover(
         timeout: Int32 = 2000,
         ttl: Int32 = 2,
@@ -273,15 +274,15 @@ open class UPNP: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_query_external_address: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "query_external_address").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "query_external_address").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     public func queryExternalAddress() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -294,15 +295,15 @@ open class UPNP: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_add_port_mapping: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_port_mapping").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 818314583)!
-        }
+            GodotStringName(swiftStaticString: "add_port_mapping").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 818314583)!
+            }
         }
     }()
-
+    
     public func addPortMapping(
         port: Int32,
         portInternal: Int32 = 0,
@@ -333,15 +334,15 @@ open class UPNP: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_delete_port_mapping: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "delete_port_mapping").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444187325)!
-        }
+            GodotStringName(swiftStaticString: "delete_port_mapping").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444187325)!
+            }
         }
     }()
-
+    
     public func deletePortMapping(
         port: Int32,
         proto: Godot.GodotString = "UDP"
@@ -363,15 +364,15 @@ open class UPNP: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_discover_multicast_if: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_discover_multicast_if").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_discover_multicast_if").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setDiscoverMulticastIf(
         mIf: Godot.GodotString
     ) {
@@ -388,15 +389,15 @@ open class UPNP: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_discover_multicast_if: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_discover_multicast_if").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_discover_multicast_if").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getDiscoverMulticastIf() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -409,15 +410,15 @@ open class UPNP: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_discover_local_port: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_discover_local_port").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_discover_local_port").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setDiscoverLocalPort(
         _ port: Int32
     ) {
@@ -434,15 +435,15 @@ open class UPNP: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_discover_local_port: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_discover_local_port").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_discover_local_port").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getDiscoverLocalPort() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -455,15 +456,15 @@ open class UPNP: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_discover_ipv6: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_discover_ipv6").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_discover_ipv6").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setDiscoverIpv6(
         _ ipv6: Bool
     ) {
@@ -480,15 +481,15 @@ open class UPNP: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_is_discover_ipv6: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_discover_ipv6").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_discover_ipv6").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isDiscoverIpv6() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -501,51 +502,48 @@ open class UPNP: RefCounted {
             }
         }
     }
-
+    
     public var discoverMulticastIf: Godot.GodotString {
         get {
             __getDiscoverMulticastIf()
         }
-        set {
+        set(newValue) {
             __setDiscoverMulticastIf(
                 mIf: newValue
             )
         }
     }
-
+    
     public var discoverLocalPort: Int32 {
         get {
             __getDiscoverLocalPort()
         }
-        set {
+        set(newValue) {
             __setDiscoverLocalPort(
                 newValue
             )
         }
     }
-
+    
     public var isDiscoverIpv6: Bool {
         get {
             __isDiscoverIpv6()
         }
-        set {
+        set(newValue) {
             __setDiscoverIpv6(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

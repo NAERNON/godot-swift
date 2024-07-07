@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class GLTFMesh: Resource {
     internal static var __method_binding_get_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_mesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3754628756)!
-        }
+            GodotStringName(swiftStaticString: "get_mesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3754628756)!
+            }
         }
     }()
-
+    
     private func __getMesh() -> Godot.ImporterMesh? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -26,15 +26,15 @@ open class GLTFMesh: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_mesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2255166972)!
-        }
+            GodotStringName(swiftStaticString: "set_mesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2255166972)!
+            }
         }
     }()
-
+    
     private func __setMesh(
         _ mesh: Godot.ImporterMesh?
     ) {
@@ -53,15 +53,15 @@ open class GLTFMesh: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_blend_weights: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_blend_weights").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2445143706)!
-        }
+            GodotStringName(swiftStaticString: "get_blend_weights").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2445143706)!
+            }
         }
     }()
-
+    
     private func __getBlendWeights() -> Godot.GodotContiguousArray<Float> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -74,15 +74,15 @@ open class GLTFMesh: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_blend_weights: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_blend_weights").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2899603908)!
-        }
+            GodotStringName(swiftStaticString: "set_blend_weights").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2899603908)!
+            }
         }
     }()
-
+    
     private func __setBlendWeights(
         _ blendWeights: Godot.GodotContiguousArray<Float>
     ) {
@@ -99,16 +99,16 @@ open class GLTFMesh: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_instance_materials: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_instance_materials").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
-        }
+            GodotStringName(swiftStaticString: "get_instance_materials").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
+            }
         }
     }()
-
-    private func __getInstanceMaterials() -> Godot.GodotArray<Godot.Material?> {
+    
+    private func __getInstanceMaterials() -> Godot.GodotArray<Godot.Material> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -120,17 +120,17 @@ open class GLTFMesh: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_instance_materials: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_instance_materials").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
-        }
+            GodotStringName(swiftStaticString: "set_instance_materials").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
+            }
         }
     }()
-
+    
     private func __setInstanceMaterials(
-        _ instanceMaterials: Godot.GodotArray<Godot.Material?>
+        _ instanceMaterials: Godot.GodotArray<Godot.Material>
     ) {
         withTransferrableUnsafeRawPointer(to: instanceMaterials) { __ptr_instanceMaterials in
             withUnsafeArgumentPackPointer(__ptr_instanceMaterials) { __accessPtr in
@@ -145,51 +145,48 @@ open class GLTFMesh: Resource {
             }
         }
     }
-
+    
     public var mesh: Godot.ImporterMesh? {
         get {
             __getMesh()
         }
-        set {
+        set(newValue) {
             __setMesh(
                 newValue
             )
         }
     }
-
+    
     public var blendWeights: Godot.GodotContiguousArray<Float> {
         get {
             __getBlendWeights()
         }
-        set {
+        set(newValue) {
             __setBlendWeights(
                 newValue
             )
         }
     }
-
-    public var instanceMaterials: Godot.GodotArray<Godot.Material?> {
+    
+    public var instanceMaterials: Godot.GodotArray<Godot.Material> {
         get {
             __getInstanceMaterials()
         }
-        set {
+        set(newValue) {
             __setInstanceMaterials(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

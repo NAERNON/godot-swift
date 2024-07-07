@@ -1,5 +1,3 @@
-import SwiftSyntax
-import SwiftSyntaxBuilder
 import Utils
 
 /// A type representing a Godot function.
@@ -47,24 +45,25 @@ struct GodotFunction {
 }
 
 private struct GenericType {
-    let name: String
-    let constraint: String
+    let name: Syntax
+    let constraint: Syntax
 }
 
 // MARK: - Extensions
 
 extension GodotFunction {
-    private var varargArgumentIdentifier: String {
+    private var varargArgumentIdentifier: Syntax {
         "rest"
     }
     
-    private func genericTypeConstraints(for argument: GodotArgument) -> [String] {
+    private func genericTypeConstraints(for argument: GodotArgument) -> [Syntax] {
+        let variantStorableType: Syntax = "Variant.Storable"
         if argument.type == .variant {
-            return ["Variant.Storable"]
+            return [variantStorableType]
         } else if argument.type == .array {
-            return ["Variant.Storable"]
+            return [variantStorableType]
         } else if argument.type == .dictionary {
-            return ["Variant.Storable", "Variant.Storable"]
+            return [variantStorableType, variantStorableType]
         } else {
             return []
         }
@@ -87,35 +86,42 @@ extension GodotFunction {
         let argument = arguments[index]
         let genericCount = genericTypesCount()
         
-        return genericTypeConstraints(for: argument).enumerated()
-            .map { (enumeratedIndex, constraint) in
+        return genericTypeConstraints(for: argument)
+            .enumerated()
+            .map { enumeratedIndex, constraint in
                 if genericCount == 1 {
-                    .init(name: "Value", 
-                          constraint: constraint)
+                    .init(
+                        name: "Value",
+                        constraint: constraint)
                 } else {
-                    .init(name: "Value\(previousGenericTypesCount + enumeratedIndex + 1)",
-                          constraint: constraint)
+                    .init(
+                        name: "Value\(previousGenericTypesCount + enumeratedIndex + 1)",
+                        constraint: constraint)
                 }
             }
     }
     
-    /// Returns the syntax to place inside the generic function signature.
-    private func genericSyntax() -> String? {
-        var genericArguments = [String]()
+    private func genericSyntax() -> Syntax {
+        guard usesVariantGeneric else {
+            return Syntax()
+        }
+        
+        var syntaxes = [Syntax]()
+        
         for index in 0..<arguments.count {
-            for genericType in genericTypes(forArgumentAt: index) {
-                genericArguments.append("\(genericType.name): \(genericType.constraint)")
-            }
+            syntaxes.append(
+                contentsOf: genericTypes(forArgumentAt: index).map { "\($0.name): \($0.constraint)" }
+            )
         }
         
         if isVararg {
-            genericArguments.append("each VariantRest : Variant.Storable")
+            syntaxes.append("each VariantRest: Variant.Storable")
         }
         
-        if genericArguments.isEmpty {
-            return nil
+        if syntaxes.isEmpty {
+            return Syntax()
         } else {
-            return genericArguments.joined(separator: ", ")
+            return "<\(syntaxes.joined(separator: ", "))>"
         }
     }
     
@@ -129,11 +135,11 @@ extension GodotFunction {
     /// it will return "`3 + Int32(rest.count)`".
     func argumentsCountSyntax<IntegerType: BinaryInteger>(
         type: IntegerType.Type
-    ) -> String {
+    ) -> Syntax {
         if isVararg {
             return "\(IntegerType.self)(packCount)"
         } else {
-            return String(arguments.count)
+            return "\(arguments.count)"
         }
     }
     
@@ -141,117 +147,84 @@ extension GodotFunction {
     func declSyntax(
         hideAllLabels: Bool = false,
         options: GodotTypeSyntaxOptions = [],
-        @CodeBlockItemListBuilder bodyBuilder: () throws -> CodeBlockItemListSyntax
-    ) throws -> FunctionDeclSyntax {
-        var functionHeader = String()
+        @SyntaxGroupBuilder body: () throws -> SyntaxGroup
+    ) rethrows -> Syntax {
+        var argumentsSyntaxes = [Syntax]()
         
-        functionHeader.append("func ")
-        
-        functionHeader.append(name.backticksKeyword())
-        
-        if usesVariantGeneric,
-           let genericSyntax = genericSyntax() 
-        {
-            functionHeader.append("<\(genericSyntax)>")
-        }
-        
-        var variantArgumentIndex = 0
-        functionHeader.append("(")
-        functionHeader.append(arguments.enumerated().map { (index, argument) in
-            var parameterString = ""
-            
-            if argument.isLabelHidden || hideAllLabels {
-                parameterString.append("_ ")
-            } else if let label = argument.label {
-                parameterString.append(label)
-                parameterString.append(" ")
-            }
-            parameterString.append(argument.name.backticksKeyword())
-            parameterString.append(": ")
-            
+        for (index, argument) in self.arguments.enumerated() {
             let genericNames = genericTypes(forArgumentAt: index).map { $0.name }
             
-            for attribute in argument.attributes {
-                parameterString.append("\(attribute) ")
-            }
-            
-            if usesVariantGeneric, argument.type == .variant {
-                parameterString.append(genericNames[0])
-                variantArgumentIndex += 1
+            let typeSyntax: Syntax? = if usesVariantGeneric, argument.type == .variant {
+                genericNames[0]
             } else if usesVariantGeneric, argument.type == .array {
-                let typeSyntax = GodotType.generic(
+                GodotType.generic(
                     type: argument.type,
-                    genericType: .base(genericNames[0])
+                    genericType: .base(genericNames[0].formatted())
                 ).syntax(options: options.subtracting([
                     .genericArrayOnVariant,
                     .genericArrayOnElement
                 ]))
-                parameterString.append(typeSyntax)
-                variantArgumentIndex += 1
             } else if usesVariantGeneric, argument.type == .dictionary {
-                let typeSyntax = GodotType.generic(
+                GodotType.generic(
                     type: argument.type,
-                    genericType: .base(genericNames[0] + ", " + genericNames[1])
+                    genericType: .base(genericNames[0].formatted() + ", " + genericNames[1].formatted())
                 ).syntax(options: options.subtracting([
                     .genericDictionaryOnVariant,
                     .genericDictionaryOnKeyValue
                 ]))
-                parameterString.append(typeSyntax)
-                variantArgumentIndex += 2
             } else {
-                parameterString.append(argument.type.syntax(options: options))
+                nil
             }
             
-            if let defaultValue = argument.defaultValue {
-                parameterString.append(" = ")
-                parameterString.append(defaultValue.syntax(
-                    forType: argument.type,
-                    useStaticVariables: true
-                ))
-            }
-            
-            return parameterString
-        }.joined(separator: ", "))
+            argumentsSyntaxes.append(
+                argument.functionParameterSyntax(
+                    hideLabel: hideAllLabels,
+                    type: typeSyntax,
+                    options: options
+                )
+            )
+        }
         
         if isVararg {
-            if !arguments.isEmpty {
-                functionHeader.append(",")
-            }
-            functionHeader.append("_ \(varargArgumentIdentifier): ")
             if usesVariantGeneric {
-                functionHeader.append("repeat each VariantRest")
+                argumentsSyntaxes.append("_ \(varargArgumentIdentifier): repeat each VariantRest")
             } else {
-                functionHeader.append("Variant...")
+                argumentsSyntaxes.append("_ \(varargArgumentIdentifier): \(GodotType.variant.syntax())...")
             }
         }
         
-        functionHeader.append(")")
+        var modifiers = [Syntax]()
+        if isStatic { modifiers.append("static") }
+        if isMutating { modifiers.append("mutating") }
+        modifiers.append(accessControl.keyword)
         
-        if let returnType {
-            functionHeader.append(" -> ")
-            functionHeader.append(returnType.syntax(options: options))
+        let genericSyntax = self.genericSyntax()
+        
+        let returnClause: Syntax? = if let returnType {
+            " -> \(returnType.syntax(options: options))"
+        } else {
+            nil
         }
         
-        let modifiers = DeclModifierListSyntax {
-            if isStatic {
-                DeclModifierSyntax(name: .keyword(.static))
-            }
+        let argumentSyntax: Syntax = if argumentsSyntaxes.isEmpty {
+            ""
+        } else {
+            """
             
-            if isMutating {
-                DeclModifierSyntax(name: .keyword(.mutating))
-            }
+                \(argumentsSyntaxes.joined(separator: ",\n"))
             
-            DeclModifierSyntax(name: .keyword(accessControl.keyword))
+            """
         }
         
-        return try FunctionDeclSyntax("\(raw: functionHeader)", bodyBuilder: bodyBuilder)
-            .with(\.modifiers, modifiers)
+        let header: Syntax = "\(modifiers.joined(separator: " ")) func \(name.backticksKeyword())\(genericSyntax)(\(argumentSyntax))\(returnClause)"
+        
+        return try Syntax(header, builder: body)
     }
     
     /// Returns the arguments pointer access of the function.
     ///
     /// Use this to access all the arguments pointers in the function.
-    /// The `bodyBuilder` provides an argument giving all the
+    /// The `body` provides an argument giving all the
     /// pointer names accessible in the closure.
     ///
     /// For a function with 2 parameters, the following syntax would be generated:
@@ -264,12 +237,12 @@ extension GodotFunction {
     /// ```
     func argumentsPointerAccessSyntax(
         options: GodotTypeSyntaxOptions,
-        @CodeBlockItemListBuilder bodyBuilder: ([String]) throws -> CodeBlockItemListSyntax
-    ) throws -> CodeBlockItemListSyntax {
+        @SyntaxGroupBuilder body: ([Syntax]) throws -> SyntaxGroup
+    ) rethrows -> Syntax {
         try argumentsPointerAccessSyntax(
             options: options,
             indexes: 0..<arguments.count,
-            bodyBuilder: bodyBuilder
+            body: body
         )
     }
     
@@ -280,11 +253,11 @@ extension GodotFunction {
     ///   - forcePackCreation: A Boolean value indicating whether the
     ///   pack should be created,
     ///   even if no argument is inside the pack.
-    ///   - bodyBuilder: The content syntax.
+    ///   - body: The content syntax.
     ///
     /// Use this to access all the arguments pointers in the function
     /// grouped in a pack.
-    /// The `bodyBuilder` provides an argument giving the
+    /// The `body` provides an argument giving the
     /// pack name accessible in the closure.
     ///
     /// For a function with 2 parameters, the following syntax would be generated:
@@ -303,32 +276,32 @@ extension GodotFunction {
     func argumentsPackPointerAccessSyntax(
         options: GodotTypeSyntaxOptions,
         forcePackCreation: Bool = false,
-        @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
-    ) throws -> CodeBlockItemListSyntax {
-        let packName = "__accessPtr"
+        @SyntaxGroupBuilder body: (Syntax) throws -> SyntaxGroup
+    ) rethrows -> Syntax {
+        let packName: Syntax = "__accessPtr"
         
         // No argument and vararg. Return no pack is created.
         if !forcePackCreation && arguments.isEmpty == true && !isVararg {
-            return try bodyBuilder("nil")
+            return try body("nil").syntax()
         }
         
         return try argumentsPointerAccessSyntax(options: options) { pointerNames in
             if isVararg {
-                let call = if pointerNames.isEmpty {
+                let call: Syntax = if pointerNames.isEmpty {
                     "withUnsafeArgumentPackPointer(varargs: repeat each \(varargArgumentIdentifier)) { packCount, \(packName) in"
                 } else {
                     "withUnsafeArgumentPackPointer(\(pointerNames.joined(separator: ", ")), varargs: repeat each \(varargArgumentIdentifier)) { packCount, \(packName) in"
                 }
                 
                 """
-                \(raw: call)
-                    \(try bodyBuilder(packName))
+                \(call)
+                    \(try body(packName))
                 }
                 """
             } else {
                 """
-                withUnsafeArgumentPackPointer(\(raw: pointerNames.joined(separator: ", "))) { \(raw: packName) in
-                    \(try bodyBuilder(packName))
+                withUnsafeArgumentPackPointer(\(pointerNames.joined(separator: ", "))) { \(packName) in
+                    \(try body(packName))
                 }
                 """
             }
@@ -340,58 +313,57 @@ extension GodotFunction {
     /// - Parameters:
     ///   - options: The options for type syntax.
     ///   - indexes: The indexes of the arguments to retrieve.
-    ///   - bodyBuilder: The body content syntax.
-    @CodeBlockItemListBuilder
+    ///   - body: The body content syntax.
     private func argumentsPointerAccessSyntax(
         options: GodotTypeSyntaxOptions,
         indexes: some Collection<Int>,
-        @CodeBlockItemListBuilder bodyBuilder: ([String]) throws -> CodeBlockItemListSyntax
-    ) throws -> CodeBlockItemListSyntax {
+        @SyntaxGroupBuilder body: ([Syntax]) throws -> SyntaxGroup
+    ) rethrows -> Syntax {
         if let index = indexes.first {
             let argument = arguments[index]
             let accessThroughVariantStorage = convertsAllParameterToVariant ||
                 (usesVariantGeneric && argument.type == .variant)
             
-            try argument.type.argumentPointerAccessSyntax(
+            return try argument.type.argumentPointerAccessSyntax(
                 instanceName: argument.name.backticksKeyword(),
                 options: options,
                 mutability: .const,
                 accessThroughVariantStorage: accessThroughVariantStorage
             ) { pointerName in
                 try argumentsPointerAccessSyntax(options: options, indexes: indexes.dropFirst()) { pointerNames in
-                    try bodyBuilder([pointerName] + pointerNames)
+                    try body([pointerName] + pointerNames)
                 }
             }
         } else {
-            try bodyBuilder([])
+            return try body([]).syntax()
         }
     }
     
-    func callSyntax(
-        withParameters parameterValues: [String]
-    ) -> FunctionCallExprSyntax {
-        let parameterStrings = arguments.enumerated().map { (index, argument) in
+    func callExprSyntax(
+        withParameters parameterValues: [Syntax]
+    ) -> Syntax {
+        let parameterSyntaxes: [Syntax] = arguments.enumerated().map { (index, argument) in
             if argument.isLabelHidden {
                 parameterValues[index]
             } else if let label = argument.label {
-                label + ": " + parameterValues[index]
+                "\(label): \(parameterValues[index])"
             } else {
-                argument.name + ": " + parameterValues[index]
+                "\(argument.name): \(parameterValues[index])"
             }
         }
         
         let functionName = name.backticksKeyword()
         
-        let exprSyntax = if parameterStrings.isEmpty {
-            ExprSyntax("\(raw: functionName)()")
+        let exprSyntax: Syntax = if parameterSyntaxes.isEmpty {
+            "\(functionName)()"
         } else {
-            ExprSyntax("""
-            \(raw: functionName)(
-                \(raw: parameterStrings.joined(separator: ",\n    "))
+            """
+            \(functionName)(
+                \(parameterSyntaxes.joined(separator: ",\n"))
             )
-            """)
+            """
         }
         
-        return exprSyntax.as(FunctionCallExprSyntax.self)!
+        return exprSyntax
     }
 }

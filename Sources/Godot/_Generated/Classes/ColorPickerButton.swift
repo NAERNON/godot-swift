@@ -8,26 +8,16 @@ import GodotExtensionHeaders
 open class ColorPickerButton: Button {
     public struct ColorChangedSignalInput: Godot.SignalInput {
         public let color: Godot.Color
-
-        fileprivate init(
-            color: Godot.Color
-        ) {
+        fileprivate init(color: Godot.Color) {
             self.color = color
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.color)]
         }
     }
-
-    public func colorChanged(
-        color: Godot.Color
-    ) {
+    public func colorChanged(color: Godot.Color) {
         _ = colorChangedSignal.emit(.init(color: color))
     }
-
     public lazy var colorChangedSignal: Godot.SignalEmitter<ColorChangedSignalInput> = {
         .init(object: self, signalName: "color_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ColorChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -42,11 +32,11 @@ open class ColorPickerButton: Button {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func popupClosed() {
         _ = popupClosedSignal.emit()
     }
-
     public lazy var popupClosedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "popup_closed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -61,11 +51,11 @@ open class ColorPickerButton: Button {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func pickerCreated() {
         _ = pickerCreatedSignal.emit()
     }
-
     public lazy var pickerCreatedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "picker_created") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -80,15 +70,15 @@ open class ColorPickerButton: Button {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_set_pick_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_pick_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
-        }
+            GodotStringName(swiftStaticString: "set_pick_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
+            }
         }
     }()
-
+    
     private func __setPickColor(
         _ color: Godot.Color
     ) {
@@ -105,15 +95,15 @@ open class ColorPickerButton: Button {
             }
         }
     }
-
+    
     internal static var __method_binding_get_pick_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_pick_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
-        }
+            GodotStringName(swiftStaticString: "get_pick_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
+            }
         }
     }()
-
+    
     private func __getPickColor() -> Godot.Color {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -126,15 +116,15 @@ open class ColorPickerButton: Button {
             }
         }
     }
-
+    
     internal static var __method_binding_get_picker: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_picker").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 331835996)!
-        }
+            GodotStringName(swiftStaticString: "get_picker").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 331835996)!
+            }
         }
     }()
-
+    
     public func picker() -> Godot.ColorPicker? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -147,15 +137,15 @@ open class ColorPickerButton: Button {
             }
         }
     }
-
+    
     internal static var __method_binding_get_popup: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_popup").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1322440207)!
-        }
+            GodotStringName(swiftStaticString: "get_popup").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1322440207)!
+            }
         }
     }()
-
+    
     public func popup() -> Godot.PopupPanel? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -168,15 +158,15 @@ open class ColorPickerButton: Button {
             }
         }
     }
-
+    
     internal static var __method_binding_set_edit_alpha: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_edit_alpha").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_edit_alpha").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setEditAlpha(
         show: Bool
     ) {
@@ -193,15 +183,15 @@ open class ColorPickerButton: Button {
             }
         }
     }
-
+    
     internal static var __method_binding_is_editing_alpha: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_editing_alpha").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_editing_alpha").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isEditingAlpha() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -214,40 +204,37 @@ open class ColorPickerButton: Button {
             }
         }
     }
-
+    
     public var pickColor: Godot.Color {
         get {
             __getPickColor()
         }
-        set {
+        set(newValue) {
             __setPickColor(
                 newValue
             )
         }
     }
-
+    
     public var isEditingAlpha: Bool {
         get {
             __isEditingAlpha()
         }
-        set {
+        set(newValue) {
             __setEditAlpha(
                 show: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class TLSOptions: RefCounted {
     internal static var __method_binding_client: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "client").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3565000357)!
-        }
+            GodotStringName(swiftStaticString: "client").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3565000357)!
+            }
         }
     }()
-
+    
     static public func client(
         trustedChain: Godot.X509Certificate? = nil,
         commonNameOverride: Godot.GodotString = ""
@@ -35,15 +35,15 @@ open class TLSOptions: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_client_unsafe: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "client_unsafe").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2090251749)!
-        }
+            GodotStringName(swiftStaticString: "client_unsafe").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2090251749)!
+            }
         }
     }()
-
+    
     static public func clientUnsafe(
         trustedChain: Godot.X509Certificate? = nil
     ) -> Godot.TLSOptions? {
@@ -62,15 +62,15 @@ open class TLSOptions: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_server: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "server").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36969539)!
-        }
+            GodotStringName(swiftStaticString: "server").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36969539)!
+            }
         }
     }()
-
+    
     static public func server(
         key: Godot.CryptoKey?,
         certificate: Godot.X509Certificate?
@@ -94,18 +94,15 @@ open class TLSOptions: RefCounted {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

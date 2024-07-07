@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class MethodTweener: Tweener {
     internal static var __method_binding_set_delay: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_delay").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 266477812)!
-        }
+            GodotStringName(swiftStaticString: "set_delay").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 266477812)!
+            }
         }
     }()
-
+    
     public func setDelay(
         _ delay: Double
     ) -> Godot.MethodTweener? {
@@ -32,15 +32,15 @@ open class MethodTweener: Tweener {
             }
         }
     }
-
+    
     internal static var __method_binding_set_trans: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_trans").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740975367)!
-        }
+            GodotStringName(swiftStaticString: "set_trans").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740975367)!
+            }
         }
     }()
-
+    
     public func setTrans(
         _ trans: Godot.Tween.TransitionType
     ) -> Godot.MethodTweener? {
@@ -59,15 +59,15 @@ open class MethodTweener: Tweener {
             }
         }
     }
-
+    
     internal static var __method_binding_set_ease: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_ease").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 315540545)!
-        }
+            GodotStringName(swiftStaticString: "set_ease").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 315540545)!
+            }
         }
     }()
-
+    
     public func setEase(
         _ ease: Godot.Tween.EaseType
     ) -> Godot.MethodTweener? {
@@ -86,18 +86,15 @@ open class MethodTweener: Tweener {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

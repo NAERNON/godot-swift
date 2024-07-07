@@ -8,14 +8,14 @@ import GodotExtensionHeaders
 open class LightmapGIData: Resource {
     internal static var __method_binding_set_lightmap_textures: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_lightmap_textures").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
-        }
+            GodotStringName(swiftStaticString: "set_lightmap_textures").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
+            }
         }
     }()
-
+    
     private func __setLightmapTextures(
-        lightTextures: Godot.GodotArray<Godot.TextureLayered?>
+        lightTextures: Godot.GodotArray<Godot.TextureLayered>
     ) {
         withTransferrableUnsafeRawPointer(to: lightTextures) { __ptr_lightTextures in
             withUnsafeArgumentPackPointer(__ptr_lightTextures) { __accessPtr in
@@ -30,16 +30,16 @@ open class LightmapGIData: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_lightmap_textures: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_lightmap_textures").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
-        }
+            GodotStringName(swiftStaticString: "get_lightmap_textures").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
+            }
         }
     }()
-
-    private func __getLightmapTextures() -> Godot.GodotArray<Godot.TextureLayered?> {
+    
+    private func __getLightmapTextures() -> Godot.GodotArray<Godot.TextureLayered> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -51,15 +51,15 @@ open class LightmapGIData: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_uses_spherical_harmonics: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_uses_spherical_harmonics").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_uses_spherical_harmonics").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setUsesSphericalHarmonics(
         _ usesSphericalHarmonics: Bool
     ) {
@@ -76,15 +76,15 @@ open class LightmapGIData: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_is_using_spherical_harmonics: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_using_spherical_harmonics").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_using_spherical_harmonics").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isUsingSphericalHarmonics() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -97,15 +97,15 @@ open class LightmapGIData: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_add_user: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_user").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4272570515)!
-        }
+            GodotStringName(swiftStaticString: "add_user").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4272570515)!
+            }
         }
     }()
-
+    
     public func addUser(
         path: Godot.NodePath,
         uvScale: Godot.Rect2,
@@ -131,15 +131,15 @@ open class LightmapGIData: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_user_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_user_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_user_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func userCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -152,15 +152,15 @@ open class LightmapGIData: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_user_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_user_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 408788394)!
-        }
+            GodotStringName(swiftStaticString: "get_user_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 408788394)!
+            }
         }
     }()
-
+    
     public func userPath(
         userIdx: Int32
     ) -> Godot.NodePath {
@@ -179,15 +179,15 @@ open class LightmapGIData: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_clear_users: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear_users").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "clear_users").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func clearUsers() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -198,15 +198,15 @@ open class LightmapGIData: Resource {
             )
         }
     }
-
+    
     internal static var __method_binding_set_light_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_light_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1278366092)!
-        }
+            GodotStringName(swiftStaticString: "set_light_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1278366092)!
+            }
         }
     }()
-
+    
     private func __setLightTexture(
         _ lightTexture: Godot.TextureLayered?
     ) {
@@ -225,15 +225,15 @@ open class LightmapGIData: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_light_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_light_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3984243839)!
-        }
+            GodotStringName(swiftStaticString: "get_light_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3984243839)!
+            }
         }
     }()
-
+    
     private func __getLightTexture() -> Godot.TextureLayered? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -246,51 +246,48 @@ open class LightmapGIData: Resource {
             }
         }
     }
-
-    public var lightmapTextures: Godot.GodotArray<Godot.TextureLayered?> {
+    
+    public var lightmapTextures: Godot.GodotArray<Godot.TextureLayered> {
         get {
             __getLightmapTextures()
         }
-        set {
+        set(newValue) {
             __setLightmapTextures(
                 lightTextures: newValue
             )
         }
     }
-
+    
     public var isUsingSphericalHarmonics: Bool {
         get {
             __isUsingSphericalHarmonics()
         }
-        set {
+        set(newValue) {
             __setUsesSphericalHarmonics(
                 newValue
             )
         }
     }
-
+    
     public var lightTexture: Godot.TextureLayered? {
         get {
             __getLightTexture()
         }
-        set {
+        set(newValue) {
             __setLightTexture(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

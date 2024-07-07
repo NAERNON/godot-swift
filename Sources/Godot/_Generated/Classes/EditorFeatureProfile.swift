@@ -16,29 +16,30 @@ open class EditorFeatureProfile: RefCounted {
         case importDock = 6
         case historyDock = 7
         case max = 8
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Feature3D", 0),
-            ("Script", 1),
-            ("Asset Lib", 2),
-            ("Scene Tree", 3),
-            ("Node Dock", 4),
-            ("Filesystem Dock", 5),
-            ("Import Dock", 6),
-            ("History Dock", 7),
-            ("Max", 8),]
+               ("Feature3D", 0),
+               ("Script", 1),
+               ("Asset Lib", 2),
+               ("Scene Tree", 3),
+               ("Node Dock", 4),
+               ("Filesystem Dock", 5),
+               ("Import Dock", 6),
+               ("History Dock", 7),
+               ("Max", 8),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_disable_class: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_disable_class").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2524380260)!
-        }
+            GodotStringName(swiftStaticString: "set_disable_class").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2524380260)!
+            }
         }
     }()
-
+    
     public func setDisableClass(
         className: Godot.GodotStringName,
         disable: Bool
@@ -58,15 +59,15 @@ open class EditorFeatureProfile: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_is_class_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_class_disabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
-        }
+            GodotStringName(swiftStaticString: "is_class_disabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
+            }
         }
     }()
-
+    
     public func isClassDisabled(
         className: Godot.GodotStringName
     ) -> Bool {
@@ -85,15 +86,15 @@ open class EditorFeatureProfile: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_disable_class_editor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_disable_class_editor").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2524380260)!
-        }
+            GodotStringName(swiftStaticString: "set_disable_class_editor").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2524380260)!
+            }
         }
     }()
-
+    
     public func setDisableClassEditor(
         className: Godot.GodotStringName,
         disable: Bool
@@ -113,15 +114,15 @@ open class EditorFeatureProfile: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_is_class_editor_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_class_editor_disabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
-        }
+            GodotStringName(swiftStaticString: "is_class_editor_disabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
+            }
         }
     }()
-
+    
     public func isClassEditorDisabled(
         className: Godot.GodotStringName
     ) -> Bool {
@@ -140,15 +141,15 @@ open class EditorFeatureProfile: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_disable_class_property: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_disable_class_property").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 865197084)!
-        }
+            GodotStringName(swiftStaticString: "set_disable_class_property").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 865197084)!
+            }
         }
     }()
-
+    
     public func setDisableClassProperty(
         className: Godot.GodotStringName,
         property: Godot.GodotStringName,
@@ -171,15 +172,15 @@ open class EditorFeatureProfile: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_is_class_property_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_class_property_disabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 471820014)!
-        }
+            GodotStringName(swiftStaticString: "is_class_property_disabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 471820014)!
+            }
         }
     }()
-
+    
     public func isClassPropertyDisabled(
         className: Godot.GodotStringName,
         property: Godot.GodotStringName
@@ -201,15 +202,15 @@ open class EditorFeatureProfile: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_disable_feature: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_disable_feature").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1884871044)!
-        }
+            GodotStringName(swiftStaticString: "set_disable_feature").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1884871044)!
+            }
         }
     }()
-
+    
     public func setDisableFeature(
         _ feature: Godot.EditorFeatureProfile.Feature,
         disable: Bool
@@ -229,15 +230,15 @@ open class EditorFeatureProfile: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_is_feature_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_feature_disabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2974403161)!
-        }
+            GodotStringName(swiftStaticString: "is_feature_disabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2974403161)!
+            }
         }
     }()
-
+    
     public func isFeatureDisabled(
         feature: Godot.EditorFeatureProfile.Feature
     ) -> Bool {
@@ -256,15 +257,15 @@ open class EditorFeatureProfile: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_feature_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_feature_name").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3401335809)!
-        }
+            GodotStringName(swiftStaticString: "get_feature_name").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3401335809)!
+            }
         }
     }()
-
+    
     public func featureName(
         feature: Godot.EditorFeatureProfile.Feature
     ) -> Godot.GodotString {
@@ -283,15 +284,15 @@ open class EditorFeatureProfile: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_save_to_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "save_to_file").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
-        }
+            GodotStringName(swiftStaticString: "save_to_file").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
+            }
         }
     }()
-
+    
     public func saveToFile(
         path: Godot.GodotString
     ) -> Godot.ErrorType {
@@ -310,15 +311,15 @@ open class EditorFeatureProfile: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_load_from_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "load_from_file").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
-        }
+            GodotStringName(swiftStaticString: "load_from_file").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
+            }
         }
     }()
-
+    
     public func loadFromFile(
         path: Godot.GodotString
     ) -> Godot.ErrorType {
@@ -337,18 +338,15 @@ open class EditorFeatureProfile: RefCounted {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

@@ -3,7 +3,7 @@ extension NodePath: Variant.Storable {
     public static let variantStorageType: Variant.StorageType? = .nodePath
     
     public static func convertToStorage(
-        _ value: consuming NodePath
+        _ value: NodePath
     ) -> Variant.Storage {
         let storage = Variant.Storage()
         
@@ -45,7 +45,7 @@ extension NodePath: Hintable {
 extension NodePath: Exposable {
     public static let variantRepresentationType: Variant.RepresentationType = .nodePath
     
-    public consuming func transferToGodot(
+    public func transferToGodot(
         unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
     ) {
         withUnsafeOpaquePointer { selfPtr in

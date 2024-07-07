@@ -3,7 +3,7 @@ extension RID: Variant.Storable {
     public static let variantStorageType: Variant.StorageType? = .rid
     
     public static func convertToStorage(
-        _ value: consuming RID
+        _ value: RID
     ) -> Variant.Storage {
         let storage = Variant.Storage()
         
@@ -45,7 +45,7 @@ extension RID: Hintable {
 extension RID: Exposable {
     public static let variantRepresentationType: Variant.RepresentationType = .rid
     
-    public consuming func transferToGodot(
+    public func transferToGodot(
         unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
     ) {
         withUnsafeOpaquePointer { selfPtr in

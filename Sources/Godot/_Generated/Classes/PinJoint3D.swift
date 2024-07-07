@@ -10,23 +10,24 @@ open class PinJoint3D: Joint3D {
         case bias = 0
         case damping = 1
         case impulseClamp = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Bias", 0),
-            ("Damping", 1),
-            ("Impulse Clamp", 2),]
+               ("Bias", 0),
+               ("Damping", 1),
+               ("Impulse Clamp", 2),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2059913726)!
-        }
+            GodotStringName(swiftStaticString: "set_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2059913726)!
+            }
         }
     }()
-
+    
     public func setParam(
         _ param: Godot.PinJoint3D.Param,
         value: Double
@@ -46,15 +47,15 @@ open class PinJoint3D: Joint3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1758438771)!
-        }
+            GodotStringName(swiftStaticString: "get_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1758438771)!
+            }
         }
     }()
-
+    
     public func param(
         _ param: Godot.PinJoint3D.Param
     ) -> Double {
@@ -73,18 +74,15 @@ open class PinJoint3D: Joint3D {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

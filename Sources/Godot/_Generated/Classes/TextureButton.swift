@@ -14,27 +14,28 @@ open class TextureButton: BaseButton {
         case keepAspect = 4
         case keepAspectCentered = 5
         case keepAspectCovered = 6
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Scale", 0),
-            ("Tile", 1),
-            ("Keep", 2),
-            ("Keep Centered", 3),
-            ("Keep Aspect", 4),
-            ("Keep Aspect Centered", 5),
-            ("Keep Aspect Covered", 6),]
+               ("Scale", 0),
+               ("Tile", 1),
+               ("Keep", 2),
+               ("Keep Centered", 3),
+               ("Keep Aspect", 4),
+               ("Keep Aspect Centered", 5),
+               ("Keep Aspect Covered", 6),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_texture_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_normal").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
-        }
+            GodotStringName(swiftStaticString: "set_texture_normal").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
+            }
         }
     }()
-
+    
     private func __setTextureNormal(
         texture: Godot.Texture2D?
     ) {
@@ -53,15 +54,15 @@ open class TextureButton: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_pressed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
-        }
+            GodotStringName(swiftStaticString: "set_texture_pressed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
+            }
         }
     }()
-
+    
     private func __setTexturePressed(
         texture: Godot.Texture2D?
     ) {
@@ -80,15 +81,15 @@ open class TextureButton: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture_hover: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_hover").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
-        }
+            GodotStringName(swiftStaticString: "set_texture_hover").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
+            }
         }
     }()
-
+    
     private func __setTextureHover(
         texture: Godot.Texture2D?
     ) {
@@ -107,15 +108,15 @@ open class TextureButton: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_disabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
-        }
+            GodotStringName(swiftStaticString: "set_texture_disabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
+            }
         }
     }()
-
+    
     private func __setTextureDisabled(
         texture: Godot.Texture2D?
     ) {
@@ -134,15 +135,15 @@ open class TextureButton: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture_focused: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_focused").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
-        }
+            GodotStringName(swiftStaticString: "set_texture_focused").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
+            }
         }
     }()
-
+    
     private func __setTextureFocused(
         texture: Godot.Texture2D?
     ) {
@@ -161,15 +162,15 @@ open class TextureButton: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_set_click_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_click_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 698588216)!
-        }
+            GodotStringName(swiftStaticString: "set_click_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 698588216)!
+            }
         }
     }()
-
+    
     private func __setClickMask(
         _ mask: Godot.BitMap?
     ) {
@@ -188,15 +189,15 @@ open class TextureButton: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_set_ignore_texture_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_ignore_texture_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_ignore_texture_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setIgnoreTextureSize(
         ignore: Bool
     ) {
@@ -213,15 +214,15 @@ open class TextureButton: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_set_stretch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_stretch_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 252530840)!
-        }
+            GodotStringName(swiftStaticString: "set_stretch_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 252530840)!
+            }
         }
     }()
-
+    
     private func __setStretchMode(
         _ mode: Godot.TextureButton.StretchMode
     ) {
@@ -238,15 +239,15 @@ open class TextureButton: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_set_flip_h: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_flip_h").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_flip_h").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setFlipH(
         enable: Bool
     ) {
@@ -263,15 +264,15 @@ open class TextureButton: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_is_flipped_h: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_flipped_h").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_flipped_h").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isFlippedH() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -284,15 +285,15 @@ open class TextureButton: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_set_flip_v: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_flip_v").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_flip_v").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setFlipV(
         enable: Bool
     ) {
@@ -309,15 +310,15 @@ open class TextureButton: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_is_flipped_v: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_flipped_v").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_flipped_v").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isFlippedV() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -330,15 +331,15 @@ open class TextureButton: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_normal").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_normal").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
+            }
         }
     }()
-
+    
     private func __getTextureNormal() -> Godot.Texture2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -351,15 +352,15 @@ open class TextureButton: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_pressed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_pressed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
+            }
         }
     }()
-
+    
     private func __getTexturePressed() -> Godot.Texture2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -372,15 +373,15 @@ open class TextureButton: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_hover: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_hover").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_hover").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
+            }
         }
     }()
-
+    
     private func __getTextureHover() -> Godot.Texture2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -393,15 +394,15 @@ open class TextureButton: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_disabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_disabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
+            }
         }
     }()
-
+    
     private func __getTextureDisabled() -> Godot.Texture2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -414,15 +415,15 @@ open class TextureButton: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_focused: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_focused").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_focused").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
+            }
         }
     }()
-
+    
     private func __getTextureFocused() -> Godot.Texture2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -435,15 +436,15 @@ open class TextureButton: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_get_click_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_click_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2459671998)!
-        }
+            GodotStringName(swiftStaticString: "get_click_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2459671998)!
+            }
         }
     }()
-
+    
     private func __getClickMask() -> Godot.BitMap? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -456,15 +457,15 @@ open class TextureButton: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_get_ignore_texture_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_ignore_texture_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_ignore_texture_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getIgnoreTextureSize() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -477,15 +478,15 @@ open class TextureButton: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_get_stretch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_stretch_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 33815122)!
-        }
+            GodotStringName(swiftStaticString: "get_stretch_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 33815122)!
+            }
         }
     }()
-
+    
     private func __getStretchMode() -> Godot.TextureButton.StretchMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -498,128 +499,125 @@ open class TextureButton: BaseButton {
             }
         }
     }
-
+    
     public var textureNormal: Godot.Texture2D? {
         get {
             __getTextureNormal()
         }
-        set {
+        set(newValue) {
             __setTextureNormal(
                 texture: newValue
             )
         }
     }
-
+    
     public var texturePressed: Godot.Texture2D? {
         get {
             __getTexturePressed()
         }
-        set {
+        set(newValue) {
             __setTexturePressed(
                 texture: newValue
             )
         }
     }
-
+    
     public var textureHover: Godot.Texture2D? {
         get {
             __getTextureHover()
         }
-        set {
+        set(newValue) {
             __setTextureHover(
                 texture: newValue
             )
         }
     }
-
+    
     public var textureDisabled: Godot.Texture2D? {
         get {
             __getTextureDisabled()
         }
-        set {
+        set(newValue) {
             __setTextureDisabled(
                 texture: newValue
             )
         }
     }
-
+    
     public var textureFocused: Godot.Texture2D? {
         get {
             __getTextureFocused()
         }
-        set {
+        set(newValue) {
             __setTextureFocused(
                 texture: newValue
             )
         }
     }
-
+    
     public var clickMask: Godot.BitMap? {
         get {
             __getClickMask()
         }
-        set {
+        set(newValue) {
             __setClickMask(
                 newValue
             )
         }
     }
-
+    
     public var ignoreTextureSize: Bool {
         get {
             __getIgnoreTextureSize()
         }
-        set {
+        set(newValue) {
             __setIgnoreTextureSize(
                 ignore: newValue
             )
         }
     }
-
+    
     public var stretchMode: Godot.TextureButton.StretchMode {
         get {
             __getStretchMode()
         }
-        set {
+        set(newValue) {
             __setStretchMode(
                 newValue
             )
         }
     }
-
+    
     public var isFlippedH: Bool {
         get {
             __isFlippedH()
         }
-        set {
+        set(newValue) {
             __setFlipH(
                 enable: newValue
             )
         }
     }
-
+    
     public var isFlippedV: Bool {
         get {
             __isFlippedV()
         }
-        set {
+        set(newValue) {
             __setFlipV(
                 enable: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

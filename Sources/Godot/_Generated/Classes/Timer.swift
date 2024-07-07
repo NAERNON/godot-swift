@@ -9,18 +9,19 @@ open class Timer: Node {
     public enum TimerProcessCallback: UInt32, GodotEnum {
         case physics = 0
         case idle = 1
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Physics", 0),
-            ("Idle", 1),]
+               ("Physics", 0),
+               ("Idle", 1),
+            ]
         }
     }
-
+    
+    
     public func timeout() {
         _ = timeoutSignal.emit()
     }
-
     public lazy var timeoutSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "timeout") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -35,15 +36,15 @@ open class Timer: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_set_wait_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_wait_time").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_wait_time").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setWaitTime(
         timeSec: Double
     ) {
@@ -60,15 +61,15 @@ open class Timer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_wait_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_wait_time").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_wait_time").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getWaitTime() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -81,15 +82,15 @@ open class Timer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_one_shot: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_one_shot").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_one_shot").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setOneShot(
         enable: Bool
     ) {
@@ -106,15 +107,15 @@ open class Timer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_is_one_shot: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_one_shot").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_one_shot").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isOneShot() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -127,15 +128,15 @@ open class Timer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_autostart: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_autostart").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_autostart").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setAutostart(
         enable: Bool
     ) {
@@ -152,15 +153,15 @@ open class Timer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_has_autostart: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_autostart").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "has_autostart").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __hasAutostart() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -173,15 +174,15 @@ open class Timer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_start: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "start").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1392008558)!
-        }
+            GodotStringName(swiftStaticString: "start").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1392008558)!
+            }
         }
     }()
-
+    
     public func start(
         timeSec: Double = -1
     ) {
@@ -198,15 +199,15 @@ open class Timer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_stop: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "stop").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "stop").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func stop() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -217,15 +218,15 @@ open class Timer: Node {
             )
         }
     }
-
+    
     internal static var __method_binding_set_paused: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_paused").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_paused").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setPaused(
         _ paused: Bool
     ) {
@@ -242,15 +243,15 @@ open class Timer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_is_paused: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_paused").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_paused").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isPaused() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -263,15 +264,15 @@ open class Timer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_is_stopped: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_stopped").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_stopped").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isStopped() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -284,15 +285,15 @@ open class Timer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_time_left: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_time_left").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_time_left").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getTimeLeft() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -305,15 +306,15 @@ open class Timer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_timer_process_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_timer_process_callback").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3469495063)!
-        }
+            GodotStringName(swiftStaticString: "set_timer_process_callback").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3469495063)!
+            }
         }
     }()
-
+    
     private func __setTimerProcessCallback(
         _ callback: Godot.Timer.TimerProcessCallback
     ) {
@@ -330,15 +331,15 @@ open class Timer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_timer_process_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_timer_process_callback").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2672570227)!
-        }
+            GodotStringName(swiftStaticString: "get_timer_process_callback").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2672570227)!
+            }
         }
     }()
-
+    
     private func __getTimerProcessCallback() -> Godot.Timer.TimerProcessCallback {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -351,79 +352,76 @@ open class Timer: Node {
             }
         }
     }
-
+    
     public var timerProcessCallback: Godot.Timer.TimerProcessCallback {
         get {
             __getTimerProcessCallback()
         }
-        set {
+        set(newValue) {
             __setTimerProcessCallback(
                 newValue
             )
         }
     }
-
+    
     public var waitTime: Double {
         get {
             __getWaitTime()
         }
-        set {
+        set(newValue) {
             __setWaitTime(
                 timeSec: newValue
             )
         }
     }
-
+    
     public var isOneShot: Bool {
         get {
             __isOneShot()
         }
-        set {
+        set(newValue) {
             __setOneShot(
                 enable: newValue
             )
         }
     }
-
+    
     public var hasAutostart: Bool {
         get {
             __hasAutostart()
         }
-        set {
+        set(newValue) {
             __setAutostart(
                 enable: newValue
             )
         }
     }
-
+    
     public var isPaused: Bool {
         get {
             __isPaused()
         }
-        set {
+        set(newValue) {
             __setPaused(
                 newValue
             )
         }
     }
-
+    
     public var timeLeft: Double {
         get {
             __getTimeLeft()
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

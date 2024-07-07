@@ -10,37 +10,28 @@ open class MultiplayerAPI: RefCounted {
         case disabled = 0
         case anyPeer = 1
         case authority = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Disabled", 0),
-            ("Any Peer", 1),
-            ("Authority", 2),]
+               ("Disabled", 0),
+               ("Any Peer", 1),
+               ("Authority", 2),
+            ]
         }
     }
-
+    
     public struct PeerConnectedSignalInput: Godot.SignalInput {
         public let id: Int
-
-        fileprivate init(
-            id: Int
-        ) {
+        fileprivate init(id: Int) {
             self.id = id
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.id)]
         }
     }
-
-    public func peerConnected(
-        id: Int
-    ) {
+    public func peerConnected(id: Int) {
         _ = peerConnectedSignal.emit(.init(id: id))
     }
-
     public lazy var peerConnectedSignal: Godot.SignalEmitter<PeerConnectedSignalInput> = {
         .init(object: self, signalName: "peer_connected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PeerConnectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -55,29 +46,19 @@ open class MultiplayerAPI: RefCounted {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct PeerDisconnectedSignalInput: Godot.SignalInput {
         public let id: Int
-
-        fileprivate init(
-            id: Int
-        ) {
+        fileprivate init(id: Int) {
             self.id = id
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.id)]
         }
     }
-
-    public func peerDisconnected(
-        id: Int
-    ) {
+    public func peerDisconnected(id: Int) {
         _ = peerDisconnectedSignal.emit(.init(id: id))
     }
-
     public lazy var peerDisconnectedSignal: Godot.SignalEmitter<PeerDisconnectedSignalInput> = {
         .init(object: self, signalName: "peer_disconnected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PeerDisconnectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -92,11 +73,11 @@ open class MultiplayerAPI: RefCounted {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func connectedToServer() {
         _ = connectedToServerSignal.emit()
     }
-
     public lazy var connectedToServerSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "connected_to_server") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -111,11 +92,11 @@ open class MultiplayerAPI: RefCounted {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func connectionFailed() {
         _ = connectionFailedSignal.emit()
     }
-
     public lazy var connectionFailedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "connection_failed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -130,11 +111,11 @@ open class MultiplayerAPI: RefCounted {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func serverDisconnected() {
         _ = serverDisconnectedSignal.emit()
     }
-
     public lazy var serverDisconnectedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "server_disconnected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -149,15 +130,15 @@ open class MultiplayerAPI: RefCounted {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_has_multiplayer_peer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_multiplayer_peer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
-        }
+            GodotStringName(swiftStaticString: "has_multiplayer_peer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
+            }
         }
     }()
-
+    
     public func hasMultiplayerPeer() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -170,15 +151,15 @@ open class MultiplayerAPI: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_multiplayer_peer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_multiplayer_peer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3223692825)!
-        }
+            GodotStringName(swiftStaticString: "get_multiplayer_peer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3223692825)!
+            }
         }
     }()
-
+    
     private func __getMultiplayerPeer() -> Godot.MultiplayerPeer? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -191,15 +172,15 @@ open class MultiplayerAPI: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_multiplayer_peer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_multiplayer_peer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3694835298)!
-        }
+            GodotStringName(swiftStaticString: "set_multiplayer_peer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3694835298)!
+            }
         }
     }()
-
+    
     private func __setMultiplayerPeer(
         _ peer: Godot.MultiplayerPeer?
     ) {
@@ -218,15 +199,15 @@ open class MultiplayerAPI: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_unique_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_unique_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
-        }
+            GodotStringName(swiftStaticString: "get_unique_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
+            }
         }
     }()
-
+    
     public func uniqueID() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -239,15 +220,15 @@ open class MultiplayerAPI: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_is_server: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_server").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
-        }
+            GodotStringName(swiftStaticString: "is_server").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
+            }
         }
     }()
-
+    
     public func isServer() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -260,15 +241,15 @@ open class MultiplayerAPI: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_remote_sender_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_remote_sender_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
-        }
+            GodotStringName(swiftStaticString: "get_remote_sender_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
+            }
         }
     }()
-
+    
     public func remoteSenderID() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -281,15 +262,15 @@ open class MultiplayerAPI: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_poll: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "poll").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166280745)!
-        }
+            GodotStringName(swiftStaticString: "poll").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166280745)!
+            }
         }
     }()
-
+    
     public func poll() -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -302,15 +283,15 @@ open class MultiplayerAPI: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_rpc: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "rpc").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2077486355)!
-        }
+            GodotStringName(swiftStaticString: "rpc").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2077486355)!
+            }
         }
     }()
-
+    
     public func rpc<Value: Variant.Storable>(
         peer: Int32,
         object: Godot.Object?,
@@ -340,15 +321,15 @@ open class MultiplayerAPI: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_object_configuration_add: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "object_configuration_add").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1171879464)!
-        }
+            GodotStringName(swiftStaticString: "object_configuration_add").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1171879464)!
+            }
         }
     }()
-
+    
     public func objectConfigurationAdd<Value: Variant.Storable>(
         object: Godot.Object?,
         configuration: Value
@@ -372,15 +353,15 @@ open class MultiplayerAPI: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_object_configuration_remove: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "object_configuration_remove").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1171879464)!
-        }
+            GodotStringName(swiftStaticString: "object_configuration_remove").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1171879464)!
+            }
         }
     }()
-
+    
     public func objectConfigurationRemove<Value: Variant.Storable>(
         object: Godot.Object?,
         configuration: Value
@@ -404,15 +385,15 @@ open class MultiplayerAPI: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_peers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_peers").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
-        }
+            GodotStringName(swiftStaticString: "get_peers").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
+            }
         }
     }()
-
+    
     public func peers() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -425,15 +406,15 @@ open class MultiplayerAPI: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_default_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_default_interface").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
-        }
+            GodotStringName(swiftStaticString: "set_default_interface").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
+            }
         }
     }()
-
+    
     static public func setDefaultInterface(
         interfaceName: Godot.GodotStringName
     ) {
@@ -448,15 +429,15 @@ open class MultiplayerAPI: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_default_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_default_interface").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2737447660)!
-        }
+            GodotStringName(swiftStaticString: "get_default_interface").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2737447660)!
+            }
         }
     }()
-
+    
     static public func defaultInterface() -> Godot.GodotStringName {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -467,15 +448,15 @@ open class MultiplayerAPI: RefCounted {
             )
         }
     }
-
+    
     internal static var __method_binding_create_default_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_default_interface").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3294156723)!
-        }
+            GodotStringName(swiftStaticString: "create_default_interface").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3294156723)!
+            }
         }
     }()
-
+    
     static public func createDefaultInterface() -> Godot.MultiplayerAPI? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -486,29 +467,26 @@ open class MultiplayerAPI: RefCounted {
             )
         }
     }
-
+    
     public var multiplayerPeer: Godot.MultiplayerPeer? {
         get {
             __getMultiplayerPeer()
         }
-        set {
+        set(newValue) {
             __setMultiplayerPeer(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class GLTFPhysicsShape: Resource {
     internal static var __method_binding_from_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "from_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3613751275)!
-        }
+            GodotStringName(swiftStaticString: "from_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3613751275)!
+            }
         }
     }()
-
+    
     static public func fromNode(
         shapeNode: Godot.CollisionShape3D?
     ) -> Godot.GLTFPhysicsShape? {
@@ -32,15 +32,15 @@ open class GLTFPhysicsShape: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_to_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "to_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 563689933)!
-        }
+            GodotStringName(swiftStaticString: "to_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 563689933)!
+            }
         }
     }()
-
+    
     public func toNode(
         cacheShapes: Bool = false
     ) -> Godot.CollisionShape3D? {
@@ -59,15 +59,15 @@ open class GLTFPhysicsShape: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_from_dictionary: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "from_dictionary").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2390691823)!
-        }
+            GodotStringName(swiftStaticString: "from_dictionary").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2390691823)!
+            }
         }
     }()
-
+    
     static public func fromDictionary<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ dictionary: Godot.GodotDictionary<Value1, Value2>
     ) -> Godot.GLTFPhysicsShape? {
@@ -84,15 +84,15 @@ open class GLTFPhysicsShape: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_to_dictionary: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "to_dictionary").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3102165223)!
-        }
+            GodotStringName(swiftStaticString: "to_dictionary").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3102165223)!
+            }
         }
     }()
-
+    
     public func toDictionary() -> Godot.AnyGodotDictionary {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -105,15 +105,15 @@ open class GLTFPhysicsShape: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_shape_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_shape_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_shape_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getShapeType() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -126,15 +126,15 @@ open class GLTFPhysicsShape: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_shape_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_shape_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_shape_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setShapeType(
         _ shapeType: Godot.GodotString
     ) {
@@ -151,15 +151,15 @@ open class GLTFPhysicsShape: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
-        }
+            GodotStringName(swiftStaticString: "get_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
+            }
         }
     }()
-
+    
     private func __getSize() -> Godot.Vector3 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -172,15 +172,15 @@ open class GLTFPhysicsShape: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
-        }
+            GodotStringName(swiftStaticString: "set_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
+            }
         }
     }()
-
+    
     private func __setSize(
         _ size: Godot.Vector3
     ) {
@@ -197,15 +197,15 @@ open class GLTFPhysicsShape: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_radius").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_radius").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getRadius() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -218,15 +218,15 @@ open class GLTFPhysicsShape: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_radius").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_radius").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setRadius(
         _ radius: Double
     ) {
@@ -243,15 +243,15 @@ open class GLTFPhysicsShape: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_height: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_height").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_height").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getHeight() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -264,15 +264,15 @@ open class GLTFPhysicsShape: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_height: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_height").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_height").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setHeight(
         _ height: Double
     ) {
@@ -289,15 +289,15 @@ open class GLTFPhysicsShape: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_is_trigger: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_is_trigger").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_is_trigger").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getIsTrigger() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -310,15 +310,15 @@ open class GLTFPhysicsShape: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_is_trigger: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_is_trigger").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_is_trigger").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setIsTrigger(
         _ isTrigger: Bool
     ) {
@@ -335,15 +335,15 @@ open class GLTFPhysicsShape: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_mesh_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_mesh_index").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_mesh_index").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getMeshIndex() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -356,15 +356,15 @@ open class GLTFPhysicsShape: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_mesh_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_mesh_index").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_mesh_index").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setMeshIndex(
         _ meshIndex: Int32
     ) {
@@ -381,15 +381,15 @@ open class GLTFPhysicsShape: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_importer_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_importer_mesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3161779525)!
-        }
+            GodotStringName(swiftStaticString: "get_importer_mesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3161779525)!
+            }
         }
     }()
-
+    
     private func __getImporterMesh() -> Godot.ImporterMesh? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -402,15 +402,15 @@ open class GLTFPhysicsShape: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_importer_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_importer_mesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2255166972)!
-        }
+            GodotStringName(swiftStaticString: "set_importer_mesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2255166972)!
+            }
         }
     }()
-
+    
     private func __setImporterMesh(
         _ importerMesh: Godot.ImporterMesh?
     ) {
@@ -429,95 +429,92 @@ open class GLTFPhysicsShape: Resource {
             }
         }
     }
-
+    
     public var shapeType: Godot.GodotString {
         get {
             __getShapeType()
         }
-        set {
+        set(newValue) {
             __setShapeType(
                 newValue
             )
         }
     }
-
+    
     public var size: Godot.Vector3 {
         get {
             __getSize()
         }
-        set {
+        set(newValue) {
             __setSize(
                 newValue
             )
         }
     }
-
+    
     public var radius: Double {
         get {
             __getRadius()
         }
-        set {
+        set(newValue) {
             __setRadius(
                 newValue
             )
         }
     }
-
+    
     public var height: Double {
         get {
             __getHeight()
         }
-        set {
+        set(newValue) {
             __setHeight(
                 newValue
             )
         }
     }
-
+    
     public var isTrigger: Bool {
         get {
             __getIsTrigger()
         }
-        set {
+        set(newValue) {
             __setIsTrigger(
                 newValue
             )
         }
     }
-
+    
     public var meshIndex: Int32 {
         get {
             __getMeshIndex()
         }
-        set {
+        set(newValue) {
             __setMeshIndex(
                 newValue
             )
         }
     }
-
+    
     public var importerMesh: Godot.ImporterMesh? {
         get {
             __getImporterMesh()
         }
-        set {
+        set(newValue) {
             __setImporterMesh(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

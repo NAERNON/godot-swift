@@ -12,32 +12,34 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
         case normalMap = 2
         case anisotropy = 3
         case max = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Data", 0),
-            ("Color", 1),
-            ("Normal Map", 2),
-            ("Anisotropy", 3),
-            ("Max", 4),]
+               ("Data", 0),
+               ("Color", 1),
+               ("Normal Map", 2),
+               ("Anisotropy", 3),
+               ("Max", 4),
+            ]
         }
     }
-
+    
     public enum ColorDefault: UInt32, GodotEnum {
         case white = 0
         case black = 1
         case transparent = 2
         case max = 3
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("White", 0),
-            ("Black", 1),
-            ("Transparent", 2),
-            ("Max", 3),]
+               ("White", 0),
+               ("Black", 1),
+               ("Transparent", 2),
+               ("Max", 3),
+            ]
         }
     }
-
+    
     public enum TextureFilter: UInt32, GodotEnum {
         case `default` = 0
         case nearest = 1
@@ -47,60 +49,63 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
         case nearestMipmapAnisotropic = 5
         case linearMipmapAnisotropic = 6
         case max = 7
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Default", 0),
-            ("Nearest", 1),
-            ("Linear", 2),
-            ("Nearest Mipmap", 3),
-            ("Linear Mipmap", 4),
-            ("Nearest Mipmap Anisotropic", 5),
-            ("Linear Mipmap Anisotropic", 6),
-            ("Max", 7),]
+               ("Default", 0),
+               ("Nearest", 1),
+               ("Linear", 2),
+               ("Nearest Mipmap", 3),
+               ("Linear Mipmap", 4),
+               ("Nearest Mipmap Anisotropic", 5),
+               ("Linear Mipmap Anisotropic", 6),
+               ("Max", 7),
+            ]
         }
     }
-
+    
     public enum TextureRepeat: UInt32, GodotEnum {
         case `default` = 0
         case enabled = 1
         case disabled = 2
         case max = 3
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Default", 0),
-            ("Enabled", 1),
-            ("Disabled", 2),
-            ("Max", 3),]
+               ("Default", 0),
+               ("Enabled", 1),
+               ("Disabled", 2),
+               ("Max", 3),
+            ]
         }
     }
-
+    
     public enum TextureSource: UInt32, GodotEnum {
         case none = 0
         case screen = 1
         case depth = 2
         case normalRoughness = 3
         case max = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("None", 0),
-            ("Screen", 1),
-            ("Depth", 2),
-            ("Normal Roughness", 3),
-            ("Max", 4),]
+               ("None", 0),
+               ("Screen", 1),
+               ("Depth", 2),
+               ("Normal Roughness", 3),
+               ("Max", 4),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_texture_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2227296876)!
-        }
+            GodotStringName(swiftStaticString: "set_texture_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2227296876)!
+            }
         }
     }()
-
+    
     private func __setTextureType(
         _ type: Godot.VisualShaderNodeTextureParameter.TextureType
     ) {
@@ -117,15 +122,15 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 367922070)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 367922070)!
+            }
         }
     }()
-
+    
     private func __getTextureType() -> Godot.VisualShaderNodeTextureParameter.TextureType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -138,15 +143,15 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
             }
         }
     }
-
+    
     internal static var __method_binding_set_color_default: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_color_default").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4217624432)!
-        }
+            GodotStringName(swiftStaticString: "set_color_default").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4217624432)!
+            }
         }
     }()
-
+    
     private func __setColorDefault(
         color: Godot.VisualShaderNodeTextureParameter.ColorDefault
     ) {
@@ -163,15 +168,15 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
             }
         }
     }
-
+    
     internal static var __method_binding_get_color_default: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_color_default").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3837060134)!
-        }
+            GodotStringName(swiftStaticString: "get_color_default").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3837060134)!
+            }
         }
     }()
-
+    
     private func __getColorDefault() -> Godot.VisualShaderNodeTextureParameter.ColorDefault {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -184,15 +189,15 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_filter").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2147684752)!
-        }
+            GodotStringName(swiftStaticString: "set_texture_filter").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2147684752)!
+            }
         }
     }()
-
+    
     private func __setTextureFilter(
         _ filter: Godot.VisualShaderNodeTextureParameter.TextureFilter
     ) {
@@ -209,15 +214,15 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_filter").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4184490817)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_filter").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4184490817)!
+            }
         }
     }()
-
+    
     private func __getTextureFilter() -> Godot.VisualShaderNodeTextureParameter.TextureFilter {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -230,15 +235,15 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture_repeat: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_repeat").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2036143070)!
-        }
+            GodotStringName(swiftStaticString: "set_texture_repeat").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2036143070)!
+            }
         }
     }()
-
+    
     private func __setTextureRepeat(
         _ `repeat`: Godot.VisualShaderNodeTextureParameter.TextureRepeat
     ) {
@@ -255,15 +260,15 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_repeat: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_repeat").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1690132794)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_repeat").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1690132794)!
+            }
         }
     }()
-
+    
     private func __getTextureRepeat() -> Godot.VisualShaderNodeTextureParameter.TextureRepeat {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -276,15 +281,15 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture_source: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_source").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1212687372)!
-        }
+            GodotStringName(swiftStaticString: "set_texture_source").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1212687372)!
+            }
         }
     }()
-
+    
     private func __setTextureSource(
         _ source: Godot.VisualShaderNodeTextureParameter.TextureSource
     ) {
@@ -301,15 +306,15 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_source: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_source").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2039092262)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_source").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2039092262)!
+            }
         }
     }()
-
+    
     private func __getTextureSource() -> Godot.VisualShaderNodeTextureParameter.TextureSource {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -322,73 +327,70 @@ open class VisualShaderNodeTextureParameter: VisualShaderNodeParameter {
             }
         }
     }
-
+    
     public var textureType: Godot.VisualShaderNodeTextureParameter.TextureType {
         get {
             __getTextureType()
         }
-        set {
+        set(newValue) {
             __setTextureType(
                 newValue
             )
         }
     }
-
+    
     public var colorDefault: Godot.VisualShaderNodeTextureParameter.ColorDefault {
         get {
             __getColorDefault()
         }
-        set {
+        set(newValue) {
             __setColorDefault(
                 color: newValue
             )
         }
     }
-
+    
     public var textureFilter: Godot.VisualShaderNodeTextureParameter.TextureFilter {
         get {
             __getTextureFilter()
         }
-        set {
+        set(newValue) {
             __setTextureFilter(
                 newValue
             )
         }
     }
-
+    
     public var textureRepeat: Godot.VisualShaderNodeTextureParameter.TextureRepeat {
         get {
             __getTextureRepeat()
         }
-        set {
+        set(newValue) {
             __setTextureRepeat(
                 newValue
             )
         }
     }
-
+    
     public var textureSource: Godot.VisualShaderNodeTextureParameter.TextureSource {
         get {
             __getTextureSource()
         }
-        set {
+        set(newValue) {
             __setTextureSource(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

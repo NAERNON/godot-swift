@@ -146,7 +146,7 @@ extension UInt8.GodotContiguousArrayStorage: GodotContiguousArrayStorageProtocol
         .packedByteArray
     }
     
-    public consuming func transferToGodot(
+    public func transferToGodot(
         unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
     ) {
         withUnsafeOpaquePointer { selfPtr in

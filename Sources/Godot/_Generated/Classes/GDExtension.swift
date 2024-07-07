@@ -11,24 +11,25 @@ open class GDExtension: Resource {
         case servers = 1
         case scene = 2
         case editor = 3
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Core", 0),
-            ("Servers", 1),
-            ("Scene", 2),
-            ("Editor", 3),]
+               ("Core", 0),
+               ("Servers", 1),
+               ("Scene", 2),
+               ("Editor", 3),
+            ]
         }
     }
-
+    
     internal static var __method_binding_open_library: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "open_library").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 852856452)!
-        }
+            GodotStringName(swiftStaticString: "open_library").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 852856452)!
+            }
         }
     }()
-
+    
     public func openLibrary(
         path: Godot.GodotString,
         entrySymbol: Godot.GodotString
@@ -50,15 +51,15 @@ open class GDExtension: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_close_library: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "close_library").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "close_library").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func closeLibrary() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -69,15 +70,15 @@ open class GDExtension: Resource {
             )
         }
     }
-
+    
     internal static var __method_binding_is_library_open: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_library_open").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_library_open").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isLibraryOpen() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -90,15 +91,15 @@ open class GDExtension: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_minimum_library_initialization_level: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_minimum_library_initialization_level").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 964858755)!
-        }
+            GodotStringName(swiftStaticString: "get_minimum_library_initialization_level").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 964858755)!
+            }
         }
     }()
-
+    
     public func minimumLibraryInitializationLevel() -> Godot.GDExtension.InitializationLevel {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -111,15 +112,15 @@ open class GDExtension: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_initialize_library: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "initialize_library").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3409922941)!
-        }
+            GodotStringName(swiftStaticString: "initialize_library").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3409922941)!
+            }
         }
     }()
-
+    
     public func initializeLibrary(
         level: Godot.GDExtension.InitializationLevel
     ) {
@@ -136,18 +137,15 @@ open class GDExtension: Resource {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

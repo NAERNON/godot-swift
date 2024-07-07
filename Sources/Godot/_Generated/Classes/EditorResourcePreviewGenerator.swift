@@ -11,7 +11,7 @@ open class EditorResourcePreviewGenerator: RefCounted {
     ) -> Bool {
         Bool()
     }
-
+    
     open func _generate(
         resource: Godot.Resource?,
         size: Godot.Vector2I,
@@ -19,7 +19,7 @@ open class EditorResourcePreviewGenerator: RefCounted {
     ) -> Godot.Texture2D? {
         nil
     }
-
+    
     open func _generateFromPath(
         _ path: Godot.GodotString,
         size: Godot.Vector2I,
@@ -27,66 +27,65 @@ open class EditorResourcePreviewGenerator: RefCounted {
     ) -> Godot.Texture2D? {
         nil
     }
-
+    
     open func _generateSmallPreviewAutomatically() -> Bool {
         Bool()
     }
-
+    
     open func _canGenerateSmallPreview() -> Bool {
         Bool()
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _handles_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._handles(
-            type: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorResourcePreviewGenerator>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._handles(
+                    type: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _generate_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._generate(
-            resource: Godot.Resource?.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
-            metadata: Godot.AnyGodotDictionary.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorResourcePreviewGenerator>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._generate(
+                    resource: Godot.Resource?.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+                    metadata: Godot.AnyGodotDictionary.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _generate_from_path_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._generateFromPath(
-            Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
-            metadata: Godot.AnyGodotDictionary.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorResourcePreviewGenerator>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._generateFromPath(
+                    Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+                    metadata: Godot.AnyGodotDictionary.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _generate_small_preview_automatically_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._generateSmallPreviewAutomatically()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<EditorResourcePreviewGenerator>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._generateSmallPreviewAutomatically()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _can_generate_small_preview_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<EditorResourcePreviewGenerator> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._canGenerateSmallPreview()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<EditorResourcePreviewGenerator>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._canGenerateSmallPreview()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         _virtualFunctions = [
             "_handles" : ("_handles", _handles_call),
             "_generate" : ("_generate", _generate_call),
@@ -95,7 +94,7 @@ open class EditorResourcePreviewGenerator: RefCounted {
             "_canGenerateSmallPreview" : ("_can_generate_small_preview", _can_generate_small_preview_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class ParallaxLayer: Node2D {
     internal static var __method_binding_set_motion_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_motion_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_motion_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setMotionScale(
         _ scale: Godot.Vector2
     ) {
@@ -30,15 +30,15 @@ open class ParallaxLayer: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_motion_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_motion_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_motion_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getMotionScale() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -51,15 +51,15 @@ open class ParallaxLayer: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_motion_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_motion_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_motion_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setMotionOffset(
         _ offset: Godot.Vector2
     ) {
@@ -76,15 +76,15 @@ open class ParallaxLayer: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_motion_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_motion_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_motion_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getMotionOffset() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -97,15 +97,15 @@ open class ParallaxLayer: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_mirroring: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_mirroring").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_mirroring").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setMirroring(
         mirror: Godot.Vector2
     ) {
@@ -122,15 +122,15 @@ open class ParallaxLayer: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_mirroring: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_mirroring").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_mirroring").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getMirroring() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -143,51 +143,48 @@ open class ParallaxLayer: Node2D {
             }
         }
     }
-
+    
     public var motionScale: Godot.Vector2 {
         get {
             __getMotionScale()
         }
-        set {
+        set(newValue) {
             __setMotionScale(
                 newValue
             )
         }
     }
-
+    
     public var motionOffset: Godot.Vector2 {
         get {
             __getMotionOffset()
         }
-        set {
+        set(newValue) {
             __setMotionOffset(
                 newValue
             )
         }
     }
-
+    
     public var mirroring: Godot.Vector2 {
         get {
             __getMirroring()
         }
-        set {
+        set(newValue) {
             __setMirroring(
                 mirror: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

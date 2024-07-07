@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class X509Certificate: Resource {
     internal static var __method_binding_save: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "save").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
-        }
+            GodotStringName(swiftStaticString: "save").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
+            }
         }
     }()
-
+    
     public func save(
         path: Godot.GodotString
     ) -> Godot.ErrorType {
@@ -32,15 +32,15 @@ open class X509Certificate: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_load: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "load").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
-        }
+            GodotStringName(swiftStaticString: "load").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
+            }
         }
     }()
-
+    
     public func load(
         path: Godot.GodotString
     ) -> Godot.ErrorType {
@@ -59,15 +59,15 @@ open class X509Certificate: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_save_to_string: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "save_to_string").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2841200299)!
-        }
+            GodotStringName(swiftStaticString: "save_to_string").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2841200299)!
+            }
         }
     }()
-
+    
     public func saveToString() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -80,15 +80,15 @@ open class X509Certificate: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_load_from_string: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "load_from_string").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
-        }
+            GodotStringName(swiftStaticString: "load_from_string").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
+            }
         }
     }()
-
+    
     public func loadFromString(
         _ string: Godot.GodotString
     ) -> Godot.ErrorType {
@@ -107,18 +107,15 @@ open class X509Certificate: Resource {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

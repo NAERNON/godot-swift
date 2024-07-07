@@ -12,25 +12,26 @@ open class AESContext: RefCounted {
         case cbcEncrypt = 2
         case cbcDecrypt = 3
         case max = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Ecb Encrypt", 0),
-            ("Ecb Decrypt", 1),
-            ("Cbc Encrypt", 2),
-            ("Cbc Decrypt", 3),
-            ("Max", 4),]
+               ("Ecb Encrypt", 0),
+               ("Ecb Decrypt", 1),
+               ("Cbc Encrypt", 2),
+               ("Cbc Decrypt", 3),
+               ("Max", 4),
+            ]
         }
     }
-
+    
     internal static var __method_binding_start: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "start").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3122411423)!
-        }
+            GodotStringName(swiftStaticString: "start").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3122411423)!
+            }
         }
     }()
-
+    
     public func start(
         mode: Godot.AESContext.Mode,
         key: Godot.GodotContiguousArray<UInt8>,
@@ -55,15 +56,15 @@ open class AESContext: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_update: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "update").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 527836100)!
-        }
+            GodotStringName(swiftStaticString: "update").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 527836100)!
+            }
         }
     }()
-
+    
     public func update(
         src: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.GodotContiguousArray<UInt8> {
@@ -82,15 +83,15 @@ open class AESContext: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_iv_state: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_iv_state").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2115431945)!
-        }
+            GodotStringName(swiftStaticString: "get_iv_state").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2115431945)!
+            }
         }
     }()
-
+    
     public func ivState() -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -103,15 +104,15 @@ open class AESContext: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_finish: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "finish").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "finish").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func finish() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -122,18 +123,15 @@ open class AESContext: RefCounted {
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

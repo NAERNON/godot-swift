@@ -19,24 +19,25 @@ open class EditorPlugin: Node {
         case inspectorBottom = 9
         case projectSettingTabLeft = 10
         case projectSettingTabRight = 11
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Toolbar", 0),
-            ("Spatial Editor Menu", 1),
-            ("Spatial Editor Side Left", 2),
-            ("Spatial Editor Side Right", 3),
-            ("Spatial Editor Bottom", 4),
-            ("Canvas Editor Menu", 5),
-            ("Canvas Editor Side Left", 6),
-            ("Canvas Editor Side Right", 7),
-            ("Canvas Editor Bottom", 8),
-            ("Inspector Bottom", 9),
-            ("Project Setting Tab Left", 10),
-            ("Project Setting Tab Right", 11),]
+               ("Toolbar", 0),
+               ("Spatial Editor Menu", 1),
+               ("Spatial Editor Side Left", 2),
+               ("Spatial Editor Side Right", 3),
+               ("Spatial Editor Bottom", 4),
+               ("Canvas Editor Menu", 5),
+               ("Canvas Editor Side Left", 6),
+               ("Canvas Editor Side Right", 7),
+               ("Canvas Editor Bottom", 8),
+               ("Inspector Bottom", 9),
+               ("Project Setting Tab Left", 10),
+               ("Project Setting Tab Right", 11),
+            ]
         }
     }
-
+    
     public enum DockSlot: UInt32, GodotEnum {
         case leftUl = 0
         case leftBl = 1
@@ -47,56 +48,48 @@ open class EditorPlugin: Node {
         case rightUr = 6
         case rightBr = 7
         case max = 8
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Left Ul", 0),
-            ("Left Bl", 1),
-            ("Left Ur", 2),
-            ("Left Br", 3),
-            ("Right Ul", 4),
-            ("Right Bl", 5),
-            ("Right Ur", 6),
-            ("Right Br", 7),
-            ("Max", 8),]
+               ("Left Ul", 0),
+               ("Left Bl", 1),
+               ("Left Ur", 2),
+               ("Left Br", 3),
+               ("Right Ul", 4),
+               ("Right Bl", 5),
+               ("Right Ur", 6),
+               ("Right Br", 7),
+               ("Max", 8),
+            ]
         }
     }
-
+    
     public enum AfterGUIInput: UInt32, GodotEnum {
         case pass = 0
         case stop = 1
         case custom = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Pass", 0),
-            ("Stop", 1),
-            ("Custom", 2),]
+               ("Pass", 0),
+               ("Stop", 1),
+               ("Custom", 2),
+            ]
         }
     }
-
+    
     public struct SceneChangedSignalInput: Godot.SignalInput {
         public let sceneRoot: Godot.Node?
-
-        fileprivate init(
-            sceneRoot: Godot.Node?
-        ) {
+        fileprivate init(sceneRoot: Godot.Node?) {
             self.sceneRoot = sceneRoot
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.sceneRoot)]
         }
     }
-
-    public func sceneChanged(
-        sceneRoot: Godot.Node?
-    ) {
+    public func sceneChanged(sceneRoot: Godot.Node?) {
         _ = sceneChangedSignal.emit(.init(sceneRoot: sceneRoot))
     }
-
     public lazy var sceneChangedSignal: Godot.SignalEmitter<SceneChangedSignalInput> = {
         .init(object: self, signalName: "scene_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SceneChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -111,29 +104,19 @@ open class EditorPlugin: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct SceneClosedSignalInput: Godot.SignalInput {
         public let filepath: Godot.GodotString
-
-        fileprivate init(
-            filepath: Godot.GodotString
-        ) {
+        fileprivate init(filepath: Godot.GodotString) {
             self.filepath = filepath
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.filepath)]
         }
     }
-
-    public func sceneClosed(
-        filepath: Godot.GodotString
-    ) {
+    public func sceneClosed(filepath: Godot.GodotString) {
         _ = sceneClosedSignal.emit(.init(filepath: filepath))
     }
-
     public lazy var sceneClosedSignal: Godot.SignalEmitter<SceneClosedSignalInput> = {
         .init(object: self, signalName: "scene_closed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SceneClosedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -148,29 +131,19 @@ open class EditorPlugin: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct MainScreenChangedSignalInput: Godot.SignalInput {
         public let screenName: Godot.GodotString
-
-        fileprivate init(
-            screenName: Godot.GodotString
-        ) {
+        fileprivate init(screenName: Godot.GodotString) {
             self.screenName = screenName
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.screenName)]
         }
     }
-
-    public func mainScreenChanged(
-        screenName: Godot.GodotString
-    ) {
+    public func mainScreenChanged(screenName: Godot.GodotString) {
         _ = mainScreenChangedSignal.emit(.init(screenName: screenName))
     }
-
     public lazy var mainScreenChangedSignal: Godot.SignalEmitter<MainScreenChangedSignalInput> = {
         .init(object: self, signalName: "main_screen_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<MainScreenChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -185,29 +158,19 @@ open class EditorPlugin: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct ResourceSavedSignalInput: Godot.SignalInput {
         public let resource: Godot.Resource?
-
-        fileprivate init(
-            resource: Godot.Resource?
-        ) {
+        fileprivate init(resource: Godot.Resource?) {
             self.resource = resource
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.resource)]
         }
     }
-
-    public func resourceSaved(
-        resource: Godot.Resource?
-    ) {
+    public func resourceSaved(resource: Godot.Resource?) {
         _ = resourceSavedSignal.emit(.init(resource: resource))
     }
-
     public lazy var resourceSavedSignal: Godot.SignalEmitter<ResourceSavedSignalInput> = {
         .init(object: self, signalName: "resource_saved") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ResourceSavedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -222,11 +185,11 @@ open class EditorPlugin: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func projectSettingsChanged() {
         _ = projectSettingsChangedSignal.emit()
     }
-
     public lazy var projectSettingsChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "project_settings_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -241,124 +204,138 @@ open class EditorPlugin: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     open func _forwardCanvasGuiInput(
         event: Godot.InputEvent?
     ) -> Bool {
         Bool()
     }
-
+    
     open func _forwardCanvasDrawOverViewport(
         viewportControl: Godot.Control?
     ) {
+        
     }
-
+    
     open func _forwardCanvasForceDrawOverViewport(
         viewportControl: Godot.Control?
     ) {
+        
     }
-
+    
     open func _forward3DGuiInput(
         viewportCamera: Godot.Camera3D?,
         event: Godot.InputEvent?
     ) -> Int32 {
         Int32()
     }
-
+    
     open func _forward3DDrawOverViewport(
         viewportControl: Godot.Control?
     ) {
+        
     }
-
+    
     open func _forward3DForceDrawOverViewport(
         viewportControl: Godot.Control?
     ) {
+        
     }
-
+    
     open func _getPluginName() -> Godot.GodotString {
         Godot.GodotString()
     }
-
+    
     open func _getPluginIcon() -> Godot.Texture2D? {
         nil
     }
-
+    
     open func _hasMainScreen() -> Bool {
         Bool()
     }
-
+    
     open func _makeVisible(
         _ visible: Bool
     ) {
+        
     }
-
+    
     open func _edit(
         object: Godot.Object?
     ) {
+        
     }
-
+    
     open func _handles(
         object: Godot.Object?
     ) -> Bool {
         Bool()
     }
-
+    
     open func _getState() -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
-
+    
     open func _setState(
         _ state: Godot.AnyGodotDictionary
     ) {
+        
     }
-
+    
     open func _clear() {
+        
     }
-
+    
     open func _getUnsavedStatus(
         forScene scene: Godot.GodotString
     ) -> Godot.GodotString {
         Godot.GodotString()
     }
-
+    
     open func _saveExternalData() {
+        
     }
-
+    
     open func _applyChanges() {
+        
     }
-
+    
     open func _getBreakpoints() -> Godot.GodotContiguousArray<GodotString> {
         Godot.GodotContiguousArray<GodotString>()
     }
-
+    
     open func _setWindowLayout(
         configuration: Godot.ConfigFile?
     ) {
+        
     }
-
+    
     open func _getWindowLayout(
         configuration: Godot.ConfigFile?
     ) {
+        
     }
-
+    
     open func _build() -> Bool {
         Bool()
     }
-
+    
     open func _enablePlugin() {
+        
     }
-
+    
     open func _disablePlugin() {
+        
     }
-
+    
     internal static var __method_binding_add_control_to_container: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_control_to_container").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3092750152)!
-        }
+            GodotStringName(swiftStaticString: "add_control_to_container").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3092750152)!
+            }
         }
     }()
-
+    
     public func addControlToContainer(
         _ container: Godot.EditorPlugin.CustomControlContainer,
         control: Godot.Control?
@@ -380,15 +357,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_add_control_to_bottom_panel: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_control_to_bottom_panel").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3526039376)!
-        }
+            GodotStringName(swiftStaticString: "add_control_to_bottom_panel").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3526039376)!
+            }
         }
     }()
-
+    
     public func addControlToBottomPanel(
         control: Godot.Control?,
         title: Godot.GodotString
@@ -412,15 +389,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_add_control_to_dock: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_control_to_dock").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3354871258)!
-        }
+            GodotStringName(swiftStaticString: "add_control_to_dock").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3354871258)!
+            }
         }
     }()
-
+    
     public func addControlToDock(
         slot: Godot.EditorPlugin.DockSlot,
         control: Godot.Control?
@@ -442,15 +419,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_control_from_docks: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_control_from_docks").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
-        }
+            GodotStringName(swiftStaticString: "remove_control_from_docks").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
+            }
         }
     }()
-
+    
     public func removeControlFromDocks(
         control: Godot.Control?
     ) {
@@ -469,15 +446,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_control_from_bottom_panel: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_control_from_bottom_panel").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
-        }
+            GodotStringName(swiftStaticString: "remove_control_from_bottom_panel").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
+            }
         }
     }()
-
+    
     public func removeControlFromBottomPanel(
         control: Godot.Control?
     ) {
@@ -496,15 +473,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_control_from_container: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_control_from_container").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3092750152)!
-        }
+            GodotStringName(swiftStaticString: "remove_control_from_container").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3092750152)!
+            }
         }
     }()
-
+    
     public func removeControlFromContainer(
         _ container: Godot.EditorPlugin.CustomControlContainer,
         control: Godot.Control?
@@ -526,15 +503,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_add_tool_menu_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_tool_menu_item").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2137474292)!
-        }
+            GodotStringName(swiftStaticString: "add_tool_menu_item").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2137474292)!
+            }
         }
     }()
-
+    
     public func addToolMenuItem(
         name: Godot.GodotString,
         callable: Godot.Callable
@@ -554,15 +531,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_add_tool_submenu_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_tool_submenu_item").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1019428915)!
-        }
+            GodotStringName(swiftStaticString: "add_tool_submenu_item").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1019428915)!
+            }
         }
     }()
-
+    
     public func addToolSubmenuItem(
         name: Godot.GodotString,
         submenu: Godot.PopupMenu?
@@ -584,15 +561,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_tool_menu_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_tool_menu_item").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "remove_tool_menu_item").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     public func removeToolMenuItem(
         name: Godot.GodotString
     ) {
@@ -609,15 +586,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_export_as_menu: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_export_as_menu").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1775878644)!
-        }
+            GodotStringName(swiftStaticString: "get_export_as_menu").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1775878644)!
+            }
         }
     }()
-
+    
     public func exportAsMenu() -> Godot.PopupMenu? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -630,15 +607,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_add_custom_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_custom_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1986814599)!
-        }
+            GodotStringName(swiftStaticString: "add_custom_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1986814599)!
+            }
         }
     }()
-
+    
     public func addCustomType(
         _ type: Godot.GodotString,
         base: Godot.GodotString,
@@ -668,15 +645,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_custom_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_custom_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "remove_custom_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     public func removeCustomType(
         _ type: Godot.GodotString
     ) {
@@ -693,15 +670,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_add_autoload_singleton: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_autoload_singleton").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3186203200)!
-        }
+            GodotStringName(swiftStaticString: "add_autoload_singleton").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3186203200)!
+            }
         }
     }()
-
+    
     public func addAutoloadSingleton(
         name: Godot.GodotString,
         path: Godot.GodotString
@@ -721,15 +698,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_autoload_singleton: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_autoload_singleton").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "remove_autoload_singleton").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     public func removeAutoloadSingleton(
         name: Godot.GodotString
     ) {
@@ -746,15 +723,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_update_overlays: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "update_overlays").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "update_overlays").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func updateOverlays() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -767,15 +744,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_make_bottom_panel_item_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "make_bottom_panel_item_visible").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
-        }
+            GodotStringName(swiftStaticString: "make_bottom_panel_item_visible").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
+            }
         }
     }()
-
+    
     public func makeBottomPanelItemVisible(
         item: Godot.Control?
     ) {
@@ -794,15 +771,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_hide_bottom_panel: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "hide_bottom_panel").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "hide_bottom_panel").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func hideBottomPanel() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -813,15 +790,15 @@ open class EditorPlugin: Node {
             )
         }
     }
-
+    
     internal static var __method_binding_get_undo_redo: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_undo_redo").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 773492341)!
-        }
+            GodotStringName(swiftStaticString: "get_undo_redo").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 773492341)!
+            }
         }
     }()
-
+    
     public func undoRedo() -> Godot.EditorUndoRedoManager? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -834,15 +811,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_add_undo_redo_inspector_hook_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_undo_redo_inspector_hook_callback").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1611583062)!
-        }
+            GodotStringName(swiftStaticString: "add_undo_redo_inspector_hook_callback").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1611583062)!
+            }
         }
     }()
-
+    
     public func addUndoRedoInspectorHookCallback(
         callable: Godot.Callable
     ) {
@@ -859,15 +836,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_undo_redo_inspector_hook_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_undo_redo_inspector_hook_callback").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1611583062)!
-        }
+            GodotStringName(swiftStaticString: "remove_undo_redo_inspector_hook_callback").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1611583062)!
+            }
         }
     }()
-
+    
     public func removeUndoRedoInspectorHookCallback(
         callable: Godot.Callable
     ) {
@@ -884,15 +861,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_queue_save_layout: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "queue_save_layout").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "queue_save_layout").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func queueSaveLayout() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -903,15 +880,15 @@ open class EditorPlugin: Node {
             )
         }
     }
-
+    
     internal static var __method_binding_add_translation_parser_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_translation_parser_plugin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3116463128)!
-        }
+            GodotStringName(swiftStaticString: "add_translation_parser_plugin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3116463128)!
+            }
         }
     }()
-
+    
     public func addTranslationParserPlugin(
         parser: Godot.EditorTranslationParserPlugin?
     ) {
@@ -930,15 +907,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_translation_parser_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_translation_parser_plugin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3116463128)!
-        }
+            GodotStringName(swiftStaticString: "remove_translation_parser_plugin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3116463128)!
+            }
         }
     }()
-
+    
     public func removeTranslationParserPlugin(
         parser: Godot.EditorTranslationParserPlugin?
     ) {
@@ -957,15 +934,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_add_import_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_import_plugin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3113975762)!
-        }
+            GodotStringName(swiftStaticString: "add_import_plugin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3113975762)!
+            }
         }
     }()
-
+    
     public func addImportPlugin(
         importer: Godot.EditorImportPlugin?,
         firstPriority: Bool = false
@@ -987,15 +964,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_import_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_import_plugin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2312482773)!
-        }
+            GodotStringName(swiftStaticString: "remove_import_plugin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2312482773)!
+            }
         }
     }()
-
+    
     public func removeImportPlugin(
         importer: Godot.EditorImportPlugin?
     ) {
@@ -1014,15 +991,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_add_scene_format_importer_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_scene_format_importer_plugin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2764104752)!
-        }
+            GodotStringName(swiftStaticString: "add_scene_format_importer_plugin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2764104752)!
+            }
         }
     }()
-
+    
     public func addSceneFormatImporterPlugin(
         sceneFormatImporter: Godot.EditorSceneFormatImporter?,
         firstPriority: Bool = false
@@ -1044,15 +1021,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_scene_format_importer_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_scene_format_importer_plugin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2637776123)!
-        }
+            GodotStringName(swiftStaticString: "remove_scene_format_importer_plugin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2637776123)!
+            }
         }
     }()
-
+    
     public func removeSceneFormatImporterPlugin(
         sceneFormatImporter: Godot.EditorSceneFormatImporter?
     ) {
@@ -1071,15 +1048,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_add_scene_post_import_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_scene_post_import_plugin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3492436322)!
-        }
+            GodotStringName(swiftStaticString: "add_scene_post_import_plugin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3492436322)!
+            }
         }
     }()
-
+    
     public func addScenePostImportPlugin(
         sceneImportPlugin: Godot.EditorScenePostImportPlugin?,
         firstPriority: Bool = false
@@ -1101,15 +1078,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_scene_post_import_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_scene_post_import_plugin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3045178206)!
-        }
+            GodotStringName(swiftStaticString: "remove_scene_post_import_plugin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3045178206)!
+            }
         }
     }()
-
+    
     public func removeScenePostImportPlugin(
         sceneImportPlugin: Godot.EditorScenePostImportPlugin?
     ) {
@@ -1128,15 +1105,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_add_export_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_export_plugin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4095952207)!
-        }
+            GodotStringName(swiftStaticString: "add_export_plugin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4095952207)!
+            }
         }
     }()
-
+    
     public func addExportPlugin(
         _ plugin: Godot.EditorExportPlugin?
     ) {
@@ -1155,15 +1132,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_export_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_export_plugin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4095952207)!
-        }
+            GodotStringName(swiftStaticString: "remove_export_plugin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4095952207)!
+            }
         }
     }()
-
+    
     public func removeExportPlugin(
         _ plugin: Godot.EditorExportPlugin?
     ) {
@@ -1182,15 +1159,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_add_node_3d_gizmo_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_node_3d_gizmo_plugin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1541015022)!
-        }
+            GodotStringName(swiftStaticString: "add_node_3d_gizmo_plugin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1541015022)!
+            }
         }
     }()
-
+    
     public func addNode3DGizmoPlugin(
         _ plugin: Godot.EditorNode3DGizmoPlugin?
     ) {
@@ -1209,15 +1186,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_node_3d_gizmo_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_node_3d_gizmo_plugin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1541015022)!
-        }
+            GodotStringName(swiftStaticString: "remove_node_3d_gizmo_plugin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1541015022)!
+            }
         }
     }()
-
+    
     public func removeNode3DGizmoPlugin(
         _ plugin: Godot.EditorNode3DGizmoPlugin?
     ) {
@@ -1236,15 +1213,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_add_inspector_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_inspector_plugin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 546395733)!
-        }
+            GodotStringName(swiftStaticString: "add_inspector_plugin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 546395733)!
+            }
         }
     }()
-
+    
     public func addInspectorPlugin(
         _ plugin: Godot.EditorInspectorPlugin?
     ) {
@@ -1263,15 +1240,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_inspector_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_inspector_plugin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 546395733)!
-        }
+            GodotStringName(swiftStaticString: "remove_inspector_plugin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 546395733)!
+            }
         }
     }()
-
+    
     public func removeInspectorPlugin(
         _ plugin: Godot.EditorInspectorPlugin?
     ) {
@@ -1290,15 +1267,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_add_resource_conversion_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_resource_conversion_plugin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2124849111)!
-        }
+            GodotStringName(swiftStaticString: "add_resource_conversion_plugin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2124849111)!
+            }
         }
     }()
-
+    
     public func addResourceConversionPlugin(
         _ plugin: Godot.EditorResourceConversionPlugin?
     ) {
@@ -1317,15 +1294,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_resource_conversion_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_resource_conversion_plugin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2124849111)!
-        }
+            GodotStringName(swiftStaticString: "remove_resource_conversion_plugin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2124849111)!
+            }
         }
     }()
-
+    
     public func removeResourceConversionPlugin(
         _ plugin: Godot.EditorResourceConversionPlugin?
     ) {
@@ -1344,15 +1321,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_input_event_forwarding_always_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_input_event_forwarding_always_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "set_input_event_forwarding_always_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func setInputEventForwardingAlwaysEnabled() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1363,15 +1340,15 @@ open class EditorPlugin: Node {
             )
         }
     }
-
+    
     internal static var __method_binding_set_force_draw_over_forwarding_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_force_draw_over_forwarding_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "set_force_draw_over_forwarding_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func setForceDrawOverForwardingEnabled() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1382,15 +1359,15 @@ open class EditorPlugin: Node {
             )
         }
     }
-
+    
     internal static var __method_binding_get_editor_interface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_editor_interface").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4223731786)!
-        }
+            GodotStringName(swiftStaticString: "get_editor_interface").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4223731786)!
+            }
         }
     }()
-
+    
     public func editorInterface() -> Godot.EditorInterface? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1403,15 +1380,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_script_create_dialog: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_script_create_dialog").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3121871482)!
-        }
+            GodotStringName(swiftStaticString: "get_script_create_dialog").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3121871482)!
+            }
         }
     }()
-
+    
     public func scriptCreateDialog() -> Godot.ScriptCreateDialog? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1424,15 +1401,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_add_debugger_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_debugger_plugin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3749880309)!
-        }
+            GodotStringName(swiftStaticString: "add_debugger_plugin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3749880309)!
+            }
         }
     }()
-
+    
     public func addDebuggerPlugin(
         script: Godot.EditorDebuggerPlugin?
     ) {
@@ -1451,15 +1428,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_debugger_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_debugger_plugin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3749880309)!
-        }
+            GodotStringName(swiftStaticString: "remove_debugger_plugin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3749880309)!
+            }
         }
     }()
-
+    
     public func removeDebuggerPlugin(
         script: Godot.EditorDebuggerPlugin?
     ) {
@@ -1478,15 +1455,15 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_plugin_version: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_plugin_version").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_plugin_version").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     public func pluginVersion() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1499,194 +1476,193 @@ open class EditorPlugin: Node {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _forward_canvas_gui_input_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._forwardCanvasGuiInput(
-            event: Godot.InputEvent?.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._forwardCanvasGuiInput(
+                    event: Godot.InputEvent?.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _forward_canvas_draw_over_viewport_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._forwardCanvasDrawOverViewport(
-            viewportControl: Godot.Control?.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._forwardCanvasDrawOverViewport(
+                    viewportControl: Godot.Control?.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _forward_canvas_force_draw_over_viewport_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._forwardCanvasForceDrawOverViewport(
-            viewportControl: Godot.Control?.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._forwardCanvasForceDrawOverViewport(
+                    viewportControl: Godot.Control?.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _forward_3d_gui_input_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._forward3DGuiInput(
-            viewportCamera: Godot.Camera3D?.transferFromGodot(unsafePointer: args[0]!),
-            event: Godot.InputEvent?.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._forward3DGuiInput(
+                    viewportCamera: Godot.Camera3D?.transferFromGodot(unsafePointer: args[0]!),
+                    event: Godot.InputEvent?.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _forward_3d_draw_over_viewport_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._forward3DDrawOverViewport(
-            viewportControl: Godot.Control?.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._forward3DDrawOverViewport(
+                    viewportControl: Godot.Control?.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _forward_3d_force_draw_over_viewport_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._forward3DForceDrawOverViewport(
-            viewportControl: Godot.Control?.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._forward3DForceDrawOverViewport(
+                    viewportControl: Godot.Control?.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _get_plugin_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getPluginName()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getPluginName()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_plugin_icon_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getPluginIcon()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getPluginIcon()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _has_main_screen_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._hasMainScreen()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._hasMainScreen()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _make_visible_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._makeVisible(
-            Bool.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._makeVisible(
+                    Bool.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _edit_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._edit(
-            object: Godot.Object?.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._edit(
+                    object: Godot.Object?.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _handles_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._handles(
-            object: Godot.Object?.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._handles(
+                    object: Godot.Object?.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_state_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getState()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getState()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _set_state_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._setState(
-            Godot.AnyGodotDictionary.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._setState(
+                    Godot.AnyGodotDictionary.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _clear_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._clear()}
+            guard let instancePtr else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._clear()
+        }
         let _get_unsaved_status_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getUnsavedStatus(
-            forScene: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getUnsavedStatus(
+                    forScene: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _save_external_data_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._saveExternalData()}
+            guard let instancePtr else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._saveExternalData()
+        }
         let _apply_changes_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._applyChanges()}
+            guard let instancePtr else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._applyChanges()
+        }
         let _get_breakpoints_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getBreakpoints()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getBreakpoints()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _set_window_layout_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._setWindowLayout(
-            configuration: Godot.ConfigFile?.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._setWindowLayout(
+                    configuration: Godot.ConfigFile?.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _get_window_layout_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getWindowLayout(
-            configuration: Godot.ConfigFile?.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getWindowLayout(
+                    configuration: Godot.ConfigFile?.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _build_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._build()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._build()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _enable_plugin_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._enablePlugin()}
+            guard let instancePtr else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._enablePlugin()
+        }
         let _disable_plugin_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<EditorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._disablePlugin()}
+            guard let instancePtr else { return }
+            Unmanaged<EditorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._disablePlugin()
+        }
         _virtualFunctions = [
             "_forwardCanvasGuiInput" : ("_forward_canvas_gui_input", _forward_canvas_gui_input_call),
             "_forwardCanvasDrawOverViewport" : ("_forward_canvas_draw_over_viewport", _forward_canvas_draw_over_viewport_call),
@@ -1714,7 +1690,7 @@ open class EditorPlugin: Node {
             "_disablePlugin" : ("_disable_plugin", _disable_plugin_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

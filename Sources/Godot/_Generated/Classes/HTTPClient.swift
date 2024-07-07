@@ -17,22 +17,23 @@ open class HTTPClient: RefCounted {
         case connect = 7
         case patch = 8
         case max = 9
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Get", 0),
-            ("Head", 1),
-            ("Post", 2),
-            ("Put", 3),
-            ("Delete", 4),
-            ("Options", 5),
-            ("Trace", 6),
-            ("Connect", 7),
-            ("Patch", 8),
-            ("Max", 9),]
+               ("Get", 0),
+               ("Head", 1),
+               ("Post", 2),
+               ("Put", 3),
+               ("Delete", 4),
+               ("Options", 5),
+               ("Trace", 6),
+               ("Connect", 7),
+               ("Patch", 8),
+               ("Max", 9),
+            ]
         }
     }
-
+    
     public enum Status: UInt32, GodotEnum {
         case disconnected = 0
         case resolving = 1
@@ -44,22 +45,23 @@ open class HTTPClient: RefCounted {
         case body = 7
         case connectionError = 8
         case tlsHandshakeError = 9
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Disconnected", 0),
-            ("Resolving", 1),
-            ("Cant Resolve", 2),
-            ("Connecting", 3),
-            ("Cant Connect", 4),
-            ("Connected", 5),
-            ("Requesting", 6),
-            ("Body", 7),
-            ("Connection Error", 8),
-            ("Tls Handshake Error", 9),]
+               ("Disconnected", 0),
+               ("Resolving", 1),
+               ("Cant Resolve", 2),
+               ("Connecting", 3),
+               ("Cant Connect", 4),
+               ("Connected", 5),
+               ("Requesting", 6),
+               ("Body", 7),
+               ("Connection Error", 8),
+               ("Tls Handshake Error", 9),
+            ]
         }
     }
-
+    
     public enum ResponseCode: UInt32, GodotEnum {
         case `continue` = 100
         case switchingProtocols = 101
@@ -122,81 +124,82 @@ open class HTTPClient: RefCounted {
         case loopDetected = 508
         case notExtended = 510
         case networkAuthRequired = 511
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Continue", 100),
-            ("Switching Protocols", 101),
-            ("Processing", 102),
-            ("Ok", 200),
-            ("Created", 201),
-            ("Accepted", 202),
-            ("Non Authoritative Information", 203),
-            ("No Content", 204),
-            ("Reset Content", 205),
-            ("Partial Content", 206),
-            ("Multi Status", 207),
-            ("Already Reported", 208),
-            ("Im Used", 226),
-            ("Multiple Choices", 300),
-            ("Moved Permanently", 301),
-            ("Found", 302),
-            ("See Other", 303),
-            ("Not Modified", 304),
-            ("Use Proxy", 305),
-            ("Switch Proxy", 306),
-            ("Temporary Redirect", 307),
-            ("Permanent Redirect", 308),
-            ("Bad Request", 400),
-            ("Unauthorized", 401),
-            ("Payment Required", 402),
-            ("Forbidden", 403),
-            ("Not Found", 404),
-            ("Method Not Allowed", 405),
-            ("Not Acceptable", 406),
-            ("Proxy Authentication Required", 407),
-            ("Request Timeout", 408),
-            ("Conflict", 409),
-            ("Gone", 410),
-            ("Length Required", 411),
-            ("Precondition Failed", 412),
-            ("Request Entity Too Large", 413),
-            ("Request Uri Too Long", 414),
-            ("Unsupported Media Type", 415),
-            ("Requested Range Not Satisfiable", 416),
-            ("Expectation Failed", 417),
-            ("Im A Teapot", 418),
-            ("Misdirected Request", 421),
-            ("Unprocessable Entity", 422),
-            ("Locked", 423),
-            ("Failed Dependency", 424),
-            ("Upgrade Required", 426),
-            ("Precondition Required", 428),
-            ("Too Many Requests", 429),
-            ("Request Header Fields Too Large", 431),
-            ("Unavailable For Legal Reasons", 451),
-            ("Internal Server Error", 500),
-            ("Not Implemented", 501),
-            ("Bad Gateway", 502),
-            ("Service Unavailable", 503),
-            ("Gateway Timeout", 504),
-            ("Http Version Not Supported", 505),
-            ("Variant Also Negotiates", 506),
-            ("Insufficient Storage", 507),
-            ("Loop Detected", 508),
-            ("Not Extended", 510),
-            ("Network Auth Required", 511),]
+               ("Continue", 100),
+               ("Switching Protocols", 101),
+               ("Processing", 102),
+               ("Ok", 200),
+               ("Created", 201),
+               ("Accepted", 202),
+               ("Non Authoritative Information", 203),
+               ("No Content", 204),
+               ("Reset Content", 205),
+               ("Partial Content", 206),
+               ("Multi Status", 207),
+               ("Already Reported", 208),
+               ("Im Used", 226),
+               ("Multiple Choices", 300),
+               ("Moved Permanently", 301),
+               ("Found", 302),
+               ("See Other", 303),
+               ("Not Modified", 304),
+               ("Use Proxy", 305),
+               ("Switch Proxy", 306),
+               ("Temporary Redirect", 307),
+               ("Permanent Redirect", 308),
+               ("Bad Request", 400),
+               ("Unauthorized", 401),
+               ("Payment Required", 402),
+               ("Forbidden", 403),
+               ("Not Found", 404),
+               ("Method Not Allowed", 405),
+               ("Not Acceptable", 406),
+               ("Proxy Authentication Required", 407),
+               ("Request Timeout", 408),
+               ("Conflict", 409),
+               ("Gone", 410),
+               ("Length Required", 411),
+               ("Precondition Failed", 412),
+               ("Request Entity Too Large", 413),
+               ("Request Uri Too Long", 414),
+               ("Unsupported Media Type", 415),
+               ("Requested Range Not Satisfiable", 416),
+               ("Expectation Failed", 417),
+               ("Im A Teapot", 418),
+               ("Misdirected Request", 421),
+               ("Unprocessable Entity", 422),
+               ("Locked", 423),
+               ("Failed Dependency", 424),
+               ("Upgrade Required", 426),
+               ("Precondition Required", 428),
+               ("Too Many Requests", 429),
+               ("Request Header Fields Too Large", 431),
+               ("Unavailable For Legal Reasons", 451),
+               ("Internal Server Error", 500),
+               ("Not Implemented", 501),
+               ("Bad Gateway", 502),
+               ("Service Unavailable", 503),
+               ("Gateway Timeout", 504),
+               ("Http Version Not Supported", 505),
+               ("Variant Also Negotiates", 506),
+               ("Insufficient Storage", 507),
+               ("Loop Detected", 508),
+               ("Not Extended", 510),
+               ("Network Auth Required", 511),
+            ]
         }
     }
-
+    
     internal static var __method_binding_connect_to_host: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "connect_to_host").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 504540374)!
-        }
+            GodotStringName(swiftStaticString: "connect_to_host").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 504540374)!
+            }
         }
     }()
-
+    
     public func connectToHost(
         _ host: Godot.GodotString,
         port: Int32 = -1,
@@ -223,15 +226,15 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_connection: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_connection").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3281897016)!
-        }
+            GodotStringName(swiftStaticString: "set_connection").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3281897016)!
+            }
         }
     }()
-
+    
     private func __setConnection(
         _ connection: Godot.StreamPeer?
     ) {
@@ -250,15 +253,15 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_connection: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_connection").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2741655269)!
-        }
+            GodotStringName(swiftStaticString: "get_connection").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2741655269)!
+            }
         }
     }()
-
+    
     private func __getConnection() -> Godot.StreamPeer? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -271,15 +274,15 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_request_raw: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "request_raw").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 540161961)!
-        }
+            GodotStringName(swiftStaticString: "request_raw").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 540161961)!
+            }
         }
     }()
-
+    
     public func requestRaw(
         method: Godot.HTTPClient.Method,
         url: Godot.GodotString,
@@ -307,15 +310,15 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_request: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "request").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3778990155)!
-        }
+            GodotStringName(swiftStaticString: "request").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3778990155)!
+            }
         }
     }()
-
+    
     public func request(
         method: Godot.HTTPClient.Method,
         url: Godot.GodotString,
@@ -343,15 +346,15 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_close: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "close").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "close").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func close() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -362,15 +365,15 @@ open class HTTPClient: RefCounted {
             )
         }
     }
-
+    
     internal static var __method_binding_has_response: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_response").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "has_response").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func hasResponse() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -383,15 +386,15 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_is_response_chunked: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_response_chunked").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_response_chunked").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isResponseChunked() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -404,15 +407,15 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_response_code: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_response_code").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_response_code").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func responseCode() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -425,15 +428,15 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_response_headers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_response_headers").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2981934095)!
-        }
+            GodotStringName(swiftStaticString: "get_response_headers").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2981934095)!
+            }
         }
     }()
-
+    
     public func responseHeaders() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -446,15 +449,15 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_response_headers_as_dictionary: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_response_headers_as_dictionary").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2382534195)!
-        }
+            GodotStringName(swiftStaticString: "get_response_headers_as_dictionary").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2382534195)!
+            }
         }
     }()
-
+    
     public func responseHeadersAsDictionary() -> Godot.AnyGodotDictionary {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -467,15 +470,15 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_response_body_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_response_body_length").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_response_body_length").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func responseBodyLength() -> Int64 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -488,15 +491,15 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_read_response_body_chunk: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "read_response_body_chunk").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2115431945)!
-        }
+            GodotStringName(swiftStaticString: "read_response_body_chunk").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2115431945)!
+            }
         }
     }()
-
+    
     public func readResponseBodyChunk() -> Godot.GodotContiguousArray<UInt8> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -509,15 +512,15 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_read_chunk_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_read_chunk_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_read_chunk_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setReadChunkSize(
         bytes: Int32
     ) {
@@ -534,15 +537,15 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_read_chunk_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_read_chunk_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_read_chunk_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getReadChunkSize() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -555,15 +558,15 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_blocking_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_blocking_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_blocking_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setBlockingMode(
         enabled: Bool
     ) {
@@ -580,15 +583,15 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_is_blocking_mode_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_blocking_mode_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_blocking_mode_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isBlockingModeEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -601,15 +604,15 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_status: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_status").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1426656811)!
-        }
+            GodotStringName(swiftStaticString: "get_status").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1426656811)!
+            }
         }
     }()
-
+    
     public func status() -> Godot.HTTPClient.Status {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -622,15 +625,15 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_poll: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "poll").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166280745)!
-        }
+            GodotStringName(swiftStaticString: "poll").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166280745)!
+            }
         }
     }()
-
+    
     public func poll() -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -643,15 +646,15 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_http_proxy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_http_proxy").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2956805083)!
-        }
+            GodotStringName(swiftStaticString: "set_http_proxy").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2956805083)!
+            }
         }
     }()
-
+    
     public func setHttpProxy(
         host: Godot.GodotString,
         port: Int32
@@ -671,15 +674,15 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_https_proxy: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_https_proxy").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2956805083)!
-        }
+            GodotStringName(swiftStaticString: "set_https_proxy").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2956805083)!
+            }
         }
     }()
-
+    
     public func setHttpsProxy(
         host: Godot.GodotString,
         port: Int32
@@ -699,15 +702,15 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_query_string_from_dict: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "query_string_from_dict").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2538086567)!
-        }
+            GodotStringName(swiftStaticString: "query_string_from_dict").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2538086567)!
+            }
         }
     }()
-
+    
     public func queryStringFromDict<Value1: Variant.Storable, Value2: Variant.Storable>(
         fields: Godot.GodotDictionary<Value1, Value2>
     ) -> Godot.GodotString {
@@ -726,51 +729,48 @@ open class HTTPClient: RefCounted {
             }
         }
     }
-
+    
     public var isBlockingModeEnabled: Bool {
         get {
             __isBlockingModeEnabled()
         }
-        set {
+        set(newValue) {
             __setBlockingMode(
                 enabled: newValue
             )
         }
     }
-
+    
     public var connection: Godot.StreamPeer? {
         get {
             __getConnection()
         }
-        set {
+        set(newValue) {
             __setConnection(
                 newValue
             )
         }
     }
-
+    
     public var readChunkSize: Int32 {
         get {
             __getReadChunkSize()
         }
-        set {
+        set(newValue) {
             __setReadChunkSize(
                 bytes: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

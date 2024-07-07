@@ -21,7 +21,7 @@ struct GodotConstant: Decodable, Equatable, Hashable {
 }
 
 extension GodotConstant {
-    func syntax(forType type: GodotType, useStaticVariables: Bool) -> String {
+    func syntax(forType type: GodotType, useStaticVariables: Bool) -> Syntax {
         if rawString.isEmpty {
             return type.syntax() + "()"
         }
@@ -50,7 +50,7 @@ extension GodotConstant {
             return "[:]"
         }
         
-        if (type.isTypedArray || type == .array) && rawString.contains("([])") {
+        if type.withoutGeneric == .array && rawString.contains("([])") {
             return "[]"
         }
         
@@ -59,7 +59,7 @@ extension GodotConstant {
         }
         
         if type == .float && rawString.last == "f" {
-            return rawString.dropLast() + "0"
+            return "\(rawString.dropLast())0"
         }
         
         // Decompose initializers types.
@@ -158,7 +158,7 @@ extension GodotConstant {
             break
         }
         
-        return rawString
+        return .init(rawString)
     }
     
     /// Decomposes the parameters of an init. For instance, the String "`Rect(1, 3, 2, 0)`"
@@ -188,7 +188,11 @@ extension GodotConstant {
         return (type, parameters)
     }
     
-    private func recomposeInitParameters(forType type: String, parameters: [String], labels: String...) -> String {
+    private func recomposeInitParameters(
+        forType type: String,
+        parameters: [String],
+        labels: String...
+    ) -> Syntax {
         var string = type + "("
         for index in 0..<parameters.count {
             let parameter = parameters[index].replacingOccurrences(of: "inf", with: ".infinity")
@@ -201,7 +205,7 @@ extension GodotConstant {
         }
         string += ")"
         
-        return string
+        return .init(string)
     }
     
     private func vectorInit<Parameters>(with parameters: Parameters) -> String

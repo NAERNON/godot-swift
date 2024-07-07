@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class OpenXRInteractionProfileMetadata: Object {
     internal static var __method_binding_register_profile_rename: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "register_profile_rename").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3186203200)!
-        }
+            GodotStringName(swiftStaticString: "register_profile_rename").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3186203200)!
+            }
         }
     }()
-
+    
     public func registerProfileRename(
         oldName: Godot.GodotString,
         newName: Godot.GodotString
@@ -33,15 +33,15 @@ open class OpenXRInteractionProfileMetadata: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_register_top_level_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "register_top_level_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 254767734)!
-        }
+            GodotStringName(swiftStaticString: "register_top_level_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 254767734)!
+            }
         }
     }()
-
+    
     public func registerTopLevelPath(
         displayName: Godot.GodotString,
         openxrPath: Godot.GodotString,
@@ -64,15 +64,15 @@ open class OpenXRInteractionProfileMetadata: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_register_interaction_profile: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "register_interaction_profile").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 254767734)!
-        }
+            GodotStringName(swiftStaticString: "register_interaction_profile").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 254767734)!
+            }
         }
     }()
-
+    
     public func registerInteractionProfile(
         displayName: Godot.GodotString,
         openxrPath: Godot.GodotString,
@@ -95,15 +95,15 @@ open class OpenXRInteractionProfileMetadata: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_register_io_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "register_io_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3443511926)!
-        }
+            GodotStringName(swiftStaticString: "register_io_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3443511926)!
+            }
         }
     }()
-
+    
     public func registerIoPath(
         interactionProfile: Godot.GodotString,
         displayName: Godot.GodotString,
@@ -135,18 +135,15 @@ open class OpenXRInteractionProfileMetadata: Object {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

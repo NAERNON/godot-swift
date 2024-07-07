@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class Marshalls: Object {
     internal static var __method_binding_variant_to_base64: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "variant_to_base64").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3876248563)!
-        }
+            GodotStringName(swiftStaticString: "variant_to_base64").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3876248563)!
+            }
         }
     }()
-
+    
     public func variantToBase64<Value: Variant.Storable>(
         variant: Value,
         fullObjects: Bool = false
@@ -35,15 +35,15 @@ open class Marshalls: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_base64_to_variant: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "base64_to_variant").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 218087648)!
-        }
+            GodotStringName(swiftStaticString: "base64_to_variant").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 218087648)!
+            }
         }
     }()
-
+    
     public func base64ToVariant(
         base64Str: Godot.GodotString,
         allowObjects: Bool = false
@@ -65,15 +65,15 @@ open class Marshalls: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_raw_to_base64: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "raw_to_base64").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3999417757)!
-        }
+            GodotStringName(swiftStaticString: "raw_to_base64").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3999417757)!
+            }
         }
     }()
-
+    
     public func rawToBase64(
         array: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.GodotString {
@@ -92,15 +92,15 @@ open class Marshalls: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_base64_to_raw: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "base64_to_raw").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 659035735)!
-        }
+            GodotStringName(swiftStaticString: "base64_to_raw").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 659035735)!
+            }
         }
     }()
-
+    
     public func base64ToRaw(
         base64Str: Godot.GodotString
     ) -> Godot.GodotContiguousArray<UInt8> {
@@ -119,15 +119,15 @@ open class Marshalls: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_utf8_to_base64: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "utf8_to_base64").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1703090593)!
-        }
+            GodotStringName(swiftStaticString: "utf8_to_base64").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1703090593)!
+            }
         }
     }()
-
+    
     public func utf8ToBase64(
         utf8Str: Godot.GodotString
     ) -> Godot.GodotString {
@@ -146,15 +146,15 @@ open class Marshalls: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_base64_to_utf8: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "base64_to_utf8").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1703090593)!
-        }
+            GodotStringName(swiftStaticString: "base64_to_utf8").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1703090593)!
+            }
         }
     }()
-
+    
     public func base64ToUtf8(
         base64Str: Godot.GodotString
     ) -> Godot.GodotString {
@@ -173,18 +173,15 @@ open class Marshalls: Object {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

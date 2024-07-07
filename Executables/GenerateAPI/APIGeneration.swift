@@ -6,10 +6,13 @@ struct APIGeneration: AsyncParsableCommand {
     @Argument(help: "The configuration of Godot.\n[float-32, float-64, double-32, double-64]")
     private var buildConfiguration: BuildConfiguration
     
+    @Option(help: "The maximum number of concurrent tasks.")
+    private var concurrentTaskCount: Int = 1
+    
     @Flag(name: .shortAndLong, help: "The generated files are not written to disk.")
     private var noWrite: Bool = false
     
-    @Flag(name: .long, help: "Only a small subset of classes are generated.")
+    @Flag(name: .long, help: "Only a small subset of classes is generated.")
     private var subset: Bool = false
     
     func run() async throws {
@@ -59,7 +62,10 @@ struct APIGeneration: AsyncParsableCommand {
                     buildConfiguration: buildConfiguration
                 )
                 
-                try await pool.generateFiles(writeFiles: !noWrite)
+                try await pool.generateFiles(
+                    writeFiles: !noWrite,
+                    concurrentTaskCount: concurrentTaskCount
+                )
             }
         }
     }
@@ -99,14 +105,14 @@ struct APIGeneration: AsyncParsableCommand {
         for builtinClass in extensionAPI.builtinClasses {
             pool.append(
                 source: builtinClass,
-                nameURLComponent: "Builtin Structs/" + builtinClass.name.syntax(options: .packedArrayStorage) + "+Bindings.swift"
+                nameURLComponent: "Builtin Structs/" + builtinClass.name.syntax(options: .packedArrayStorage).formatted() + "+Bindings.swift"
             )
         }
         
         for `class` in extensionAPI.classes {
             pool.append(
                 source: `class`,
-                nameURLComponent: "Classes/" + `class`.identifier + ".swift"
+                nameURLComponent: "Classes/" + `class`.identifier.formatted() + ".swift"
             )
         }
         

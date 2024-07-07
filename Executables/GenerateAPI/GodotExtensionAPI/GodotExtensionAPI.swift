@@ -70,10 +70,10 @@ private extension GodotClass.Method {
 private extension GodotType {
     func isInFilter(classFilter: (GodotType) -> Bool) -> Bool {
         switch self {
-        case .typedArray(let genericType):
-            return genericType.isInFilter(classFilter: classFilter)
+        case .generic(let type, let genericType) where type == .array:
+            !genericType.isGodotClass || classFilter(genericType)
         default:
-            return !isGodotClass || classFilter(self)
+            !isGodotClass || classFilter(self)
         }
     }
 }

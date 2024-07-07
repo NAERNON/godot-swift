@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class PhysicsPointQueryParameters2D: RefCounted {
     internal static var __method_binding_set_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setPosition(
         _ position: Godot.Vector2
     ) {
@@ -30,15 +30,15 @@ open class PhysicsPointQueryParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getPosition() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -51,15 +51,15 @@ open class PhysicsPointQueryParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_canvas_instance_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_canvas_instance_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_canvas_instance_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setCanvasInstanceID(
         _ canvasInstanceID: UInt64
     ) {
@@ -76,15 +76,15 @@ open class PhysicsPointQueryParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_canvas_instance_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_canvas_instance_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_canvas_instance_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getCanvasInstanceID() -> UInt64 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -97,15 +97,15 @@ open class PhysicsPointQueryParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_collision_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_collision_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setCollisionMask(
         _ collisionMask: UInt32
     ) {
@@ -122,15 +122,15 @@ open class PhysicsPointQueryParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_collision_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_collision_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getCollisionMask() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -143,15 +143,15 @@ open class PhysicsPointQueryParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_exclude: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_exclude").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
-        }
+            GodotStringName(swiftStaticString: "set_exclude").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
+            }
         }
     }()
-
+    
     private func __setExclude(
         _ exclude: Godot.GodotArray<Godot.RID>
     ) {
@@ -168,15 +168,15 @@ open class PhysicsPointQueryParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_exclude: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_exclude").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
-        }
+            GodotStringName(swiftStaticString: "get_exclude").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
+            }
         }
     }()
-
+    
     private func __getExclude() -> Godot.GodotArray<Godot.RID> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -189,15 +189,15 @@ open class PhysicsPointQueryParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_collide_with_bodies: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_collide_with_bodies").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_collide_with_bodies").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setCollideWithBodies(
         enable: Bool
     ) {
@@ -214,15 +214,15 @@ open class PhysicsPointQueryParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_is_collide_with_bodies_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_collide_with_bodies_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_collide_with_bodies_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isCollideWithBodiesEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -235,15 +235,15 @@ open class PhysicsPointQueryParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_collide_with_areas: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_collide_with_areas").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_collide_with_areas").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setCollideWithAreas(
         enable: Bool
     ) {
@@ -260,15 +260,15 @@ open class PhysicsPointQueryParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_is_collide_with_areas_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_collide_with_areas_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_collide_with_areas_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isCollideWithAreasEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -281,84 +281,81 @@ open class PhysicsPointQueryParameters2D: RefCounted {
             }
         }
     }
-
+    
     public var position: Godot.Vector2 {
         get {
             __getPosition()
         }
-        set {
+        set(newValue) {
             __setPosition(
                 newValue
             )
         }
     }
-
+    
     public var canvasInstanceID: UInt64 {
         get {
             __getCanvasInstanceID()
         }
-        set {
+        set(newValue) {
             __setCanvasInstanceID(
                 newValue
             )
         }
     }
-
+    
     public var collisionMask: UInt32 {
         get {
             __getCollisionMask()
         }
-        set {
+        set(newValue) {
             __setCollisionMask(
                 newValue
             )
         }
     }
-
+    
     public var exclude: Godot.GodotArray<Godot.RID> {
         get {
             __getExclude()
         }
-        set {
+        set(newValue) {
             __setExclude(
                 newValue
             )
         }
     }
-
+    
     public var isCollideWithBodiesEnabled: Bool {
         get {
             __isCollideWithBodiesEnabled()
         }
-        set {
+        set(newValue) {
             __setCollideWithBodies(
                 enable: newValue
             )
         }
     }
-
+    
     public var isCollideWithAreasEnabled: Bool {
         get {
             __isCollideWithAreasEnabled()
         }
-        set {
+        set(newValue) {
             __setCollideWithAreas(
                 enable: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

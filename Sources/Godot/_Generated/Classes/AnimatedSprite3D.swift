@@ -6,11 +6,10 @@ import GodotExtensionHeaders
 
 @GodotClass
 open class AnimatedSprite3D: SpriteBase3D {
-
+    
     public func spriteFramesChanged() {
         _ = spriteFramesChangedSignal.emit()
     }
-
     public lazy var spriteFramesChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "sprite_frames_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -25,11 +24,11 @@ open class AnimatedSprite3D: SpriteBase3D {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func animationChanged() {
         _ = animationChangedSignal.emit()
     }
-
     public lazy var animationChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "animation_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -44,11 +43,11 @@ open class AnimatedSprite3D: SpriteBase3D {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func frameChanged() {
         _ = frameChangedSignal.emit()
     }
-
     public lazy var frameChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "frame_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -63,11 +62,11 @@ open class AnimatedSprite3D: SpriteBase3D {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func animationLooped() {
         _ = animationLoopedSignal.emit()
     }
-
     public lazy var animationLoopedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "animation_looped") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -82,11 +81,11 @@ open class AnimatedSprite3D: SpriteBase3D {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func animationFinished() {
         _ = animationFinishedSignal.emit()
     }
-
     public lazy var animationFinishedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "animation_finished") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -101,15 +100,15 @@ open class AnimatedSprite3D: SpriteBase3D {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_set_sprite_frames: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_sprite_frames").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 905781144)!
-        }
+            GodotStringName(swiftStaticString: "set_sprite_frames").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 905781144)!
+            }
         }
     }()
-
+    
     private func __setSpriteFrames(
         _ spriteFrames: Godot.SpriteFrames?
     ) {
@@ -128,15 +127,15 @@ open class AnimatedSprite3D: SpriteBase3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_sprite_frames: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_sprite_frames").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3804851214)!
-        }
+            GodotStringName(swiftStaticString: "get_sprite_frames").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3804851214)!
+            }
         }
     }()
-
+    
     private func __getSpriteFrames() -> Godot.SpriteFrames? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -149,15 +148,15 @@ open class AnimatedSprite3D: SpriteBase3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_animation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
-        }
+            GodotStringName(swiftStaticString: "set_animation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
+            }
         }
     }()
-
+    
     private func __setAnimation(
         name: Godot.GodotStringName
     ) {
@@ -174,15 +173,15 @@ open class AnimatedSprite3D: SpriteBase3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_animation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
-        }
+            GodotStringName(swiftStaticString: "get_animation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
+            }
         }
     }()
-
+    
     private func __getAnimation() -> Godot.GodotStringName {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -195,15 +194,15 @@ open class AnimatedSprite3D: SpriteBase3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_autoplay: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_autoplay").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_autoplay").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setAutoplay(
         name: Godot.GodotString
     ) {
@@ -220,15 +219,15 @@ open class AnimatedSprite3D: SpriteBase3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_autoplay: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_autoplay").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_autoplay").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getAutoplay() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -241,15 +240,15 @@ open class AnimatedSprite3D: SpriteBase3D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_playing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_playing").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_playing").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isPlaying() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -262,15 +261,15 @@ open class AnimatedSprite3D: SpriteBase3D {
             }
         }
     }
-
+    
     internal static var __method_binding_play: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "play").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2372066587)!
-        }
+            GodotStringName(swiftStaticString: "play").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2372066587)!
+            }
         }
     }()
-
+    
     public func play(
         name: Godot.GodotStringName = "",
         customSpeed: Double = 1.0,
@@ -293,15 +292,15 @@ open class AnimatedSprite3D: SpriteBase3D {
             }
         }
     }
-
+    
     internal static var __method_binding_play_backwards: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "play_backwards").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1421762485)!
-        }
+            GodotStringName(swiftStaticString: "play_backwards").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1421762485)!
+            }
         }
     }()
-
+    
     public func playBackwards(
         name: Godot.GodotStringName = ""
     ) {
@@ -318,15 +317,15 @@ open class AnimatedSprite3D: SpriteBase3D {
             }
         }
     }
-
+    
     internal static var __method_binding_pause: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "pause").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "pause").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func pause() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -337,15 +336,15 @@ open class AnimatedSprite3D: SpriteBase3D {
             )
         }
     }
-
+    
     internal static var __method_binding_stop: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "stop").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "stop").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func stop() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -356,15 +355,15 @@ open class AnimatedSprite3D: SpriteBase3D {
             )
         }
     }
-
+    
     internal static var __method_binding_set_frame: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_frame").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_frame").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setFrame(
         _ frame: Int32
     ) {
@@ -381,15 +380,15 @@ open class AnimatedSprite3D: SpriteBase3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_frame: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_frame").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_frame").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getFrame() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -402,15 +401,15 @@ open class AnimatedSprite3D: SpriteBase3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_frame_progress: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_frame_progress").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_frame_progress").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setFrameProgress(
         _ progress: Double
     ) {
@@ -427,15 +426,15 @@ open class AnimatedSprite3D: SpriteBase3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_frame_progress: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_frame_progress").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_frame_progress").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getFrameProgress() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -448,15 +447,15 @@ open class AnimatedSprite3D: SpriteBase3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_frame_and_progress: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_frame_and_progress").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
-        }
+            GodotStringName(swiftStaticString: "set_frame_and_progress").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
+            }
         }
     }()
-
+    
     public func setFrameAndProgress(
         frame: Int32,
         progress: Double
@@ -476,15 +475,15 @@ open class AnimatedSprite3D: SpriteBase3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_speed_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_speed_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_speed_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setSpeedScale(
         _ speedScale: Double
     ) {
@@ -501,15 +500,15 @@ open class AnimatedSprite3D: SpriteBase3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_speed_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_speed_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_speed_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getSpeedScale() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -522,15 +521,15 @@ open class AnimatedSprite3D: SpriteBase3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_playing_speed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_playing_speed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_playing_speed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     public func playingSpeed() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -543,84 +542,81 @@ open class AnimatedSprite3D: SpriteBase3D {
             }
         }
     }
-
+    
     public var spriteFrames: Godot.SpriteFrames? {
         get {
             __getSpriteFrames()
         }
-        set {
+        set(newValue) {
             __setSpriteFrames(
                 newValue
             )
         }
     }
-
+    
     public var animation: Godot.GodotStringName {
         get {
             __getAnimation()
         }
-        set {
+        set(newValue) {
             __setAnimation(
                 name: newValue
             )
         }
     }
-
+    
     public var autoplay: Godot.GodotString {
         get {
             __getAutoplay()
         }
-        set {
+        set(newValue) {
             __setAutoplay(
                 name: newValue
             )
         }
     }
-
+    
     public var frame: Int32 {
         get {
             __getFrame()
         }
-        set {
+        set(newValue) {
             __setFrame(
                 newValue
             )
         }
     }
-
+    
     public var frameProgress: Double {
         get {
             __getFrameProgress()
         }
-        set {
+        set(newValue) {
             __setFrameProgress(
                 newValue
             )
         }
     }
-
+    
     public var speedScale: Double {
         get {
             __getSpeedScale()
         }
-        set {
+        set(newValue) {
             __setSpeedScale(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

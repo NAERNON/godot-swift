@@ -6,10 +6,11 @@ import GodotExtensionHeaders
 
 internal enum SignalBindings {
     static private var areBindingsLoaded = false
-
+    
     internal static func loadBindings() {
         precondition(!areBindingsLoaded, "Signal bindings are already loaded.")
         areBindingsLoaded = true
+        
         destructor = GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_SIGNAL)!
         constructor = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_SIGNAL, 0)!
         constructorFromSignal = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_SIGNAL, 1)!
@@ -49,46 +50,27 @@ internal enum SignalBindings {
             GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_SIGNAL, __ptr__method_name, 3286317445)!
         }
     }
-
-    static private (set) var destructor: GDExtensionPtrDestructor!
-
-    static private (set) var constructor: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromSignal: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromObjectGodotStringName: GDExtensionPtrConstructor!
-
-    static private (set) var operatorEqualVariant: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNotEqualVariant: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNot: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorEqualSignal: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNotEqualSignal: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorInGodotdictionary: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorInGodotarray: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var methodIsNull: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodGetObject: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodGetObjectID: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodGetName: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodConnect: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodDisconnect: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodIsConnected: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodGetConnections: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodEmit: GDExtensionPtrBuiltInMethod!
+    
+    static private(set) var destructor: GDExtensionPtrDestructor!
+    static private(set) var constructor: GDExtensionPtrConstructor!
+    static private(set) var constructorFromSignal: GDExtensionPtrConstructor!
+    static private(set) var constructorFromObjectGodotStringName: GDExtensionPtrConstructor!
+    static private(set) var operatorEqualVariant: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNotEqualVariant: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNot: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorEqualSignal: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNotEqualSignal: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorInGodotdictionary: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorInGodotarray: GDExtensionPtrOperatorEvaluator!
+    static private(set) var methodIsNull: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodGetObject: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodGetObjectID: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodGetName: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodConnect: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodDisconnect: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodIsConnected: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodGetConnections: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodEmit: GDExtensionPtrBuiltInMethod!
 }
 
 extension Signal {
@@ -97,7 +79,7 @@ extension Signal {
     ) -> Opaque.Storage {
         Opaque.Storage(size: 16, destructorPtr: useDestructor ? SignalBindings.destructor : nil)
     }
-
+    
     static internal func make() -> Opaque.Storage {
         var __temporary: Opaque.Storage = makeOpaqueStorage()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -105,7 +87,7 @@ extension Signal {
         }
         return __temporary
     }
-
+    
     static internal func make(
         from: Godot.Signal
     ) -> Opaque.Storage {
@@ -119,7 +101,7 @@ extension Signal {
         }
         return __temporary
     }
-
+    
     static internal func make(
         object: Godot.Object?,
         signal: Godot.GodotStringName
@@ -138,7 +120,7 @@ extension Signal {
         }
         return __temporary
     }
-
+    
     static internal func _operatorEqual<Value: Variant.Storable>(
         _ lhs: Godot.Signal,
         _ rhs: Value
@@ -151,7 +133,7 @@ extension Signal {
             }
         }
     }
-
+    
     static internal func _operatorNotEqual<Value: Variant.Storable>(
         _ lhs: Godot.Signal,
         _ rhs: Value
@@ -164,7 +146,7 @@ extension Signal {
             }
         }
     }
-
+    
     static internal func _operatorNot(
         _ lhs: Godot.Signal
     ) -> Bool {
@@ -174,7 +156,7 @@ extension Signal {
             }
         }
     }
-
+    
     static internal func _operatorEqual(
         _ lhs: Godot.Signal,
         _ rhs: Godot.Signal
@@ -187,7 +169,7 @@ extension Signal {
             }
         }
     }
-
+    
     static internal func _operatorNotEqual(
         _ lhs: Godot.Signal,
         _ rhs: Godot.Signal
@@ -200,7 +182,7 @@ extension Signal {
             }
         }
     }
-
+    
     static internal func _operatorIn<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ lhs: Godot.Signal,
         _ rhs: Godot.GodotDictionary<Value1, Value2>
@@ -213,7 +195,7 @@ extension Signal {
             }
         }
     }
-
+    
     static internal func _operatorIn<Value: Variant.Storable>(
         _ lhs: Godot.Signal,
         _ rhs: Godot.GodotArray<Value>
@@ -226,7 +208,7 @@ extension Signal {
             }
         }
     }
-
+    
     internal func _isNull() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -234,7 +216,7 @@ extension Signal {
             }
         }
     }
-
+    
     internal func _object() -> Godot.Object? {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -242,7 +224,7 @@ extension Signal {
             }
         }
     }
-
+    
     internal func _objectID() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -250,7 +232,7 @@ extension Signal {
             }
         }
     }
-
+    
     internal func _name() -> Godot.GodotStringName {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -258,7 +240,7 @@ extension Signal {
             }
         }
     }
-
+    
     internal func _connect(
         callable: Godot.Callable,
         flags: Int = 0
@@ -275,7 +257,7 @@ extension Signal {
             }
         }
     }
-
+    
     internal func _disconnect(
         callable: Godot.Callable
     ) {
@@ -287,7 +269,7 @@ extension Signal {
             }
         }
     }
-
+    
     internal func _isConnected(
         callable: Godot.Callable
     ) -> Bool {
@@ -301,7 +283,7 @@ extension Signal {
             }
         }
     }
-
+    
     internal func _connections() -> Godot.AnyGodotArray {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -309,8 +291,8 @@ extension Signal {
             }
         }
     }
-
-    internal func _emit<each VariantRest : Variant.Storable>(
+    
+    internal func _emit<each VariantRest: Variant.Storable>(
         _ rest: repeat each VariantRest
     ) {
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { packCount, __accessPtr in

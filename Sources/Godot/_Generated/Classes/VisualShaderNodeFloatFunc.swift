@@ -40,53 +40,54 @@ open class VisualShaderNodeFloatFunc: VisualShaderNode {
         case trunc = 30
         case oneminus = 31
         case max = 32
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Sin", 0),
-            ("Cos", 1),
-            ("Tan", 2),
-            ("Asin", 3),
-            ("Acos", 4),
-            ("Atan", 5),
-            ("Sinh", 6),
-            ("Cosh", 7),
-            ("Tanh", 8),
-            ("Log", 9),
-            ("Exp", 10),
-            ("Sqrt", 11),
-            ("Abs", 12),
-            ("Sign", 13),
-            ("Floor", 14),
-            ("Round", 15),
-            ("Ceil", 16),
-            ("Fract", 17),
-            ("Saturate", 18),
-            ("Negate", 19),
-            ("Acosh", 20),
-            ("Asinh", 21),
-            ("Atanh", 22),
-            ("Degrees", 23),
-            ("Exp2", 24),
-            ("Inverse Sqrt", 25),
-            ("Log2", 26),
-            ("Radians", 27),
-            ("Reciprocal", 28),
-            ("Roundeven", 29),
-            ("Trunc", 30),
-            ("Oneminus", 31),
-            ("Max", 32),]
+               ("Sin", 0),
+               ("Cos", 1),
+               ("Tan", 2),
+               ("Asin", 3),
+               ("Acos", 4),
+               ("Atan", 5),
+               ("Sinh", 6),
+               ("Cosh", 7),
+               ("Tanh", 8),
+               ("Log", 9),
+               ("Exp", 10),
+               ("Sqrt", 11),
+               ("Abs", 12),
+               ("Sign", 13),
+               ("Floor", 14),
+               ("Round", 15),
+               ("Ceil", 16),
+               ("Fract", 17),
+               ("Saturate", 18),
+               ("Negate", 19),
+               ("Acosh", 20),
+               ("Asinh", 21),
+               ("Atanh", 22),
+               ("Degrees", 23),
+               ("Exp2", 24),
+               ("Inverse Sqrt", 25),
+               ("Log2", 26),
+               ("Radians", 27),
+               ("Reciprocal", 28),
+               ("Roundeven", 29),
+               ("Trunc", 30),
+               ("Oneminus", 31),
+               ("Max", 32),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_function: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_function").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 536026177)!
-        }
+            GodotStringName(swiftStaticString: "set_function").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 536026177)!
+            }
         }
     }()
-
+    
     private func __setFunction(
         `func`: Godot.VisualShaderNodeFloatFunc.Function
     ) {
@@ -103,15 +104,15 @@ open class VisualShaderNodeFloatFunc: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_function: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_function").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2033948868)!
-        }
+            GodotStringName(swiftStaticString: "get_function").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2033948868)!
+            }
         }
     }()
-
+    
     private func __getFunction() -> Godot.VisualShaderNodeFloatFunc.Function {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -124,29 +125,26 @@ open class VisualShaderNodeFloatFunc: VisualShaderNode {
             }
         }
     }
-
+    
     public var function: Godot.VisualShaderNodeFloatFunc.Function {
         get {
             __getFunction()
         }
-        set {
+        set(newValue) {
             __setFunction(
                 func: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

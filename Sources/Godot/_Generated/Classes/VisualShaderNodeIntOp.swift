@@ -20,33 +20,34 @@ open class VisualShaderNodeIntOp: VisualShaderNode {
         case bitwiseLeftShift = 10
         case bitwiseRightShift = 11
         case enumSize = 12
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Add", 0),
-            ("Sub", 1),
-            ("Mul", 2),
-            ("Div", 3),
-            ("Mod", 4),
-            ("Max", 5),
-            ("Min", 6),
-            ("Bitwise And", 7),
-            ("Bitwise Or", 8),
-            ("Bitwise Xor", 9),
-            ("Bitwise Left Shift", 10),
-            ("Bitwise Right Shift", 11),
-            ("Enum Size", 12),]
+               ("Add", 0),
+               ("Sub", 1),
+               ("Mul", 2),
+               ("Div", 3),
+               ("Mod", 4),
+               ("Max", 5),
+               ("Min", 6),
+               ("Bitwise And", 7),
+               ("Bitwise Or", 8),
+               ("Bitwise Xor", 9),
+               ("Bitwise Left Shift", 10),
+               ("Bitwise Right Shift", 11),
+               ("Enum Size", 12),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_operator: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_operator").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1677909323)!
-        }
+            GodotStringName(swiftStaticString: "set_operator").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1677909323)!
+            }
         }
     }()
-
+    
     private func __setOperator(
         op: Godot.VisualShaderNodeIntOp.Operator
     ) {
@@ -63,15 +64,15 @@ open class VisualShaderNodeIntOp: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_operator: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_operator").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1236987913)!
-        }
+            GodotStringName(swiftStaticString: "get_operator").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1236987913)!
+            }
         }
     }()
-
+    
     private func __getOperator() -> Godot.VisualShaderNodeIntOp.Operator {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -84,29 +85,26 @@ open class VisualShaderNodeIntOp: VisualShaderNode {
             }
         }
     }
-
+    
     public var `operator`: Godot.VisualShaderNodeIntOp.Operator {
         get {
             __getOperator()
         }
-        set {
+        set(newValue) {
             __setOperator(
                 op: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

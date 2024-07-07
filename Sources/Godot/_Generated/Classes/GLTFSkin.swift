@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class GLTFSkin: Resource {
     internal static var __method_binding_get_skin_root: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_skin_root").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
-        }
+            GodotStringName(swiftStaticString: "get_skin_root").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
+            }
         }
     }()
-
+    
     private func __getSkinRoot() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -26,15 +26,15 @@ open class GLTFSkin: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_skin_root: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_skin_root").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_skin_root").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setSkinRoot(
         _ skinRoot: Int32
     ) {
@@ -51,15 +51,15 @@ open class GLTFSkin: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_joints_original: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_joints_original").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
-        }
+            GodotStringName(swiftStaticString: "get_joints_original").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
+            }
         }
     }()
-
+    
     private func __getJointsOriginal() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -72,15 +72,15 @@ open class GLTFSkin: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_joints_original: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_joints_original").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
-        }
+            GodotStringName(swiftStaticString: "set_joints_original").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
+            }
         }
     }()
-
+    
     private func __setJointsOriginal(
         _ jointsOriginal: Godot.GodotContiguousArray<Int32>
     ) {
@@ -97,15 +97,15 @@ open class GLTFSkin: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_inverse_binds: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_inverse_binds").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
-        }
+            GodotStringName(swiftStaticString: "get_inverse_binds").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
+            }
         }
     }()
-
+    
     private func __getInverseBinds() -> Godot.GodotArray<Godot.Transform3D> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -118,15 +118,15 @@ open class GLTFSkin: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_inverse_binds: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_inverse_binds").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
-        }
+            GodotStringName(swiftStaticString: "set_inverse_binds").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
+            }
         }
     }()
-
+    
     private func __setInverseBinds(
         _ inverseBinds: Godot.GodotArray<Godot.Transform3D>
     ) {
@@ -143,15 +143,15 @@ open class GLTFSkin: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_joints: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_joints").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
-        }
+            GodotStringName(swiftStaticString: "get_joints").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
+            }
         }
     }()
-
+    
     private func __getJoints() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -164,15 +164,15 @@ open class GLTFSkin: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_joints: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_joints").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
-        }
+            GodotStringName(swiftStaticString: "set_joints").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
+            }
         }
     }()
-
+    
     private func __setJoints(
         _ joints: Godot.GodotContiguousArray<Int32>
     ) {
@@ -189,15 +189,15 @@ open class GLTFSkin: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_non_joints: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_non_joints").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
-        }
+            GodotStringName(swiftStaticString: "get_non_joints").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
+            }
         }
     }()
-
+    
     private func __getNonJoints() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -210,15 +210,15 @@ open class GLTFSkin: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_non_joints: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_non_joints").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
-        }
+            GodotStringName(swiftStaticString: "set_non_joints").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
+            }
         }
     }()
-
+    
     private func __setNonJoints(
         _ nonJoints: Godot.GodotContiguousArray<Int32>
     ) {
@@ -235,15 +235,15 @@ open class GLTFSkin: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_roots: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_roots").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
-        }
+            GodotStringName(swiftStaticString: "get_roots").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
+            }
         }
     }()
-
+    
     private func __getRoots() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -256,15 +256,15 @@ open class GLTFSkin: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_roots: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_roots").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
-        }
+            GodotStringName(swiftStaticString: "set_roots").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
+            }
         }
     }()
-
+    
     private func __setRoots(
         _ roots: Godot.GodotContiguousArray<Int32>
     ) {
@@ -281,15 +281,15 @@ open class GLTFSkin: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_skeleton: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_skeleton").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
-        }
+            GodotStringName(swiftStaticString: "get_skeleton").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
+            }
         }
     }()
-
+    
     private func __getSkeleton() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -302,15 +302,15 @@ open class GLTFSkin: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_skeleton: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_skeleton").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_skeleton").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setSkeleton(
         _ skeleton: Int32
     ) {
@@ -327,15 +327,15 @@ open class GLTFSkin: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_joint_i_to_bone_i: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_joint_i_to_bone_i").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2382534195)!
-        }
+            GodotStringName(swiftStaticString: "get_joint_i_to_bone_i").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2382534195)!
+            }
         }
     }()
-
+    
     private func __getJointIToBoneI() -> Godot.AnyGodotDictionary {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -348,15 +348,15 @@ open class GLTFSkin: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_joint_i_to_bone_i: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_joint_i_to_bone_i").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155329257)!
-        }
+            GodotStringName(swiftStaticString: "set_joint_i_to_bone_i").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155329257)!
+            }
         }
     }()
-
+    
     private func __setJointIToBoneI<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ jointIToBoneI: Godot.GodotDictionary<Value1, Value2>
     ) {
@@ -373,15 +373,15 @@ open class GLTFSkin: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_joint_i_to_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_joint_i_to_name").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2382534195)!
-        }
+            GodotStringName(swiftStaticString: "get_joint_i_to_name").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2382534195)!
+            }
         }
     }()
-
+    
     private func __getJointIToName() -> Godot.AnyGodotDictionary {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -394,15 +394,15 @@ open class GLTFSkin: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_joint_i_to_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_joint_i_to_name").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155329257)!
-        }
+            GodotStringName(swiftStaticString: "set_joint_i_to_name").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155329257)!
+            }
         }
     }()
-
+    
     private func __setJointIToName<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ jointIToName: Godot.GodotDictionary<Value1, Value2>
     ) {
@@ -419,15 +419,15 @@ open class GLTFSkin: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_godot_skin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_godot_skin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1032037385)!
-        }
+            GodotStringName(swiftStaticString: "get_godot_skin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1032037385)!
+            }
         }
     }()
-
+    
     private func __getGodotSkin() -> Godot.Skin? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -440,15 +440,15 @@ open class GLTFSkin: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_godot_skin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_godot_skin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3971435618)!
-        }
+            GodotStringName(swiftStaticString: "set_godot_skin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3971435618)!
+            }
         }
     }()
-
+    
     private func __setGodotSkin(
         _ godotSkin: Godot.Skin?
     ) {
@@ -467,128 +467,125 @@ open class GLTFSkin: Resource {
             }
         }
     }
-
+    
     public var skinRoot: Int32 {
         get {
             __getSkinRoot()
         }
-        set {
+        set(newValue) {
             __setSkinRoot(
                 newValue
             )
         }
     }
-
+    
     public var jointsOriginal: Godot.GodotContiguousArray<Int32> {
         get {
             __getJointsOriginal()
         }
-        set {
+        set(newValue) {
             __setJointsOriginal(
                 newValue
             )
         }
     }
-
+    
     public var inverseBinds: Godot.GodotArray<Godot.Transform3D> {
         get {
             __getInverseBinds()
         }
-        set {
+        set(newValue) {
             __setInverseBinds(
                 newValue
             )
         }
     }
-
+    
     public var joints: Godot.GodotContiguousArray<Int32> {
         get {
             __getJoints()
         }
-        set {
+        set(newValue) {
             __setJoints(
                 newValue
             )
         }
     }
-
+    
     public var nonJoints: Godot.GodotContiguousArray<Int32> {
         get {
             __getNonJoints()
         }
-        set {
+        set(newValue) {
             __setNonJoints(
                 newValue
             )
         }
     }
-
+    
     public var roots: Godot.GodotContiguousArray<Int32> {
         get {
             __getRoots()
         }
-        set {
+        set(newValue) {
             __setRoots(
                 newValue
             )
         }
     }
-
+    
     public var skeleton: Int32 {
         get {
             __getSkeleton()
         }
-        set {
+        set(newValue) {
             __setSkeleton(
                 newValue
             )
         }
     }
-
+    
     public var jointIToBoneI: Godot.AnyGodotDictionary {
         get {
             __getJointIToBoneI()
         }
-        set {
+        set(newValue) {
             __setJointIToBoneI(
                 newValue
             )
         }
     }
-
+    
     public var jointIToName: Godot.AnyGodotDictionary {
         get {
             __getJointIToName()
         }
-        set {
+        set(newValue) {
             __setJointIToName(
                 newValue
             )
         }
     }
-
+    
     public var godotSkin: Godot.Skin? {
         get {
             __getGodotSkin()
         }
-        set {
+        set(newValue) {
             __setGodotSkin(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

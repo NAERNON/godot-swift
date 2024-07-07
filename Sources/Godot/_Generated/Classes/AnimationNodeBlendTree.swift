@@ -8,26 +8,16 @@ import GodotExtensionHeaders
 open class AnimationNodeBlendTree: AnimationRootNode {
     public struct NodeChangedSignalInput: Godot.SignalInput {
         public let nodeName: Godot.GodotStringName
-
-        fileprivate init(
-            nodeName: Godot.GodotStringName
-        ) {
+        fileprivate init(nodeName: Godot.GodotStringName) {
             self.nodeName = nodeName
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.nodeName)]
         }
     }
-
-    public func nodeChanged(
-        nodeName: Godot.GodotStringName
-    ) {
+    public func nodeChanged(nodeName: Godot.GodotStringName) {
         _ = nodeChangedSignal.emit(.init(nodeName: nodeName))
     }
-
     public lazy var nodeChangedSignal: Godot.SignalEmitter<NodeChangedSignalInput> = {
         .init(object: self, signalName: "node_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<NodeChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -42,27 +32,27 @@ open class AnimationNodeBlendTree: AnimationRootNode {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public static let connectionOk: Int = 0
-
+    
     public static let connectionErrorNoInput: Int = 1
-
+    
     public static let connectionErrorNoInputIndex: Int = 2
-
+    
     public static let connectionErrorNoOutput: Int = 3
-
+    
     public static let connectionErrorSameNode: Int = 4
-
+    
     public static let connectionErrorConnectionExists: Int = 5
-
+    
     internal static var __method_binding_add_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1980270704)!
-        }
+            GodotStringName(swiftStaticString: "add_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1980270704)!
+            }
         }
     }()
-
+    
     public func addNode(
         name: Godot.GodotStringName,
         node: Godot.AnimationNode?,
@@ -87,15 +77,15 @@ open class AnimationNodeBlendTree: AnimationRootNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 625644256)!
-        }
+            GodotStringName(swiftStaticString: "get_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 625644256)!
+            }
         }
     }()
-
+    
     public func node(
         name: Godot.GodotStringName
     ) -> Godot.AnimationNode? {
@@ -114,15 +104,15 @@ open class AnimationNodeBlendTree: AnimationRootNode {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
-        }
+            GodotStringName(swiftStaticString: "remove_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
+            }
         }
     }()
-
+    
     public func removeNode(
         name: Godot.GodotStringName
     ) {
@@ -139,15 +129,15 @@ open class AnimationNodeBlendTree: AnimationRootNode {
             }
         }
     }
-
+    
     internal static var __method_binding_rename_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "rename_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740211285)!
-        }
+            GodotStringName(swiftStaticString: "rename_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740211285)!
+            }
         }
     }()
-
+    
     public func renameNode(
         name: Godot.GodotStringName,
         newName: Godot.GodotStringName
@@ -167,15 +157,15 @@ open class AnimationNodeBlendTree: AnimationRootNode {
             }
         }
     }
-
+    
     internal static var __method_binding_has_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
-        }
+            GodotStringName(swiftStaticString: "has_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
+            }
         }
     }()
-
+    
     public func hasNode(
         name: Godot.GodotStringName
     ) -> Bool {
@@ -194,15 +184,15 @@ open class AnimationNodeBlendTree: AnimationRootNode {
             }
         }
     }
-
+    
     internal static var __method_binding_connect_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "connect_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2168001410)!
-        }
+            GodotStringName(swiftStaticString: "connect_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2168001410)!
+            }
         }
     }()
-
+    
     public func connectNode(
         inputNode: Godot.GodotStringName,
         inputIndex: Int32,
@@ -225,15 +215,15 @@ open class AnimationNodeBlendTree: AnimationRootNode {
             }
         }
     }
-
+    
     internal static var __method_binding_disconnect_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "disconnect_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2415702435)!
-        }
+            GodotStringName(swiftStaticString: "disconnect_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2415702435)!
+            }
         }
     }()
-
+    
     public func disconnectNode(
         inputNode: Godot.GodotStringName,
         inputIndex: Int32
@@ -253,15 +243,15 @@ open class AnimationNodeBlendTree: AnimationRootNode {
             }
         }
     }
-
+    
     internal static var __method_binding_set_node_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_node_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1999414630)!
-        }
+            GodotStringName(swiftStaticString: "set_node_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1999414630)!
+            }
         }
     }()
-
+    
     public func setNodePosition(
         name: Godot.GodotStringName,
         position: Godot.Vector2
@@ -281,15 +271,15 @@ open class AnimationNodeBlendTree: AnimationRootNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_node_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_node_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3100822709)!
-        }
+            GodotStringName(swiftStaticString: "get_node_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3100822709)!
+            }
         }
     }()
-
+    
     public func nodePosition(
         name: Godot.GodotStringName
     ) -> Godot.Vector2 {
@@ -308,15 +298,15 @@ open class AnimationNodeBlendTree: AnimationRootNode {
             }
         }
     }
-
+    
     internal static var __method_binding_set_graph_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_graph_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_graph_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setGraphOffset(
         _ offset: Godot.Vector2
     ) {
@@ -333,15 +323,15 @@ open class AnimationNodeBlendTree: AnimationRootNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_graph_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_graph_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_graph_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getGraphOffset() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -354,29 +344,26 @@ open class AnimationNodeBlendTree: AnimationRootNode {
             }
         }
     }
-
+    
     public var graphOffset: Godot.Vector2 {
         get {
             __getGraphOffset()
         }
-        set {
+        set(newValue) {
             __setGraphOffset(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

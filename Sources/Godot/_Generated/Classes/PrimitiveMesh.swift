@@ -9,15 +9,15 @@ open class PrimitiveMesh: Mesh {
     open func _createMeshArray() -> Godot.AnyGodotArray {
         Godot.AnyGodotArray()
     }
-
+    
     internal static var __method_binding_set_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_material").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2757459619)!
-        }
+            GodotStringName(swiftStaticString: "set_material").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2757459619)!
+            }
         }
     }()
-
+    
     private func __setMaterial(
         _ material: Godot.Material?
     ) {
@@ -36,15 +36,15 @@ open class PrimitiveMesh: Mesh {
             }
         }
     }
-
+    
     internal static var __method_binding_get_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_material").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 5934680)!
-        }
+            GodotStringName(swiftStaticString: "get_material").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 5934680)!
+            }
         }
     }()
-
+    
     private func __getMaterial() -> Godot.Material? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -57,15 +57,15 @@ open class PrimitiveMesh: Mesh {
             }
         }
     }
-
+    
     internal static var __method_binding_get_mesh_arrays: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_mesh_arrays").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
-        }
+            GodotStringName(swiftStaticString: "get_mesh_arrays").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
+            }
         }
     }()
-
+    
     public func meshArrays() -> Godot.AnyGodotArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -78,15 +78,15 @@ open class PrimitiveMesh: Mesh {
             }
         }
     }
-
+    
     internal static var __method_binding_set_custom_aabb: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_custom_aabb").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 259215842)!
-        }
+            GodotStringName(swiftStaticString: "set_custom_aabb").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 259215842)!
+            }
         }
     }()
-
+    
     private func __setCustomAABB(
         _ aabb: Godot.AABB
     ) {
@@ -103,15 +103,15 @@ open class PrimitiveMesh: Mesh {
             }
         }
     }
-
+    
     internal static var __method_binding_get_custom_aabb: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_custom_aabb").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1068685055)!
-        }
+            GodotStringName(swiftStaticString: "get_custom_aabb").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1068685055)!
+            }
         }
     }()
-
+    
     private func __getCustomAABB() -> Godot.AABB {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -124,15 +124,15 @@ open class PrimitiveMesh: Mesh {
             }
         }
     }
-
+    
     internal static var __method_binding_set_flip_faces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_flip_faces").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_flip_faces").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setFlipFaces(
         _ flipFaces: Bool
     ) {
@@ -149,15 +149,15 @@ open class PrimitiveMesh: Mesh {
             }
         }
     }
-
+    
     internal static var __method_binding_get_flip_faces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_flip_faces").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_flip_faces").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getFlipFaces() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -170,15 +170,15 @@ open class PrimitiveMesh: Mesh {
             }
         }
     }
-
+    
     internal static var __method_binding_set_add_uv2: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_add_uv2").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_add_uv2").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setAddUv2(
         _ addUv2: Bool
     ) {
@@ -195,15 +195,15 @@ open class PrimitiveMesh: Mesh {
             }
         }
     }
-
+    
     internal static var __method_binding_get_add_uv2: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_add_uv2").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_add_uv2").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getAddUv2() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -216,15 +216,15 @@ open class PrimitiveMesh: Mesh {
             }
         }
     }
-
+    
     internal static var __method_binding_set_uv2_padding: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_uv2_padding").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_uv2_padding").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setUv2Padding(
         _ uv2Padding: Double
     ) {
@@ -241,15 +241,15 @@ open class PrimitiveMesh: Mesh {
             }
         }
     }
-
+    
     internal static var __method_binding_get_uv2_padding: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_uv2_padding").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_uv2_padding").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getUv2Padding() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -262,80 +262,79 @@ open class PrimitiveMesh: Mesh {
             }
         }
     }
-
+    
     public var material: Godot.Material? {
         get {
             __getMaterial()
         }
-        set {
+        set(newValue) {
             __setMaterial(
                 newValue
             )
         }
     }
-
+    
     public var customAABB: Godot.AABB {
         get {
             __getCustomAABB()
         }
-        set {
+        set(newValue) {
             __setCustomAABB(
                 newValue
             )
         }
     }
-
+    
     public var flipFaces: Bool {
         get {
             __getFlipFaces()
         }
-        set {
+        set(newValue) {
             __setFlipFaces(
                 newValue
             )
         }
     }
-
+    
     public var addUv2: Bool {
         get {
             __getAddUv2()
         }
-        set {
+        set(newValue) {
             __setAddUv2(
                 newValue
             )
         }
     }
-
+    
     public var uv2Padding: Double {
         get {
             __getUv2Padding()
         }
-        set {
+        set(newValue) {
             __setUv2Padding(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _create_mesh_array_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<PrimitiveMesh> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._createMeshArray()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<PrimitiveMesh>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._createMeshArray()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         _virtualFunctions = [
             "_createMeshArray" : ("_create_mesh_array", _create_mesh_array_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

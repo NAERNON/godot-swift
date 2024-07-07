@@ -12,40 +12,42 @@ open class Label3D: GeometryInstance3D {
         case disableDepthTest = 2
         case fixedSize = 3
         case max = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Shaded", 0),
-            ("Double Sided", 1),
-            ("Disable Depth Test", 2),
-            ("Fixed Size", 3),
-            ("Max", 4),]
+               ("Shaded", 0),
+               ("Double Sided", 1),
+               ("Disable Depth Test", 2),
+               ("Fixed Size", 3),
+               ("Max", 4),
+            ]
         }
     }
-
+    
     public enum AlphaCutMode: UInt32, GodotEnum {
         case disabled = 0
         case discard = 1
         case opaquePrepass = 2
         case hash = 3
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Disabled", 0),
-            ("Discard", 1),
-            ("Opaque Prepass", 2),
-            ("Hash", 3),]
+               ("Disabled", 0),
+               ("Discard", 1),
+               ("Opaque Prepass", 2),
+               ("Hash", 3),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_horizontal_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_horizontal_alignment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2312603777)!
-        }
+            GodotStringName(swiftStaticString: "set_horizontal_alignment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2312603777)!
+            }
         }
     }()
-
+    
     private func __setHorizontalAlignment(
         _ alignment: Godot.HorizontalAlignment
     ) {
@@ -62,15 +64,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_horizontal_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_horizontal_alignment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 341400642)!
-        }
+            GodotStringName(swiftStaticString: "get_horizontal_alignment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 341400642)!
+            }
         }
     }()
-
+    
     private func __getHorizontalAlignment() -> Godot.HorizontalAlignment {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -83,15 +85,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_vertical_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_vertical_alignment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1796458609)!
-        }
+            GodotStringName(swiftStaticString: "set_vertical_alignment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1796458609)!
+            }
         }
     }()
-
+    
     private func __setVerticalAlignment(
         _ alignment: Godot.VerticalAlignment
     ) {
@@ -108,15 +110,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_vertical_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_vertical_alignment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3274884059)!
-        }
+            GodotStringName(swiftStaticString: "get_vertical_alignment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3274884059)!
+            }
         }
     }()
-
+    
     private func __getVerticalAlignment() -> Godot.VerticalAlignment {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -129,15 +131,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_modulate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_modulate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
-        }
+            GodotStringName(swiftStaticString: "set_modulate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
+            }
         }
     }()
-
+    
     private func __setModulate(
         _ modulate: Godot.Color
     ) {
@@ -154,15 +156,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_modulate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_modulate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
-        }
+            GodotStringName(swiftStaticString: "get_modulate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
+            }
         }
     }()
-
+    
     private func __getModulate() -> Godot.Color {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -175,15 +177,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_outline_modulate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_outline_modulate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
-        }
+            GodotStringName(swiftStaticString: "set_outline_modulate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
+            }
         }
     }()
-
+    
     private func __setOutlineModulate(
         _ modulate: Godot.Color
     ) {
@@ -200,15 +202,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_outline_modulate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_outline_modulate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
-        }
+            GodotStringName(swiftStaticString: "get_outline_modulate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
+            }
         }
     }()
-
+    
     private func __getOutlineModulate() -> Godot.Color {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -221,15 +223,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_text").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_text").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setText(
         _ text: Godot.GodotString
     ) {
@@ -246,15 +248,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_text").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_text").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getText() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -267,15 +269,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_text_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_text_direction").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1418190634)!
-        }
+            GodotStringName(swiftStaticString: "set_text_direction").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1418190634)!
+            }
         }
     }()
-
+    
     private func __setTextDirection(
         _ direction: Godot.TextServer.Direction
     ) {
@@ -292,15 +294,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_text_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_text_direction").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2516697328)!
-        }
+            GodotStringName(swiftStaticString: "get_text_direction").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2516697328)!
+            }
         }
     }()
-
+    
     private func __getTextDirection() -> Godot.TextServer.Direction {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -313,15 +315,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_language").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_language").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setLanguage(
         _ language: Godot.GodotString
     ) {
@@ -338,15 +340,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_language").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_language").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getLanguage() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -359,15 +361,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_structured_text_bidi_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_structured_text_bidi_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 55961453)!
-        }
+            GodotStringName(swiftStaticString: "set_structured_text_bidi_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 55961453)!
+            }
         }
     }()
-
+    
     private func __setStructuredTextBidiOverride(
         parser: Godot.TextServer.StructuredTextParser
     ) {
@@ -384,15 +386,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_structured_text_bidi_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_structured_text_bidi_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3385126229)!
-        }
+            GodotStringName(swiftStaticString: "get_structured_text_bidi_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3385126229)!
+            }
         }
     }()
-
+    
     private func __getStructuredTextBidiOverride() -> Godot.TextServer.StructuredTextParser {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -405,15 +407,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_structured_text_bidi_override_options: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_structured_text_bidi_override_options").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
-        }
+            GodotStringName(swiftStaticString: "set_structured_text_bidi_override_options").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
+            }
         }
     }()
-
+    
     private func __setStructuredTextBidiOverrideOptions<Value: Variant.Storable>(
         args: Godot.GodotArray<Value>
     ) {
@@ -430,15 +432,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_structured_text_bidi_override_options: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_structured_text_bidi_override_options").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
-        }
+            GodotStringName(swiftStaticString: "get_structured_text_bidi_override_options").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
+            }
         }
     }()
-
+    
     private func __getStructuredTextBidiOverrideOptions() -> Godot.AnyGodotArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -451,15 +453,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_uppercase: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_uppercase").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_uppercase").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setUppercase(
         enable: Bool
     ) {
@@ -476,15 +478,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_uppercase: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_uppercase").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_uppercase").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isUppercase() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -497,15 +499,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_render_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_render_priority").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_render_priority").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setRenderPriority(
         _ priority: Int32
     ) {
@@ -522,15 +524,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_render_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_render_priority").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_render_priority").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getRenderPriority() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -543,15 +545,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_outline_render_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_outline_render_priority").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_outline_render_priority").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setOutlineRenderPriority(
         _ priority: Int32
     ) {
@@ -568,15 +570,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_outline_render_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_outline_render_priority").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_outline_render_priority").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getOutlineRenderPriority() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -589,15 +591,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_font: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_font").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1262170328)!
-        }
+            GodotStringName(swiftStaticString: "set_font").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1262170328)!
+            }
         }
     }()
-
+    
     private func __setFont(
         _ font: Godot.Font?
     ) {
@@ -616,15 +618,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_font: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_font").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3229501585)!
-        }
+            GodotStringName(swiftStaticString: "get_font").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3229501585)!
+            }
         }
     }()
-
+    
     private func __getFont() -> Godot.Font? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -637,15 +639,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_font_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_font_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_font_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setFontSize(
         _ size: Int32
     ) {
@@ -662,15 +664,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_font_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_font_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_font_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getFontSize() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -683,15 +685,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_outline_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_outline_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_outline_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setOutlineSize(
         _ outlineSize: Int32
     ) {
@@ -708,15 +710,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_outline_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_outline_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_outline_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getOutlineSize() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -729,15 +731,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_line_spacing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_line_spacing").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_line_spacing").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setLineSpacing(
         _ lineSpacing: Double
     ) {
@@ -754,15 +756,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_line_spacing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_line_spacing").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_line_spacing").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getLineSpacing() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -775,15 +777,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_autowrap_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_autowrap_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3289138044)!
-        }
+            GodotStringName(swiftStaticString: "set_autowrap_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3289138044)!
+            }
         }
     }()
-
+    
     private func __setAutowrapMode(
         _ autowrapMode: Godot.TextServer.AutowrapMode
     ) {
@@ -800,15 +802,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_autowrap_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_autowrap_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1549071663)!
-        }
+            GodotStringName(swiftStaticString: "get_autowrap_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1549071663)!
+            }
         }
     }()
-
+    
     private func __getAutowrapMode() -> Godot.TextServer.AutowrapMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -821,15 +823,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_justification_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_justification_flags").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2877345813)!
-        }
+            GodotStringName(swiftStaticString: "set_justification_flags").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2877345813)!
+            }
         }
     }()
-
+    
     private func __setJustificationFlags(
         _ justificationFlags: Godot.TextServer.JustificationFlag
     ) {
@@ -846,15 +848,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_justification_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_justification_flags").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1583363614)!
-        }
+            GodotStringName(swiftStaticString: "get_justification_flags").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1583363614)!
+            }
         }
     }()
-
+    
     private func __getJustificationFlags() -> Godot.TextServer.JustificationFlag {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -867,15 +869,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_width").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_width").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setWidth(
         _ width: Double
     ) {
@@ -892,15 +894,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_width").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_width").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getWidth() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -913,15 +915,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_pixel_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_pixel_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_pixel_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setPixelSize(
         _ pixelSize: Double
     ) {
@@ -938,15 +940,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_pixel_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_pixel_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_pixel_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getPixelSize() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -959,15 +961,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setOffset(
         _ offset: Godot.Vector2
     ) {
@@ -984,15 +986,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getOffset() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1005,15 +1007,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_draw_flag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_draw_flag").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1285833066)!
-        }
+            GodotStringName(swiftStaticString: "set_draw_flag").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1285833066)!
+            }
         }
     }()
-
+    
     public func setDrawFlag(
         _ flag: Godot.Label3D.DrawFlags,
         enabled: Bool
@@ -1033,15 +1035,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_draw_flag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_draw_flag").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 259226453)!
-        }
+            GodotStringName(swiftStaticString: "get_draw_flag").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 259226453)!
+            }
         }
     }()
-
+    
     private func __getDrawFlag(
         _ flag: Godot.Label3D.DrawFlags
     ) -> Bool {
@@ -1060,15 +1062,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_billboard_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_billboard_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4202036497)!
-        }
+            GodotStringName(swiftStaticString: "set_billboard_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4202036497)!
+            }
         }
     }()
-
+    
     private func __setBillboardMode(
         _ mode: Godot.BaseMaterial3D.BillboardMode
     ) {
@@ -1085,15 +1087,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_billboard_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_billboard_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1283840139)!
-        }
+            GodotStringName(swiftStaticString: "get_billboard_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1283840139)!
+            }
         }
     }()
-
+    
     private func __getBillboardMode() -> Godot.BaseMaterial3D.BillboardMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1106,15 +1108,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_alpha_cut_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_alpha_cut_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2549142916)!
-        }
+            GodotStringName(swiftStaticString: "set_alpha_cut_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2549142916)!
+            }
         }
     }()
-
+    
     private func __setAlphaCutMode(
         _ mode: Godot.Label3D.AlphaCutMode
     ) {
@@ -1131,15 +1133,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_alpha_cut_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_alpha_cut_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 219468601)!
-        }
+            GodotStringName(swiftStaticString: "get_alpha_cut_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 219468601)!
+            }
         }
     }()
-
+    
     private func __getAlphaCutMode() -> Godot.Label3D.AlphaCutMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1152,15 +1154,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_alpha_scissor_threshold: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_alpha_scissor_threshold").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_alpha_scissor_threshold").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setAlphaScissorThreshold(
         _ threshold: Double
     ) {
@@ -1177,15 +1179,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_alpha_scissor_threshold: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_alpha_scissor_threshold").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_alpha_scissor_threshold").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getAlphaScissorThreshold() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1198,15 +1200,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_alpha_hash_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_alpha_hash_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_alpha_hash_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setAlphaHashScale(
         threshold: Double
     ) {
@@ -1223,15 +1225,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_alpha_hash_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_alpha_hash_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_alpha_hash_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getAlphaHashScale() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1244,15 +1246,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_alpha_antialiasing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_alpha_antialiasing").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3212649852)!
-        }
+            GodotStringName(swiftStaticString: "set_alpha_antialiasing").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3212649852)!
+            }
         }
     }()
-
+    
     private func __setAlphaAntialiasing(
         alphaAa: Godot.BaseMaterial3D.AlphaAntiAliasing
     ) {
@@ -1269,15 +1271,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_alpha_antialiasing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_alpha_antialiasing").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2889939400)!
-        }
+            GodotStringName(swiftStaticString: "get_alpha_antialiasing").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2889939400)!
+            }
         }
     }()
-
+    
     private func __getAlphaAntialiasing() -> Godot.BaseMaterial3D.AlphaAntiAliasing {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1290,15 +1292,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_alpha_antialiasing_edge: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_alpha_antialiasing_edge").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_alpha_antialiasing_edge").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setAlphaAntialiasingEdge(
         _ edge: Double
     ) {
@@ -1315,15 +1317,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_alpha_antialiasing_edge: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_alpha_antialiasing_edge").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_alpha_antialiasing_edge").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getAlphaAntialiasingEdge() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1336,15 +1338,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_filter").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 22904437)!
-        }
+            GodotStringName(swiftStaticString: "set_texture_filter").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 22904437)!
+            }
         }
     }()
-
+    
     private func __setTextureFilter(
         mode: Godot.BaseMaterial3D.TextureFilter
     ) {
@@ -1361,15 +1363,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_filter").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3289213076)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_filter").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3289213076)!
+            }
         }
     }()
-
+    
     private func __getTextureFilter() -> Godot.BaseMaterial3D.TextureFilter {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1382,15 +1384,15 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_generate_triangle_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "generate_triangle_mesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3476533166)!
-        }
+            GodotStringName(swiftStaticString: "generate_triangle_mesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3476533166)!
+            }
         }
     }()
-
+    
     public func generateTriangleMesh() -> Godot.TriangleMesh? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1403,40 +1405,40 @@ open class Label3D: GeometryInstance3D {
             }
         }
     }
-
+    
     public var pixelSize: Double {
         get {
             __getPixelSize()
         }
-        set {
+        set(newValue) {
             __setPixelSize(
                 newValue
             )
         }
     }
-
+    
     public var offset: Godot.Vector2 {
         get {
             __getOffset()
         }
-        set {
+        set(newValue) {
             __setOffset(
                 newValue
             )
         }
     }
-
+    
     public var billboardMode: Godot.BaseMaterial3D.BillboardMode {
         get {
             __getBillboardMode()
         }
-        set {
+        set(newValue) {
             __setBillboardMode(
                 newValue
             )
         }
     }
-
+    
     public var shaded: Bool {
         get {
             __getDrawFlag(
@@ -1444,7 +1446,7 @@ open class Label3D: GeometryInstance3D {
             )
         }
     }
-
+    
     public var doubleSided: Bool {
         get {
             __getDrawFlag(
@@ -1452,7 +1454,7 @@ open class Label3D: GeometryInstance3D {
             )
         }
     }
-
+    
     public var noDepthTest: Bool {
         get {
             __getDrawFlag(
@@ -1460,7 +1462,7 @@ open class Label3D: GeometryInstance3D {
             )
         }
     }
-
+    
     public var fixedSize: Bool {
         get {
             __getDrawFlag(
@@ -1468,293 +1470,290 @@ open class Label3D: GeometryInstance3D {
             )
         }
     }
-
+    
     public var alphaCutMode: Godot.Label3D.AlphaCutMode {
         get {
             __getAlphaCutMode()
         }
-        set {
+        set(newValue) {
             __setAlphaCutMode(
                 newValue
             )
         }
     }
-
+    
     public var alphaScissorThreshold: Double {
         get {
             __getAlphaScissorThreshold()
         }
-        set {
+        set(newValue) {
             __setAlphaScissorThreshold(
                 newValue
             )
         }
     }
-
+    
     public var alphaHashScale: Double {
         get {
             __getAlphaHashScale()
         }
-        set {
+        set(newValue) {
             __setAlphaHashScale(
                 threshold: newValue
             )
         }
     }
-
+    
     public var alphaAntialiasing: Godot.BaseMaterial3D.AlphaAntiAliasing {
         get {
             __getAlphaAntialiasing()
         }
-        set {
+        set(newValue) {
             __setAlphaAntialiasing(
                 alphaAa: newValue
             )
         }
     }
-
+    
     public var alphaAntialiasingEdge: Double {
         get {
             __getAlphaAntialiasingEdge()
         }
-        set {
+        set(newValue) {
             __setAlphaAntialiasingEdge(
                 newValue
             )
         }
     }
-
+    
     public var textureFilter: Godot.BaseMaterial3D.TextureFilter {
         get {
             __getTextureFilter()
         }
-        set {
+        set(newValue) {
             __setTextureFilter(
                 mode: newValue
             )
         }
     }
-
+    
     public var renderPriority: Int32 {
         get {
             __getRenderPriority()
         }
-        set {
+        set(newValue) {
             __setRenderPriority(
                 newValue
             )
         }
     }
-
+    
     public var outlineRenderPriority: Int32 {
         get {
             __getOutlineRenderPriority()
         }
-        set {
+        set(newValue) {
             __setOutlineRenderPriority(
                 newValue
             )
         }
     }
-
+    
     public var modulate: Godot.Color {
         get {
             __getModulate()
         }
-        set {
+        set(newValue) {
             __setModulate(
                 newValue
             )
         }
     }
-
+    
     public var outlineModulate: Godot.Color {
         get {
             __getOutlineModulate()
         }
-        set {
+        set(newValue) {
             __setOutlineModulate(
                 newValue
             )
         }
     }
-
+    
     public var text: Godot.GodotString {
         get {
             __getText()
         }
-        set {
+        set(newValue) {
             __setText(
                 newValue
             )
         }
     }
-
+    
     public var font: Godot.Font? {
         get {
             __getFont()
         }
-        set {
+        set(newValue) {
             __setFont(
                 newValue
             )
         }
     }
-
+    
     public var fontSize: Int32 {
         get {
             __getFontSize()
         }
-        set {
+        set(newValue) {
             __setFontSize(
                 newValue
             )
         }
     }
-
+    
     public var outlineSize: Int32 {
         get {
             __getOutlineSize()
         }
-        set {
+        set(newValue) {
             __setOutlineSize(
                 newValue
             )
         }
     }
-
+    
     public var horizontalAlignment: Godot.HorizontalAlignment {
         get {
             __getHorizontalAlignment()
         }
-        set {
+        set(newValue) {
             __setHorizontalAlignment(
                 newValue
             )
         }
     }
-
+    
     public var verticalAlignment: Godot.VerticalAlignment {
         get {
             __getVerticalAlignment()
         }
-        set {
+        set(newValue) {
             __setVerticalAlignment(
                 newValue
             )
         }
     }
-
+    
     public var isUppercase: Bool {
         get {
             __isUppercase()
         }
-        set {
+        set(newValue) {
             __setUppercase(
                 enable: newValue
             )
         }
     }
-
+    
     public var lineSpacing: Double {
         get {
             __getLineSpacing()
         }
-        set {
+        set(newValue) {
             __setLineSpacing(
                 newValue
             )
         }
     }
-
+    
     public var autowrapMode: Godot.TextServer.AutowrapMode {
         get {
             __getAutowrapMode()
         }
-        set {
+        set(newValue) {
             __setAutowrapMode(
                 newValue
             )
         }
     }
-
+    
     public var justificationFlags: Godot.TextServer.JustificationFlag {
         get {
             __getJustificationFlags()
         }
-        set {
+        set(newValue) {
             __setJustificationFlags(
                 newValue
             )
         }
     }
-
+    
     public var width: Double {
         get {
             __getWidth()
         }
-        set {
+        set(newValue) {
             __setWidth(
                 newValue
             )
         }
     }
-
+    
     public var textDirection: Godot.TextServer.Direction {
         get {
             __getTextDirection()
         }
-        set {
+        set(newValue) {
             __setTextDirection(
                 newValue
             )
         }
     }
-
+    
     public var language: Godot.GodotString {
         get {
             __getLanguage()
         }
-        set {
+        set(newValue) {
             __setLanguage(
                 newValue
             )
         }
     }
-
+    
     public var structuredTextBidiOverride: Godot.TextServer.StructuredTextParser {
         get {
             __getStructuredTextBidiOverride()
         }
-        set {
+        set(newValue) {
             __setStructuredTextBidiOverride(
                 parser: newValue
             )
         }
     }
-
+    
     public var structuredTextBidiOverrideOptions: Godot.AnyGodotArray {
         get {
             __getStructuredTextBidiOverrideOptions()
         }
-        set {
+        set(newValue) {
             __setStructuredTextBidiOverrideOptions(
                 args: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

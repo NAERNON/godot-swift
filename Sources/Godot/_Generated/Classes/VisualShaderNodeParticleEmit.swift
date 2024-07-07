@@ -12,25 +12,26 @@ open class VisualShaderNodeParticleEmit: VisualShaderNode {
         case velocity = 4
         case color = 8
         case custom = 16
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Position", 1),
-            ("Rot Scale", 2),
-            ("Velocity", 4),
-            ("Color", 8),
-            ("Custom", 16),]
+               ("Position", 1),
+               ("Rot Scale", 2),
+               ("Velocity", 4),
+               ("Color", 8),
+               ("Custom", 16),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_flags").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3960756792)!
-        }
+            GodotStringName(swiftStaticString: "set_flags").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3960756792)!
+            }
         }
     }()
-
+    
     private func __setFlags(
         _ flags: Godot.VisualShaderNodeParticleEmit.EmitFlags
     ) {
@@ -47,15 +48,15 @@ open class VisualShaderNodeParticleEmit: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_flags").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 171277835)!
-        }
+            GodotStringName(swiftStaticString: "get_flags").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 171277835)!
+            }
         }
     }()
-
+    
     private func __getFlags() -> Godot.VisualShaderNodeParticleEmit.EmitFlags {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -68,29 +69,26 @@ open class VisualShaderNodeParticleEmit: VisualShaderNode {
             }
         }
     }
-
+    
     public var flags: Godot.VisualShaderNodeParticleEmit.EmitFlags {
         get {
             __getFlags()
         }
-        set {
+        set(newValue) {
             __setFlags(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

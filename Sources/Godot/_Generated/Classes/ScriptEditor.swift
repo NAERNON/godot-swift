@@ -8,26 +8,16 @@ import GodotExtensionHeaders
 open class ScriptEditor: PanelContainer {
     public struct EditorScriptChangedSignalInput: Godot.SignalInput {
         public let script: Godot.Script?
-
-        fileprivate init(
-            script: Godot.Script?
-        ) {
+        fileprivate init(script: Godot.Script?) {
             self.script = script
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.script)]
         }
     }
-
-    public func editorScriptChanged(
-        script: Godot.Script?
-    ) {
+    public func editorScriptChanged(script: Godot.Script?) {
         _ = editorScriptChangedSignal.emit(.init(script: script))
     }
-
     public lazy var editorScriptChangedSignal: Godot.SignalEmitter<EditorScriptChangedSignalInput> = {
         .init(object: self, signalName: "editor_script_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<EditorScriptChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -42,29 +32,19 @@ open class ScriptEditor: PanelContainer {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct ScriptCloseSignalInput: Godot.SignalInput {
         public let script: Godot.Script?
-
-        fileprivate init(
-            script: Godot.Script?
-        ) {
+        fileprivate init(script: Godot.Script?) {
             self.script = script
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.script)]
         }
     }
-
-    public func scriptClose(
-        script: Godot.Script?
-    ) {
+    public func scriptClose(script: Godot.Script?) {
         _ = scriptCloseSignal.emit(.init(script: script))
     }
-
     public lazy var scriptCloseSignal: Godot.SignalEmitter<ScriptCloseSignalInput> = {
         .init(object: self, signalName: "script_close") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ScriptCloseSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -79,15 +59,15 @@ open class ScriptEditor: PanelContainer {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_get_current_editor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_current_editor").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1906266726)!
-        }
+            GodotStringName(swiftStaticString: "get_current_editor").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1906266726)!
+            }
         }
     }()
-
+    
     public func currentEditor() -> Godot.ScriptEditorBase? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -100,16 +80,16 @@ open class ScriptEditor: PanelContainer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_open_script_editors: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_open_script_editors").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
-        }
+            GodotStringName(swiftStaticString: "get_open_script_editors").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
+            }
         }
     }()
-
-    public func openScriptEditors() -> Godot.GodotArray<Godot.ScriptEditorBase?> {
+    
+    public func openScriptEditors() -> Godot.GodotArray<Godot.ScriptEditorBase> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -121,15 +101,15 @@ open class ScriptEditor: PanelContainer {
             }
         }
     }
-
+    
     internal static var __method_binding_register_syntax_highlighter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "register_syntax_highlighter").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1092774468)!
-        }
+            GodotStringName(swiftStaticString: "register_syntax_highlighter").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1092774468)!
+            }
         }
     }()
-
+    
     public func registerSyntaxHighlighter(
         _ syntaxHighlighter: Godot.EditorSyntaxHighlighter?
     ) {
@@ -148,15 +128,15 @@ open class ScriptEditor: PanelContainer {
             }
         }
     }
-
+    
     internal static var __method_binding_unregister_syntax_highlighter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "unregister_syntax_highlighter").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1092774468)!
-        }
+            GodotStringName(swiftStaticString: "unregister_syntax_highlighter").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1092774468)!
+            }
         }
     }()
-
+    
     public func unregisterSyntaxHighlighter(
         _ syntaxHighlighter: Godot.EditorSyntaxHighlighter?
     ) {
@@ -175,15 +155,15 @@ open class ScriptEditor: PanelContainer {
             }
         }
     }
-
+    
     internal static var __method_binding_goto_line: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "goto_line").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "goto_line").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func gotoLine(
         lineNumber: Int32
     ) {
@@ -200,15 +180,15 @@ open class ScriptEditor: PanelContainer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_current_script: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_current_script").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2146468882)!
-        }
+            GodotStringName(swiftStaticString: "get_current_script").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2146468882)!
+            }
         }
     }()
-
+    
     public func currentScript() -> Godot.Script? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -221,16 +201,16 @@ open class ScriptEditor: PanelContainer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_open_scripts: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_open_scripts").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
-        }
+            GodotStringName(swiftStaticString: "get_open_scripts").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
+            }
         }
     }()
-
-    public func openScripts() -> Godot.GodotArray<Godot.Script?> {
+    
+    public func openScripts() -> Godot.GodotArray<Godot.Script> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -242,15 +222,15 @@ open class ScriptEditor: PanelContainer {
             }
         }
     }
-
+    
     internal static var __method_binding_open_script_create_dialog: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "open_script_create_dialog").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3186203200)!
-        }
+            GodotStringName(swiftStaticString: "open_script_create_dialog").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3186203200)!
+            }
         }
     }()
-
+    
     public func openScriptCreateDialog(
         baseName: Godot.GodotString,
         basePath: Godot.GodotString
@@ -270,18 +250,15 @@ open class ScriptEditor: PanelContainer {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

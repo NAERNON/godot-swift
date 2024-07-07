@@ -8,61 +8,58 @@ import GodotExtensionHeaders
 open class NavigationPathQueryParameters3D: RefCounted {
     public enum PathfindingAlgorithm: UInt32, GodotEnum {
         case pathfindingAlgorithmAstar = 0
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Pathfinding Algorithm Astar", 0),]
+               ("Pathfinding Algorithm Astar", 0),
+            ]
         }
     }
-
+    
     public enum PathPostProcessing: UInt32, GodotEnum {
         case corridorfunnel = 0
         case edgecentered = 1
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Corridorfunnel", 0),
-            ("Edgecentered", 1),]
+               ("Corridorfunnel", 0),
+               ("Edgecentered", 1),
+            ]
         }
     }
-
+    
     public struct PathMetadataFlags: GodotOptionSet {
         public let rawValue: Int64
-
-        public init(
-            rawValue: Int64
-        ) {
+        
+        public init(rawValue: Int64) {
             self.rawValue = rawValue
         }
-
+        
         public static let none: Self = .init(rawValue: 0)
-
         public static let types: Self = .init(rawValue: 1)
-
         public static let rids: Self = .init(rawValue: 2)
-
         public static let owners: Self = .init(rawValue: 4)
-
         public static let all: Self = .init(rawValue: 7)
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("None", 0),
-            ("Types", 1),
-            ("Rids", 2),
-            ("Owners", 4),
-            ("All", 7),]
+               ("None", 0),
+               ("Types", 1),
+               ("Rids", 2),
+               ("Owners", 4),
+               ("All", 7),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_pathfinding_algorithm: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_pathfinding_algorithm").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 394560454)!
-        }
+            GodotStringName(swiftStaticString: "set_pathfinding_algorithm").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 394560454)!
+            }
         }
     }()
-
+    
     private func __setPathfindingAlgorithm(
         _ pathfindingAlgorithm: Godot.NavigationPathQueryParameters3D.PathfindingAlgorithm
     ) {
@@ -79,15 +76,15 @@ open class NavigationPathQueryParameters3D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_pathfinding_algorithm: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_pathfinding_algorithm").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3398491350)!
-        }
+            GodotStringName(swiftStaticString: "get_pathfinding_algorithm").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3398491350)!
+            }
         }
     }()
-
+    
     private func __getPathfindingAlgorithm() -> Godot.NavigationPathQueryParameters3D.PathfindingAlgorithm {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -100,15 +97,15 @@ open class NavigationPathQueryParameters3D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_path_postprocessing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_path_postprocessing").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2267362344)!
-        }
+            GodotStringName(swiftStaticString: "set_path_postprocessing").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2267362344)!
+            }
         }
     }()
-
+    
     private func __setPathPostprocessing(
         _ pathPostprocessing: Godot.NavigationPathQueryParameters3D.PathPostProcessing
     ) {
@@ -125,15 +122,15 @@ open class NavigationPathQueryParameters3D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_path_postprocessing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_path_postprocessing").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3883858360)!
-        }
+            GodotStringName(swiftStaticString: "get_path_postprocessing").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3883858360)!
+            }
         }
     }()
-
+    
     private func __getPathPostprocessing() -> Godot.NavigationPathQueryParameters3D.PathPostProcessing {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -146,15 +143,15 @@ open class NavigationPathQueryParameters3D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_map").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
-        }
+            GodotStringName(swiftStaticString: "set_map").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
+            }
         }
     }()
-
+    
     private func __setMap(
         _ map: Godot.RID
     ) {
@@ -171,15 +168,15 @@ open class NavigationPathQueryParameters3D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_map").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
-        }
+            GodotStringName(swiftStaticString: "get_map").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
+            }
         }
     }()
-
+    
     private func __getMap() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -192,15 +189,15 @@ open class NavigationPathQueryParameters3D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_start_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_start_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
-        }
+            GodotStringName(swiftStaticString: "set_start_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
+            }
         }
     }()
-
+    
     private func __setStartPosition(
         _ startPosition: Godot.Vector3
     ) {
@@ -217,15 +214,15 @@ open class NavigationPathQueryParameters3D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_start_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_start_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
-        }
+            GodotStringName(swiftStaticString: "get_start_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
+            }
         }
     }()
-
+    
     private func __getStartPosition() -> Godot.Vector3 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -238,15 +235,15 @@ open class NavigationPathQueryParameters3D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_target_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_target_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
-        }
+            GodotStringName(swiftStaticString: "set_target_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
+            }
         }
     }()
-
+    
     private func __setTargetPosition(
         _ targetPosition: Godot.Vector3
     ) {
@@ -263,15 +260,15 @@ open class NavigationPathQueryParameters3D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_target_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_target_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
-        }
+            GodotStringName(swiftStaticString: "get_target_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
+            }
         }
     }()
-
+    
     private func __getTargetPosition() -> Godot.Vector3 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -284,15 +281,15 @@ open class NavigationPathQueryParameters3D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_navigation_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_navigation_layers").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_navigation_layers").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setNavigationLayers(
         _ navigationLayers: UInt32
     ) {
@@ -309,15 +306,15 @@ open class NavigationPathQueryParameters3D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_navigation_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_navigation_layers").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_navigation_layers").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getNavigationLayers() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -330,15 +327,15 @@ open class NavigationPathQueryParameters3D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_metadata_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_metadata_flags").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2713846708)!
-        }
+            GodotStringName(swiftStaticString: "set_metadata_flags").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2713846708)!
+            }
         }
     }()
-
+    
     private func __setMetadataFlags(
         _ flags: Godot.NavigationPathQueryParameters3D.PathMetadataFlags
     ) {
@@ -355,15 +352,15 @@ open class NavigationPathQueryParameters3D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_metadata_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_metadata_flags").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1582332802)!
-        }
+            GodotStringName(swiftStaticString: "get_metadata_flags").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1582332802)!
+            }
         }
     }()
-
+    
     private func __getMetadataFlags() -> Godot.NavigationPathQueryParameters3D.PathMetadataFlags {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -376,95 +373,92 @@ open class NavigationPathQueryParameters3D: RefCounted {
             }
         }
     }
-
+    
     public var map: Godot.RID {
         get {
             __getMap()
         }
-        set {
+        set(newValue) {
             __setMap(
                 newValue
             )
         }
     }
-
+    
     public var startPosition: Godot.Vector3 {
         get {
             __getStartPosition()
         }
-        set {
+        set(newValue) {
             __setStartPosition(
                 newValue
             )
         }
     }
-
+    
     public var targetPosition: Godot.Vector3 {
         get {
             __getTargetPosition()
         }
-        set {
+        set(newValue) {
             __setTargetPosition(
                 newValue
             )
         }
     }
-
+    
     public var navigationLayers: UInt32 {
         get {
             __getNavigationLayers()
         }
-        set {
+        set(newValue) {
             __setNavigationLayers(
                 newValue
             )
         }
     }
-
+    
     public var pathfindingAlgorithm: Godot.NavigationPathQueryParameters3D.PathfindingAlgorithm {
         get {
             __getPathfindingAlgorithm()
         }
-        set {
+        set(newValue) {
             __setPathfindingAlgorithm(
                 newValue
             )
         }
     }
-
+    
     public var pathPostprocessing: Godot.NavigationPathQueryParameters3D.PathPostProcessing {
         get {
             __getPathPostprocessing()
         }
-        set {
+        set(newValue) {
             __setPathPostprocessing(
                 newValue
             )
         }
     }
-
+    
     public var metadataFlags: Godot.NavigationPathQueryParameters3D.PathMetadataFlags {
         get {
             __getMetadataFlags()
         }
-        set {
+        set(newValue) {
             __setMetadataFlags(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

@@ -8,26 +8,16 @@ import GodotExtensionHeaders
 open class AnimationLibrary: Resource {
     public struct AnimationAddedSignalInput: Godot.SignalInput {
         public let name: Godot.GodotStringName
-
-        fileprivate init(
-            name: Godot.GodotStringName
-        ) {
+        fileprivate init(name: Godot.GodotStringName) {
             self.name = name
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.name)]
         }
     }
-
-    public func animationAdded(
-        name: Godot.GodotStringName
-    ) {
+    public func animationAdded(name: Godot.GodotStringName) {
         _ = animationAddedSignal.emit(.init(name: name))
     }
-
     public lazy var animationAddedSignal: Godot.SignalEmitter<AnimationAddedSignalInput> = {
         .init(object: self, signalName: "animation_added") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AnimationAddedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -42,29 +32,19 @@ open class AnimationLibrary: Resource {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct AnimationRemovedSignalInput: Godot.SignalInput {
         public let name: Godot.GodotStringName
-
-        fileprivate init(
-            name: Godot.GodotStringName
-        ) {
+        fileprivate init(name: Godot.GodotStringName) {
             self.name = name
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.name)]
         }
     }
-
-    public func animationRemoved(
-        name: Godot.GodotStringName
-    ) {
+    public func animationRemoved(name: Godot.GodotStringName) {
         _ = animationRemovedSignal.emit(.init(name: name))
     }
-
     public lazy var animationRemovedSignal: Godot.SignalEmitter<AnimationRemovedSignalInput> = {
         .init(object: self, signalName: "animation_removed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AnimationRemovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -79,35 +59,22 @@ open class AnimationLibrary: Resource {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct AnimationRenamedSignalInput: Godot.SignalInput {
         public let name: Godot.GodotStringName
-
         public let toName: Godot.GodotStringName
-
-        fileprivate init(
-            name: Godot.GodotStringName,
-            toName: Godot.GodotStringName
-        ) {
+        fileprivate init(name: Godot.GodotStringName, toName: Godot.GodotStringName) {
             self.name = name
             self.toName = toName
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.name), Variant(input.toName)]
         }
     }
-
-    public func animationRenamed(
-        name: Godot.GodotStringName,
-        toName: Godot.GodotStringName
-    ) {
+    public func animationRenamed(name: Godot.GodotStringName, toName: Godot.GodotStringName) {
         _ = animationRenamedSignal.emit(.init(name: name,
                 toName: toName))
     }
-
     public lazy var animationRenamedSignal: Godot.SignalEmitter<AnimationRenamedSignalInput> = {
         .init(object: self, signalName: "animation_renamed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AnimationRenamedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -123,29 +90,19 @@ open class AnimationLibrary: Resource {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct AnimationChangedSignalInput: Godot.SignalInput {
         public let name: Godot.GodotStringName
-
-        fileprivate init(
-            name: Godot.GodotStringName
-        ) {
+        fileprivate init(name: Godot.GodotStringName) {
             self.name = name
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.name)]
         }
     }
-
-    public func animationChanged(
-        name: Godot.GodotStringName
-    ) {
+    public func animationChanged(name: Godot.GodotStringName) {
         _ = animationChangedSignal.emit(.init(name: name))
     }
-
     public lazy var animationChangedSignal: Godot.SignalEmitter<AnimationChangedSignalInput> = {
         .init(object: self, signalName: "animation_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AnimationChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -160,15 +117,15 @@ open class AnimationLibrary: Resource {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_add_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_animation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1811855551)!
-        }
+            GodotStringName(swiftStaticString: "add_animation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1811855551)!
+            }
         }
     }()
-
+    
     public func addAnimation(
         name: Godot.GodotStringName,
         animation: Godot.Animation?
@@ -192,15 +149,15 @@ open class AnimationLibrary: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_animation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
-        }
+            GodotStringName(swiftStaticString: "remove_animation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
+            }
         }
     }()
-
+    
     public func removeAnimation(
         name: Godot.GodotStringName
     ) {
@@ -217,15 +174,15 @@ open class AnimationLibrary: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_rename_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "rename_animation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740211285)!
-        }
+            GodotStringName(swiftStaticString: "rename_animation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740211285)!
+            }
         }
     }()
-
+    
     public func renameAnimation(
         name: Godot.GodotStringName,
         newname: Godot.GodotStringName
@@ -245,15 +202,15 @@ open class AnimationLibrary: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_has_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_animation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
-        }
+            GodotStringName(swiftStaticString: "has_animation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
+            }
         }
     }()
-
+    
     public func hasAnimation(
         name: Godot.GodotStringName
     ) -> Bool {
@@ -272,15 +229,15 @@ open class AnimationLibrary: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_animation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2933122410)!
-        }
+            GodotStringName(swiftStaticString: "get_animation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2933122410)!
+            }
         }
     }()
-
+    
     public func animation(
         name: Godot.GodotStringName
     ) -> Godot.Animation? {
@@ -299,15 +256,15 @@ open class AnimationLibrary: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_animation_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_animation_list").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
-        }
+            GodotStringName(swiftStaticString: "get_animation_list").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
+            }
         }
     }()
-
+    
     public func animationList() -> Godot.GodotArray<Godot.GodotStringName> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -320,18 +277,15 @@ open class AnimationLibrary: Resource {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

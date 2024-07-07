@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class ImporterMeshInstance3D: Node3D {
     internal static var __method_binding_set_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_mesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2255166972)!
-        }
+            GodotStringName(swiftStaticString: "set_mesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2255166972)!
+            }
         }
     }()
-
+    
     private func __setMesh(
         _ mesh: Godot.ImporterMesh?
     ) {
@@ -32,15 +32,15 @@ open class ImporterMeshInstance3D: Node3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_mesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3161779525)!
-        }
+            GodotStringName(swiftStaticString: "get_mesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3161779525)!
+            }
         }
     }()
-
+    
     private func __getMesh() -> Godot.ImporterMesh? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -53,15 +53,15 @@ open class ImporterMeshInstance3D: Node3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_skin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_skin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3971435618)!
-        }
+            GodotStringName(swiftStaticString: "set_skin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3971435618)!
+            }
         }
     }()
-
+    
     private func __setSkin(
         _ skin: Godot.Skin?
     ) {
@@ -80,15 +80,15 @@ open class ImporterMeshInstance3D: Node3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_skin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_skin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2074563878)!
-        }
+            GodotStringName(swiftStaticString: "get_skin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2074563878)!
+            }
         }
     }()
-
+    
     private func __getSkin() -> Godot.Skin? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -101,15 +101,15 @@ open class ImporterMeshInstance3D: Node3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_skeleton_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_skeleton_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
-        }
+            GodotStringName(swiftStaticString: "set_skeleton_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
+            }
         }
     }()
-
+    
     private func __setSkeletonPath(
         _ skeletonPath: Godot.NodePath
     ) {
@@ -126,15 +126,15 @@ open class ImporterMeshInstance3D: Node3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_skeleton_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_skeleton_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
-        }
+            GodotStringName(swiftStaticString: "get_skeleton_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
+            }
         }
     }()
-
+    
     private func __getSkeletonPath() -> Godot.NodePath {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -147,15 +147,15 @@ open class ImporterMeshInstance3D: Node3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_layer_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_layer_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_layer_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setLayerMask(
         _ layerMask: UInt32
     ) {
@@ -172,15 +172,15 @@ open class ImporterMeshInstance3D: Node3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_layer_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_layer_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_layer_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getLayerMask() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -193,15 +193,15 @@ open class ImporterMeshInstance3D: Node3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_cast_shadows_setting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_cast_shadows_setting").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 856677339)!
-        }
+            GodotStringName(swiftStaticString: "set_cast_shadows_setting").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 856677339)!
+            }
         }
     }()
-
+    
     private func __setCastShadowsSetting(
         shadowCastingSetting: Godot.GeometryInstance3D.ShadowCastingSetting
     ) {
@@ -218,15 +218,15 @@ open class ImporterMeshInstance3D: Node3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_cast_shadows_setting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_cast_shadows_setting").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3383019359)!
-        }
+            GodotStringName(swiftStaticString: "get_cast_shadows_setting").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3383019359)!
+            }
         }
     }()
-
+    
     private func __getCastShadowsSetting() -> Godot.GeometryInstance3D.ShadowCastingSetting {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -239,15 +239,15 @@ open class ImporterMeshInstance3D: Node3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_visibility_range_end_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_visibility_range_end_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_visibility_range_end_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setVisibilityRangeEndMargin(
         distance: Double
     ) {
@@ -264,15 +264,15 @@ open class ImporterMeshInstance3D: Node3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_visibility_range_end_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_visibility_range_end_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_visibility_range_end_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getVisibilityRangeEndMargin() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -285,15 +285,15 @@ open class ImporterMeshInstance3D: Node3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_visibility_range_end: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_visibility_range_end").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_visibility_range_end").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setVisibilityRangeEnd(
         distance: Double
     ) {
@@ -310,15 +310,15 @@ open class ImporterMeshInstance3D: Node3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_visibility_range_end: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_visibility_range_end").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_visibility_range_end").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getVisibilityRangeEnd() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -331,15 +331,15 @@ open class ImporterMeshInstance3D: Node3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_visibility_range_begin_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_visibility_range_begin_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_visibility_range_begin_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setVisibilityRangeBeginMargin(
         distance: Double
     ) {
@@ -356,15 +356,15 @@ open class ImporterMeshInstance3D: Node3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_visibility_range_begin_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_visibility_range_begin_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_visibility_range_begin_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getVisibilityRangeBeginMargin() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -377,15 +377,15 @@ open class ImporterMeshInstance3D: Node3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_visibility_range_begin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_visibility_range_begin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_visibility_range_begin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setVisibilityRangeBegin(
         distance: Double
     ) {
@@ -402,15 +402,15 @@ open class ImporterMeshInstance3D: Node3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_visibility_range_begin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_visibility_range_begin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_visibility_range_begin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getVisibilityRangeBegin() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -423,15 +423,15 @@ open class ImporterMeshInstance3D: Node3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_visibility_range_fade_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_visibility_range_fade_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1440117808)!
-        }
+            GodotStringName(swiftStaticString: "set_visibility_range_fade_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1440117808)!
+            }
         }
     }()
-
+    
     private func __setVisibilityRangeFadeMode(
         _ mode: Godot.GeometryInstance3D.VisibilityRangeFadeMode
     ) {
@@ -448,15 +448,15 @@ open class ImporterMeshInstance3D: Node3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_visibility_range_fade_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_visibility_range_fade_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2067221882)!
-        }
+            GodotStringName(swiftStaticString: "get_visibility_range_fade_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2067221882)!
+            }
         }
     }()
-
+    
     private func __getVisibilityRangeFadeMode() -> Godot.GeometryInstance3D.VisibilityRangeFadeMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -469,128 +469,125 @@ open class ImporterMeshInstance3D: Node3D {
             }
         }
     }
-
+    
     public var mesh: Godot.ImporterMesh? {
         get {
             __getMesh()
         }
-        set {
+        set(newValue) {
             __setMesh(
                 newValue
             )
         }
     }
-
+    
     public var skin: Godot.Skin? {
         get {
             __getSkin()
         }
-        set {
+        set(newValue) {
             __setSkin(
                 newValue
             )
         }
     }
-
+    
     public var skeletonPath: Godot.NodePath {
         get {
             __getSkeletonPath()
         }
-        set {
+        set(newValue) {
             __setSkeletonPath(
                 newValue
             )
         }
     }
-
+    
     public var layerMask: UInt32 {
         get {
             __getLayerMask()
         }
-        set {
+        set(newValue) {
             __setLayerMask(
                 newValue
             )
         }
     }
-
+    
     public var castShadowsSetting: Godot.GeometryInstance3D.ShadowCastingSetting {
         get {
             __getCastShadowsSetting()
         }
-        set {
+        set(newValue) {
             __setCastShadowsSetting(
                 shadowCastingSetting: newValue
             )
         }
     }
-
+    
     public var visibilityRangeBegin: Double {
         get {
             __getVisibilityRangeBegin()
         }
-        set {
+        set(newValue) {
             __setVisibilityRangeBegin(
                 distance: newValue
             )
         }
     }
-
+    
     public var visibilityRangeBeginMargin: Double {
         get {
             __getVisibilityRangeBeginMargin()
         }
-        set {
+        set(newValue) {
             __setVisibilityRangeBeginMargin(
                 distance: newValue
             )
         }
     }
-
+    
     public var visibilityRangeEnd: Double {
         get {
             __getVisibilityRangeEnd()
         }
-        set {
+        set(newValue) {
             __setVisibilityRangeEnd(
                 distance: newValue
             )
         }
     }
-
+    
     public var visibilityRangeEndMargin: Double {
         get {
             __getVisibilityRangeEndMargin()
         }
-        set {
+        set(newValue) {
             __setVisibilityRangeEndMargin(
                 distance: newValue
             )
         }
     }
-
+    
     public var visibilityRangeFadeMode: Godot.GeometryInstance3D.VisibilityRangeFadeMode {
         get {
             __getVisibilityRangeFadeMode()
         }
-        set {
+        set(newValue) {
             __setVisibilityRangeFadeMode(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

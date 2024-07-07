@@ -12,25 +12,26 @@ open class VisualShaderNodeIntFunc: VisualShaderNode {
         case sign = 2
         case bitwiseNot = 3
         case max = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Abs", 0),
-            ("Negate", 1),
-            ("Sign", 2),
-            ("Bitwise Not", 3),
-            ("Max", 4),]
+               ("Abs", 0),
+               ("Negate", 1),
+               ("Sign", 2),
+               ("Bitwise Not", 3),
+               ("Max", 4),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_function: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_function").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 424195284)!
-        }
+            GodotStringName(swiftStaticString: "set_function").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 424195284)!
+            }
         }
     }()
-
+    
     private func __setFunction(
         `func`: Godot.VisualShaderNodeIntFunc.Function
     ) {
@@ -47,15 +48,15 @@ open class VisualShaderNodeIntFunc: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_function: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_function").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2753496911)!
-        }
+            GodotStringName(swiftStaticString: "get_function").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2753496911)!
+            }
         }
     }()
-
+    
     private func __getFunction() -> Godot.VisualShaderNodeIntFunc.Function {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -68,29 +69,26 @@ open class VisualShaderNodeIntFunc: VisualShaderNode {
             }
         }
     }
-
+    
     public var function: Godot.VisualShaderNodeIntFunc.Function {
         get {
             __getFunction()
         }
-        set {
+        set(newValue) {
             __setFunction(
                 func: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

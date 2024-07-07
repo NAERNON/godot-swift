@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class ArrayOccluder3D: Occluder3D {
     internal static var __method_binding_set_arrays: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_arrays").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3233972621)!
-        }
+            GodotStringName(swiftStaticString: "set_arrays").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3233972621)!
+            }
         }
     }()
-
+    
     public func setArrays(
         vertices: Godot.GodotContiguousArray<Vector3>,
         indices: Godot.GodotContiguousArray<Int32>
@@ -33,15 +33,15 @@ open class ArrayOccluder3D: Occluder3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_vertices: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_vertices").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 334873810)!
-        }
+            GodotStringName(swiftStaticString: "set_vertices").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 334873810)!
+            }
         }
     }()
-
+    
     public func setVertices(
         _ vertices: Godot.GodotContiguousArray<Vector3>
     ) {
@@ -58,15 +58,15 @@ open class ArrayOccluder3D: Occluder3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_indices: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_indices").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
-        }
+            GodotStringName(swiftStaticString: "set_indices").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
+            }
         }
     }()
-
+    
     public func setIndices(
         _ indices: Godot.GodotContiguousArray<Int32>
     ) {
@@ -83,18 +83,15 @@ open class ArrayOccluder3D: Occluder3D {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

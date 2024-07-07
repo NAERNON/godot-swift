@@ -8,41 +8,30 @@ import GodotExtensionHeaders
 open class CameraServer: Object {
     public enum FeedImage: UInt32, GodotEnum {
         case rgbaImage = 0
-
         public static let ycbcrImage: Self = .rgbaImage
-
         public static let yImage: Self = .rgbaImage
         case cbcrImage = 1
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Rgba Image", 0),
-            ("Cbcr Image", 1),]
+               ("Rgba Image", 0),
+               ("Cbcr Image", 1),
+            ]
         }
     }
-
+    
     public struct CameraFeedAddedSignalInput: Godot.SignalInput {
         public let id: Int
-
-        fileprivate init(
-            id: Int
-        ) {
+        fileprivate init(id: Int) {
             self.id = id
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.id)]
         }
     }
-
-    public func cameraFeedAdded(
-        id: Int
-    ) {
+    public func cameraFeedAdded(id: Int) {
         _ = cameraFeedAddedSignal.emit(.init(id: id))
     }
-
     public lazy var cameraFeedAddedSignal: Godot.SignalEmitter<CameraFeedAddedSignalInput> = {
         .init(object: self, signalName: "camera_feed_added") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<CameraFeedAddedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -57,29 +46,19 @@ open class CameraServer: Object {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct CameraFeedRemovedSignalInput: Godot.SignalInput {
         public let id: Int
-
-        fileprivate init(
-            id: Int
-        ) {
+        fileprivate init(id: Int) {
             self.id = id
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.id)]
         }
     }
-
-    public func cameraFeedRemoved(
-        id: Int
-    ) {
+    public func cameraFeedRemoved(id: Int) {
         _ = cameraFeedRemovedSignal.emit(.init(id: id))
     }
-
     public lazy var cameraFeedRemovedSignal: Godot.SignalEmitter<CameraFeedRemovedSignalInput> = {
         .init(object: self, signalName: "camera_feed_removed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<CameraFeedRemovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -94,15 +73,15 @@ open class CameraServer: Object {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_get_feed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_feed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 361927068)!
-        }
+            GodotStringName(swiftStaticString: "get_feed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 361927068)!
+            }
         }
     }()
-
+    
     public func feed(
         index: Int32
     ) -> Godot.CameraFeed? {
@@ -121,15 +100,15 @@ open class CameraServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_feed_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_feed_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
-        }
+            GodotStringName(swiftStaticString: "get_feed_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
+            }
         }
     }()
-
+    
     public func feedCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -142,16 +121,16 @@ open class CameraServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_feeds: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "feeds").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
-        }
+            GodotStringName(swiftStaticString: "feeds").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
+            }
         }
     }()
-
-    public func feeds() -> Godot.GodotArray<Godot.CameraFeed?> {
+    
+    public func feeds() -> Godot.GodotArray<Godot.CameraFeed> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -163,15 +142,15 @@ open class CameraServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_add_feed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_feed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3204782488)!
-        }
+            GodotStringName(swiftStaticString: "add_feed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3204782488)!
+            }
         }
     }()
-
+    
     public func addFeed(
         _ feed: Godot.CameraFeed?
     ) {
@@ -190,15 +169,15 @@ open class CameraServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_feed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_feed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3204782488)!
-        }
+            GodotStringName(swiftStaticString: "remove_feed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3204782488)!
+            }
         }
     }()
-
+    
     public func removeFeed(
         _ feed: Godot.CameraFeed?
     ) {
@@ -217,18 +196,15 @@ open class CameraServer: Object {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

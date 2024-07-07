@@ -25,7 +25,7 @@ extension GodotArray: Variant.Storable {
     }
     
     public static func convertToStorage(
-        _ value: consuming GodotArray
+        _ value: GodotArray
     ) -> Variant.Storage {
         let storage = Variant.Storage()
         
@@ -124,7 +124,7 @@ extension GodotArray: Exposable where Element : Exposable {
         .array
     }
     
-    public consuming func transferToGodot(
+    public func transferToGodot(
         unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
     ) {
         withUnsafeOpaquePointer { selfPtr in

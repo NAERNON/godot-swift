@@ -12,22 +12,22 @@ open class AStar2D: RefCounted {
     ) -> Double {
         Double()
     }
-
+    
     open func _computeCost(
         fromID: Int64,
         toID: Int64
     ) -> Double {
         Double()
     }
-
+    
     internal static var __method_binding_get_available_point_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_available_point_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_available_point_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func availablePointID() -> Int64 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -40,15 +40,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_add_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_point").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4074201818)!
-        }
+            GodotStringName(swiftStaticString: "add_point").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4074201818)!
+            }
         }
     }()
-
+    
     public func addPoint(
         id: Int64,
         position: Godot.Vector2,
@@ -71,15 +71,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_point_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2299179447)!
-        }
+            GodotStringName(swiftStaticString: "get_point_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2299179447)!
+            }
         }
     }()
-
+    
     public func pointPosition(
         id: Int64
     ) -> Godot.Vector2 {
@@ -98,15 +98,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_point_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_point_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 163021252)!
-        }
+            GodotStringName(swiftStaticString: "set_point_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 163021252)!
+            }
         }
     }()
-
+    
     public func setPointPosition(
         id: Int64,
         position: Godot.Vector2
@@ -126,15 +126,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_point_weight_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_weight_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
-        }
+            GodotStringName(swiftStaticString: "get_point_weight_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
+            }
         }
     }()
-
+    
     public func pointWeightScale(
         id: Int64
     ) -> Double {
@@ -153,15 +153,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_point_weight_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_point_weight_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
-        }
+            GodotStringName(swiftStaticString: "set_point_weight_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
+            }
         }
     }()
-
+    
     public func setPointWeightScale(
         id: Int64,
         weightScale: Double
@@ -181,15 +181,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_point").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "remove_point").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func removePoint(
         id: Int64
     ) {
@@ -206,15 +206,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_has_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_point").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "has_point").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func hasPoint(
         id: Int64
     ) -> Bool {
@@ -233,15 +233,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_point_connections: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_connections").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2865087369)!
-        }
+            GodotStringName(swiftStaticString: "get_point_connections").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2865087369)!
+            }
         }
     }()
-
+    
     public func pointConnections(
         id: Int64
     ) -> Godot.GodotContiguousArray<Int64> {
@@ -260,15 +260,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_point_ids: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_ids").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3851388692)!
-        }
+            GodotStringName(swiftStaticString: "get_point_ids").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3851388692)!
+            }
         }
     }()
-
+    
     public func pointIds() -> Godot.GodotContiguousArray<Int64> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -281,15 +281,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_point_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_point_disabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 972357352)!
-        }
+            GodotStringName(swiftStaticString: "set_point_disabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 972357352)!
+            }
         }
     }()
-
+    
     public func setPointDisabled(
         id: Int64,
         disabled: Bool = true
@@ -309,15 +309,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_is_point_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_point_disabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "is_point_disabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func isPointDisabled(
         id: Int64
     ) -> Bool {
@@ -336,15 +336,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_connect_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "connect_points").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3710494224)!
-        }
+            GodotStringName(swiftStaticString: "connect_points").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3710494224)!
+            }
         }
     }()
-
+    
     public func connectPoints(
         id: Int64,
         toID: Int64,
@@ -367,15 +367,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_disconnect_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "disconnect_points").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3710494224)!
-        }
+            GodotStringName(swiftStaticString: "disconnect_points").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3710494224)!
+            }
         }
     }()
-
+    
     public func disconnectPoints(
         id: Int64,
         toID: Int64,
@@ -398,15 +398,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_are_points_connected: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "are_points_connected").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2288175859)!
-        }
+            GodotStringName(swiftStaticString: "are_points_connected").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2288175859)!
+            }
         }
     }()
-
+    
     public func arePointsConnected(
         id: Int64,
         toID: Int64,
@@ -431,15 +431,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_point_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_point_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func pointCount() -> Int64 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -452,15 +452,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_point_capacity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_capacity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_point_capacity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func pointCapacity() -> Int64 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -473,15 +473,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_reserve_space: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "reserve_space").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "reserve_space").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func reserveSpace(
         numNodes: Int64
     ) {
@@ -498,15 +498,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "clear").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func clear() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -517,15 +517,15 @@ open class AStar2D: RefCounted {
             )
         }
     }
-
+    
     internal static var __method_binding_get_closest_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_closest_point").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2300324924)!
-        }
+            GodotStringName(swiftStaticString: "get_closest_point").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2300324924)!
+            }
         }
     }()
-
+    
     public func closestPoint(
         toPosition position: Godot.Vector2,
         includeDisabled: Bool = false
@@ -547,15 +547,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_closest_position_in_segment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_closest_position_in_segment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2656412154)!
-        }
+            GodotStringName(swiftStaticString: "get_closest_position_in_segment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2656412154)!
+            }
         }
     }()
-
+    
     public func closestPositionInSegment(
         toPosition position: Godot.Vector2
     ) -> Godot.Vector2 {
@@ -574,15 +574,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_point_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 281625055)!
-        }
+            GodotStringName(swiftStaticString: "get_point_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 281625055)!
+            }
         }
     }()
-
+    
     public func pointPath(
         fromID: Int64,
         toID: Int64
@@ -604,15 +604,15 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_id_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_id_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3404614526)!
-        }
+            GodotStringName(swiftStaticString: "get_id_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3404614526)!
+            }
         }
     }()
-
+    
     public func idPath(
         fromID: Int64,
         toID: Int64
@@ -634,39 +634,38 @@ open class AStar2D: RefCounted {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _estimate_cost_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<AStar2D> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._estimateCost(
-            fromID: Int64.transferFromGodot(unsafePointer: args[0]!),
-            toID: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<AStar2D>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._estimateCost(
+                    fromID: Int64.transferFromGodot(unsafePointer: args[0]!),
+                    toID: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _compute_cost_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<AStar2D> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._computeCost(
-            fromID: Int64.transferFromGodot(unsafePointer: args[0]!),
-            toID: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<AStar2D>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._computeCost(
+                    fromID: Int64.transferFromGodot(unsafePointer: args[0]!),
+                    toID: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         _virtualFunctions = [
             "_estimateCost" : ("_estimate_cost", _estimate_cost_call),
             "_computeCost" : ("_compute_cost", _compute_cost_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

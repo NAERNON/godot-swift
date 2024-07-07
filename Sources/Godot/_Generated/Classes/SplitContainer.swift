@@ -10,37 +10,28 @@ open class SplitContainer: Container {
         case visible = 0
         case hidden = 1
         case hiddenCollapsed = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Visible", 0),
-            ("Hidden", 1),
-            ("Hidden Collapsed", 2),]
+               ("Visible", 0),
+               ("Hidden", 1),
+               ("Hidden Collapsed", 2),
+            ]
         }
     }
-
+    
     public struct DraggedSignalInput: Godot.SignalInput {
         public let offset: Int
-
-        fileprivate init(
-            offset: Int
-        ) {
+        fileprivate init(offset: Int) {
             self.offset = offset
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.offset)]
         }
     }
-
-    public func dragged(
-        offset: Int
-    ) {
+    public func dragged(offset: Int) {
         _ = draggedSignal.emit(.init(offset: offset))
     }
-
     public lazy var draggedSignal: Godot.SignalEmitter<DraggedSignalInput> = {
         .init(object: self, signalName: "dragged") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<DraggedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -55,15 +46,15 @@ open class SplitContainer: Container {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_set_split_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_split_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_split_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setSplitOffset(
         _ offset: Int32
     ) {
@@ -80,15 +71,15 @@ open class SplitContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_split_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_split_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_split_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getSplitOffset() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -101,15 +92,15 @@ open class SplitContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_clamp_split_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clamp_split_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "clamp_split_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func clampSplitOffset() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -120,15 +111,15 @@ open class SplitContainer: Container {
             )
         }
     }
-
+    
     internal static var __method_binding_set_collapsed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_collapsed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_collapsed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setCollapsed(
         _ collapsed: Bool
     ) {
@@ -145,15 +136,15 @@ open class SplitContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_is_collapsed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_collapsed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_collapsed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isCollapsed() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -166,15 +157,15 @@ open class SplitContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_set_dragger_visibility: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_dragger_visibility").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1168273952)!
-        }
+            GodotStringName(swiftStaticString: "set_dragger_visibility").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1168273952)!
+            }
         }
     }()
-
+    
     private func __setDraggerVisibility(
         mode: Godot.SplitContainer.DraggerVisibility
     ) {
@@ -191,15 +182,15 @@ open class SplitContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_dragger_visibility: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_dragger_visibility").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 967297479)!
-        }
+            GodotStringName(swiftStaticString: "get_dragger_visibility").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 967297479)!
+            }
         }
     }()
-
+    
     private func __getDraggerVisibility() -> Godot.SplitContainer.DraggerVisibility {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -212,15 +203,15 @@ open class SplitContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_set_vertical: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_vertical").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_vertical").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setVertical(
         _ vertical: Bool
     ) {
@@ -237,15 +228,15 @@ open class SplitContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_is_vertical: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_vertical").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_vertical").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isVertical() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -258,62 +249,59 @@ open class SplitContainer: Container {
             }
         }
     }
-
+    
     public var splitOffset: Int32 {
         get {
             __getSplitOffset()
         }
-        set {
+        set(newValue) {
             __setSplitOffset(
                 newValue
             )
         }
     }
-
+    
     public var isCollapsed: Bool {
         get {
             __isCollapsed()
         }
-        set {
+        set(newValue) {
             __setCollapsed(
                 newValue
             )
         }
     }
-
+    
     public var draggerVisibility: Godot.SplitContainer.DraggerVisibility {
         get {
             __getDraggerVisibility()
         }
-        set {
+        set(newValue) {
             __setDraggerVisibility(
                 mode: newValue
             )
         }
     }
-
+    
     public var isVertical: Bool {
         get {
             __isVertical()
         }
-        set {
+        set(newValue) {
             __setVertical(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

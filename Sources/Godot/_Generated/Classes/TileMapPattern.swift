@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class TileMapPattern: Resource {
     internal static var __method_binding_set_cell: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_cell").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2224802556)!
-        }
+            GodotStringName(swiftStaticString: "set_cell").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2224802556)!
+            }
         }
     }()
-
+    
     public func setCell(
         coords: Godot.Vector2I,
         sourceID: Int32 = -1,
@@ -39,15 +39,15 @@ open class TileMapPattern: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_has_cell: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_cell").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3900751641)!
-        }
+            GodotStringName(swiftStaticString: "has_cell").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3900751641)!
+            }
         }
     }()
-
+    
     public func hasCell(
         coords: Godot.Vector2I
     ) -> Bool {
@@ -66,15 +66,15 @@ open class TileMapPattern: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_cell: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_cell").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4153096796)!
-        }
+            GodotStringName(swiftStaticString: "remove_cell").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4153096796)!
+            }
         }
     }()
-
+    
     public func removeCell(
         coords: Godot.Vector2I,
         updateSize: Bool
@@ -94,15 +94,15 @@ open class TileMapPattern: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_cell_source_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_cell_source_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2485466453)!
-        }
+            GodotStringName(swiftStaticString: "get_cell_source_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2485466453)!
+            }
         }
     }()
-
+    
     public func cellSourceID(
         coords: Godot.Vector2I
     ) -> Int32 {
@@ -121,15 +121,15 @@ open class TileMapPattern: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_cell_atlas_coords: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_cell_atlas_coords").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3050897911)!
-        }
+            GodotStringName(swiftStaticString: "get_cell_atlas_coords").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3050897911)!
+            }
         }
     }()
-
+    
     public func cellAtlasCoords(
         _ coords: Godot.Vector2I
     ) -> Godot.Vector2I {
@@ -148,15 +148,15 @@ open class TileMapPattern: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_cell_alternative_tile: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_cell_alternative_tile").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2485466453)!
-        }
+            GodotStringName(swiftStaticString: "get_cell_alternative_tile").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2485466453)!
+            }
         }
     }()
-
+    
     public func cellAlternativeTile(
         coords: Godot.Vector2I
     ) -> Int32 {
@@ -175,15 +175,15 @@ open class TileMapPattern: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_used_cells: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_used_cells").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
-        }
+            GodotStringName(swiftStaticString: "get_used_cells").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
+            }
         }
     }()
-
+    
     public func usedCells() -> Godot.GodotArray<Godot.Vector2I> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -196,15 +196,15 @@ open class TileMapPattern: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
-        }
+            GodotStringName(swiftStaticString: "get_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
+            }
         }
     }()
-
+    
     public func size() -> Godot.Vector2I {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -217,15 +217,15 @@ open class TileMapPattern: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
-        }
+            GodotStringName(swiftStaticString: "set_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
+            }
         }
     }()
-
+    
     public func setSize(
         _ size: Godot.Vector2I
     ) {
@@ -242,15 +242,15 @@ open class TileMapPattern: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_is_empty: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_empty").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_empty").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isEmpty() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -263,18 +263,15 @@ open class TileMapPattern: Resource {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

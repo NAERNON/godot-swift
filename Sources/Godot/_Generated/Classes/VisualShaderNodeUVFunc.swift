@@ -10,23 +10,24 @@ open class VisualShaderNodeUVFunc: VisualShaderNode {
         case panning = 0
         case scaling = 1
         case max = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Panning", 0),
-            ("Scaling", 1),
-            ("Max", 2),]
+               ("Panning", 0),
+               ("Scaling", 1),
+               ("Max", 2),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_function: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_function").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 765791915)!
-        }
+            GodotStringName(swiftStaticString: "set_function").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 765791915)!
+            }
         }
     }()
-
+    
     private func __setFunction(
         `func`: Godot.VisualShaderNodeUVFunc.Function
     ) {
@@ -43,15 +44,15 @@ open class VisualShaderNodeUVFunc: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_function: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_function").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3772902164)!
-        }
+            GodotStringName(swiftStaticString: "get_function").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3772902164)!
+            }
         }
     }()
-
+    
     private func __getFunction() -> Godot.VisualShaderNodeUVFunc.Function {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -64,29 +65,26 @@ open class VisualShaderNodeUVFunc: VisualShaderNode {
             }
         }
     }
-
+    
     public var function: Godot.VisualShaderNodeUVFunc.Function {
         get {
             __getFunction()
         }
-        set {
+        set(newValue) {
             __setFunction(
                 func: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

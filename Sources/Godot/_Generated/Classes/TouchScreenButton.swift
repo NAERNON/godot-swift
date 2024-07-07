@@ -9,18 +9,19 @@ open class TouchScreenButton: Node2D {
     public enum VisibilityMode: UInt32, GodotEnum {
         case always = 0
         case touchscreenOnly = 1
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Always", 0),
-            ("Touchscreen Only", 1),]
+               ("Always", 0),
+               ("Touchscreen Only", 1),
+            ]
         }
     }
-
+    
+    
     public func pressed() {
         _ = pressedSignal.emit()
     }
-
     public lazy var pressedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "pressed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -35,11 +36,11 @@ open class TouchScreenButton: Node2D {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func released() {
         _ = releasedSignal.emit()
     }
-
     public lazy var releasedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "released") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -54,15 +55,15 @@ open class TouchScreenButton: Node2D {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_set_texture_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_normal").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
-        }
+            GodotStringName(swiftStaticString: "set_texture_normal").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
+            }
         }
     }()
-
+    
     private func __setTextureNormal(
         texture: Godot.Texture2D?
     ) {
@@ -81,15 +82,15 @@ open class TouchScreenButton: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_normal").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_normal").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
+            }
         }
     }()
-
+    
     private func __getTextureNormal() -> Godot.Texture2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -102,15 +103,15 @@ open class TouchScreenButton: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_pressed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
-        }
+            GodotStringName(swiftStaticString: "set_texture_pressed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
+            }
         }
     }()
-
+    
     private func __setTexturePressed(
         texture: Godot.Texture2D?
     ) {
@@ -129,15 +130,15 @@ open class TouchScreenButton: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_pressed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_pressed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
+            }
         }
     }()
-
+    
     private func __getTexturePressed() -> Godot.Texture2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -150,15 +151,15 @@ open class TouchScreenButton: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_bitmask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_bitmask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 698588216)!
-        }
+            GodotStringName(swiftStaticString: "set_bitmask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 698588216)!
+            }
         }
     }()
-
+    
     private func __setBitmask(
         _ bitmask: Godot.BitMap?
     ) {
@@ -177,15 +178,15 @@ open class TouchScreenButton: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bitmask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bitmask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2459671998)!
-        }
+            GodotStringName(swiftStaticString: "get_bitmask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2459671998)!
+            }
         }
     }()
-
+    
     private func __getBitmask() -> Godot.BitMap? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -198,15 +199,15 @@ open class TouchScreenButton: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_shape").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 771364740)!
-        }
+            GodotStringName(swiftStaticString: "set_shape").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 771364740)!
+            }
         }
     }()
-
+    
     private func __setShape(
         _ shape: Godot.Shape2D?
     ) {
@@ -225,15 +226,15 @@ open class TouchScreenButton: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_shape").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 522005891)!
-        }
+            GodotStringName(swiftStaticString: "get_shape").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 522005891)!
+            }
         }
     }()
-
+    
     private func __getShape() -> Godot.Shape2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -246,15 +247,15 @@ open class TouchScreenButton: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_shape_centered: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_shape_centered").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_shape_centered").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setShapeCentered(
         bool: Bool
     ) {
@@ -271,15 +272,15 @@ open class TouchScreenButton: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_shape_centered: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_shape_centered").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_shape_centered").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isShapeCentered() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -292,15 +293,15 @@ open class TouchScreenButton: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_shape_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_shape_visible").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_shape_visible").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setShapeVisible(
         bool: Bool
     ) {
@@ -317,15 +318,15 @@ open class TouchScreenButton: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_shape_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_shape_visible").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_shape_visible").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isShapeVisible() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -338,15 +339,15 @@ open class TouchScreenButton: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_action: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_action").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_action").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setAction(
         _ action: Godot.GodotString
     ) {
@@ -363,15 +364,15 @@ open class TouchScreenButton: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_action: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_action").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_action").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getAction() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -384,15 +385,15 @@ open class TouchScreenButton: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_visibility_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_visibility_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3031128463)!
-        }
+            GodotStringName(swiftStaticString: "set_visibility_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3031128463)!
+            }
         }
     }()
-
+    
     private func __setVisibilityMode(
         _ mode: Godot.TouchScreenButton.VisibilityMode
     ) {
@@ -409,15 +410,15 @@ open class TouchScreenButton: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_visibility_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_visibility_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2558996468)!
-        }
+            GodotStringName(swiftStaticString: "get_visibility_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2558996468)!
+            }
         }
     }()
-
+    
     private func __getVisibilityMode() -> Godot.TouchScreenButton.VisibilityMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -430,15 +431,15 @@ open class TouchScreenButton: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_passby_press: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_passby_press").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_passby_press").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setPassbyPress(
         enabled: Bool
     ) {
@@ -455,15 +456,15 @@ open class TouchScreenButton: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_passby_press_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_passby_press_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_passby_press_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isPassbyPressEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -476,15 +477,15 @@ open class TouchScreenButton: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_pressed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_pressed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isPressed() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -497,117 +498,114 @@ open class TouchScreenButton: Node2D {
             }
         }
     }
-
+    
     public var textureNormal: Godot.Texture2D? {
         get {
             __getTextureNormal()
         }
-        set {
+        set(newValue) {
             __setTextureNormal(
                 texture: newValue
             )
         }
     }
-
+    
     public var texturePressed: Godot.Texture2D? {
         get {
             __getTexturePressed()
         }
-        set {
+        set(newValue) {
             __setTexturePressed(
                 texture: newValue
             )
         }
     }
-
+    
     public var bitmask: Godot.BitMap? {
         get {
             __getBitmask()
         }
-        set {
+        set(newValue) {
             __setBitmask(
                 newValue
             )
         }
     }
-
+    
     public var shape: Godot.Shape2D? {
         get {
             __getShape()
         }
-        set {
+        set(newValue) {
             __setShape(
                 newValue
             )
         }
     }
-
+    
     public var isShapeCentered: Bool {
         get {
             __isShapeCentered()
         }
-        set {
+        set(newValue) {
             __setShapeCentered(
                 bool: newValue
             )
         }
     }
-
+    
     public var isShapeVisible: Bool {
         get {
             __isShapeVisible()
         }
-        set {
+        set(newValue) {
             __setShapeVisible(
                 bool: newValue
             )
         }
     }
-
+    
     public var isPassbyPressEnabled: Bool {
         get {
             __isPassbyPressEnabled()
         }
-        set {
+        set(newValue) {
             __setPassbyPress(
                 enabled: newValue
             )
         }
     }
-
+    
     public var action: Godot.GodotString {
         get {
             __getAction()
         }
-        set {
+        set(newValue) {
             __setAction(
                 newValue
             )
         }
     }
-
+    
     public var visibilityMode: Godot.TouchScreenButton.VisibilityMode {
         get {
             __getVisibilityMode()
         }
-        set {
+        set(newValue) {
             __setVisibilityMode(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

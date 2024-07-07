@@ -8,26 +8,16 @@ import GodotExtensionHeaders
 open class FileSystemDock: VBoxContainer {
     public struct InheritSignalInput: Godot.SignalInput {
         public let file: Godot.GodotString
-
-        fileprivate init(
-            file: Godot.GodotString
-        ) {
+        fileprivate init(file: Godot.GodotString) {
             self.file = file
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.file)]
         }
     }
-
-    public func inherit(
-        file: Godot.GodotString
-    ) {
+    public func inherit(file: Godot.GodotString) {
         _ = inheritSignal.emit(.init(file: file))
     }
-
     public lazy var inheritSignal: Godot.SignalEmitter<InheritSignalInput> = {
         .init(object: self, signalName: "inherit") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<InheritSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -42,29 +32,19 @@ open class FileSystemDock: VBoxContainer {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct InstantiateSignalInput: Godot.SignalInput {
         public let files: Godot.GodotContiguousArray<GodotString>
-
-        fileprivate init(
-            files: Godot.GodotContiguousArray<GodotString>
-        ) {
+        fileprivate init(files: Godot.GodotContiguousArray<GodotString>) {
             self.files = files
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.files)]
         }
     }
-
-    public func instantiate(
-        files: Godot.GodotContiguousArray<GodotString>
-    ) {
+    public func instantiate(files: Godot.GodotContiguousArray<GodotString>) {
         _ = instantiateSignal.emit(.init(files: files))
     }
-
     public lazy var instantiateSignal: Godot.SignalEmitter<InstantiateSignalInput> = {
         .init(object: self, signalName: "instantiate") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<InstantiateSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -79,29 +59,19 @@ open class FileSystemDock: VBoxContainer {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct ResourceRemovedSignalInput: Godot.SignalInput {
         public let resource: Godot.Resource?
-
-        fileprivate init(
-            resource: Godot.Resource?
-        ) {
+        fileprivate init(resource: Godot.Resource?) {
             self.resource = resource
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.resource)]
         }
     }
-
-    public func resourceRemoved(
-        resource: Godot.Resource?
-    ) {
+    public func resourceRemoved(resource: Godot.Resource?) {
         _ = resourceRemovedSignal.emit(.init(resource: resource))
     }
-
     public lazy var resourceRemovedSignal: Godot.SignalEmitter<ResourceRemovedSignalInput> = {
         .init(object: self, signalName: "resource_removed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ResourceRemovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -116,29 +86,19 @@ open class FileSystemDock: VBoxContainer {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct FileRemovedSignalInput: Godot.SignalInput {
         public let file: Godot.GodotString
-
-        fileprivate init(
-            file: Godot.GodotString
-        ) {
+        fileprivate init(file: Godot.GodotString) {
             self.file = file
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.file)]
         }
     }
-
-    public func fileRemoved(
-        file: Godot.GodotString
-    ) {
+    public func fileRemoved(file: Godot.GodotString) {
         _ = fileRemovedSignal.emit(.init(file: file))
     }
-
     public lazy var fileRemovedSignal: Godot.SignalEmitter<FileRemovedSignalInput> = {
         .init(object: self, signalName: "file_removed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<FileRemovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -153,29 +113,19 @@ open class FileSystemDock: VBoxContainer {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct FolderRemovedSignalInput: Godot.SignalInput {
         public let folder: Godot.GodotString
-
-        fileprivate init(
-            folder: Godot.GodotString
-        ) {
+        fileprivate init(folder: Godot.GodotString) {
             self.folder = folder
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.folder)]
         }
     }
-
-    public func folderRemoved(
-        folder: Godot.GodotString
-    ) {
+    public func folderRemoved(folder: Godot.GodotString) {
         _ = folderRemovedSignal.emit(.init(folder: folder))
     }
-
     public lazy var folderRemovedSignal: Godot.SignalEmitter<FolderRemovedSignalInput> = {
         .init(object: self, signalName: "folder_removed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<FolderRemovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -190,35 +140,22 @@ open class FileSystemDock: VBoxContainer {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct FilesMovedSignalInput: Godot.SignalInput {
         public let oldFile: Godot.GodotString
-
         public let newFile: Godot.GodotString
-
-        fileprivate init(
-            oldFile: Godot.GodotString,
-            newFile: Godot.GodotString
-        ) {
+        fileprivate init(oldFile: Godot.GodotString, newFile: Godot.GodotString) {
             self.oldFile = oldFile
             self.newFile = newFile
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.oldFile), Variant(input.newFile)]
         }
     }
-
-    public func filesMoved(
-        oldFile: Godot.GodotString,
-        newFile: Godot.GodotString
-    ) {
+    public func filesMoved(oldFile: Godot.GodotString, newFile: Godot.GodotString) {
         _ = filesMovedSignal.emit(.init(oldFile: oldFile,
                 newFile: newFile))
     }
-
     public lazy var filesMovedSignal: Godot.SignalEmitter<FilesMovedSignalInput> = {
         .init(object: self, signalName: "files_moved") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<FilesMovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -234,35 +171,22 @@ open class FileSystemDock: VBoxContainer {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct FolderMovedSignalInput: Godot.SignalInput {
         public let oldFolder: Godot.GodotString
-
         public let newFolder: Godot.GodotString
-
-        fileprivate init(
-            oldFolder: Godot.GodotString,
-            newFolder: Godot.GodotString
-        ) {
+        fileprivate init(oldFolder: Godot.GodotString, newFolder: Godot.GodotString) {
             self.oldFolder = oldFolder
             self.newFolder = newFolder
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.oldFolder), Variant(input.newFolder)]
         }
     }
-
-    public func folderMoved(
-        oldFolder: Godot.GodotString,
-        newFolder: Godot.GodotString
-    ) {
+    public func folderMoved(oldFolder: Godot.GodotString, newFolder: Godot.GodotString) {
         _ = folderMovedSignal.emit(.init(oldFolder: oldFolder,
                 newFolder: newFolder))
     }
-
     public lazy var folderMovedSignal: Godot.SignalEmitter<FolderMovedSignalInput> = {
         .init(object: self, signalName: "folder_moved") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<FolderMovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -278,11 +202,11 @@ open class FileSystemDock: VBoxContainer {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func displayModeChanged() {
         _ = displayModeChangedSignal.emit()
     }
-
     public lazy var displayModeChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "display_mode_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -297,15 +221,15 @@ open class FileSystemDock: VBoxContainer {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_navigate_to_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "navigate_to_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "navigate_to_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     public func navigateToPath(
         _ path: Godot.GodotString
     ) {
@@ -322,15 +246,15 @@ open class FileSystemDock: VBoxContainer {
             }
         }
     }
-
+    
     internal static var __method_binding_add_resource_tooltip_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_resource_tooltip_plugin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2258356838)!
-        }
+            GodotStringName(swiftStaticString: "add_resource_tooltip_plugin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2258356838)!
+            }
         }
     }()
-
+    
     public func addResourceTooltipPlugin(
         _ plugin: Godot.EditorResourceTooltipPlugin?
     ) {
@@ -349,15 +273,15 @@ open class FileSystemDock: VBoxContainer {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_resource_tooltip_plugin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_resource_tooltip_plugin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2258356838)!
-        }
+            GodotStringName(swiftStaticString: "remove_resource_tooltip_plugin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2258356838)!
+            }
         }
     }()
-
+    
     public func removeResourceTooltipPlugin(
         _ plugin: Godot.EditorResourceTooltipPlugin?
     ) {
@@ -376,18 +300,15 @@ open class FileSystemDock: VBoxContainer {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

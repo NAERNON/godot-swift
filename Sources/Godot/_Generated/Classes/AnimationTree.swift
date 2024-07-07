@@ -10,19 +10,20 @@ open class AnimationTree: AnimationMixer {
         case physics = 0
         case idle = 1
         case manual = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Physics", 0),
-            ("Idle", 1),
-            ("Manual", 2),]
+               ("Physics", 0),
+               ("Idle", 1),
+               ("Manual", 2),
+            ]
         }
     }
-
+    
+    
     public func animationPlayerChanged() {
         _ = animationPlayerChangedSignal.emit()
     }
-
     public lazy var animationPlayerChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "animation_player_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -37,15 +38,15 @@ open class AnimationTree: AnimationMixer {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_set_tree_root: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_tree_root").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2581683800)!
-        }
+            GodotStringName(swiftStaticString: "set_tree_root").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2581683800)!
+            }
         }
     }()
-
+    
     private func __setTreeRoot(
         animationNode: Godot.AnimationRootNode?
     ) {
@@ -64,15 +65,15 @@ open class AnimationTree: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_tree_root: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tree_root").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4110384712)!
-        }
+            GodotStringName(swiftStaticString: "get_tree_root").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4110384712)!
+            }
         }
     }()
-
+    
     private func __getTreeRoot() -> Godot.AnimationRootNode? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -85,15 +86,15 @@ open class AnimationTree: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_set_advance_expression_base_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_advance_expression_base_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
-        }
+            GodotStringName(swiftStaticString: "set_advance_expression_base_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
+            }
         }
     }()
-
+    
     private func __setAdvanceExpressionBaseNode(
         path: Godot.NodePath
     ) {
@@ -110,15 +111,15 @@ open class AnimationTree: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_advance_expression_base_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_advance_expression_base_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
-        }
+            GodotStringName(swiftStaticString: "get_advance_expression_base_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
+            }
         }
     }()
-
+    
     private func __getAdvanceExpressionBaseNode() -> Godot.NodePath {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -131,15 +132,15 @@ open class AnimationTree: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_set_animation_player: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_animation_player").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
-        }
+            GodotStringName(swiftStaticString: "set_animation_player").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
+            }
         }
     }()
-
+    
     private func __setAnimationPlayer(
         path: Godot.NodePath
     ) {
@@ -156,15 +157,15 @@ open class AnimationTree: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_animation_player: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_animation_player").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
-        }
+            GodotStringName(swiftStaticString: "get_animation_player").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
+            }
         }
     }()
-
+    
     private func __getAnimationPlayer() -> Godot.NodePath {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -177,15 +178,15 @@ open class AnimationTree: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_set_process_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_process_callback").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1723352826)!
-        }
+            GodotStringName(swiftStaticString: "set_process_callback").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1723352826)!
+            }
         }
     }()
-
+    
     public func setProcessCallback(
         mode: Godot.AnimationTree.AnimationProcessCallback
     ) {
@@ -202,15 +203,15 @@ open class AnimationTree: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_process_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_process_callback").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 891317132)!
-        }
+            GodotStringName(swiftStaticString: "get_process_callback").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 891317132)!
+            }
         }
     }()
-
+    
     public func processCallback() -> Godot.AnimationTree.AnimationProcessCallback {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -223,51 +224,48 @@ open class AnimationTree: AnimationMixer {
             }
         }
     }
-
+    
     public var treeRoot: Godot.AnimationRootNode? {
         get {
             __getTreeRoot()
         }
-        set {
+        set(newValue) {
             __setTreeRoot(
                 animationNode: newValue
             )
         }
     }
-
+    
     public var advanceExpressionBaseNode: Godot.NodePath {
         get {
             __getAdvanceExpressionBaseNode()
         }
-        set {
+        set(newValue) {
             __setAdvanceExpressionBaseNode(
                 path: newValue
             )
         }
     }
-
+    
     public var animationPlayer: Godot.NodePath {
         get {
             __getAnimationPlayer()
         }
-        set {
+        set(newValue) {
             __setAnimationPlayer(
                 path: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

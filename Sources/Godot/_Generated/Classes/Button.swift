@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class Button: BaseButton {
     internal static var __method_binding_set_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_text").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_text").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setText(
         _ text: Godot.GodotString
     ) {
@@ -30,15 +30,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_get_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_text").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_text").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getText() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -51,15 +51,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_set_text_overrun_behavior: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_text_overrun_behavior").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1008890932)!
-        }
+            GodotStringName(swiftStaticString: "set_text_overrun_behavior").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1008890932)!
+            }
         }
     }()
-
+    
     private func __setTextOverrunBehavior(
         _ overrunBehavior: Godot.TextServer.OverrunBehavior
     ) {
@@ -76,15 +76,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_get_text_overrun_behavior: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_text_overrun_behavior").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3779142101)!
-        }
+            GodotStringName(swiftStaticString: "get_text_overrun_behavior").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3779142101)!
+            }
         }
     }()
-
+    
     private func __getTextOverrunBehavior() -> Godot.TextServer.OverrunBehavior {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -97,15 +97,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_set_text_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_text_direction").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 119160795)!
-        }
+            GodotStringName(swiftStaticString: "set_text_direction").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 119160795)!
+            }
         }
     }()
-
+    
     private func __setTextDirection(
         _ direction: Godot.Control.TextDirection
     ) {
@@ -122,15 +122,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_get_text_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_text_direction").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 797257663)!
-        }
+            GodotStringName(swiftStaticString: "get_text_direction").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 797257663)!
+            }
         }
     }()
-
+    
     private func __getTextDirection() -> Godot.Control.TextDirection {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -143,15 +143,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_set_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_language").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_language").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setLanguage(
         _ language: Godot.GodotString
     ) {
@@ -168,15 +168,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_get_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_language").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_language").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getLanguage() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -189,15 +189,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_set_button_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_button_icon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
-        }
+            GodotStringName(swiftStaticString: "set_button_icon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
+            }
         }
     }()
-
+    
     private func __setButtonIcon(
         texture: Godot.Texture2D?
     ) {
@@ -216,15 +216,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_get_button_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_button_icon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
-        }
+            GodotStringName(swiftStaticString: "get_button_icon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
+            }
         }
     }()
-
+    
     private func __getButtonIcon() -> Godot.Texture2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -237,15 +237,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_set_flat: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_flat").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_flat").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setFlat(
         enabled: Bool
     ) {
@@ -262,15 +262,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_is_flat: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_flat").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_flat").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isFlat() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -283,15 +283,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_set_clip_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_clip_text").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_clip_text").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setClipText(
         enabled: Bool
     ) {
@@ -308,15 +308,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_get_clip_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_clip_text").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_clip_text").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getClipText() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -329,15 +329,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_set_text_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_text_alignment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2312603777)!
-        }
+            GodotStringName(swiftStaticString: "set_text_alignment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2312603777)!
+            }
         }
     }()
-
+    
     private func __setTextAlignment(
         _ alignment: Godot.HorizontalAlignment
     ) {
@@ -354,15 +354,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_get_text_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_text_alignment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 341400642)!
-        }
+            GodotStringName(swiftStaticString: "get_text_alignment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 341400642)!
+            }
         }
     }()
-
+    
     private func __getTextAlignment() -> Godot.HorizontalAlignment {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -375,15 +375,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_set_icon_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_icon_alignment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2312603777)!
-        }
+            GodotStringName(swiftStaticString: "set_icon_alignment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2312603777)!
+            }
         }
     }()
-
+    
     private func __setIconAlignment(
         _ iconAlignment: Godot.HorizontalAlignment
     ) {
@@ -400,15 +400,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_get_icon_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_icon_alignment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 341400642)!
-        }
+            GodotStringName(swiftStaticString: "get_icon_alignment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 341400642)!
+            }
         }
     }()
-
+    
     private func __getIconAlignment() -> Godot.HorizontalAlignment {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -421,15 +421,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_set_vertical_icon_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_vertical_icon_alignment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1796458609)!
-        }
+            GodotStringName(swiftStaticString: "set_vertical_icon_alignment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1796458609)!
+            }
         }
     }()
-
+    
     private func __setVerticalIconAlignment(
         _ verticalIconAlignment: Godot.VerticalAlignment
     ) {
@@ -446,15 +446,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_get_vertical_icon_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_vertical_icon_alignment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3274884059)!
-        }
+            GodotStringName(swiftStaticString: "get_vertical_icon_alignment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3274884059)!
+            }
         }
     }()
-
+    
     private func __getVerticalIconAlignment() -> Godot.VerticalAlignment {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -467,15 +467,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_set_expand_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_expand_icon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_expand_icon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setExpandIcon(
         enabled: Bool
     ) {
@@ -492,15 +492,15 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     internal static var __method_binding_is_expand_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_expand_icon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_expand_icon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isExpandIcon() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -513,139 +513,136 @@ open class Button: BaseButton {
             }
         }
     }
-
+    
     public var text: Godot.GodotString {
         get {
             __getText()
         }
-        set {
+        set(newValue) {
             __setText(
                 newValue
             )
         }
     }
-
+    
     public var buttonIcon: Godot.Texture2D? {
         get {
             __getButtonIcon()
         }
-        set {
+        set(newValue) {
             __setButtonIcon(
                 texture: newValue
             )
         }
     }
-
+    
     public var isFlat: Bool {
         get {
             __isFlat()
         }
-        set {
+        set(newValue) {
             __setFlat(
                 enabled: newValue
             )
         }
     }
-
+    
     public var textAlignment: Godot.HorizontalAlignment {
         get {
             __getTextAlignment()
         }
-        set {
+        set(newValue) {
             __setTextAlignment(
                 newValue
             )
         }
     }
-
+    
     public var textOverrunBehavior: Godot.TextServer.OverrunBehavior {
         get {
             __getTextOverrunBehavior()
         }
-        set {
+        set(newValue) {
             __setTextOverrunBehavior(
                 newValue
             )
         }
     }
-
+    
     public var clipText: Bool {
         get {
             __getClipText()
         }
-        set {
+        set(newValue) {
             __setClipText(
                 enabled: newValue
             )
         }
     }
-
+    
     public var iconAlignment: Godot.HorizontalAlignment {
         get {
             __getIconAlignment()
         }
-        set {
+        set(newValue) {
             __setIconAlignment(
                 newValue
             )
         }
     }
-
+    
     public var verticalIconAlignment: Godot.VerticalAlignment {
         get {
             __getVerticalIconAlignment()
         }
-        set {
+        set(newValue) {
             __setVerticalIconAlignment(
                 newValue
             )
         }
     }
-
+    
     public var isExpandIcon: Bool {
         get {
             __isExpandIcon()
         }
-        set {
+        set(newValue) {
             __setExpandIcon(
                 enabled: newValue
             )
         }
     }
-
+    
     public var textDirection: Godot.Control.TextDirection {
         get {
             __getTextDirection()
         }
-        set {
+        set(newValue) {
             __setTextDirection(
                 newValue
             )
         }
     }
-
+    
     public var language: Godot.GodotString {
         get {
             __getLanguage()
         }
-        set {
+        set(newValue) {
             __setLanguage(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

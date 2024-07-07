@@ -10,23 +10,24 @@ open class ZIPPacker: RefCounted {
         case create = 0
         case createafter = 1
         case addinzip = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Create", 0),
-            ("Createafter", 1),
-            ("Addinzip", 2),]
+               ("Create", 0),
+               ("Createafter", 1),
+               ("Addinzip", 2),
+            ]
         }
     }
-
+    
     internal static var __method_binding_open: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "open").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1936816515)!
-        }
+            GodotStringName(swiftStaticString: "open").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1936816515)!
+            }
         }
     }()
-
+    
     public func open(
         path: Godot.GodotString,
         append: Godot.ZIPPacker.ZipAppend = ZIPPacker.ZipAppend(rawValue: 0)!
@@ -48,15 +49,15 @@ open class ZIPPacker: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_start_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "start_file").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
-        }
+            GodotStringName(swiftStaticString: "start_file").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
+            }
         }
     }()
-
+    
     public func startFile(
         path: Godot.GodotString
     ) -> Godot.ErrorType {
@@ -75,15 +76,15 @@ open class ZIPPacker: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_write_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "write_file").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 680677267)!
-        }
+            GodotStringName(swiftStaticString: "write_file").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 680677267)!
+            }
         }
     }()
-
+    
     public func writeFile(
         data: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.ErrorType {
@@ -102,15 +103,15 @@ open class ZIPPacker: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_close_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "close_file").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166280745)!
-        }
+            GodotStringName(swiftStaticString: "close_file").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166280745)!
+            }
         }
     }()
-
+    
     public func closeFile() -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -123,15 +124,15 @@ open class ZIPPacker: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_close: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "close").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166280745)!
-        }
+            GodotStringName(swiftStaticString: "close").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166280745)!
+            }
         }
     }()
-
+    
     public func close() -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -144,18 +145,15 @@ open class ZIPPacker: RefCounted {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

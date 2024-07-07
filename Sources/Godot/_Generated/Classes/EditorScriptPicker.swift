@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class EditorScriptPicker: EditorResourcePicker {
     internal static var __method_binding_set_script_owner: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_script_owner").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
-        }
+            GodotStringName(swiftStaticString: "set_script_owner").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
+            }
         }
     }()
-
+    
     private func __setScriptOwner(
         ownerNode: Godot.Node?
     ) {
@@ -32,15 +32,15 @@ open class EditorScriptPicker: EditorResourcePicker {
             }
         }
     }
-
+    
     internal static var __method_binding_get_script_owner: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_script_owner").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3160264692)!
-        }
+            GodotStringName(swiftStaticString: "get_script_owner").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3160264692)!
+            }
         }
     }()
-
+    
     private func __getScriptOwner() -> Godot.Node? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -53,29 +53,26 @@ open class EditorScriptPicker: EditorResourcePicker {
             }
         }
     }
-
+    
     public var scriptOwner: Godot.Node? {
         get {
             __getScriptOwner()
         }
-        set {
+        set(newValue) {
             __setScriptOwner(
                 ownerNode: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

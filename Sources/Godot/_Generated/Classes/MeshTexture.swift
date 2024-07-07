@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class MeshTexture: Texture2D {
     internal static var __method_binding_set_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_mesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 194775623)!
-        }
+            GodotStringName(swiftStaticString: "set_mesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 194775623)!
+            }
         }
     }()
-
+    
     private func __setMesh(
         _ mesh: Godot.Mesh?
     ) {
@@ -32,15 +32,15 @@ open class MeshTexture: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_mesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1808005922)!
-        }
+            GodotStringName(swiftStaticString: "get_mesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1808005922)!
+            }
         }
     }()
-
+    
     private func __getMesh() -> Godot.Mesh? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -53,15 +53,15 @@ open class MeshTexture: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_image_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_image_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_image_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setImageSize(
         _ size: Godot.Vector2
     ) {
@@ -78,15 +78,15 @@ open class MeshTexture: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_image_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_image_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_image_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getImageSize() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -99,15 +99,15 @@ open class MeshTexture: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_base_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_base_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
-        }
+            GodotStringName(swiftStaticString: "set_base_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
+            }
         }
     }()
-
+    
     private func __setBaseTexture(
         _ texture: Godot.Texture2D?
     ) {
@@ -126,15 +126,15 @@ open class MeshTexture: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_base_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_base_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
-        }
+            GodotStringName(swiftStaticString: "get_base_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
+            }
         }
     }()
-
+    
     private func __getBaseTexture() -> Godot.Texture2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -147,51 +147,48 @@ open class MeshTexture: Texture2D {
             }
         }
     }
-
+    
     public var mesh: Godot.Mesh? {
         get {
             __getMesh()
         }
-        set {
+        set(newValue) {
             __setMesh(
                 newValue
             )
         }
     }
-
+    
     public var baseTexture: Godot.Texture2D? {
         get {
             __getBaseTexture()
         }
-        set {
+        set(newValue) {
             __setBaseTexture(
                 newValue
             )
         }
     }
-
+    
     public var imageSize: Godot.Vector2 {
         get {
             __getImageSize()
         }
-        set {
+        set(newValue) {
             __setImageSize(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

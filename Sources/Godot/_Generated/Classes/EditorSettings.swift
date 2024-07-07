@@ -6,11 +6,10 @@ import GodotExtensionHeaders
 
 @GodotRefCountedClass
 open class EditorSettings: Resource {
-
+    
     public func settingsChanged() {
         _ = settingsChangedSignal.emit()
     }
-
     public lazy var settingsChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "settings_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -25,17 +24,17 @@ open class EditorSettings: Resource {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public static let notificationEditorSettingsChanged: Notification = .init(rawValue: 10000)
-
+    
     internal static var __method_binding_has_setting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_setting").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3927539163)!
-        }
+            GodotStringName(swiftStaticString: "has_setting").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3927539163)!
+            }
         }
     }()
-
+    
     public func hasSetting(
         name: Godot.GodotString
     ) -> Bool {
@@ -54,15 +53,15 @@ open class EditorSettings: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_setting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_setting").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 402577236)!
-        }
+            GodotStringName(swiftStaticString: "set_setting").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 402577236)!
+            }
         }
     }()
-
+    
     public func setSetting<Value: Variant.Storable>(
         name: Godot.GodotString,
         value: Value
@@ -82,15 +81,15 @@ open class EditorSettings: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_setting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_setting").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1868160156)!
-        }
+            GodotStringName(swiftStaticString: "get_setting").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1868160156)!
+            }
         }
     }()
-
+    
     public func setting(
         name: Godot.GodotString
     ) -> Godot.Variant {
@@ -109,15 +108,15 @@ open class EditorSettings: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_erase: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "erase").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "erase").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     public func erase(
         property: Godot.GodotString
     ) {
@@ -134,15 +133,15 @@ open class EditorSettings: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_initial_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_initial_value").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1529169264)!
-        }
+            GodotStringName(swiftStaticString: "set_initial_value").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1529169264)!
+            }
         }
     }()
-
+    
     public func setInitialValue<Value: Variant.Storable>(
         name: Godot.GodotStringName,
         value: Value,
@@ -165,15 +164,15 @@ open class EditorSettings: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_add_property_info: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_property_info").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155329257)!
-        }
+            GodotStringName(swiftStaticString: "add_property_info").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155329257)!
+            }
         }
     }()
-
+    
     public func addPropertyInfo<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ info: Godot.GodotDictionary<Value1, Value2>
     ) {
@@ -190,15 +189,15 @@ open class EditorSettings: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_project_metadata: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_project_metadata").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2504492430)!
-        }
+            GodotStringName(swiftStaticString: "set_project_metadata").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2504492430)!
+            }
         }
     }()
-
+    
     public func setProjectMetadata<Value: Variant.Storable>(
         section: Godot.GodotString,
         key: Godot.GodotString,
@@ -221,15 +220,15 @@ open class EditorSettings: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_project_metadata: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_project_metadata").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 89809366)!
-        }
+            GodotStringName(swiftStaticString: "get_project_metadata").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 89809366)!
+            }
         }
     }()
-
+    
     public func projectMetadata<Value: Variant.Storable>(
         section: Godot.GodotString,
         key: Godot.GodotString,
@@ -254,15 +253,15 @@ open class EditorSettings: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_favorites: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_favorites").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4015028928)!
-        }
+            GodotStringName(swiftStaticString: "set_favorites").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4015028928)!
+            }
         }
     }()
-
+    
     public func setFavorites(
         dirs: Godot.GodotContiguousArray<GodotString>
     ) {
@@ -279,15 +278,15 @@ open class EditorSettings: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_favorites: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_favorites").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
-        }
+            GodotStringName(swiftStaticString: "get_favorites").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
+            }
         }
     }()
-
+    
     public func favorites() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -300,15 +299,15 @@ open class EditorSettings: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_recent_dirs: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_recent_dirs").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4015028928)!
-        }
+            GodotStringName(swiftStaticString: "set_recent_dirs").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4015028928)!
+            }
         }
     }()
-
+    
     public func setRecentDirs(
         _ dirs: Godot.GodotContiguousArray<GodotString>
     ) {
@@ -325,15 +324,15 @@ open class EditorSettings: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_recent_dirs: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_recent_dirs").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
-        }
+            GodotStringName(swiftStaticString: "get_recent_dirs").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
+            }
         }
     }()
-
+    
     public func recentDirs() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -346,18 +345,18 @@ open class EditorSettings: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_builtin_action_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_builtin_action_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1209351045)!
-        }
+            GodotStringName(swiftStaticString: "set_builtin_action_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1209351045)!
+            }
         }
     }()
-
+    
     public func setBuiltinActionOverride(
         name: Godot.GodotString,
-        actionsList: Godot.GodotArray<Godot.InputEvent?>
+        actionsList: Godot.GodotArray<Godot.InputEvent>
     ) {
         withTransferrableUnsafeRawPointer(to: name) { __ptr_name in
             withTransferrableUnsafeRawPointer(to: actionsList) { __ptr_actionsList in
@@ -374,15 +373,15 @@ open class EditorSettings: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_check_changed_settings_in_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "check_changed_settings_in_group").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3927539163)!
-        }
+            GodotStringName(swiftStaticString: "check_changed_settings_in_group").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3927539163)!
+            }
         }
     }()
-
+    
     public func checkChangedSettingsInGroup(
         settingPrefix: Godot.GodotString
     ) -> Bool {
@@ -401,15 +400,15 @@ open class EditorSettings: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_changed_settings: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_changed_settings").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
-        }
+            GodotStringName(swiftStaticString: "get_changed_settings").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
+            }
         }
     }()
-
+    
     public func changedSettings() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -422,15 +421,15 @@ open class EditorSettings: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_mark_setting_changed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "mark_setting_changed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "mark_setting_changed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     public func markSettingChanged(
         setting: Godot.GodotString
     ) {
@@ -447,18 +446,15 @@ open class EditorSettings: Resource {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

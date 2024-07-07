@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class StyleBoxFlat: StyleBox {
     internal static var __method_binding_set_bg_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_bg_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
-        }
+            GodotStringName(swiftStaticString: "set_bg_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
+            }
         }
     }()
-
+    
     private func __setBgColor(
         _ color: Godot.Color
     ) {
@@ -30,15 +30,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bg_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bg_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
-        }
+            GodotStringName(swiftStaticString: "get_bg_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
+            }
         }
     }()
-
+    
     private func __getBgColor() -> Godot.Color {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -51,15 +51,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_set_border_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_border_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
-        }
+            GodotStringName(swiftStaticString: "set_border_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
+            }
         }
     }()
-
+    
     private func __setBorderColor(
         _ color: Godot.Color
     ) {
@@ -76,15 +76,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_get_border_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_border_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
-        }
+            GodotStringName(swiftStaticString: "get_border_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
+            }
         }
     }()
-
+    
     private func __getBorderColor() -> Godot.Color {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -97,15 +97,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_set_border_width_all: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_border_width_all").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_border_width_all").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func setBorderWidthAll(
         width: Int32
     ) {
@@ -122,15 +122,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_get_border_width_min: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_border_width_min").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_border_width_min").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func borderWidthMin() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -143,15 +143,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_set_border_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_border_width").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 437707142)!
-        }
+            GodotStringName(swiftStaticString: "set_border_width").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 437707142)!
+            }
         }
     }()
-
+    
     public func setBorderWidth(
         margin: Godot.Side,
         width: Int32
@@ -171,15 +171,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_get_border_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_border_width").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1983885014)!
-        }
+            GodotStringName(swiftStaticString: "get_border_width").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1983885014)!
+            }
         }
     }()
-
+    
     private func __getBorderWidth(
         margin: Godot.Side
     ) -> Int32 {
@@ -198,15 +198,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_set_border_blend: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_border_blend").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_border_blend").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setBorderBlend(
         _ blend: Bool
     ) {
@@ -223,15 +223,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_get_border_blend: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_border_blend").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_border_blend").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getBorderBlend() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -244,15 +244,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_set_corner_radius_all: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_corner_radius_all").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_corner_radius_all").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func setCornerRadiusAll(
         radius: Int32
     ) {
@@ -269,15 +269,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_set_corner_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_corner_radius").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2696158768)!
-        }
+            GodotStringName(swiftStaticString: "set_corner_radius").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2696158768)!
+            }
         }
     }()
-
+    
     public func setCornerRadius(
         corner: Godot.Corner,
         radius: Int32
@@ -297,15 +297,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_get_corner_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_corner_radius").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3982397690)!
-        }
+            GodotStringName(swiftStaticString: "get_corner_radius").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3982397690)!
+            }
         }
     }()
-
+    
     private func __getCornerRadius(
         corner: Godot.Corner
     ) -> Int32 {
@@ -324,15 +324,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_set_expand_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_expand_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4290182280)!
-        }
+            GodotStringName(swiftStaticString: "set_expand_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4290182280)!
+            }
         }
     }()
-
+    
     public func setExpandMargin(
         _ margin: Godot.Side,
         size: Double
@@ -352,15 +352,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_set_expand_margin_all: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_expand_margin_all").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_expand_margin_all").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     public func setExpandMarginAll(
         size: Double
     ) {
@@ -377,15 +377,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_get_expand_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_expand_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2869120046)!
-        }
+            GodotStringName(swiftStaticString: "get_expand_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2869120046)!
+            }
         }
     }()
-
+    
     private func __getExpandMargin(
         _ margin: Godot.Side
     ) -> Double {
@@ -404,15 +404,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_set_draw_center: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_draw_center").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_draw_center").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setDrawCenter(
         _ drawCenter: Bool
     ) {
@@ -429,15 +429,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_is_draw_center_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_draw_center_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_draw_center_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isDrawCenterEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -450,15 +450,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_set_skew: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_skew").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_skew").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setSkew(
         _ skew: Godot.Vector2
     ) {
@@ -475,15 +475,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_get_skew: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_skew").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_skew").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getSkew() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -496,15 +496,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_set_shadow_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_shadow_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
-        }
+            GodotStringName(swiftStaticString: "set_shadow_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
+            }
         }
     }()
-
+    
     private func __setShadowColor(
         _ color: Godot.Color
     ) {
@@ -521,15 +521,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_get_shadow_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_shadow_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
-        }
+            GodotStringName(swiftStaticString: "get_shadow_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
+            }
         }
     }()
-
+    
     private func __getShadowColor() -> Godot.Color {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -542,15 +542,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_set_shadow_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_shadow_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_shadow_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setShadowSize(
         _ size: Int32
     ) {
@@ -567,15 +567,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_get_shadow_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_shadow_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_shadow_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getShadowSize() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -588,15 +588,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_set_shadow_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_shadow_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_shadow_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setShadowOffset(
         _ offset: Godot.Vector2
     ) {
@@ -613,15 +613,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_get_shadow_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_shadow_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_shadow_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getShadowOffset() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -634,15 +634,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_set_anti_aliased: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_anti_aliased").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_anti_aliased").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setAntiAliased(
         _ antiAliased: Bool
     ) {
@@ -659,15 +659,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_is_anti_aliased: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_anti_aliased").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_anti_aliased").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isAntiAliased() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -680,15 +680,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_set_aa_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_aa_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_aa_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setAaSize(
         _ size: Double
     ) {
@@ -705,15 +705,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_get_aa_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_aa_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_aa_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getAaSize() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -726,15 +726,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_set_corner_detail: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_corner_detail").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_corner_detail").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setCornerDetail(
         _ detail: Int32
     ) {
@@ -751,15 +751,15 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     internal static var __method_binding_get_corner_detail: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_corner_detail").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_corner_detail").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getCornerDetail() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -772,40 +772,40 @@ open class StyleBoxFlat: StyleBox {
             }
         }
     }
-
+    
     public var bgColor: Godot.Color {
         get {
             __getBgColor()
         }
-        set {
+        set(newValue) {
             __setBgColor(
                 newValue
             )
         }
     }
-
+    
     public var isDrawCenterEnabled: Bool {
         get {
             __isDrawCenterEnabled()
         }
-        set {
+        set(newValue) {
             __setDrawCenter(
                 newValue
             )
         }
     }
-
+    
     public var skew: Godot.Vector2 {
         get {
             __getSkew()
         }
-        set {
+        set(newValue) {
             __setSkew(
                 newValue
             )
         }
     }
-
+    
     public var borderWidthLeft: Int32 {
         get {
             __getBorderWidth(
@@ -813,7 +813,7 @@ open class StyleBoxFlat: StyleBox {
             )
         }
     }
-
+    
     public var borderWidthTop: Int32 {
         get {
             __getBorderWidth(
@@ -821,7 +821,7 @@ open class StyleBoxFlat: StyleBox {
             )
         }
     }
-
+    
     public var borderWidthRight: Int32 {
         get {
             __getBorderWidth(
@@ -829,7 +829,7 @@ open class StyleBoxFlat: StyleBox {
             )
         }
     }
-
+    
     public var borderWidthBottom: Int32 {
         get {
             __getBorderWidth(
@@ -837,29 +837,29 @@ open class StyleBoxFlat: StyleBox {
             )
         }
     }
-
+    
     public var borderColor: Godot.Color {
         get {
             __getBorderColor()
         }
-        set {
+        set(newValue) {
             __setBorderColor(
                 newValue
             )
         }
     }
-
+    
     public var borderBlend: Bool {
         get {
             __getBorderBlend()
         }
-        set {
+        set(newValue) {
             __setBorderBlend(
                 newValue
             )
         }
     }
-
+    
     public var cornerRadiusTopLeft: Int32 {
         get {
             __getCornerRadius(
@@ -867,7 +867,7 @@ open class StyleBoxFlat: StyleBox {
             )
         }
     }
-
+    
     public var cornerRadiusTopRight: Int32 {
         get {
             __getCornerRadius(
@@ -875,7 +875,7 @@ open class StyleBoxFlat: StyleBox {
             )
         }
     }
-
+    
     public var cornerRadiusBottomRight: Int32 {
         get {
             __getCornerRadius(
@@ -883,7 +883,7 @@ open class StyleBoxFlat: StyleBox {
             )
         }
     }
-
+    
     public var cornerRadiusBottomLeft: Int32 {
         get {
             __getCornerRadius(
@@ -891,18 +891,18 @@ open class StyleBoxFlat: StyleBox {
             )
         }
     }
-
+    
     public var cornerDetail: Int32 {
         get {
             __getCornerDetail()
         }
-        set {
+        set(newValue) {
             __setCornerDetail(
                 newValue
             )
         }
     }
-
+    
     public var expandMarginLeft: Double {
         get {
             __getExpandMargin(
@@ -910,7 +910,7 @@ open class StyleBoxFlat: StyleBox {
             )
         }
     }
-
+    
     public var expandMarginTop: Double {
         get {
             __getExpandMargin(
@@ -918,7 +918,7 @@ open class StyleBoxFlat: StyleBox {
             )
         }
     }
-
+    
     public var expandMarginRight: Double {
         get {
             __getExpandMargin(
@@ -926,7 +926,7 @@ open class StyleBoxFlat: StyleBox {
             )
         }
     }
-
+    
     public var expandMarginBottom: Double {
         get {
             __getExpandMargin(
@@ -934,73 +934,70 @@ open class StyleBoxFlat: StyleBox {
             )
         }
     }
-
+    
     public var shadowColor: Godot.Color {
         get {
             __getShadowColor()
         }
-        set {
+        set(newValue) {
             __setShadowColor(
                 newValue
             )
         }
     }
-
+    
     public var shadowSize: Int32 {
         get {
             __getShadowSize()
         }
-        set {
+        set(newValue) {
             __setShadowSize(
                 newValue
             )
         }
     }
-
+    
     public var shadowOffset: Godot.Vector2 {
         get {
             __getShadowOffset()
         }
-        set {
+        set(newValue) {
             __setShadowOffset(
                 newValue
             )
         }
     }
-
+    
     public var isAntiAliased: Bool {
         get {
             __isAntiAliased()
         }
-        set {
+        set(newValue) {
             __setAntiAliased(
                 newValue
             )
         }
     }
-
+    
     public var aaSize: Double {
         get {
             __getAaSize()
         }
-        set {
+        set(newValue) {
             __setAaSize(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

@@ -15,25 +15,27 @@ open class EditorScenePostImportPlugin: RefCounted {
         case animationNode = 5
         case skeleton3DNode = 6
         case max = 7
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Node", 0),
-            ("Mesh3D Node", 1),
-            ("Mesh", 2),
-            ("Material", 3),
-            ("Animation", 4),
-            ("Animation Node", 5),
-            ("Skeleton3D Node", 6),
-            ("Max", 7),]
+               ("Node", 0),
+               ("Mesh3D Node", 1),
+               ("Mesh", 2),
+               ("Material", 3),
+               ("Animation", 4),
+               ("Animation Node", 5),
+               ("Skeleton3D Node", 6),
+               ("Max", 7),
+            ]
         }
     }
-
+    
     open func _getInternalImportOptions(
         category: Int32
     ) {
+        
     }
-
+    
     open func _getInternalOptionVisibility(
         category: Int32,
         forAnimation animation: Bool,
@@ -41,27 +43,29 @@ open class EditorScenePostImportPlugin: RefCounted {
     ) -> Godot.Variant {
         Variant()
     }
-
+    
     open func _getInternalOptionUpdateViewRequired(
         category: Int32,
         option: Godot.GodotString
     ) -> Godot.Variant {
         Variant()
     }
-
+    
     open func _internalProcess(
         category: Int32,
         baseNode: Godot.Node?,
         node: Godot.Node?,
         resource: Godot.Resource?
     ) {
+        
     }
-
+    
     open func _getImportOptions(
         path: Godot.GodotString
     ) {
+        
     }
-
+    
     open func _getOptionVisibility(
         path: Godot.GodotString,
         forAnimation animation: Bool,
@@ -69,25 +73,27 @@ open class EditorScenePostImportPlugin: RefCounted {
     ) -> Godot.Variant {
         Variant()
     }
-
+    
     open func _preProcess(
         scene: Godot.Node?
     ) {
+        
     }
-
+    
     open func _postProcess(
         scene: Godot.Node?
     ) {
+        
     }
-
+    
     internal static var __method_binding_get_option_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_option_value").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2760726917)!
-        }
+            GodotStringName(swiftStaticString: "get_option_value").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2760726917)!
+            }
         }
     }()
-
+    
     public func optionValue(
         name: Godot.GodotStringName
     ) -> Godot.Variant {
@@ -106,15 +112,15 @@ open class EditorScenePostImportPlugin: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_add_import_option: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_import_option").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 402577236)!
-        }
+            GodotStringName(swiftStaticString: "add_import_option").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 402577236)!
+            }
         }
     }()
-
+    
     public func addImportOption<Value: Variant.Storable>(
         name: Godot.GodotString,
         value: Value
@@ -134,17 +140,17 @@ open class EditorScenePostImportPlugin: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_add_import_option_advanced: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_import_option_advanced").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3674075649)!
-        }
+            GodotStringName(swiftStaticString: "add_import_option_advanced").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3674075649)!
+            }
         }
     }()
-
+    
     public func addImportOptionAdvanced<Value: Variant.Storable>(
-        type: Godot.Variant.StorageType,
+        type: Godot.Variant.GodotType,
         name: Godot.GodotString,
         defaultValue: Value,
         hint: Godot.PropertyHint = PropertyHint(rawValue: 0)!,
@@ -174,88 +180,87 @@ open class EditorScenePostImportPlugin: RefCounted {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _get_internal_import_options_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorScenePostImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getInternalImportOptions(
-            category: Int32.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorScenePostImportPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getInternalImportOptions(
+                    category: Int32.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _get_internal_option_visibility_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorScenePostImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getInternalOptionVisibility(
-            category: Int32.transferFromGodot(unsafePointer: args[0]!),
-            forAnimation: Bool.transferFromGodot(unsafePointer: args[1]!),
-            option: Godot.GodotString.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorScenePostImportPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getInternalOptionVisibility(
+                    category: Int32.transferFromGodot(unsafePointer: args[0]!),
+                    forAnimation: Bool.transferFromGodot(unsafePointer: args[1]!),
+                    option: Godot.GodotString.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_internal_option_update_view_required_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorScenePostImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getInternalOptionUpdateViewRequired(
-            category: Int32.transferFromGodot(unsafePointer: args[0]!),
-            option: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorScenePostImportPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getInternalOptionUpdateViewRequired(
+                    category: Int32.transferFromGodot(unsafePointer: args[0]!),
+                    option: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _internal_process_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorScenePostImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._internalProcess(
-            category: Int32.transferFromGodot(unsafePointer: args[0]!),
-            baseNode: Godot.Node?.transferFromGodot(unsafePointer: args[1]!),
-            node: Godot.Node?.transferFromGodot(unsafePointer: args[2]!),
-            resource: Godot.Resource?.transferFromGodot(unsafePointer: args[3]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorScenePostImportPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._internalProcess(
+                    category: Int32.transferFromGodot(unsafePointer: args[0]!),
+                    baseNode: Godot.Node?.transferFromGodot(unsafePointer: args[1]!),
+                    node: Godot.Node?.transferFromGodot(unsafePointer: args[2]!),
+                    resource: Godot.Resource?.transferFromGodot(unsafePointer: args[3]!)
+                )
+        }
         let _get_import_options_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorScenePostImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getImportOptions(
-            path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorScenePostImportPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getImportOptions(
+                    path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _get_option_visibility_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorScenePostImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getOptionVisibility(
-            path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
-            forAnimation: Bool.transferFromGodot(unsafePointer: args[1]!),
-            option: Godot.GodotString.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorScenePostImportPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getOptionVisibility(
+                    path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+                    forAnimation: Bool.transferFromGodot(unsafePointer: args[1]!),
+                    option: Godot.GodotString.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _pre_process_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorScenePostImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._preProcess(
-            scene: Godot.Node?.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorScenePostImportPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._preProcess(
+                    scene: Godot.Node?.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _post_process_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorScenePostImportPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._postProcess(
-            scene: Godot.Node?.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorScenePostImportPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._postProcess(
+                    scene: Godot.Node?.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         _virtualFunctions = [
             "_getInternalImportOptions" : ("_get_internal_import_options", _get_internal_import_options_call),
             "_getInternalOptionVisibility" : ("_get_internal_option_visibility", _get_internal_option_visibility_call),
@@ -267,7 +272,7 @@ open class EditorScenePostImportPlugin: RefCounted {
             "_postProcess" : ("_post_process", _post_process_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

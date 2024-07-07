@@ -12,25 +12,26 @@ open class VisualShaderNodeBillboard: VisualShaderNode {
         case fixedY = 2
         case particles = 3
         case max = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Disabled", 0),
-            ("Enabled", 1),
-            ("Fixed Y", 2),
-            ("Particles", 3),
-            ("Max", 4),]
+               ("Disabled", 0),
+               ("Enabled", 1),
+               ("Fixed Y", 2),
+               ("Particles", 3),
+               ("Max", 4),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_billboard_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_billboard_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1227463289)!
-        }
+            GodotStringName(swiftStaticString: "set_billboard_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1227463289)!
+            }
         }
     }()
-
+    
     private func __setBillboardType(
         _ billboardType: Godot.VisualShaderNodeBillboard.BillboardType
     ) {
@@ -47,15 +48,15 @@ open class VisualShaderNodeBillboard: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_billboard_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_billboard_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3724188517)!
-        }
+            GodotStringName(swiftStaticString: "get_billboard_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3724188517)!
+            }
         }
     }()
-
+    
     private func __getBillboardType() -> Godot.VisualShaderNodeBillboard.BillboardType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -68,15 +69,15 @@ open class VisualShaderNodeBillboard: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_set_keep_scale_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_keep_scale_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_keep_scale_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setKeepScaleEnabled(
         _ enabled: Bool
     ) {
@@ -93,15 +94,15 @@ open class VisualShaderNodeBillboard: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_is_keep_scale_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_keep_scale_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_keep_scale_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isKeepScaleEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -114,40 +115,37 @@ open class VisualShaderNodeBillboard: VisualShaderNode {
             }
         }
     }
-
+    
     public var billboardType: Godot.VisualShaderNodeBillboard.BillboardType {
         get {
             __getBillboardType()
         }
-        set {
+        set(newValue) {
             __setBillboardType(
                 newValue
             )
         }
     }
-
+    
     public var isKeepScaleEnabled: Bool {
         get {
             __isKeepScaleEnabled()
         }
-        set {
+        set(newValue) {
             __setKeepScaleEnabled(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

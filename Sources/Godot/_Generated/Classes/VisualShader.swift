@@ -18,36 +18,38 @@ open class VisualShader: Shader {
         case sky = 8
         case fog = 9
         case max = 10
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Vertex", 0),
-            ("Fragment", 1),
-            ("Light", 2),
-            ("Start", 3),
-            ("Process", 4),
-            ("Collide", 5),
-            ("Start Custom", 6),
-            ("Process Custom", 7),
-            ("Sky", 8),
-            ("Fog", 9),
-            ("Max", 10),]
+               ("Vertex", 0),
+               ("Fragment", 1),
+               ("Light", 2),
+               ("Start", 3),
+               ("Process", 4),
+               ("Collide", 5),
+               ("Start Custom", 6),
+               ("Process Custom", 7),
+               ("Sky", 8),
+               ("Fog", 9),
+               ("Max", 10),
+            ]
         }
     }
-
+    
     public enum VaryingMode: UInt32, GodotEnum {
         case vertexToFragLight = 0
         case fragToLight = 1
         case max = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Vertex To Frag Light", 0),
-            ("Frag To Light", 1),
-            ("Max", 2),]
+               ("Vertex To Frag Light", 0),
+               ("Frag To Light", 1),
+               ("Max", 2),
+            ]
         }
     }
-
+    
     public enum VaryingType: UInt32, GodotEnum {
         case float = 0
         case int = 1
@@ -58,33 +60,34 @@ open class VisualShader: Shader {
         case boolean = 6
         case transform = 7
         case max = 8
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Float", 0),
-            ("Int", 1),
-            ("Uint", 2),
-            ("Vector2D", 3),
-            ("Vector3D", 4),
-            ("Vector4D", 5),
-            ("Boolean", 6),
-            ("Transform", 7),
-            ("Max", 8),]
+               ("Float", 0),
+               ("Int", 1),
+               ("Uint", 2),
+               ("Vector2D", 3),
+               ("Vector3D", 4),
+               ("Vector4D", 5),
+               ("Boolean", 6),
+               ("Transform", 7),
+               ("Max", 8),
+            ]
         }
     }
-
+    
     public static let nodeIDInvalid: Int = -1
-
+    
     public static let nodeIDOutput: Int = 0
-
+    
     internal static var __method_binding_set_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3978014962)!
-        }
+            GodotStringName(swiftStaticString: "set_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3978014962)!
+            }
         }
     }()
-
+    
     public func setMode(
         _ mode: Godot.Shader.Mode
     ) {
@@ -101,15 +104,15 @@ open class VisualShader: Shader {
             }
         }
     }
-
+    
     internal static var __method_binding_add_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1560769431)!
-        }
+            GodotStringName(swiftStaticString: "add_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1560769431)!
+            }
         }
     }()
-
+    
     public func addNode(
         type: Godot.VisualShader.GodotType,
         node: Godot.VisualShaderNode?,
@@ -137,15 +140,15 @@ open class VisualShader: Shader {
             }
         }
     }
-
+    
     internal static var __method_binding_get_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3784670312)!
-        }
+            GodotStringName(swiftStaticString: "get_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3784670312)!
+            }
         }
     }()
-
+    
     public func node(
         type: Godot.VisualShader.GodotType,
         id: Int32
@@ -167,15 +170,15 @@ open class VisualShader: Shader {
             }
         }
     }
-
+    
     internal static var __method_binding_set_node_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_node_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2726660721)!
-        }
+            GodotStringName(swiftStaticString: "set_node_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2726660721)!
+            }
         }
     }()
-
+    
     public func setNodePosition(
         type: Godot.VisualShader.GodotType,
         id: Int32,
@@ -198,15 +201,15 @@ open class VisualShader: Shader {
             }
         }
     }
-
+    
     internal static var __method_binding_get_node_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_node_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2175036082)!
-        }
+            GodotStringName(swiftStaticString: "get_node_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2175036082)!
+            }
         }
     }()
-
+    
     public func nodePosition(
         type: Godot.VisualShader.GodotType,
         id: Int32
@@ -228,15 +231,15 @@ open class VisualShader: Shader {
             }
         }
     }
-
+    
     internal static var __method_binding_get_node_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_node_list").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2370592410)!
-        }
+            GodotStringName(swiftStaticString: "get_node_list").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2370592410)!
+            }
         }
     }()
-
+    
     public func nodeList(
         type: Godot.VisualShader.GodotType
     ) -> Godot.GodotContiguousArray<Int32> {
@@ -255,15 +258,15 @@ open class VisualShader: Shader {
             }
         }
     }
-
+    
     internal static var __method_binding_get_valid_node_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_valid_node_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 629467342)!
-        }
+            GodotStringName(swiftStaticString: "get_valid_node_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 629467342)!
+            }
         }
     }()
-
+    
     public func validNodeID(
         type: Godot.VisualShader.GodotType
     ) -> Int32 {
@@ -282,15 +285,15 @@ open class VisualShader: Shader {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844050912)!
-        }
+            GodotStringName(swiftStaticString: "remove_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844050912)!
+            }
         }
     }()
-
+    
     public func removeNode(
         type: Godot.VisualShader.GodotType,
         id: Int32
@@ -310,15 +313,15 @@ open class VisualShader: Shader {
             }
         }
     }
-
+    
     internal static var __method_binding_replace_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "replace_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3144735253)!
-        }
+            GodotStringName(swiftStaticString: "replace_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3144735253)!
+            }
         }
     }()
-
+    
     public func replaceNode(
         type: Godot.VisualShader.GodotType,
         id: Int32,
@@ -341,15 +344,15 @@ open class VisualShader: Shader {
             }
         }
     }
-
+    
     internal static var __method_binding_is_node_connection: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_node_connection").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3922381898)!
-        }
+            GodotStringName(swiftStaticString: "is_node_connection").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3922381898)!
+            }
         }
     }()
-
+    
     public func isNodeConnection(
         type: Godot.VisualShader.GodotType,
         fromNode: Int32,
@@ -380,15 +383,15 @@ open class VisualShader: Shader {
             }
         }
     }
-
+    
     internal static var __method_binding_can_connect_nodes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "can_connect_nodes").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3922381898)!
-        }
+            GodotStringName(swiftStaticString: "can_connect_nodes").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3922381898)!
+            }
         }
     }()
-
+    
     public func canConnectNodes(
         type: Godot.VisualShader.GodotType,
         fromNode: Int32,
@@ -419,15 +422,15 @@ open class VisualShader: Shader {
             }
         }
     }
-
+    
     internal static var __method_binding_connect_nodes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "connect_nodes").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3081049573)!
-        }
+            GodotStringName(swiftStaticString: "connect_nodes").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3081049573)!
+            }
         }
     }()
-
+    
     public func connectNodes(
         type: Godot.VisualShader.GodotType,
         fromNode: Int32,
@@ -458,15 +461,15 @@ open class VisualShader: Shader {
             }
         }
     }
-
+    
     internal static var __method_binding_disconnect_nodes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "disconnect_nodes").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2268060358)!
-        }
+            GodotStringName(swiftStaticString: "disconnect_nodes").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2268060358)!
+            }
         }
     }()
-
+    
     public func disconnectNodes(
         type: Godot.VisualShader.GodotType,
         fromNode: Int32,
@@ -495,15 +498,15 @@ open class VisualShader: Shader {
             }
         }
     }
-
+    
     internal static var __method_binding_connect_nodes_forced: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "connect_nodes_forced").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2268060358)!
-        }
+            GodotStringName(swiftStaticString: "connect_nodes_forced").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2268060358)!
+            }
         }
     }()
-
+    
     public func connectNodesForced(
         type: Godot.VisualShader.GodotType,
         fromNode: Int32,
@@ -532,15 +535,15 @@ open class VisualShader: Shader {
             }
         }
     }
-
+    
     internal static var __method_binding_get_node_connections: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_node_connections").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1441964831)!
-        }
+            GodotStringName(swiftStaticString: "get_node_connections").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1441964831)!
+            }
         }
     }()
-
+    
     public func nodeConnections(
         type: Godot.VisualShader.GodotType
     ) -> Godot.GodotArray<Godot.AnyGodotDictionary> {
@@ -559,15 +562,15 @@ open class VisualShader: Shader {
             }
         }
     }
-
+    
     internal static var __method_binding_set_graph_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_graph_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_graph_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setGraphOffset(
         _ offset: Godot.Vector2
     ) {
@@ -584,15 +587,15 @@ open class VisualShader: Shader {
             }
         }
     }
-
+    
     internal static var __method_binding_get_graph_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_graph_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_graph_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getGraphOffset() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -605,15 +608,15 @@ open class VisualShader: Shader {
             }
         }
     }
-
+    
     internal static var __method_binding_add_varying: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_varying").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2084110726)!
-        }
+            GodotStringName(swiftStaticString: "add_varying").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2084110726)!
+            }
         }
     }()
-
+    
     public func addVarying(
         name: Godot.GodotString,
         mode: Godot.VisualShader.VaryingMode,
@@ -636,15 +639,15 @@ open class VisualShader: Shader {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_varying: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_varying").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "remove_varying").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     public func removeVarying(
         name: Godot.GodotString
     ) {
@@ -661,15 +664,15 @@ open class VisualShader: Shader {
             }
         }
     }
-
+    
     internal static var __method_binding_has_varying: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_varying").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3927539163)!
-        }
+            GodotStringName(swiftStaticString: "has_varying").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3927539163)!
+            }
         }
     }()
-
+    
     public func hasVarying(
         name: Godot.GodotString
     ) -> Bool {
@@ -688,29 +691,26 @@ open class VisualShader: Shader {
             }
         }
     }
-
+    
     public var graphOffset: Godot.Vector2 {
         get {
             __getGraphOffset()
         }
-        set {
+        set(newValue) {
             __setGraphOffset(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

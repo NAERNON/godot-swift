@@ -6,10 +6,11 @@ import GodotExtensionHeaders
 
 internal enum GodotDictionaryBindings {
     static private var areBindingsLoaded = false
-
+    
     internal static func loadBindings() {
         precondition(!areBindingsLoaded, "GodotDictionary bindings are already loaded.")
         areBindingsLoaded = true
+        
         destructor = GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY)!
         constructor = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY, 0)!
         constructorFromGodotDictionary = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_DICTIONARY, 1)!
@@ -69,62 +70,35 @@ internal enum GodotDictionaryBindings {
             GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_DICTIONARY, __ptr__method_name, 3918633141)!
         }
     }
-
-    static private (set) var destructor: GDExtensionPtrDestructor!
-
-    static private (set) var constructor: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromGodotDictionary: GDExtensionPtrConstructor!
-
-    static private (set) var operatorEqualVariant: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNotEqualVariant: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNot: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorEqualGodotdictionary: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNotEqualGodotdictionary: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorInGodotdictionary: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorInGodotarray: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var keyedSetter: GDExtensionPtrKeyedSetter!
-
-    static private (set) var keyedGetter: GDExtensionPtrKeyedGetter!
-
-    static private (set) var keyedChecker: GDExtensionPtrKeyedChecker!
-
-    static private (set) var methodSize: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodIsEmpty: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodClear: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodMerge: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodHas: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodHasAll: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodFindKey: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodErase: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodHash: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodKeys: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodValues: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodDuplicate: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodGet: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodMakeReadOnly: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodIsReadOnly: GDExtensionPtrBuiltInMethod!
+    
+    static private(set) var destructor: GDExtensionPtrDestructor!
+    static private(set) var constructor: GDExtensionPtrConstructor!
+    static private(set) var constructorFromGodotDictionary: GDExtensionPtrConstructor!
+    static private(set) var operatorEqualVariant: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNotEqualVariant: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNot: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorEqualGodotdictionary: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNotEqualGodotdictionary: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorInGodotdictionary: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorInGodotarray: GDExtensionPtrOperatorEvaluator!
+    static private(set) var keyedSetter: GDExtensionPtrKeyedSetter!
+    static private(set) var keyedGetter: GDExtensionPtrKeyedGetter!
+    static private(set) var keyedChecker: GDExtensionPtrKeyedChecker!
+    static private(set) var methodSize: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodIsEmpty: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodClear: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodMerge: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodHas: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodHasAll: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodFindKey: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodErase: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodHash: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodKeys: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodValues: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodDuplicate: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodGet: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodMakeReadOnly: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodIsReadOnly: GDExtensionPtrBuiltInMethod!
 }
 
 extension GodotDictionary {
@@ -133,7 +107,7 @@ extension GodotDictionary {
     ) -> Opaque.Storage {
         Opaque.Storage(size: 8, destructorPtr: useDestructor ? GodotDictionaryBindings.destructor : nil)
     }
-
+    
     static internal func make() -> Opaque.Storage {
         var __temporary: Opaque.Storage = makeOpaqueStorage()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -141,7 +115,7 @@ extension GodotDictionary {
         }
         return __temporary
     }
-
+    
     static internal func make<Value1: Variant.Storable, Value2: Variant.Storable>(
         from: Godot.GodotDictionary<Value1, Value2>
     ) -> Opaque.Storage {
@@ -155,7 +129,7 @@ extension GodotDictionary {
         }
         return __temporary
     }
-
+    
     static internal func _operatorEqual<Value1: Variant.Storable, Value2: Variant.Storable, Value3: Variant.Storable>(
         _ lhs: Godot.GodotDictionary<Value1, Value2>,
         _ rhs: Value3
@@ -168,7 +142,7 @@ extension GodotDictionary {
             }
         }
     }
-
+    
     static internal func _operatorNotEqual<Value1: Variant.Storable, Value2: Variant.Storable, Value3: Variant.Storable>(
         _ lhs: Godot.GodotDictionary<Value1, Value2>,
         _ rhs: Value3
@@ -181,7 +155,7 @@ extension GodotDictionary {
             }
         }
     }
-
+    
     static internal func _operatorNot<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ lhs: Godot.GodotDictionary<Value1, Value2>
     ) -> Bool {
@@ -191,7 +165,7 @@ extension GodotDictionary {
             }
         }
     }
-
+    
     static internal func _operatorEqual<Value1: Variant.Storable, Value2: Variant.Storable, Value3: Variant.Storable, Value4: Variant.Storable>(
         _ lhs: Godot.GodotDictionary<Value1, Value2>,
         _ rhs: Godot.GodotDictionary<Value3, Value4>
@@ -204,7 +178,7 @@ extension GodotDictionary {
             }
         }
     }
-
+    
     static internal func _operatorNotEqual<Value1: Variant.Storable, Value2: Variant.Storable, Value3: Variant.Storable, Value4: Variant.Storable>(
         _ lhs: Godot.GodotDictionary<Value1, Value2>,
         _ rhs: Godot.GodotDictionary<Value3, Value4>
@@ -217,7 +191,7 @@ extension GodotDictionary {
             }
         }
     }
-
+    
     static internal func _operatorIn<Value1: Variant.Storable, Value2: Variant.Storable, Value3: Variant.Storable, Value4: Variant.Storable>(
         _ lhs: Godot.GodotDictionary<Value1, Value2>,
         _ rhs: Godot.GodotDictionary<Value3, Value4>
@@ -230,7 +204,7 @@ extension GodotDictionary {
             }
         }
     }
-
+    
     static internal func _operatorIn<Value1: Variant.Storable, Value2: Variant.Storable, Value3: Variant.Storable>(
         _ lhs: Godot.GodotDictionary<Value1, Value2>,
         _ rhs: Godot.GodotArray<Value3>
@@ -243,12 +217,10 @@ extension GodotDictionary {
             }
         }
     }
-
-    internal func _getValue(
-        forKey key: borrowing Variant.Storage
-    ) -> Variant.Storage {
+    
+    internal func _getValue(forKey key: borrowing Variant.Storage) -> Variant.Storage {
         let __returnValue = Variant.Storage()
-
+        
         __returnValue.withUnsafeMutableRawPointer { __ptr___returnValue in
             key.withUnsafeRawPointer { __ptr_key in
                 self.withUnsafeOpaquePointer { __ptr_self in
@@ -256,14 +228,11 @@ extension GodotDictionary {
                 }
             }
         }
-
+        
         return __returnValue
     }
-
-    internal func _set(
-        value: borrowing Variant.Storage,
-        forKey key: borrowing Variant.Storage
-    ) {
+    
+    internal func _set(value: borrowing Variant.Storage, forKey key: borrowing Variant.Storage) {
         value.withUnsafeRawPointer { __ptr_value in
             key.withUnsafeRawPointer { __ptr_key in
                 self.withUnsafeMutableOpaquePointer { __ptr_self in
@@ -272,21 +241,19 @@ extension GodotDictionary {
             }
         }
     }
-
-    internal func _check(
-        key: borrowing Variant.Storage
-    ) -> Bool {
+    
+    internal func _check(key: borrowing Variant.Storage) -> Bool {
         var keyCheck = UInt32()
-
+        
         key.withUnsafeRawPointer { __ptr_key in
             self.withUnsafeOpaquePointer { __ptr_self in
                 keyCheck = GodotDictionaryBindings.keyedChecker(__ptr_self, __ptr_key)
             }
         }
-
+        
         return keyCheck != 0
     }
-
+    
     internal func _size() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -294,7 +261,7 @@ extension GodotDictionary {
             }
         }
     }
-
+    
     internal func _isEmpty() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -302,13 +269,13 @@ extension GodotDictionary {
             }
         }
     }
-
+    
     internal func _clear() {
         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
             GodotDictionaryBindings.methodClear(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
-
+    
     internal func _merge<Value1: Variant.Storable, Value2: Variant.Storable>(
         dictionary: Godot.GodotDictionary<Value1, Value2>,
         overwrite: Bool = false
@@ -323,7 +290,7 @@ extension GodotDictionary {
             }
         }
     }
-
+    
     internal func _has(
         key: borrowing Godot.Variant.Storage
     ) -> Bool {
@@ -337,7 +304,7 @@ extension GodotDictionary {
             }
         }
     }
-
+    
     internal func _hasAll<Value: Variant.Storable>(
         keys: Godot.GodotArray<Value>
     ) -> Bool {
@@ -351,7 +318,7 @@ extension GodotDictionary {
             }
         }
     }
-
+    
     internal func _findKey(
         value: borrowing Godot.Variant.Storage
     ) -> Godot.Variant.Storage {
@@ -365,7 +332,7 @@ extension GodotDictionary {
             }
         }
     }
-
+    
     internal func _erase(
         key: borrowing Godot.Variant.Storage
     ) -> Bool {
@@ -379,7 +346,7 @@ extension GodotDictionary {
             }
         }
     }
-
+    
     internal func _hash() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -387,7 +354,7 @@ extension GodotDictionary {
             }
         }
     }
-
+    
     internal func _keys() -> Godot.AnyGodotArray {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -395,7 +362,7 @@ extension GodotDictionary {
             }
         }
     }
-
+    
     internal func _values() -> Godot.AnyGodotArray {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -403,7 +370,7 @@ extension GodotDictionary {
             }
         }
     }
-
+    
     internal func _duplicate(
         deep: Bool = false
     ) -> Godot.GodotDictionary<Key, AssociatedValue> {
@@ -417,7 +384,7 @@ extension GodotDictionary {
             }
         }
     }
-
+    
     internal func _get(
         key: borrowing Godot.Variant.Storage,
         `default`: borrowing Godot.Variant.Storage
@@ -434,13 +401,13 @@ extension GodotDictionary {
             }
         }
     }
-
+    
     internal func _makeReadOnly() {
         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
             GodotDictionaryBindings.methodMakeReadOnly(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
-
+    
     internal func _isReadOnly() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in

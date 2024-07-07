@@ -30,35 +30,36 @@ open class Generic6DOFJoint3D: Joint3D {
         case angularSpringDamping = 20
         case angularSpringEquilibriumPoint = 21
         case max = 22
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Linear Lower Limit", 0),
-            ("Linear Upper Limit", 1),
-            ("Linear Limit Softness", 2),
-            ("Linear Restitution", 3),
-            ("Linear Damping", 4),
-            ("Linear Motor Target Velocity", 5),
-            ("Linear Motor Force Limit", 6),
-            ("Linear Spring Stiffness", 7),
-            ("Linear Spring Damping", 8),
-            ("Linear Spring Equilibrium Point", 9),
-            ("Angular Lower Limit", 10),
-            ("Angular Upper Limit", 11),
-            ("Angular Limit Softness", 12),
-            ("Angular Damping", 13),
-            ("Angular Restitution", 14),
-            ("Angular Force Limit", 15),
-            ("Angular Erp", 16),
-            ("Angular Motor Target Velocity", 17),
-            ("Angular Motor Force Limit", 18),
-            ("Angular Spring Stiffness", 19),
-            ("Angular Spring Damping", 20),
-            ("Angular Spring Equilibrium Point", 21),
-            ("Max", 22),]
+               ("Linear Lower Limit", 0),
+               ("Linear Upper Limit", 1),
+               ("Linear Limit Softness", 2),
+               ("Linear Restitution", 3),
+               ("Linear Damping", 4),
+               ("Linear Motor Target Velocity", 5),
+               ("Linear Motor Force Limit", 6),
+               ("Linear Spring Stiffness", 7),
+               ("Linear Spring Damping", 8),
+               ("Linear Spring Equilibrium Point", 9),
+               ("Angular Lower Limit", 10),
+               ("Angular Upper Limit", 11),
+               ("Angular Limit Softness", 12),
+               ("Angular Damping", 13),
+               ("Angular Restitution", 14),
+               ("Angular Force Limit", 15),
+               ("Angular Erp", 16),
+               ("Angular Motor Target Velocity", 17),
+               ("Angular Motor Force Limit", 18),
+               ("Angular Spring Stiffness", 19),
+               ("Angular Spring Damping", 20),
+               ("Angular Spring Equilibrium Point", 21),
+               ("Max", 22),
+            ]
         }
     }
-
+    
     public enum Flag: UInt32, GodotEnum {
         case enableLinearLimit = 0
         case enableAngularLimit = 1
@@ -67,27 +68,28 @@ open class Generic6DOFJoint3D: Joint3D {
         case enableMotor = 4
         case enableLinearMotor = 5
         case max = 6
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Enable Linear Limit", 0),
-            ("Enable Angular Limit", 1),
-            ("Enable Angular Spring", 2),
-            ("Enable Linear Spring", 3),
-            ("Enable Motor", 4),
-            ("Enable Linear Motor", 5),
-            ("Max", 6),]
+               ("Enable Linear Limit", 0),
+               ("Enable Angular Limit", 1),
+               ("Enable Angular Spring", 2),
+               ("Enable Linear Spring", 3),
+               ("Enable Motor", 4),
+               ("Enable Linear Motor", 5),
+               ("Max", 6),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_param_x: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_param_x").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2018184242)!
-        }
+            GodotStringName(swiftStaticString: "set_param_x").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2018184242)!
+            }
         }
     }()
-
+    
     public func setParamX(
         param: Godot.Generic6DOFJoint3D.Param,
         value: Double
@@ -107,15 +109,15 @@ open class Generic6DOFJoint3D: Joint3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_param_x: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_param_x").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2599835054)!
-        }
+            GodotStringName(swiftStaticString: "get_param_x").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2599835054)!
+            }
         }
     }()
-
+    
     public func paramX(
         param: Godot.Generic6DOFJoint3D.Param
     ) -> Double {
@@ -134,15 +136,15 @@ open class Generic6DOFJoint3D: Joint3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_param_y: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_param_y").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2018184242)!
-        }
+            GodotStringName(swiftStaticString: "set_param_y").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2018184242)!
+            }
         }
     }()
-
+    
     public func setParamY(
         param: Godot.Generic6DOFJoint3D.Param,
         value: Double
@@ -162,15 +164,15 @@ open class Generic6DOFJoint3D: Joint3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_param_y: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_param_y").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2599835054)!
-        }
+            GodotStringName(swiftStaticString: "get_param_y").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2599835054)!
+            }
         }
     }()
-
+    
     public func paramY(
         param: Godot.Generic6DOFJoint3D.Param
     ) -> Double {
@@ -189,15 +191,15 @@ open class Generic6DOFJoint3D: Joint3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_param_z: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_param_z").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2018184242)!
-        }
+            GodotStringName(swiftStaticString: "set_param_z").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2018184242)!
+            }
         }
     }()
-
+    
     public func setParamZ(
         param: Godot.Generic6DOFJoint3D.Param,
         value: Double
@@ -217,15 +219,15 @@ open class Generic6DOFJoint3D: Joint3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_param_z: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_param_z").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2599835054)!
-        }
+            GodotStringName(swiftStaticString: "get_param_z").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2599835054)!
+            }
         }
     }()
-
+    
     public func paramZ(
         param: Godot.Generic6DOFJoint3D.Param
     ) -> Double {
@@ -244,15 +246,15 @@ open class Generic6DOFJoint3D: Joint3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_flag_x: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_flag_x").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2451594564)!
-        }
+            GodotStringName(swiftStaticString: "set_flag_x").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2451594564)!
+            }
         }
     }()
-
+    
     public func setFlagX(
         flag: Godot.Generic6DOFJoint3D.Flag,
         value: Bool
@@ -272,15 +274,15 @@ open class Generic6DOFJoint3D: Joint3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_flag_x: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_flag_x").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2122427807)!
-        }
+            GodotStringName(swiftStaticString: "get_flag_x").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2122427807)!
+            }
         }
     }()
-
+    
     public func flagX(
         flag: Godot.Generic6DOFJoint3D.Flag
     ) -> Bool {
@@ -299,15 +301,15 @@ open class Generic6DOFJoint3D: Joint3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_flag_y: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_flag_y").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2451594564)!
-        }
+            GodotStringName(swiftStaticString: "set_flag_y").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2451594564)!
+            }
         }
     }()
-
+    
     public func setFlagY(
         flag: Godot.Generic6DOFJoint3D.Flag,
         value: Bool
@@ -327,15 +329,15 @@ open class Generic6DOFJoint3D: Joint3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_flag_y: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_flag_y").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2122427807)!
-        }
+            GodotStringName(swiftStaticString: "get_flag_y").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2122427807)!
+            }
         }
     }()
-
+    
     public func flagY(
         flag: Godot.Generic6DOFJoint3D.Flag
     ) -> Bool {
@@ -354,15 +356,15 @@ open class Generic6DOFJoint3D: Joint3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_flag_z: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_flag_z").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2451594564)!
-        }
+            GodotStringName(swiftStaticString: "set_flag_z").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2451594564)!
+            }
         }
     }()
-
+    
     public func setFlagZ(
         flag: Godot.Generic6DOFJoint3D.Flag,
         value: Bool
@@ -382,15 +384,15 @@ open class Generic6DOFJoint3D: Joint3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_flag_z: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_flag_z").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2122427807)!
-        }
+            GodotStringName(swiftStaticString: "get_flag_z").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2122427807)!
+            }
         }
     }()
-
+    
     public func flagZ(
         flag: Godot.Generic6DOFJoint3D.Flag
     ) -> Bool {
@@ -409,18 +411,15 @@ open class Generic6DOFJoint3D: Joint3D {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

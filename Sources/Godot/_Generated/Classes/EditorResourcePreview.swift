@@ -8,26 +8,16 @@ import GodotExtensionHeaders
 open class EditorResourcePreview: Node {
     public struct PreviewInvalidatedSignalInput: Godot.SignalInput {
         public let path: Godot.GodotString
-
-        fileprivate init(
-            path: Godot.GodotString
-        ) {
+        fileprivate init(path: Godot.GodotString) {
             self.path = path
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.path)]
         }
     }
-
-    public func previewInvalidated(
-        path: Godot.GodotString
-    ) {
+    public func previewInvalidated(path: Godot.GodotString) {
         _ = previewInvalidatedSignal.emit(.init(path: path))
     }
-
     public lazy var previewInvalidatedSignal: Godot.SignalEmitter<PreviewInvalidatedSignalInput> = {
         .init(object: self, signalName: "preview_invalidated") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PreviewInvalidatedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -42,15 +32,15 @@ open class EditorResourcePreview: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_queue_resource_preview: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "queue_resource_preview").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 233177534)!
-        }
+            GodotStringName(swiftStaticString: "queue_resource_preview").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 233177534)!
+            }
         }
     }()
-
+    
     public func queueResourcePreview<Value: Variant.Storable>(
         path: Godot.GodotString,
         receiver: Godot.Object?,
@@ -78,15 +68,15 @@ open class EditorResourcePreview: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_queue_edited_resource_preview: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "queue_edited_resource_preview").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1608376650)!
-        }
+            GodotStringName(swiftStaticString: "queue_edited_resource_preview").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1608376650)!
+            }
         }
     }()
-
+    
     public func queueEditedResourcePreview<Value: Variant.Storable>(
         resource: Godot.Resource?,
         receiver: Godot.Object?,
@@ -116,15 +106,15 @@ open class EditorResourcePreview: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_add_preview_generator: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_preview_generator").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 332288124)!
-        }
+            GodotStringName(swiftStaticString: "add_preview_generator").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 332288124)!
+            }
         }
     }()
-
+    
     public func addPreviewGenerator(
         _ generator: Godot.EditorResourcePreviewGenerator?
     ) {
@@ -143,15 +133,15 @@ open class EditorResourcePreview: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_preview_generator: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_preview_generator").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 332288124)!
-        }
+            GodotStringName(swiftStaticString: "remove_preview_generator").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 332288124)!
+            }
         }
     }()
-
+    
     public func removePreviewGenerator(
         _ generator: Godot.EditorResourcePreviewGenerator?
     ) {
@@ -170,15 +160,15 @@ open class EditorResourcePreview: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_check_for_invalidation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "check_for_invalidation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "check_for_invalidation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     public func checkForInvalidation(
         path: Godot.GodotString
     ) {
@@ -195,18 +185,15 @@ open class EditorResourcePreview: Node {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

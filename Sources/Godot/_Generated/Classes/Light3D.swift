@@ -29,55 +29,57 @@ open class Light3D: VisualInstance3D {
         case transmittanceBias = 19
         case intensity = 20
         case max = 21
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Energy", 0),
-            ("Indirect Energy", 1),
-            ("Volumetric Fog Energy", 2),
-            ("Specular", 3),
-            ("Range", 4),
-            ("Size", 5),
-            ("Attenuation", 6),
-            ("Spot Angle", 7),
-            ("Spot Attenuation", 8),
-            ("Shadow Max Distance", 9),
-            ("Shadow Split1 Offset", 10),
-            ("Shadow Split2 Offset", 11),
-            ("Shadow Split3 Offset", 12),
-            ("Shadow Fade Start", 13),
-            ("Shadow Normal Bias", 14),
-            ("Shadow Bias", 15),
-            ("Shadow Pancake Size", 16),
-            ("Shadow Opacity", 17),
-            ("Shadow Blur", 18),
-            ("Transmittance Bias", 19),
-            ("Intensity", 20),
-            ("Max", 21),]
+               ("Energy", 0),
+               ("Indirect Energy", 1),
+               ("Volumetric Fog Energy", 2),
+               ("Specular", 3),
+               ("Range", 4),
+               ("Size", 5),
+               ("Attenuation", 6),
+               ("Spot Angle", 7),
+               ("Spot Attenuation", 8),
+               ("Shadow Max Distance", 9),
+               ("Shadow Split1 Offset", 10),
+               ("Shadow Split2 Offset", 11),
+               ("Shadow Split3 Offset", 12),
+               ("Shadow Fade Start", 13),
+               ("Shadow Normal Bias", 14),
+               ("Shadow Bias", 15),
+               ("Shadow Pancake Size", 16),
+               ("Shadow Opacity", 17),
+               ("Shadow Blur", 18),
+               ("Transmittance Bias", 19),
+               ("Intensity", 20),
+               ("Max", 21),
+            ]
         }
     }
-
+    
     public enum BakeMode: UInt32, GodotEnum {
         case disabled = 0
         case `static` = 1
         case dynamic = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Disabled", 0),
-            ("Static", 1),
-            ("Dynamic", 2),]
+               ("Disabled", 0),
+               ("Static", 1),
+               ("Dynamic", 2),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_editor_only: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_editor_only").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_editor_only").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setEditorOnly(
         _ editorOnly: Bool
     ) {
@@ -94,15 +96,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_editor_only: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_editor_only").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_editor_only").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isEditorOnly() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -115,15 +117,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1722734213)!
-        }
+            GodotStringName(swiftStaticString: "set_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1722734213)!
+            }
         }
     }()
-
+    
     public func setParam(
         _ param: Godot.Light3D.Param,
         value: Double
@@ -143,15 +145,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1844084987)!
-        }
+            GodotStringName(swiftStaticString: "get_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1844084987)!
+            }
         }
     }()
-
+    
     private func __getParam(
         _ param: Godot.Light3D.Param
     ) -> Double {
@@ -170,15 +172,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_shadow: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_shadow").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_shadow").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setShadow(
         enabled: Bool
     ) {
@@ -195,15 +197,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_has_shadow: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_shadow").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "has_shadow").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __hasShadow() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -216,15 +218,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_negative: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_negative").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_negative").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setNegative(
         enabled: Bool
     ) {
@@ -241,15 +243,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_negative: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_negative").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_negative").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isNegative() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -262,15 +264,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_cull_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_cull_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_cull_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setCullMask(
         _ cullMask: UInt32
     ) {
@@ -287,15 +289,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_cull_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_cull_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_cull_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getCullMask() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -308,15 +310,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_enable_distance_fade: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_enable_distance_fade").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_enable_distance_fade").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setEnableDistanceFade(
         enable: Bool
     ) {
@@ -333,15 +335,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_distance_fade_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_distance_fade_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_distance_fade_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isDistanceFadeEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -354,15 +356,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_distance_fade_begin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_distance_fade_begin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_distance_fade_begin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setDistanceFadeBegin(
         distance: Double
     ) {
@@ -379,15 +381,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_distance_fade_begin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_distance_fade_begin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_distance_fade_begin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getDistanceFadeBegin() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -400,15 +402,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_distance_fade_shadow: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_distance_fade_shadow").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_distance_fade_shadow").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setDistanceFadeShadow(
         distance: Double
     ) {
@@ -425,15 +427,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_distance_fade_shadow: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_distance_fade_shadow").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_distance_fade_shadow").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getDistanceFadeShadow() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -446,15 +448,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_distance_fade_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_distance_fade_length").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_distance_fade_length").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setDistanceFadeLength(
         distance: Double
     ) {
@@ -471,15 +473,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_distance_fade_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_distance_fade_length").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_distance_fade_length").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getDistanceFadeLength() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -492,15 +494,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
-        }
+            GodotStringName(swiftStaticString: "set_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
+            }
         }
     }()
-
+    
     private func __setColor(
         _ color: Godot.Color
     ) {
@@ -517,15 +519,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
-        }
+            GodotStringName(swiftStaticString: "get_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
+            }
         }
     }()
-
+    
     private func __getColor() -> Godot.Color {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -538,15 +540,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_shadow_reverse_cull_face: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_shadow_reverse_cull_face").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_shadow_reverse_cull_face").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setShadowReverseCullFace(
         enable: Bool
     ) {
@@ -563,15 +565,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_shadow_reverse_cull_face: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_shadow_reverse_cull_face").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_shadow_reverse_cull_face").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getShadowReverseCullFace() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -584,15 +586,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_bake_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_bake_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 37739303)!
-        }
+            GodotStringName(swiftStaticString: "set_bake_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 37739303)!
+            }
         }
     }()
-
+    
     private func __setBakeMode(
         _ bakeMode: Godot.Light3D.BakeMode
     ) {
@@ -609,15 +611,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bake_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bake_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 371737608)!
-        }
+            GodotStringName(swiftStaticString: "get_bake_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 371737608)!
+            }
         }
     }()
-
+    
     private func __getBakeMode() -> Godot.Light3D.BakeMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -630,15 +632,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_projector: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_projector").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
-        }
+            GodotStringName(swiftStaticString: "set_projector").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
+            }
         }
     }()
-
+    
     private func __setProjector(
         _ projector: Godot.Texture2D?
     ) {
@@ -657,15 +659,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_projector: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_projector").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
-        }
+            GodotStringName(swiftStaticString: "get_projector").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
+            }
         }
     }()
-
+    
     private func __getProjector() -> Godot.Texture2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -678,15 +680,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_temperature: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_temperature").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_temperature").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setTemperature(
         _ temperature: Double
     ) {
@@ -703,15 +705,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_temperature: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_temperature").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_temperature").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getTemperature() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -724,15 +726,15 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_correlated_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_correlated_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
-        }
+            GodotStringName(swiftStaticString: "get_correlated_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
+            }
         }
     }()
-
+    
     public func correlatedColor() -> Godot.Color {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -745,7 +747,7 @@ open class Light3D: VisualInstance3D {
             }
         }
     }
-
+    
     public var lightIntensityLumens: Double {
         get {
             __getParam(
@@ -753,7 +755,7 @@ open class Light3D: VisualInstance3D {
             )
         }
     }
-
+    
     public var lightIntensityLux: Double {
         get {
             __getParam(
@@ -761,29 +763,29 @@ open class Light3D: VisualInstance3D {
             )
         }
     }
-
+    
     public var temperature: Double {
         get {
             __getTemperature()
         }
-        set {
+        set(newValue) {
             __setTemperature(
                 newValue
             )
         }
     }
-
+    
     public var color: Godot.Color {
         get {
             __getColor()
         }
-        set {
+        set(newValue) {
             __setColor(
                 newValue
             )
         }
     }
-
+    
     public var lightEnergy: Double {
         get {
             __getParam(
@@ -791,7 +793,7 @@ open class Light3D: VisualInstance3D {
             )
         }
     }
-
+    
     public var lightIndirectEnergy: Double {
         get {
             __getParam(
@@ -799,7 +801,7 @@ open class Light3D: VisualInstance3D {
             )
         }
     }
-
+    
     public var lightVolumetricFogEnergy: Double {
         get {
             __getParam(
@@ -807,18 +809,18 @@ open class Light3D: VisualInstance3D {
             )
         }
     }
-
+    
     public var projector: Godot.Texture2D? {
         get {
             __getProjector()
         }
-        set {
+        set(newValue) {
             __setProjector(
                 newValue
             )
         }
     }
-
+    
     public var lightSize: Double {
         get {
             __getParam(
@@ -826,7 +828,7 @@ open class Light3D: VisualInstance3D {
             )
         }
     }
-
+    
     public var lightAngularDistance: Double {
         get {
             __getParam(
@@ -834,18 +836,18 @@ open class Light3D: VisualInstance3D {
             )
         }
     }
-
+    
     public var isNegative: Bool {
         get {
             __isNegative()
         }
-        set {
+        set(newValue) {
             __setNegative(
                 enabled: newValue
             )
         }
     }
-
+    
     public var lightSpecular: Double {
         get {
             __getParam(
@@ -853,40 +855,40 @@ open class Light3D: VisualInstance3D {
             )
         }
     }
-
+    
     public var bakeMode: Godot.Light3D.BakeMode {
         get {
             __getBakeMode()
         }
-        set {
+        set(newValue) {
             __setBakeMode(
                 newValue
             )
         }
     }
-
+    
     public var cullMask: UInt32 {
         get {
             __getCullMask()
         }
-        set {
+        set(newValue) {
             __setCullMask(
                 newValue
             )
         }
     }
-
+    
     public var hasShadow: Bool {
         get {
             __hasShadow()
         }
-        set {
+        set(newValue) {
             __setShadow(
                 enabled: newValue
             )
         }
     }
-
+    
     public var shadowBias: Double {
         get {
             __getParam(
@@ -894,7 +896,7 @@ open class Light3D: VisualInstance3D {
             )
         }
     }
-
+    
     public var shadowNormalBias: Double {
         get {
             __getParam(
@@ -902,18 +904,18 @@ open class Light3D: VisualInstance3D {
             )
         }
     }
-
+    
     public var shadowReverseCullFace: Bool {
         get {
             __getShadowReverseCullFace()
         }
-        set {
+        set(newValue) {
             __setShadowReverseCullFace(
                 enable: newValue
             )
         }
     }
-
+    
     public var shadowTransmittanceBias: Double {
         get {
             __getParam(
@@ -921,7 +923,7 @@ open class Light3D: VisualInstance3D {
             )
         }
     }
-
+    
     public var shadowOpacity: Double {
         get {
             __getParam(
@@ -929,7 +931,7 @@ open class Light3D: VisualInstance3D {
             )
         }
     }
-
+    
     public var shadowBlur: Double {
         get {
             __getParam(
@@ -937,73 +939,70 @@ open class Light3D: VisualInstance3D {
             )
         }
     }
-
+    
     public var isDistanceFadeEnabled: Bool {
         get {
             __isDistanceFadeEnabled()
         }
-        set {
+        set(newValue) {
             __setEnableDistanceFade(
                 enable: newValue
             )
         }
     }
-
+    
     public var distanceFadeBegin: Double {
         get {
             __getDistanceFadeBegin()
         }
-        set {
+        set(newValue) {
             __setDistanceFadeBegin(
                 distance: newValue
             )
         }
     }
-
+    
     public var distanceFadeShadow: Double {
         get {
             __getDistanceFadeShadow()
         }
-        set {
+        set(newValue) {
             __setDistanceFadeShadow(
                 distance: newValue
             )
         }
     }
-
+    
     public var distanceFadeLength: Double {
         get {
             __getDistanceFadeLength()
         }
-        set {
+        set(newValue) {
             __setDistanceFadeLength(
                 distance: newValue
             )
         }
     }
-
+    
     public var isEditorOnly: Bool {
         get {
             __isEditorOnly()
         }
-        set {
+        set(newValue) {
             __setEditorOnly(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

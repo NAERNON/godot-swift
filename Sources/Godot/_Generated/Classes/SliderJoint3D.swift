@@ -30,43 +30,44 @@ open class SliderJoint3D: Joint3D {
         case angularOrthogonalRestitution = 20
         case angularOrthogonalDamping = 21
         case max = 22
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Linear Limit Upper", 0),
-            ("Linear Limit Lower", 1),
-            ("Linear Limit Softness", 2),
-            ("Linear Limit Restitution", 3),
-            ("Linear Limit Damping", 4),
-            ("Linear Motion Softness", 5),
-            ("Linear Motion Restitution", 6),
-            ("Linear Motion Damping", 7),
-            ("Linear Orthogonal Softness", 8),
-            ("Linear Orthogonal Restitution", 9),
-            ("Linear Orthogonal Damping", 10),
-            ("Angular Limit Upper", 11),
-            ("Angular Limit Lower", 12),
-            ("Angular Limit Softness", 13),
-            ("Angular Limit Restitution", 14),
-            ("Angular Limit Damping", 15),
-            ("Angular Motion Softness", 16),
-            ("Angular Motion Restitution", 17),
-            ("Angular Motion Damping", 18),
-            ("Angular Orthogonal Softness", 19),
-            ("Angular Orthogonal Restitution", 20),
-            ("Angular Orthogonal Damping", 21),
-            ("Max", 22),]
+               ("Linear Limit Upper", 0),
+               ("Linear Limit Lower", 1),
+               ("Linear Limit Softness", 2),
+               ("Linear Limit Restitution", 3),
+               ("Linear Limit Damping", 4),
+               ("Linear Motion Softness", 5),
+               ("Linear Motion Restitution", 6),
+               ("Linear Motion Damping", 7),
+               ("Linear Orthogonal Softness", 8),
+               ("Linear Orthogonal Restitution", 9),
+               ("Linear Orthogonal Damping", 10),
+               ("Angular Limit Upper", 11),
+               ("Angular Limit Lower", 12),
+               ("Angular Limit Softness", 13),
+               ("Angular Limit Restitution", 14),
+               ("Angular Limit Damping", 15),
+               ("Angular Motion Softness", 16),
+               ("Angular Motion Restitution", 17),
+               ("Angular Motion Damping", 18),
+               ("Angular Orthogonal Softness", 19),
+               ("Angular Orthogonal Restitution", 20),
+               ("Angular Orthogonal Damping", 21),
+               ("Max", 22),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 918243683)!
-        }
+            GodotStringName(swiftStaticString: "set_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 918243683)!
+            }
         }
     }()
-
+    
     public func setParam(
         _ param: Godot.SliderJoint3D.Param,
         value: Double
@@ -86,15 +87,15 @@ open class SliderJoint3D: Joint3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 959925627)!
-        }
+            GodotStringName(swiftStaticString: "get_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 959925627)!
+            }
         }
     }()
-
+    
     public func param(
         _ param: Godot.SliderJoint3D.Param
     ) -> Double {
@@ -113,18 +114,15 @@ open class SliderJoint3D: Joint3D {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

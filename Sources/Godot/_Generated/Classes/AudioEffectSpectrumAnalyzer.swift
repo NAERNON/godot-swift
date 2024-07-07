@@ -13,26 +13,27 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
         case fftSize2048 = 3
         case fftSize4096 = 4
         case max = 5
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Fft Size256", 0),
-            ("Fft Size512", 1),
-            ("Fft Size1024", 2),
-            ("Fft Size2048", 3),
-            ("Fft Size4096", 4),
-            ("Max", 5),]
+               ("Fft Size256", 0),
+               ("Fft Size512", 1),
+               ("Fft Size1024", 2),
+               ("Fft Size2048", 3),
+               ("Fft Size4096", 4),
+               ("Max", 5),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_buffer_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_buffer_length").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_buffer_length").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setBufferLength(
         seconds: Double
     ) {
@@ -49,15 +50,15 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
             }
         }
     }
-
+    
     internal static var __method_binding_get_buffer_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_buffer_length").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_buffer_length").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getBufferLength() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -70,15 +71,15 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
             }
         }
     }
-
+    
     internal static var __method_binding_set_tap_back_pos: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_tap_back_pos").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_tap_back_pos").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setTapBackPos(
         seconds: Double
     ) {
@@ -95,15 +96,15 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
             }
         }
     }
-
+    
     internal static var __method_binding_get_tap_back_pos: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tap_back_pos").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_tap_back_pos").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getTapBackPos() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -116,15 +117,15 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
             }
         }
     }
-
+    
     internal static var __method_binding_set_fft_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_fft_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1202879215)!
-        }
+            GodotStringName(swiftStaticString: "set_fft_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1202879215)!
+            }
         }
     }()
-
+    
     private func __setFftSize(
         _ size: Godot.AudioEffectSpectrumAnalyzer.FFTSize
     ) {
@@ -141,15 +142,15 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
             }
         }
     }
-
+    
     internal static var __method_binding_get_fft_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_fft_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3925405343)!
-        }
+            GodotStringName(swiftStaticString: "get_fft_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3925405343)!
+            }
         }
     }()
-
+    
     private func __getFftSize() -> Godot.AudioEffectSpectrumAnalyzer.FFTSize {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -162,51 +163,48 @@ open class AudioEffectSpectrumAnalyzer: AudioEffect {
             }
         }
     }
-
+    
     public var bufferLength: Double {
         get {
             __getBufferLength()
         }
-        set {
+        set(newValue) {
             __setBufferLength(
                 seconds: newValue
             )
         }
     }
-
+    
     public var tapBackPos: Double {
         get {
             __getTapBackPos()
         }
-        set {
+        set(newValue) {
             __setTapBackPos(
                 seconds: newValue
             )
         }
     }
-
+    
     public var fftSize: Godot.AudioEffectSpectrumAnalyzer.FFTSize {
         get {
             __getFftSize()
         }
-        set {
+        set(newValue) {
             __setFftSize(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

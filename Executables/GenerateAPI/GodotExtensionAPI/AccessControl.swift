@@ -1,4 +1,3 @@
-import SwiftSyntax
 
 enum AccessControl: Comparable {
     case `private`
@@ -6,12 +5,12 @@ enum AccessControl: Comparable {
     case `public`
     case `open`
     
-    var keyword: Keyword {
+    var keyword: Syntax {
         switch self {
-        case .open: .open
-        case .public: .public
-        case .internal: .internal
-        case .private: .private
+        case .open: "open"
+        case .public: "public"
+        case .internal: "internal"
+        case .private: "private"
         }
     }
 }

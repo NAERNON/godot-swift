@@ -12,25 +12,26 @@ open class VoxelGI: VisualInstance3D {
         case subdiv256 = 2
         case subdiv512 = 3
         case max = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Subdiv64", 0),
-            ("Subdiv128", 1),
-            ("Subdiv256", 2),
-            ("Subdiv512", 3),
-            ("Max", 4),]
+               ("Subdiv64", 0),
+               ("Subdiv128", 1),
+               ("Subdiv256", 2),
+               ("Subdiv512", 3),
+               ("Max", 4),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_probe_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_probe_data").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1637849675)!
-        }
+            GodotStringName(swiftStaticString: "set_probe_data").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1637849675)!
+            }
         }
     }()
-
+    
     private func __setProbeData(
         _ data: Godot.VoxelGIData?
     ) {
@@ -49,15 +50,15 @@ open class VoxelGI: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_probe_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_probe_data").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1730645405)!
-        }
+            GodotStringName(swiftStaticString: "get_probe_data").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1730645405)!
+            }
         }
     }()
-
+    
     private func __getProbeData() -> Godot.VoxelGIData? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -70,15 +71,15 @@ open class VoxelGI: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_subdiv: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_subdiv").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240898472)!
-        }
+            GodotStringName(swiftStaticString: "set_subdiv").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240898472)!
+            }
         }
     }()
-
+    
     private func __setSubdiv(
         _ subdiv: Godot.VoxelGI.Subdiv
     ) {
@@ -95,15 +96,15 @@ open class VoxelGI: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_subdiv: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_subdiv").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4261647950)!
-        }
+            GodotStringName(swiftStaticString: "get_subdiv").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4261647950)!
+            }
         }
     }()
-
+    
     private func __getSubdiv() -> Godot.VoxelGI.Subdiv {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -116,15 +117,15 @@ open class VoxelGI: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
-        }
+            GodotStringName(swiftStaticString: "set_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
+            }
         }
     }()
-
+    
     private func __setSize(
         _ size: Godot.Vector3
     ) {
@@ -141,15 +142,15 @@ open class VoxelGI: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
-        }
+            GodotStringName(swiftStaticString: "get_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
+            }
         }
     }()
-
+    
     private func __getSize() -> Godot.Vector3 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -162,15 +163,15 @@ open class VoxelGI: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_camera_attributes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_camera_attributes").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2817810567)!
-        }
+            GodotStringName(swiftStaticString: "set_camera_attributes").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2817810567)!
+            }
         }
     }()
-
+    
     private func __setCameraAttributes(
         _ cameraAttributes: Godot.CameraAttributes?
     ) {
@@ -189,15 +190,15 @@ open class VoxelGI: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_camera_attributes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_camera_attributes").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3921283215)!
-        }
+            GodotStringName(swiftStaticString: "get_camera_attributes").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3921283215)!
+            }
         }
     }()
-
+    
     private func __getCameraAttributes() -> Godot.CameraAttributes? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -210,15 +211,15 @@ open class VoxelGI: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_bake: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "bake").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2781551026)!
-        }
+            GodotStringName(swiftStaticString: "bake").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2781551026)!
+            }
         }
     }()
-
+    
     public func bake(
         fromNode node: Godot.Node? = nil,
         createVisualDebug: Bool = false
@@ -240,15 +241,15 @@ open class VoxelGI: VisualInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_debug_bake: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "debug_bake").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "debug_bake").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func debugBake() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -259,62 +260,59 @@ open class VoxelGI: VisualInstance3D {
             )
         }
     }
-
+    
     public var subdiv: Godot.VoxelGI.Subdiv {
         get {
             __getSubdiv()
         }
-        set {
+        set(newValue) {
             __setSubdiv(
                 newValue
             )
         }
     }
-
+    
     public var size: Godot.Vector3 {
         get {
             __getSize()
         }
-        set {
+        set(newValue) {
             __setSize(
                 newValue
             )
         }
     }
-
+    
     public var cameraAttributes: Godot.CameraAttributes? {
         get {
             __getCameraAttributes()
         }
-        set {
+        set(newValue) {
             __setCameraAttributes(
                 newValue
             )
         }
     }
-
+    
     public var probeData: Godot.VoxelGIData? {
         get {
             __getProbeData()
         }
-        set {
+        set(newValue) {
             __setProbeData(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

@@ -10,23 +10,24 @@ open class OccluderPolygon2D: Resource {
         case disabled = 0
         case clockwise = 1
         case counterClockwise = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Disabled", 0),
-            ("Clockwise", 1),
-            ("Counter Clockwise", 2),]
+               ("Disabled", 0),
+               ("Clockwise", 1),
+               ("Counter Clockwise", 2),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_closed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_closed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_closed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setClosed(
         _ closed: Bool
     ) {
@@ -43,15 +44,15 @@ open class OccluderPolygon2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_is_closed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_closed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_closed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isClosed() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -64,15 +65,15 @@ open class OccluderPolygon2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_cull_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_cull_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3500863002)!
-        }
+            GodotStringName(swiftStaticString: "set_cull_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3500863002)!
+            }
         }
     }()
-
+    
     private func __setCullMode(
         _ cullMode: Godot.OccluderPolygon2D.CullMode
     ) {
@@ -89,15 +90,15 @@ open class OccluderPolygon2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_cull_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_cull_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 33931036)!
-        }
+            GodotStringName(swiftStaticString: "get_cull_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 33931036)!
+            }
         }
     }()
-
+    
     private func __getCullMode() -> Godot.OccluderPolygon2D.CullMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -110,15 +111,15 @@ open class OccluderPolygon2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_polygon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
-        }
+            GodotStringName(swiftStaticString: "set_polygon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
+            }
         }
     }()
-
+    
     private func __setPolygon(
         _ polygon: Godot.GodotContiguousArray<Vector2>
     ) {
@@ -135,15 +136,15 @@ open class OccluderPolygon2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_polygon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!
-        }
+            GodotStringName(swiftStaticString: "get_polygon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!
+            }
         }
     }()
-
+    
     private func __getPolygon() -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -156,51 +157,48 @@ open class OccluderPolygon2D: Resource {
             }
         }
     }
-
+    
     public var isClosed: Bool {
         get {
             __isClosed()
         }
-        set {
+        set(newValue) {
             __setClosed(
                 newValue
             )
         }
     }
-
+    
     public var cullMode: Godot.OccluderPolygon2D.CullMode {
         get {
             __getCullMode()
         }
-        set {
+        set(newValue) {
             __setCullMode(
                 newValue
             )
         }
     }
-
+    
     public var polygon: Godot.GodotContiguousArray<Vector2> {
         get {
             __getPolygon()
         }
-        set {
+        set(newValue) {
             __setPolygon(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

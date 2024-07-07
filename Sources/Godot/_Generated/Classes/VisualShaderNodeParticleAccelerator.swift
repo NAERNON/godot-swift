@@ -11,24 +11,25 @@ open class VisualShaderNodeParticleAccelerator: VisualShaderNode {
         case radial = 1
         case tangential = 2
         case max = 3
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Linear", 0),
-            ("Radial", 1),
-            ("Tangential", 2),
-            ("Max", 3),]
+               ("Linear", 0),
+               ("Radial", 1),
+               ("Tangential", 2),
+               ("Max", 3),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3457585749)!
-        }
+            GodotStringName(swiftStaticString: "set_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3457585749)!
+            }
         }
     }()
-
+    
     private func __setMode(
         _ mode: Godot.VisualShaderNodeParticleAccelerator.Mode
     ) {
@@ -45,15 +46,15 @@ open class VisualShaderNodeParticleAccelerator: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2660365633)!
-        }
+            GodotStringName(swiftStaticString: "get_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2660365633)!
+            }
         }
     }()
-
+    
     private func __getMode() -> Godot.VisualShaderNodeParticleAccelerator.Mode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -66,29 +67,26 @@ open class VisualShaderNodeParticleAccelerator: VisualShaderNode {
             }
         }
     }
-
+    
     public var mode: Godot.VisualShaderNodeParticleAccelerator.Mode {
         get {
             __getMode()
         }
-        set {
+        set(newValue) {
             __setMode(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

@@ -13,26 +13,27 @@ open class AudioEffectPitchShift: AudioEffect {
         case fftSize2048 = 3
         case fftSize4096 = 4
         case max = 5
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Fft Size256", 0),
-            ("Fft Size512", 1),
-            ("Fft Size1024", 2),
-            ("Fft Size2048", 3),
-            ("Fft Size4096", 4),
-            ("Max", 5),]
+               ("Fft Size256", 0),
+               ("Fft Size512", 1),
+               ("Fft Size1024", 2),
+               ("Fft Size2048", 3),
+               ("Fft Size4096", 4),
+               ("Max", 5),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_pitch_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_pitch_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_pitch_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setPitchScale(
         rate: Double
     ) {
@@ -49,15 +50,15 @@ open class AudioEffectPitchShift: AudioEffect {
             }
         }
     }
-
+    
     internal static var __method_binding_get_pitch_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_pitch_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_pitch_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getPitchScale() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -70,15 +71,15 @@ open class AudioEffectPitchShift: AudioEffect {
             }
         }
     }
-
+    
     internal static var __method_binding_set_oversampling: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_oversampling").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_oversampling").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setOversampling(
         amount: Int32
     ) {
@@ -95,15 +96,15 @@ open class AudioEffectPitchShift: AudioEffect {
             }
         }
     }
-
+    
     internal static var __method_binding_get_oversampling: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_oversampling").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_oversampling").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getOversampling() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -116,15 +117,15 @@ open class AudioEffectPitchShift: AudioEffect {
             }
         }
     }
-
+    
     internal static var __method_binding_set_fft_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_fft_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2323518741)!
-        }
+            GodotStringName(swiftStaticString: "set_fft_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2323518741)!
+            }
         }
     }()
-
+    
     private func __setFftSize(
         _ size: Godot.AudioEffectPitchShift.FFTSize
     ) {
@@ -141,15 +142,15 @@ open class AudioEffectPitchShift: AudioEffect {
             }
         }
     }
-
+    
     internal static var __method_binding_get_fft_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_fft_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2361246789)!
-        }
+            GodotStringName(swiftStaticString: "get_fft_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2361246789)!
+            }
         }
     }()
-
+    
     private func __getFftSize() -> Godot.AudioEffectPitchShift.FFTSize {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -162,51 +163,48 @@ open class AudioEffectPitchShift: AudioEffect {
             }
         }
     }
-
+    
     public var pitchScale: Double {
         get {
             __getPitchScale()
         }
-        set {
+        set(newValue) {
             __setPitchScale(
                 rate: newValue
             )
         }
     }
-
+    
     public var oversampling: Int32 {
         get {
             __getOversampling()
         }
-        set {
+        set(newValue) {
             __setOversampling(
                 amount: newValue
             )
         }
     }
-
+    
     public var fftSize: Godot.AudioEffectPitchShift.FFTSize {
         get {
             __getFftSize()
         }
-        set {
+        set(newValue) {
             __setFftSize(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

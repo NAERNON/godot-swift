@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class PhysicsBody2D: CollisionObject2D {
     internal static var __method_binding_move_and_collide: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "move_and_collide").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3681923724)!
-        }
+            GodotStringName(swiftStaticString: "move_and_collide").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3681923724)!
+            }
         }
     }()
-
+    
     public func moveAndCollide(
         motion: Godot.Vector2,
         testOnly: Bool = false,
@@ -41,15 +41,15 @@ open class PhysicsBody2D: CollisionObject2D {
             }
         }
     }
-
+    
     internal static var __method_binding_test_move: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "test_move").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3324464701)!
-        }
+            GodotStringName(swiftStaticString: "test_move").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3324464701)!
+            }
         }
     }()
-
+    
     public func testMove(
         from: Godot.Transform2D,
         motion: Godot.Vector2,
@@ -82,16 +82,16 @@ open class PhysicsBody2D: CollisionObject2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_collision_exceptions: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_collision_exceptions").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
-        }
+            GodotStringName(swiftStaticString: "get_collision_exceptions").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
+            }
         }
     }()
-
-    public func collisionExceptions() -> Godot.GodotArray<Godot.PhysicsBody2D?> {
+    
+    public func collisionExceptions() -> Godot.GodotArray<Godot.PhysicsBody2D> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -103,15 +103,15 @@ open class PhysicsBody2D: CollisionObject2D {
             }
         }
     }
-
+    
     internal static var __method_binding_add_collision_exception_with: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_collision_exception_with").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
-        }
+            GodotStringName(swiftStaticString: "add_collision_exception_with").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
+            }
         }
     }()
-
+    
     public func addCollisionExceptionWith(
         body: Godot.Node?
     ) {
@@ -130,15 +130,15 @@ open class PhysicsBody2D: CollisionObject2D {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_collision_exception_with: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_collision_exception_with").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
-        }
+            GodotStringName(swiftStaticString: "remove_collision_exception_with").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
+            }
         }
     }()
-
+    
     public func removeCollisionExceptionWith(
         body: Godot.Node?
     ) {
@@ -157,18 +157,15 @@ open class PhysicsBody2D: CollisionObject2D {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

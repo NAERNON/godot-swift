@@ -16,40 +16,42 @@ open class SurfaceTool: RefCounted {
         case rgbFloat = 6
         case rgbaFloat = 7
         case max = 8
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Rgba8 Unorm", 0),
-            ("Rgba8 Snorm", 1),
-            ("Rg Half", 2),
-            ("Rgba Half", 3),
-            ("R Float", 4),
-            ("Rg Float", 5),
-            ("Rgb Float", 6),
-            ("Rgba Float", 7),
-            ("Max", 8),]
+               ("Rgba8 Unorm", 0),
+               ("Rgba8 Snorm", 1),
+               ("Rg Half", 2),
+               ("Rgba Half", 3),
+               ("R Float", 4),
+               ("Rg Float", 5),
+               ("Rgb Float", 6),
+               ("Rgba Float", 7),
+               ("Max", 8),
+            ]
         }
     }
-
+    
     public enum SkinWeightCount: UInt32, GodotEnum {
         case skin4Weights = 0
         case skin8Weights = 1
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Skin4 Weights", 0),
-            ("Skin8 Weights", 1),]
+               ("Skin4 Weights", 0),
+               ("Skin8 Weights", 1),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_skin_weight_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_skin_weight_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 618679515)!
-        }
+            GodotStringName(swiftStaticString: "set_skin_weight_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 618679515)!
+            }
         }
     }()
-
+    
     public func setSkinWeightCount(
         _ count: Godot.SurfaceTool.SkinWeightCount
     ) {
@@ -66,15 +68,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_skin_weight_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_skin_weight_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1072401130)!
-        }
+            GodotStringName(swiftStaticString: "get_skin_weight_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1072401130)!
+            }
         }
     }()
-
+    
     public func skinWeightCount() -> Godot.SurfaceTool.SkinWeightCount {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -87,15 +89,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_custom_format: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_custom_format").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4087759856)!
-        }
+            GodotStringName(swiftStaticString: "set_custom_format").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4087759856)!
+            }
         }
     }()
-
+    
     public func setCustomFormat(
         channelIndex: Int32,
         format: Godot.SurfaceTool.CustomFormat
@@ -115,15 +117,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_custom_format: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_custom_format").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 839863283)!
-        }
+            GodotStringName(swiftStaticString: "get_custom_format").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 839863283)!
+            }
         }
     }()
-
+    
     public func customFormat(
         channelIndex: Int32
     ) -> Godot.SurfaceTool.CustomFormat {
@@ -142,15 +144,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_begin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "begin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2230304113)!
-        }
+            GodotStringName(swiftStaticString: "begin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2230304113)!
+            }
         }
     }()
-
+    
     public func begin(
         primitive: Godot.Mesh.PrimitiveType
     ) {
@@ -167,15 +169,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_add_vertex: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_vertex").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
-        }
+            GodotStringName(swiftStaticString: "add_vertex").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
+            }
         }
     }()
-
+    
     public func addVertex(
         _ vertex: Godot.Vector3
     ) {
@@ -192,15 +194,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
-        }
+            GodotStringName(swiftStaticString: "set_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
+            }
         }
     }()
-
+    
     public func setColor(
         _ color: Godot.Color
     ) {
@@ -217,15 +219,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_normal").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
-        }
+            GodotStringName(swiftStaticString: "set_normal").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
+            }
         }
     }()
-
+    
     public func setNormal(
         _ normal: Godot.Vector3
     ) {
@@ -242,15 +244,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_tangent: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_tangent").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3505987427)!
-        }
+            GodotStringName(swiftStaticString: "set_tangent").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3505987427)!
+            }
         }
     }()
-
+    
     public func setTangent(
         _ tangent: Godot.Plane
     ) {
@@ -267,15 +269,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_uv: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_uv").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_uv").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     public func setUv(
         _ uv: Godot.Vector2
     ) {
@@ -292,15 +294,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_uv2: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_uv2").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_uv2").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     public func setUv2(
         _ uv2: Godot.Vector2
     ) {
@@ -317,15 +319,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_bones: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_bones").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
-        }
+            GodotStringName(swiftStaticString: "set_bones").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
+            }
         }
     }()
-
+    
     public func setBones(
         _ bones: Godot.GodotContiguousArray<Int32>
     ) {
@@ -342,15 +344,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_weights: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_weights").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2899603908)!
-        }
+            GodotStringName(swiftStaticString: "set_weights").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2899603908)!
+            }
         }
     }()
-
+    
     public func setWeights(
         _ weights: Godot.GodotContiguousArray<Float>
     ) {
@@ -367,15 +369,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_custom: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_custom").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2878471219)!
-        }
+            GodotStringName(swiftStaticString: "set_custom").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2878471219)!
+            }
         }
     }()
-
+    
     public func setCustom(
         channelIndex: Int32,
         customColor: Godot.Color
@@ -395,15 +397,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_smooth_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_smooth_group").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_smooth_group").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func setSmoothGroup(
         index: UInt32
     ) {
@@ -420,15 +422,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_add_triangle_fan: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_triangle_fan").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2235017613)!
-        }
+            GodotStringName(swiftStaticString: "add_triangle_fan").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2235017613)!
+            }
         }
     }()
-
+    
     public func addTriangleFan(
         vertices: Godot.GodotContiguousArray<Vector3>,
         uvs: Godot.GodotContiguousArray<Vector2> = [],
@@ -460,15 +462,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_add_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_index").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "add_index").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func addIndex(
         _ index: Int32
     ) {
@@ -485,15 +487,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "index").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "index").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func index() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -504,15 +506,15 @@ open class SurfaceTool: RefCounted {
             )
         }
     }
-
+    
     internal static var __method_binding_deindex: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "deindex").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "deindex").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func deindex() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -523,15 +525,15 @@ open class SurfaceTool: RefCounted {
             )
         }
     }
-
+    
     internal static var __method_binding_generate_normals: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "generate_normals").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 107499316)!
-        }
+            GodotStringName(swiftStaticString: "generate_normals").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 107499316)!
+            }
         }
     }()
-
+    
     public func generateNormals(
         flip: Bool = false
     ) {
@@ -548,15 +550,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_generate_tangents: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "generate_tangents").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "generate_tangents").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func generateTangents() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -567,15 +569,15 @@ open class SurfaceTool: RefCounted {
             )
         }
     }
-
+    
     internal static var __method_binding_optimize_indices_for_cache: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "optimize_indices_for_cache").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "optimize_indices_for_cache").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func optimizeIndicesForCache() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -586,15 +588,15 @@ open class SurfaceTool: RefCounted {
             )
         }
     }
-
+    
     internal static var __method_binding_get_aabb: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_aabb").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1068685055)!
-        }
+            GodotStringName(swiftStaticString: "get_aabb").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1068685055)!
+            }
         }
     }()
-
+    
     public func aabb() -> Godot.AABB {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -607,15 +609,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_generate_lod: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "generate_lod").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1938056459)!
-        }
+            GodotStringName(swiftStaticString: "generate_lod").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1938056459)!
+            }
         }
     }()
-
+    
     public func generateLod(
         ndThreshold: Double,
         targetIndexCount: Int32 = 3
@@ -637,15 +639,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_material").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2757459619)!
-        }
+            GodotStringName(swiftStaticString: "set_material").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2757459619)!
+            }
         }
     }()
-
+    
     public func setMaterial(
         _ material: Godot.Material?
     ) {
@@ -664,15 +666,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_primitive_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_primitive_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 768822145)!
-        }
+            GodotStringName(swiftStaticString: "get_primitive_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 768822145)!
+            }
         }
     }()
-
+    
     public func primitiveType() -> Godot.Mesh.PrimitiveType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -685,15 +687,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "clear").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func clear() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -704,15 +706,15 @@ open class SurfaceTool: RefCounted {
             )
         }
     }
-
+    
     internal static var __method_binding_create_from: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_from").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1767024570)!
-        }
+            GodotStringName(swiftStaticString: "create_from").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1767024570)!
+            }
         }
     }()
-
+    
     public func createFrom(
         existing: Godot.Mesh?,
         surface: Int32
@@ -734,15 +736,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_create_from_blend_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_from_blend_shape").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1306185582)!
-        }
+            GodotStringName(swiftStaticString: "create_from_blend_shape").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1306185582)!
+            }
         }
     }()
-
+    
     public func createFromBlendShape(
         existing: Godot.Mesh?,
         surface: Int32,
@@ -767,15 +769,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_append_from: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "append_from").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2217967155)!
-        }
+            GodotStringName(swiftStaticString: "append_from").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2217967155)!
+            }
         }
     }()
-
+    
     public func appendFrom(
         existing: Godot.Mesh?,
         surface: Int32,
@@ -800,15 +802,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_commit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "commit").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4107864055)!
-        }
+            GodotStringName(swiftStaticString: "commit").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4107864055)!
+            }
         }
     }()
-
+    
     public func commit(
         existing: Godot.ArrayMesh? = nil,
         flags: UInt64 = 0
@@ -832,15 +834,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_commit_to_arrays: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "commit_to_arrays").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
-        }
+            GodotStringName(swiftStaticString: "commit_to_arrays").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
+            }
         }
     }()
-
+    
     public func commitToArrays() -> Godot.AnyGodotArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -853,18 +855,15 @@ open class SurfaceTool: RefCounted {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

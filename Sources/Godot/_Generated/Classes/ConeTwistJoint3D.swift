@@ -13,26 +13,27 @@ open class ConeTwistJoint3D: Joint3D {
         case softness = 3
         case relaxation = 4
         case max = 5
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Swing Span", 0),
-            ("Twist Span", 1),
-            ("Bias", 2),
-            ("Softness", 3),
-            ("Relaxation", 4),
-            ("Max", 5),]
+               ("Swing Span", 0),
+               ("Twist Span", 1),
+               ("Bias", 2),
+               ("Softness", 3),
+               ("Relaxation", 4),
+               ("Max", 5),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1062470226)!
-        }
+            GodotStringName(swiftStaticString: "set_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1062470226)!
+            }
         }
     }()
-
+    
     public func setParam(
         _ param: Godot.ConeTwistJoint3D.Param,
         value: Double
@@ -52,15 +53,15 @@ open class ConeTwistJoint3D: Joint3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2928790850)!
-        }
+            GodotStringName(swiftStaticString: "get_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2928790850)!
+            }
         }
     }()
-
+    
     private func __getParam(
         _ param: Godot.ConeTwistJoint3D.Param
     ) -> Double {
@@ -79,7 +80,7 @@ open class ConeTwistJoint3D: Joint3D {
             }
         }
     }
-
+    
     public var swingSpan: Double {
         get {
             __getParam(
@@ -87,7 +88,7 @@ open class ConeTwistJoint3D: Joint3D {
             )
         }
     }
-
+    
     public var twistSpan: Double {
         get {
             __getParam(
@@ -95,7 +96,7 @@ open class ConeTwistJoint3D: Joint3D {
             )
         }
     }
-
+    
     public var bias: Double {
         get {
             __getParam(
@@ -103,7 +104,7 @@ open class ConeTwistJoint3D: Joint3D {
             )
         }
     }
-
+    
     public var softness: Double {
         get {
             __getParam(
@@ -111,7 +112,7 @@ open class ConeTwistJoint3D: Joint3D {
             )
         }
     }
-
+    
     public var relaxation: Double {
         get {
             __getParam(
@@ -119,18 +120,15 @@ open class ConeTwistJoint3D: Joint3D {
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

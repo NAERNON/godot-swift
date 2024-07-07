@@ -10,33 +10,34 @@ open class StyleBox: Resource {
         toCanvasItem canvasItem: Godot.RID,
         rect: Godot.Rect2
     ) {
+        
     }
-
+    
     open func _getDrawRect(
         _ rect: Godot.Rect2
     ) -> Godot.Rect2 {
         Godot.Rect2()
     }
-
+    
     open func _getMinimumSize() -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _testMask(
         point: Godot.Vector2,
         rect: Godot.Rect2
     ) -> Bool {
         Bool()
     }
-
+    
     internal static var __method_binding_get_minimum_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_minimum_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_minimum_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     public func minimumSize() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -49,15 +50,15 @@ open class StyleBox: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_content_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_content_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4290182280)!
-        }
+            GodotStringName(swiftStaticString: "set_content_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4290182280)!
+            }
         }
     }()
-
+    
     public func setContentMargin(
         _ margin: Godot.Side,
         offset: Double
@@ -77,15 +78,15 @@ open class StyleBox: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_content_margin_all: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_content_margin_all").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_content_margin_all").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     public func setContentMarginAll(
         offset: Double
     ) {
@@ -102,15 +103,15 @@ open class StyleBox: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_content_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_content_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2869120046)!
-        }
+            GodotStringName(swiftStaticString: "get_content_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2869120046)!
+            }
         }
     }()
-
+    
     private func __getContentMargin(
         _ margin: Godot.Side
     ) -> Double {
@@ -129,15 +130,15 @@ open class StyleBox: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2869120046)!
-        }
+            GodotStringName(swiftStaticString: "get_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2869120046)!
+            }
         }
     }()
-
+    
     public func margin(
         _ margin: Godot.Side
     ) -> Double {
@@ -156,15 +157,15 @@ open class StyleBox: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     public func offset() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -177,15 +178,15 @@ open class StyleBox: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_draw: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2275962004)!
-        }
+            GodotStringName(swiftStaticString: "draw").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2275962004)!
+            }
         }
     }()
-
+    
     public func draw(
         canvasItem: Godot.RID,
         rect: Godot.Rect2
@@ -205,15 +206,15 @@ open class StyleBox: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_current_item_drawn: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_current_item_drawn").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3213695180)!
-        }
+            GodotStringName(swiftStaticString: "get_current_item_drawn").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3213695180)!
+            }
         }
     }()
-
+    
     public func currentItemDrawn() -> Godot.CanvasItem? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -226,15 +227,15 @@ open class StyleBox: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_test_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "test_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3735564539)!
-        }
+            GodotStringName(swiftStaticString: "test_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3735564539)!
+            }
         }
     }()
-
+    
     public func testMask(
         point: Godot.Vector2,
         rect: Godot.Rect2
@@ -256,7 +257,7 @@ open class StyleBox: Resource {
             }
         }
     }
-
+    
     public var contentMarginLeft: Double {
         get {
             __getContentMargin(
@@ -264,7 +265,7 @@ open class StyleBox: Resource {
             )
         }
     }
-
+    
     public var contentMarginTop: Double {
         get {
             __getContentMargin(
@@ -272,7 +273,7 @@ open class StyleBox: Resource {
             )
         }
     }
-
+    
     public var contentMarginRight: Double {
         get {
             __getContentMargin(
@@ -280,7 +281,7 @@ open class StyleBox: Resource {
             )
         }
     }
-
+    
     public var contentMarginBottom: Double {
         get {
             __getContentMargin(
@@ -288,48 +289,47 @@ open class StyleBox: Resource {
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _draw_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<StyleBox> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._draw(
-            toCanvasItem: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            rect: Godot.Rect2.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<StyleBox>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._draw(
+                    toCanvasItem: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    rect: Godot.Rect2.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _get_draw_rect_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<StyleBox> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getDrawRect(
-            Godot.Rect2.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<StyleBox>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getDrawRect(
+                    Godot.Rect2.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_minimum_size_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<StyleBox> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getMinimumSize()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<StyleBox>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getMinimumSize()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _test_mask_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<StyleBox> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._testMask(
-            point: Godot.Vector2.transferFromGodot(unsafePointer: args[0]!),
-            rect: Godot.Rect2.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<StyleBox>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._testMask(
+                    point: Godot.Vector2.transferFromGodot(unsafePointer: args[0]!),
+                    rect: Godot.Rect2.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         _virtualFunctions = [
             "_draw" : ("_draw", _draw_call),
             "_getDrawRect" : ("_get_draw_rect", _get_draw_rect_call),
@@ -337,7 +337,7 @@ open class StyleBox: Resource {
             "_testMask" : ("_test_mask", _test_mask_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

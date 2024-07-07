@@ -14,27 +14,28 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
         case resolution256 = 4
         case resolution512 = 5
         case max = 6
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Resolution16", 0),
-            ("Resolution32", 1),
-            ("Resolution64", 2),
-            ("Resolution128", 3),
-            ("Resolution256", 4),
-            ("Resolution512", 5),
-            ("Max", 6),]
+               ("Resolution16", 0),
+               ("Resolution32", 1),
+               ("Resolution64", 2),
+               ("Resolution128", 3),
+               ("Resolution256", 4),
+               ("Resolution512", 5),
+               ("Max", 6),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
-        }
+            GodotStringName(swiftStaticString: "set_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
+            }
         }
     }()
-
+    
     private func __setSize(
         _ size: Godot.Vector3
     ) {
@@ -51,15 +52,15 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
-        }
+            GodotStringName(swiftStaticString: "get_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
+            }
         }
     }()
-
+    
     private func __getSize() -> Godot.Vector3 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -72,15 +73,15 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_resolution: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_resolution").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1155629297)!
-        }
+            GodotStringName(swiftStaticString: "set_resolution").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1155629297)!
+            }
         }
     }()
-
+    
     private func __setResolution(
         _ resolution: Godot.GPUParticlesCollisionSDF3D.Resolution
     ) {
@@ -97,15 +98,15 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_resolution: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_resolution").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2919555867)!
-        }
+            GodotStringName(swiftStaticString: "get_resolution").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2919555867)!
+            }
         }
     }()
-
+    
     private func __getResolution() -> Godot.GPUParticlesCollisionSDF3D.Resolution {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -118,15 +119,15 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1188404210)!
-        }
+            GodotStringName(swiftStaticString: "set_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1188404210)!
+            }
         }
     }()
-
+    
     private func __setTexture(
         _ texture: Godot.Texture3D?
     ) {
@@ -145,15 +146,15 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373985333)!
-        }
+            GodotStringName(swiftStaticString: "get_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373985333)!
+            }
         }
     }()
-
+    
     private func __getTexture() -> Godot.Texture3D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -166,15 +167,15 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_thickness: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_thickness").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_thickness").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setThickness(
         _ thickness: Double
     ) {
@@ -191,15 +192,15 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_thickness: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_thickness").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_thickness").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getThickness() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -212,15 +213,15 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_bake_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_bake_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_bake_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setBakeMask(
         _ mask: UInt32
     ) {
@@ -237,15 +238,15 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bake_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bake_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_bake_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getBakeMask() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -258,15 +259,15 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_bake_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_bake_mask_value").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "set_bake_mask_value").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func setBakeMaskValue(
         layerNumber: Int32,
         value: Bool
@@ -286,15 +287,15 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bake_mask_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bake_mask_value").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "get_bake_mask_value").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func bakeMaskValue(
         layerNumber: Int32
     ) -> Bool {
@@ -313,73 +314,70 @@ open class GPUParticlesCollisionSDF3D: GPUParticlesCollision3D {
             }
         }
     }
-
+    
     public var size: Godot.Vector3 {
         get {
             __getSize()
         }
-        set {
+        set(newValue) {
             __setSize(
                 newValue
             )
         }
     }
-
+    
     public var resolution: Godot.GPUParticlesCollisionSDF3D.Resolution {
         get {
             __getResolution()
         }
-        set {
+        set(newValue) {
             __setResolution(
                 newValue
             )
         }
     }
-
+    
     public var thickness: Double {
         get {
             __getThickness()
         }
-        set {
+        set(newValue) {
             __setThickness(
                 newValue
             )
         }
     }
-
+    
     public var bakeMask: UInt32 {
         get {
             __getBakeMask()
         }
-        set {
+        set(newValue) {
             __setBakeMask(
                 newValue
             )
         }
     }
-
+    
     public var texture: Godot.Texture3D? {
         get {
             __getTexture()
         }
-        set {
+        set(newValue) {
             __setTexture(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

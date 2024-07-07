@@ -9,15 +9,15 @@ open class VideoStream: Resource {
     open func _instantiatePlayback() -> Godot.VideoStreamPlayback? {
         nil
     }
-
+    
     internal static var __method_binding_set_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_file").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_file").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setFile(
         _ file: Godot.GodotString
     ) {
@@ -34,15 +34,15 @@ open class VideoStream: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_file").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2841200299)!
-        }
+            GodotStringName(swiftStaticString: "get_file").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2841200299)!
+            }
         }
     }()
-
+    
     private func __getFile() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -55,36 +55,35 @@ open class VideoStream: Resource {
             }
         }
     }
-
+    
     public var file: Godot.GodotString {
         get {
             __getFile()
         }
-        set {
+        set(newValue) {
             __setFile(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _instantiate_playback_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<VideoStream> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._instantiatePlayback()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<VideoStream>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._instantiatePlayback()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         _virtualFunctions = [
             "_instantiatePlayback" : ("_instantiate_playback", _instantiate_playback_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

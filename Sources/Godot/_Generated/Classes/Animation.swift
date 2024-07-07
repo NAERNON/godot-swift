@@ -16,98 +16,104 @@ open class Animation: Resource {
         case bezier = 6
         case audio = 7
         case animation = 8
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Value", 0),
-            ("Position3D", 1),
-            ("Rotation3D", 2),
-            ("Scale3D", 3),
-            ("Blend Shape", 4),
-            ("Method", 5),
-            ("Bezier", 6),
-            ("Audio", 7),
-            ("Animation", 8),]
+               ("Value", 0),
+               ("Position3D", 1),
+               ("Rotation3D", 2),
+               ("Scale3D", 3),
+               ("Blend Shape", 4),
+               ("Method", 5),
+               ("Bezier", 6),
+               ("Audio", 7),
+               ("Animation", 8),
+            ]
         }
     }
-
+    
     public enum InterpolationType: UInt32, GodotEnum {
         case nearest = 0
         case linear = 1
         case cubic = 2
         case linearAngle = 3
         case cubicAngle = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Nearest", 0),
-            ("Linear", 1),
-            ("Cubic", 2),
-            ("Linear Angle", 3),
-            ("Cubic Angle", 4),]
+               ("Nearest", 0),
+               ("Linear", 1),
+               ("Cubic", 2),
+               ("Linear Angle", 3),
+               ("Cubic Angle", 4),
+            ]
         }
     }
-
+    
     public enum UpdateMode: UInt32, GodotEnum {
         case continuous = 0
         case discrete = 1
         case capture = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Continuous", 0),
-            ("Discrete", 1),
-            ("Capture", 2),]
+               ("Continuous", 0),
+               ("Discrete", 1),
+               ("Capture", 2),
+            ]
         }
     }
-
+    
     public enum LoopMode: UInt32, GodotEnum {
         case none = 0
         case linear = 1
         case pingpong = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("None", 0),
-            ("Linear", 1),
-            ("Pingpong", 2),]
+               ("None", 0),
+               ("Linear", 1),
+               ("Pingpong", 2),
+            ]
         }
     }
-
+    
     public enum LoopedFlag: UInt32, GodotEnum {
         case none = 0
         case end = 1
         case start = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("None", 0),
-            ("End", 1),
-            ("Start", 2),]
+               ("None", 0),
+               ("End", 1),
+               ("Start", 2),
+            ]
         }
     }
-
+    
     public enum FindMode: UInt32, GodotEnum {
         case nearest = 0
         case approx = 1
         case exact = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Nearest", 0),
-            ("Approx", 1),
-            ("Exact", 2),]
+               ("Nearest", 0),
+               ("Approx", 1),
+               ("Exact", 2),
+            ]
         }
     }
-
+    
     internal static var __method_binding_add_track: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_track").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3843682357)!
-        }
+            GodotStringName(swiftStaticString: "add_track").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3843682357)!
+            }
         }
     }()
-
+    
     public func addTrack(
         type: Godot.Animation.TrackType,
         atPosition position: Int32 = -1
@@ -129,15 +135,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_track: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_track").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "remove_track").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func removeTrack(
         trackIdx: Int32
     ) {
@@ -154,15 +160,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_track_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_track_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_track_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func trackCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -175,15 +181,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_get_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_get_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3445944217)!
-        }
+            GodotStringName(swiftStaticString: "track_get_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3445944217)!
+            }
         }
     }()
-
+    
     public func trackGetType(
         trackIdx: Int32
     ) -> Godot.Animation.TrackType {
@@ -202,15 +208,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_get_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_get_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 408788394)!
-        }
+            GodotStringName(swiftStaticString: "track_get_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 408788394)!
+            }
         }
     }()
-
+    
     public func trackGetPath(
         trackIdx: Int32
     ) -> Godot.NodePath {
@@ -229,15 +235,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_set_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_set_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2761262315)!
-        }
+            GodotStringName(swiftStaticString: "track_set_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2761262315)!
+            }
         }
     }()
-
+    
     public func trackSetPath(
         trackIdx: Int32,
         path: Godot.NodePath
@@ -257,15 +263,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_find_track: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "find_track").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 245376003)!
-        }
+            GodotStringName(swiftStaticString: "find_track").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 245376003)!
+            }
         }
     }()
-
+    
     public func findTrack(
         path: Godot.NodePath,
         type: Godot.Animation.TrackType
@@ -287,15 +293,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_move_up: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_move_up").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "track_move_up").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func trackMoveUp(
         trackIdx: Int32
     ) {
@@ -312,15 +318,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_move_down: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_move_down").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "track_move_down").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func trackMoveDown(
         trackIdx: Int32
     ) {
@@ -337,15 +343,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_move_to: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_move_to").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
-        }
+            GodotStringName(swiftStaticString: "track_move_to").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
+            }
         }
     }()
-
+    
     public func trackMoveTo(
         trackIdx: Int32,
         toIdx idx: Int32
@@ -365,15 +371,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_swap: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_swap").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
-        }
+            GodotStringName(swiftStaticString: "track_swap").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
+            }
         }
     }()
-
+    
     public func trackSwap(
         trackIdx: Int32,
         withIdx idx: Int32
@@ -393,15 +399,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_set_imported: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_set_imported").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "track_set_imported").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func trackSetImported(
         trackIdx: Int32,
         imported: Bool
@@ -421,15 +427,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_is_imported: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_is_imported").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "track_is_imported").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func trackIsImported(
         trackIdx: Int32
     ) -> Bool {
@@ -448,15 +454,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_set_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_set_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "track_set_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func trackSetEnabled(
         trackIdx: Int32,
         enabled: Bool
@@ -476,15 +482,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_is_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_is_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "track_is_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func trackIsEnabled(
         trackIdx: Int32
     ) -> Bool {
@@ -503,15 +509,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_position_track_insert_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "position_track_insert_key").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2540608232)!
-        }
+            GodotStringName(swiftStaticString: "position_track_insert_key").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2540608232)!
+            }
         }
     }()
-
+    
     public func positionTrackInsertKey(
         trackIdx: Int32,
         time: Double,
@@ -536,15 +542,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_rotation_track_insert_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "rotation_track_insert_key").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4165004800)!
-        }
+            GodotStringName(swiftStaticString: "rotation_track_insert_key").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4165004800)!
+            }
         }
     }()
-
+    
     public func rotationTrackInsertKey(
         trackIdx: Int32,
         time: Double,
@@ -569,15 +575,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_scale_track_insert_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "scale_track_insert_key").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2540608232)!
-        }
+            GodotStringName(swiftStaticString: "scale_track_insert_key").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2540608232)!
+            }
         }
     }()
-
+    
     public func scaleTrackInsertKey(
         trackIdx: Int32,
         time: Double,
@@ -602,15 +608,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_blend_shape_track_insert_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "blend_shape_track_insert_key").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1534913637)!
-        }
+            GodotStringName(swiftStaticString: "blend_shape_track_insert_key").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1534913637)!
+            }
         }
     }()
-
+    
     public func blendShapeTrackInsertKey(
         trackIdx: Int32,
         time: Double,
@@ -635,15 +641,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_position_track_interpolate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "position_track_interpolate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3285246857)!
-        }
+            GodotStringName(swiftStaticString: "position_track_interpolate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3285246857)!
+            }
         }
     }()
-
+    
     public func positionTrackInterpolate(
         trackIdx: Int32,
         timeSec: Double
@@ -665,15 +671,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_rotation_track_interpolate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "rotation_track_interpolate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1988711975)!
-        }
+            GodotStringName(swiftStaticString: "rotation_track_interpolate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1988711975)!
+            }
         }
     }()
-
+    
     public func rotationTrackInterpolate(
         trackIdx: Int32,
         timeSec: Double
@@ -695,15 +701,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_scale_track_interpolate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "scale_track_interpolate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3285246857)!
-        }
+            GodotStringName(swiftStaticString: "scale_track_interpolate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3285246857)!
+            }
         }
     }()
-
+    
     public func scaleTrackInterpolate(
         trackIdx: Int32,
         timeSec: Double
@@ -725,15 +731,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_blend_shape_track_interpolate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "blend_shape_track_interpolate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1900462983)!
-        }
+            GodotStringName(swiftStaticString: "blend_shape_track_interpolate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1900462983)!
+            }
         }
     }()
-
+    
     public func blendShapeTrackInterpolate(
         trackIdx: Int32,
         timeSec: Double
@@ -755,15 +761,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_insert_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_insert_key").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 808952278)!
-        }
+            GodotStringName(swiftStaticString: "track_insert_key").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 808952278)!
+            }
         }
     }()
-
+    
     public func trackInsertKey<Value: Variant.Storable>(
         trackIdx: Int32,
         time: Double,
@@ -791,15 +797,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_remove_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_remove_key").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
-        }
+            GodotStringName(swiftStaticString: "track_remove_key").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
+            }
         }
     }()
-
+    
     public func trackRemoveKey(
         trackIdx: Int32,
         keyIdx: Int32
@@ -819,15 +825,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_remove_key_at_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_remove_key_at_time").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
-        }
+            GodotStringName(swiftStaticString: "track_remove_key_at_time").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
+            }
         }
     }()
-
+    
     public func trackRemoveKeyAtTime(
         trackIdx: Int32,
         time: Double
@@ -847,15 +853,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_set_key_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_set_key_value").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2060538656)!
-        }
+            GodotStringName(swiftStaticString: "track_set_key_value").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2060538656)!
+            }
         }
     }()
-
+    
     public func trackSetKeyValue<Value: Variant.Storable>(
         trackIdx: Int32,
         key: Int32,
@@ -878,15 +884,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_set_key_transition: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_set_key_transition").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3506521499)!
-        }
+            GodotStringName(swiftStaticString: "track_set_key_transition").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3506521499)!
+            }
         }
     }()
-
+    
     public func trackSetKeyTransition(
         trackIdx: Int32,
         keyIdx: Int32,
@@ -909,15 +915,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_set_key_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_set_key_time").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3506521499)!
-        }
+            GodotStringName(swiftStaticString: "track_set_key_time").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3506521499)!
+            }
         }
     }()
-
+    
     public func trackSetKeyTime(
         trackIdx: Int32,
         keyIdx: Int32,
@@ -940,15 +946,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_get_key_transition: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_get_key_transition").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
-        }
+            GodotStringName(swiftStaticString: "track_get_key_transition").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
+            }
         }
     }()
-
+    
     public func trackGetKeyTransition(
         trackIdx: Int32,
         keyIdx: Int32
@@ -970,15 +976,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_get_key_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_get_key_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
-        }
+            GodotStringName(swiftStaticString: "track_get_key_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
+            }
         }
     }()
-
+    
     public func trackGetKeyCount(
         trackIdx: Int32
     ) -> Int32 {
@@ -997,15 +1003,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_get_key_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_get_key_value").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 678354945)!
-        }
+            GodotStringName(swiftStaticString: "track_get_key_value").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 678354945)!
+            }
         }
     }()
-
+    
     public func trackGetKeyValue(
         trackIdx: Int32,
         keyIdx: Int32
@@ -1027,15 +1033,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_get_key_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_get_key_time").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
-        }
+            GodotStringName(swiftStaticString: "track_get_key_time").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
+            }
         }
     }()
-
+    
     public func trackGetKeyTime(
         trackIdx: Int32,
         keyIdx: Int32
@@ -1057,15 +1063,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_find_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_find_key").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3245197284)!
-        }
+            GodotStringName(swiftStaticString: "track_find_key").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3245197284)!
+            }
         }
     }()
-
+    
     public func trackFindKey(
         trackIdx: Int32,
         time: Double,
@@ -1090,15 +1096,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_set_interpolation_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_set_interpolation_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4112932513)!
-        }
+            GodotStringName(swiftStaticString: "track_set_interpolation_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4112932513)!
+            }
         }
     }()
-
+    
     public func trackSetInterpolationType(
         trackIdx: Int32,
         interpolation: Godot.Animation.InterpolationType
@@ -1118,15 +1124,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_get_interpolation_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_get_interpolation_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1530756894)!
-        }
+            GodotStringName(swiftStaticString: "track_get_interpolation_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1530756894)!
+            }
         }
     }()
-
+    
     public func trackGetInterpolationType(
         trackIdx: Int32
     ) -> Godot.Animation.InterpolationType {
@@ -1145,15 +1151,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_set_interpolation_loop_wrap: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_set_interpolation_loop_wrap").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "track_set_interpolation_loop_wrap").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func trackSetInterpolationLoopWrap(
         trackIdx: Int32,
         interpolation: Bool
@@ -1173,15 +1179,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_get_interpolation_loop_wrap: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_get_interpolation_loop_wrap").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "track_get_interpolation_loop_wrap").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func trackGetInterpolationLoopWrap(
         trackIdx: Int32
     ) -> Bool {
@@ -1200,15 +1206,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_track_is_compressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "track_is_compressed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "track_is_compressed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func trackIsCompressed(
         trackIdx: Int32
     ) -> Bool {
@@ -1227,15 +1233,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_value_track_set_update_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "value_track_set_update_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2854058312)!
-        }
+            GodotStringName(swiftStaticString: "value_track_set_update_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2854058312)!
+            }
         }
     }()
-
+    
     public func valueTrackSetUpdateMode(
         trackIdx: Int32,
         mode: Godot.Animation.UpdateMode
@@ -1255,15 +1261,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_value_track_get_update_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "value_track_get_update_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1440326473)!
-        }
+            GodotStringName(swiftStaticString: "value_track_get_update_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1440326473)!
+            }
         }
     }()
-
+    
     public func valueTrackGetUpdateMode(
         trackIdx: Int32
     ) -> Godot.Animation.UpdateMode {
@@ -1282,15 +1288,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_value_track_interpolate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "value_track_interpolate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 491147702)!
-        }
+            GodotStringName(swiftStaticString: "value_track_interpolate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 491147702)!
+            }
         }
     }()
-
+    
     public func valueTrackInterpolate(
         trackIdx: Int32,
         timeSec: Double
@@ -1312,15 +1318,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_method_track_get_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "method_track_get_name").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 351665558)!
-        }
+            GodotStringName(swiftStaticString: "method_track_get_name").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 351665558)!
+            }
         }
     }()
-
+    
     public func methodTrackGetName(
         trackIdx: Int32,
         keyIdx: Int32
@@ -1342,15 +1348,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_method_track_get_params: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "method_track_get_params").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2345056839)!
-        }
+            GodotStringName(swiftStaticString: "method_track_get_params").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2345056839)!
+            }
         }
     }()
-
+    
     public func methodTrackGetParams(
         trackIdx: Int32,
         keyIdx: Int32
@@ -1372,15 +1378,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_bezier_track_insert_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "bezier_track_insert_key").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3656773645)!
-        }
+            GodotStringName(swiftStaticString: "bezier_track_insert_key").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3656773645)!
+            }
         }
     }()
-
+    
     public func bezierTrackInsertKey(
         trackIdx: Int32,
         time: Double,
@@ -1411,15 +1417,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_bezier_track_set_key_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "bezier_track_set_key_value").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3506521499)!
-        }
+            GodotStringName(swiftStaticString: "bezier_track_set_key_value").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3506521499)!
+            }
         }
     }()
-
+    
     public func bezierTrackSetKeyValue(
         trackIdx: Int32,
         keyIdx: Int32,
@@ -1442,15 +1448,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_bezier_track_set_key_in_handle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "bezier_track_set_key_in_handle").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1719223284)!
-        }
+            GodotStringName(swiftStaticString: "bezier_track_set_key_in_handle").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1719223284)!
+            }
         }
     }()
-
+    
     public func bezierTrackSetKeyInHandle(
         trackIdx: Int32,
         keyIdx: Int32,
@@ -1476,15 +1482,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_bezier_track_set_key_out_handle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "bezier_track_set_key_out_handle").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1719223284)!
-        }
+            GodotStringName(swiftStaticString: "bezier_track_set_key_out_handle").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1719223284)!
+            }
         }
     }()
-
+    
     public func bezierTrackSetKeyOutHandle(
         trackIdx: Int32,
         keyIdx: Int32,
@@ -1510,15 +1516,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_bezier_track_get_key_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "bezier_track_get_key_value").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
-        }
+            GodotStringName(swiftStaticString: "bezier_track_get_key_value").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
+            }
         }
     }()
-
+    
     public func bezierTrackGetKeyValue(
         trackIdx: Int32,
         keyIdx: Int32
@@ -1540,15 +1546,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_bezier_track_get_key_in_handle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "bezier_track_get_key_in_handle").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3016396712)!
-        }
+            GodotStringName(swiftStaticString: "bezier_track_get_key_in_handle").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3016396712)!
+            }
         }
     }()
-
+    
     public func bezierTrackGetKeyInHandle(
         trackIdx: Int32,
         keyIdx: Int32
@@ -1570,15 +1576,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_bezier_track_get_key_out_handle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "bezier_track_get_key_out_handle").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3016396712)!
-        }
+            GodotStringName(swiftStaticString: "bezier_track_get_key_out_handle").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3016396712)!
+            }
         }
     }()
-
+    
     public func bezierTrackGetKeyOutHandle(
         trackIdx: Int32,
         keyIdx: Int32
@@ -1600,15 +1606,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_bezier_track_interpolate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "bezier_track_interpolate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1900462983)!
-        }
+            GodotStringName(swiftStaticString: "bezier_track_interpolate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1900462983)!
+            }
         }
     }()
-
+    
     public func bezierTrackInterpolate(
         trackIdx: Int32,
         time: Double
@@ -1630,15 +1636,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_audio_track_insert_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "audio_track_insert_key").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4021027286)!
-        }
+            GodotStringName(swiftStaticString: "audio_track_insert_key").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4021027286)!
+            }
         }
     }()
-
+    
     public func audioTrackInsertKey(
         trackIdx: Int32,
         time: Double,
@@ -1671,15 +1677,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_audio_track_set_key_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "audio_track_set_key_stream").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3886397084)!
-        }
+            GodotStringName(swiftStaticString: "audio_track_set_key_stream").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3886397084)!
+            }
         }
     }()
-
+    
     public func audioTrackSetKeyStream(
         trackIdx: Int32,
         keyIdx: Int32,
@@ -1704,15 +1710,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_audio_track_set_key_start_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "audio_track_set_key_start_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3506521499)!
-        }
+            GodotStringName(swiftStaticString: "audio_track_set_key_start_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3506521499)!
+            }
         }
     }()
-
+    
     public func audioTrackSetKeyStartOffset(
         trackIdx: Int32,
         keyIdx: Int32,
@@ -1735,15 +1741,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_audio_track_set_key_end_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "audio_track_set_key_end_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3506521499)!
-        }
+            GodotStringName(swiftStaticString: "audio_track_set_key_end_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3506521499)!
+            }
         }
     }()
-
+    
     public func audioTrackSetKeyEndOffset(
         trackIdx: Int32,
         keyIdx: Int32,
@@ -1766,15 +1772,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_audio_track_get_key_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "audio_track_get_key_stream").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 635277205)!
-        }
+            GodotStringName(swiftStaticString: "audio_track_get_key_stream").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 635277205)!
+            }
         }
     }()
-
+    
     public func audioTrackGetKeyStream(
         trackIdx: Int32,
         keyIdx: Int32
@@ -1796,15 +1802,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_audio_track_get_key_start_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "audio_track_get_key_start_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
-        }
+            GodotStringName(swiftStaticString: "audio_track_get_key_start_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
+            }
         }
     }()
-
+    
     public func audioTrackGetKeyStartOffset(
         trackIdx: Int32,
         keyIdx: Int32
@@ -1826,15 +1832,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_audio_track_get_key_end_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "audio_track_get_key_end_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
-        }
+            GodotStringName(swiftStaticString: "audio_track_get_key_end_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
+            }
         }
     }()
-
+    
     public func audioTrackGetKeyEndOffset(
         trackIdx: Int32,
         keyIdx: Int32
@@ -1856,15 +1862,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_audio_track_set_use_blend: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "audio_track_set_use_blend").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "audio_track_set_use_blend").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func audioTrackSetUseBlend(
         trackIdx: Int32,
         enable: Bool
@@ -1884,15 +1890,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_audio_track_is_use_blend: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "audio_track_is_use_blend").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "audio_track_is_use_blend").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func audioTrackIsUseBlend(
         trackIdx: Int32
     ) -> Bool {
@@ -1911,15 +1917,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_animation_track_insert_key: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "animation_track_insert_key").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 158676774)!
-        }
+            GodotStringName(swiftStaticString: "animation_track_insert_key").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 158676774)!
+            }
         }
     }()
-
+    
     public func animationTrackInsertKey(
         trackIdx: Int32,
         time: Double,
@@ -1944,15 +1950,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_animation_track_set_key_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "animation_track_set_key_animation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 117615382)!
-        }
+            GodotStringName(swiftStaticString: "animation_track_set_key_animation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 117615382)!
+            }
         }
     }()
-
+    
     public func animationTrackSetKeyAnimation(
         trackIdx: Int32,
         keyIdx: Int32,
@@ -1975,15 +1981,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_animation_track_get_key_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "animation_track_get_key_animation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 351665558)!
-        }
+            GodotStringName(swiftStaticString: "animation_track_get_key_animation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 351665558)!
+            }
         }
     }()
-
+    
     public func animationTrackGetKeyAnimation(
         trackIdx: Int32,
         keyIdx: Int32
@@ -2005,15 +2011,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_length").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_length").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setLength(
         timeSec: Double
     ) {
@@ -2030,15 +2036,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_length").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_length").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getLength() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2051,15 +2057,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_loop_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_loop_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3155355575)!
-        }
+            GodotStringName(swiftStaticString: "set_loop_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3155355575)!
+            }
         }
     }()
-
+    
     private func __setLoopMode(
         _ loopMode: Godot.Animation.LoopMode
     ) {
@@ -2076,15 +2082,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_loop_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_loop_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1988889481)!
-        }
+            GodotStringName(swiftStaticString: "get_loop_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1988889481)!
+            }
         }
     }()
-
+    
     private func __getLoopMode() -> Godot.Animation.LoopMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2097,15 +2103,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_step: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_step").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_step").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setStep(
         sizeSec: Double
     ) {
@@ -2122,15 +2128,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_step: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_step").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_step").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getStep() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2143,15 +2149,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "clear").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func clear() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -2162,15 +2168,15 @@ open class Animation: Resource {
             )
         }
     }
-
+    
     internal static var __method_binding_copy_track: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "copy_track").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 148001024)!
-        }
+            GodotStringName(swiftStaticString: "copy_track").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 148001024)!
+            }
         }
     }()
-
+    
     public func copyTrack(
         trackIdx: Int32,
         to animation: Godot.Animation?
@@ -2192,15 +2198,15 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_compress: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "compress").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3608408117)!
-        }
+            GodotStringName(swiftStaticString: "compress").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3608408117)!
+            }
         }
     }()
-
+    
     public func compress(
         pageSize: UInt32 = 8192,
         fps: UInt32 = 120,
@@ -2223,51 +2229,48 @@ open class Animation: Resource {
             }
         }
     }
-
+    
     public var length: Double {
         get {
             __getLength()
         }
-        set {
+        set(newValue) {
             __setLength(
                 timeSec: newValue
             )
         }
     }
-
+    
     public var loopMode: Godot.Animation.LoopMode {
         get {
             __getLoopMode()
         }
-        set {
+        set(newValue) {
             __setLoopMode(
                 newValue
             )
         }
     }
-
+    
     public var step: Double {
         get {
             __getStep()
         }
-        set {
+        set(newValue) {
             __setStep(
                 sizeSec: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

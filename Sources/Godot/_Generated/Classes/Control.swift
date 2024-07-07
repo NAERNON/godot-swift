@@ -10,15 +10,16 @@ open class Control: CanvasItem {
         case none = 0
         case click = 1
         case all = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("None", 0),
-            ("Click", 1),
-            ("All", 2),]
+               ("None", 0),
+               ("Click", 1),
+               ("All", 2),
+            ]
         }
     }
-
+    
     public enum CursorShape: UInt32, GodotEnum {
         case arrow = 0
         case ibeam = 1
@@ -37,29 +38,30 @@ open class Control: CanvasItem {
         case vsplit = 14
         case hsplit = 15
         case help = 16
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Arrow", 0),
-            ("Ibeam", 1),
-            ("Pointing Hand", 2),
-            ("Cross", 3),
-            ("Wait", 4),
-            ("Busy", 5),
-            ("Drag", 6),
-            ("Can Drop", 7),
-            ("Forbidden", 8),
-            ("Vsize", 9),
-            ("Hsize", 10),
-            ("Bdiagsize", 11),
-            ("Fdiagsize", 12),
-            ("Move", 13),
-            ("Vsplit", 14),
-            ("Hsplit", 15),
-            ("Help", 16),]
+               ("Arrow", 0),
+               ("Ibeam", 1),
+               ("Pointing Hand", 2),
+               ("Cross", 3),
+               ("Wait", 4),
+               ("Busy", 5),
+               ("Drag", 6),
+               ("Can Drop", 7),
+               ("Forbidden", 8),
+               ("Vsize", 9),
+               ("Hsize", 10),
+               ("Bdiagsize", 11),
+               ("Fdiagsize", 12),
+               ("Move", 13),
+               ("Vsplit", 14),
+               ("Hsplit", 15),
+               ("Help", 16),
+            ]
         }
     }
-
+    
     public enum LayoutPreset: UInt32, GodotEnum {
         case topLeft = 0
         case topRight = 1
@@ -77,146 +79,147 @@ open class Control: CanvasItem {
         case vcenterWide = 13
         case hcenterWide = 14
         case fullRect = 15
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Top Left", 0),
-            ("Top Right", 1),
-            ("Bottom Left", 2),
-            ("Bottom Right", 3),
-            ("Center Left", 4),
-            ("Center Top", 5),
-            ("Center Right", 6),
-            ("Center Bottom", 7),
-            ("Center", 8),
-            ("Left Wide", 9),
-            ("Top Wide", 10),
-            ("Right Wide", 11),
-            ("Bottom Wide", 12),
-            ("Vcenter Wide", 13),
-            ("Hcenter Wide", 14),
-            ("Full Rect", 15),]
+               ("Top Left", 0),
+               ("Top Right", 1),
+               ("Bottom Left", 2),
+               ("Bottom Right", 3),
+               ("Center Left", 4),
+               ("Center Top", 5),
+               ("Center Right", 6),
+               ("Center Bottom", 7),
+               ("Center", 8),
+               ("Left Wide", 9),
+               ("Top Wide", 10),
+               ("Right Wide", 11),
+               ("Bottom Wide", 12),
+               ("Vcenter Wide", 13),
+               ("Hcenter Wide", 14),
+               ("Full Rect", 15),
+            ]
         }
     }
-
+    
     public enum LayoutPresetMode: UInt32, GodotEnum {
         case minsize = 0
         case keepWidth = 1
         case keepHeight = 2
         case keepSize = 3
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Minsize", 0),
-            ("Keep Width", 1),
-            ("Keep Height", 2),
-            ("Keep Size", 3),]
+               ("Minsize", 0),
+               ("Keep Width", 1),
+               ("Keep Height", 2),
+               ("Keep Size", 3),
+            ]
         }
     }
-
+    
     public struct SizeFlags: GodotOptionSet {
         public let rawValue: Int64
-
-        public init(
-            rawValue: Int64
-        ) {
+        
+        public init(rawValue: Int64) {
             self.rawValue = rawValue
         }
-
+        
         public static let shrinkBegin: Self = .init(rawValue: 0)
-
         public static let fill: Self = .init(rawValue: 1)
-
         public static let expand: Self = .init(rawValue: 2)
-
         public static let expandFill: Self = .init(rawValue: 3)
-
         public static let shrinkCenter: Self = .init(rawValue: 4)
-
         public static let shrinkEnd: Self = .init(rawValue: 8)
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Shrink Begin", 0),
-            ("Fill", 1),
-            ("Expand", 2),
-            ("Expand Fill", 3),
-            ("Shrink Center", 4),
-            ("Shrink End", 8),]
+               ("Shrink Begin", 0),
+               ("Fill", 1),
+               ("Expand", 2),
+               ("Expand Fill", 3),
+               ("Shrink Center", 4),
+               ("Shrink End", 8),
+            ]
         }
     }
-
+    
     public enum MouseFilter: UInt32, GodotEnum {
         case stop = 0
         case pass = 1
         case ignore = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Stop", 0),
-            ("Pass", 1),
-            ("Ignore", 2),]
+               ("Stop", 0),
+               ("Pass", 1),
+               ("Ignore", 2),
+            ]
         }
     }
-
+    
     public enum GrowDirection: UInt32, GodotEnum {
         case begin = 0
         case end = 1
         case both = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Begin", 0),
-            ("End", 1),
-            ("Both", 2),]
+               ("Begin", 0),
+               ("End", 1),
+               ("Both", 2),
+            ]
         }
     }
-
+    
     public enum Anchor: UInt32, GodotEnum {
         case begin = 0
         case end = 1
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Begin", 0),
-            ("End", 1),]
+               ("Begin", 0),
+               ("End", 1),
+            ]
         }
     }
-
+    
     public enum LayoutDirection: UInt32, GodotEnum {
         case inherited = 0
         case locale = 1
         case ltr = 2
         case rtl = 3
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Inherited", 0),
-            ("Locale", 1),
-            ("Ltr", 2),
-            ("Rtl", 3),]
+               ("Inherited", 0),
+               ("Locale", 1),
+               ("Ltr", 2),
+               ("Rtl", 3),
+            ]
         }
     }
-
+    
     public enum TextDirection: UInt32, GodotEnum {
         case inherited = 3
         case auto = 0
         case ltr = 1
         case rtl = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Auto", 0),
-            ("Ltr", 1),
-            ("Rtl", 2),
-            ("Inherited", 3),]
+               ("Auto", 0),
+               ("Ltr", 1),
+               ("Rtl", 2),
+               ("Inherited", 3),
+            ]
         }
     }
-
+    
+    
     public func resized() {
         _ = resizedSignal.emit()
     }
-
     public lazy var resizedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "resized") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -231,29 +234,19 @@ open class Control: CanvasItem {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct GuiInputSignalInput: Godot.SignalInput {
         public let event: Godot.InputEvent?
-
-        fileprivate init(
-            event: Godot.InputEvent?
-        ) {
+        fileprivate init(event: Godot.InputEvent?) {
             self.event = event
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.event)]
         }
     }
-
-    public func guiInput(
-        event: Godot.InputEvent?
-    ) {
+    public func guiInput(event: Godot.InputEvent?) {
         _ = guiInputSignal.emit(.init(event: event))
     }
-
     public lazy var guiInputSignal: Godot.SignalEmitter<GuiInputSignalInput> = {
         .init(object: self, signalName: "gui_input") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<GuiInputSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -268,11 +261,11 @@ open class Control: CanvasItem {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func mouseEntered() {
         _ = mouseEnteredSignal.emit()
     }
-
     public lazy var mouseEnteredSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "mouse_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -287,11 +280,11 @@ open class Control: CanvasItem {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func mouseExited() {
         _ = mouseExitedSignal.emit()
     }
-
     public lazy var mouseExitedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "mouse_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -306,11 +299,11 @@ open class Control: CanvasItem {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func focusEntered() {
         _ = focusEnteredSignal.emit()
     }
-
     public lazy var focusEnteredSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "focus_entered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -325,11 +318,11 @@ open class Control: CanvasItem {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func focusExited() {
         _ = focusExitedSignal.emit()
     }
-
     public lazy var focusExitedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "focus_exited") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -344,11 +337,11 @@ open class Control: CanvasItem {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func sizeFlagsChanged() {
         _ = sizeFlagsChangedSignal.emit()
     }
-
     public lazy var sizeFlagsChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "size_flags_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -363,11 +356,11 @@ open class Control: CanvasItem {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func minimumSizeChanged() {
         _ = minimumSizeChangedSignal.emit()
     }
-
     public lazy var minimumSizeChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "minimum_size_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -382,11 +375,11 @@ open class Control: CanvasItem {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func themeChanged() {
         _ = themeChangedSignal.emit()
     }
-
     public lazy var themeChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "theme_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -401,90 +394,92 @@ open class Control: CanvasItem {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public static let notificationResized: Notification = .init(rawValue: 40)
-
+    
     public static let notificationMouseEnter: Notification = .init(rawValue: 41)
-
+    
     public static let notificationMouseExit: Notification = .init(rawValue: 42)
-
+    
     public static let notificationMouseEnterSelf: Notification = .init(rawValue: 60)
-
+    
     public static let notificationMouseExitSelf: Notification = .init(rawValue: 61)
-
+    
     public static let notificationFocusEnter: Notification = .init(rawValue: 43)
-
+    
     public static let notificationFocusExit: Notification = .init(rawValue: 44)
-
+    
     public static let notificationThemeChanged: Notification = .init(rawValue: 45)
-
+    
     public static let notificationScrollBegin: Notification = .init(rawValue: 47)
-
+    
     public static let notificationScrollEnd: Notification = .init(rawValue: 48)
-
+    
     public static let notificationLayoutDirectionChanged: Notification = .init(rawValue: 49)
-
+    
     open func _hasPoint(
         _ point: Godot.Vector2
     ) -> Bool {
         Bool()
     }
-
+    
     open func _structuredTextParser(
         args: Godot.AnyGodotArray,
         text: Godot.GodotString
     ) -> Godot.GodotArray<Godot.Vector3I> {
         Godot.GodotArray<Godot.Vector3I>()
     }
-
+    
     open func _getMinimumSize() -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _getTooltip(
         atPosition position: Godot.Vector2
     ) -> Godot.GodotString {
         Godot.GodotString()
     }
-
+    
     open func _getDragData(
         atPosition position: Godot.Vector2
     ) -> Godot.Variant {
         Variant()
     }
-
+    
     open func _canDropData(
         atPosition position: Godot.Vector2,
         data: Godot.Variant
     ) -> Bool {
         Bool()
     }
-
+    
     open func _dropData(
         atPosition position: Godot.Vector2,
         data: Godot.Variant
     ) {
+        
     }
-
+    
     open func _makeCustomTooltip(
         forText text: Godot.GodotString
     ) -> Godot.Object? {
         nil
     }
-
+    
     open func _guiInput(
         event: Godot.InputEvent?
     ) {
+        
     }
-
+    
     internal static var __method_binding_accept_event: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "accept_event").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "accept_event").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func acceptEvent() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -495,15 +490,15 @@ open class Control: CanvasItem {
             )
         }
     }
-
+    
     internal static var __method_binding_get_minimum_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_minimum_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_minimum_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     public func minimumSize() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -516,15 +511,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_combined_minimum_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_combined_minimum_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_combined_minimum_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     public func combinedMinimumSize() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -537,15 +532,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_anchors_preset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_anchors_preset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 509135270)!
-        }
+            GodotStringName(swiftStaticString: "set_anchors_preset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 509135270)!
+            }
         }
     }()
-
+    
     public func setAnchorsPreset(
         _ preset: Godot.Control.LayoutPreset,
         keepOffsets: Bool = false
@@ -565,15 +560,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_offsets_preset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_offsets_preset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3724524307)!
-        }
+            GodotStringName(swiftStaticString: "set_offsets_preset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3724524307)!
+            }
         }
     }()
-
+    
     public func setOffsetsPreset(
         _ preset: Godot.Control.LayoutPreset,
         resizeMode: Godot.Control.LayoutPresetMode = Control.LayoutPresetMode(rawValue: 0)!,
@@ -596,15 +591,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_anchors_and_offsets_preset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_anchors_and_offsets_preset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3724524307)!
-        }
+            GodotStringName(swiftStaticString: "set_anchors_and_offsets_preset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3724524307)!
+            }
         }
     }()
-
+    
     public func setAnchorsAndOffsetsPreset(
         _ preset: Godot.Control.LayoutPreset,
         resizeMode: Godot.Control.LayoutPresetMode = Control.LayoutPresetMode(rawValue: 0)!,
@@ -627,15 +622,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_anchor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_anchor").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2302782885)!
-        }
+            GodotStringName(swiftStaticString: "set_anchor").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2302782885)!
+            }
         }
     }()
-
+    
     public func setAnchor(
         side: Godot.Side,
         anchor: Double,
@@ -661,15 +656,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_anchor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_anchor").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2869120046)!
-        }
+            GodotStringName(swiftStaticString: "get_anchor").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2869120046)!
+            }
         }
     }()
-
+    
     private func __getAnchor(
         side: Godot.Side
     ) -> Double {
@@ -688,15 +683,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4290182280)!
-        }
+            GodotStringName(swiftStaticString: "set_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4290182280)!
+            }
         }
     }()
-
+    
     public func setOffset(
         side: Godot.Side,
         offset: Double
@@ -716,15 +711,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2869120046)!
-        }
+            GodotStringName(swiftStaticString: "get_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2869120046)!
+            }
         }
     }()
-
+    
     private func __getOffset(
         _ offset: Godot.Side
     ) -> Double {
@@ -743,15 +738,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_anchor_and_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_anchor_and_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4031722181)!
-        }
+            GodotStringName(swiftStaticString: "set_anchor_and_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4031722181)!
+            }
         }
     }()
-
+    
     public func setAnchorAndOffset(
         side: Godot.Side,
         anchor: Double,
@@ -777,15 +772,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_begin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_begin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_begin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     public func setBegin(
         position: Godot.Vector2
     ) {
@@ -802,15 +797,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_end: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_end").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_end").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     public func setEnd(
         position: Godot.Vector2
     ) {
@@ -827,15 +822,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2436320129)!
-        }
+            GodotStringName(swiftStaticString: "set_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2436320129)!
+            }
         }
     }()
-
+    
     public func setPosition(
         _ position: Godot.Vector2,
         keepOffsets: Bool = false
@@ -855,15 +850,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2436320129)!
-        }
+            GodotStringName(swiftStaticString: "set_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2436320129)!
+            }
         }
     }()
-
+    
     public func setSize(
         _ size: Godot.Vector2,
         keepOffsets: Bool = false
@@ -883,15 +878,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_reset_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "reset_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "reset_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func resetSize() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -902,15 +897,15 @@ open class Control: CanvasItem {
             )
         }
     }
-
+    
     internal static var __method_binding_set_custom_minimum_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_custom_minimum_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_custom_minimum_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setCustomMinimumSize(
         _ size: Godot.Vector2
     ) {
@@ -927,15 +922,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_global_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_global_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2436320129)!
-        }
+            GodotStringName(swiftStaticString: "set_global_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2436320129)!
+            }
         }
     }()
-
+    
     public func setGlobalPosition(
         _ position: Godot.Vector2,
         keepOffsets: Bool = false
@@ -955,15 +950,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_rotation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_rotation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_rotation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setRotation(
         radians: Double
     ) {
@@ -980,15 +975,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_rotation_degrees: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_rotation_degrees").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_rotation_degrees").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setRotationDegrees(
         _ degrees: Double
     ) {
@@ -1005,15 +1000,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setScale(
         _ scale: Godot.Vector2
     ) {
@@ -1030,15 +1025,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_pivot_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_pivot_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_pivot_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setPivotOffset(
         _ pivotOffset: Godot.Vector2
     ) {
@@ -1055,15 +1050,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_begin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_begin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_begin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     public func begin() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1076,15 +1071,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_end: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_end").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_end").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     public func end() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1097,15 +1092,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getPosition() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1118,15 +1113,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getSize() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1139,15 +1134,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_rotation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_rotation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_rotation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getRotation() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1160,15 +1155,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_rotation_degrees: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_rotation_degrees").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_rotation_degrees").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getRotationDegrees() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1181,15 +1176,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getScale() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1202,15 +1197,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_pivot_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_pivot_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_pivot_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getPivotOffset() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1223,15 +1218,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_custom_minimum_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_custom_minimum_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_custom_minimum_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getCustomMinimumSize() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1244,15 +1239,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_parent_area_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_parent_area_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_parent_area_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     public func parentAreaSize() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1265,15 +1260,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_global_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_global_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_global_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getGlobalPosition() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1286,15 +1281,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_screen_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_screen_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_screen_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     public func screenPosition() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1307,15 +1302,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_rect").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!
-        }
+            GodotStringName(swiftStaticString: "get_rect").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!
+            }
         }
     }()
-
+    
     public func rect() -> Godot.Rect2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1328,15 +1323,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_global_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_global_rect").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!
-        }
+            GodotStringName(swiftStaticString: "get_global_rect").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!
+            }
         }
     }()
-
+    
     public func globalRect() -> Godot.Rect2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1349,15 +1344,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_focus_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_focus_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3232914922)!
-        }
+            GodotStringName(swiftStaticString: "set_focus_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3232914922)!
+            }
         }
     }()
-
+    
     private func __setFocusMode(
         _ mode: Godot.Control.FocusMode
     ) {
@@ -1374,15 +1369,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_focus_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_focus_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2132829277)!
-        }
+            GodotStringName(swiftStaticString: "get_focus_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2132829277)!
+            }
         }
     }()
-
+    
     private func __getFocusMode() -> Godot.Control.FocusMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1395,15 +1390,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_has_focus: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_focus").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "has_focus").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func hasFocus() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1416,15 +1411,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_grab_focus: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "grab_focus").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "grab_focus").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func grabFocus() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1435,15 +1430,15 @@ open class Control: CanvasItem {
             )
         }
     }
-
+    
     internal static var __method_binding_release_focus: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "release_focus").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "release_focus").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func releaseFocus() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1454,15 +1449,15 @@ open class Control: CanvasItem {
             )
         }
     }
-
+    
     internal static var __method_binding_find_prev_valid_focus: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "find_prev_valid_focus").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2783021301)!
-        }
+            GodotStringName(swiftStaticString: "find_prev_valid_focus").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2783021301)!
+            }
         }
     }()
-
+    
     public func findPrevValidFocus() -> Godot.Control? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1475,15 +1470,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_find_next_valid_focus: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "find_next_valid_focus").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2783021301)!
-        }
+            GodotStringName(swiftStaticString: "find_next_valid_focus").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2783021301)!
+            }
         }
     }()
-
+    
     public func findNextValidFocus() -> Godot.Control? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1496,15 +1491,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_find_valid_focus_neighbor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "find_valid_focus_neighbor").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1543910170)!
-        }
+            GodotStringName(swiftStaticString: "find_valid_focus_neighbor").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1543910170)!
+            }
         }
     }()
-
+    
     public func findValidFocusNeighbor(
         side: Godot.Side
     ) -> Godot.Control? {
@@ -1523,15 +1518,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_h_size_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_h_size_flags").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 394851643)!
-        }
+            GodotStringName(swiftStaticString: "set_h_size_flags").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 394851643)!
+            }
         }
     }()
-
+    
     private func __setHSizeFlags(
         _ flags: Godot.Control.SizeFlags
     ) {
@@ -1548,15 +1543,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_h_size_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_h_size_flags").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3781367401)!
-        }
+            GodotStringName(swiftStaticString: "get_h_size_flags").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3781367401)!
+            }
         }
     }()
-
+    
     private func __getHSizeFlags() -> Godot.Control.SizeFlags {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1569,15 +1564,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_stretch_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_stretch_ratio").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_stretch_ratio").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setStretchRatio(
         _ ratio: Double
     ) {
@@ -1594,15 +1589,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_stretch_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_stretch_ratio").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_stretch_ratio").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getStretchRatio() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1615,15 +1610,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_v_size_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_v_size_flags").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 394851643)!
-        }
+            GodotStringName(swiftStaticString: "set_v_size_flags").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 394851643)!
+            }
         }
     }()
-
+    
     private func __setVSizeFlags(
         _ flags: Godot.Control.SizeFlags
     ) {
@@ -1640,15 +1635,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_v_size_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_v_size_flags").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3781367401)!
-        }
+            GodotStringName(swiftStaticString: "get_v_size_flags").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3781367401)!
+            }
         }
     }()
-
+    
     private func __getVSizeFlags() -> Godot.Control.SizeFlags {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1661,15 +1656,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_theme: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_theme").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2326690814)!
-        }
+            GodotStringName(swiftStaticString: "set_theme").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2326690814)!
+            }
         }
     }()
-
+    
     private func __setTheme(
         _ theme: Godot.Theme?
     ) {
@@ -1688,15 +1683,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_theme: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3846893731)!
-        }
+            GodotStringName(swiftStaticString: "get_theme").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3846893731)!
+            }
         }
     }()
-
+    
     private func __getTheme() -> Godot.Theme? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1709,15 +1704,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_theme_type_variation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_theme_type_variation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
-        }
+            GodotStringName(swiftStaticString: "set_theme_type_variation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
+            }
         }
     }()
-
+    
     private func __setThemeTypeVariation(
         themeType: Godot.GodotStringName
     ) {
@@ -1734,15 +1729,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_theme_type_variation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_type_variation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
-        }
+            GodotStringName(swiftStaticString: "get_theme_type_variation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
+            }
         }
     }()
-
+    
     private func __getThemeTypeVariation() -> Godot.GodotStringName {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1755,15 +1750,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_begin_bulk_theme_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "begin_bulk_theme_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "begin_bulk_theme_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func beginBulkThemeOverride() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1774,15 +1769,15 @@ open class Control: CanvasItem {
             )
         }
     }
-
+    
     internal static var __method_binding_end_bulk_theme_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "end_bulk_theme_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "end_bulk_theme_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func endBulkThemeOverride() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1793,15 +1788,15 @@ open class Control: CanvasItem {
             )
         }
     }
-
+    
     internal static var __method_binding_add_theme_icon_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_theme_icon_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1373065600)!
-        }
+            GodotStringName(swiftStaticString: "add_theme_icon_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1373065600)!
+            }
         }
     }()
-
+    
     public func addThemeIconOverride(
         name: Godot.GodotStringName,
         texture: Godot.Texture2D?
@@ -1823,15 +1818,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_add_theme_stylebox_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_theme_stylebox_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4188838905)!
-        }
+            GodotStringName(swiftStaticString: "add_theme_stylebox_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4188838905)!
+            }
         }
     }()
-
+    
     public func addThemeStyleboxOverride(
         name: Godot.GodotStringName,
         stylebox: Godot.StyleBox?
@@ -1853,15 +1848,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_add_theme_font_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_theme_font_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3518018674)!
-        }
+            GodotStringName(swiftStaticString: "add_theme_font_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3518018674)!
+            }
         }
     }()
-
+    
     public func addThemeFontOverride(
         name: Godot.GodotStringName,
         font: Godot.Font?
@@ -1883,15 +1878,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_add_theme_font_size_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_theme_font_size_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2415702435)!
-        }
+            GodotStringName(swiftStaticString: "add_theme_font_size_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2415702435)!
+            }
         }
     }()
-
+    
     public func addThemeFontSizeOverride(
         name: Godot.GodotStringName,
         fontSize: Int32
@@ -1911,15 +1906,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_add_theme_color_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_theme_color_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4260178595)!
-        }
+            GodotStringName(swiftStaticString: "add_theme_color_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4260178595)!
+            }
         }
     }()
-
+    
     public func addThemeColorOverride(
         name: Godot.GodotStringName,
         color: Godot.Color
@@ -1939,15 +1934,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_add_theme_constant_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_theme_constant_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2415702435)!
-        }
+            GodotStringName(swiftStaticString: "add_theme_constant_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2415702435)!
+            }
         }
     }()
-
+    
     public func addThemeConstantOverride(
         name: Godot.GodotStringName,
         constant: Int32
@@ -1967,15 +1962,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_theme_icon_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_theme_icon_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
-        }
+            GodotStringName(swiftStaticString: "remove_theme_icon_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
+            }
         }
     }()
-
+    
     public func removeThemeIconOverride(
         name: Godot.GodotStringName
     ) {
@@ -1992,15 +1987,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_theme_stylebox_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_theme_stylebox_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
-        }
+            GodotStringName(swiftStaticString: "remove_theme_stylebox_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
+            }
         }
     }()
-
+    
     public func removeThemeStyleboxOverride(
         name: Godot.GodotStringName
     ) {
@@ -2017,15 +2012,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_theme_font_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_theme_font_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
-        }
+            GodotStringName(swiftStaticString: "remove_theme_font_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
+            }
         }
     }()
-
+    
     public func removeThemeFontOverride(
         name: Godot.GodotStringName
     ) {
@@ -2042,15 +2037,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_theme_font_size_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_theme_font_size_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
-        }
+            GodotStringName(swiftStaticString: "remove_theme_font_size_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
+            }
         }
     }()
-
+    
     public func removeThemeFontSizeOverride(
         name: Godot.GodotStringName
     ) {
@@ -2067,15 +2062,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_theme_color_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_theme_color_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
-        }
+            GodotStringName(swiftStaticString: "remove_theme_color_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
+            }
         }
     }()
-
+    
     public func removeThemeColorOverride(
         name: Godot.GodotStringName
     ) {
@@ -2092,15 +2087,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_theme_constant_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_theme_constant_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
-        }
+            GodotStringName(swiftStaticString: "remove_theme_constant_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
+            }
         }
     }()
-
+    
     public func removeThemeConstantOverride(
         name: Godot.GodotStringName
     ) {
@@ -2117,15 +2112,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_theme_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_icon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3163973443)!
-        }
+            GodotStringName(swiftStaticString: "get_theme_icon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3163973443)!
+            }
         }
     }()
-
+    
     public func themeIcon(
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
@@ -2147,15 +2142,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_theme_stylebox: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_stylebox").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 604739069)!
-        }
+            GodotStringName(swiftStaticString: "get_theme_stylebox").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 604739069)!
+            }
         }
     }()
-
+    
     public func themeStylebox(
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
@@ -2177,15 +2172,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_theme_font: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_font").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2826986490)!
-        }
+            GodotStringName(swiftStaticString: "get_theme_font").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2826986490)!
+            }
         }
     }()
-
+    
     public func themeFont(
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
@@ -2207,15 +2202,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_theme_font_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_font_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1327056374)!
-        }
+            GodotStringName(swiftStaticString: "get_theme_font_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1327056374)!
+            }
         }
     }()
-
+    
     public func themeFontSize(
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
@@ -2237,15 +2232,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_theme_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2798751242)!
-        }
+            GodotStringName(swiftStaticString: "get_theme_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2798751242)!
+            }
         }
     }()
-
+    
     public func themeColor(
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
@@ -2267,15 +2262,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_theme_constant: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_constant").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1327056374)!
-        }
+            GodotStringName(swiftStaticString: "get_theme_constant").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1327056374)!
+            }
         }
     }()
-
+    
     public func themeConstant(
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
@@ -2297,15 +2292,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_has_theme_icon_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_icon_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
-        }
+            GodotStringName(swiftStaticString: "has_theme_icon_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
+            }
         }
     }()
-
+    
     public func hasThemeIconOverride(
         name: Godot.GodotStringName
     ) -> Bool {
@@ -2324,15 +2319,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_has_theme_stylebox_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_stylebox_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
-        }
+            GodotStringName(swiftStaticString: "has_theme_stylebox_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
+            }
         }
     }()
-
+    
     public func hasThemeStyleboxOverride(
         name: Godot.GodotStringName
     ) -> Bool {
@@ -2351,15 +2346,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_has_theme_font_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_font_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
-        }
+            GodotStringName(swiftStaticString: "has_theme_font_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
+            }
         }
     }()
-
+    
     public func hasThemeFontOverride(
         name: Godot.GodotStringName
     ) -> Bool {
@@ -2378,15 +2373,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_has_theme_font_size_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_font_size_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
-        }
+            GodotStringName(swiftStaticString: "has_theme_font_size_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
+            }
         }
     }()
-
+    
     public func hasThemeFontSizeOverride(
         name: Godot.GodotStringName
     ) -> Bool {
@@ -2405,15 +2400,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_has_theme_color_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_color_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
-        }
+            GodotStringName(swiftStaticString: "has_theme_color_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
+            }
         }
     }()
-
+    
     public func hasThemeColorOverride(
         name: Godot.GodotStringName
     ) -> Bool {
@@ -2432,15 +2427,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_has_theme_constant_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_constant_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
-        }
+            GodotStringName(swiftStaticString: "has_theme_constant_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
+            }
         }
     }()
-
+    
     public func hasThemeConstantOverride(
         name: Godot.GodotStringName
     ) -> Bool {
@@ -2459,15 +2454,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_has_theme_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_icon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
-        }
+            GodotStringName(swiftStaticString: "has_theme_icon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
+            }
         }
     }()
-
+    
     public func hasThemeIcon(
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
@@ -2489,15 +2484,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_has_theme_stylebox: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_stylebox").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
-        }
+            GodotStringName(swiftStaticString: "has_theme_stylebox").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
+            }
         }
     }()
-
+    
     public func hasThemeStylebox(
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
@@ -2519,15 +2514,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_has_theme_font: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_font").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
-        }
+            GodotStringName(swiftStaticString: "has_theme_font").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
+            }
         }
     }()
-
+    
     public func hasThemeFont(
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
@@ -2549,15 +2544,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_has_theme_font_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_font_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
-        }
+            GodotStringName(swiftStaticString: "has_theme_font_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
+            }
         }
     }()
-
+    
     public func hasThemeFontSize(
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
@@ -2579,15 +2574,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_has_theme_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
-        }
+            GodotStringName(swiftStaticString: "has_theme_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
+            }
         }
     }()
-
+    
     public func hasThemeColor(
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
@@ -2609,15 +2604,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_has_theme_constant: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_theme_constant").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
-        }
+            GodotStringName(swiftStaticString: "has_theme_constant").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866386512)!
+            }
         }
     }()
-
+    
     public func hasThemeConstant(
         name: Godot.GodotStringName,
         themeType: Godot.GodotStringName = ""
@@ -2639,15 +2634,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_theme_default_base_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_default_base_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_theme_default_base_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     public func themeDefaultBaseScale() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2660,15 +2655,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_theme_default_font: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_default_font").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3229501585)!
-        }
+            GodotStringName(swiftStaticString: "get_theme_default_font").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3229501585)!
+            }
         }
     }()
-
+    
     public func themeDefaultFont() -> Godot.Font? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2681,15 +2676,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_theme_default_font_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_theme_default_font_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_theme_default_font_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func themeDefaultFontSize() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2702,15 +2697,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_parent_control: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_parent_control").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2783021301)!
-        }
+            GodotStringName(swiftStaticString: "get_parent_control").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2783021301)!
+            }
         }
     }()
-
+    
     public func parentControl() -> Godot.Control? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2723,15 +2718,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_h_grow_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_h_grow_direction").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2022385301)!
-        }
+            GodotStringName(swiftStaticString: "set_h_grow_direction").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2022385301)!
+            }
         }
     }()
-
+    
     private func __setHGrowDirection(
         _ direction: Godot.Control.GrowDirection
     ) {
@@ -2748,15 +2743,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_h_grow_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_h_grow_direction").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635610155)!
-        }
+            GodotStringName(swiftStaticString: "get_h_grow_direction").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635610155)!
+            }
         }
     }()
-
+    
     private func __getHGrowDirection() -> Godot.Control.GrowDirection {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2769,15 +2764,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_v_grow_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_v_grow_direction").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2022385301)!
-        }
+            GodotStringName(swiftStaticString: "set_v_grow_direction").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2022385301)!
+            }
         }
     }()
-
+    
     private func __setVGrowDirection(
         _ direction: Godot.Control.GrowDirection
     ) {
@@ -2794,15 +2789,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_v_grow_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_v_grow_direction").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635610155)!
-        }
+            GodotStringName(swiftStaticString: "get_v_grow_direction").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635610155)!
+            }
         }
     }()
-
+    
     private func __getVGrowDirection() -> Godot.Control.GrowDirection {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2815,15 +2810,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_tooltip_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_tooltip_text").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_tooltip_text").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setTooltipText(
         hint: Godot.GodotString
     ) {
@@ -2840,15 +2835,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_tooltip_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tooltip_text").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_tooltip_text").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getTooltipText() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2861,15 +2856,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_tooltip: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tooltip").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2895288280)!
-        }
+            GodotStringName(swiftStaticString: "get_tooltip").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2895288280)!
+            }
         }
     }()
-
+    
     public func tooltip(
         atPosition position: Godot.Vector2 = Vector2(x: 0, y: 0)
     ) -> Godot.GodotString {
@@ -2888,15 +2883,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_default_cursor_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_default_cursor_shape").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 217062046)!
-        }
+            GodotStringName(swiftStaticString: "set_default_cursor_shape").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 217062046)!
+            }
         }
     }()
-
+    
     private func __setDefaultCursorShape(
         _ shape: Godot.Control.CursorShape
     ) {
@@ -2913,15 +2908,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_default_cursor_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_default_cursor_shape").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2359535750)!
-        }
+            GodotStringName(swiftStaticString: "get_default_cursor_shape").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2359535750)!
+            }
         }
     }()
-
+    
     private func __getDefaultCursorShape() -> Godot.Control.CursorShape {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2934,15 +2929,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_cursor_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_cursor_shape").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1395773853)!
-        }
+            GodotStringName(swiftStaticString: "get_cursor_shape").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1395773853)!
+            }
         }
     }()
-
+    
     public func cursorShape(
         position: Godot.Vector2 = Vector2(x: 0, y: 0)
     ) -> Godot.Control.CursorShape {
@@ -2961,15 +2956,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_focus_neighbor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_focus_neighbor").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2024461774)!
-        }
+            GodotStringName(swiftStaticString: "set_focus_neighbor").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2024461774)!
+            }
         }
     }()
-
+    
     public func setFocusNeighbor(
         side: Godot.Side,
         neighbor: Godot.NodePath
@@ -2989,15 +2984,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_focus_neighbor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_focus_neighbor").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2757935761)!
-        }
+            GodotStringName(swiftStaticString: "get_focus_neighbor").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2757935761)!
+            }
         }
     }()
-
+    
     private func __getFocusNeighbor(
         side: Godot.Side
     ) -> Godot.NodePath {
@@ -3016,15 +3011,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_focus_next: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_focus_next").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
-        }
+            GodotStringName(swiftStaticString: "set_focus_next").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
+            }
         }
     }()
-
+    
     private func __setFocusNext(
         _ next: Godot.NodePath
     ) {
@@ -3041,15 +3036,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_focus_next: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_focus_next").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
-        }
+            GodotStringName(swiftStaticString: "get_focus_next").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
+            }
         }
     }()
-
+    
     private func __getFocusNext() -> Godot.NodePath {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -3062,15 +3057,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_focus_previous: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_focus_previous").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
-        }
+            GodotStringName(swiftStaticString: "set_focus_previous").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
+            }
         }
     }()
-
+    
     private func __setFocusPrevious(
         _ previous: Godot.NodePath
     ) {
@@ -3087,15 +3082,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_focus_previous: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_focus_previous").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
-        }
+            GodotStringName(swiftStaticString: "get_focus_previous").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
+            }
         }
     }()
-
+    
     private func __getFocusPrevious() -> Godot.NodePath {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -3108,15 +3103,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_force_drag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "force_drag").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3191844692)!
-        }
+            GodotStringName(swiftStaticString: "force_drag").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3191844692)!
+            }
         }
     }()
-
+    
     public func forceDrag<Value: Variant.Storable>(
         data: Value,
         preview: Godot.Control?
@@ -3138,15 +3133,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_mouse_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_mouse_filter").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3891156122)!
-        }
+            GodotStringName(swiftStaticString: "set_mouse_filter").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3891156122)!
+            }
         }
     }()
-
+    
     private func __setMouseFilter(
         _ filter: Godot.Control.MouseFilter
     ) {
@@ -3163,15 +3158,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_mouse_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_mouse_filter").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1572545674)!
-        }
+            GodotStringName(swiftStaticString: "get_mouse_filter").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1572545674)!
+            }
         }
     }()
-
+    
     private func __getMouseFilter() -> Godot.Control.MouseFilter {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -3184,15 +3179,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_force_pass_scroll_events: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_force_pass_scroll_events").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_force_pass_scroll_events").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setForcePassScrollEvents(
         _ forcePassScrollEvents: Bool
     ) {
@@ -3209,15 +3204,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_is_force_pass_scroll_events: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_force_pass_scroll_events").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_force_pass_scroll_events").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isForcePassScrollEvents() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -3230,15 +3225,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_clip_contents: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_clip_contents").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_clip_contents").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setClipContents(
         enable: Bool
     ) {
@@ -3255,15 +3250,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_is_clipping_contents: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_clipping_contents").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
-        }
+            GodotStringName(swiftStaticString: "is_clipping_contents").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
+            }
         }
     }()
-
+    
     private func __isClippingContents() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -3276,15 +3271,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_grab_click_focus: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "grab_click_focus").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "grab_click_focus").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func grabClickFocus() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -3295,15 +3290,15 @@ open class Control: CanvasItem {
             )
         }
     }
-
+    
     internal static var __method_binding_set_drag_forwarding: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_drag_forwarding").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1076571380)!
-        }
+            GodotStringName(swiftStaticString: "set_drag_forwarding").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1076571380)!
+            }
         }
     }()
-
+    
     public func setDragForwarding(
         dragFunc: Godot.Callable,
         canDropFunc: Godot.Callable,
@@ -3326,15 +3321,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_drag_preview: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_drag_preview").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
-        }
+            GodotStringName(swiftStaticString: "set_drag_preview").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
+            }
         }
     }()
-
+    
     public func setDragPreview(
         _ control: Godot.Control?
     ) {
@@ -3353,15 +3348,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_is_drag_successful: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_drag_successful").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_drag_successful").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isDragSuccessful() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -3374,15 +3369,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_warp_mouse: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "warp_mouse").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "warp_mouse").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     public func warpMouse(
         position: Godot.Vector2
     ) {
@@ -3399,15 +3394,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_shortcut_context: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_shortcut_context").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
-        }
+            GodotStringName(swiftStaticString: "set_shortcut_context").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
+            }
         }
     }()
-
+    
     private func __setShortcutContext(
         node: Godot.Node?
     ) {
@@ -3426,15 +3421,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_shortcut_context: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_shortcut_context").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3160264692)!
-        }
+            GodotStringName(swiftStaticString: "get_shortcut_context").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3160264692)!
+            }
         }
     }()
-
+    
     private func __getShortcutContext() -> Godot.Node? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -3447,15 +3442,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_update_minimum_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "update_minimum_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "update_minimum_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func updateMinimumSize() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -3466,15 +3461,15 @@ open class Control: CanvasItem {
             )
         }
     }
-
+    
     internal static var __method_binding_set_layout_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_layout_direction").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3310692370)!
-        }
+            GodotStringName(swiftStaticString: "set_layout_direction").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3310692370)!
+            }
         }
     }()
-
+    
     private func __setLayoutDirection(
         _ direction: Godot.Control.LayoutDirection
     ) {
@@ -3491,15 +3486,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_get_layout_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_layout_direction").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1546772008)!
-        }
+            GodotStringName(swiftStaticString: "get_layout_direction").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1546772008)!
+            }
         }
     }()
-
+    
     private func __getLayoutDirection() -> Godot.Control.LayoutDirection {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -3512,15 +3507,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_is_layout_rtl: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_layout_rtl").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_layout_rtl").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isLayoutRtl() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -3533,15 +3528,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_auto_translate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_auto_translate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_auto_translate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setAutoTranslate(
         enable: Bool
     ) {
@@ -3558,15 +3553,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_is_auto_translating: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_auto_translating").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_auto_translating").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isAutoTranslating() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -3579,15 +3574,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_set_localize_numeral_system: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_localize_numeral_system").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_localize_numeral_system").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setLocalizeNumeralSystem(
         enable: Bool
     ) {
@@ -3604,15 +3599,15 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     internal static var __method_binding_is_localizing_numeral_system: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_localizing_numeral_system").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_localizing_numeral_system").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isLocalizingNumeralSystem() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -3625,40 +3620,40 @@ open class Control: CanvasItem {
             }
         }
     }
-
+    
     public var isClippingContents: Bool {
         get {
             __isClippingContents()
         }
-        set {
+        set(newValue) {
             __setClipContents(
                 enable: newValue
             )
         }
     }
-
+    
     public var customMinimumSize: Godot.Vector2 {
         get {
             __getCustomMinimumSize()
         }
-        set {
+        set(newValue) {
             __setCustomMinimumSize(
                 newValue
             )
         }
     }
-
+    
     public var layoutDirection: Godot.Control.LayoutDirection {
         get {
             __getLayoutDirection()
         }
-        set {
+        set(newValue) {
             __setLayoutDirection(
                 newValue
             )
         }
     }
-
+    
     public var anchorLeft: Double {
         get {
             __getAnchor(
@@ -3666,7 +3661,7 @@ open class Control: CanvasItem {
             )
         }
     }
-
+    
     public var anchorTop: Double {
         get {
             __getAnchor(
@@ -3674,7 +3669,7 @@ open class Control: CanvasItem {
             )
         }
     }
-
+    
     public var anchorRight: Double {
         get {
             __getAnchor(
@@ -3682,7 +3677,7 @@ open class Control: CanvasItem {
             )
         }
     }
-
+    
     public var anchorBottom: Double {
         get {
             __getAnchor(
@@ -3690,7 +3685,7 @@ open class Control: CanvasItem {
             )
         }
     }
-
+    
     public var offsetLeft: Double {
         get {
             __getOffset(
@@ -3698,7 +3693,7 @@ open class Control: CanvasItem {
             )
         }
     }
-
+    
     public var offsetTop: Double {
         get {
             __getOffset(
@@ -3706,7 +3701,7 @@ open class Control: CanvasItem {
             )
         }
     }
-
+    
     public var offsetRight: Double {
         get {
             __getOffset(
@@ -3714,7 +3709,7 @@ open class Control: CanvasItem {
             )
         }
     }
-
+    
     public var offsetBottom: Double {
         get {
             __getOffset(
@@ -3722,157 +3717,157 @@ open class Control: CanvasItem {
             )
         }
     }
-
+    
     public var hGrowDirection: Godot.Control.GrowDirection {
         get {
             __getHGrowDirection()
         }
-        set {
+        set(newValue) {
             __setHGrowDirection(
                 newValue
             )
         }
     }
-
+    
     public var vGrowDirection: Godot.Control.GrowDirection {
         get {
             __getVGrowDirection()
         }
-        set {
+        set(newValue) {
             __setVGrowDirection(
                 newValue
             )
         }
     }
-
+    
     public var size: Godot.Vector2 {
         get {
             __getSize()
         }
     }
-
+    
     public var position: Godot.Vector2 {
         get {
             __getPosition()
         }
     }
-
+    
     public var globalPosition: Godot.Vector2 {
         get {
             __getGlobalPosition()
         }
     }
-
+    
     public var rotation: Double {
         get {
             __getRotation()
         }
-        set {
+        set(newValue) {
             __setRotation(
                 radians: newValue
             )
         }
     }
-
+    
     public var rotationDegrees: Double {
         get {
             __getRotationDegrees()
         }
-        set {
+        set(newValue) {
             __setRotationDegrees(
                 newValue
             )
         }
     }
-
+    
     public var scale: Godot.Vector2 {
         get {
             __getScale()
         }
-        set {
+        set(newValue) {
             __setScale(
                 newValue
             )
         }
     }
-
+    
     public var pivotOffset: Godot.Vector2 {
         get {
             __getPivotOffset()
         }
-        set {
+        set(newValue) {
             __setPivotOffset(
                 newValue
             )
         }
     }
-
+    
     public var hSizeFlags: Godot.Control.SizeFlags {
         get {
             __getHSizeFlags()
         }
-        set {
+        set(newValue) {
             __setHSizeFlags(
                 newValue
             )
         }
     }
-
+    
     public var vSizeFlags: Godot.Control.SizeFlags {
         get {
             __getVSizeFlags()
         }
-        set {
+        set(newValue) {
             __setVSizeFlags(
                 newValue
             )
         }
     }
-
+    
     public var stretchRatio: Double {
         get {
             __getStretchRatio()
         }
-        set {
+        set(newValue) {
             __setStretchRatio(
                 newValue
             )
         }
     }
-
+    
     public var isAutoTranslating: Bool {
         get {
             __isAutoTranslating()
         }
-        set {
+        set(newValue) {
             __setAutoTranslate(
                 enable: newValue
             )
         }
     }
-
+    
     public var isLocalizingNumeralSystem: Bool {
         get {
             __isLocalizingNumeralSystem()
         }
-        set {
+        set(newValue) {
             __setLocalizeNumeralSystem(
                 enable: newValue
             )
         }
     }
-
+    
     public var tooltipText: Godot.GodotString {
         get {
             __getTooltipText()
         }
-        set {
+        set(newValue) {
             __setTooltipText(
                 hint: newValue
             )
         }
     }
-
+    
     public var focusNeighborLeft: Godot.NodePath {
         get {
             __getFocusNeighbor(
@@ -3880,7 +3875,7 @@ open class Control: CanvasItem {
             )
         }
     }
-
+    
     public var focusNeighborTop: Godot.NodePath {
         get {
             __getFocusNeighbor(
@@ -3888,7 +3883,7 @@ open class Control: CanvasItem {
             )
         }
     }
-
+    
     public var focusNeighborRight: Godot.NodePath {
         get {
             __getFocusNeighbor(
@@ -3896,7 +3891,7 @@ open class Control: CanvasItem {
             )
         }
     }
-
+    
     public var focusNeighborBottom: Godot.NodePath {
         get {
             __getFocusNeighbor(
@@ -3904,192 +3899,191 @@ open class Control: CanvasItem {
             )
         }
     }
-
+    
     public var focusNext: Godot.NodePath {
         get {
             __getFocusNext()
         }
-        set {
+        set(newValue) {
             __setFocusNext(
                 newValue
             )
         }
     }
-
+    
     public var focusPrevious: Godot.NodePath {
         get {
             __getFocusPrevious()
         }
-        set {
+        set(newValue) {
             __setFocusPrevious(
                 newValue
             )
         }
     }
-
+    
     public var focusMode: Godot.Control.FocusMode {
         get {
             __getFocusMode()
         }
-        set {
+        set(newValue) {
             __setFocusMode(
                 newValue
             )
         }
     }
-
+    
     public var mouseFilter: Godot.Control.MouseFilter {
         get {
             __getMouseFilter()
         }
-        set {
+        set(newValue) {
             __setMouseFilter(
                 newValue
             )
         }
     }
-
+    
     public var isForcePassScrollEvents: Bool {
         get {
             __isForcePassScrollEvents()
         }
-        set {
+        set(newValue) {
             __setForcePassScrollEvents(
                 newValue
             )
         }
     }
-
+    
     public var defaultCursorShape: Godot.Control.CursorShape {
         get {
             __getDefaultCursorShape()
         }
-        set {
+        set(newValue) {
             __setDefaultCursorShape(
                 newValue
             )
         }
     }
-
+    
     public var shortcutContext: Godot.Node? {
         get {
             __getShortcutContext()
         }
-        set {
+        set(newValue) {
             __setShortcutContext(
                 node: newValue
             )
         }
     }
-
+    
     public var theme: Godot.Theme? {
         get {
             __getTheme()
         }
-        set {
+        set(newValue) {
             __setTheme(
                 newValue
             )
         }
     }
-
+    
     public var themeTypeVariation: Godot.GodotStringName {
         get {
             __getThemeTypeVariation()
         }
-        set {
+        set(newValue) {
             __setThemeTypeVariation(
                 themeType: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _has_point_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._hasPoint(
-            Godot.Vector2.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<Control>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._hasPoint(
+                    Godot.Vector2.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _structured_text_parser_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._structuredTextParser(
-            args: Godot.AnyGodotArray.transferFromGodot(unsafePointer: args[0]!),
-            text: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<Control>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._structuredTextParser(
+                    args: Godot.AnyGodotArray.transferFromGodot(unsafePointer: args[0]!),
+                    text: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_minimum_size_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getMinimumSize()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<Control>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getMinimumSize()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_tooltip_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getTooltip(
-            atPosition: Godot.Vector2.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<Control>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getTooltip(
+                    atPosition: Godot.Vector2.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_drag_data_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getDragData(
-            atPosition: Godot.Vector2.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<Control>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getDragData(
+                    atPosition: Godot.Vector2.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _can_drop_data_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._canDropData(
-            atPosition: Godot.Vector2.transferFromGodot(unsafePointer: args[0]!),
-            data: Godot.Variant.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<Control>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._canDropData(
+                    atPosition: Godot.Vector2.transferFromGodot(unsafePointer: args[0]!),
+                    data: Godot.Variant.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _drop_data_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._dropData(
-            atPosition: Godot.Vector2.transferFromGodot(unsafePointer: args[0]!),
-            data: Godot.Variant.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<Control>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._dropData(
+                    atPosition: Godot.Vector2.transferFromGodot(unsafePointer: args[0]!),
+                    data: Godot.Variant.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _make_custom_tooltip_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._makeCustomTooltip(
-            forText: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<Control>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._makeCustomTooltip(
+                    forText: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _gui_input_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<Control> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._guiInput(
-            event: Godot.InputEvent?.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<Control>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._guiInput(
+                    event: Godot.InputEvent?.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         _virtualFunctions = [
             "_hasPoint" : ("_has_point", _has_point_call),
             "_structuredTextParser" : ("_structured_text_parser", _structured_text_parser_call),
@@ -4102,7 +4096,7 @@ open class Control: CanvasItem {
             "_guiInput" : ("_gui_input", _gui_input_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

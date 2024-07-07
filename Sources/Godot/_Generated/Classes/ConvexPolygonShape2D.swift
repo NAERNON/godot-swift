@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class ConvexPolygonShape2D: Shape2D {
     internal static var __method_binding_set_point_cloud: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_point_cloud").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
-        }
+            GodotStringName(swiftStaticString: "set_point_cloud").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
+            }
         }
     }()
-
+    
     public func setPointCloud(
         _ pointCloud: Godot.GodotContiguousArray<Vector2>
     ) {
@@ -30,15 +30,15 @@ open class ConvexPolygonShape2D: Shape2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_points").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
-        }
+            GodotStringName(swiftStaticString: "set_points").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
+            }
         }
     }()
-
+    
     private func __setPoints(
         _ points: Godot.GodotContiguousArray<Vector2>
     ) {
@@ -55,15 +55,15 @@ open class ConvexPolygonShape2D: Shape2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_points").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!
-        }
+            GodotStringName(swiftStaticString: "get_points").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!
+            }
         }
     }()
-
+    
     private func __getPoints() -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -76,29 +76,26 @@ open class ConvexPolygonShape2D: Shape2D {
             }
         }
     }
-
+    
     public var points: Godot.GodotContiguousArray<Vector2> {
         get {
             __getPoints()
         }
-        set {
+        set(newValue) {
             __setPoints(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

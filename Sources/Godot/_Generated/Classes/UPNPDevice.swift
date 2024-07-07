@@ -17,30 +17,31 @@ open class UPNPDevice: RefCounted {
         case invalidControl = 7
         case mallocError = 8
         case unknownError = 9
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Ok", 0),
-            ("Http Error", 1),
-            ("Http Empty", 2),
-            ("No Urls", 3),
-            ("No Igd", 4),
-            ("Disconnected", 5),
-            ("Unknown Device", 6),
-            ("Invalid Control", 7),
-            ("Malloc Error", 8),
-            ("Unknown Error", 9),]
+               ("Ok", 0),
+               ("Http Error", 1),
+               ("Http Empty", 2),
+               ("No Urls", 3),
+               ("No Igd", 4),
+               ("Disconnected", 5),
+               ("Unknown Device", 6),
+               ("Invalid Control", 7),
+               ("Malloc Error", 8),
+               ("Unknown Error", 9),
+            ]
         }
     }
-
+    
     internal static var __method_binding_is_valid_gateway: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_valid_gateway").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_valid_gateway").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isValidGateway() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -53,15 +54,15 @@ open class UPNPDevice: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_query_external_address: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "query_external_address").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "query_external_address").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     public func queryExternalAddress() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -74,15 +75,15 @@ open class UPNPDevice: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_add_port_mapping: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_port_mapping").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 818314583)!
-        }
+            GodotStringName(swiftStaticString: "add_port_mapping").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 818314583)!
+            }
         }
     }()
-
+    
     public func addPortMapping(
         port: Int32,
         portInternal: Int32 = 0,
@@ -113,15 +114,15 @@ open class UPNPDevice: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_delete_port_mapping: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "delete_port_mapping").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444187325)!
-        }
+            GodotStringName(swiftStaticString: "delete_port_mapping").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444187325)!
+            }
         }
     }()
-
+    
     public func deletePortMapping(
         port: Int32,
         proto: Godot.GodotString = "UDP"
@@ -143,15 +144,15 @@ open class UPNPDevice: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_description_url: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_description_url").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_description_url").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setDescriptionUrl(
         _ url: Godot.GodotString
     ) {
@@ -168,15 +169,15 @@ open class UPNPDevice: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_description_url: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_description_url").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_description_url").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getDescriptionUrl() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -189,15 +190,15 @@ open class UPNPDevice: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_service_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_service_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_service_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setServiceType(
         _ type: Godot.GodotString
     ) {
@@ -214,15 +215,15 @@ open class UPNPDevice: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_service_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_service_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_service_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getServiceType() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -235,15 +236,15 @@ open class UPNPDevice: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_igd_control_url: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_igd_control_url").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_igd_control_url").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setIgdControlUrl(
         _ url: Godot.GodotString
     ) {
@@ -260,15 +261,15 @@ open class UPNPDevice: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_igd_control_url: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_igd_control_url").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_igd_control_url").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getIgdControlUrl() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -281,15 +282,15 @@ open class UPNPDevice: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_igd_service_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_igd_service_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_igd_service_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setIgdServiceType(
         _ type: Godot.GodotString
     ) {
@@ -306,15 +307,15 @@ open class UPNPDevice: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_igd_service_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_igd_service_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_igd_service_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getIgdServiceType() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -327,15 +328,15 @@ open class UPNPDevice: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_igd_our_addr: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_igd_our_addr").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_igd_our_addr").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setIgdOurAddr(
         _ addr: Godot.GodotString
     ) {
@@ -352,15 +353,15 @@ open class UPNPDevice: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_igd_our_addr: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_igd_our_addr").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_igd_our_addr").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getIgdOurAddr() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -373,15 +374,15 @@ open class UPNPDevice: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_igd_status: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_igd_status").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 519504122)!
-        }
+            GodotStringName(swiftStaticString: "set_igd_status").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 519504122)!
+            }
         }
     }()
-
+    
     private func __setIgdStatus(
         _ status: Godot.UPNPDevice.IGDStatus
     ) {
@@ -398,15 +399,15 @@ open class UPNPDevice: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_igd_status: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_igd_status").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 180887011)!
-        }
+            GodotStringName(swiftStaticString: "get_igd_status").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 180887011)!
+            }
         }
     }()
-
+    
     private func __getIgdStatus() -> Godot.UPNPDevice.IGDStatus {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -419,84 +420,81 @@ open class UPNPDevice: RefCounted {
             }
         }
     }
-
+    
     public var descriptionUrl: Godot.GodotString {
         get {
             __getDescriptionUrl()
         }
-        set {
+        set(newValue) {
             __setDescriptionUrl(
                 newValue
             )
         }
     }
-
+    
     public var serviceType: Godot.GodotString {
         get {
             __getServiceType()
         }
-        set {
+        set(newValue) {
             __setServiceType(
                 newValue
             )
         }
     }
-
+    
     public var igdControlUrl: Godot.GodotString {
         get {
             __getIgdControlUrl()
         }
-        set {
+        set(newValue) {
             __setIgdControlUrl(
                 newValue
             )
         }
     }
-
+    
     public var igdServiceType: Godot.GodotString {
         get {
             __getIgdServiceType()
         }
-        set {
+        set(newValue) {
             __setIgdServiceType(
                 newValue
             )
         }
     }
-
+    
     public var igdOurAddr: Godot.GodotString {
         get {
             __getIgdOurAddr()
         }
-        set {
+        set(newValue) {
             __setIgdOurAddr(
                 newValue
             )
         }
     }
-
+    
     public var igdStatus: Godot.UPNPDevice.IGDStatus {
         get {
             __getIgdStatus()
         }
-        set {
+        set(newValue) {
             __setIgdStatus(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

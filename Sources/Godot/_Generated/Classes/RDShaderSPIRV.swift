@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class RDShaderSPIRV: Resource {
     internal static var __method_binding_set_stage_bytecode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_stage_bytecode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3514097977)!
-        }
+            GodotStringName(swiftStaticString: "set_stage_bytecode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3514097977)!
+            }
         }
     }()
-
+    
     public func setStageBytecode(
         stage: Godot.RenderingDevice.ShaderStage,
         bytecode: Godot.GodotContiguousArray<UInt8>
@@ -33,15 +33,15 @@ open class RDShaderSPIRV: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_stage_bytecode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_stage_bytecode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3816765404)!
-        }
+            GodotStringName(swiftStaticString: "get_stage_bytecode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3816765404)!
+            }
         }
     }()
-
+    
     private func __getStageBytecode(
         stage: Godot.RenderingDevice.ShaderStage
     ) -> Godot.GodotContiguousArray<UInt8> {
@@ -60,15 +60,15 @@ open class RDShaderSPIRV: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_stage_compile_error: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_stage_compile_error").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 620821314)!
-        }
+            GodotStringName(swiftStaticString: "set_stage_compile_error").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 620821314)!
+            }
         }
     }()
-
+    
     public func setStageCompileError(
         stage: Godot.RenderingDevice.ShaderStage,
         compileError: Godot.GodotString
@@ -88,15 +88,15 @@ open class RDShaderSPIRV: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_stage_compile_error: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_stage_compile_error").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3354920045)!
-        }
+            GodotStringName(swiftStaticString: "get_stage_compile_error").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3354920045)!
+            }
         }
     }()
-
+    
     private func __getStageCompileError(
         stage: Godot.RenderingDevice.ShaderStage
     ) -> Godot.GodotString {
@@ -115,7 +115,7 @@ open class RDShaderSPIRV: Resource {
             }
         }
     }
-
+    
     public var bytecodeVertex: Godot.GodotContiguousArray<UInt8> {
         get {
             __getStageBytecode(
@@ -123,7 +123,7 @@ open class RDShaderSPIRV: Resource {
             )
         }
     }
-
+    
     public var bytecodeFragment: Godot.GodotContiguousArray<UInt8> {
         get {
             __getStageBytecode(
@@ -131,7 +131,7 @@ open class RDShaderSPIRV: Resource {
             )
         }
     }
-
+    
     public var bytecodeTesselationControl: Godot.GodotContiguousArray<UInt8> {
         get {
             __getStageBytecode(
@@ -139,7 +139,7 @@ open class RDShaderSPIRV: Resource {
             )
         }
     }
-
+    
     public var bytecodeTesselationEvaluation: Godot.GodotContiguousArray<UInt8> {
         get {
             __getStageBytecode(
@@ -147,7 +147,7 @@ open class RDShaderSPIRV: Resource {
             )
         }
     }
-
+    
     public var bytecodeCompute: Godot.GodotContiguousArray<UInt8> {
         get {
             __getStageBytecode(
@@ -155,7 +155,7 @@ open class RDShaderSPIRV: Resource {
             )
         }
     }
-
+    
     public var compileErrorVertex: Godot.GodotString {
         get {
             __getStageCompileError(
@@ -163,7 +163,7 @@ open class RDShaderSPIRV: Resource {
             )
         }
     }
-
+    
     public var compileErrorFragment: Godot.GodotString {
         get {
             __getStageCompileError(
@@ -171,7 +171,7 @@ open class RDShaderSPIRV: Resource {
             )
         }
     }
-
+    
     public var compileErrorTesselationControl: Godot.GodotString {
         get {
             __getStageCompileError(
@@ -179,7 +179,7 @@ open class RDShaderSPIRV: Resource {
             )
         }
     }
-
+    
     public var compileErrorTesselationEvaluation: Godot.GodotString {
         get {
             __getStageCompileError(
@@ -187,7 +187,7 @@ open class RDShaderSPIRV: Resource {
             )
         }
     }
-
+    
     public var compileErrorCompute: Godot.GodotString {
         get {
             __getStageCompileError(
@@ -195,18 +195,15 @@ open class RDShaderSPIRV: Resource {
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

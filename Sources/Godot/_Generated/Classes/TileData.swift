@@ -6,11 +6,10 @@ import GodotExtensionHeaders
 
 @GodotClass
 open class TileData: Object {
-
+    
     public func changed() {
         _ = changedSignal.emit()
     }
-
     public lazy var changedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -25,15 +24,15 @@ open class TileData: Object {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_set_flip_h: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_flip_h").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_flip_h").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setFlipH(
         _ flipH: Bool
     ) {
@@ -50,15 +49,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_flip_h: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_flip_h").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_flip_h").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getFlipH() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -71,15 +70,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_flip_v: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_flip_v").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_flip_v").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setFlipV(
         _ flipV: Bool
     ) {
@@ -96,15 +95,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_flip_v: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_flip_v").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_flip_v").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getFlipV() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -117,15 +116,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_transpose: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_transpose").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_transpose").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setTranspose(
         _ transpose: Bool
     ) {
@@ -142,15 +141,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_transpose: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_transpose").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_transpose").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getTranspose() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -163,15 +162,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_material").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2757459619)!
-        }
+            GodotStringName(swiftStaticString: "set_material").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2757459619)!
+            }
         }
     }()
-
+    
     private func __setMaterial(
         _ material: Godot.Material?
     ) {
@@ -190,15 +189,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_material").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 5934680)!
-        }
+            GodotStringName(swiftStaticString: "get_material").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 5934680)!
+            }
         }
     }()
-
+    
     private func __getMaterial() -> Godot.Material? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -211,15 +210,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture_origin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_origin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
-        }
+            GodotStringName(swiftStaticString: "set_texture_origin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
+            }
         }
     }()
-
+    
     private func __setTextureOrigin(
         _ textureOrigin: Godot.Vector2I
     ) {
@@ -236,15 +235,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_origin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_origin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_origin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
+            }
         }
     }()
-
+    
     private func __getTextureOrigin() -> Godot.Vector2I {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -257,15 +256,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_modulate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_modulate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
-        }
+            GodotStringName(swiftStaticString: "set_modulate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
+            }
         }
     }()
-
+    
     private func __setModulate(
         _ modulate: Godot.Color
     ) {
@@ -282,15 +281,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_modulate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_modulate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
-        }
+            GodotStringName(swiftStaticString: "get_modulate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
+            }
         }
     }()
-
+    
     private func __getModulate() -> Godot.Color {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -303,15 +302,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_z_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_z_index").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_z_index").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setZIndex(
         _ zIndex: Int32
     ) {
@@ -328,15 +327,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_z_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_z_index").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_z_index").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getZIndex() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -349,15 +348,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_y_sort_origin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_y_sort_origin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_y_sort_origin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setYSortOrigin(
         _ ySortOrigin: Int32
     ) {
@@ -374,15 +373,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_y_sort_origin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_y_sort_origin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_y_sort_origin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getYSortOrigin() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -395,15 +394,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_occluder: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_occluder").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 914399637)!
-        }
+            GodotStringName(swiftStaticString: "set_occluder").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 914399637)!
+            }
         }
     }()
-
+    
     public func setOccluder(
         layerID: Int32,
         occluderPolygon: Godot.OccluderPolygon2D?
@@ -425,15 +424,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_occluder: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_occluder").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2458574231)!
-        }
+            GodotStringName(swiftStaticString: "get_occluder").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2458574231)!
+            }
         }
     }()
-
+    
     public func occluder(
         layerID: Int32
     ) -> Godot.OccluderPolygon2D? {
@@ -452,15 +451,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_constant_linear_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_constant_linear_velocity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 163021252)!
-        }
+            GodotStringName(swiftStaticString: "set_constant_linear_velocity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 163021252)!
+            }
         }
     }()
-
+    
     public func setConstantLinearVelocity(
         layerID: Int32,
         velocity: Godot.Vector2
@@ -480,15 +479,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_constant_linear_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_constant_linear_velocity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2299179447)!
-        }
+            GodotStringName(swiftStaticString: "get_constant_linear_velocity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2299179447)!
+            }
         }
     }()
-
+    
     public func constantLinearVelocity(
         layerID: Int32
     ) -> Godot.Vector2 {
@@ -507,15 +506,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_constant_angular_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_constant_angular_velocity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
-        }
+            GodotStringName(swiftStaticString: "set_constant_angular_velocity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
+            }
         }
     }()
-
+    
     public func setConstantAngularVelocity(
         layerID: Int32,
         velocity: Double
@@ -535,15 +534,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_constant_angular_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_constant_angular_velocity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
-        }
+            GodotStringName(swiftStaticString: "get_constant_angular_velocity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
+            }
         }
     }()
-
+    
     public func constantAngularVelocity(
         layerID: Int32
     ) -> Double {
@@ -562,15 +561,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_collision_polygons_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_collision_polygons_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
-        }
+            GodotStringName(swiftStaticString: "set_collision_polygons_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
+            }
         }
     }()
-
+    
     public func setCollisionPolygonsCount(
         layerID: Int32,
         polygonsCount: Int32
@@ -590,15 +589,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_collision_polygons_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_collision_polygons_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
-        }
+            GodotStringName(swiftStaticString: "get_collision_polygons_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
+            }
         }
     }()
-
+    
     public func collisionPolygonsCount(
         layerID: Int32
     ) -> Int32 {
@@ -617,15 +616,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_add_collision_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_collision_polygon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "add_collision_polygon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func addCollisionPolygon(
         layerID: Int32
     ) {
@@ -642,15 +641,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_collision_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_collision_polygon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
-        }
+            GodotStringName(swiftStaticString: "remove_collision_polygon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
+            }
         }
     }()
-
+    
     public func removeCollisionPolygon(
         layerID: Int32,
         polygonIndex: Int32
@@ -670,15 +669,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_collision_polygon_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_collision_polygon_points").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3230546541)!
-        }
+            GodotStringName(swiftStaticString: "set_collision_polygon_points").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3230546541)!
+            }
         }
     }()
-
+    
     public func setCollisionPolygonPoints(
         layerID: Int32,
         polygonIndex: Int32,
@@ -701,15 +700,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_collision_polygon_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_collision_polygon_points").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 103942801)!
-        }
+            GodotStringName(swiftStaticString: "get_collision_polygon_points").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 103942801)!
+            }
         }
     }()
-
+    
     public func collisionPolygonPoints(
         layerID: Int32,
         polygonIndex: Int32
@@ -731,15 +730,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_collision_polygon_one_way: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_collision_polygon_one_way").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1383440665)!
-        }
+            GodotStringName(swiftStaticString: "set_collision_polygon_one_way").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1383440665)!
+            }
         }
     }()
-
+    
     public func setCollisionPolygonOneWay(
         layerID: Int32,
         polygonIndex: Int32,
@@ -762,15 +761,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_collision_polygon_one_way: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_collision_polygon_one_way").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2522259332)!
-        }
+            GodotStringName(swiftStaticString: "is_collision_polygon_one_way").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2522259332)!
+            }
         }
     }()
-
+    
     public func isCollisionPolygonOneWay(
         layerID: Int32,
         polygonIndex: Int32
@@ -792,15 +791,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_collision_polygon_one_way_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_collision_polygon_one_way_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3506521499)!
-        }
+            GodotStringName(swiftStaticString: "set_collision_polygon_one_way_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3506521499)!
+            }
         }
     }()
-
+    
     public func setCollisionPolygonOneWayMargin(
         layerID: Int32,
         polygonIndex: Int32,
@@ -823,15 +822,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_collision_polygon_one_way_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_collision_polygon_one_way_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
-        }
+            GodotStringName(swiftStaticString: "get_collision_polygon_one_way_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
+            }
         }
     }()
-
+    
     public func collisionPolygonOneWayMargin(
         layerID: Int32,
         polygonIndex: Int32
@@ -853,15 +852,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_terrain_set: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_terrain_set").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_terrain_set").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setTerrainSet(
         _ terrainSet: Int32
     ) {
@@ -878,15 +877,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_terrain_set: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_terrain_set").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_terrain_set").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getTerrainSet() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -899,15 +898,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_terrain: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_terrain").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_terrain").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setTerrain(
         _ terrain: Int32
     ) {
@@ -924,15 +923,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_terrain: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_terrain").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_terrain").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getTerrain() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -945,15 +944,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_terrain_peering_bit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_terrain_peering_bit").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1084452308)!
-        }
+            GodotStringName(swiftStaticString: "set_terrain_peering_bit").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1084452308)!
+            }
         }
     }()
-
+    
     public func setTerrainPeeringBit(
         _ peeringBit: Godot.TileSet.CellNeighbor,
         terrain: Int32
@@ -973,15 +972,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_terrain_peering_bit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_terrain_peering_bit").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3831796792)!
-        }
+            GodotStringName(swiftStaticString: "get_terrain_peering_bit").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3831796792)!
+            }
         }
     }()
-
+    
     public func terrainPeeringBit(
         _ peeringBit: Godot.TileSet.CellNeighbor
     ) -> Int32 {
@@ -1000,15 +999,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_navigation_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_navigation_polygon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2224691167)!
-        }
+            GodotStringName(swiftStaticString: "set_navigation_polygon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2224691167)!
+            }
         }
     }()
-
+    
     public func setNavigationPolygon(
         layerID: Int32,
         navigationPolygon: Godot.NavigationPolygon?
@@ -1030,15 +1029,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_navigation_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_navigation_polygon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3991786031)!
-        }
+            GodotStringName(swiftStaticString: "get_navigation_polygon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3991786031)!
+            }
         }
     }()
-
+    
     public func navigationPolygon(
         layerID: Int32
     ) -> Godot.NavigationPolygon? {
@@ -1057,15 +1056,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_probability: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_probability").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_probability").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setProbability(
         _ probability: Double
     ) {
@@ -1082,15 +1081,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_probability: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_probability").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_probability").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getProbability() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1103,15 +1102,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_custom_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_custom_data").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 402577236)!
-        }
+            GodotStringName(swiftStaticString: "set_custom_data").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 402577236)!
+            }
         }
     }()
-
+    
     public func setCustomData<Value: Variant.Storable>(
         layerName: Godot.GodotString,
         value: Value
@@ -1131,15 +1130,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_custom_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_custom_data").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1868160156)!
-        }
+            GodotStringName(swiftStaticString: "get_custom_data").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1868160156)!
+            }
         }
     }()
-
+    
     public func customData(
         layerName: Godot.GodotString
     ) -> Godot.Variant {
@@ -1158,15 +1157,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_custom_data_by_layer_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_custom_data_by_layer_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2152698145)!
-        }
+            GodotStringName(swiftStaticString: "set_custom_data_by_layer_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2152698145)!
+            }
         }
     }()
-
+    
     public func setCustomDataByLayerID<Value: Variant.Storable>(
         _ layerID: Int32,
         value: Value
@@ -1186,15 +1185,15 @@ open class TileData: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_custom_data_by_layer_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_custom_data_by_layer_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4227898402)!
-        }
+            GodotStringName(swiftStaticString: "get_custom_data_by_layer_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4227898402)!
+            }
         }
     }()
-
+    
     public func customDataByLayerID(
         _ layerID: Int32
     ) -> Godot.Variant {
@@ -1213,139 +1212,136 @@ open class TileData: Object {
             }
         }
     }
-
+    
     public var flipH: Bool {
         get {
             __getFlipH()
         }
-        set {
+        set(newValue) {
             __setFlipH(
                 newValue
             )
         }
     }
-
+    
     public var flipV: Bool {
         get {
             __getFlipV()
         }
-        set {
+        set(newValue) {
             __setFlipV(
                 newValue
             )
         }
     }
-
+    
     public var transpose: Bool {
         get {
             __getTranspose()
         }
-        set {
+        set(newValue) {
             __setTranspose(
                 newValue
             )
         }
     }
-
+    
     public var textureOrigin: Godot.Vector2I {
         get {
             __getTextureOrigin()
         }
-        set {
+        set(newValue) {
             __setTextureOrigin(
                 newValue
             )
         }
     }
-
+    
     public var modulate: Godot.Color {
         get {
             __getModulate()
         }
-        set {
+        set(newValue) {
             __setModulate(
                 newValue
             )
         }
     }
-
+    
     public var material: Godot.Material? {
         get {
             __getMaterial()
         }
-        set {
+        set(newValue) {
             __setMaterial(
                 newValue
             )
         }
     }
-
+    
     public var zIndex: Int32 {
         get {
             __getZIndex()
         }
-        set {
+        set(newValue) {
             __setZIndex(
                 newValue
             )
         }
     }
-
+    
     public var ySortOrigin: Int32 {
         get {
             __getYSortOrigin()
         }
-        set {
+        set(newValue) {
             __setYSortOrigin(
                 newValue
             )
         }
     }
-
+    
     public var terrainSet: Int32 {
         get {
             __getTerrainSet()
         }
-        set {
+        set(newValue) {
             __setTerrainSet(
                 newValue
             )
         }
     }
-
+    
     public var terrain: Int32 {
         get {
             __getTerrain()
         }
-        set {
+        set(newValue) {
             __setTerrain(
                 newValue
             )
         }
     }
-
+    
     public var probability: Double {
         get {
             __getProbability()
         }
-        set {
+        set(newValue) {
             __setProbability(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

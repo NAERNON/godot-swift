@@ -12,15 +12,16 @@ extension Projection {
         case top = 3
         case right = 4
         case bottom = 5
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Near", 0),
-            ("Far", 1),
-            ("Left", 2),
-            ("Top", 3),
-            ("Right", 4),
-            ("Bottom", 5),]
+               ("Near", 0),
+               ("Far", 1),
+               ("Left", 2),
+               ("Top", 3),
+               ("Right", 4),
+               ("Bottom", 5),
+            ]
         }
     }
 }

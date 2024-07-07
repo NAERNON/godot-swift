@@ -12,21 +12,22 @@ open class GDExtensionManager: Object {
         case alreadyLoaded = 2
         case notLoaded = 3
         case needsRestart = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Ok", 0),
-            ("Failed", 1),
-            ("Already Loaded", 2),
-            ("Not Loaded", 3),
-            ("Needs Restart", 4),]
+               ("Ok", 0),
+               ("Failed", 1),
+               ("Already Loaded", 2),
+               ("Not Loaded", 3),
+               ("Needs Restart", 4),
+            ]
         }
     }
-
+    
+    
     public func extensionsReloaded() {
         _ = extensionsReloadedSignal.emit()
     }
-
     public lazy var extensionsReloadedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "extensions_reloaded") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -41,15 +42,15 @@ open class GDExtensionManager: Object {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_load_extension: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "load_extension").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4024158731)!
-        }
+            GodotStringName(swiftStaticString: "load_extension").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4024158731)!
+            }
         }
     }()
-
+    
     public func loadExtension(
         path: Godot.GodotString
     ) -> Godot.GDExtensionManager.LoadStatus {
@@ -68,15 +69,15 @@ open class GDExtensionManager: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_reload_extension: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "reload_extension").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4024158731)!
-        }
+            GodotStringName(swiftStaticString: "reload_extension").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4024158731)!
+            }
         }
     }()
-
+    
     public func reloadExtension(
         path: Godot.GodotString
     ) -> Godot.GDExtensionManager.LoadStatus {
@@ -95,15 +96,15 @@ open class GDExtensionManager: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_unload_extension: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "unload_extension").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4024158731)!
-        }
+            GodotStringName(swiftStaticString: "unload_extension").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4024158731)!
+            }
         }
     }()
-
+    
     public func unloadExtension(
         path: Godot.GodotString
     ) -> Godot.GDExtensionManager.LoadStatus {
@@ -122,15 +123,15 @@ open class GDExtensionManager: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_extension_loaded: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_extension_loaded").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3927539163)!
-        }
+            GodotStringName(swiftStaticString: "is_extension_loaded").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3927539163)!
+            }
         }
     }()
-
+    
     public func isExtensionLoaded(
         path: Godot.GodotString
     ) -> Bool {
@@ -149,15 +150,15 @@ open class GDExtensionManager: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_loaded_extensions: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_loaded_extensions").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
-        }
+            GodotStringName(swiftStaticString: "get_loaded_extensions").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
+            }
         }
     }()
-
+    
     public func loadedExtensions() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -170,15 +171,15 @@ open class GDExtensionManager: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_extension: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_extension").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 49743343)!
-        }
+            GodotStringName(swiftStaticString: "get_extension").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 49743343)!
+            }
         }
     }()
-
+    
     public func `extension`(
         path: Godot.GodotString
     ) -> Godot.GDExtension? {
@@ -197,18 +198,15 @@ open class GDExtensionManager: Object {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

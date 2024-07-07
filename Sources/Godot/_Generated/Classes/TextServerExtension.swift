@@ -11,480 +11,515 @@ open class TextServerExtension: TextServer {
     ) -> Bool {
         Bool()
     }
-
+    
     open func _getName() -> Godot.GodotString {
         Godot.GodotString()
     }
-
+    
     open func _getFeatures() -> Int64 {
         Int64()
     }
-
+    
     open func _freeRID(
         _ rid: Godot.RID
     ) {
+        
     }
-
+    
     open func _has(
         rid: Godot.RID
     ) -> Bool {
         Bool()
     }
-
+    
     open func _loadSupportData(
         filename: Godot.GodotString
     ) -> Bool {
         Bool()
     }
-
+    
     open func _getSupportDataFilename() -> Godot.GodotString {
         Godot.GodotString()
     }
-
+    
     open func _getSupportDataInfo() -> Godot.GodotString {
         Godot.GodotString()
     }
-
+    
     open func _saveSupportData(
         filename: Godot.GodotString
     ) -> Bool {
         Bool()
     }
-
+    
     open func _isLocaleRightToLeft(
         locale: Godot.GodotString
     ) -> Bool {
         Bool()
     }
-
+    
     open func _nameToTag(
         name: Godot.GodotString
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _tagToName(
         tag: Int64
     ) -> Godot.GodotString {
         Godot.GodotString()
     }
-
+    
     open func _createFont() -> Godot.RID {
         Godot.RID()
     }
-
+    
     open func _createFontLinkedVariation(
         fontRID: Godot.RID
     ) -> Godot.RID {
         Godot.RID()
     }
-
+    
     open func _fontSetData(
         fontRID: Godot.RID,
         data: Godot.GodotContiguousArray<UInt8>
     ) {
+        
     }
-
+    
     open func _fontSetDataPtr(
         fontRID: Godot.RID,
         dataPtr: UnsafePointer<UInt8>,
         dataSize: Int64
     ) {
+        
     }
-
+    
     open func _fontSetFaceIndex(
         fontRID: Godot.RID,
         faceIndex: Int64
     ) {
+        
     }
-
+    
     open func _fontGetFaceIndex(
         fontRID: Godot.RID
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _fontGetFaceCount(
         fontRID: Godot.RID
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _fontSetStyle(
         fontRID: Godot.RID,
         style: Godot.TextServer.FontStyle
     ) {
+        
     }
-
+    
     open func _fontGetStyle(
         fontRID: Godot.RID
     ) -> Godot.TextServer.FontStyle {
         Godot.TextServer.FontStyle()
     }
-
+    
     open func _fontSetName(
         fontRID: Godot.RID,
         name: Godot.GodotString
     ) {
+        
     }
-
+    
     open func _fontGetName(
         fontRID: Godot.RID
     ) -> Godot.GodotString {
         Godot.GodotString()
     }
-
+    
     open func _fontGetOtNameStrings(
         fontRID: Godot.RID
     ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
-
+    
     open func _fontSetStyleName(
         fontRID: Godot.RID,
         nameStyle: Godot.GodotString
     ) {
+        
     }
-
+    
     open func _fontGetStyleName(
         fontRID: Godot.RID
     ) -> Godot.GodotString {
         Godot.GodotString()
     }
-
+    
     open func _fontSetWeight(
         fontRID: Godot.RID,
         weight: Int64
     ) {
+        
     }
-
+    
     open func _fontGetWeight(
         fontRID: Godot.RID
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _fontSetStretch(
         fontRID: Godot.RID,
         stretch: Int64
     ) {
+        
     }
-
+    
     open func _fontGetStretch(
         fontRID: Godot.RID
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _fontSetAntialiasing(
         fontRID: Godot.RID,
         antialiasing: Godot.TextServer.FontAntialiasing
     ) {
+        
     }
-
+    
     open func _fontGetAntialiasing(
         fontRID: Godot.RID
     ) -> Godot.TextServer.FontAntialiasing {
         Godot.TextServer.FontAntialiasing(rawValue: 0)!
     }
-
+    
     open func _fontSetGenerateMipmaps(
         fontRID: Godot.RID,
         generateMipmaps: Bool
     ) {
+        
     }
-
+    
     open func _fontGetGenerateMipmaps(
         fontRID: Godot.RID
     ) -> Bool {
         Bool()
     }
-
+    
     open func _fontSetMultichannelSignedDistanceField(
         fontRID: Godot.RID,
         msdf: Bool
     ) {
+        
     }
-
+    
     open func _fontIsMultichannelSignedDistanceField(
         fontRID: Godot.RID
     ) -> Bool {
         Bool()
     }
-
+    
     open func _fontSetMsdfPixelRange(
         fontRID: Godot.RID,
         msdfPixelRange: Int64
     ) {
+        
     }
-
+    
     open func _fontGetMsdfPixelRange(
         fontRID: Godot.RID
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _fontSetMsdfSize(
         fontRID: Godot.RID,
         msdfSize: Int64
     ) {
+        
     }
-
+    
     open func _fontGetMsdfSize(
         fontRID: Godot.RID
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _fontSetFixedSize(
         fontRID: Godot.RID,
         fixedSize: Int64
     ) {
+        
     }
-
+    
     open func _fontGetFixedSize(
         fontRID: Godot.RID
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _fontSetFixedSizeScaleMode(
         fontRID: Godot.RID,
         fixedSizeScaleMode: Godot.TextServer.FixedSizeScaleMode
     ) {
+        
     }
-
+    
     open func _fontGetFixedSizeScaleMode(
         fontRID: Godot.RID
     ) -> Godot.TextServer.FixedSizeScaleMode {
         Godot.TextServer.FixedSizeScaleMode(rawValue: 0)!
     }
-
+    
     open func _fontSetAllowSystemFallback(
         fontRID: Godot.RID,
         allowSystemFallback: Bool
     ) {
+        
     }
-
+    
     open func _fontIsAllowSystemFallback(
         fontRID: Godot.RID
     ) -> Bool {
         Bool()
     }
-
+    
     open func _fontSetForceAutohinter(
         fontRID: Godot.RID,
         forceAutohinter: Bool
     ) {
+        
     }
-
+    
     open func _fontIsForceAutohinter(
         fontRID: Godot.RID
     ) -> Bool {
         Bool()
     }
-
+    
     open func _fontSetHinting(
         fontRID: Godot.RID,
         hinting: Godot.TextServer.Hinting
     ) {
+        
     }
-
+    
     open func _fontGetHinting(
         fontRID: Godot.RID
     ) -> Godot.TextServer.Hinting {
         Godot.TextServer.Hinting(rawValue: 0)!
     }
-
+    
     open func _fontSetSubpixelPositioning(
         fontRID: Godot.RID,
         subpixelPositioning: Godot.TextServer.SubpixelPositioning
     ) {
+        
     }
-
+    
     open func _fontGetSubpixelPositioning(
         fontRID: Godot.RID
     ) -> Godot.TextServer.SubpixelPositioning {
         Godot.TextServer.SubpixelPositioning(rawValue: 0)!
     }
-
+    
     open func _fontSetEmbolden(
         fontRID: Godot.RID,
         strength: Double
     ) {
+        
     }
-
+    
     open func _fontGetEmbolden(
         fontRID: Godot.RID
     ) -> Double {
         Double()
     }
-
+    
     open func _fontSetSpacing(
         fontRID: Godot.RID,
         spacing: Godot.TextServer.SpacingType,
         value: Int64
     ) {
+        
     }
-
+    
     open func _fontGetSpacing(
         fontRID: Godot.RID,
         spacing: Godot.TextServer.SpacingType
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _fontSetTransform(
         fontRID: Godot.RID,
         transform: Godot.Transform2D
     ) {
+        
     }
-
+    
     open func _fontGetTransform(
         fontRID: Godot.RID
     ) -> Godot.Transform2D {
         Godot.Transform2D()
     }
-
+    
     open func _fontSetVariationCoordinates(
         fontRID: Godot.RID,
         variationCoordinates: Godot.AnyGodotDictionary
     ) {
+        
     }
-
+    
     open func _fontGetVariationCoordinates(
         fontRID: Godot.RID
     ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
-
+    
     open func _fontSetOversampling(
         fontRID: Godot.RID,
         oversampling: Double
     ) {
+        
     }
-
+    
     open func _fontGetOversampling(
         fontRID: Godot.RID
     ) -> Double {
         Double()
     }
-
+    
     open func _fontGetSizeCacheList(
         fontRID: Godot.RID
     ) -> Godot.GodotArray<Godot.Vector2I> {
         Godot.GodotArray<Godot.Vector2I>()
     }
-
+    
     open func _fontClearSizeCache(
         fontRID: Godot.RID
     ) {
+        
     }
-
+    
     open func _fontRemoveSizeCache(
         fontRID: Godot.RID,
         size: Godot.Vector2I
     ) {
+        
     }
-
+    
     open func _fontSetAscent(
         fontRID: Godot.RID,
         size: Int64,
         ascent: Double
     ) {
+        
     }
-
+    
     open func _fontGetAscent(
         fontRID: Godot.RID,
         size: Int64
     ) -> Double {
         Double()
     }
-
+    
     open func _fontSetDescent(
         fontRID: Godot.RID,
         size: Int64,
         descent: Double
     ) {
+        
     }
-
+    
     open func _fontGetDescent(
         fontRID: Godot.RID,
         size: Int64
     ) -> Double {
         Double()
     }
-
+    
     open func _fontSetUnderlinePosition(
         fontRID: Godot.RID,
         size: Int64,
         underlinePosition: Double
     ) {
+        
     }
-
+    
     open func _fontGetUnderlinePosition(
         fontRID: Godot.RID,
         size: Int64
     ) -> Double {
         Double()
     }
-
+    
     open func _fontSetUnderlineThickness(
         fontRID: Godot.RID,
         size: Int64,
         underlineThickness: Double
     ) {
+        
     }
-
+    
     open func _fontGetUnderlineThickness(
         fontRID: Godot.RID,
         size: Int64
     ) -> Double {
         Double()
     }
-
+    
     open func _fontSetScale(
         fontRID: Godot.RID,
         size: Int64,
         scale: Double
     ) {
+        
     }
-
+    
     open func _fontGetScale(
         fontRID: Godot.RID,
         size: Int64
     ) -> Double {
         Double()
     }
-
+    
     open func _fontGetTextureCount(
         fontRID: Godot.RID,
         size: Godot.Vector2I
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _fontClearTextures(
         fontRID: Godot.RID,
         size: Godot.Vector2I
     ) {
+        
     }
-
+    
     open func _fontRemoveTexture(
         fontRID: Godot.RID,
         size: Godot.Vector2I,
         textureIndex: Int64
     ) {
+        
     }
-
+    
     open func _fontSetTextureImage(
         fontRID: Godot.RID,
         size: Godot.Vector2I,
         textureIndex: Int64,
         image: Godot.Image?
     ) {
+        
     }
-
+    
     open func _fontGetTextureImage(
         fontRID: Godot.RID,
         size: Godot.Vector2I,
@@ -492,15 +527,16 @@ open class TextServerExtension: TextServer {
     ) -> Godot.Image? {
         nil
     }
-
+    
     open func _fontSetTextureOffsets(
         fontRID: Godot.RID,
         size: Godot.Vector2I,
         textureIndex: Int64,
         offset: Godot.GodotContiguousArray<Int32>
     ) {
+        
     }
-
+    
     open func _fontGetTextureOffsets(
         fontRID: Godot.RID,
         size: Godot.Vector2I,
@@ -508,27 +544,29 @@ open class TextServerExtension: TextServer {
     ) -> Godot.GodotContiguousArray<Int32> {
         Godot.GodotContiguousArray<Int32>()
     }
-
+    
     open func _fontGetGlyphList(
         fontRID: Godot.RID,
         size: Godot.Vector2I
     ) -> Godot.GodotContiguousArray<Int32> {
         Godot.GodotContiguousArray<Int32>()
     }
-
+    
     open func _fontClearGlyphs(
         fontRID: Godot.RID,
         size: Godot.Vector2I
     ) {
+        
     }
-
+    
     open func _fontRemoveGlyph(
         fontRID: Godot.RID,
         size: Godot.Vector2I,
         glyph: Int64
     ) {
+        
     }
-
+    
     open func _fontGetGlyphAdvance(
         fontRID: Godot.RID,
         size: Int64,
@@ -536,15 +574,16 @@ open class TextServerExtension: TextServer {
     ) -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _fontSetGlyphAdvance(
         fontRID: Godot.RID,
         size: Int64,
         glyph: Int64,
         advance: Godot.Vector2
     ) {
+        
     }
-
+    
     open func _fontGetGlyphOffset(
         fontRID: Godot.RID,
         size: Godot.Vector2I,
@@ -552,15 +591,16 @@ open class TextServerExtension: TextServer {
     ) -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _fontSetGlyphOffset(
         fontRID: Godot.RID,
         size: Godot.Vector2I,
         glyph: Int64,
         offset: Godot.Vector2
     ) {
+        
     }
-
+    
     open func _fontGetGlyphSize(
         fontRID: Godot.RID,
         size: Godot.Vector2I,
@@ -568,15 +608,16 @@ open class TextServerExtension: TextServer {
     ) -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _fontSetGlyphSize(
         fontRID: Godot.RID,
         size: Godot.Vector2I,
         glyph: Int64,
         glSize: Godot.Vector2
     ) {
+        
     }
-
+    
     open func _fontGetGlyphUvRect(
         fontRID: Godot.RID,
         size: Godot.Vector2I,
@@ -584,15 +625,16 @@ open class TextServerExtension: TextServer {
     ) -> Godot.Rect2 {
         Godot.Rect2()
     }
-
+    
     open func _fontSetGlyphUvRect(
         fontRID: Godot.RID,
         size: Godot.Vector2I,
         glyph: Int64,
         uvRect: Godot.Rect2
     ) {
+        
     }
-
+    
     open func _fontGetGlyphTextureIdx(
         fontRID: Godot.RID,
         size: Godot.Vector2I,
@@ -600,15 +642,16 @@ open class TextServerExtension: TextServer {
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _fontSetGlyphTextureIdx(
         fontRID: Godot.RID,
         size: Godot.Vector2I,
         glyph: Int64,
         textureIdx: Int64
     ) {
+        
     }
-
+    
     open func _fontGetGlyphTextureRID(
         fontRID: Godot.RID,
         size: Godot.Vector2I,
@@ -616,7 +659,7 @@ open class TextServerExtension: TextServer {
     ) -> Godot.RID {
         Godot.RID()
     }
-
+    
     open func _fontGetGlyphTextureSize(
         fontRID: Godot.RID,
         size: Godot.Vector2I,
@@ -624,7 +667,7 @@ open class TextServerExtension: TextServer {
     ) -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _fontGetGlyphContours(
         fontRID: Godot.RID,
         size: Int64,
@@ -632,35 +675,38 @@ open class TextServerExtension: TextServer {
     ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
-
+    
     open func _fontGetKerningList(
         fontRID: Godot.RID,
         size: Int64
     ) -> Godot.GodotArray<Godot.Vector2I> {
         Godot.GodotArray<Godot.Vector2I>()
     }
-
+    
     open func _fontClearKerningMap(
         fontRID: Godot.RID,
         size: Int64
     ) {
+        
     }
-
+    
     open func _fontRemoveKerning(
         fontRID: Godot.RID,
         size: Int64,
         glyphPair: Godot.Vector2I
     ) {
+        
     }
-
+    
     open func _fontSetKerning(
         fontRID: Godot.RID,
         size: Int64,
         glyphPair: Godot.Vector2I,
         kerning: Godot.Vector2
     ) {
+        
     }
-
+    
     open func _fontGetKerning(
         fontRID: Godot.RID,
         size: Int64,
@@ -668,7 +714,7 @@ open class TextServerExtension: TextServer {
     ) -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _fontGetGlyphIndex(
         fontRID: Godot.RID,
         size: Int64,
@@ -677,7 +723,7 @@ open class TextServerExtension: TextServer {
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _fontGetCharFromGlyphIndex(
         fontRID: Godot.RID,
         size: Int64,
@@ -685,35 +731,37 @@ open class TextServerExtension: TextServer {
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _fontHasChar(
         fontRID: Godot.RID,
         char: Int64
     ) -> Bool {
         Bool()
     }
-
+    
     open func _fontGetSupportedChars(
         fontRID: Godot.RID
     ) -> Godot.GodotString {
         Godot.GodotString()
     }
-
+    
     open func _fontRenderRange(
         fontRID: Godot.RID,
         size: Godot.Vector2I,
         start: Int64,
         end: Int64
     ) {
+        
     }
-
+    
     open func _fontRenderGlyph(
         fontRID: Godot.RID,
         size: Godot.Vector2I,
         index: Int64
     ) {
+        
     }
-
+    
     open func _fontDrawGlyph(
         fontRID: Godot.RID,
         canvas: Godot.RID,
@@ -722,8 +770,9 @@ open class TextServerExtension: TextServer {
         index: Int64,
         color: Godot.Color
     ) {
+        
     }
-
+    
     open func _fontDrawGlyphOutline(
         fontRID: Godot.RID,
         canvas: Godot.RID,
@@ -733,114 +782,121 @@ open class TextServerExtension: TextServer {
         index: Int64,
         color: Godot.Color
     ) {
+        
     }
-
+    
     open func _fontIsLanguageSupported(
         fontRID: Godot.RID,
         language: Godot.GodotString
     ) -> Bool {
         Bool()
     }
-
+    
     open func _fontSetLanguageSupportOverride(
         fontRID: Godot.RID,
         language: Godot.GodotString,
         supported: Bool
     ) {
+        
     }
-
+    
     open func _fontGetLanguageSupportOverride(
         fontRID: Godot.RID,
         language: Godot.GodotString
     ) -> Bool {
         Bool()
     }
-
+    
     open func _fontRemoveLanguageSupportOverride(
         fontRID: Godot.RID,
         language: Godot.GodotString
     ) {
+        
     }
-
+    
     open func _fontGetLanguageSupportOverrides(
         fontRID: Godot.RID
     ) -> Godot.GodotContiguousArray<GodotString> {
         Godot.GodotContiguousArray<GodotString>()
     }
-
+    
     open func _fontIsScriptSupported(
         fontRID: Godot.RID,
         script: Godot.GodotString
     ) -> Bool {
         Bool()
     }
-
+    
     open func _fontSetScriptSupportOverride(
         fontRID: Godot.RID,
         script: Godot.GodotString,
         supported: Bool
     ) {
+        
     }
-
+    
     open func _fontGetScriptSupportOverride(
         fontRID: Godot.RID,
         script: Godot.GodotString
     ) -> Bool {
         Bool()
     }
-
+    
     open func _fontRemoveScriptSupportOverride(
         fontRID: Godot.RID,
         script: Godot.GodotString
     ) {
+        
     }
-
+    
     open func _fontGetScriptSupportOverrides(
         fontRID: Godot.RID
     ) -> Godot.GodotContiguousArray<GodotString> {
         Godot.GodotContiguousArray<GodotString>()
     }
-
+    
     open func _fontSetOpentypeFeatureOverrides(
         fontRID: Godot.RID,
         overrides: Godot.AnyGodotDictionary
     ) {
+        
     }
-
+    
     open func _fontGetOpentypeFeatureOverrides(
         fontRID: Godot.RID
     ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
-
+    
     open func _fontSupportedFeatureList(
         fontRID: Godot.RID
     ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
-
+    
     open func _fontSupportedVariationList(
         fontRID: Godot.RID
     ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
-
+    
     open func _fontGetGlobalOversampling() -> Double {
         Double()
     }
-
+    
     open func _fontSetGlobalOversampling(
         _ oversampling: Double
     ) {
+        
     }
-
+    
     open func _getHexCodeBoxSize(
         _ size: Int64,
         index: Int64
     ) -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _drawHexCodeBox(
         canvas: Godot.RID,
         size: Int64,
@@ -848,106 +904,115 @@ open class TextServerExtension: TextServer {
         index: Int64,
         color: Godot.Color
     ) {
+        
     }
-
+    
     open func _createShapedText(
         direction: Godot.TextServer.Direction,
         orientation: Godot.TextServer.Orientation
     ) -> Godot.RID {
         Godot.RID()
     }
-
+    
     open func _shapedTextClear(
         shaped: Godot.RID
     ) {
+        
     }
-
+    
     open func _shapedTextSetDirection(
         shaped: Godot.RID,
         direction: Godot.TextServer.Direction
     ) {
+        
     }
-
+    
     open func _shapedTextGetDirection(
         shaped: Godot.RID
     ) -> Godot.TextServer.Direction {
         Godot.TextServer.Direction(rawValue: 0)!
     }
-
+    
     open func _shapedTextGetInferredDirection(
         shaped: Godot.RID
     ) -> Godot.TextServer.Direction {
         Godot.TextServer.Direction(rawValue: 0)!
     }
-
+    
     open func _shapedTextSetBidiOverride(
         shaped: Godot.RID,
         override: Godot.AnyGodotArray
     ) {
+        
     }
-
+    
     open func _shapedTextSetCustomPunctuation(
         shaped: Godot.RID,
         punct: Godot.GodotString
     ) {
+        
     }
-
+    
     open func _shapedTextGetCustomPunctuation(
         shaped: Godot.RID
     ) -> Godot.GodotString {
         Godot.GodotString()
     }
-
+    
     open func _shapedTextSetOrientation(
         shaped: Godot.RID,
         orientation: Godot.TextServer.Orientation
     ) {
+        
     }
-
+    
     open func _shapedTextGetOrientation(
         shaped: Godot.RID
     ) -> Godot.TextServer.Orientation {
         Godot.TextServer.Orientation(rawValue: 0)!
     }
-
+    
     open func _shapedTextSetPreserveInvalid(
         shaped: Godot.RID,
         enabled: Bool
     ) {
+        
     }
-
+    
     open func _shapedTextGetPreserveInvalid(
         shaped: Godot.RID
     ) -> Bool {
         Bool()
     }
-
+    
     open func _shapedTextSetPreserveControl(
         shaped: Godot.RID,
         enabled: Bool
     ) {
+        
     }
-
+    
     open func _shapedTextGetPreserveControl(
         shaped: Godot.RID
     ) -> Bool {
         Bool()
     }
-
+    
     open func _shapedTextSetSpacing(
         shaped: Godot.RID,
         spacing: Godot.TextServer.SpacingType,
         value: Int64
     ) {
+        
     }
-
+    
     open func _shapedTextGetSpacing(
         shaped: Godot.RID,
         spacing: Godot.TextServer.SpacingType
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _shapedTextAddString(
         shaped: Godot.RID,
         text: Godot.GodotString,
@@ -959,7 +1024,7 @@ open class TextServerExtension: TextServer {
     ) -> Bool {
         Bool()
     }
-
+    
     open func _shapedTextAddObject(
         shaped: Godot.RID,
         key: Godot.Variant,
@@ -970,7 +1035,7 @@ open class TextServerExtension: TextServer {
     ) -> Bool {
         Bool()
     }
-
+    
     open func _shapedTextResizeObject(
         shaped: Godot.RID,
         key: Godot.Variant,
@@ -980,20 +1045,20 @@ open class TextServerExtension: TextServer {
     ) -> Bool {
         Bool()
     }
-
+    
     open func _shapedGetSpanCount(
         shaped: Godot.RID
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _shapedGetSpanMeta(
         shaped: Godot.RID,
         index: Int64
     ) -> Godot.Variant {
         Variant()
     }
-
+    
     open func _shapedSetSpanUpdateFont(
         shaped: Godot.RID,
         index: Int64,
@@ -1001,8 +1066,9 @@ open class TextServerExtension: TextServer {
         size: Int64,
         opentypeFeatures: Godot.AnyGodotDictionary
     ) {
+        
     }
-
+    
     open func _shapedTextSubstr(
         shaped: Godot.RID,
         start: Int64,
@@ -1010,13 +1076,13 @@ open class TextServerExtension: TextServer {
     ) -> Godot.RID {
         Godot.RID()
     }
-
+    
     open func _shapedTextGetParent(
         shaped: Godot.RID
     ) -> Godot.RID {
         Godot.RID()
     }
-
+    
     open func _shapedTextFitToWidth(
         shaped: Godot.RID,
         width: Double,
@@ -1024,62 +1090,62 @@ open class TextServerExtension: TextServer {
     ) -> Double {
         Double()
     }
-
+    
     open func _shapedTextTabAlign(
         shaped: Godot.RID,
         tabStops: Godot.GodotContiguousArray<Float>
     ) -> Double {
         Double()
     }
-
+    
     open func _shapedTextShape(
         shaped: Godot.RID
     ) -> Bool {
         Bool()
     }
-
+    
     open func _shapedTextUpdateBreaks(
         shaped: Godot.RID
     ) -> Bool {
         Bool()
     }
-
+    
     open func _shapedTextUpdateJustificationOps(
         shaped: Godot.RID
     ) -> Bool {
         Bool()
     }
-
+    
     open func _shapedTextIsReady(
         shaped: Godot.RID
     ) -> Bool {
         Bool()
     }
-
+    
     open func _shapedTextGetGlyphs(
         shaped: Godot.RID
     ) -> UnsafePointer<Glyph> {
         fatalError("No default value provided for pointers")
     }
-
+    
     open func _shapedTextSortLogical(
         shaped: Godot.RID
     ) -> UnsafePointer<Glyph> {
         fatalError("No default value provided for pointers")
     }
-
+    
     open func _shapedTextGetGlyphCount(
         shaped: Godot.RID
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _shapedTextGetRange(
         shaped: Godot.RID
     ) -> Godot.Vector2I {
         Godot.Vector2I()
     }
-
+    
     open func _shapedTextGetLineBreaksAdv(
         shaped: Godot.RID,
         width: Godot.GodotContiguousArray<Float>,
@@ -1089,7 +1155,7 @@ open class TextServerExtension: TextServer {
     ) -> Godot.GodotContiguousArray<Int32> {
         Godot.GodotContiguousArray<Int32>()
     }
-
+    
     open func _shapedTextGetLineBreaks(
         shaped: Godot.RID,
         width: Double,
@@ -1098,94 +1164,95 @@ open class TextServerExtension: TextServer {
     ) -> Godot.GodotContiguousArray<Int32> {
         Godot.GodotContiguousArray<Int32>()
     }
-
+    
     open func _shapedTextGetWordBreaks(
         shaped: Godot.RID,
         graphemeFlags: Godot.TextServer.GraphemeFlag
     ) -> Godot.GodotContiguousArray<Int32> {
         Godot.GodotContiguousArray<Int32>()
     }
-
+    
     open func _shapedTextGetTrimPos(
         shaped: Godot.RID
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _shapedTextGetEllipsisPos(
         shaped: Godot.RID
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _shapedTextGetEllipsisGlyphCount(
         shaped: Godot.RID
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _shapedTextGetEllipsisGlyphs(
         shaped: Godot.RID
     ) -> UnsafePointer<Glyph> {
         fatalError("No default value provided for pointers")
     }
-
+    
     open func _shapedTextOverrunTrimToWidth(
         shaped: Godot.RID,
         width: Double,
         trimFlags: Godot.TextServer.TextOverrunFlag
     ) {
+        
     }
-
+    
     open func _shapedTextGetObjects(
         shaped: Godot.RID
     ) -> Godot.AnyGodotArray {
         Godot.AnyGodotArray()
     }
-
+    
     open func _shapedTextGetObjectRect(
         shaped: Godot.RID,
         key: Godot.Variant
     ) -> Godot.Rect2 {
         Godot.Rect2()
     }
-
+    
     open func _shapedTextGetSize(
         shaped: Godot.RID
     ) -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _shapedTextGetAscent(
         shaped: Godot.RID
     ) -> Double {
         Double()
     }
-
+    
     open func _shapedTextGetDescent(
         shaped: Godot.RID
     ) -> Double {
         Double()
     }
-
+    
     open func _shapedTextGetWidth(
         shaped: Godot.RID
     ) -> Double {
         Double()
     }
-
+    
     open func _shapedTextGetUnderlinePosition(
         shaped: Godot.RID
     ) -> Double {
         Double()
     }
-
+    
     open func _shapedTextGetUnderlineThickness(
         shaped: Godot.RID
     ) -> Double {
         Double()
     }
-
+    
     open func _shapedTextGetDominantDirectionInRange(
         shaped: Godot.RID,
         start: Int64,
@@ -1193,14 +1260,15 @@ open class TextServerExtension: TextServer {
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _shapedTextGetCarets(
         shaped: Godot.RID,
         position: Int64,
         caret: UnsafeMutablePointer<CaretInfo>
     ) {
+        
     }
-
+    
     open func _shapedTextGetSelection(
         shaped: Godot.RID,
         start: Int64,
@@ -1208,21 +1276,21 @@ open class TextServerExtension: TextServer {
     ) -> Godot.GodotContiguousArray<Vector2> {
         Godot.GodotContiguousArray<Vector2>()
     }
-
+    
     open func _shapedTextHitTestGrapheme(
         shaped: Godot.RID,
         coord: Double
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _shapedTextHitTestPosition(
         shaped: Godot.RID,
         coord: Double
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _shapedTextDraw(
         shaped: Godot.RID,
         canvas: Godot.RID,
@@ -1231,8 +1299,9 @@ open class TextServerExtension: TextServer {
         clipR: Double,
         color: Godot.Color
     ) {
+        
     }
-
+    
     open func _shapedTextDrawOutline(
         shaped: Godot.RID,
         canvas: Godot.RID,
@@ -1242,88 +1311,89 @@ open class TextServerExtension: TextServer {
         outlineSize: Int64,
         color: Godot.Color
     ) {
+        
     }
-
+    
     open func _shapedTextGetGraphemeBounds(
         shaped: Godot.RID,
         pos: Int64
     ) -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _shapedTextNextGraphemePos(
         shaped: Godot.RID,
         pos: Int64
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _shapedTextPrevGraphemePos(
         shaped: Godot.RID,
         pos: Int64
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _shapedTextGetCharacterBreaks(
         shaped: Godot.RID
     ) -> Godot.GodotContiguousArray<Int32> {
         Godot.GodotContiguousArray<Int32>()
     }
-
+    
     open func _shapedTextNextCharacterPos(
         shaped: Godot.RID,
         pos: Int64
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _shapedTextPrevCharacterPos(
         shaped: Godot.RID,
         pos: Int64
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _shapedTextClosestCharacterPos(
         shaped: Godot.RID,
         pos: Int64
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _formatNumber(
         string: Godot.GodotString,
         language: Godot.GodotString
     ) -> Godot.GodotString {
         Godot.GodotString()
     }
-
+    
     open func _parseNumber(
         string: Godot.GodotString,
         language: Godot.GodotString
     ) -> Godot.GodotString {
         Godot.GodotString()
     }
-
+    
     open func _percentSign(
         language: Godot.GodotString
     ) -> Godot.GodotString {
         Godot.GodotString()
     }
-
+    
     open func _stripDiacritics(
         string: Godot.GodotString
     ) -> Godot.GodotString {
         Godot.GodotString()
     }
-
+    
     open func _isValidIdentifier(
         string: Godot.GodotString
     ) -> Bool {
         Bool()
     }
-
+    
     open func _stringGetWordBreaks(
         string: Godot.GodotString,
         language: Godot.GodotString,
@@ -1331,41 +1401,41 @@ open class TextServerExtension: TextServer {
     ) -> Godot.GodotContiguousArray<Int32> {
         Godot.GodotContiguousArray<Int32>()
     }
-
+    
     open func _stringGetCharacterBreaks(
         string: Godot.GodotString,
         language: Godot.GodotString
     ) -> Godot.GodotContiguousArray<Int32> {
         Godot.GodotContiguousArray<Int32>()
     }
-
+    
     open func _isConfusable(
         string: Godot.GodotString,
         dict: Godot.GodotContiguousArray<GodotString>
     ) -> Int64 {
         Int64()
     }
-
+    
     open func _spoofCheck(
         string: Godot.GodotString
     ) -> Bool {
         Bool()
     }
-
+    
     open func _stringToUpper(
         string: Godot.GodotString,
         language: Godot.GodotString
     ) -> Godot.GodotString {
         Godot.GodotString()
     }
-
+    
     open func _stringToLower(
         string: Godot.GodotString,
         language: Godot.GodotString
     ) -> Godot.GodotString {
         Godot.GodotString()
     }
-
+    
     open func _parseStructuredText(
         parserType: Godot.TextServer.StructuredTextParser,
         args: Godot.AnyGodotArray,
@@ -1373,2005 +1443,2005 @@ open class TextServerExtension: TextServer {
     ) -> Godot.GodotArray<Godot.Vector3I> {
         Godot.GodotArray<Godot.Vector3I>()
     }
-
+    
     open func _cleanup() {
+        
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _has_feature_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._hasFeature(
-            Godot.TextServer.Feature.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._hasFeature(
+                    Godot.TextServer.Feature.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getName()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getName()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_features_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getFeatures()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getFeatures()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _free_rid_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._freeRID(
-            Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._freeRID(
+                    Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _has_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._has(
-            rid: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._has(
+                    rid: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _load_support_data_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._loadSupportData(
-            filename: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._loadSupportData(
+                    filename: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_support_data_filename_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getSupportDataFilename()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getSupportDataFilename()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_support_data_info_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getSupportDataInfo()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getSupportDataInfo()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _save_support_data_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._saveSupportData(
-            filename: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._saveSupportData(
+                    filename: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _is_locale_right_to_left_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._isLocaleRightToLeft(
-            locale: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._isLocaleRightToLeft(
+                    locale: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _name_to_tag_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._nameToTag(
-            name: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._nameToTag(
+                    name: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _tag_to_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._tagToName(
-            tag: Int64.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._tagToName(
+                    tag: Int64.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _create_font_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._createFont()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._createFont()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _create_font_linked_variation_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._createFontLinkedVariation(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._createFontLinkedVariation(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_data_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetData(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            data: Godot.GodotContiguousArray<UInt8> .transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetData(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    data: Godot.GodotContiguousArray<UInt8>.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_set_data_ptr_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetDataPtr(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            dataPtr: UnsafePointer<UInt8> .transferFromGodot(unsafePointer: args[1]!),
-            dataSize: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetDataPtr(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    dataPtr: UnsafePointer<UInt8>.transferFromGodot(unsafePointer: args[1]!),
+                    dataSize: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+        }
         let _font_set_face_index_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetFaceIndex(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            faceIndex: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetFaceIndex(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    faceIndex: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_face_index_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetFaceIndex(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetFaceIndex(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_get_face_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetFaceCount(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetFaceCount(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_style_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetStyle(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            style: Godot.TextServer.FontStyle.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetStyle(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    style: Godot.TextServer.FontStyle.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_style_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetStyle(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetStyle(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetName(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            name: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetName(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    name: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetName(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetName(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_get_ot_name_strings_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetOtNameStrings(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetOtNameStrings(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_style_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetStyleName(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            nameStyle: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetStyleName(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    nameStyle: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_style_name_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetStyleName(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetStyleName(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_weight_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetWeight(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            weight: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetWeight(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    weight: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_weight_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetWeight(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetWeight(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_stretch_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetStretch(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            stretch: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetStretch(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    stretch: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_stretch_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetStretch(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetStretch(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_antialiasing_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetAntialiasing(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            antialiasing: Godot.TextServer.FontAntialiasing.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetAntialiasing(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    antialiasing: Godot.TextServer.FontAntialiasing.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_antialiasing_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetAntialiasing(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetAntialiasing(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_generate_mipmaps_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetGenerateMipmaps(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            generateMipmaps: Bool.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetGenerateMipmaps(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    generateMipmaps: Bool.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_generate_mipmaps_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetGenerateMipmaps(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetGenerateMipmaps(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_multichannel_signed_distance_field_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetMultichannelSignedDistanceField(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            msdf: Bool.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetMultichannelSignedDistanceField(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    msdf: Bool.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_is_multichannel_signed_distance_field_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontIsMultichannelSignedDistanceField(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontIsMultichannelSignedDistanceField(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_msdf_pixel_range_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetMsdfPixelRange(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            msdfPixelRange: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetMsdfPixelRange(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    msdfPixelRange: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_msdf_pixel_range_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetMsdfPixelRange(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetMsdfPixelRange(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_msdf_size_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetMsdfSize(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            msdfSize: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetMsdfSize(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    msdfSize: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_msdf_size_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetMsdfSize(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetMsdfSize(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_fixed_size_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetFixedSize(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            fixedSize: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetFixedSize(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    fixedSize: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_fixed_size_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetFixedSize(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetFixedSize(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_fixed_size_scale_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetFixedSizeScaleMode(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            fixedSizeScaleMode: Godot.TextServer.FixedSizeScaleMode.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetFixedSizeScaleMode(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    fixedSizeScaleMode: Godot.TextServer.FixedSizeScaleMode.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_fixed_size_scale_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetFixedSizeScaleMode(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetFixedSizeScaleMode(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_allow_system_fallback_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetAllowSystemFallback(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            allowSystemFallback: Bool.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetAllowSystemFallback(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    allowSystemFallback: Bool.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_is_allow_system_fallback_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontIsAllowSystemFallback(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontIsAllowSystemFallback(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_force_autohinter_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetForceAutohinter(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            forceAutohinter: Bool.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetForceAutohinter(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    forceAutohinter: Bool.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_is_force_autohinter_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontIsForceAutohinter(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontIsForceAutohinter(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_hinting_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetHinting(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            hinting: Godot.TextServer.Hinting.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetHinting(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    hinting: Godot.TextServer.Hinting.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_hinting_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetHinting(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetHinting(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_subpixel_positioning_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetSubpixelPositioning(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            subpixelPositioning: Godot.TextServer.SubpixelPositioning.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetSubpixelPositioning(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    subpixelPositioning: Godot.TextServer.SubpixelPositioning.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_subpixel_positioning_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetSubpixelPositioning(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetSubpixelPositioning(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_embolden_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetEmbolden(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            strength: Double.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetEmbolden(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    strength: Double.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_embolden_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetEmbolden(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetEmbolden(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_spacing_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetSpacing(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            spacing: Godot.TextServer.SpacingType.transferFromGodot(unsafePointer: args[1]!),
-            value: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetSpacing(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    spacing: Godot.TextServer.SpacingType.transferFromGodot(unsafePointer: args[1]!),
+                    value: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+        }
         let _font_get_spacing_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetSpacing(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            spacing: Godot.TextServer.SpacingType.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetSpacing(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    spacing: Godot.TextServer.SpacingType.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_transform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetTransform(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            transform: Godot.Transform2D.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetTransform(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    transform: Godot.Transform2D.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_transform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetTransform(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetTransform(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_variation_coordinates_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetVariationCoordinates(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            variationCoordinates: Godot.AnyGodotDictionary.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetVariationCoordinates(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    variationCoordinates: Godot.AnyGodotDictionary.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_variation_coordinates_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetVariationCoordinates(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetVariationCoordinates(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_oversampling_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetOversampling(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            oversampling: Double.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetOversampling(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    oversampling: Double.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_oversampling_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetOversampling(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetOversampling(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_get_size_cache_list_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetSizeCacheList(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetSizeCacheList(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_clear_size_cache_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontClearSizeCache(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontClearSizeCache(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _font_remove_size_cache_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontRemoveSizeCache(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontRemoveSizeCache(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_set_ascent_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetAscent(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!),
-            ascent: Double.transferFromGodot(unsafePointer: args[2]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetAscent(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!),
+                    ascent: Double.transferFromGodot(unsafePointer: args[2]!)
+                )
+        }
         let _font_get_ascent_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetAscent(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetAscent(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_descent_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetDescent(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!),
-            descent: Double.transferFromGodot(unsafePointer: args[2]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetDescent(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!),
+                    descent: Double.transferFromGodot(unsafePointer: args[2]!)
+                )
+        }
         let _font_get_descent_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetDescent(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetDescent(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_underline_position_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetUnderlinePosition(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!),
-            underlinePosition: Double.transferFromGodot(unsafePointer: args[2]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetUnderlinePosition(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!),
+                    underlinePosition: Double.transferFromGodot(unsafePointer: args[2]!)
+                )
+        }
         let _font_get_underline_position_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetUnderlinePosition(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetUnderlinePosition(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_underline_thickness_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetUnderlineThickness(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!),
-            underlineThickness: Double.transferFromGodot(unsafePointer: args[2]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetUnderlineThickness(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!),
+                    underlineThickness: Double.transferFromGodot(unsafePointer: args[2]!)
+                )
+        }
         let _font_get_underline_thickness_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetUnderlineThickness(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetUnderlineThickness(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_scale_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetScale(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!),
-            scale: Double.transferFromGodot(unsafePointer: args[2]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetScale(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!),
+                    scale: Double.transferFromGodot(unsafePointer: args[2]!)
+                )
+        }
         let _font_get_scale_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetScale(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetScale(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_get_texture_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetTextureCount(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetTextureCount(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_clear_textures_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontClearTextures(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontClearTextures(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_remove_texture_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontRemoveTexture(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
-            textureIndex: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontRemoveTexture(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+                    textureIndex: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+        }
         let _font_set_texture_image_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetTextureImage(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
-            textureIndex: Int64.transferFromGodot(unsafePointer: args[2]!),
-            image: Godot.Image?.transferFromGodot(unsafePointer: args[3]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetTextureImage(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+                    textureIndex: Int64.transferFromGodot(unsafePointer: args[2]!),
+                    image: Godot.Image?.transferFromGodot(unsafePointer: args[3]!)
+                )
+        }
         let _font_get_texture_image_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetTextureImage(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
-            textureIndex: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetTextureImage(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+                    textureIndex: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_texture_offsets_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetTextureOffsets(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
-            textureIndex: Int64.transferFromGodot(unsafePointer: args[2]!),
-            offset: Godot.GodotContiguousArray<Int32> .transferFromGodot(unsafePointer: args[3]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetTextureOffsets(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+                    textureIndex: Int64.transferFromGodot(unsafePointer: args[2]!),
+                    offset: Godot.GodotContiguousArray<Int32>.transferFromGodot(unsafePointer: args[3]!)
+                )
+        }
         let _font_get_texture_offsets_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetTextureOffsets(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
-            textureIndex: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetTextureOffsets(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+                    textureIndex: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_get_glyph_list_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetGlyphList(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetGlyphList(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_clear_glyphs_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontClearGlyphs(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontClearGlyphs(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_remove_glyph_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontRemoveGlyph(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
-            glyph: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontRemoveGlyph(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+                    glyph: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+        }
         let _font_get_glyph_advance_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetGlyphAdvance(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!),
-            glyph: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetGlyphAdvance(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!),
+                    glyph: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_glyph_advance_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetGlyphAdvance(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!),
-            glyph: Int64.transferFromGodot(unsafePointer: args[2]!),
-            advance: Godot.Vector2.transferFromGodot(unsafePointer: args[3]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetGlyphAdvance(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!),
+                    glyph: Int64.transferFromGodot(unsafePointer: args[2]!),
+                    advance: Godot.Vector2.transferFromGodot(unsafePointer: args[3]!)
+                )
+        }
         let _font_get_glyph_offset_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetGlyphOffset(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
-            glyph: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetGlyphOffset(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+                    glyph: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_glyph_offset_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetGlyphOffset(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
-            glyph: Int64.transferFromGodot(unsafePointer: args[2]!),
-            offset: Godot.Vector2.transferFromGodot(unsafePointer: args[3]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetGlyphOffset(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+                    glyph: Int64.transferFromGodot(unsafePointer: args[2]!),
+                    offset: Godot.Vector2.transferFromGodot(unsafePointer: args[3]!)
+                )
+        }
         let _font_get_glyph_size_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetGlyphSize(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
-            glyph: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetGlyphSize(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+                    glyph: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_glyph_size_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetGlyphSize(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
-            glyph: Int64.transferFromGodot(unsafePointer: args[2]!),
-            glSize: Godot.Vector2.transferFromGodot(unsafePointer: args[3]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetGlyphSize(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+                    glyph: Int64.transferFromGodot(unsafePointer: args[2]!),
+                    glSize: Godot.Vector2.transferFromGodot(unsafePointer: args[3]!)
+                )
+        }
         let _font_get_glyph_uv_rect_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetGlyphUvRect(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
-            glyph: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetGlyphUvRect(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+                    glyph: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_glyph_uv_rect_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetGlyphUvRect(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
-            glyph: Int64.transferFromGodot(unsafePointer: args[2]!),
-            uvRect: Godot.Rect2.transferFromGodot(unsafePointer: args[3]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetGlyphUvRect(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+                    glyph: Int64.transferFromGodot(unsafePointer: args[2]!),
+                    uvRect: Godot.Rect2.transferFromGodot(unsafePointer: args[3]!)
+                )
+        }
         let _font_get_glyph_texture_idx_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetGlyphTextureIdx(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
-            glyph: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetGlyphTextureIdx(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+                    glyph: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_glyph_texture_idx_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetGlyphTextureIdx(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
-            glyph: Int64.transferFromGodot(unsafePointer: args[2]!),
-            textureIdx: Int64.transferFromGodot(unsafePointer: args[3]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetGlyphTextureIdx(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+                    glyph: Int64.transferFromGodot(unsafePointer: args[2]!),
+                    textureIdx: Int64.transferFromGodot(unsafePointer: args[3]!)
+                )
+        }
         let _font_get_glyph_texture_rid_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetGlyphTextureRID(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
-            glyph: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetGlyphTextureRID(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+                    glyph: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_get_glyph_texture_size_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetGlyphTextureSize(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
-            glyph: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetGlyphTextureSize(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+                    glyph: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_get_glyph_contours_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetGlyphContours(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!),
-            index: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetGlyphContours(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!),
+                    index: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_get_kerning_list_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetKerningList(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetKerningList(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_clear_kerning_map_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontClearKerningMap(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontClearKerningMap(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_remove_kerning_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontRemoveKerning(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!),
-            glyphPair: Godot.Vector2I.transferFromGodot(unsafePointer: args[2]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontRemoveKerning(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!),
+                    glyphPair: Godot.Vector2I.transferFromGodot(unsafePointer: args[2]!)
+                )
+        }
         let _font_set_kerning_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetKerning(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!),
-            glyphPair: Godot.Vector2I.transferFromGodot(unsafePointer: args[2]!),
-            kerning: Godot.Vector2.transferFromGodot(unsafePointer: args[3]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetKerning(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!),
+                    glyphPair: Godot.Vector2I.transferFromGodot(unsafePointer: args[2]!),
+                    kerning: Godot.Vector2.transferFromGodot(unsafePointer: args[3]!)
+                )
+        }
         let _font_get_kerning_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetKerning(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!),
-            glyphPair: Godot.Vector2I.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetKerning(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!),
+                    glyphPair: Godot.Vector2I.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_get_glyph_index_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetGlyphIndex(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!),
-            char: Int64.transferFromGodot(unsafePointer: args[2]!),
-            variationSelector: Int64.transferFromGodot(unsafePointer: args[3]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetGlyphIndex(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!),
+                    char: Int64.transferFromGodot(unsafePointer: args[2]!),
+                    variationSelector: Int64.transferFromGodot(unsafePointer: args[3]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_get_char_from_glyph_index_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetCharFromGlyphIndex(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!),
-            glyphIndex: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetCharFromGlyphIndex(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!),
+                    glyphIndex: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_has_char_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontHasChar(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            char: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontHasChar(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    char: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_get_supported_chars_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetSupportedChars(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetSupportedChars(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_render_range_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontRenderRange(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
-            start: Int64.transferFromGodot(unsafePointer: args[2]!),
-            end: Int64.transferFromGodot(unsafePointer: args[3]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontRenderRange(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+                    start: Int64.transferFromGodot(unsafePointer: args[2]!),
+                    end: Int64.transferFromGodot(unsafePointer: args[3]!)
+                )
+        }
         let _font_render_glyph_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontRenderGlyph(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
-            index: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontRenderGlyph(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!),
+                    index: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+        }
         let _font_draw_glyph_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontDrawGlyph(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            canvas: Godot.RID.transferFromGodot(unsafePointer: args[1]!),
-            size: Int64.transferFromGodot(unsafePointer: args[2]!),
-            pos: Godot.Vector2.transferFromGodot(unsafePointer: args[3]!),
-            index: Int64.transferFromGodot(unsafePointer: args[4]!),
-            color: Godot.Color.transferFromGodot(unsafePointer: args[5]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontDrawGlyph(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    canvas: Godot.RID.transferFromGodot(unsafePointer: args[1]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[2]!),
+                    pos: Godot.Vector2.transferFromGodot(unsafePointer: args[3]!),
+                    index: Int64.transferFromGodot(unsafePointer: args[4]!),
+                    color: Godot.Color.transferFromGodot(unsafePointer: args[5]!)
+                )
+        }
         let _font_draw_glyph_outline_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontDrawGlyphOutline(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            canvas: Godot.RID.transferFromGodot(unsafePointer: args[1]!),
-            size: Int64.transferFromGodot(unsafePointer: args[2]!),
-            outlineSize: Int64.transferFromGodot(unsafePointer: args[3]!),
-            pos: Godot.Vector2.transferFromGodot(unsafePointer: args[4]!),
-            index: Int64.transferFromGodot(unsafePointer: args[5]!),
-            color: Godot.Color.transferFromGodot(unsafePointer: args[6]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontDrawGlyphOutline(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    canvas: Godot.RID.transferFromGodot(unsafePointer: args[1]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[2]!),
+                    outlineSize: Int64.transferFromGodot(unsafePointer: args[3]!),
+                    pos: Godot.Vector2.transferFromGodot(unsafePointer: args[4]!),
+                    index: Int64.transferFromGodot(unsafePointer: args[5]!),
+                    color: Godot.Color.transferFromGodot(unsafePointer: args[6]!)
+                )
+        }
         let _font_is_language_supported_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontIsLanguageSupported(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            language: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontIsLanguageSupported(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    language: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_language_support_override_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetLanguageSupportOverride(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            language: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!),
-            supported: Bool.transferFromGodot(unsafePointer: args[2]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetLanguageSupportOverride(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    language: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!),
+                    supported: Bool.transferFromGodot(unsafePointer: args[2]!)
+                )
+        }
         let _font_get_language_support_override_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetLanguageSupportOverride(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            language: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetLanguageSupportOverride(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    language: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_remove_language_support_override_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontRemoveLanguageSupportOverride(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            language: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontRemoveLanguageSupportOverride(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    language: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_language_support_overrides_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetLanguageSupportOverrides(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetLanguageSupportOverrides(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_is_script_supported_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontIsScriptSupported(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            script: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontIsScriptSupported(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    script: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_script_support_override_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetScriptSupportOverride(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            script: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!),
-            supported: Bool.transferFromGodot(unsafePointer: args[2]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetScriptSupportOverride(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    script: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!),
+                    supported: Bool.transferFromGodot(unsafePointer: args[2]!)
+                )
+        }
         let _font_get_script_support_override_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetScriptSupportOverride(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            script: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetScriptSupportOverride(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    script: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_remove_script_support_override_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontRemoveScriptSupportOverride(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            script: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontRemoveScriptSupportOverride(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    script: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_script_support_overrides_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetScriptSupportOverrides(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetScriptSupportOverrides(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_opentype_feature_overrides_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetOpentypeFeatureOverrides(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            overrides: Godot.AnyGodotDictionary.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetOpentypeFeatureOverrides(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    overrides: Godot.AnyGodotDictionary.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _font_get_opentype_feature_overrides_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetOpentypeFeatureOverrides(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetOpentypeFeatureOverrides(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_supported_feature_list_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSupportedFeatureList(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSupportedFeatureList(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_supported_variation_list_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSupportedVariationList(
-            fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSupportedVariationList(
+                    fontRID: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_get_global_oversampling_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontGetGlobalOversampling()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontGetGlobalOversampling()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _font_set_global_oversampling_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._fontSetGlobalOversampling(
-            Double.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._fontSetGlobalOversampling(
+                    Double.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _get_hex_code_box_size_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getHexCodeBoxSize(
-            Int64.transferFromGodot(unsafePointer: args[0]!),
-            index: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getHexCodeBoxSize(
+                    Int64.transferFromGodot(unsafePointer: args[0]!),
+                    index: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _draw_hex_code_box_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._drawHexCodeBox(
-            canvas: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            size: Int64.transferFromGodot(unsafePointer: args[1]!),
-            pos: Godot.Vector2.transferFromGodot(unsafePointer: args[2]!),
-            index: Int64.transferFromGodot(unsafePointer: args[3]!),
-            color: Godot.Color.transferFromGodot(unsafePointer: args[4]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._drawHexCodeBox(
+                    canvas: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[1]!),
+                    pos: Godot.Vector2.transferFromGodot(unsafePointer: args[2]!),
+                    index: Int64.transferFromGodot(unsafePointer: args[3]!),
+                    color: Godot.Color.transferFromGodot(unsafePointer: args[4]!)
+                )
+        }
         let _create_shaped_text_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._createShapedText(
-            direction: Godot.TextServer.Direction.transferFromGodot(unsafePointer: args[0]!),
-            orientation: Godot.TextServer.Orientation.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._createShapedText(
+                    direction: Godot.TextServer.Direction.transferFromGodot(unsafePointer: args[0]!),
+                    orientation: Godot.TextServer.Orientation.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_clear_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextClear(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextClear(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _shaped_text_set_direction_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextSetDirection(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            direction: Godot.TextServer.Direction.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextSetDirection(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    direction: Godot.TextServer.Direction.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _shaped_text_get_direction_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetDirection(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetDirection(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_inferred_direction_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetInferredDirection(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetInferredDirection(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_set_bidi_override_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextSetBidiOverride(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            override: Godot.AnyGodotArray.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextSetBidiOverride(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    override: Godot.AnyGodotArray.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _shaped_text_set_custom_punctuation_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextSetCustomPunctuation(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            punct: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextSetCustomPunctuation(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    punct: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _shaped_text_get_custom_punctuation_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetCustomPunctuation(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetCustomPunctuation(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_set_orientation_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextSetOrientation(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            orientation: Godot.TextServer.Orientation.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextSetOrientation(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    orientation: Godot.TextServer.Orientation.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _shaped_text_get_orientation_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetOrientation(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetOrientation(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_set_preserve_invalid_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextSetPreserveInvalid(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            enabled: Bool.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextSetPreserveInvalid(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    enabled: Bool.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _shaped_text_get_preserve_invalid_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetPreserveInvalid(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetPreserveInvalid(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_set_preserve_control_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextSetPreserveControl(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            enabled: Bool.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextSetPreserveControl(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    enabled: Bool.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _shaped_text_get_preserve_control_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetPreserveControl(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetPreserveControl(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_set_spacing_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextSetSpacing(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            spacing: Godot.TextServer.SpacingType.transferFromGodot(unsafePointer: args[1]!),
-            value: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextSetSpacing(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    spacing: Godot.TextServer.SpacingType.transferFromGodot(unsafePointer: args[1]!),
+                    value: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+        }
         let _shaped_text_get_spacing_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetSpacing(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            spacing: Godot.TextServer.SpacingType.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetSpacing(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    spacing: Godot.TextServer.SpacingType.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_add_string_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextAddString(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            text: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!),
-            fonts: Godot.GodotArray<Godot.RID> .transferFromGodot(unsafePointer: args[2]!),
-            size: Int64.transferFromGodot(unsafePointer: args[3]!),
-            opentypeFeatures: Godot.AnyGodotDictionary.transferFromGodot(unsafePointer: args[4]!),
-            language: Godot.GodotString.transferFromGodot(unsafePointer: args[5]!),
-            meta: Godot.Variant.transferFromGodot(unsafePointer: args[6]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextAddString(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    text: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!),
+                    fonts: Godot.GodotArray<Godot.RID>.transferFromGodot(unsafePointer: args[2]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[3]!),
+                    opentypeFeatures: Godot.AnyGodotDictionary.transferFromGodot(unsafePointer: args[4]!),
+                    language: Godot.GodotString.transferFromGodot(unsafePointer: args[5]!),
+                    meta: Godot.Variant.transferFromGodot(unsafePointer: args[6]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_add_object_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextAddObject(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            key: Godot.Variant.transferFromGodot(unsafePointer: args[1]!),
-            size: Godot.Vector2.transferFromGodot(unsafePointer: args[2]!),
-            inlineAlign: Godot.InlineAlignment.transferFromGodot(unsafePointer: args[3]!),
-            length: Int64.transferFromGodot(unsafePointer: args[4]!),
-            baseline: Double.transferFromGodot(unsafePointer: args[5]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextAddObject(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    key: Godot.Variant.transferFromGodot(unsafePointer: args[1]!),
+                    size: Godot.Vector2.transferFromGodot(unsafePointer: args[2]!),
+                    inlineAlign: Godot.InlineAlignment.transferFromGodot(unsafePointer: args[3]!),
+                    length: Int64.transferFromGodot(unsafePointer: args[4]!),
+                    baseline: Double.transferFromGodot(unsafePointer: args[5]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_resize_object_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextResizeObject(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            key: Godot.Variant.transferFromGodot(unsafePointer: args[1]!),
-            size: Godot.Vector2.transferFromGodot(unsafePointer: args[2]!),
-            inlineAlign: Godot.InlineAlignment.transferFromGodot(unsafePointer: args[3]!),
-            baseline: Double.transferFromGodot(unsafePointer: args[4]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextResizeObject(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    key: Godot.Variant.transferFromGodot(unsafePointer: args[1]!),
+                    size: Godot.Vector2.transferFromGodot(unsafePointer: args[2]!),
+                    inlineAlign: Godot.InlineAlignment.transferFromGodot(unsafePointer: args[3]!),
+                    baseline: Double.transferFromGodot(unsafePointer: args[4]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_get_span_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedGetSpanCount(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedGetSpanCount(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_get_span_meta_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedGetSpanMeta(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            index: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedGetSpanMeta(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    index: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_set_span_update_font_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedSetSpanUpdateFont(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            index: Int64.transferFromGodot(unsafePointer: args[1]!),
-            fonts: Godot.GodotArray<Godot.RID> .transferFromGodot(unsafePointer: args[2]!),
-            size: Int64.transferFromGodot(unsafePointer: args[3]!),
-            opentypeFeatures: Godot.AnyGodotDictionary.transferFromGodot(unsafePointer: args[4]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedSetSpanUpdateFont(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    index: Int64.transferFromGodot(unsafePointer: args[1]!),
+                    fonts: Godot.GodotArray<Godot.RID>.transferFromGodot(unsafePointer: args[2]!),
+                    size: Int64.transferFromGodot(unsafePointer: args[3]!),
+                    opentypeFeatures: Godot.AnyGodotDictionary.transferFromGodot(unsafePointer: args[4]!)
+                )
+        }
         let _shaped_text_substr_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextSubstr(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            start: Int64.transferFromGodot(unsafePointer: args[1]!),
-            length: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextSubstr(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    start: Int64.transferFromGodot(unsafePointer: args[1]!),
+                    length: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_parent_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetParent(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetParent(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_fit_to_width_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextFitToWidth(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            width: Double.transferFromGodot(unsafePointer: args[1]!),
-            justificationFlags: Godot.TextServer.JustificationFlag.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextFitToWidth(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    width: Double.transferFromGodot(unsafePointer: args[1]!),
+                    justificationFlags: Godot.TextServer.JustificationFlag.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_tab_align_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextTabAlign(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            tabStops: Godot.GodotContiguousArray<Float> .transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextTabAlign(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    tabStops: Godot.GodotContiguousArray<Float>.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_shape_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextShape(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextShape(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_update_breaks_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextUpdateBreaks(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextUpdateBreaks(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_update_justification_ops_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextUpdateJustificationOps(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextUpdateJustificationOps(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_is_ready_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextIsReady(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextIsReady(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_glyphs_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetGlyphs(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetGlyphs(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_sort_logical_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextSortLogical(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextSortLogical(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_glyph_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetGlyphCount(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetGlyphCount(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_range_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetRange(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetRange(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_line_breaks_adv_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetLineBreaksAdv(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            width: Godot.GodotContiguousArray<Float> .transferFromGodot(unsafePointer: args[1]!),
-            start: Int64.transferFromGodot(unsafePointer: args[2]!),
-            once: Bool.transferFromGodot(unsafePointer: args[3]!),
-            breakFlags: Godot.TextServer.LineBreakFlag.transferFromGodot(unsafePointer: args[4]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetLineBreaksAdv(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    width: Godot.GodotContiguousArray<Float>.transferFromGodot(unsafePointer: args[1]!),
+                    start: Int64.transferFromGodot(unsafePointer: args[2]!),
+                    once: Bool.transferFromGodot(unsafePointer: args[3]!),
+                    breakFlags: Godot.TextServer.LineBreakFlag.transferFromGodot(unsafePointer: args[4]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_line_breaks_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetLineBreaks(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            width: Double.transferFromGodot(unsafePointer: args[1]!),
-            start: Int64.transferFromGodot(unsafePointer: args[2]!),
-            breakFlags: Godot.TextServer.LineBreakFlag.transferFromGodot(unsafePointer: args[3]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetLineBreaks(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    width: Double.transferFromGodot(unsafePointer: args[1]!),
+                    start: Int64.transferFromGodot(unsafePointer: args[2]!),
+                    breakFlags: Godot.TextServer.LineBreakFlag.transferFromGodot(unsafePointer: args[3]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_word_breaks_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetWordBreaks(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            graphemeFlags: Godot.TextServer.GraphemeFlag.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetWordBreaks(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    graphemeFlags: Godot.TextServer.GraphemeFlag.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_trim_pos_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetTrimPos(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetTrimPos(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_ellipsis_pos_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetEllipsisPos(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetEllipsisPos(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_ellipsis_glyph_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetEllipsisGlyphCount(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetEllipsisGlyphCount(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_ellipsis_glyphs_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetEllipsisGlyphs(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetEllipsisGlyphs(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_overrun_trim_to_width_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextOverrunTrimToWidth(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            width: Double.transferFromGodot(unsafePointer: args[1]!),
-            trimFlags: Godot.TextServer.TextOverrunFlag.transferFromGodot(unsafePointer: args[2]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextOverrunTrimToWidth(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    width: Double.transferFromGodot(unsafePointer: args[1]!),
+                    trimFlags: Godot.TextServer.TextOverrunFlag.transferFromGodot(unsafePointer: args[2]!)
+                )
+        }
         let _shaped_text_get_objects_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetObjects(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetObjects(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_object_rect_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetObjectRect(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            key: Godot.Variant.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetObjectRect(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    key: Godot.Variant.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_size_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetSize(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetSize(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_ascent_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetAscent(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetAscent(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_descent_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetDescent(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetDescent(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_width_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetWidth(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetWidth(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_underline_position_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetUnderlinePosition(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetUnderlinePosition(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_underline_thickness_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetUnderlineThickness(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetUnderlineThickness(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_dominant_direction_in_range_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetDominantDirectionInRange(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            start: Int64.transferFromGodot(unsafePointer: args[1]!),
-            end: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetDominantDirectionInRange(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    start: Int64.transferFromGodot(unsafePointer: args[1]!),
+                    end: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_carets_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetCarets(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            position: Int64.transferFromGodot(unsafePointer: args[1]!),
-            caret: UnsafeMutablePointer<CaretInfo> .transferFromGodot(unsafePointer: args[2]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetCarets(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    position: Int64.transferFromGodot(unsafePointer: args[1]!),
+                    caret: UnsafeMutablePointer<CaretInfo>.transferFromGodot(unsafePointer: args[2]!)
+                )
+        }
         let _shaped_text_get_selection_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetSelection(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            start: Int64.transferFromGodot(unsafePointer: args[1]!),
-            end: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetSelection(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    start: Int64.transferFromGodot(unsafePointer: args[1]!),
+                    end: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_hit_test_grapheme_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextHitTestGrapheme(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            coord: Double.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextHitTestGrapheme(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    coord: Double.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_hit_test_position_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextHitTestPosition(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            coord: Double.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextHitTestPosition(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    coord: Double.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_draw_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextDraw(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            canvas: Godot.RID.transferFromGodot(unsafePointer: args[1]!),
-            pos: Godot.Vector2.transferFromGodot(unsafePointer: args[2]!),
-            clipL: Double.transferFromGodot(unsafePointer: args[3]!),
-            clipR: Double.transferFromGodot(unsafePointer: args[4]!),
-            color: Godot.Color.transferFromGodot(unsafePointer: args[5]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextDraw(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    canvas: Godot.RID.transferFromGodot(unsafePointer: args[1]!),
+                    pos: Godot.Vector2.transferFromGodot(unsafePointer: args[2]!),
+                    clipL: Double.transferFromGodot(unsafePointer: args[3]!),
+                    clipR: Double.transferFromGodot(unsafePointer: args[4]!),
+                    color: Godot.Color.transferFromGodot(unsafePointer: args[5]!)
+                )
+        }
         let _shaped_text_draw_outline_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextDrawOutline(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            canvas: Godot.RID.transferFromGodot(unsafePointer: args[1]!),
-            pos: Godot.Vector2.transferFromGodot(unsafePointer: args[2]!),
-            clipL: Double.transferFromGodot(unsafePointer: args[3]!),
-            clipR: Double.transferFromGodot(unsafePointer: args[4]!),
-            outlineSize: Int64.transferFromGodot(unsafePointer: args[5]!),
-            color: Godot.Color.transferFromGodot(unsafePointer: args[6]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextDrawOutline(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    canvas: Godot.RID.transferFromGodot(unsafePointer: args[1]!),
+                    pos: Godot.Vector2.transferFromGodot(unsafePointer: args[2]!),
+                    clipL: Double.transferFromGodot(unsafePointer: args[3]!),
+                    clipR: Double.transferFromGodot(unsafePointer: args[4]!),
+                    outlineSize: Int64.transferFromGodot(unsafePointer: args[5]!),
+                    color: Godot.Color.transferFromGodot(unsafePointer: args[6]!)
+                )
+        }
         let _shaped_text_get_grapheme_bounds_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetGraphemeBounds(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            pos: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetGraphemeBounds(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    pos: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_next_grapheme_pos_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextNextGraphemePos(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            pos: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextNextGraphemePos(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    pos: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_prev_grapheme_pos_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextPrevGraphemePos(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            pos: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextPrevGraphemePos(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    pos: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_get_character_breaks_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextGetCharacterBreaks(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextGetCharacterBreaks(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_next_character_pos_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextNextCharacterPos(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            pos: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextNextCharacterPos(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    pos: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_prev_character_pos_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextPrevCharacterPos(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            pos: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextPrevCharacterPos(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    pos: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _shaped_text_closest_character_pos_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._shapedTextClosestCharacterPos(
-            shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            pos: Int64.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._shapedTextClosestCharacterPos(
+                    shaped: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    pos: Int64.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _format_number_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._formatNumber(
-            string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
-            language: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._formatNumber(
+                    string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+                    language: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _parse_number_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._parseNumber(
-            string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
-            language: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._parseNumber(
+                    string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+                    language: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _percent_sign_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._percentSign(
-            language: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._percentSign(
+                    language: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _strip_diacritics_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._stripDiacritics(
-            string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._stripDiacritics(
+                    string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _is_valid_identifier_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._isValidIdentifier(
-            string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._isValidIdentifier(
+                    string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _string_get_word_breaks_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._stringGetWordBreaks(
-            string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
-            language: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!),
-            charsPerLine: Int64.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._stringGetWordBreaks(
+                    string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+                    language: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!),
+                    charsPerLine: Int64.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _string_get_character_breaks_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._stringGetCharacterBreaks(
-            string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
-            language: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._stringGetCharacterBreaks(
+                    string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+                    language: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _is_confusable_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._isConfusable(
-            string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
-            dict: Godot.GodotContiguousArray<GodotString> .transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._isConfusable(
+                    string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+                    dict: Godot.GodotContiguousArray<GodotString>.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _spoof_check_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._spoofCheck(
-            string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._spoofCheck(
+                    string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _string_to_upper_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._stringToUpper(
-            string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
-            language: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._stringToUpper(
+                    string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+                    language: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _string_to_lower_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._stringToLower(
-            string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
-            language: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._stringToLower(
+                    string: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!),
+                    language: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _parse_structured_text_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._parseStructuredText(
-            parserType: Godot.TextServer.StructuredTextParser.transferFromGodot(unsafePointer: args[0]!),
-            args: Godot.AnyGodotArray.transferFromGodot(unsafePointer: args[1]!),
-            text: Godot.GodotString.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._parseStructuredText(
+                    parserType: Godot.TextServer.StructuredTextParser.transferFromGodot(unsafePointer: args[0]!),
+                    args: Godot.AnyGodotArray.transferFromGodot(unsafePointer: args[1]!),
+                    text: Godot.GodotString.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _cleanup_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<TextServerExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._cleanup()}
+            guard let instancePtr else { return }
+            Unmanaged<TextServerExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._cleanup()
+        }
         _virtualFunctions = [
             "_hasFeature" : ("_has_feature", _has_feature_call),
             "_getName" : ("_get_name", _get_name_call),
@@ -3581,7 +3651,7 @@ open class TextServerExtension: TextServer {
             "_cleanup" : ("_cleanup", _cleanup_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

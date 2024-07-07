@@ -8,50 +8,42 @@ import GodotExtensionHeaders
 open class ResourceSaver: Object {
     public struct SaverFlags: GodotOptionSet {
         public let rawValue: Int64
-
-        public init(
-            rawValue: Int64
-        ) {
+        
+        public init(rawValue: Int64) {
             self.rawValue = rawValue
         }
-
+        
         public static let none: Self = .init(rawValue: 0)
-
         public static let relativePaths: Self = .init(rawValue: 1)
-
         public static let bundleResources: Self = .init(rawValue: 2)
-
         public static let changePath: Self = .init(rawValue: 4)
-
         public static let omitEditorProperties: Self = .init(rawValue: 8)
-
         public static let saveBigEndian: Self = .init(rawValue: 16)
-
         public static let compress: Self = .init(rawValue: 32)
-
         public static let replaceSubresourcePaths: Self = .init(rawValue: 64)
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("None", 0),
-            ("Relative Paths", 1),
-            ("Bundle Resources", 2),
-            ("Change Path", 4),
-            ("Omit Editor Properties", 8),
-            ("Save Big Endian", 16),
-            ("Compress", 32),
-            ("Replace Subresource Paths", 64),]
+               ("None", 0),
+               ("Relative Paths", 1),
+               ("Bundle Resources", 2),
+               ("Change Path", 4),
+               ("Omit Editor Properties", 8),
+               ("Save Big Endian", 16),
+               ("Compress", 32),
+               ("Replace Subresource Paths", 64),
+            ]
         }
     }
-
+    
     internal static var __method_binding_save: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "save").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2983274697)!
-        }
+            GodotStringName(swiftStaticString: "save").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2983274697)!
+            }
         }
     }()
-
+    
     public func save(
         resource: Godot.Resource?,
         path: Godot.GodotString = "",
@@ -78,15 +70,15 @@ open class ResourceSaver: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_recognized_extensions: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_recognized_extensions").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4223597960)!
-        }
+            GodotStringName(swiftStaticString: "get_recognized_extensions").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4223597960)!
+            }
         }
     }()
-
+    
     public func recognizedExtensions(
         type: Godot.Resource?
     ) -> Godot.GodotContiguousArray<GodotString> {
@@ -107,15 +99,15 @@ open class ResourceSaver: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_add_resource_format_saver: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_resource_format_saver").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 362894272)!
-        }
+            GodotStringName(swiftStaticString: "add_resource_format_saver").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 362894272)!
+            }
         }
     }()
-
+    
     public func addResourceFormatSaver(
         _ formatSaver: Godot.ResourceFormatSaver?,
         atFront front: Bool = false
@@ -137,15 +129,15 @@ open class ResourceSaver: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_resource_format_saver: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_resource_format_saver").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3373026878)!
-        }
+            GodotStringName(swiftStaticString: "remove_resource_format_saver").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3373026878)!
+            }
         }
     }()
-
+    
     public func removeResourceFormatSaver(
         _ formatSaver: Godot.ResourceFormatSaver?
     ) {
@@ -164,18 +156,15 @@ open class ResourceSaver: Object {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

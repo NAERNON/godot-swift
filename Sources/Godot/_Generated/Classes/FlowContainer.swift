@@ -10,23 +10,24 @@ open class FlowContainer: Container {
         case begin = 0
         case center = 1
         case end = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Begin", 0),
-            ("Center", 1),
-            ("End", 2),]
+               ("Begin", 0),
+               ("Center", 1),
+               ("End", 2),
+            ]
         }
     }
-
+    
     internal static var __method_binding_get_line_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_line_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_line_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func lineCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -39,15 +40,15 @@ open class FlowContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_set_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_alignment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 575250951)!
-        }
+            GodotStringName(swiftStaticString: "set_alignment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 575250951)!
+            }
         }
     }()
-
+    
     private func __setAlignment(
         _ alignment: Godot.FlowContainer.AlignmentMode
     ) {
@@ -64,15 +65,15 @@ open class FlowContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_alignment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3749743559)!
-        }
+            GodotStringName(swiftStaticString: "get_alignment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3749743559)!
+            }
         }
     }()
-
+    
     private func __getAlignment() -> Godot.FlowContainer.AlignmentMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -85,15 +86,15 @@ open class FlowContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_set_vertical: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_vertical").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_vertical").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setVertical(
         _ vertical: Bool
     ) {
@@ -110,15 +111,15 @@ open class FlowContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_is_vertical: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_vertical").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_vertical").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isVertical() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -131,40 +132,37 @@ open class FlowContainer: Container {
             }
         }
     }
-
+    
     public var alignment: Godot.FlowContainer.AlignmentMode {
         get {
             __getAlignment()
         }
-        set {
+        set(newValue) {
             __setAlignment(
                 newValue
             )
         }
     }
-
+    
     public var isVertical: Bool {
         get {
             __isVertical()
         }
-        set {
+        set(newValue) {
             __setVertical(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

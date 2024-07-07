@@ -6,11 +6,10 @@ import GodotExtensionHeaders
 
 @GodotClass
 open class MultiMeshInstance2D: Node2D {
-
+    
     public func textureChanged() {
         _ = textureChangedSignal.emit()
     }
-
     public lazy var textureChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "texture_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -25,15 +24,15 @@ open class MultiMeshInstance2D: Node2D {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_set_multimesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_multimesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2246127404)!
-        }
+            GodotStringName(swiftStaticString: "set_multimesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2246127404)!
+            }
         }
     }()
-
+    
     private func __setMultimesh(
         _ multimesh: Godot.MultiMesh?
     ) {
@@ -52,15 +51,15 @@ open class MultiMeshInstance2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_multimesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_multimesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1385450523)!
-        }
+            GodotStringName(swiftStaticString: "get_multimesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1385450523)!
+            }
         }
     }()
-
+    
     private func __getMultimesh() -> Godot.MultiMesh? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -73,15 +72,15 @@ open class MultiMeshInstance2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
-        }
+            GodotStringName(swiftStaticString: "set_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
+            }
         }
     }()
-
+    
     private func __setTexture(
         _ texture: Godot.Texture2D?
     ) {
@@ -100,15 +99,15 @@ open class MultiMeshInstance2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
-        }
+            GodotStringName(swiftStaticString: "get_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
+            }
         }
     }()
-
+    
     private func __getTexture() -> Godot.Texture2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -121,40 +120,37 @@ open class MultiMeshInstance2D: Node2D {
             }
         }
     }
-
+    
     public var multimesh: Godot.MultiMesh? {
         get {
             __getMultimesh()
         }
-        set {
+        set(newValue) {
             __setMultimesh(
                 newValue
             )
         }
     }
-
+    
     public var texture: Godot.Texture2D? {
         get {
             __getTexture()
         }
-        set {
+        set(newValue) {
             __setTexture(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

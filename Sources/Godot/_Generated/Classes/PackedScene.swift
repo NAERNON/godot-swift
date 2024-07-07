@@ -11,24 +11,25 @@ open class PackedScene: Resource {
         case instance = 1
         case main = 2
         case mainInherited = 3
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Disabled", 0),
-            ("Instance", 1),
-            ("Main", 2),
-            ("Main Inherited", 3),]
+               ("Disabled", 0),
+               ("Instance", 1),
+               ("Main", 2),
+               ("Main Inherited", 3),
+            ]
         }
     }
-
+    
     internal static var __method_binding_pack: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "pack").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2584678054)!
-        }
+            GodotStringName(swiftStaticString: "pack").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2584678054)!
+            }
         }
     }()
-
+    
     public func pack(
         path: Godot.Node?
     ) -> Godot.ErrorType {
@@ -49,15 +50,15 @@ open class PackedScene: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_instantiate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "instantiate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2628778455)!
-        }
+            GodotStringName(swiftStaticString: "instantiate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2628778455)!
+            }
         }
     }()
-
+    
     public func instantiate(
         editState: Godot.PackedScene.GenEditState = PackedScene.GenEditState(rawValue: 0)!
     ) -> Godot.Node? {
@@ -76,15 +77,15 @@ open class PackedScene: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_can_instantiate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "can_instantiate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "can_instantiate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func canInstantiate() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -97,15 +98,15 @@ open class PackedScene: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_state: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_state").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3479783971)!
-        }
+            GodotStringName(swiftStaticString: "get_state").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3479783971)!
+            }
         }
     }()
-
+    
     public func state() -> Godot.SceneState? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -118,18 +119,15 @@ open class PackedScene: Resource {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

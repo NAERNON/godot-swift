@@ -12,56 +12,58 @@ open class AStarGrid2D: RefCounted {
         case octile = 2
         case chebyshev = 3
         case max = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Euclidean", 0),
-            ("Manhattan", 1),
-            ("Octile", 2),
-            ("Chebyshev", 3),
-            ("Max", 4),]
+               ("Euclidean", 0),
+               ("Manhattan", 1),
+               ("Octile", 2),
+               ("Chebyshev", 3),
+               ("Max", 4),
+            ]
         }
     }
-
+    
     public enum DiagonalMode: UInt32, GodotEnum {
         case always = 0
         case never = 1
         case atLeastOneWalkable = 2
         case onlyIfNoObstacles = 3
         case max = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Always", 0),
-            ("Never", 1),
-            ("At Least One Walkable", 2),
-            ("Only If No Obstacles", 3),
-            ("Max", 4),]
+               ("Always", 0),
+               ("Never", 1),
+               ("At Least One Walkable", 2),
+               ("Only If No Obstacles", 3),
+               ("Max", 4),
+            ]
         }
     }
-
+    
     open func _estimateCost(
         fromID: Godot.Vector2I,
         toID: Godot.Vector2I
     ) -> Double {
         Double()
     }
-
+    
     open func _computeCost(
         fromID: Godot.Vector2I,
         toID: Godot.Vector2I
     ) -> Double {
         Double()
     }
-
+    
     internal static var __method_binding_set_region: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_region").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1763793166)!
-        }
+            GodotStringName(swiftStaticString: "set_region").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1763793166)!
+            }
         }
     }()
-
+    
     private func __setRegion(
         _ region: Godot.Rect2I
     ) {
@@ -78,15 +80,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_region: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_region").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 410525958)!
-        }
+            GodotStringName(swiftStaticString: "get_region").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 410525958)!
+            }
         }
     }()
-
+    
     private func __getRegion() -> Godot.Rect2I {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -99,15 +101,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
-        }
+            GodotStringName(swiftStaticString: "set_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
+            }
         }
     }()
-
+    
     private func __setSize(
         _ size: Godot.Vector2I
     ) {
@@ -124,15 +126,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
-        }
+            GodotStringName(swiftStaticString: "get_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
+            }
         }
     }()
-
+    
     private func __getSize() -> Godot.Vector2I {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -145,15 +147,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setOffset(
         _ offset: Godot.Vector2
     ) {
@@ -170,15 +172,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getOffset() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -191,15 +193,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_cell_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_cell_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_cell_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setCellSize(
         _ cellSize: Godot.Vector2
     ) {
@@ -216,15 +218,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_cell_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_cell_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_cell_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getCellSize() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -237,15 +239,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_is_in_bounds: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_in_bounds").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2522259332)!
-        }
+            GodotStringName(swiftStaticString: "is_in_bounds").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2522259332)!
+            }
         }
     }()
-
+    
     public func isInBounds(
         x: Int32,
         y: Int32
@@ -267,15 +269,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_is_in_boundsv: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_in_boundsv").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3900751641)!
-        }
+            GodotStringName(swiftStaticString: "is_in_boundsv").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3900751641)!
+            }
         }
     }()
-
+    
     public func isInBoundsv(
         id: Godot.Vector2I
     ) -> Bool {
@@ -294,15 +296,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_is_dirty: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_dirty").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_dirty").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isDirty() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -315,15 +317,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_update: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "update").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "update").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func update() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -334,15 +336,15 @@ open class AStarGrid2D: RefCounted {
             )
         }
     }
-
+    
     internal static var __method_binding_set_jumping_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_jumping_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_jumping_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setJumpingEnabled(
         _ enabled: Bool
     ) {
@@ -359,15 +361,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_is_jumping_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_jumping_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_jumping_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isJumpingEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -380,15 +382,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_diagonal_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_diagonal_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1017829798)!
-        }
+            GodotStringName(swiftStaticString: "set_diagonal_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1017829798)!
+            }
         }
     }()
-
+    
     private func __setDiagonalMode(
         _ mode: Godot.AStarGrid2D.DiagonalMode
     ) {
@@ -405,15 +407,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_diagonal_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_diagonal_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3129282674)!
-        }
+            GodotStringName(swiftStaticString: "get_diagonal_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3129282674)!
+            }
         }
     }()
-
+    
     private func __getDiagonalMode() -> Godot.AStarGrid2D.DiagonalMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -426,15 +428,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_default_compute_heuristic: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_default_compute_heuristic").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1044375519)!
-        }
+            GodotStringName(swiftStaticString: "set_default_compute_heuristic").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1044375519)!
+            }
         }
     }()
-
+    
     private func __setDefaultComputeHeuristic(
         _ heuristic: Godot.AStarGrid2D.Heuristic
     ) {
@@ -451,15 +453,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_default_compute_heuristic: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_default_compute_heuristic").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2074731422)!
-        }
+            GodotStringName(swiftStaticString: "get_default_compute_heuristic").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2074731422)!
+            }
         }
     }()
-
+    
     private func __getDefaultComputeHeuristic() -> Godot.AStarGrid2D.Heuristic {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -472,15 +474,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_default_estimate_heuristic: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_default_estimate_heuristic").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1044375519)!
-        }
+            GodotStringName(swiftStaticString: "set_default_estimate_heuristic").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1044375519)!
+            }
         }
     }()
-
+    
     private func __setDefaultEstimateHeuristic(
         _ heuristic: Godot.AStarGrid2D.Heuristic
     ) {
@@ -497,15 +499,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_default_estimate_heuristic: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_default_estimate_heuristic").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2074731422)!
-        }
+            GodotStringName(swiftStaticString: "get_default_estimate_heuristic").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2074731422)!
+            }
         }
     }()
-
+    
     private func __getDefaultEstimateHeuristic() -> Godot.AStarGrid2D.Heuristic {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -518,15 +520,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_point_solid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_point_solid").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1765703753)!
-        }
+            GodotStringName(swiftStaticString: "set_point_solid").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1765703753)!
+            }
         }
     }()
-
+    
     public func setPointSolid(
         id: Godot.Vector2I,
         solid: Bool = true
@@ -546,15 +548,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_is_point_solid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_point_solid").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3900751641)!
-        }
+            GodotStringName(swiftStaticString: "is_point_solid").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3900751641)!
+            }
         }
     }()
-
+    
     public func isPointSolid(
         id: Godot.Vector2I
     ) -> Bool {
@@ -573,15 +575,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_point_weight_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_point_weight_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2262553149)!
-        }
+            GodotStringName(swiftStaticString: "set_point_weight_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2262553149)!
+            }
         }
     }()
-
+    
     public func setPointWeightScale(
         id: Godot.Vector2I,
         weightScale: Double
@@ -601,15 +603,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_point_weight_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_weight_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 719993801)!
-        }
+            GodotStringName(swiftStaticString: "get_point_weight_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 719993801)!
+            }
         }
     }()
-
+    
     public func pointWeightScale(
         id: Godot.Vector2I
     ) -> Double {
@@ -628,15 +630,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_fill_solid_region: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "fill_solid_region").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2261970063)!
-        }
+            GodotStringName(swiftStaticString: "fill_solid_region").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2261970063)!
+            }
         }
     }()
-
+    
     public func fillSolidRegion(
         _ region: Godot.Rect2I,
         solid: Bool = true
@@ -656,15 +658,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_fill_weight_scale_region: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "fill_weight_scale_region").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2793244083)!
-        }
+            GodotStringName(swiftStaticString: "fill_weight_scale_region").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2793244083)!
+            }
         }
     }()
-
+    
     public func fillWeightScaleRegion(
         _ region: Godot.Rect2I,
         weightScale: Double
@@ -684,15 +686,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "clear").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func clear() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -703,15 +705,15 @@ open class AStarGrid2D: RefCounted {
             )
         }
     }
-
+    
     internal static var __method_binding_get_point_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 108438297)!
-        }
+            GodotStringName(swiftStaticString: "get_point_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 108438297)!
+            }
         }
     }()
-
+    
     public func pointPosition(
         id: Godot.Vector2I
     ) -> Godot.Vector2 {
@@ -730,15 +732,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_point_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 690373547)!
-        }
+            GodotStringName(swiftStaticString: "get_point_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 690373547)!
+            }
         }
     }()
-
+    
     public func pointPath(
         fromID: Godot.Vector2I,
         toID: Godot.Vector2I
@@ -760,15 +762,15 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_id_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_id_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1989391000)!
-        }
+            GodotStringName(swiftStaticString: "get_id_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1989391000)!
+            }
         }
     }()
-
+    
     public func idPath(
         fromID: Godot.Vector2I,
         toID: Godot.Vector2I
@@ -790,127 +792,126 @@ open class AStarGrid2D: RefCounted {
             }
         }
     }
-
+    
     public var region: Godot.Rect2I {
         get {
             __getRegion()
         }
-        set {
+        set(newValue) {
             __setRegion(
                 newValue
             )
         }
     }
-
+    
     public var size: Godot.Vector2I {
         get {
             __getSize()
         }
-        set {
+        set(newValue) {
             __setSize(
                 newValue
             )
         }
     }
-
+    
     public var offset: Godot.Vector2 {
         get {
             __getOffset()
         }
-        set {
+        set(newValue) {
             __setOffset(
                 newValue
             )
         }
     }
-
+    
     public var cellSize: Godot.Vector2 {
         get {
             __getCellSize()
         }
-        set {
+        set(newValue) {
             __setCellSize(
                 newValue
             )
         }
     }
-
+    
     public var isJumpingEnabled: Bool {
         get {
             __isJumpingEnabled()
         }
-        set {
+        set(newValue) {
             __setJumpingEnabled(
                 newValue
             )
         }
     }
-
+    
     public var defaultComputeHeuristic: Godot.AStarGrid2D.Heuristic {
         get {
             __getDefaultComputeHeuristic()
         }
-        set {
+        set(newValue) {
             __setDefaultComputeHeuristic(
                 newValue
             )
         }
     }
-
+    
     public var defaultEstimateHeuristic: Godot.AStarGrid2D.Heuristic {
         get {
             __getDefaultEstimateHeuristic()
         }
-        set {
+        set(newValue) {
             __setDefaultEstimateHeuristic(
                 newValue
             )
         }
     }
-
+    
     public var diagonalMode: Godot.AStarGrid2D.DiagonalMode {
         get {
             __getDiagonalMode()
         }
-        set {
+        set(newValue) {
             __setDiagonalMode(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _estimate_cost_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<AStarGrid2D> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._estimateCost(
-            fromID: Godot.Vector2I.transferFromGodot(unsafePointer: args[0]!),
-            toID: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<AStarGrid2D>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._estimateCost(
+                    fromID: Godot.Vector2I.transferFromGodot(unsafePointer: args[0]!),
+                    toID: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _compute_cost_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<AStarGrid2D> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._computeCost(
-            fromID: Godot.Vector2I.transferFromGodot(unsafePointer: args[0]!),
-            toID: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<AStarGrid2D>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._computeCost(
+                    fromID: Godot.Vector2I.transferFromGodot(unsafePointer: args[0]!),
+                    toID: Godot.Vector2I.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         _virtualFunctions = [
             "_estimateCost" : ("_estimate_cost", _estimate_cost_call),
             "_computeCost" : ("_compute_cost", _compute_cost_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

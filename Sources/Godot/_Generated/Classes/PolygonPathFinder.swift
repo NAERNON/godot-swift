@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class PolygonPathFinder: Resource {
     internal static var __method_binding_setup: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "setup").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3251786936)!
-        }
+            GodotStringName(swiftStaticString: "setup").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3251786936)!
+            }
         }
     }()
-
+    
     public func setup(
         points: Godot.GodotContiguousArray<Vector2>,
         connections: Godot.GodotContiguousArray<Int32>
@@ -33,15 +33,15 @@ open class PolygonPathFinder: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_find_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "find_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1562168077)!
-        }
+            GodotStringName(swiftStaticString: "find_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1562168077)!
+            }
         }
     }()
-
+    
     public func findPath(
         from: Godot.Vector2,
         to: Godot.Vector2
@@ -63,15 +63,15 @@ open class PolygonPathFinder: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_intersections: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_intersections").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3932192302)!
-        }
+            GodotStringName(swiftStaticString: "get_intersections").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3932192302)!
+            }
         }
     }()
-
+    
     public func intersections(
         from: Godot.Vector2,
         to: Godot.Vector2
@@ -93,15 +93,15 @@ open class PolygonPathFinder: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_closest_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_closest_point").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2656412154)!
-        }
+            GodotStringName(swiftStaticString: "get_closest_point").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2656412154)!
+            }
         }
     }()
-
+    
     public func closestPoint(
         _ point: Godot.Vector2
     ) -> Godot.Vector2 {
@@ -120,15 +120,15 @@ open class PolygonPathFinder: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_is_point_inside: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_point_inside").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 556197845)!
-        }
+            GodotStringName(swiftStaticString: "is_point_inside").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 556197845)!
+            }
         }
     }()
-
+    
     public func isPointInside(
         point: Godot.Vector2
     ) -> Bool {
@@ -147,15 +147,15 @@ open class PolygonPathFinder: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_point_penalty: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_point_penalty").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
-        }
+            GodotStringName(swiftStaticString: "set_point_penalty").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
+            }
         }
     }()
-
+    
     public func setPointPenalty(
         idx: Int32,
         penalty: Double
@@ -175,15 +175,15 @@ open class PolygonPathFinder: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_point_penalty: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_penalty").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
-        }
+            GodotStringName(swiftStaticString: "get_point_penalty").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
+            }
         }
     }()
-
+    
     public func pointPenalty(
         idx: Int32
     ) -> Double {
@@ -202,15 +202,15 @@ open class PolygonPathFinder: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bounds: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bounds").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!
-        }
+            GodotStringName(swiftStaticString: "get_bounds").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!
+            }
         }
     }()
-
+    
     public func bounds() -> Godot.Rect2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -223,18 +223,15 @@ open class PolygonPathFinder: Resource {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

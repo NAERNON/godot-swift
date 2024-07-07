@@ -1,5 +1,3 @@
-import SwiftSyntax
-import SwiftSyntaxBuilder
 import Utils
 
 /// A representation of a Godot native structure.
@@ -49,17 +47,17 @@ extension GodotNativeStructure {
                 self.name = String(name)
             }
             
-            func declSyntax() -> DeclSyntax {
+            func declSyntax() -> Syntax {
                 let translatedName = name.translated(from: .snake, to: .camel).backticksKeyword()
-                var varString = "public var \(translatedName): \(type.removeGodotClassPointers.syntax(options: .floatAsDouble))"
+                var syntax: Syntax = "public var \(translatedName): \(type.godotClassPointerRemoved().syntax(options: .floatAsDouble))"
                 if let defaultValue {
-                    varString += " = " + defaultValue.syntax(
+                    syntax += " = " + defaultValue.syntax(
                         forType: type,
                         useStaticVariables: true
                     )
                 }
                 
-                return "\(raw: varString)"
+                return syntax
             }
         }
         
@@ -81,8 +79,8 @@ extension GodotNativeStructure: FileSource {
     func fileCodeContent(
         for extensionAPI: GodotExtensionAPI,
         with configuration: BuildConfiguration
-    ) throws -> CodeBlockItemListSyntax {
-        try StructDeclSyntax("public struct \(raw: name)") {
+    ) throws -> Syntax {
+        Syntax("public struct \(name)") {
             for element in format.elements {
                 element.declSyntax()
             }

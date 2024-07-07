@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class TileSetScenesCollectionSource: TileSetSource {
     internal static var __method_binding_get_scene_tiles_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_scene_tiles_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
-        }
+            GodotStringName(swiftStaticString: "get_scene_tiles_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
+            }
         }
     }()
-
+    
     public func sceneTilesCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -26,15 +26,15 @@ open class TileSetScenesCollectionSource: TileSetSource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_scene_tile_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_scene_tile_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3744713108)!
-        }
+            GodotStringName(swiftStaticString: "get_scene_tile_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3744713108)!
+            }
         }
     }()
-
+    
     public func sceneTileID(
         index: Int32
     ) -> Int32 {
@@ -53,15 +53,15 @@ open class TileSetScenesCollectionSource: TileSetSource {
             }
         }
     }
-
+    
     internal static var __method_binding_has_scene_tile_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_scene_tile_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3067735520)!
-        }
+            GodotStringName(swiftStaticString: "has_scene_tile_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3067735520)!
+            }
         }
     }()
-
+    
     public func hasSceneTileID(
         _ id: Int32
     ) -> Bool {
@@ -80,15 +80,15 @@ open class TileSetScenesCollectionSource: TileSetSource {
             }
         }
     }
-
+    
     internal static var __method_binding_create_scene_tile: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_scene_tile").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1117465415)!
-        }
+            GodotStringName(swiftStaticString: "create_scene_tile").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1117465415)!
+            }
         }
     }()
-
+    
     public func createSceneTile(
         packedScene: Godot.PackedScene?,
         idOverride: Int32 = -1
@@ -112,15 +112,15 @@ open class TileSetScenesCollectionSource: TileSetSource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_scene_tile_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_scene_tile_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
-        }
+            GodotStringName(swiftStaticString: "set_scene_tile_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
+            }
         }
     }()
-
+    
     public func setSceneTileID(
         _ id: Int32,
         newID: Int32
@@ -140,15 +140,15 @@ open class TileSetScenesCollectionSource: TileSetSource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_scene_tile_scene: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_scene_tile_scene").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3435852839)!
-        }
+            GodotStringName(swiftStaticString: "set_scene_tile_scene").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3435852839)!
+            }
         }
     }()
-
+    
     public func setSceneTileScene(
         id: Int32,
         packedScene: Godot.PackedScene?
@@ -170,15 +170,15 @@ open class TileSetScenesCollectionSource: TileSetSource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_scene_tile_scene: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_scene_tile_scene").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 511017218)!
-        }
+            GodotStringName(swiftStaticString: "get_scene_tile_scene").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 511017218)!
+            }
         }
     }()
-
+    
     public func sceneTileScene(
         id: Int32
     ) -> Godot.PackedScene? {
@@ -197,15 +197,15 @@ open class TileSetScenesCollectionSource: TileSetSource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_scene_tile_display_placeholder: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_scene_tile_display_placeholder").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "set_scene_tile_display_placeholder").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func setSceneTileDisplayPlaceholder(
         id: Int32,
         displayPlaceholder: Bool
@@ -225,15 +225,15 @@ open class TileSetScenesCollectionSource: TileSetSource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_scene_tile_display_placeholder: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_scene_tile_display_placeholder").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "get_scene_tile_display_placeholder").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func sceneTileDisplayPlaceholder(
         id: Int32
     ) -> Bool {
@@ -252,15 +252,15 @@ open class TileSetScenesCollectionSource: TileSetSource {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_scene_tile: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_scene_tile").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "remove_scene_tile").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func removeSceneTile(
         id: Int32
     ) {
@@ -277,15 +277,15 @@ open class TileSetScenesCollectionSource: TileSetSource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_next_scene_tile_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_next_scene_tile_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_next_scene_tile_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func nextSceneTileID() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -298,18 +298,15 @@ open class TileSetScenesCollectionSource: TileSetSource {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

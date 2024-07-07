@@ -3,7 +3,7 @@ extension GodotStringName: Variant.Storable {
     public static let variantStorageType: Variant.StorageType? = .stringName
     
     public static func convertToStorage(
-        _ value: consuming GodotStringName
+        _ value: GodotStringName
     ) -> Variant.Storage {
         let storage = Variant.Storage()
         
@@ -45,7 +45,7 @@ extension GodotStringName: Hintable {
 extension GodotStringName: Exposable {
     public static let variantRepresentationType: Variant.RepresentationType = .stringName
     
-    public consuming func transferToGodot(
+    public func transferToGodot(
         unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
     ) {
         withUnsafeOpaquePointer { selfPtr in

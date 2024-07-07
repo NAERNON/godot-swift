@@ -7,7 +7,7 @@ where Key == Variant, AssociatedValue == Variant
     }
     
     public static func convertToStorage(
-        _ value: consuming GodotDictionary
+        _ value: GodotDictionary
     ) -> Variant.Storage {
         let storage = Variant.Storage()
         
@@ -55,7 +55,7 @@ where Key == Variant, AssociatedValue == Variant
         .dictionary
     }
     
-    public consuming func transferToGodot(
+    public func transferToGodot(
         unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
     ) {
         withUnsafeOpaquePointer { selfPtr in

@@ -10,38 +10,40 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
         case texture = 0
         case port = 1
         case max = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Texture", 0),
-            ("Port", 1),
-            ("Max", 2),]
+               ("Texture", 0),
+               ("Port", 1),
+               ("Max", 2),
+            ]
         }
     }
-
+    
     public enum TextureType: UInt32, GodotEnum {
         case data = 0
         case color = 1
         case normalMap = 2
         case max = 3
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Data", 0),
-            ("Color", 1),
-            ("Normal Map", 2),
-            ("Max", 3),]
+               ("Data", 0),
+               ("Color", 1),
+               ("Normal Map", 2),
+               ("Max", 3),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_source: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_source").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1625400621)!
-        }
+            GodotStringName(swiftStaticString: "set_source").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1625400621)!
+            }
         }
     }()
-
+    
     private func __setSource(
         value: Godot.VisualShaderNodeCubemap.Source
     ) {
@@ -58,15 +60,15 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_source: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_source").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2222048781)!
-        }
+            GodotStringName(swiftStaticString: "get_source").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2222048781)!
+            }
         }
     }()
-
+    
     private func __getSource() -> Godot.VisualShaderNodeCubemap.Source {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -79,15 +81,15 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_set_cube_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_cube_map").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2219800736)!
-        }
+            GodotStringName(swiftStaticString: "set_cube_map").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2219800736)!
+            }
         }
     }()
-
+    
     private func __setCubeMap(
         value: Godot.Cubemap?
     ) {
@@ -106,15 +108,15 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_cube_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_cube_map").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1772111058)!
-        }
+            GodotStringName(swiftStaticString: "get_cube_map").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1772111058)!
+            }
         }
     }()
-
+    
     private func __getCubeMap() -> Godot.Cubemap? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -127,15 +129,15 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1899718876)!
-        }
+            GodotStringName(swiftStaticString: "set_texture_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1899718876)!
+            }
         }
     }()
-
+    
     private func __setTextureType(
         value: Godot.VisualShaderNodeCubemap.TextureType
     ) {
@@ -152,15 +154,15 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3356498888)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3356498888)!
+            }
         }
     }()
-
+    
     private func __getTextureType() -> Godot.VisualShaderNodeCubemap.TextureType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -173,51 +175,48 @@ open class VisualShaderNodeCubemap: VisualShaderNode {
             }
         }
     }
-
+    
     public var source: Godot.VisualShaderNodeCubemap.Source {
         get {
             __getSource()
         }
-        set {
+        set(newValue) {
             __setSource(
                 value: newValue
             )
         }
     }
-
+    
     public var cubeMap: Godot.Cubemap? {
         get {
             __getCubeMap()
         }
-        set {
+        set(newValue) {
             __setCubeMap(
                 value: newValue
             )
         }
     }
-
+    
     public var textureType: Godot.VisualShaderNodeCubemap.TextureType {
         get {
             __getTextureType()
         }
-        set {
+        set(newValue) {
             __setTextureType(
                 value: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

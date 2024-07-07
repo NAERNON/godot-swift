@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class RDShaderSource: RefCounted {
     internal static var __method_binding_set_stage_source: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_stage_source").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 620821314)!
-        }
+            GodotStringName(swiftStaticString: "set_stage_source").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 620821314)!
+            }
         }
     }()
-
+    
     public func setStageSource(
         stage: Godot.RenderingDevice.ShaderStage,
         source: Godot.GodotString
@@ -33,15 +33,15 @@ open class RDShaderSource: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_stage_source: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_stage_source").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3354920045)!
-        }
+            GodotStringName(swiftStaticString: "get_stage_source").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3354920045)!
+            }
         }
     }()
-
+    
     private func __getStageSource(
         stage: Godot.RenderingDevice.ShaderStage
     ) -> Godot.GodotString {
@@ -60,15 +60,15 @@ open class RDShaderSource: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_language").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3422186742)!
-        }
+            GodotStringName(swiftStaticString: "set_language").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3422186742)!
+            }
         }
     }()
-
+    
     private func __setLanguage(
         _ language: Godot.RenderingDevice.ShaderLanguage
     ) {
@@ -85,15 +85,15 @@ open class RDShaderSource: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_language").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1063538261)!
-        }
+            GodotStringName(swiftStaticString: "get_language").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1063538261)!
+            }
         }
     }()
-
+    
     private func __getLanguage() -> Godot.RenderingDevice.ShaderLanguage {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -106,7 +106,7 @@ open class RDShaderSource: RefCounted {
             }
         }
     }
-
+    
     public var sourceVertex: Godot.GodotString {
         get {
             __getStageSource(
@@ -114,7 +114,7 @@ open class RDShaderSource: RefCounted {
             )
         }
     }
-
+    
     public var sourceFragment: Godot.GodotString {
         get {
             __getStageSource(
@@ -122,7 +122,7 @@ open class RDShaderSource: RefCounted {
             )
         }
     }
-
+    
     public var sourceTesselationControl: Godot.GodotString {
         get {
             __getStageSource(
@@ -130,7 +130,7 @@ open class RDShaderSource: RefCounted {
             )
         }
     }
-
+    
     public var sourceTesselationEvaluation: Godot.GodotString {
         get {
             __getStageSource(
@@ -138,7 +138,7 @@ open class RDShaderSource: RefCounted {
             )
         }
     }
-
+    
     public var sourceCompute: Godot.GodotString {
         get {
             __getStageSource(
@@ -146,29 +146,26 @@ open class RDShaderSource: RefCounted {
             )
         }
     }
-
+    
     public var language: Godot.RenderingDevice.ShaderLanguage {
         get {
             __getLanguage()
         }
-        set {
+        set(newValue) {
             __setLanguage(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

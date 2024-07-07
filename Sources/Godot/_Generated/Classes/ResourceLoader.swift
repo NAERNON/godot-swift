@@ -11,37 +11,39 @@ open class ResourceLoader: Object {
         case inProgress = 1
         case failed = 2
         case loaded = 3
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Invalid Resource", 0),
-            ("In Progress", 1),
-            ("Failed", 2),
-            ("Loaded", 3),]
+               ("Invalid Resource", 0),
+               ("In Progress", 1),
+               ("Failed", 2),
+               ("Loaded", 3),
+            ]
         }
     }
-
+    
     public enum CacheMode: UInt32, GodotEnum {
         case ignore = 0
         case reuse = 1
         case replace = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Ignore", 0),
-            ("Reuse", 1),
-            ("Replace", 2),]
+               ("Ignore", 0),
+               ("Reuse", 1),
+               ("Replace", 2),
+            ]
         }
     }
-
+    
     internal static var __method_binding_load_threaded_request: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "load_threaded_request").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614384323)!
-        }
+            GodotStringName(swiftStaticString: "load_threaded_request").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614384323)!
+            }
         }
     }()
-
+    
     public func loadThreadedRequest(
         path: Godot.GodotString,
         typeHint: Godot.GodotString = "",
@@ -69,15 +71,15 @@ open class ResourceLoader: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_load_threaded_get_status: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "load_threaded_get_status").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4137685479)!
-        }
+            GodotStringName(swiftStaticString: "load_threaded_get_status").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4137685479)!
+            }
         }
     }()
-
+    
     public func loadThreadedGetStatus<Value: Variant.Storable>(
         path: Godot.GodotString,
         progress: Godot.GodotArray<Value> = []
@@ -99,15 +101,15 @@ open class ResourceLoader: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_load_threaded_get: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "load_threaded_get").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1748875256)!
-        }
+            GodotStringName(swiftStaticString: "load_threaded_get").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1748875256)!
+            }
         }
     }()
-
+    
     public func loadThreadedGet(
         path: Godot.GodotString
     ) -> Godot.Resource? {
@@ -126,15 +128,15 @@ open class ResourceLoader: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_load: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "load").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3358495409)!
-        }
+            GodotStringName(swiftStaticString: "load").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3358495409)!
+            }
         }
     }()
-
+    
     public func load(
         path: Godot.GodotString,
         typeHint: Godot.GodotString = "",
@@ -159,15 +161,15 @@ open class ResourceLoader: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_recognized_extensions_for_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_recognized_extensions_for_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3538744774)!
-        }
+            GodotStringName(swiftStaticString: "get_recognized_extensions_for_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3538744774)!
+            }
         }
     }()
-
+    
     public func recognizedExtensionsForType(
         _ type: Godot.GodotString
     ) -> Godot.GodotContiguousArray<GodotString> {
@@ -186,15 +188,15 @@ open class ResourceLoader: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_add_resource_format_loader: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_resource_format_loader").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2896595483)!
-        }
+            GodotStringName(swiftStaticString: "add_resource_format_loader").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2896595483)!
+            }
         }
     }()
-
+    
     public func addResourceFormatLoader(
         _ formatLoader: Godot.ResourceFormatLoader?,
         atFront front: Bool = false
@@ -216,15 +218,15 @@ open class ResourceLoader: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_resource_format_loader: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_resource_format_loader").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 405397102)!
-        }
+            GodotStringName(swiftStaticString: "remove_resource_format_loader").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 405397102)!
+            }
         }
     }()
-
+    
     public func removeResourceFormatLoader(
         _ formatLoader: Godot.ResourceFormatLoader?
     ) {
@@ -243,15 +245,15 @@ open class ResourceLoader: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_abort_on_missing_resources: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_abort_on_missing_resources").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_abort_on_missing_resources").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     public func setAbortOnMissingResources(
         abort: Bool
     ) {
@@ -268,15 +270,15 @@ open class ResourceLoader: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_dependencies: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_dependencies").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3538744774)!
-        }
+            GodotStringName(swiftStaticString: "get_dependencies").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3538744774)!
+            }
         }
     }()
-
+    
     public func dependencies(
         path: Godot.GodotString
     ) -> Godot.GodotContiguousArray<GodotString> {
@@ -295,15 +297,15 @@ open class ResourceLoader: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_has_cached: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_cached").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2323990056)!
-        }
+            GodotStringName(swiftStaticString: "has_cached").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2323990056)!
+            }
         }
     }()
-
+    
     public func hasCached(
         path: Godot.GodotString
     ) -> Bool {
@@ -322,15 +324,15 @@ open class ResourceLoader: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_exists: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "exists").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4185558881)!
-        }
+            GodotStringName(swiftStaticString: "exists").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4185558881)!
+            }
         }
     }()
-
+    
     public func exists(
         path: Godot.GodotString,
         typeHint: Godot.GodotString = ""
@@ -352,15 +354,15 @@ open class ResourceLoader: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_resource_uid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_resource_uid").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1597066294)!
-        }
+            GodotStringName(swiftStaticString: "get_resource_uid").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1597066294)!
+            }
         }
     }()
-
+    
     public func resourceUid(
         path: Godot.GodotString
     ) -> Int64 {
@@ -379,18 +381,15 @@ open class ResourceLoader: Object {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

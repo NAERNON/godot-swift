@@ -6,11 +6,10 @@ import GodotExtensionHeaders
 
 @GodotClass
 open class EditorFileSystem: Node {
-
+    
     public func filesystemChanged() {
         _ = filesystemChangedSignal.emit()
     }
-
     public lazy var filesystemChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "filesystem_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -25,11 +24,11 @@ open class EditorFileSystem: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func scriptClassesUpdated() {
         _ = scriptClassesUpdatedSignal.emit()
     }
-
     public lazy var scriptClassesUpdatedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "script_classes_updated") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -44,29 +43,19 @@ open class EditorFileSystem: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct SourcesChangedSignalInput: Godot.SignalInput {
         public let exist: Bool
-
-        fileprivate init(
-            exist: Bool
-        ) {
+        fileprivate init(exist: Bool) {
             self.exist = exist
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.exist)]
         }
     }
-
-    public func sourcesChanged(
-        exist: Bool
-    ) {
+    public func sourcesChanged(exist: Bool) {
         _ = sourcesChangedSignal.emit(.init(exist: exist))
     }
-
     public lazy var sourcesChangedSignal: Godot.SignalEmitter<SourcesChangedSignalInput> = {
         .init(object: self, signalName: "sources_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SourcesChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -81,29 +70,19 @@ open class EditorFileSystem: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct ResourcesReimportedSignalInput: Godot.SignalInput {
         public let resources: Godot.GodotContiguousArray<GodotString>
-
-        fileprivate init(
-            resources: Godot.GodotContiguousArray<GodotString>
-        ) {
+        fileprivate init(resources: Godot.GodotContiguousArray<GodotString>) {
             self.resources = resources
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.resources)]
         }
     }
-
-    public func resourcesReimported(
-        resources: Godot.GodotContiguousArray<GodotString>
-    ) {
+    public func resourcesReimported(resources: Godot.GodotContiguousArray<GodotString>) {
         _ = resourcesReimportedSignal.emit(.init(resources: resources))
     }
-
     public lazy var resourcesReimportedSignal: Godot.SignalEmitter<ResourcesReimportedSignalInput> = {
         .init(object: self, signalName: "resources_reimported") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ResourcesReimportedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -118,29 +97,19 @@ open class EditorFileSystem: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct ResourcesReloadSignalInput: Godot.SignalInput {
         public let resources: Godot.GodotContiguousArray<GodotString>
-
-        fileprivate init(
-            resources: Godot.GodotContiguousArray<GodotString>
-        ) {
+        fileprivate init(resources: Godot.GodotContiguousArray<GodotString>) {
             self.resources = resources
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.resources)]
         }
     }
-
-    public func resourcesReload(
-        resources: Godot.GodotContiguousArray<GodotString>
-    ) {
+    public func resourcesReload(resources: Godot.GodotContiguousArray<GodotString>) {
         _ = resourcesReloadSignal.emit(.init(resources: resources))
     }
-
     public lazy var resourcesReloadSignal: Godot.SignalEmitter<ResourcesReloadSignalInput> = {
         .init(object: self, signalName: "resources_reload") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ResourcesReloadSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -155,15 +124,15 @@ open class EditorFileSystem: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_get_filesystem: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_filesystem").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 842323275)!
-        }
+            GodotStringName(swiftStaticString: "get_filesystem").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 842323275)!
+            }
         }
     }()
-
+    
     public func filesystem() -> Godot.EditorFileSystemDirectory? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -176,15 +145,15 @@ open class EditorFileSystem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_is_scanning: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_scanning").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_scanning").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isScanning() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -197,15 +166,15 @@ open class EditorFileSystem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_scanning_progress: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_scanning_progress").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_scanning_progress").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     public func scanningProgress() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -218,15 +187,15 @@ open class EditorFileSystem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_scan: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "scan").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "scan").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func scan() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -237,15 +206,15 @@ open class EditorFileSystem: Node {
             )
         }
     }
-
+    
     internal static var __method_binding_scan_sources: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "scan_sources").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "scan_sources").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func scanSources() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -256,15 +225,15 @@ open class EditorFileSystem: Node {
             )
         }
     }
-
+    
     internal static var __method_binding_update_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "update_file").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "update_file").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     public func updateFile(
         path: Godot.GodotString
     ) {
@@ -281,15 +250,15 @@ open class EditorFileSystem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_filesystem_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_filesystem_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3188521125)!
-        }
+            GodotStringName(swiftStaticString: "get_filesystem_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3188521125)!
+            }
         }
     }()
-
+    
     public func filesystemPath(
         _ path: Godot.GodotString
     ) -> Godot.EditorFileSystemDirectory? {
@@ -308,15 +277,15 @@ open class EditorFileSystem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_file_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_file_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3135753539)!
-        }
+            GodotStringName(swiftStaticString: "get_file_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3135753539)!
+            }
         }
     }()
-
+    
     public func fileType(
         path: Godot.GodotString
     ) -> Godot.GodotString {
@@ -335,15 +304,15 @@ open class EditorFileSystem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_reimport_files: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "reimport_files").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4015028928)!
-        }
+            GodotStringName(swiftStaticString: "reimport_files").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4015028928)!
+            }
         }
     }()
-
+    
     public func reimportFiles(
         _ files: Godot.GodotContiguousArray<GodotString>
     ) {
@@ -360,18 +329,15 @@ open class EditorFileSystem: Node {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

@@ -10,19 +10,20 @@ open class MultiplayerSynchronizer: Node {
         case idle = 0
         case physics = 1
         case none = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Idle", 0),
-            ("Physics", 1),
-            ("None", 2),]
+               ("Idle", 0),
+               ("Physics", 1),
+               ("None", 2),
+            ]
         }
     }
-
+    
+    
     public func synchronized() {
         _ = synchronizedSignal.emit()
     }
-
     public lazy var synchronizedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "synchronized") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -37,11 +38,11 @@ open class MultiplayerSynchronizer: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func deltaSynchronized() {
         _ = deltaSynchronizedSignal.emit()
     }
-
     public lazy var deltaSynchronizedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "delta_synchronized") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -56,29 +57,19 @@ open class MultiplayerSynchronizer: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct VisibilityChangedSignalInput: Godot.SignalInput {
         public let forPeer: Int
-
-        fileprivate init(
-            forPeer: Int
-        ) {
+        fileprivate init(forPeer: Int) {
             self.forPeer = forPeer
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.forPeer)]
         }
     }
-
-    public func visibilityChanged(
-        forPeer: Int
-    ) {
+    public func visibilityChanged(forPeer: Int) {
         _ = visibilityChangedSignal.emit(.init(forPeer: forPeer))
     }
-
     public lazy var visibilityChangedSignal: Godot.SignalEmitter<VisibilityChangedSignalInput> = {
         .init(object: self, signalName: "visibility_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<VisibilityChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -93,15 +84,15 @@ open class MultiplayerSynchronizer: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_set_root_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_root_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
-        }
+            GodotStringName(swiftStaticString: "set_root_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
+            }
         }
     }()
-
+    
     private func __setRootPath(
         _ path: Godot.NodePath
     ) {
@@ -118,15 +109,15 @@ open class MultiplayerSynchronizer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_root_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_root_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
-        }
+            GodotStringName(swiftStaticString: "get_root_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
+            }
         }
     }()
-
+    
     private func __getRootPath() -> Godot.NodePath {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -139,15 +130,15 @@ open class MultiplayerSynchronizer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_replication_interval: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_replication_interval").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_replication_interval").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setReplicationInterval(
         milliseconds: Double
     ) {
@@ -164,15 +155,15 @@ open class MultiplayerSynchronizer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_replication_interval: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_replication_interval").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_replication_interval").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getReplicationInterval() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -185,15 +176,15 @@ open class MultiplayerSynchronizer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_delta_interval: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_delta_interval").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_delta_interval").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setDeltaInterval(
         milliseconds: Double
     ) {
@@ -210,15 +201,15 @@ open class MultiplayerSynchronizer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_delta_interval: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_delta_interval").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_delta_interval").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getDeltaInterval() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -231,15 +222,15 @@ open class MultiplayerSynchronizer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_replication_config: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_replication_config").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3889206742)!
-        }
+            GodotStringName(swiftStaticString: "set_replication_config").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3889206742)!
+            }
         }
     }()
-
+    
     private func __setReplicationConfig(
         _ config: Godot.SceneReplicationConfig?
     ) {
@@ -258,15 +249,15 @@ open class MultiplayerSynchronizer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_replication_config: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_replication_config").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3200254614)!
-        }
+            GodotStringName(swiftStaticString: "get_replication_config").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3200254614)!
+            }
         }
     }()
-
+    
     private func __getReplicationConfig() -> Godot.SceneReplicationConfig? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -279,15 +270,15 @@ open class MultiplayerSynchronizer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_visibility_update_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_visibility_update_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3494860300)!
-        }
+            GodotStringName(swiftStaticString: "set_visibility_update_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3494860300)!
+            }
         }
     }()
-
+    
     private func __setVisibilityUpdateMode(
         _ mode: Godot.MultiplayerSynchronizer.VisibilityUpdateMode
     ) {
@@ -304,15 +295,15 @@ open class MultiplayerSynchronizer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_visibility_update_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_visibility_update_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3352241418)!
-        }
+            GodotStringName(swiftStaticString: "get_visibility_update_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3352241418)!
+            }
         }
     }()
-
+    
     private func __getVisibilityUpdateMode() -> Godot.MultiplayerSynchronizer.VisibilityUpdateMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -325,15 +316,15 @@ open class MultiplayerSynchronizer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_update_visibility: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "update_visibility").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1995695955)!
-        }
+            GodotStringName(swiftStaticString: "update_visibility").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1995695955)!
+            }
         }
     }()
-
+    
     public func updateVisibility(
         forPeer peer: Int32 = 0
     ) {
@@ -350,15 +341,15 @@ open class MultiplayerSynchronizer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_visibility_public: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_visibility_public").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_visibility_public").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setVisibilityPublic(
         visible: Bool
     ) {
@@ -375,15 +366,15 @@ open class MultiplayerSynchronizer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_is_visibility_public: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_visibility_public").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_visibility_public").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isVisibilityPublic() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -396,15 +387,15 @@ open class MultiplayerSynchronizer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_add_visibility_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_visibility_filter").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1611583062)!
-        }
+            GodotStringName(swiftStaticString: "add_visibility_filter").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1611583062)!
+            }
         }
     }()
-
+    
     public func addVisibilityFilter(
         _ filter: Godot.Callable
     ) {
@@ -421,15 +412,15 @@ open class MultiplayerSynchronizer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_visibility_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_visibility_filter").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1611583062)!
-        }
+            GodotStringName(swiftStaticString: "remove_visibility_filter").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1611583062)!
+            }
         }
     }()
-
+    
     public func removeVisibilityFilter(
         _ filter: Godot.Callable
     ) {
@@ -446,15 +437,15 @@ open class MultiplayerSynchronizer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_visibility_for: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_visibility_for").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "set_visibility_for").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func setVisibilityFor(
         peer: Int32,
         visible: Bool
@@ -474,15 +465,15 @@ open class MultiplayerSynchronizer: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_visibility_for: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_visibility_for").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "get_visibility_for").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func visibilityFor(
         peer: Int32
     ) -> Bool {
@@ -501,84 +492,81 @@ open class MultiplayerSynchronizer: Node {
             }
         }
     }
-
+    
     public var rootPath: Godot.NodePath {
         get {
             __getRootPath()
         }
-        set {
+        set(newValue) {
             __setRootPath(
                 newValue
             )
         }
     }
-
+    
     public var replicationInterval: Double {
         get {
             __getReplicationInterval()
         }
-        set {
+        set(newValue) {
             __setReplicationInterval(
                 milliseconds: newValue
             )
         }
     }
-
+    
     public var deltaInterval: Double {
         get {
             __getDeltaInterval()
         }
-        set {
+        set(newValue) {
             __setDeltaInterval(
                 milliseconds: newValue
             )
         }
     }
-
+    
     public var replicationConfig: Godot.SceneReplicationConfig? {
         get {
             __getReplicationConfig()
         }
-        set {
+        set(newValue) {
             __setReplicationConfig(
                 newValue
             )
         }
     }
-
+    
     public var visibilityUpdateMode: Godot.MultiplayerSynchronizer.VisibilityUpdateMode {
         get {
             __getVisibilityUpdateMode()
         }
-        set {
+        set(newValue) {
             __setVisibilityUpdateMode(
                 newValue
             )
         }
     }
-
+    
     public var isVisibilityPublic: Bool {
         get {
             __isVisibilityPublic()
         }
-        set {
+        set(newValue) {
             __setVisibilityPublic(
                 visible: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

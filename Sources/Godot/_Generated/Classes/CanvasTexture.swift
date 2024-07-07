@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class CanvasTexture: Texture2D {
     internal static var __method_binding_set_diffuse_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_diffuse_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
-        }
+            GodotStringName(swiftStaticString: "set_diffuse_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
+            }
         }
     }()
-
+    
     private func __setDiffuseTexture(
         _ texture: Godot.Texture2D?
     ) {
@@ -32,15 +32,15 @@ open class CanvasTexture: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_diffuse_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_diffuse_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
-        }
+            GodotStringName(swiftStaticString: "get_diffuse_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
+            }
         }
     }()
-
+    
     private func __getDiffuseTexture() -> Godot.Texture2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -53,15 +53,15 @@ open class CanvasTexture: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_normal_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_normal_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
-        }
+            GodotStringName(swiftStaticString: "set_normal_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
+            }
         }
     }()
-
+    
     private func __setNormalTexture(
         _ texture: Godot.Texture2D?
     ) {
@@ -80,15 +80,15 @@ open class CanvasTexture: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_normal_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_normal_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
-        }
+            GodotStringName(swiftStaticString: "get_normal_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
+            }
         }
     }()
-
+    
     private func __getNormalTexture() -> Godot.Texture2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -101,15 +101,15 @@ open class CanvasTexture: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_specular_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_specular_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
-        }
+            GodotStringName(swiftStaticString: "set_specular_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
+            }
         }
     }()
-
+    
     private func __setSpecularTexture(
         _ texture: Godot.Texture2D?
     ) {
@@ -128,15 +128,15 @@ open class CanvasTexture: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_specular_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_specular_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
-        }
+            GodotStringName(swiftStaticString: "get_specular_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
+            }
         }
     }()
-
+    
     private func __getSpecularTexture() -> Godot.Texture2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -149,15 +149,15 @@ open class CanvasTexture: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_specular_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_specular_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
-        }
+            GodotStringName(swiftStaticString: "set_specular_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
+            }
         }
     }()
-
+    
     private func __setSpecularColor(
         _ color: Godot.Color
     ) {
@@ -174,15 +174,15 @@ open class CanvasTexture: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_specular_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_specular_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
-        }
+            GodotStringName(swiftStaticString: "get_specular_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
+            }
         }
     }()
-
+    
     private func __getSpecularColor() -> Godot.Color {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -195,15 +195,15 @@ open class CanvasTexture: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_specular_shininess: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_specular_shininess").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_specular_shininess").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setSpecularShininess(
         _ shininess: Double
     ) {
@@ -220,15 +220,15 @@ open class CanvasTexture: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_specular_shininess: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_specular_shininess").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_specular_shininess").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getSpecularShininess() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -241,15 +241,15 @@ open class CanvasTexture: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_filter").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1037999706)!
-        }
+            GodotStringName(swiftStaticString: "set_texture_filter").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1037999706)!
+            }
         }
     }()
-
+    
     private func __setTextureFilter(
         _ filter: Godot.CanvasItem.TextureFilter
     ) {
@@ -266,15 +266,15 @@ open class CanvasTexture: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_filter").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 121960042)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_filter").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 121960042)!
+            }
         }
     }()
-
+    
     private func __getTextureFilter() -> Godot.CanvasItem.TextureFilter {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -287,15 +287,15 @@ open class CanvasTexture: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture_repeat: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_repeat").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1716472974)!
-        }
+            GodotStringName(swiftStaticString: "set_texture_repeat").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1716472974)!
+            }
         }
     }()
-
+    
     private func __setTextureRepeat(
         _ `repeat`: Godot.CanvasItem.TextureRepeat
     ) {
@@ -312,15 +312,15 @@ open class CanvasTexture: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_repeat: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_repeat").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2667158319)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_repeat").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2667158319)!
+            }
         }
     }()
-
+    
     private func __getTextureRepeat() -> Godot.CanvasItem.TextureRepeat {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -333,95 +333,92 @@ open class CanvasTexture: Texture2D {
             }
         }
     }
-
+    
     public var diffuseTexture: Godot.Texture2D? {
         get {
             __getDiffuseTexture()
         }
-        set {
+        set(newValue) {
             __setDiffuseTexture(
                 newValue
             )
         }
     }
-
+    
     public var normalTexture: Godot.Texture2D? {
         get {
             __getNormalTexture()
         }
-        set {
+        set(newValue) {
             __setNormalTexture(
                 newValue
             )
         }
     }
-
+    
     public var specularTexture: Godot.Texture2D? {
         get {
             __getSpecularTexture()
         }
-        set {
+        set(newValue) {
             __setSpecularTexture(
                 newValue
             )
         }
     }
-
+    
     public var specularColor: Godot.Color {
         get {
             __getSpecularColor()
         }
-        set {
+        set(newValue) {
             __setSpecularColor(
                 newValue
             )
         }
     }
-
+    
     public var specularShininess: Double {
         get {
             __getSpecularShininess()
         }
-        set {
+        set(newValue) {
             __setSpecularShininess(
                 newValue
             )
         }
     }
-
+    
     public var textureFilter: Godot.CanvasItem.TextureFilter {
         get {
             __getTextureFilter()
         }
-        set {
+        set(newValue) {
             __setTextureFilter(
                 newValue
             )
         }
     }
-
+    
     public var textureRepeat: Godot.CanvasItem.TextureRepeat {
         get {
             __getTextureRepeat()
         }
-        set {
+        set(newValue) {
             __setTextureRepeat(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

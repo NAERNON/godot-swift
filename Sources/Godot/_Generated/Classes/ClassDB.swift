@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class ClassDB: Object {
     internal static var __method_binding_get_class_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_class_list").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
-        }
+            GodotStringName(swiftStaticString: "get_class_list").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
+            }
         }
     }()
-
+    
     public func classList() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -26,15 +26,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_inheriters_from_class: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_inheriters_from_class").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1761182771)!
-        }
+            GodotStringName(swiftStaticString: "get_inheriters_from_class").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1761182771)!
+            }
         }
     }()
-
+    
     public func inheritersFromClass(
         _ `class`: Godot.GodotStringName
     ) -> Godot.GodotContiguousArray<GodotString> {
@@ -53,15 +53,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_parent_class: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_parent_class").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1965194235)!
-        }
+            GodotStringName(swiftStaticString: "get_parent_class").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1965194235)!
+            }
         }
     }()
-
+    
     public func parentClass(
         _ `class`: Godot.GodotStringName
     ) -> Godot.GodotStringName {
@@ -80,15 +80,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_class_exists: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "class_exists").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
-        }
+            GodotStringName(swiftStaticString: "class_exists").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
+            }
         }
     }()
-
+    
     public func classExists(
         `class`: Godot.GodotStringName
     ) -> Bool {
@@ -107,15 +107,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_parent_class: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_parent_class").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 471820014)!
-        }
+            GodotStringName(swiftStaticString: "is_parent_class").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 471820014)!
+            }
         }
     }()
-
+    
     public func isParentClass(
         _ `class`: Godot.GodotStringName,
         inherits: Godot.GodotStringName
@@ -137,15 +137,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_can_instantiate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "can_instantiate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
-        }
+            GodotStringName(swiftStaticString: "can_instantiate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
+            }
         }
     }()
-
+    
     public func canInstantiate(
         `class`: Godot.GodotStringName
     ) -> Bool {
@@ -164,15 +164,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_instantiate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "instantiate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2760726917)!
-        }
+            GodotStringName(swiftStaticString: "instantiate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2760726917)!
+            }
         }
     }()
-
+    
     public func instantiate(
         `class`: Godot.GodotStringName
     ) -> Godot.Variant {
@@ -191,15 +191,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_class_has_signal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "class_has_signal").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 471820014)!
-        }
+            GodotStringName(swiftStaticString: "class_has_signal").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 471820014)!
+            }
         }
     }()
-
+    
     public func classHasSignal(
         `class`: Godot.GodotStringName,
         signal: Godot.GodotStringName
@@ -221,15 +221,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_class_get_signal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "class_get_signal").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3061114238)!
-        }
+            GodotStringName(swiftStaticString: "class_get_signal").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3061114238)!
+            }
         }
     }()
-
+    
     public func classGetSignal(
         `class`: Godot.GodotStringName,
         signal: Godot.GodotStringName
@@ -251,15 +251,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_class_get_signal_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "class_get_signal_list").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3504980660)!
-        }
+            GodotStringName(swiftStaticString: "class_get_signal_list").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3504980660)!
+            }
         }
     }()
-
+    
     public func classGetSignalList(
         `class`: Godot.GodotStringName,
         noInheritance: Bool = false
@@ -281,15 +281,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_class_get_property_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "class_get_property_list").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3504980660)!
-        }
+            GodotStringName(swiftStaticString: "class_get_property_list").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3504980660)!
+            }
         }
     }()
-
+    
     public func classGetPropertyList(
         `class`: Godot.GodotStringName,
         noInheritance: Bool = false
@@ -311,15 +311,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_class_get_property: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "class_get_property").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2498641674)!
-        }
+            GodotStringName(swiftStaticString: "class_get_property").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2498641674)!
+            }
         }
     }()
-
+    
     public func classGetProperty(
         object: Godot.Object?,
         property: Godot.GodotStringName
@@ -343,15 +343,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_class_set_property: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "class_set_property").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1690314931)!
-        }
+            GodotStringName(swiftStaticString: "class_set_property").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1690314931)!
+            }
         }
     }()
-
+    
     public func classSetProperty<Value: Variant.Storable>(
         object: Godot.Object?,
         property: Godot.GodotStringName,
@@ -378,15 +378,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_class_has_method: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "class_has_method").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3860701026)!
-        }
+            GodotStringName(swiftStaticString: "class_has_method").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3860701026)!
+            }
         }
     }()
-
+    
     public func classHasMethod(
         `class`: Godot.GodotStringName,
         method: Godot.GodotStringName,
@@ -411,15 +411,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_class_get_method_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "class_get_method_list").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3504980660)!
-        }
+            GodotStringName(swiftStaticString: "class_get_method_list").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3504980660)!
+            }
         }
     }()
-
+    
     public func classGetMethodList(
         `class`: Godot.GodotStringName,
         noInheritance: Bool = false
@@ -441,15 +441,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_class_get_integer_constant_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "class_get_integer_constant_list").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3031669221)!
-        }
+            GodotStringName(swiftStaticString: "class_get_integer_constant_list").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3031669221)!
+            }
         }
     }()
-
+    
     public func classGetIntegerConstantList(
         `class`: Godot.GodotStringName,
         noInheritance: Bool = false
@@ -471,15 +471,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_class_has_integer_constant: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "class_has_integer_constant").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 471820014)!
-        }
+            GodotStringName(swiftStaticString: "class_has_integer_constant").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 471820014)!
+            }
         }
     }()
-
+    
     public func classHasIntegerConstant(
         `class`: Godot.GodotStringName,
         name: Godot.GodotStringName
@@ -501,15 +501,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_class_get_integer_constant: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "class_get_integer_constant").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2419549490)!
-        }
+            GodotStringName(swiftStaticString: "class_get_integer_constant").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2419549490)!
+            }
         }
     }()
-
+    
     public func classGetIntegerConstant(
         `class`: Godot.GodotStringName,
         name: Godot.GodotStringName
@@ -531,15 +531,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_class_has_enum: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "class_has_enum").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3860701026)!
-        }
+            GodotStringName(swiftStaticString: "class_has_enum").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3860701026)!
+            }
         }
     }()
-
+    
     public func classHasEnum(
         `class`: Godot.GodotStringName,
         name: Godot.GodotStringName,
@@ -564,15 +564,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_class_get_enum_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "class_get_enum_list").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3031669221)!
-        }
+            GodotStringName(swiftStaticString: "class_get_enum_list").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3031669221)!
+            }
         }
     }()
-
+    
     public func classGetEnumList(
         `class`: Godot.GodotStringName,
         noInheritance: Bool = false
@@ -594,15 +594,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_class_get_enum_constants: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "class_get_enum_constants").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 661528303)!
-        }
+            GodotStringName(swiftStaticString: "class_get_enum_constants").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 661528303)!
+            }
         }
     }()
-
+    
     public func classGetEnumConstants(
         `class`: Godot.GodotStringName,
         `enum`: Godot.GodotStringName,
@@ -627,15 +627,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_class_get_integer_constant_enum: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "class_get_integer_constant_enum").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2457504236)!
-        }
+            GodotStringName(swiftStaticString: "class_get_integer_constant_enum").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2457504236)!
+            }
         }
     }()
-
+    
     public func classGetIntegerConstantEnum(
         `class`: Godot.GodotStringName,
         name: Godot.GodotStringName,
@@ -660,15 +660,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_class_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_class_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
-        }
+            GodotStringName(swiftStaticString: "is_class_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
+            }
         }
     }()
-
+    
     public func isClassEnabled(
         `class`: Godot.GodotStringName
     ) -> Bool {
@@ -687,18 +687,15 @@ open class ClassDB: Object {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

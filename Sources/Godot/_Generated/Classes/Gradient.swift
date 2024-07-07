@@ -10,36 +10,38 @@ open class Gradient: Resource {
         case linear = 0
         case constant = 1
         case cubic = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Linear", 0),
-            ("Constant", 1),
-            ("Cubic", 2),]
+               ("Linear", 0),
+               ("Constant", 1),
+               ("Cubic", 2),
+            ]
         }
     }
-
+    
     public enum ColorSpace: UInt32, GodotEnum {
         case srgb = 0
         case linearSrgb = 1
         case oklab = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Srgb", 0),
-            ("Linear Srgb", 1),
-            ("Oklab", 2),]
+               ("Srgb", 0),
+               ("Linear Srgb", 1),
+               ("Oklab", 2),
+            ]
         }
     }
-
+    
     internal static var __method_binding_add_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_point").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3629403827)!
-        }
+            GodotStringName(swiftStaticString: "add_point").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3629403827)!
+            }
         }
     }()
-
+    
     public func addPoint(
         offset: Double,
         color: Godot.Color
@@ -59,15 +61,15 @@ open class Gradient: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_point").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "remove_point").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func removePoint(
         _ point: Int32
     ) {
@@ -84,15 +86,15 @@ open class Gradient: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
-        }
+            GodotStringName(swiftStaticString: "set_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
+            }
         }
     }()
-
+    
     public func setOffset(
         point: Int32,
         offset: Double
@@ -112,15 +114,15 @@ open class Gradient: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4025615559)!
-        }
+            GodotStringName(swiftStaticString: "get_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4025615559)!
+            }
         }
     }()
-
+    
     public func offset(
         point: Int32
     ) -> Double {
@@ -139,15 +141,15 @@ open class Gradient: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_reverse: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "reverse").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "reverse").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func reverse() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -158,15 +160,15 @@ open class Gradient: Resource {
             )
         }
     }
-
+    
     internal static var __method_binding_set_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2878471219)!
-        }
+            GodotStringName(swiftStaticString: "set_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2878471219)!
+            }
         }
     }()
-
+    
     public func setColor(
         point: Int32,
         color: Godot.Color
@@ -186,15 +188,15 @@ open class Gradient: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2624840992)!
-        }
+            GodotStringName(swiftStaticString: "get_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2624840992)!
+            }
         }
     }()
-
+    
     public func color(
         point: Int32
     ) -> Godot.Color {
@@ -213,15 +215,15 @@ open class Gradient: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_sample: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "sample").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1250405064)!
-        }
+            GodotStringName(swiftStaticString: "sample").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1250405064)!
+            }
         }
     }()
-
+    
     public func sample(
         offset: Double
     ) -> Godot.Color {
@@ -240,15 +242,15 @@ open class Gradient: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_point_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_point_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func pointCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -261,15 +263,15 @@ open class Gradient: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_offsets: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_offsets").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2899603908)!
-        }
+            GodotStringName(swiftStaticString: "set_offsets").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2899603908)!
+            }
         }
     }()
-
+    
     private func __setOffsets(
         _ offsets: Godot.GodotContiguousArray<Float>
     ) {
@@ -286,15 +288,15 @@ open class Gradient: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_offsets: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_offsets").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 675695659)!
-        }
+            GodotStringName(swiftStaticString: "get_offsets").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 675695659)!
+            }
         }
     }()
-
+    
     private func __getOffsets() -> Godot.GodotContiguousArray<Float> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -307,15 +309,15 @@ open class Gradient: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_colors: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_colors").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3546319833)!
-        }
+            GodotStringName(swiftStaticString: "set_colors").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3546319833)!
+            }
         }
     }()
-
+    
     private func __setColors(
         _ colors: Godot.GodotContiguousArray<Color>
     ) {
@@ -332,15 +334,15 @@ open class Gradient: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_colors: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_colors").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1392750486)!
-        }
+            GodotStringName(swiftStaticString: "get_colors").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1392750486)!
+            }
         }
     }()
-
+    
     private func __getColors() -> Godot.GodotContiguousArray<Color> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -353,15 +355,15 @@ open class Gradient: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_interpolation_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_interpolation_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1971444490)!
-        }
+            GodotStringName(swiftStaticString: "set_interpolation_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1971444490)!
+            }
         }
     }()
-
+    
     private func __setInterpolationMode(
         _ interpolationMode: Godot.Gradient.InterpolationMode
     ) {
@@ -378,15 +380,15 @@ open class Gradient: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_interpolation_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_interpolation_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3674172981)!
-        }
+            GodotStringName(swiftStaticString: "get_interpolation_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3674172981)!
+            }
         }
     }()
-
+    
     private func __getInterpolationMode() -> Godot.Gradient.InterpolationMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -399,15 +401,15 @@ open class Gradient: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_interpolation_color_space: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_interpolation_color_space").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3685995981)!
-        }
+            GodotStringName(swiftStaticString: "set_interpolation_color_space").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3685995981)!
+            }
         }
     }()
-
+    
     private func __setInterpolationColorSpace(
         _ interpolationColorSpace: Godot.Gradient.ColorSpace
     ) {
@@ -424,15 +426,15 @@ open class Gradient: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_interpolation_color_space: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_interpolation_color_space").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1538296000)!
-        }
+            GodotStringName(swiftStaticString: "get_interpolation_color_space").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1538296000)!
+            }
         }
     }()
-
+    
     private func __getInterpolationColorSpace() -> Godot.Gradient.ColorSpace {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -445,62 +447,59 @@ open class Gradient: Resource {
             }
         }
     }
-
+    
     public var interpolationMode: Godot.Gradient.InterpolationMode {
         get {
             __getInterpolationMode()
         }
-        set {
+        set(newValue) {
             __setInterpolationMode(
                 newValue
             )
         }
     }
-
+    
     public var interpolationColorSpace: Godot.Gradient.ColorSpace {
         get {
             __getInterpolationColorSpace()
         }
-        set {
+        set(newValue) {
             __setInterpolationColorSpace(
                 newValue
             )
         }
     }
-
+    
     public var offsets: Godot.GodotContiguousArray<Float> {
         get {
             __getOffsets()
         }
-        set {
+        set(newValue) {
             __setOffsets(
                 newValue
             )
         }
     }
-
+    
     public var colors: Godot.GodotContiguousArray<Color> {
         get {
             __getColors()
         }
-        set {
+        set(newValue) {
             __setColors(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

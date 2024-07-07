@@ -17,30 +17,31 @@ open class VisualShaderNode: Resource {
         case transform = 7
         case sampler = 8
         case max = 9
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Scalar", 0),
-            ("Scalar Int", 1),
-            ("Scalar Uint", 2),
-            ("Vector2D", 3),
-            ("Vector3D", 4),
-            ("Vector4D", 5),
-            ("Boolean", 6),
-            ("Transform", 7),
-            ("Sampler", 8),
-            ("Max", 9),]
+               ("Scalar", 0),
+               ("Scalar Int", 1),
+               ("Scalar Uint", 2),
+               ("Vector2D", 3),
+               ("Vector3D", 4),
+               ("Vector4D", 5),
+               ("Boolean", 6),
+               ("Transform", 7),
+               ("Sampler", 8),
+               ("Max", 9),
+            ]
         }
     }
-
+    
     internal static var __method_binding_get_default_input_port: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_default_input_port").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1894493699)!
-        }
+            GodotStringName(swiftStaticString: "get_default_input_port").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1894493699)!
+            }
         }
     }()
-
+    
     public func defaultInputPort(
         type: Godot.VisualShaderNode.PortType
     ) -> Int32 {
@@ -59,15 +60,15 @@ open class VisualShaderNode: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_output_port_for_preview: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_output_port_for_preview").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_output_port_for_preview").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setOutputPortForPreview(
         port: Int32
     ) {
@@ -84,15 +85,15 @@ open class VisualShaderNode: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_output_port_for_preview: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_output_port_for_preview").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_output_port_for_preview").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getOutputPortForPreview() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -105,15 +106,15 @@ open class VisualShaderNode: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_input_port_default_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_input_port_default_value").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 150923387)!
-        }
+            GodotStringName(swiftStaticString: "set_input_port_default_value").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 150923387)!
+            }
         }
     }()
-
+    
     public func setInputPortDefaultValue<Value1: Variant.Storable, Value2: Variant.Storable>(
         port: Int32,
         value: Value1,
@@ -136,15 +137,15 @@ open class VisualShaderNode: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_input_port_default_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_input_port_default_value").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4227898402)!
-        }
+            GodotStringName(swiftStaticString: "get_input_port_default_value").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4227898402)!
+            }
         }
     }()
-
+    
     public func inputPortDefaultValue(
         port: Int32
     ) -> Godot.Variant {
@@ -163,15 +164,15 @@ open class VisualShaderNode: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_input_port_default_value: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_input_port_default_value").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "remove_input_port_default_value").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func removeInputPortDefaultValue(
         port: Int32
     ) {
@@ -188,15 +189,15 @@ open class VisualShaderNode: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_clear_default_input_values: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear_default_input_values").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "clear_default_input_values").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func clearDefaultInputValues() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -207,15 +208,15 @@ open class VisualShaderNode: Resource {
             )
         }
     }
-
+    
     internal static var __method_binding_set_default_input_values: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_default_input_values").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
-        }
+            GodotStringName(swiftStaticString: "set_default_input_values").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
+            }
         }
     }()
-
+    
     private func __setDefaultInputValues<Value: Variant.Storable>(
         _ values: Godot.GodotArray<Value>
     ) {
@@ -232,15 +233,15 @@ open class VisualShaderNode: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_default_input_values: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_default_input_values").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
-        }
+            GodotStringName(swiftStaticString: "get_default_input_values").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
+            }
         }
     }()
-
+    
     private func __getDefaultInputValues() -> Godot.AnyGodotArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -253,40 +254,37 @@ open class VisualShaderNode: Resource {
             }
         }
     }
-
+    
     public var outputPortForPreview: Int32 {
         get {
             __getOutputPortForPreview()
         }
-        set {
+        set(newValue) {
             __setOutputPortForPreview(
                 port: newValue
             )
         }
     }
-
+    
     public var defaultInputValues: Godot.AnyGodotArray {
         get {
             __getDefaultInputValues()
         }
-        set {
+        set(newValue) {
             __setDefaultInputValues(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

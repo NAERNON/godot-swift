@@ -10,23 +10,24 @@ open class VisibleOnScreenEnabler2D: VisibleOnScreenNotifier2D {
         case inherit = 0
         case always = 1
         case whenPaused = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Inherit", 0),
-            ("Always", 1),
-            ("When Paused", 2),]
+               ("Inherit", 0),
+               ("Always", 1),
+               ("When Paused", 2),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_enable_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_enable_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961788752)!
-        }
+            GodotStringName(swiftStaticString: "set_enable_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961788752)!
+            }
         }
     }()
-
+    
     private func __setEnableMode(
         _ mode: Godot.VisibleOnScreenEnabler2D.EnableMode
     ) {
@@ -43,15 +44,15 @@ open class VisibleOnScreenEnabler2D: VisibleOnScreenNotifier2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_enable_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_enable_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2650445576)!
-        }
+            GodotStringName(swiftStaticString: "get_enable_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2650445576)!
+            }
         }
     }()
-
+    
     private func __getEnableMode() -> Godot.VisibleOnScreenEnabler2D.EnableMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -64,15 +65,15 @@ open class VisibleOnScreenEnabler2D: VisibleOnScreenNotifier2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_enable_node_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_enable_node_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
-        }
+            GodotStringName(swiftStaticString: "set_enable_node_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
+            }
         }
     }()
-
+    
     private func __setEnableNodePath(
         _ path: Godot.NodePath
     ) {
@@ -89,15 +90,15 @@ open class VisibleOnScreenEnabler2D: VisibleOnScreenNotifier2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_enable_node_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_enable_node_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 277076166)!
-        }
+            GodotStringName(swiftStaticString: "get_enable_node_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 277076166)!
+            }
         }
     }()
-
+    
     private func __getEnableNodePath() -> Godot.NodePath {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -110,40 +111,37 @@ open class VisibleOnScreenEnabler2D: VisibleOnScreenNotifier2D {
             }
         }
     }
-
+    
     public var enableMode: Godot.VisibleOnScreenEnabler2D.EnableMode {
         get {
             __getEnableMode()
         }
-        set {
+        set(newValue) {
             __setEnableMode(
                 newValue
             )
         }
     }
-
+    
     public var enableNodePath: Godot.NodePath {
         get {
             __getEnableNodePath()
         }
-        set {
+        set(newValue) {
             __setEnableNodePath(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

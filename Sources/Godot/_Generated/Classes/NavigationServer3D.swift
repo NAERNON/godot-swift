@@ -16,43 +16,34 @@ open class NavigationServer3D: Object {
         case edgeMergeCount = 6
         case edgeConnectionCount = 7
         case edgeFreeCount = 8
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Active Maps", 0),
-            ("Region Count", 1),
-            ("Agent Count", 2),
-            ("Link Count", 3),
-            ("Polygon Count", 4),
-            ("Edge Count", 5),
-            ("Edge Merge Count", 6),
-            ("Edge Connection Count", 7),
-            ("Edge Free Count", 8),]
+               ("Active Maps", 0),
+               ("Region Count", 1),
+               ("Agent Count", 2),
+               ("Link Count", 3),
+               ("Polygon Count", 4),
+               ("Edge Count", 5),
+               ("Edge Merge Count", 6),
+               ("Edge Connection Count", 7),
+               ("Edge Free Count", 8),
+            ]
         }
     }
-
+    
     public struct MapChangedSignalInput: Godot.SignalInput {
         public let map: Godot.RID
-
-        fileprivate init(
-            map: Godot.RID
-        ) {
+        fileprivate init(map: Godot.RID) {
             self.map = map
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.map)]
         }
     }
-
-    public func mapChanged(
-        map: Godot.RID
-    ) {
+    public func mapChanged(map: Godot.RID) {
         _ = mapChangedSignal.emit(.init(map: map))
     }
-
     public lazy var mapChangedSignal: Godot.SignalEmitter<MapChangedSignalInput> = {
         .init(object: self, signalName: "map_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<MapChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -67,11 +58,11 @@ open class NavigationServer3D: Object {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func navigationDebugChanged() {
         _ = navigationDebugChangedSignal.emit()
     }
-
     public lazy var navigationDebugChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "navigation_debug_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -86,11 +77,11 @@ open class NavigationServer3D: Object {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func avoidanceDebugChanged() {
         _ = avoidanceDebugChangedSignal.emit()
     }
-
     public lazy var avoidanceDebugChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "avoidance_debug_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -105,15 +96,15 @@ open class NavigationServer3D: Object {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_get_maps: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_maps").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
-        }
+            GodotStringName(swiftStaticString: "get_maps").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
+            }
         }
     }()
-
+    
     public func maps() -> Godot.GodotArray<Godot.RID> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -126,15 +117,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_create").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "map_create").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func mapCreate() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -147,15 +138,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_set_active: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_set_active").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
-        }
+            GodotStringName(swiftStaticString: "map_set_active").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
+            }
         }
     }()
-
+    
     public func mapSetActive(
         map: Godot.RID,
         active: Bool
@@ -175,15 +166,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_is_active: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_is_active").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
-        }
+            GodotStringName(swiftStaticString: "map_is_active").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
+            }
         }
     }()
-
+    
     public func mapIsActive(
         map: Godot.RID
     ) -> Bool {
@@ -202,15 +193,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_set_up: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_set_up").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
-        }
+            GodotStringName(swiftStaticString: "map_set_up").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
+            }
         }
     }()
-
+    
     public func mapSetUp(
         map: Godot.RID,
         up: Godot.Vector3
@@ -230,15 +221,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_get_up: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_get_up").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 531438156)!
-        }
+            GodotStringName(swiftStaticString: "map_get_up").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 531438156)!
+            }
         }
     }()
-
+    
     public func mapGetUp(
         map: Godot.RID
     ) -> Godot.Vector3 {
@@ -257,15 +248,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_set_cell_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_set_cell_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
-        }
+            GodotStringName(swiftStaticString: "map_set_cell_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
+            }
         }
     }()
-
+    
     public func mapSetCellSize(
         map: Godot.RID,
         cellSize: Double
@@ -285,15 +276,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_get_cell_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_get_cell_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
-        }
+            GodotStringName(swiftStaticString: "map_get_cell_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
+            }
         }
     }()
-
+    
     public func mapGetCellSize(
         map: Godot.RID
     ) -> Double {
@@ -312,15 +303,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_set_cell_height: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_set_cell_height").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
-        }
+            GodotStringName(swiftStaticString: "map_set_cell_height").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
+            }
         }
     }()
-
+    
     public func mapSetCellHeight(
         map: Godot.RID,
         cellHeight: Double
@@ -340,15 +331,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_get_cell_height: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_get_cell_height").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
-        }
+            GodotStringName(swiftStaticString: "map_get_cell_height").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
+            }
         }
     }()
-
+    
     public func mapGetCellHeight(
         map: Godot.RID
     ) -> Double {
@@ -367,15 +358,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_set_use_edge_connections: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_set_use_edge_connections").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
-        }
+            GodotStringName(swiftStaticString: "map_set_use_edge_connections").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
+            }
         }
     }()
-
+    
     public func mapSetUseEdgeConnections(
         map: Godot.RID,
         enabled: Bool
@@ -395,15 +386,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_get_use_edge_connections: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_get_use_edge_connections").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
-        }
+            GodotStringName(swiftStaticString: "map_get_use_edge_connections").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
+            }
         }
     }()
-
+    
     public func mapGetUseEdgeConnections(
         map: Godot.RID
     ) -> Bool {
@@ -422,15 +413,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_set_edge_connection_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_set_edge_connection_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
-        }
+            GodotStringName(swiftStaticString: "map_set_edge_connection_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
+            }
         }
     }()
-
+    
     public func mapSetEdgeConnectionMargin(
         map: Godot.RID,
         margin: Double
@@ -450,15 +441,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_get_edge_connection_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_get_edge_connection_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
-        }
+            GodotStringName(swiftStaticString: "map_get_edge_connection_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
+            }
         }
     }()
-
+    
     public func mapGetEdgeConnectionMargin(
         map: Godot.RID
     ) -> Double {
@@ -477,15 +468,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_set_link_connection_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_set_link_connection_radius").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
-        }
+            GodotStringName(swiftStaticString: "map_set_link_connection_radius").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
+            }
         }
     }()
-
+    
     public func mapSetLinkConnectionRadius(
         map: Godot.RID,
         radius: Double
@@ -505,15 +496,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_get_link_connection_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_get_link_connection_radius").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
-        }
+            GodotStringName(swiftStaticString: "map_get_link_connection_radius").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
+            }
         }
     }()
-
+    
     public func mapGetLinkConnectionRadius(
         map: Godot.RID
     ) -> Double {
@@ -532,15 +523,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_get_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_get_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1187418690)!
-        }
+            GodotStringName(swiftStaticString: "map_get_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1187418690)!
+            }
         }
     }()
-
+    
     public func mapGetPath(
         map: Godot.RID,
         origin: Godot.Vector3,
@@ -571,15 +562,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_get_closest_point_to_segment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_get_closest_point_to_segment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3830095642)!
-        }
+            GodotStringName(swiftStaticString: "map_get_closest_point_to_segment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3830095642)!
+            }
         }
     }()
-
+    
     public func mapGetClosestPointToSegment(
         map: Godot.RID,
         start: Godot.Vector3,
@@ -607,15 +598,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_get_closest_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_get_closest_point").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2056183332)!
-        }
+            GodotStringName(swiftStaticString: "map_get_closest_point").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2056183332)!
+            }
         }
     }()
-
+    
     public func mapGetClosestPoint(
         map: Godot.RID,
         toPoint point: Godot.Vector3
@@ -637,15 +628,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_get_closest_point_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_get_closest_point_normal").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2056183332)!
-        }
+            GodotStringName(swiftStaticString: "map_get_closest_point_normal").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2056183332)!
+            }
         }
     }()
-
+    
     public func mapGetClosestPointNormal(
         map: Godot.RID,
         toPoint point: Godot.Vector3
@@ -667,15 +658,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_get_closest_point_owner: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_get_closest_point_owner").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 553364610)!
-        }
+            GodotStringName(swiftStaticString: "map_get_closest_point_owner").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 553364610)!
+            }
         }
     }()
-
+    
     public func mapGetClosestPointOwner(
         map: Godot.RID,
         toPoint point: Godot.Vector3
@@ -697,15 +688,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_get_links: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_get_links").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2684255073)!
-        }
+            GodotStringName(swiftStaticString: "map_get_links").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2684255073)!
+            }
         }
     }()
-
+    
     public func mapGetLinks(
         map: Godot.RID
     ) -> Godot.GodotArray<Godot.RID> {
@@ -724,15 +715,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_get_regions: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_get_regions").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2684255073)!
-        }
+            GodotStringName(swiftStaticString: "map_get_regions").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2684255073)!
+            }
         }
     }()
-
+    
     public func mapGetRegions(
         map: Godot.RID
     ) -> Godot.GodotArray<Godot.RID> {
@@ -751,15 +742,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_get_agents: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_get_agents").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2684255073)!
-        }
+            GodotStringName(swiftStaticString: "map_get_agents").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2684255073)!
+            }
         }
     }()
-
+    
     public func mapGetAgents(
         map: Godot.RID
     ) -> Godot.GodotArray<Godot.RID> {
@@ -778,15 +769,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_get_obstacles: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_get_obstacles").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2684255073)!
-        }
+            GodotStringName(swiftStaticString: "map_get_obstacles").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2684255073)!
+            }
         }
     }()
-
+    
     public func mapGetObstacles(
         map: Godot.RID
     ) -> Godot.GodotArray<Godot.RID> {
@@ -805,15 +796,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_map_force_update: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "map_force_update").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
-        }
+            GodotStringName(swiftStaticString: "map_force_update").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
+            }
         }
     }()
-
+    
     public func mapForceUpdate(
         map: Godot.RID
     ) {
@@ -830,15 +821,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_query_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "query_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3415008901)!
-        }
+            GodotStringName(swiftStaticString: "query_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3415008901)!
+            }
         }
     }()
-
+    
     public func queryPath(
         parameters: Godot.NavigationPathQueryParameters3D?,
         result: Godot.NavigationPathQueryResult3D?
@@ -862,15 +853,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_create").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "region_create").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func regionCreate() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -883,15 +874,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_set_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_set_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
-        }
+            GodotStringName(swiftStaticString: "region_set_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
+            }
         }
     }()
-
+    
     public func regionSetEnabled(
         region: Godot.RID,
         enabled: Bool
@@ -911,15 +902,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_get_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_get_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
-        }
+            GodotStringName(swiftStaticString: "region_get_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
+            }
         }
     }()
-
+    
     public func regionGetEnabled(
         region: Godot.RID
     ) -> Bool {
@@ -938,15 +929,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_set_use_edge_connections: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_set_use_edge_connections").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
-        }
+            GodotStringName(swiftStaticString: "region_set_use_edge_connections").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
+            }
         }
     }()
-
+    
     public func regionSetUseEdgeConnections(
         region: Godot.RID,
         enabled: Bool
@@ -966,15 +957,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_get_use_edge_connections: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_get_use_edge_connections").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
-        }
+            GodotStringName(swiftStaticString: "region_get_use_edge_connections").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
+            }
         }
     }()
-
+    
     public func regionGetUseEdgeConnections(
         region: Godot.RID
     ) -> Bool {
@@ -993,15 +984,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_set_enter_cost: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_set_enter_cost").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
-        }
+            GodotStringName(swiftStaticString: "region_set_enter_cost").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
+            }
         }
     }()
-
+    
     public func regionSetEnterCost(
         region: Godot.RID,
         enterCost: Double
@@ -1021,15 +1012,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_get_enter_cost: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_get_enter_cost").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
-        }
+            GodotStringName(swiftStaticString: "region_get_enter_cost").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
+            }
         }
     }()
-
+    
     public func regionGetEnterCost(
         region: Godot.RID
     ) -> Double {
@@ -1048,15 +1039,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_set_travel_cost: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_set_travel_cost").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
-        }
+            GodotStringName(swiftStaticString: "region_set_travel_cost").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
+            }
         }
     }()
-
+    
     public func regionSetTravelCost(
         region: Godot.RID,
         travelCost: Double
@@ -1076,15 +1067,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_get_travel_cost: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_get_travel_cost").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
-        }
+            GodotStringName(swiftStaticString: "region_get_travel_cost").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
+            }
         }
     }()
-
+    
     public func regionGetTravelCost(
         region: Godot.RID
     ) -> Double {
@@ -1103,15 +1094,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_set_owner_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_set_owner_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
-        }
+            GodotStringName(swiftStaticString: "region_set_owner_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
+            }
         }
     }()
-
+    
     public func regionSetOwnerID(
         region: Godot.RID,
         ownerID: UInt64
@@ -1131,15 +1122,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_get_owner_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_get_owner_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
-        }
+            GodotStringName(swiftStaticString: "region_get_owner_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
+            }
         }
     }()
-
+    
     public func regionGetOwnerID(
         region: Godot.RID
     ) -> UInt64 {
@@ -1158,15 +1149,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_owns_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_owns_point").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2360011153)!
-        }
+            GodotStringName(swiftStaticString: "region_owns_point").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2360011153)!
+            }
         }
     }()
-
+    
     public func regionOwnsPoint(
         region: Godot.RID,
         point: Godot.Vector3
@@ -1188,15 +1179,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_set_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_set_map").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 395945892)!
-        }
+            GodotStringName(swiftStaticString: "region_set_map").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 395945892)!
+            }
         }
     }()
-
+    
     public func regionSetMap(
         region: Godot.RID,
         map: Godot.RID
@@ -1216,15 +1207,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_get_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_get_map").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814569979)!
-        }
+            GodotStringName(swiftStaticString: "region_get_map").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814569979)!
+            }
         }
     }()
-
+    
     public func regionGetMap(
         region: Godot.RID
     ) -> Godot.RID {
@@ -1243,15 +1234,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_set_navigation_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_set_navigation_layers").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
-        }
+            GodotStringName(swiftStaticString: "region_set_navigation_layers").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
+            }
         }
     }()
-
+    
     public func regionSetNavigationLayers(
         region: Godot.RID,
         navigationLayers: UInt32
@@ -1271,15 +1262,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_get_navigation_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_get_navigation_layers").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
-        }
+            GodotStringName(swiftStaticString: "region_get_navigation_layers").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
+            }
         }
     }()
-
+    
     public func regionGetNavigationLayers(
         region: Godot.RID
     ) -> UInt32 {
@@ -1298,15 +1289,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_set_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_set_transform").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3935195649)!
-        }
+            GodotStringName(swiftStaticString: "region_set_transform").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3935195649)!
+            }
         }
     }()
-
+    
     public func regionSetTransform(
         region: Godot.RID,
         transform: Godot.Transform3D
@@ -1326,15 +1317,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_set_navigation_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_set_navigation_mesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2764952978)!
-        }
+            GodotStringName(swiftStaticString: "region_set_navigation_mesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2764952978)!
+            }
         }
     }()
-
+    
     public func regionSetNavigationMesh(
         region: Godot.RID,
         navigationMesh: Godot.NavigationMesh?
@@ -1356,15 +1347,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_bake_navigation_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_bake_navigation_mesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1401173477)!
-        }
+            GodotStringName(swiftStaticString: "region_bake_navigation_mesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1401173477)!
+            }
         }
     }()
-
+    
     public func regionBakeNavigationMesh(
         _ navigationMesh: Godot.NavigationMesh?,
         rootNode: Godot.Node?
@@ -1388,15 +1379,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_get_connections_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_get_connections_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
-        }
+            GodotStringName(swiftStaticString: "region_get_connections_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
+            }
         }
     }()
-
+    
     public func regionGetConnectionsCount(
         region: Godot.RID
     ) -> Int32 {
@@ -1415,15 +1406,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_get_connection_pathway_start: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_get_connection_pathway_start").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3440143363)!
-        }
+            GodotStringName(swiftStaticString: "region_get_connection_pathway_start").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3440143363)!
+            }
         }
     }()
-
+    
     public func regionGetConnectionPathwayStart(
         region: Godot.RID,
         connection: Int32
@@ -1445,15 +1436,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_region_get_connection_pathway_end: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "region_get_connection_pathway_end").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3440143363)!
-        }
+            GodotStringName(swiftStaticString: "region_get_connection_pathway_end").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3440143363)!
+            }
         }
     }()
-
+    
     public func regionGetConnectionPathwayEnd(
         region: Godot.RID,
         connection: Int32
@@ -1475,15 +1466,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_link_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "link_create").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "link_create").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func linkCreate() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1496,15 +1487,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_link_set_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "link_set_map").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 395945892)!
-        }
+            GodotStringName(swiftStaticString: "link_set_map").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 395945892)!
+            }
         }
     }()
-
+    
     public func linkSetMap(
         link: Godot.RID,
         map: Godot.RID
@@ -1524,15 +1515,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_link_get_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "link_get_map").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814569979)!
-        }
+            GodotStringName(swiftStaticString: "link_get_map").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814569979)!
+            }
         }
     }()
-
+    
     public func linkGetMap(
         link: Godot.RID
     ) -> Godot.RID {
@@ -1551,15 +1542,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_link_set_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "link_set_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
-        }
+            GodotStringName(swiftStaticString: "link_set_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
+            }
         }
     }()
-
+    
     public func linkSetEnabled(
         link: Godot.RID,
         enabled: Bool
@@ -1579,15 +1570,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_link_get_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "link_get_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
-        }
+            GodotStringName(swiftStaticString: "link_get_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
+            }
         }
     }()
-
+    
     public func linkGetEnabled(
         link: Godot.RID
     ) -> Bool {
@@ -1606,15 +1597,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_link_set_bidirectional: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "link_set_bidirectional").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
-        }
+            GodotStringName(swiftStaticString: "link_set_bidirectional").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
+            }
         }
     }()
-
+    
     public func linkSetBidirectional(
         link: Godot.RID,
         bidirectional: Bool
@@ -1634,15 +1625,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_link_is_bidirectional: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "link_is_bidirectional").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
-        }
+            GodotStringName(swiftStaticString: "link_is_bidirectional").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
+            }
         }
     }()
-
+    
     public func linkIsBidirectional(
         link: Godot.RID
     ) -> Bool {
@@ -1661,15 +1652,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_link_set_navigation_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "link_set_navigation_layers").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
-        }
+            GodotStringName(swiftStaticString: "link_set_navigation_layers").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
+            }
         }
     }()
-
+    
     public func linkSetNavigationLayers(
         link: Godot.RID,
         navigationLayers: UInt32
@@ -1689,15 +1680,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_link_get_navigation_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "link_get_navigation_layers").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
-        }
+            GodotStringName(swiftStaticString: "link_get_navigation_layers").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
+            }
         }
     }()
-
+    
     public func linkGetNavigationLayers(
         link: Godot.RID
     ) -> UInt32 {
@@ -1716,15 +1707,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_link_set_start_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "link_set_start_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
-        }
+            GodotStringName(swiftStaticString: "link_set_start_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
+            }
         }
     }()
-
+    
     public func linkSetStartPosition(
         link: Godot.RID,
         position: Godot.Vector3
@@ -1744,15 +1735,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_link_get_start_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "link_get_start_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 531438156)!
-        }
+            GodotStringName(swiftStaticString: "link_get_start_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 531438156)!
+            }
         }
     }()
-
+    
     public func linkGetStartPosition(
         link: Godot.RID
     ) -> Godot.Vector3 {
@@ -1771,15 +1762,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_link_set_end_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "link_set_end_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
-        }
+            GodotStringName(swiftStaticString: "link_set_end_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
+            }
         }
     }()
-
+    
     public func linkSetEndPosition(
         link: Godot.RID,
         position: Godot.Vector3
@@ -1799,15 +1790,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_link_get_end_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "link_get_end_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 531438156)!
-        }
+            GodotStringName(swiftStaticString: "link_get_end_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 531438156)!
+            }
         }
     }()
-
+    
     public func linkGetEndPosition(
         link: Godot.RID
     ) -> Godot.Vector3 {
@@ -1826,15 +1817,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_link_set_enter_cost: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "link_set_enter_cost").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
-        }
+            GodotStringName(swiftStaticString: "link_set_enter_cost").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
+            }
         }
     }()
-
+    
     public func linkSetEnterCost(
         link: Godot.RID,
         enterCost: Double
@@ -1854,15 +1845,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_link_get_enter_cost: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "link_get_enter_cost").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
-        }
+            GodotStringName(swiftStaticString: "link_get_enter_cost").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
+            }
         }
     }()
-
+    
     public func linkGetEnterCost(
         link: Godot.RID
     ) -> Double {
@@ -1881,15 +1872,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_link_set_travel_cost: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "link_set_travel_cost").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
-        }
+            GodotStringName(swiftStaticString: "link_set_travel_cost").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
+            }
         }
     }()
-
+    
     public func linkSetTravelCost(
         link: Godot.RID,
         travelCost: Double
@@ -1909,15 +1900,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_link_get_travel_cost: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "link_get_travel_cost").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
-        }
+            GodotStringName(swiftStaticString: "link_get_travel_cost").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
+            }
         }
     }()
-
+    
     public func linkGetTravelCost(
         link: Godot.RID
     ) -> Double {
@@ -1936,15 +1927,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_link_set_owner_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "link_set_owner_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
-        }
+            GodotStringName(swiftStaticString: "link_set_owner_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
+            }
         }
     }()
-
+    
     public func linkSetOwnerID(
         link: Godot.RID,
         ownerID: UInt64
@@ -1964,15 +1955,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_link_get_owner_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "link_get_owner_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
-        }
+            GodotStringName(swiftStaticString: "link_get_owner_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
+            }
         }
     }()
-
+    
     public func linkGetOwnerID(
         link: Godot.RID
     ) -> UInt64 {
@@ -1991,15 +1982,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_create").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "agent_create").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func agentCreate() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2012,15 +2003,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_set_avoidance_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_set_avoidance_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
-        }
+            GodotStringName(swiftStaticString: "agent_set_avoidance_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
+            }
         }
     }()
-
+    
     public func agentSetAvoidanceEnabled(
         agent: Godot.RID,
         enabled: Bool
@@ -2040,15 +2031,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_get_avoidance_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_get_avoidance_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
-        }
+            GodotStringName(swiftStaticString: "agent_get_avoidance_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
+            }
         }
     }()
-
+    
     public func agentGetAvoidanceEnabled(
         agent: Godot.RID
     ) -> Bool {
@@ -2067,15 +2058,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_set_use_3d_avoidance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_set_use_3d_avoidance").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
-        }
+            GodotStringName(swiftStaticString: "agent_set_use_3d_avoidance").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
+            }
         }
     }()
-
+    
     public func agentSetUse3DAvoidance(
         agent: Godot.RID,
         enabled: Bool
@@ -2095,15 +2086,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_get_use_3d_avoidance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_get_use_3d_avoidance").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
-        }
+            GodotStringName(swiftStaticString: "agent_get_use_3d_avoidance").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
+            }
         }
     }()
-
+    
     public func agentGetUse3DAvoidance(
         agent: Godot.RID
     ) -> Bool {
@@ -2122,15 +2113,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_set_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_set_map").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 395945892)!
-        }
+            GodotStringName(swiftStaticString: "agent_set_map").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 395945892)!
+            }
         }
     }()
-
+    
     public func agentSetMap(
         agent: Godot.RID,
         map: Godot.RID
@@ -2150,15 +2141,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_get_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_get_map").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814569979)!
-        }
+            GodotStringName(swiftStaticString: "agent_get_map").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814569979)!
+            }
         }
     }()
-
+    
     public func agentGetMap(
         agent: Godot.RID
     ) -> Godot.RID {
@@ -2177,15 +2168,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_set_paused: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_set_paused").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
-        }
+            GodotStringName(swiftStaticString: "agent_set_paused").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
+            }
         }
     }()
-
+    
     public func agentSetPaused(
         agent: Godot.RID,
         paused: Bool
@@ -2205,15 +2196,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_get_paused: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_get_paused").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
-        }
+            GodotStringName(swiftStaticString: "agent_get_paused").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
+            }
         }
     }()
-
+    
     public func agentGetPaused(
         agent: Godot.RID
     ) -> Bool {
@@ -2232,15 +2223,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_set_neighbor_distance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_set_neighbor_distance").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
-        }
+            GodotStringName(swiftStaticString: "agent_set_neighbor_distance").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
+            }
         }
     }()
-
+    
     public func agentSetNeighborDistance(
         agent: Godot.RID,
         distance: Double
@@ -2260,15 +2251,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_set_max_neighbors: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_set_max_neighbors").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
-        }
+            GodotStringName(swiftStaticString: "agent_set_max_neighbors").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
+            }
         }
     }()
-
+    
     public func agentSetMaxNeighbors(
         agent: Godot.RID,
         count: Int32
@@ -2288,15 +2279,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_set_time_horizon_agents: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_set_time_horizon_agents").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
-        }
+            GodotStringName(swiftStaticString: "agent_set_time_horizon_agents").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
+            }
         }
     }()
-
+    
     public func agentSetTimeHorizonAgents(
         agent: Godot.RID,
         timeHorizon: Double
@@ -2316,15 +2307,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_set_time_horizon_obstacles: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_set_time_horizon_obstacles").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
-        }
+            GodotStringName(swiftStaticString: "agent_set_time_horizon_obstacles").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
+            }
         }
     }()
-
+    
     public func agentSetTimeHorizonObstacles(
         agent: Godot.RID,
         timeHorizon: Double
@@ -2344,15 +2335,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_set_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_set_radius").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
-        }
+            GodotStringName(swiftStaticString: "agent_set_radius").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
+            }
         }
     }()
-
+    
     public func agentSetRadius(
         agent: Godot.RID,
         radius: Double
@@ -2372,15 +2363,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_set_height: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_set_height").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
-        }
+            GodotStringName(swiftStaticString: "agent_set_height").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
+            }
         }
     }()
-
+    
     public func agentSetHeight(
         agent: Godot.RID,
         height: Double
@@ -2400,15 +2391,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_set_max_speed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_set_max_speed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
-        }
+            GodotStringName(swiftStaticString: "agent_set_max_speed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
+            }
         }
     }()
-
+    
     public func agentSetMaxSpeed(
         agent: Godot.RID,
         maxSpeed: Double
@@ -2428,15 +2419,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_set_velocity_forced: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_set_velocity_forced").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
-        }
+            GodotStringName(swiftStaticString: "agent_set_velocity_forced").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
+            }
         }
     }()
-
+    
     public func agentSetVelocityForced(
         agent: Godot.RID,
         velocity: Godot.Vector3
@@ -2456,15 +2447,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_set_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_set_velocity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
-        }
+            GodotStringName(swiftStaticString: "agent_set_velocity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
+            }
         }
     }()
-
+    
     public func agentSetVelocity(
         agent: Godot.RID,
         velocity: Godot.Vector3
@@ -2484,15 +2475,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_set_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_set_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
-        }
+            GodotStringName(swiftStaticString: "agent_set_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
+            }
         }
     }()
-
+    
     public func agentSetPosition(
         agent: Godot.RID,
         position: Godot.Vector3
@@ -2512,15 +2503,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_is_map_changed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_is_map_changed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
-        }
+            GodotStringName(swiftStaticString: "agent_is_map_changed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
+            }
         }
     }()
-
+    
     public func agentIsMapChanged(
         agent: Godot.RID
     ) -> Bool {
@@ -2539,15 +2530,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_set_avoidance_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_set_avoidance_callback").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3379118538)!
-        }
+            GodotStringName(swiftStaticString: "agent_set_avoidance_callback").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3379118538)!
+            }
         }
     }()
-
+    
     public func agentSetAvoidanceCallback(
         agent: Godot.RID,
         callback: Godot.Callable
@@ -2567,15 +2558,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_set_avoidance_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_set_avoidance_layers").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
-        }
+            GodotStringName(swiftStaticString: "agent_set_avoidance_layers").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
+            }
         }
     }()
-
+    
     public func agentSetAvoidanceLayers(
         agent: Godot.RID,
         layers: UInt32
@@ -2595,15 +2586,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_set_avoidance_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_set_avoidance_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
-        }
+            GodotStringName(swiftStaticString: "agent_set_avoidance_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
+            }
         }
     }()
-
+    
     public func agentSetAvoidanceMask(
         agent: Godot.RID,
         mask: UInt32
@@ -2623,15 +2614,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_agent_set_avoidance_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "agent_set_avoidance_priority").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
-        }
+            GodotStringName(swiftStaticString: "agent_set_avoidance_priority").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
+            }
         }
     }()
-
+    
     public func agentSetAvoidancePriority(
         agent: Godot.RID,
         priority: Double
@@ -2651,15 +2642,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_obstacle_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "obstacle_create").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "obstacle_create").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func obstacleCreate() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2672,15 +2663,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_obstacle_set_avoidance_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "obstacle_set_avoidance_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
-        }
+            GodotStringName(swiftStaticString: "obstacle_set_avoidance_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
+            }
         }
     }()
-
+    
     public func obstacleSetAvoidanceEnabled(
         obstacle: Godot.RID,
         enabled: Bool
@@ -2700,15 +2691,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_obstacle_get_avoidance_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "obstacle_get_avoidance_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
-        }
+            GodotStringName(swiftStaticString: "obstacle_get_avoidance_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
+            }
         }
     }()
-
+    
     public func obstacleGetAvoidanceEnabled(
         obstacle: Godot.RID
     ) -> Bool {
@@ -2727,15 +2718,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_obstacle_set_use_3d_avoidance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "obstacle_set_use_3d_avoidance").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
-        }
+            GodotStringName(swiftStaticString: "obstacle_set_use_3d_avoidance").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
+            }
         }
     }()
-
+    
     public func obstacleSetUse3DAvoidance(
         obstacle: Godot.RID,
         enabled: Bool
@@ -2755,15 +2746,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_obstacle_get_use_3d_avoidance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "obstacle_get_use_3d_avoidance").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
-        }
+            GodotStringName(swiftStaticString: "obstacle_get_use_3d_avoidance").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
+            }
         }
     }()
-
+    
     public func obstacleGetUse3DAvoidance(
         obstacle: Godot.RID
     ) -> Bool {
@@ -2782,15 +2773,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_obstacle_set_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "obstacle_set_map").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 395945892)!
-        }
+            GodotStringName(swiftStaticString: "obstacle_set_map").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 395945892)!
+            }
         }
     }()
-
+    
     public func obstacleSetMap(
         obstacle: Godot.RID,
         map: Godot.RID
@@ -2810,15 +2801,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_obstacle_get_map: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "obstacle_get_map").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814569979)!
-        }
+            GodotStringName(swiftStaticString: "obstacle_get_map").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814569979)!
+            }
         }
     }()
-
+    
     public func obstacleGetMap(
         obstacle: Godot.RID
     ) -> Godot.RID {
@@ -2837,15 +2828,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_obstacle_set_paused: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "obstacle_set_paused").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
-        }
+            GodotStringName(swiftStaticString: "obstacle_set_paused").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
+            }
         }
     }()
-
+    
     public func obstacleSetPaused(
         obstacle: Godot.RID,
         paused: Bool
@@ -2865,15 +2856,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_obstacle_get_paused: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "obstacle_get_paused").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
-        }
+            GodotStringName(swiftStaticString: "obstacle_get_paused").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
+            }
         }
     }()
-
+    
     public func obstacleGetPaused(
         obstacle: Godot.RID
     ) -> Bool {
@@ -2892,15 +2883,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_obstacle_set_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "obstacle_set_radius").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
-        }
+            GodotStringName(swiftStaticString: "obstacle_set_radius").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
+            }
         }
     }()
-
+    
     public func obstacleSetRadius(
         obstacle: Godot.RID,
         radius: Double
@@ -2920,15 +2911,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_obstacle_set_height: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "obstacle_set_height").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
-        }
+            GodotStringName(swiftStaticString: "obstacle_set_height").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
+            }
         }
     }()
-
+    
     public func obstacleSetHeight(
         obstacle: Godot.RID,
         height: Double
@@ -2948,15 +2939,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_obstacle_set_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "obstacle_set_velocity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
-        }
+            GodotStringName(swiftStaticString: "obstacle_set_velocity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
+            }
         }
     }()
-
+    
     public func obstacleSetVelocity(
         obstacle: Godot.RID,
         velocity: Godot.Vector3
@@ -2976,15 +2967,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_obstacle_set_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "obstacle_set_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
-        }
+            GodotStringName(swiftStaticString: "obstacle_set_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
+            }
         }
     }()
-
+    
     public func obstacleSetPosition(
         obstacle: Godot.RID,
         position: Godot.Vector3
@@ -3004,15 +2995,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_obstacle_set_vertices: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "obstacle_set_vertices").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4030257846)!
-        }
+            GodotStringName(swiftStaticString: "obstacle_set_vertices").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4030257846)!
+            }
         }
     }()
-
+    
     public func obstacleSetVertices(
         obstacle: Godot.RID,
         vertices: Godot.GodotContiguousArray<Vector3>
@@ -3032,15 +3023,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_obstacle_set_avoidance_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "obstacle_set_avoidance_layers").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
-        }
+            GodotStringName(swiftStaticString: "obstacle_set_avoidance_layers").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
+            }
         }
     }()
-
+    
     public func obstacleSetAvoidanceLayers(
         obstacle: Godot.RID,
         layers: UInt32
@@ -3060,15 +3051,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_parse_source_geometry_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "parse_source_geometry_data").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 685862123)!
-        }
+            GodotStringName(swiftStaticString: "parse_source_geometry_data").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 685862123)!
+            }
         }
     }()
-
+    
     public func parseSourceGeometryData(
         navigationMesh: Godot.NavigationMesh?,
         sourceGeometryData: Godot.NavigationMeshSourceGeometryData3D?,
@@ -3100,15 +3091,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_bake_from_source_geometry_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "bake_from_source_geometry_data").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2469318639)!
-        }
+            GodotStringName(swiftStaticString: "bake_from_source_geometry_data").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2469318639)!
+            }
         }
     }()
-
+    
     public func bakeFromSourceGeometryData(
         navigationMesh: Godot.NavigationMesh?,
         sourceGeometryData: Godot.NavigationMeshSourceGeometryData3D?,
@@ -3135,15 +3126,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_bake_from_source_geometry_data_async: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "bake_from_source_geometry_data_async").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2469318639)!
-        }
+            GodotStringName(swiftStaticString: "bake_from_source_geometry_data_async").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2469318639)!
+            }
         }
     }()
-
+    
     public func bakeFromSourceGeometryDataAsync(
         navigationMesh: Godot.NavigationMesh?,
         sourceGeometryData: Godot.NavigationMeshSourceGeometryData3D?,
@@ -3170,15 +3161,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_free_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "free_rid").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
-        }
+            GodotStringName(swiftStaticString: "free_rid").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
+            }
         }
     }()
-
+    
     public func freeRID(
         _ rid: Godot.RID
     ) {
@@ -3195,15 +3186,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_active: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_active").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_active").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     public func setActive(
         _ active: Bool
     ) {
@@ -3220,15 +3211,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_debug_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_debug_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_debug_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     public func setDebugEnabled(
         _ enabled: Bool
     ) {
@@ -3245,15 +3236,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_debug_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_debug_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_debug_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func debugEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -3266,15 +3257,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_process_info: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_process_info").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1938440894)!
-        }
+            GodotStringName(swiftStaticString: "get_process_info").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1938440894)!
+            }
         }
     }()
-
+    
     public func processInfo(
         _ processInfo: Godot.NavigationServer3D.ProcessInfo
     ) -> Int32 {
@@ -3293,18 +3284,15 @@ open class NavigationServer3D: Object {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

@@ -7,33 +7,33 @@ import GodotExtensionHeaders
 @GodotRefCountedClass
 open class Material: Resource {
     public static let renderPriorityMax: Int = 127
-
+    
     public static let renderPriorityMin: Int = -128
-
+    
     open func _getShaderRID() -> Godot.RID {
         Godot.RID()
     }
-
+    
     open func _getShaderMode() -> Godot.Shader.Mode {
         Godot.Shader.Mode(rawValue: 0)!
     }
-
+    
     open func _canDoNextPass() -> Bool {
         Bool()
     }
-
+    
     open func _canUseRenderPriority() -> Bool {
         Bool()
     }
-
+    
     internal static var __method_binding_set_next_pass: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_next_pass").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2757459619)!
-        }
+            GodotStringName(swiftStaticString: "set_next_pass").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2757459619)!
+            }
         }
     }()
-
+    
     private func __setNextPass(
         _ nextPass: Godot.Material?
     ) {
@@ -52,15 +52,15 @@ open class Material: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_next_pass: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_next_pass").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 5934680)!
-        }
+            GodotStringName(swiftStaticString: "get_next_pass").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 5934680)!
+            }
         }
     }()
-
+    
     private func __getNextPass() -> Godot.Material? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -73,15 +73,15 @@ open class Material: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_render_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_render_priority").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_render_priority").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setRenderPriority(
         _ priority: Int32
     ) {
@@ -98,15 +98,15 @@ open class Material: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_render_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_render_priority").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_render_priority").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getRenderPriority() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -119,15 +119,15 @@ open class Material: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_inspect_native_shader_code: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "inspect_native_shader_code").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "inspect_native_shader_code").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func inspectNativeShaderCode() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -138,15 +138,15 @@ open class Material: Resource {
             )
         }
     }
-
+    
     internal static var __method_binding_create_placeholder: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_placeholder").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 121922552)!
-        }
+            GodotStringName(swiftStaticString: "create_placeholder").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 121922552)!
+            }
         }
     }()
-
+    
     public func createPlaceholder() -> Godot.Resource? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -159,63 +159,62 @@ open class Material: Resource {
             }
         }
     }
-
+    
     public var renderPriority: Int32 {
         get {
             __getRenderPriority()
         }
-        set {
+        set(newValue) {
             __setRenderPriority(
                 newValue
             )
         }
     }
-
+    
     public var nextPass: Godot.Material? {
         get {
             __getNextPass()
         }
-        set {
+        set(newValue) {
             __setNextPass(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _get_shader_rid_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<Material> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getShaderRID()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<Material>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getShaderRID()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_shader_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<Material> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getShaderMode()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<Material>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getShaderMode()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _can_do_next_pass_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<Material> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._canDoNextPass()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<Material>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._canDoNextPass()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _can_use_render_priority_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<Material> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._canUseRenderPriority()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<Material>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._canUseRenderPriority()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         _virtualFunctions = [
             "_getShaderRID" : ("_get_shader_rid", _get_shader_rid_call),
             "_getShaderMode" : ("_get_shader_mode", _get_shader_mode_call),
@@ -223,7 +222,7 @@ open class Material: Resource {
             "_canUseRenderPriority" : ("_can_use_render_priority", _can_use_render_priority_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

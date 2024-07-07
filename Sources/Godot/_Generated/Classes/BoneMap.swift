@@ -6,11 +6,10 @@ import GodotExtensionHeaders
 
 @GodotRefCountedClass
 open class BoneMap: Resource {
-
+    
     public func boneMapUpdated() {
         _ = boneMapUpdatedSignal.emit()
     }
-
     public lazy var boneMapUpdatedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "bone_map_updated") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -25,11 +24,11 @@ open class BoneMap: Resource {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func profileUpdated() {
         _ = profileUpdatedSignal.emit()
     }
-
     public lazy var profileUpdatedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "profile_updated") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -44,15 +43,15 @@ open class BoneMap: Resource {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_get_profile: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_profile").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4291782652)!
-        }
+            GodotStringName(swiftStaticString: "get_profile").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4291782652)!
+            }
         }
     }()
-
+    
     private func __getProfile() -> Godot.SkeletonProfile? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -65,15 +64,15 @@ open class BoneMap: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_profile: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_profile").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3870374136)!
-        }
+            GodotStringName(swiftStaticString: "set_profile").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3870374136)!
+            }
         }
     }()
-
+    
     private func __setProfile(
         _ profile: Godot.SkeletonProfile?
     ) {
@@ -92,15 +91,15 @@ open class BoneMap: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_skeleton_bone_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_skeleton_bone_name").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1965194235)!
-        }
+            GodotStringName(swiftStaticString: "get_skeleton_bone_name").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1965194235)!
+            }
         }
     }()
-
+    
     public func skeletonBoneName(
         profileBoneName: Godot.GodotStringName
     ) -> Godot.GodotStringName {
@@ -119,15 +118,15 @@ open class BoneMap: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_skeleton_bone_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_skeleton_bone_name").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740211285)!
-        }
+            GodotStringName(swiftStaticString: "set_skeleton_bone_name").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740211285)!
+            }
         }
     }()
-
+    
     public func setSkeletonBoneName(
         profileBoneName: Godot.GodotStringName,
         skeletonBoneName: Godot.GodotStringName
@@ -147,15 +146,15 @@ open class BoneMap: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_find_profile_bone_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "find_profile_bone_name").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1965194235)!
-        }
+            GodotStringName(swiftStaticString: "find_profile_bone_name").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1965194235)!
+            }
         }
     }()
-
+    
     public func findProfileBoneName(
         skeletonBoneName: Godot.GodotStringName
     ) -> Godot.GodotStringName {
@@ -174,29 +173,26 @@ open class BoneMap: Resource {
             }
         }
     }
-
+    
     public var profile: Godot.SkeletonProfile? {
         get {
             __getProfile()
         }
-        set {
+        set(newValue) {
             __setProfile(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

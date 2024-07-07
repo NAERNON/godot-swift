@@ -8,32 +8,19 @@ import GodotExtensionHeaders
 open class EditorResourcePicker: HBoxContainer {
     public struct ResourceSelectedSignalInput: Godot.SignalInput {
         public let resource: Godot.Resource?
-
         public let inspect: Bool
-
-        fileprivate init(
-            resource: Godot.Resource?,
-            inspect: Bool
-        ) {
+        fileprivate init(resource: Godot.Resource?, inspect: Bool) {
             self.resource = resource
             self.inspect = inspect
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.resource), Variant(input.inspect)]
         }
     }
-
-    public func resourceSelected(
-        resource: Godot.Resource?,
-        inspect: Bool
-    ) {
+    public func resourceSelected(resource: Godot.Resource?, inspect: Bool) {
         _ = resourceSelectedSignal.emit(.init(resource: resource,
                 inspect: inspect))
     }
-
     public lazy var resourceSelectedSignal: Godot.SignalEmitter<ResourceSelectedSignalInput> = {
         .init(object: self, signalName: "resource_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ResourceSelectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -49,29 +36,19 @@ open class EditorResourcePicker: HBoxContainer {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct ResourceChangedSignalInput: Godot.SignalInput {
         public let resource: Godot.Resource?
-
-        fileprivate init(
-            resource: Godot.Resource?
-        ) {
+        fileprivate init(resource: Godot.Resource?) {
             self.resource = resource
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.resource)]
         }
     }
-
-    public func resourceChanged(
-        resource: Godot.Resource?
-    ) {
+    public func resourceChanged(resource: Godot.Resource?) {
         _ = resourceChangedSignal.emit(.init(resource: resource))
     }
-
     public lazy var resourceChangedSignal: Godot.SignalEmitter<ResourceChangedSignalInput> = {
         .init(object: self, signalName: "resource_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ResourceChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -86,26 +63,27 @@ open class EditorResourcePicker: HBoxContainer {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     open func _setCreateOptions(
         menuNode: Godot.Object?
     ) {
+        
     }
-
+    
     open func _handleMenuSelected(
         id: Int32
     ) -> Bool {
         Bool()
     }
-
+    
     internal static var __method_binding_set_base_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_base_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_base_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setBaseType(
         _ baseType: Godot.GodotString
     ) {
@@ -122,15 +100,15 @@ open class EditorResourcePicker: HBoxContainer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_base_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_base_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_base_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getBaseType() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -143,15 +121,15 @@ open class EditorResourcePicker: HBoxContainer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_allowed_types: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_allowed_types").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
-        }
+            GodotStringName(swiftStaticString: "get_allowed_types").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
+            }
         }
     }()
-
+    
     public func allowedTypes() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -164,15 +142,15 @@ open class EditorResourcePicker: HBoxContainer {
             }
         }
     }
-
+    
     internal static var __method_binding_set_edited_resource: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_edited_resource").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 968641751)!
-        }
+            GodotStringName(swiftStaticString: "set_edited_resource").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 968641751)!
+            }
         }
     }()
-
+    
     private func __setEditedResource(
         _ resource: Godot.Resource?
     ) {
@@ -191,15 +169,15 @@ open class EditorResourcePicker: HBoxContainer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_edited_resource: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_edited_resource").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2674603643)!
-        }
+            GodotStringName(swiftStaticString: "get_edited_resource").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2674603643)!
+            }
         }
     }()
-
+    
     private func __getEditedResource() -> Godot.Resource? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -212,15 +190,15 @@ open class EditorResourcePicker: HBoxContainer {
             }
         }
     }
-
+    
     internal static var __method_binding_set_toggle_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_toggle_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_toggle_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setToggleMode(
         enable: Bool
     ) {
@@ -237,15 +215,15 @@ open class EditorResourcePicker: HBoxContainer {
             }
         }
     }
-
+    
     internal static var __method_binding_is_toggle_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_toggle_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_toggle_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isToggleMode() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -258,15 +236,15 @@ open class EditorResourcePicker: HBoxContainer {
             }
         }
     }
-
+    
     internal static var __method_binding_set_toggle_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_toggle_pressed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_toggle_pressed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     public func setTogglePressed(
         _ pressed: Bool
     ) {
@@ -283,15 +261,15 @@ open class EditorResourcePicker: HBoxContainer {
             }
         }
     }
-
+    
     internal static var __method_binding_set_editable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_editable").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_editable").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setEditable(
         enable: Bool
     ) {
@@ -308,15 +286,15 @@ open class EditorResourcePicker: HBoxContainer {
             }
         }
     }
-
+    
     internal static var __method_binding_is_editable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_editable").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_editable").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isEditable() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -329,80 +307,79 @@ open class EditorResourcePicker: HBoxContainer {
             }
         }
     }
-
+    
     public var baseType: Godot.GodotString {
         get {
             __getBaseType()
         }
-        set {
+        set(newValue) {
             __setBaseType(
                 newValue
             )
         }
     }
-
+    
     public var editedResource: Godot.Resource? {
         get {
             __getEditedResource()
         }
-        set {
+        set(newValue) {
             __setEditedResource(
                 newValue
             )
         }
     }
-
+    
     public var isEditable: Bool {
         get {
             __isEditable()
         }
-        set {
+        set(newValue) {
             __setEditable(
                 enable: newValue
             )
         }
     }
-
+    
     public var isToggleMode: Bool {
         get {
             __isToggleMode()
         }
-        set {
+        set(newValue) {
             __setToggleMode(
                 enable: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _set_create_options_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorResourcePicker> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._setCreateOptions(
-            menuNode: Godot.Object?.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorResourcePicker>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._setCreateOptions(
+                    menuNode: Godot.Object?.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _handle_menu_selected_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorResourcePicker> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._handleMenuSelected(
-            id: Int32.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorResourcePicker>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._handleMenuSelected(
+                    id: Int32.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         _virtualFunctions = [
             "_setCreateOptions" : ("_set_create_options", _set_create_options_call),
             "_handleMenuSelected" : ("_handle_menu_selected", _handle_menu_selected_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

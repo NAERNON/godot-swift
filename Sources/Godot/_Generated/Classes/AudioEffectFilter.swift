@@ -11,24 +11,25 @@ open class AudioEffectFilter: AudioEffect {
         case filter12db = 1
         case filter18db = 2
         case filter24db = 3
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Filter6db", 0),
-            ("Filter12db", 1),
-            ("Filter18db", 2),
-            ("Filter24db", 3),]
+               ("Filter6db", 0),
+               ("Filter12db", 1),
+               ("Filter18db", 2),
+               ("Filter24db", 3),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_cutoff: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_cutoff").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_cutoff").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setCutoff(
         freq: Double
     ) {
@@ -45,15 +46,15 @@ open class AudioEffectFilter: AudioEffect {
             }
         }
     }
-
+    
     internal static var __method_binding_get_cutoff: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_cutoff").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_cutoff").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getCutoff() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -66,15 +67,15 @@ open class AudioEffectFilter: AudioEffect {
             }
         }
     }
-
+    
     internal static var __method_binding_set_resonance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_resonance").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_resonance").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setResonance(
         amount: Double
     ) {
@@ -91,15 +92,15 @@ open class AudioEffectFilter: AudioEffect {
             }
         }
     }
-
+    
     internal static var __method_binding_get_resonance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_resonance").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_resonance").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getResonance() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -112,15 +113,15 @@ open class AudioEffectFilter: AudioEffect {
             }
         }
     }
-
+    
     internal static var __method_binding_set_gain: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_gain").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_gain").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setGain(
         amount: Double
     ) {
@@ -137,15 +138,15 @@ open class AudioEffectFilter: AudioEffect {
             }
         }
     }
-
+    
     internal static var __method_binding_get_gain: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_gain").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_gain").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getGain() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -158,15 +159,15 @@ open class AudioEffectFilter: AudioEffect {
             }
         }
     }
-
+    
     internal static var __method_binding_set_db: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_db").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 771740901)!
-        }
+            GodotStringName(swiftStaticString: "set_db").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 771740901)!
+            }
         }
     }()
-
+    
     private func __setDb(
         amount: Godot.AudioEffectFilter.FilterDB
     ) {
@@ -183,15 +184,15 @@ open class AudioEffectFilter: AudioEffect {
             }
         }
     }
-
+    
     internal static var __method_binding_get_db: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_db").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3981721890)!
-        }
+            GodotStringName(swiftStaticString: "get_db").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3981721890)!
+            }
         }
     }()
-
+    
     private func __getDb() -> Godot.AudioEffectFilter.FilterDB {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -204,62 +205,59 @@ open class AudioEffectFilter: AudioEffect {
             }
         }
     }
-
+    
     public var cutoff: Double {
         get {
             __getCutoff()
         }
-        set {
+        set(newValue) {
             __setCutoff(
                 freq: newValue
             )
         }
     }
-
+    
     public var resonance: Double {
         get {
             __getResonance()
         }
-        set {
+        set(newValue) {
             __setResonance(
                 amount: newValue
             )
         }
     }
-
+    
     public var gain: Double {
         get {
             __getGain()
         }
-        set {
+        set(newValue) {
             __setGain(
                 amount: newValue
             )
         }
     }
-
+    
     public var db: Godot.AudioEffectFilter.FilterDB {
         get {
             __getDb()
         }
-        set {
+        set(newValue) {
             __setDb(
                 amount: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

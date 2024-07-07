@@ -11,21 +11,23 @@ open class SyntaxHighlighter: Resource {
     ) -> Godot.AnyGodotDictionary {
         Godot.AnyGodotDictionary()
     }
-
+    
     open func _clearHighlightingCache() {
+        
     }
-
+    
     open func _updateCache() {
+        
     }
-
+    
     internal static var __method_binding_get_line_syntax_highlighting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_line_syntax_highlighting").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3554694381)!
-        }
+            GodotStringName(swiftStaticString: "get_line_syntax_highlighting").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3554694381)!
+            }
         }
     }()
-
+    
     public func lineSyntaxHighlighting(
         line: Int32
     ) -> Godot.AnyGodotDictionary {
@@ -44,15 +46,15 @@ open class SyntaxHighlighter: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_update_cache: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "update_cache").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "update_cache").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func updateCache() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -63,15 +65,15 @@ open class SyntaxHighlighter: Resource {
             )
         }
     }
-
+    
     internal static var __method_binding_clear_highlighting_cache: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear_highlighting_cache").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "clear_highlighting_cache").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func clearHighlightingCache() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -82,15 +84,15 @@ open class SyntaxHighlighter: Resource {
             )
         }
     }
-
+    
     internal static var __method_binding_get_text_edit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_text_edit").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1893027089)!
-        }
+            GodotStringName(swiftStaticString: "get_text_edit").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1893027089)!
+            }
         }
     }()
-
+    
     public func textEdit() -> Godot.TextEdit? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -103,41 +105,40 @@ open class SyntaxHighlighter: Resource {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _get_line_syntax_highlighting_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<SyntaxHighlighter> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getLineSyntaxHighlighting(
-            line: Int32.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<SyntaxHighlighter>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getLineSyntaxHighlighting(
+                    line: Int32.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _clear_highlighting_cache_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<SyntaxHighlighter> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._clearHighlightingCache()}
+            guard let instancePtr else { return }
+            Unmanaged<SyntaxHighlighter>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._clearHighlightingCache()
+        }
         let _update_cache_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<SyntaxHighlighter> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._updateCache()}
+            guard let instancePtr else { return }
+            Unmanaged<SyntaxHighlighter>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._updateCache()
+        }
         _virtualFunctions = [
             "_getLineSyntaxHighlighting" : ("_get_line_syntax_highlighting", _get_line_syntax_highlighting_call),
             "_clearHighlightingCache" : ("_clear_highlighting_cache", _clear_highlighting_cache_call),
             "_updateCache" : ("_update_cache", _update_cache_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

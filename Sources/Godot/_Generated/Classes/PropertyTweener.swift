@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class PropertyTweener: Tweener {
     internal static var __method_binding_from: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "from").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4190193059)!
-        }
+            GodotStringName(swiftStaticString: "from").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4190193059)!
+            }
         }
     }()
-
+    
     public func from<Value: Variant.Storable>(
         value: Value
     ) -> Godot.PropertyTweener? {
@@ -32,15 +32,15 @@ open class PropertyTweener: Tweener {
             }
         }
     }
-
+    
     internal static var __method_binding_from_current: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "from_current").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4279177709)!
-        }
+            GodotStringName(swiftStaticString: "from_current").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4279177709)!
+            }
         }
     }()
-
+    
     public func fromCurrent() -> Godot.PropertyTweener? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -53,15 +53,15 @@ open class PropertyTweener: Tweener {
             }
         }
     }
-
+    
     internal static var __method_binding_as_relative: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "as_relative").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4279177709)!
-        }
+            GodotStringName(swiftStaticString: "as_relative").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4279177709)!
+            }
         }
     }()
-
+    
     public func asRelative() -> Godot.PropertyTweener? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -74,15 +74,15 @@ open class PropertyTweener: Tweener {
             }
         }
     }
-
+    
     internal static var __method_binding_set_trans: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_trans").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1899107404)!
-        }
+            GodotStringName(swiftStaticString: "set_trans").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1899107404)!
+            }
         }
     }()
-
+    
     public func setTrans(
         _ trans: Godot.Tween.TransitionType
     ) -> Godot.PropertyTweener? {
@@ -101,15 +101,15 @@ open class PropertyTweener: Tweener {
             }
         }
     }
-
+    
     internal static var __method_binding_set_ease: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_ease").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1080455622)!
-        }
+            GodotStringName(swiftStaticString: "set_ease").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1080455622)!
+            }
         }
     }()
-
+    
     public func setEase(
         _ ease: Godot.Tween.EaseType
     ) -> Godot.PropertyTweener? {
@@ -128,15 +128,15 @@ open class PropertyTweener: Tweener {
             }
         }
     }
-
+    
     internal static var __method_binding_set_delay: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_delay").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2171559331)!
-        }
+            GodotStringName(swiftStaticString: "set_delay").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2171559331)!
+            }
         }
     }()
-
+    
     public func setDelay(
         _ delay: Double
     ) -> Godot.PropertyTweener? {
@@ -155,18 +155,15 @@ open class PropertyTweener: Tweener {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

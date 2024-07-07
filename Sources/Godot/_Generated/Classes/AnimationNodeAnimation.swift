@@ -9,22 +9,23 @@ open class AnimationNodeAnimation: AnimationRootNode {
     public enum PlayMode: UInt32, GodotEnum {
         case forward = 0
         case backward = 1
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Forward", 0),
-            ("Backward", 1),]
+               ("Forward", 0),
+               ("Backward", 1),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_animation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
-        }
+            GodotStringName(swiftStaticString: "set_animation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
+            }
         }
     }()
-
+    
     private func __setAnimation(
         name: Godot.GodotStringName
     ) {
@@ -41,15 +42,15 @@ open class AnimationNodeAnimation: AnimationRootNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_animation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
-        }
+            GodotStringName(swiftStaticString: "get_animation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2002593661)!
+            }
         }
     }()
-
+    
     private func __getAnimation() -> Godot.GodotStringName {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -62,15 +63,15 @@ open class AnimationNodeAnimation: AnimationRootNode {
             }
         }
     }
-
+    
     internal static var __method_binding_set_play_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_play_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3347718873)!
-        }
+            GodotStringName(swiftStaticString: "set_play_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3347718873)!
+            }
         }
     }()
-
+    
     private func __setPlayMode(
         _ mode: Godot.AnimationNodeAnimation.PlayMode
     ) {
@@ -87,15 +88,15 @@ open class AnimationNodeAnimation: AnimationRootNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_play_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_play_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2061244637)!
-        }
+            GodotStringName(swiftStaticString: "get_play_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2061244637)!
+            }
         }
     }()
-
+    
     private func __getPlayMode() -> Godot.AnimationNodeAnimation.PlayMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -108,40 +109,37 @@ open class AnimationNodeAnimation: AnimationRootNode {
             }
         }
     }
-
+    
     public var animation: Godot.GodotStringName {
         get {
             __getAnimation()
         }
-        set {
+        set(newValue) {
             __setAnimation(
                 name: newValue
             )
         }
     }
-
+    
     public var playMode: Godot.AnimationNodeAnimation.PlayMode {
         get {
             __getPlayMode()
         }
-        set {
+        set(newValue) {
             __setPlayMode(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

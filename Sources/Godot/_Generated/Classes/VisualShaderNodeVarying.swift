@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class VisualShaderNodeVarying: VisualShaderNode {
     internal static var __method_binding_set_varying_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_varying_name").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_varying_name").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setVaryingName(
         _ name: Godot.GodotString
     ) {
@@ -30,15 +30,15 @@ open class VisualShaderNodeVarying: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_varying_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_varying_name").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_varying_name").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getVaryingName() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -51,15 +51,15 @@ open class VisualShaderNodeVarying: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_set_varying_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_varying_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3565867981)!
-        }
+            GodotStringName(swiftStaticString: "set_varying_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3565867981)!
+            }
         }
     }()
-
+    
     private func __setVaryingType(
         _ type: Godot.VisualShader.VaryingType
     ) {
@@ -76,15 +76,15 @@ open class VisualShaderNodeVarying: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_varying_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_varying_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 523183580)!
-        }
+            GodotStringName(swiftStaticString: "get_varying_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 523183580)!
+            }
         }
     }()
-
+    
     private func __getVaryingType() -> Godot.VisualShader.VaryingType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -97,40 +97,37 @@ open class VisualShaderNodeVarying: VisualShaderNode {
             }
         }
     }
-
+    
     public var varyingName: Godot.GodotString {
         get {
             __getVaryingName()
         }
-        set {
+        set(newValue) {
             __setVaryingName(
                 newValue
             )
         }
     }
-
+    
     public var varyingType: Godot.VisualShader.VaryingType {
         get {
             __getVaryingType()
         }
-        set {
+        set(newValue) {
             __setVaryingType(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

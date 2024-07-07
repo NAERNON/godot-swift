@@ -10,23 +10,24 @@ open class BackBufferCopy: Node2D {
         case disabled = 0
         case rect = 1
         case viewport = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Disabled", 0),
-            ("Rect", 1),
-            ("Viewport", 2),]
+               ("Disabled", 0),
+               ("Rect", 1),
+               ("Viewport", 2),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_rect").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2046264180)!
-        }
+            GodotStringName(swiftStaticString: "set_rect").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2046264180)!
+            }
         }
     }()
-
+    
     private func __setRect(
         _ rect: Godot.Rect2
     ) {
@@ -43,15 +44,15 @@ open class BackBufferCopy: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_rect").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!
-        }
+            GodotStringName(swiftStaticString: "get_rect").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!
+            }
         }
     }()
-
+    
     private func __getRect() -> Godot.Rect2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -64,15 +65,15 @@ open class BackBufferCopy: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_copy_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_copy_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1713538590)!
-        }
+            GodotStringName(swiftStaticString: "set_copy_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1713538590)!
+            }
         }
     }()
-
+    
     private func __setCopyMode(
         _ copyMode: Godot.BackBufferCopy.CopyMode
     ) {
@@ -89,15 +90,15 @@ open class BackBufferCopy: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_copy_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_copy_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3271169440)!
-        }
+            GodotStringName(swiftStaticString: "get_copy_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3271169440)!
+            }
         }
     }()
-
+    
     private func __getCopyMode() -> Godot.BackBufferCopy.CopyMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -110,40 +111,37 @@ open class BackBufferCopy: Node2D {
             }
         }
     }
-
+    
     public var copyMode: Godot.BackBufferCopy.CopyMode {
         get {
             __getCopyMode()
         }
-        set {
+        set(newValue) {
             __setCopyMode(
                 newValue
             )
         }
     }
-
+    
     public var rect: Godot.Rect2 {
         get {
             __getRect()
         }
-        set {
+        set(newValue) {
             __setRect(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

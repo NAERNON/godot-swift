@@ -12,25 +12,26 @@ open class TreeItem: Object {
         case range = 2
         case icon = 3
         case custom = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("String", 0),
-            ("Check", 1),
-            ("Range", 2),
-            ("Icon", 3),
-            ("Custom", 4),]
+               ("String", 0),
+               ("Check", 1),
+               ("Range", 2),
+               ("Icon", 3),
+               ("Custom", 4),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_cell_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_cell_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 289920701)!
-        }
+            GodotStringName(swiftStaticString: "set_cell_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 289920701)!
+            }
         }
     }()
-
+    
     public func setCellMode(
         column: Int32,
         mode: Godot.TreeItem.TreeCellMode
@@ -50,15 +51,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_cell_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_cell_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3406114978)!
-        }
+            GodotStringName(swiftStaticString: "get_cell_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3406114978)!
+            }
         }
     }()
-
+    
     public func cellMode(
         column: Int32
     ) -> Godot.TreeItem.TreeCellMode {
@@ -77,15 +78,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_edit_multiline: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_edit_multiline").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "set_edit_multiline").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func setEditMultiline(
         column: Int32,
         multiline: Bool
@@ -105,15 +106,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_edit_multiline: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_edit_multiline").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "is_edit_multiline").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func isEditMultiline(
         column: Int32
     ) -> Bool {
@@ -132,15 +133,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_checked: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_checked").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "set_checked").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func setChecked(
         column: Int32,
         checked: Bool
@@ -160,15 +161,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_indeterminate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_indeterminate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "set_indeterminate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func setIndeterminate(
         column: Int32,
         indeterminate: Bool
@@ -188,15 +189,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_checked: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_checked").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "is_checked").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func isChecked(
         column: Int32
     ) -> Bool {
@@ -215,15 +216,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_indeterminate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_indeterminate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "is_indeterminate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func isIndeterminate(
         column: Int32
     ) -> Bool {
@@ -242,15 +243,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_propagate_check: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "propagate_check").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 972357352)!
-        }
+            GodotStringName(swiftStaticString: "propagate_check").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 972357352)!
+            }
         }
     }()
-
+    
     public func propagateCheck(
         column: Int32,
         emitSignal: Bool = true
@@ -270,15 +271,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_text").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
-        }
+            GodotStringName(swiftStaticString: "set_text").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
+            }
         }
     }()
-
+    
     public func setText(
         column: Int32,
         text: Godot.GodotString
@@ -298,15 +299,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_text").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
-        }
+            GodotStringName(swiftStaticString: "get_text").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
+            }
         }
     }()
-
+    
     public func text(
         column: Int32
     ) -> Godot.GodotString {
@@ -325,15 +326,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_text_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_text_direction").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1707680378)!
-        }
+            GodotStringName(swiftStaticString: "set_text_direction").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1707680378)!
+            }
         }
     }()
-
+    
     public func setTextDirection(
         column: Int32,
         direction: Godot.Control.TextDirection
@@ -353,15 +354,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_text_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_text_direction").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4235602388)!
-        }
+            GodotStringName(swiftStaticString: "get_text_direction").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4235602388)!
+            }
         }
     }()
-
+    
     public func textDirection(
         column: Int32
     ) -> Godot.Control.TextDirection {
@@ -380,15 +381,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_autowrap_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_autowrap_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3633006561)!
-        }
+            GodotStringName(swiftStaticString: "set_autowrap_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3633006561)!
+            }
         }
     }()
-
+    
     public func setAutowrapMode(
         column: Int32,
         autowrapMode: Godot.TextServer.AutowrapMode
@@ -408,15 +409,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_autowrap_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_autowrap_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2902757236)!
-        }
+            GodotStringName(swiftStaticString: "get_autowrap_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2902757236)!
+            }
         }
     }()
-
+    
     public func autowrapMode(
         column: Int32
     ) -> Godot.TextServer.AutowrapMode {
@@ -435,15 +436,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_text_overrun_behavior: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_text_overrun_behavior").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1940772195)!
-        }
+            GodotStringName(swiftStaticString: "set_text_overrun_behavior").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1940772195)!
+            }
         }
     }()
-
+    
     public func setTextOverrunBehavior(
         column: Int32,
         overrunBehavior: Godot.TextServer.OverrunBehavior
@@ -463,15 +464,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_text_overrun_behavior: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_text_overrun_behavior").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3782727860)!
-        }
+            GodotStringName(swiftStaticString: "get_text_overrun_behavior").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3782727860)!
+            }
         }
     }()
-
+    
     public func textOverrunBehavior(
         column: Int32
     ) -> Godot.TextServer.OverrunBehavior {
@@ -490,15 +491,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_structured_text_bidi_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_structured_text_bidi_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 868756907)!
-        }
+            GodotStringName(swiftStaticString: "set_structured_text_bidi_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 868756907)!
+            }
         }
     }()
-
+    
     public func setStructuredTextBidiOverride(
         column: Int32,
         parser: Godot.TextServer.StructuredTextParser
@@ -518,15 +519,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_structured_text_bidi_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_structured_text_bidi_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3377823772)!
-        }
+            GodotStringName(swiftStaticString: "get_structured_text_bidi_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3377823772)!
+            }
         }
     }()
-
+    
     public func structuredTextBidiOverride(
         column: Int32
     ) -> Godot.TextServer.StructuredTextParser {
@@ -545,15 +546,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_structured_text_bidi_override_options: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_structured_text_bidi_override_options").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 537221740)!
-        }
+            GodotStringName(swiftStaticString: "set_structured_text_bidi_override_options").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 537221740)!
+            }
         }
     }()
-
+    
     public func setStructuredTextBidiOverrideOptions<Value: Variant.Storable>(
         column: Int32,
         args: Godot.GodotArray<Value>
@@ -573,15 +574,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_structured_text_bidi_override_options: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_structured_text_bidi_override_options").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 663333327)!
-        }
+            GodotStringName(swiftStaticString: "get_structured_text_bidi_override_options").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 663333327)!
+            }
         }
     }()
-
+    
     public func structuredTextBidiOverrideOptions(
         column: Int32
     ) -> Godot.AnyGodotArray {
@@ -600,15 +601,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_language").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
-        }
+            GodotStringName(swiftStaticString: "set_language").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
+            }
         }
     }()
-
+    
     public func setLanguage(
         column: Int32,
         language: Godot.GodotString
@@ -628,15 +629,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_language: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_language").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
-        }
+            GodotStringName(swiftStaticString: "get_language").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
+            }
         }
     }()
-
+    
     public func language(
         column: Int32
     ) -> Godot.GodotString {
@@ -655,15 +656,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_suffix: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_suffix").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
-        }
+            GodotStringName(swiftStaticString: "set_suffix").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
+            }
         }
     }()
-
+    
     public func setSuffix(
         column: Int32,
         text: Godot.GodotString
@@ -683,15 +684,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_suffix: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_suffix").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
-        }
+            GodotStringName(swiftStaticString: "get_suffix").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
+            }
         }
     }()
-
+    
     public func suffix(
         column: Int32
     ) -> Godot.GodotString {
@@ -710,15 +711,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_icon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 666127730)!
-        }
+            GodotStringName(swiftStaticString: "set_icon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 666127730)!
+            }
         }
     }()
-
+    
     public func setIcon(
         column: Int32,
         texture: Godot.Texture2D?
@@ -740,15 +741,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_icon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3536238170)!
-        }
+            GodotStringName(swiftStaticString: "get_icon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3536238170)!
+            }
         }
     }()
-
+    
     public func icon(
         column: Int32
     ) -> Godot.Texture2D? {
@@ -767,15 +768,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_icon_region: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_icon_region").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1356297692)!
-        }
+            GodotStringName(swiftStaticString: "set_icon_region").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1356297692)!
+            }
         }
     }()
-
+    
     public func setIconRegion(
         column: Int32,
         region: Godot.Rect2
@@ -795,15 +796,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_icon_region: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_icon_region").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3327874267)!
-        }
+            GodotStringName(swiftStaticString: "get_icon_region").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3327874267)!
+            }
         }
     }()
-
+    
     public func iconRegion(
         column: Int32
     ) -> Godot.Rect2 {
@@ -822,15 +823,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_icon_max_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_icon_max_width").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
-        }
+            GodotStringName(swiftStaticString: "set_icon_max_width").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
+            }
         }
     }()
-
+    
     public func setIconMaxWidth(
         column: Int32,
         width: Int32
@@ -850,15 +851,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_icon_max_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_icon_max_width").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
-        }
+            GodotStringName(swiftStaticString: "get_icon_max_width").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
+            }
         }
     }()
-
+    
     public func iconMaxWidth(
         column: Int32
     ) -> Int32 {
@@ -877,15 +878,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_icon_modulate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_icon_modulate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2878471219)!
-        }
+            GodotStringName(swiftStaticString: "set_icon_modulate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2878471219)!
+            }
         }
     }()
-
+    
     public func setIconModulate(
         column: Int32,
         modulate: Godot.Color
@@ -905,15 +906,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_icon_modulate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_icon_modulate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3457211756)!
-        }
+            GodotStringName(swiftStaticString: "get_icon_modulate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3457211756)!
+            }
         }
     }()
-
+    
     public func iconModulate(
         column: Int32
     ) -> Godot.Color {
@@ -932,15 +933,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_range: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_range").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
-        }
+            GodotStringName(swiftStaticString: "set_range").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
+            }
         }
     }()
-
+    
     public func setRange(
         column: Int32,
         value: Double
@@ -960,15 +961,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_range: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_range").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
-        }
+            GodotStringName(swiftStaticString: "get_range").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
+            }
         }
     }()
-
+    
     public func range(
         column: Int32
     ) -> Double {
@@ -987,15 +988,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_range_config: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_range_config").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1547181014)!
-        }
+            GodotStringName(swiftStaticString: "set_range_config").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1547181014)!
+            }
         }
     }()
-
+    
     public func setRangeConfig(
         column: Int32,
         min: Double,
@@ -1024,15 +1025,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_range_config: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_range_config").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3554694381)!
-        }
+            GodotStringName(swiftStaticString: "get_range_config").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3554694381)!
+            }
         }
     }()
-
+    
     public func rangeConfig(
         column: Int32
     ) -> Godot.AnyGodotDictionary {
@@ -1051,15 +1052,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_metadata: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_metadata").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2152698145)!
-        }
+            GodotStringName(swiftStaticString: "set_metadata").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2152698145)!
+            }
         }
     }()
-
+    
     public func setMetadata<Value: Variant.Storable>(
         column: Int32,
         meta: Value
@@ -1079,15 +1080,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_metadata: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_metadata").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4227898402)!
-        }
+            GodotStringName(swiftStaticString: "get_metadata").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4227898402)!
+            }
         }
     }()
-
+    
     public func metadata(
         column: Int32
     ) -> Godot.Variant {
@@ -1106,15 +1107,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_custom_draw: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_custom_draw").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 272420368)!
-        }
+            GodotStringName(swiftStaticString: "set_custom_draw").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 272420368)!
+            }
         }
     }()
-
+    
     public func setCustomDraw(
         column: Int32,
         object: Godot.Object?,
@@ -1139,15 +1140,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_collapsed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_collapsed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_collapsed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setCollapsed(
         enable: Bool
     ) {
@@ -1164,15 +1165,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_collapsed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_collapsed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
-        }
+            GodotStringName(swiftStaticString: "is_collapsed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
+            }
         }
     }()
-
+    
     private func __isCollapsed() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1185,15 +1186,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_collapsed_recursive: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_collapsed_recursive").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_collapsed_recursive").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     public func setCollapsedRecursive(
         enable: Bool
     ) {
@@ -1210,15 +1211,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_any_collapsed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_any_collapsed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2595650253)!
-        }
+            GodotStringName(swiftStaticString: "is_any_collapsed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2595650253)!
+            }
         }
     }()
-
+    
     public func isAnyCollapsed(
         onlyVisible: Bool = false
     ) -> Bool {
@@ -1237,15 +1238,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_visible").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_visible").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setVisible(
         enable: Bool
     ) {
@@ -1262,15 +1263,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_visible").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
-        }
+            GodotStringName(swiftStaticString: "is_visible").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
+            }
         }
     }()
-
+    
     private func __isVisible() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1283,15 +1284,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_uncollapse_tree: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "uncollapse_tree").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "uncollapse_tree").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func uncollapseTree() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1302,15 +1303,15 @@ open class TreeItem: Object {
             )
         }
     }
-
+    
     internal static var __method_binding_set_custom_minimum_height: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_custom_minimum_height").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_custom_minimum_height").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setCustomMinimumHeight(
         _ height: Int32
     ) {
@@ -1327,15 +1328,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_custom_minimum_height: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_custom_minimum_height").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_custom_minimum_height").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getCustomMinimumHeight() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1348,15 +1349,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_selectable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_selectable").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "set_selectable").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func setSelectable(
         column: Int32,
         selectable: Bool
@@ -1376,15 +1377,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_selectable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_selectable").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "is_selectable").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func isSelectable(
         column: Int32
     ) -> Bool {
@@ -1403,15 +1404,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_selected: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_selected").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3067735520)!
-        }
+            GodotStringName(swiftStaticString: "is_selected").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3067735520)!
+            }
         }
     }()
-
+    
     public func isSelected(
         column: Int32
     ) -> Bool {
@@ -1430,15 +1431,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_select: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "select").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "select").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func select(
         column: Int32
     ) {
@@ -1455,15 +1456,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_deselect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "deselect").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "deselect").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func deselect(
         column: Int32
     ) {
@@ -1480,15 +1481,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_editable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_editable").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "set_editable").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func setEditable(
         column: Int32,
         enabled: Bool
@@ -1508,15 +1509,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_editable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_editable").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3067735520)!
-        }
+            GodotStringName(swiftStaticString: "is_editable").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3067735520)!
+            }
         }
     }()
-
+    
     public func isEditable(
         column: Int32
     ) -> Bool {
@@ -1535,15 +1536,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_custom_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_custom_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2878471219)!
-        }
+            GodotStringName(swiftStaticString: "set_custom_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2878471219)!
+            }
         }
     }()
-
+    
     public func setCustomColor(
         column: Int32,
         color: Godot.Color
@@ -1563,15 +1564,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_custom_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_custom_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3457211756)!
-        }
+            GodotStringName(swiftStaticString: "get_custom_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3457211756)!
+            }
         }
     }()
-
+    
     public func customColor(
         column: Int32
     ) -> Godot.Color {
@@ -1590,15 +1591,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_clear_custom_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear_custom_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "clear_custom_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func clearCustomColor(
         column: Int32
     ) {
@@ -1615,15 +1616,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_custom_font: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_custom_font").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2637609184)!
-        }
+            GodotStringName(swiftStaticString: "set_custom_font").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2637609184)!
+            }
         }
     }()
-
+    
     public func setCustomFont(
         column: Int32,
         font: Godot.Font?
@@ -1645,15 +1646,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_custom_font: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_custom_font").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4244553094)!
-        }
+            GodotStringName(swiftStaticString: "get_custom_font").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4244553094)!
+            }
         }
     }()
-
+    
     public func customFont(
         column: Int32
     ) -> Godot.Font? {
@@ -1672,15 +1673,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_custom_font_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_custom_font_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
-        }
+            GodotStringName(swiftStaticString: "set_custom_font_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
+            }
         }
     }()
-
+    
     public func setCustomFontSize(
         column: Int32,
         fontSize: Int32
@@ -1700,15 +1701,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_custom_font_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_custom_font_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
-        }
+            GodotStringName(swiftStaticString: "get_custom_font_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
+            }
         }
     }()
-
+    
     public func customFontSize(
         column: Int32
     ) -> Int32 {
@@ -1727,15 +1728,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_custom_bg_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_custom_bg_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 894174518)!
-        }
+            GodotStringName(swiftStaticString: "set_custom_bg_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 894174518)!
+            }
         }
     }()
-
+    
     public func setCustomBgColor(
         column: Int32,
         color: Godot.Color,
@@ -1758,15 +1759,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_clear_custom_bg_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear_custom_bg_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "clear_custom_bg_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func clearCustomBgColor(
         column: Int32
     ) {
@@ -1783,15 +1784,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_custom_bg_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_custom_bg_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3457211756)!
-        }
+            GodotStringName(swiftStaticString: "get_custom_bg_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3457211756)!
+            }
         }
     }()
-
+    
     public func customBgColor(
         column: Int32
     ) -> Godot.Color {
@@ -1810,15 +1811,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_custom_as_button: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_custom_as_button").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "set_custom_as_button").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func setCustomAsButton(
         column: Int32,
         enable: Bool
@@ -1838,15 +1839,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_custom_set_as_button: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_custom_set_as_button").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "is_custom_set_as_button").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func isCustomSetAsButton(
         column: Int32
     ) -> Bool {
@@ -1865,15 +1866,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_add_button: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_button").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1688223362)!
-        }
+            GodotStringName(swiftStaticString: "add_button").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1688223362)!
+            }
         }
     }()
-
+    
     public func addButton(
         column: Int32,
         button: Godot.Texture2D?,
@@ -1904,15 +1905,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_button_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_button_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
-        }
+            GodotStringName(swiftStaticString: "get_button_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
+            }
         }
     }()
-
+    
     public func buttonCount(
         column: Int32
     ) -> Int32 {
@@ -1931,15 +1932,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_button_tooltip_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_button_tooltip_text").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1391810591)!
-        }
+            GodotStringName(swiftStaticString: "get_button_tooltip_text").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1391810591)!
+            }
         }
     }()
-
+    
     public func buttonTooltipText(
         column: Int32,
         buttonIndex: Int32
@@ -1961,15 +1962,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_button_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_button_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3175239445)!
-        }
+            GodotStringName(swiftStaticString: "get_button_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3175239445)!
+            }
         }
     }()
-
+    
     public func buttonID(
         column: Int32,
         buttonIndex: Int32
@@ -1991,15 +1992,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_button_by_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_button_by_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3175239445)!
-        }
+            GodotStringName(swiftStaticString: "get_button_by_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3175239445)!
+            }
         }
     }()
-
+    
     public func buttonByID(
         column: Int32,
         id: Int32
@@ -2021,15 +2022,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_button: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_button").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2584904275)!
-        }
+            GodotStringName(swiftStaticString: "get_button").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2584904275)!
+            }
         }
     }()
-
+    
     public func button(
         column: Int32,
         buttonIndex: Int32
@@ -2051,15 +2052,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_button_tooltip_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_button_tooltip_text").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2285447957)!
-        }
+            GodotStringName(swiftStaticString: "set_button_tooltip_text").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2285447957)!
+            }
         }
     }()
-
+    
     public func setButtonTooltipText(
         column: Int32,
         buttonIndex: Int32,
@@ -2082,15 +2083,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_button: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_button").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 176101966)!
-        }
+            GodotStringName(swiftStaticString: "set_button").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 176101966)!
+            }
         }
     }()
-
+    
     public func setButton(
         column: Int32,
         buttonIndex: Int32,
@@ -2115,15 +2116,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_erase_button: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "erase_button").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
-        }
+            GodotStringName(swiftStaticString: "erase_button").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
+            }
         }
     }()
-
+    
     public func eraseButton(
         column: Int32,
         buttonIndex: Int32
@@ -2143,15 +2144,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_button_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_button_disabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1383440665)!
-        }
+            GodotStringName(swiftStaticString: "set_button_disabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1383440665)!
+            }
         }
     }()
-
+    
     public func setButtonDisabled(
         column: Int32,
         buttonIndex: Int32,
@@ -2174,15 +2175,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_button_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_button_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3733378741)!
-        }
+            GodotStringName(swiftStaticString: "set_button_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3733378741)!
+            }
         }
     }()
-
+    
     public func setButtonColor(
         column: Int32,
         buttonIndex: Int32,
@@ -2205,15 +2206,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_button_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_button_disabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2522259332)!
-        }
+            GodotStringName(swiftStaticString: "is_button_disabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2522259332)!
+            }
         }
     }()
-
+    
     public func isButtonDisabled(
         column: Int32,
         buttonIndex: Int32
@@ -2235,15 +2236,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_tooltip_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_tooltip_text").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
-        }
+            GodotStringName(swiftStaticString: "set_tooltip_text").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
+            }
         }
     }()
-
+    
     public func setTooltipText(
         column: Int32,
         tooltip: Godot.GodotString
@@ -2263,15 +2264,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_tooltip_text: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tooltip_text").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
-        }
+            GodotStringName(swiftStaticString: "get_tooltip_text").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
+            }
         }
     }()
-
+    
     public func tooltipText(
         column: Int32
     ) -> Godot.GodotString {
@@ -2290,15 +2291,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_text_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_text_alignment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3276431499)!
-        }
+            GodotStringName(swiftStaticString: "set_text_alignment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3276431499)!
+            }
         }
     }()
-
+    
     public func setTextAlignment(
         column: Int32,
         textAlignment: Godot.HorizontalAlignment
@@ -2318,15 +2319,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_text_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_text_alignment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4171562184)!
-        }
+            GodotStringName(swiftStaticString: "get_text_alignment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4171562184)!
+            }
         }
     }()
-
+    
     public func textAlignment(
         column: Int32
     ) -> Godot.HorizontalAlignment {
@@ -2345,15 +2346,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_expand_right: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_expand_right").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "set_expand_right").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func setExpandRight(
         column: Int32,
         enable: Bool
@@ -2373,15 +2374,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_expand_right: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_expand_right").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "get_expand_right").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func expandRight(
         column: Int32
     ) -> Bool {
@@ -2400,15 +2401,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_disable_folding: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_disable_folding").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_disable_folding").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setDisableFolding(
         disable: Bool
     ) {
@@ -2425,15 +2426,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_folding_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_folding_disabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_folding_disabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isFoldingDisabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2446,15 +2447,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_create_child: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_child").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 954243986)!
-        }
+            GodotStringName(swiftStaticString: "create_child").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 954243986)!
+            }
         }
     }()
-
+    
     public func createChild(
         index: Int32 = -1
     ) -> Godot.TreeItem? {
@@ -2473,15 +2474,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_add_child: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_child").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1819951137)!
-        }
+            GodotStringName(swiftStaticString: "add_child").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1819951137)!
+            }
         }
     }()
-
+    
     public func addChild(
         _ child: Godot.TreeItem?
     ) {
@@ -2500,15 +2501,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_child: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_child").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1819951137)!
-        }
+            GodotStringName(swiftStaticString: "remove_child").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1819951137)!
+            }
         }
     }()
-
+    
     public func removeChild(
         _ child: Godot.TreeItem?
     ) {
@@ -2527,15 +2528,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_tree: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tree").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2243340556)!
-        }
+            GodotStringName(swiftStaticString: "get_tree").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2243340556)!
+            }
         }
     }()
-
+    
     public func tree() -> Godot.Tree? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2548,15 +2549,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_next: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_next").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1514277247)!
-        }
+            GodotStringName(swiftStaticString: "get_next").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1514277247)!
+            }
         }
     }()
-
+    
     public func next() -> Godot.TreeItem? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2569,15 +2570,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_prev: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_prev").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2768121250)!
-        }
+            GodotStringName(swiftStaticString: "get_prev").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2768121250)!
+            }
         }
     }()
-
+    
     public func prev() -> Godot.TreeItem? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2590,15 +2591,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_parent: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_parent").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1514277247)!
-        }
+            GodotStringName(swiftStaticString: "get_parent").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1514277247)!
+            }
         }
     }()
-
+    
     public func parent() -> Godot.TreeItem? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2611,15 +2612,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_first_child: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_first_child").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1514277247)!
-        }
+            GodotStringName(swiftStaticString: "get_first_child").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1514277247)!
+            }
         }
     }()
-
+    
     public func firstChild() -> Godot.TreeItem? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2632,15 +2633,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_next_in_tree: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_next_in_tree").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1666920593)!
-        }
+            GodotStringName(swiftStaticString: "get_next_in_tree").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1666920593)!
+            }
         }
     }()
-
+    
     public func nextInTree(
         wrap: Bool = false
     ) -> Godot.TreeItem? {
@@ -2659,15 +2660,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_prev_in_tree: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_prev_in_tree").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1666920593)!
-        }
+            GodotStringName(swiftStaticString: "get_prev_in_tree").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1666920593)!
+            }
         }
     }()
-
+    
     public func prevInTree(
         wrap: Bool = false
     ) -> Godot.TreeItem? {
@@ -2686,15 +2687,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_next_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_next_visible").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1666920593)!
-        }
+            GodotStringName(swiftStaticString: "get_next_visible").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1666920593)!
+            }
         }
     }()
-
+    
     public func nextVisible(
         wrap: Bool = false
     ) -> Godot.TreeItem? {
@@ -2713,15 +2714,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_prev_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_prev_visible").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1666920593)!
-        }
+            GodotStringName(swiftStaticString: "get_prev_visible").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1666920593)!
+            }
         }
     }()
-
+    
     public func prevVisible(
         wrap: Bool = false
     ) -> Godot.TreeItem? {
@@ -2740,15 +2741,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_child: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_child").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 306700752)!
-        }
+            GodotStringName(swiftStaticString: "get_child").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 306700752)!
+            }
         }
     }()
-
+    
     public func child(
         index: Int32
     ) -> Godot.TreeItem? {
@@ -2767,15 +2768,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_child_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_child_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
-        }
+            GodotStringName(swiftStaticString: "get_child_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
+            }
         }
     }()
-
+    
     public func childCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2788,16 +2789,16 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_children: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_children").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
-        }
+            GodotStringName(swiftStaticString: "get_children").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
+            }
         }
     }()
-
-    public func children() -> Godot.GodotArray<Godot.TreeItem?> {
+    
+    public func children() -> Godot.GodotArray<Godot.TreeItem> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -2809,15 +2810,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_index").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
-        }
+            GodotStringName(swiftStaticString: "get_index").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
+            }
         }
     }()
-
+    
     public func index() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2830,15 +2831,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_move_before: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "move_before").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1819951137)!
-        }
+            GodotStringName(swiftStaticString: "move_before").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1819951137)!
+            }
         }
     }()
-
+    
     public func moveBefore(
         item: Godot.TreeItem?
     ) {
@@ -2857,15 +2858,15 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_move_after: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "move_after").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1819951137)!
-        }
+            GodotStringName(swiftStaticString: "move_after").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1819951137)!
+            }
         }
     }()
-
+    
     public func moveAfter(
         item: Godot.TreeItem?
     ) {
@@ -2884,16 +2885,16 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_call_recursive: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "call_recursive").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2866548813)!
-        }
+            GodotStringName(swiftStaticString: "call_recursive").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2866548813)!
+            }
         }
     }()
-
-    public func callRecursive<each VariantRest : Variant.Storable>(
+    
+    public func callRecursive<each VariantRest: Variant.Storable>(
         method: Godot.GodotStringName,
         _ rest: repeat each VariantRest
     ) {
@@ -2912,62 +2913,59 @@ open class TreeItem: Object {
             }
         }
     }
-
+    
     public var isCollapsed: Bool {
         get {
             __isCollapsed()
         }
-        set {
+        set(newValue) {
             __setCollapsed(
                 enable: newValue
             )
         }
     }
-
+    
     public var isVisible: Bool {
         get {
             __isVisible()
         }
-        set {
+        set(newValue) {
             __setVisible(
                 enable: newValue
             )
         }
     }
-
+    
     public var isFoldingDisabled: Bool {
         get {
             __isFoldingDisabled()
         }
-        set {
+        set(newValue) {
             __setDisableFolding(
                 disable: newValue
             )
         }
     }
-
+    
     public var customMinimumHeight: Int32 {
         get {
             __getCustomMinimumHeight()
         }
-        set {
+        set(newValue) {
             __setCustomMinimumHeight(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

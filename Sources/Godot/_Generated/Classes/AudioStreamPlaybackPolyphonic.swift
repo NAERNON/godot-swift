@@ -7,15 +7,15 @@ import GodotExtensionHeaders
 @GodotRefCountedClass
 open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
     public static let invalidID: Int = -1
-
+    
     internal static var __method_binding_play_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "play_stream").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 604492179)!
-        }
+            GodotStringName(swiftStaticString: "play_stream").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 604492179)!
+            }
         }
     }()
-
+    
     public func playStream(
         _ stream: Godot.AudioStream?,
         fromOffset offset: Double = 0,
@@ -45,15 +45,15 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
             }
         }
     }
-
+    
     internal static var __method_binding_set_stream_volume: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_stream_volume").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
-        }
+            GodotStringName(swiftStaticString: "set_stream_volume").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
+            }
         }
     }()
-
+    
     public func setStreamVolume(
         stream: Int64,
         volumeDb: Double
@@ -73,15 +73,15 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
             }
         }
     }
-
+    
     internal static var __method_binding_set_stream_pitch_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_stream_pitch_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
-        }
+            GodotStringName(swiftStaticString: "set_stream_pitch_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
+            }
         }
     }()
-
+    
     public func setStreamPitchScale(
         stream: Int64,
         pitchScale: Double
@@ -101,15 +101,15 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
             }
         }
     }
-
+    
     internal static var __method_binding_is_stream_playing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_stream_playing").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "is_stream_playing").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func isStreamPlaying(
         stream: Int64
     ) -> Bool {
@@ -128,15 +128,15 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
             }
         }
     }
-
+    
     internal static var __method_binding_stop_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "stop_stream").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "stop_stream").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func stopStream(
         _ stream: Int64
     ) {
@@ -153,18 +153,15 @@ open class AudioStreamPlaybackPolyphonic: AudioStreamPlayback {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

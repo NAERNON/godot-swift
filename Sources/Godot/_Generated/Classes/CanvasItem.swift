@@ -15,56 +15,59 @@ open class CanvasItem: Node {
         case nearestWithMipmapsAnisotropic = 5
         case linearWithMipmapsAnisotropic = 6
         case max = 7
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Parent Node", 0),
-            ("Nearest", 1),
-            ("Linear", 2),
-            ("Nearest With Mipmaps", 3),
-            ("Linear With Mipmaps", 4),
-            ("Nearest With Mipmaps Anisotropic", 5),
-            ("Linear With Mipmaps Anisotropic", 6),
-            ("Max", 7),]
+               ("Parent Node", 0),
+               ("Nearest", 1),
+               ("Linear", 2),
+               ("Nearest With Mipmaps", 3),
+               ("Linear With Mipmaps", 4),
+               ("Nearest With Mipmaps Anisotropic", 5),
+               ("Linear With Mipmaps Anisotropic", 6),
+               ("Max", 7),
+            ]
         }
     }
-
+    
     public enum TextureRepeat: UInt32, GodotEnum {
         case parentNode = 0
         case disabled = 1
         case enabled = 2
         case mirror = 3
         case max = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Parent Node", 0),
-            ("Disabled", 1),
-            ("Enabled", 2),
-            ("Mirror", 3),
-            ("Max", 4),]
+               ("Parent Node", 0),
+               ("Disabled", 1),
+               ("Enabled", 2),
+               ("Mirror", 3),
+               ("Max", 4),
+            ]
         }
     }
-
+    
     public enum ClipChildrenMode: UInt32, GodotEnum {
         case disabled = 0
         case only = 1
         case andDraw = 2
         case max = 3
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Disabled", 0),
-            ("Only", 1),
-            ("And Draw", 2),
-            ("Max", 3),]
+               ("Disabled", 0),
+               ("Only", 1),
+               ("And Draw", 2),
+               ("Max", 3),
+            ]
         }
     }
-
+    
+    
     public func draw() {
         _ = drawSignal.emit()
     }
-
     public lazy var drawSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "draw") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -79,11 +82,11 @@ open class CanvasItem: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func visibilityChanged() {
         _ = visibilityChangedSignal.emit()
     }
-
     public lazy var visibilityChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "visibility_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -98,11 +101,11 @@ open class CanvasItem: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func hidden() {
         _ = hiddenSignal.emit()
     }
-
     public lazy var hiddenSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "hidden") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -117,11 +120,11 @@ open class CanvasItem: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func itemRectChanged() {
         _ = itemRectChangedSignal.emit()
     }
-
     public lazy var itemRectChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "item_rect_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -136,32 +139,33 @@ open class CanvasItem: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public static let notificationTransformChanged: Notification = .init(rawValue: 2000)
-
+    
     public static let notificationLocalTransformChanged: Notification = .init(rawValue: 35)
-
+    
     public static let notificationDraw: Notification = .init(rawValue: 30)
-
+    
     public static let notificationVisibilityChanged: Notification = .init(rawValue: 31)
-
+    
     public static let notificationEnterCanvas: Notification = .init(rawValue: 32)
-
+    
     public static let notificationExitCanvas: Notification = .init(rawValue: 33)
-
+    
     public static let notificationWorld2DChanged: Notification = .init(rawValue: 36)
-
+    
     open func _draw() {
+        
     }
-
+    
     internal static var __method_binding_get_canvas_item: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_canvas_item").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
-        }
+            GodotStringName(swiftStaticString: "get_canvas_item").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
+            }
         }
     }()
-
+    
     public func canvasItem() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -174,15 +178,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_visible").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_visible").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setVisible(
         _ visible: Bool
     ) {
@@ -199,15 +203,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_is_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_visible").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_visible").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isVisible() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -220,15 +224,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_is_visible_in_tree: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_visible_in_tree").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_visible_in_tree").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isVisibleInTree() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -241,15 +245,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_show: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "show").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "show").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func show() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -260,15 +264,15 @@ open class CanvasItem: Node {
             )
         }
     }
-
+    
     internal static var __method_binding_hide: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "hide").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "hide").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func hide() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -279,15 +283,15 @@ open class CanvasItem: Node {
             )
         }
     }
-
+    
     internal static var __method_binding_queue_redraw: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "queue_redraw").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "queue_redraw").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func queueRedraw() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -298,15 +302,15 @@ open class CanvasItem: Node {
             )
         }
     }
-
+    
     internal static var __method_binding_move_to_front: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "move_to_front").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "move_to_front").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func moveToFront() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -317,15 +321,15 @@ open class CanvasItem: Node {
             )
         }
     }
-
+    
     internal static var __method_binding_set_as_top_level: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_as_top_level").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_as_top_level").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setAsTopLevel(
         enable: Bool
     ) {
@@ -342,15 +346,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_is_set_as_top_level: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_set_as_top_level").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_set_as_top_level").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isSetAsTopLevel() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -363,15 +367,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_light_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_light_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_light_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setLightMask(
         _ lightMask: Int32
     ) {
@@ -388,15 +392,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_light_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_light_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_light_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getLightMask() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -409,15 +413,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_modulate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_modulate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
-        }
+            GodotStringName(swiftStaticString: "set_modulate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
+            }
         }
     }()
-
+    
     private func __setModulate(
         _ modulate: Godot.Color
     ) {
@@ -434,15 +438,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_modulate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_modulate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
-        }
+            GodotStringName(swiftStaticString: "get_modulate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
+            }
         }
     }()
-
+    
     private func __getModulate() -> Godot.Color {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -455,15 +459,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_self_modulate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_self_modulate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
-        }
+            GodotStringName(swiftStaticString: "set_self_modulate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
+            }
         }
     }()
-
+    
     private func __setSelfModulate(
         _ selfModulate: Godot.Color
     ) {
@@ -480,15 +484,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_self_modulate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_self_modulate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
-        }
+            GodotStringName(swiftStaticString: "get_self_modulate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
+            }
         }
     }()
-
+    
     private func __getSelfModulate() -> Godot.Color {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -501,15 +505,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_z_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_z_index").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_z_index").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setZIndex(
         _ zIndex: Int32
     ) {
@@ -526,15 +530,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_z_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_z_index").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_z_index").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getZIndex() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -547,15 +551,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_z_as_relative: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_z_as_relative").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_z_as_relative").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setZAsRelative(
         enable: Bool
     ) {
@@ -572,15 +576,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_is_z_relative: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_z_relative").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_z_relative").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isZRelative() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -593,15 +597,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_y_sort_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_y_sort_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_y_sort_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setYSortEnabled(
         _ enabled: Bool
     ) {
@@ -618,15 +622,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_is_y_sort_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_y_sort_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_y_sort_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isYSortEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -639,15 +643,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_draw_behind_parent: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_draw_behind_parent").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_draw_behind_parent").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setDrawBehindParent(
         enable: Bool
     ) {
@@ -664,15 +668,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_is_draw_behind_parent_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_draw_behind_parent_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_draw_behind_parent_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isDrawBehindParentEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -685,15 +689,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_line: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_line").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1562330099)!
-        }
+            GodotStringName(swiftStaticString: "draw_line").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1562330099)!
+            }
         }
     }()
-
+    
     public func drawLine(
         from: Godot.Vector2,
         to: Godot.Vector2,
@@ -722,15 +726,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_dashed_line: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_dashed_line").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 684651049)!
-        }
+            GodotStringName(swiftStaticString: "draw_dashed_line").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 684651049)!
+            }
         }
     }()
-
+    
     public func drawDashedLine(
         from: Godot.Vector2,
         to: Godot.Vector2,
@@ -762,15 +766,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_polyline: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_polyline").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3797364428)!
-        }
+            GodotStringName(swiftStaticString: "draw_polyline").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3797364428)!
+            }
         }
     }()
-
+    
     public func drawPolyline(
         points: Godot.GodotContiguousArray<Vector2>,
         color: Godot.Color,
@@ -796,15 +800,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_polyline_colors: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_polyline_colors").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2311979562)!
-        }
+            GodotStringName(swiftStaticString: "draw_polyline_colors").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2311979562)!
+            }
         }
     }()
-
+    
     public func drawPolylineColors(
         points: Godot.GodotContiguousArray<Vector2>,
         colors: Godot.GodotContiguousArray<Color>,
@@ -830,15 +834,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_arc: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_arc").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4140652635)!
-        }
+            GodotStringName(swiftStaticString: "draw_arc").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4140652635)!
+            }
         }
     }()
-
+    
     public func drawArc(
         center: Godot.Vector2,
         radius: Double,
@@ -876,15 +880,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_multiline: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_multiline").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2239075205)!
-        }
+            GodotStringName(swiftStaticString: "draw_multiline").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2239075205)!
+            }
         }
     }()
-
+    
     public func drawMultiline(
         points: Godot.GodotContiguousArray<Vector2>,
         color: Godot.Color,
@@ -907,15 +911,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_multiline_colors: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_multiline_colors").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4072951537)!
-        }
+            GodotStringName(swiftStaticString: "draw_multiline_colors").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4072951537)!
+            }
         }
     }()
-
+    
     public func drawMultilineColors(
         points: Godot.GodotContiguousArray<Vector2>,
         colors: Godot.GodotContiguousArray<Color>,
@@ -938,15 +942,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_rect").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2417231121)!
-        }
+            GodotStringName(swiftStaticString: "draw_rect").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2417231121)!
+            }
         }
     }()
-
+    
     public func drawRect(
         _ rect: Godot.Rect2,
         color: Godot.Color,
@@ -972,15 +976,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_circle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_circle").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3063020269)!
-        }
+            GodotStringName(swiftStaticString: "draw_circle").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3063020269)!
+            }
         }
     }()
-
+    
     public func drawCircle(
         position: Godot.Vector2,
         radius: Double,
@@ -1003,15 +1007,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 520200117)!
-        }
+            GodotStringName(swiftStaticString: "draw_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 520200117)!
+            }
         }
     }()
-
+    
     public func drawTexture(
         _ texture: Godot.Texture2D?,
         position: Godot.Vector2,
@@ -1036,15 +1040,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_texture_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_texture_rect").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3832805018)!
-        }
+            GodotStringName(swiftStaticString: "draw_texture_rect").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3832805018)!
+            }
         }
     }()
-
+    
     public func drawTextureRect(
         texture: Godot.Texture2D?,
         rect: Godot.Rect2,
@@ -1075,15 +1079,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_texture_rect_region: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_texture_rect_region").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3883821411)!
-        }
+            GodotStringName(swiftStaticString: "draw_texture_rect_region").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3883821411)!
+            }
         }
     }()
-
+    
     public func drawTextureRectRegion(
         texture: Godot.Texture2D?,
         rect: Godot.Rect2,
@@ -1117,15 +1121,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_msdf_texture_rect_region: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_msdf_texture_rect_region").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4219163252)!
-        }
+            GodotStringName(swiftStaticString: "draw_msdf_texture_rect_region").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4219163252)!
+            }
         }
     }()
-
+    
     public func drawMsdfTextureRectRegion(
         texture: Godot.Texture2D?,
         rect: Godot.Rect2,
@@ -1162,15 +1166,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_lcd_texture_rect_region: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_lcd_texture_rect_region").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3212350954)!
-        }
+            GodotStringName(swiftStaticString: "draw_lcd_texture_rect_region").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3212350954)!
+            }
         }
     }()
-
+    
     public func drawLcdTextureRectRegion(
         texture: Godot.Texture2D?,
         rect: Godot.Rect2,
@@ -1198,15 +1202,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_style_box: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_style_box").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 388176283)!
-        }
+            GodotStringName(swiftStaticString: "draw_style_box").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 388176283)!
+            }
         }
     }()
-
+    
     public func drawStyleBox(
         _ styleBox: Godot.StyleBox?,
         rect: Godot.Rect2
@@ -1228,15 +1232,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_primitive: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_primitive").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3288481815)!
-        }
+            GodotStringName(swiftStaticString: "draw_primitive").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3288481815)!
+            }
         }
     }()
-
+    
     public func drawPrimitive(
         points: Godot.GodotContiguousArray<Vector2>,
         colors: Godot.GodotContiguousArray<Color>,
@@ -1264,15 +1268,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_polygon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 974537912)!
-        }
+            GodotStringName(swiftStaticString: "draw_polygon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 974537912)!
+            }
         }
     }()
-
+    
     public func drawPolygon(
         points: Godot.GodotContiguousArray<Vector2>,
         colors: Godot.GodotContiguousArray<Color>,
@@ -1300,15 +1304,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_colored_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_colored_polygon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 15245644)!
-        }
+            GodotStringName(swiftStaticString: "draw_colored_polygon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 15245644)!
+            }
         }
     }()
-
+    
     public func drawColoredPolygon(
         points: Godot.GodotContiguousArray<Vector2>,
         color: Godot.Color,
@@ -1336,15 +1340,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_string: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_string").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 728290553)!
-        }
+            GodotStringName(swiftStaticString: "draw_string").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 728290553)!
+            }
         }
     }()
-
+    
     public func drawString(
         font: Godot.Font?,
         pos: Godot.Vector2,
@@ -1390,15 +1394,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_multiline_string: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_multiline_string").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1927038192)!
-        }
+            GodotStringName(swiftStaticString: "draw_multiline_string").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1927038192)!
+            }
         }
     }()
-
+    
     public func drawMultilineString(
         font: Godot.Font?,
         pos: Godot.Vector2,
@@ -1450,15 +1454,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_string_outline: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_string_outline").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 340562381)!
-        }
+            GodotStringName(swiftStaticString: "draw_string_outline").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 340562381)!
+            }
         }
     }()
-
+    
     public func drawStringOutline(
         font: Godot.Font?,
         pos: Godot.Vector2,
@@ -1507,15 +1511,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_multiline_string_outline: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_multiline_string_outline").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1912318525)!
-        }
+            GodotStringName(swiftStaticString: "draw_multiline_string_outline").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1912318525)!
+            }
         }
     }()
-
+    
     public func drawMultilineStringOutline(
         font: Godot.Font?,
         pos: Godot.Vector2,
@@ -1570,15 +1574,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_char: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_char").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3339793283)!
-        }
+            GodotStringName(swiftStaticString: "draw_char").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3339793283)!
+            }
         }
     }()
-
+    
     public func drawChar(
         font: Godot.Font?,
         pos: Godot.Vector2,
@@ -1609,15 +1613,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_char_outline: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_char_outline").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3302344391)!
-        }
+            GodotStringName(swiftStaticString: "draw_char_outline").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3302344391)!
+            }
         }
     }()
-
+    
     public func drawCharOutline(
         font: Godot.Font?,
         pos: Godot.Vector2,
@@ -1651,15 +1655,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_mesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 153818295)!
-        }
+            GodotStringName(swiftStaticString: "draw_mesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 153818295)!
+            }
         }
     }()
-
+    
     public func drawMesh(
         _ mesh: Godot.Mesh?,
         texture: Godot.Texture2D?,
@@ -1689,15 +1693,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_multimesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_multimesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 937992368)!
-        }
+            GodotStringName(swiftStaticString: "draw_multimesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 937992368)!
+            }
         }
     }()
-
+    
     public func drawMultimesh(
         _ multimesh: Godot.MultiMesh?,
         texture: Godot.Texture2D?
@@ -1721,15 +1725,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_set_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_set_transform").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 288975085)!
-        }
+            GodotStringName(swiftStaticString: "draw_set_transform").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 288975085)!
+            }
         }
     }()
-
+    
     public func drawSetTransform(
         position: Godot.Vector2,
         rotation: Double = 0.0,
@@ -1752,15 +1756,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_set_transform_matrix: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_set_transform_matrix").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2761652528)!
-        }
+            GodotStringName(swiftStaticString: "draw_set_transform_matrix").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2761652528)!
+            }
         }
     }()
-
+    
     public func drawSetTransformMatrix(
         xform: Godot.Transform2D
     ) {
@@ -1777,15 +1781,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_animation_slice: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_animation_slice").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3112831842)!
-        }
+            GodotStringName(swiftStaticString: "draw_animation_slice").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3112831842)!
+            }
         }
     }()
-
+    
     public func drawAnimationSlice(
         animationLength: Double,
         sliceBegin: Double,
@@ -1811,15 +1815,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_end_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_end_animation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "draw_end_animation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func drawEndAnimation() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1830,15 +1834,15 @@ open class CanvasItem: Node {
             )
         }
     }
-
+    
     internal static var __method_binding_get_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_transform").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814499831)!
-        }
+            GodotStringName(swiftStaticString: "get_transform").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814499831)!
+            }
         }
     }()
-
+    
     public func transform() -> Godot.Transform2D {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1851,15 +1855,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_global_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_global_transform").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814499831)!
-        }
+            GodotStringName(swiftStaticString: "get_global_transform").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814499831)!
+            }
         }
     }()
-
+    
     public func globalTransform() -> Godot.Transform2D {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1872,15 +1876,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_global_transform_with_canvas: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_global_transform_with_canvas").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814499831)!
-        }
+            GodotStringName(swiftStaticString: "get_global_transform_with_canvas").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814499831)!
+            }
         }
     }()
-
+    
     public func globalTransformWithCanvas() -> Godot.Transform2D {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1893,15 +1897,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_viewport_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_viewport_transform").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814499831)!
-        }
+            GodotStringName(swiftStaticString: "get_viewport_transform").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814499831)!
+            }
         }
     }()
-
+    
     public func viewportTransform() -> Godot.Transform2D {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1914,15 +1918,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_viewport_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_viewport_rect").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!
-        }
+            GodotStringName(swiftStaticString: "get_viewport_rect").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!
+            }
         }
     }()
-
+    
     public func viewportRect() -> Godot.Rect2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1935,15 +1939,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_canvas_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_canvas_transform").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814499831)!
-        }
+            GodotStringName(swiftStaticString: "get_canvas_transform").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814499831)!
+            }
         }
     }()
-
+    
     public func canvasTransform() -> Godot.Transform2D {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1956,15 +1960,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_screen_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_screen_transform").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814499831)!
-        }
+            GodotStringName(swiftStaticString: "get_screen_transform").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814499831)!
+            }
         }
     }()
-
+    
     public func screenTransform() -> Godot.Transform2D {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1977,15 +1981,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_local_mouse_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_local_mouse_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_local_mouse_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     public func localMousePosition() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1998,15 +2002,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_global_mouse_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_global_mouse_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_global_mouse_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     public func globalMousePosition() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2019,15 +2023,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_canvas: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_canvas").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
-        }
+            GodotStringName(swiftStaticString: "get_canvas").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
+            }
         }
     }()
-
+    
     public func canvas() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2040,15 +2044,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_world_2d: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_world_2d").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339128592)!
-        }
+            GodotStringName(swiftStaticString: "get_world_2d").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339128592)!
+            }
         }
     }()
-
+    
     public func world2D() -> Godot.World2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2061,15 +2065,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_material").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2757459619)!
-        }
+            GodotStringName(swiftStaticString: "set_material").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2757459619)!
+            }
         }
     }()
-
+    
     private func __setMaterial(
         _ material: Godot.Material?
     ) {
@@ -2088,15 +2092,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_material").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 5934680)!
-        }
+            GodotStringName(swiftStaticString: "get_material").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 5934680)!
+            }
         }
     }()
-
+    
     private func __getMaterial() -> Godot.Material? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2109,15 +2113,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_use_parent_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_use_parent_material").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_use_parent_material").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setUseParentMaterial(
         enable: Bool
     ) {
@@ -2134,15 +2138,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_use_parent_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_use_parent_material").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_use_parent_material").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getUseParentMaterial() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2155,15 +2159,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_notify_local_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_notify_local_transform").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_notify_local_transform").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     public func setNotifyLocalTransform(
         enable: Bool
     ) {
@@ -2180,15 +2184,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_is_local_transform_notification_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_local_transform_notification_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_local_transform_notification_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isLocalTransformNotificationEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2201,15 +2205,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_notify_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_notify_transform").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_notify_transform").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     public func setNotifyTransform(
         enable: Bool
     ) {
@@ -2226,15 +2230,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_is_transform_notification_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_transform_notification_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_transform_notification_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isTransformNotificationEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2247,15 +2251,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_force_update_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "force_update_transform").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "force_update_transform").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func forceUpdateTransform() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -2266,15 +2270,15 @@ open class CanvasItem: Node {
             )
         }
     }
-
+    
     internal static var __method_binding_make_canvas_position_local: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "make_canvas_position_local").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2656412154)!
-        }
+            GodotStringName(swiftStaticString: "make_canvas_position_local").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2656412154)!
+            }
         }
     }()
-
+    
     public func makeCanvasPositionLocal(
         screenPoint: Godot.Vector2
     ) -> Godot.Vector2 {
@@ -2293,15 +2297,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_make_input_local: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "make_input_local").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 811130057)!
-        }
+            GodotStringName(swiftStaticString: "make_input_local").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 811130057)!
+            }
         }
     }()
-
+    
     public func makeInputLocal(
         event: Godot.InputEvent?
     ) -> Godot.InputEvent? {
@@ -2322,15 +2326,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_visibility_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_visibility_layer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_visibility_layer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setVisibilityLayer(
         _ layer: UInt32
     ) {
@@ -2347,15 +2351,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_visibility_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_visibility_layer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_visibility_layer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getVisibilityLayer() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2368,15 +2372,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_visibility_layer_bit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_visibility_layer_bit").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "set_visibility_layer_bit").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func setVisibilityLayerBit(
         layer: UInt32,
         enabled: Bool
@@ -2396,15 +2400,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_visibility_layer_bit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_visibility_layer_bit").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "get_visibility_layer_bit").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func visibilityLayerBit(
         layer: UInt32
     ) -> Bool {
@@ -2423,15 +2427,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_filter").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1037999706)!
-        }
+            GodotStringName(swiftStaticString: "set_texture_filter").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1037999706)!
+            }
         }
     }()
-
+    
     private func __setTextureFilter(
         mode: Godot.CanvasItem.TextureFilter
     ) {
@@ -2448,15 +2452,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_filter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_filter").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 121960042)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_filter").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 121960042)!
+            }
         }
     }()
-
+    
     private func __getTextureFilter() -> Godot.CanvasItem.TextureFilter {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2469,15 +2473,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture_repeat: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_repeat").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1716472974)!
-        }
+            GodotStringName(swiftStaticString: "set_texture_repeat").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1716472974)!
+            }
         }
     }()
-
+    
     private func __setTextureRepeat(
         mode: Godot.CanvasItem.TextureRepeat
     ) {
@@ -2494,15 +2498,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_repeat: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_repeat").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2667158319)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_repeat").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2667158319)!
+            }
         }
     }()
-
+    
     private func __getTextureRepeat() -> Godot.CanvasItem.TextureRepeat {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2515,15 +2519,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_clip_children_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_clip_children_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1319393776)!
-        }
+            GodotStringName(swiftStaticString: "set_clip_children_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1319393776)!
+            }
         }
     }()
-
+    
     private func __setClipChildrenMode(
         _ mode: Godot.CanvasItem.ClipChildrenMode
     ) {
@@ -2540,15 +2544,15 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_clip_children_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_clip_children_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3581808349)!
-        }
+            GodotStringName(swiftStaticString: "get_clip_children_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3581808349)!
+            }
         }
     }()
-
+    
     private func __getClipChildrenMode() -> Godot.CanvasItem.ClipChildrenMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -2561,189 +2565,188 @@ open class CanvasItem: Node {
             }
         }
     }
-
+    
     public var isVisible: Bool {
         get {
             __isVisible()
         }
-        set {
+        set(newValue) {
             __setVisible(
                 newValue
             )
         }
     }
-
+    
     public var modulate: Godot.Color {
         get {
             __getModulate()
         }
-        set {
+        set(newValue) {
             __setModulate(
                 newValue
             )
         }
     }
-
+    
     public var selfModulate: Godot.Color {
         get {
             __getSelfModulate()
         }
-        set {
+        set(newValue) {
             __setSelfModulate(
                 newValue
             )
         }
     }
-
+    
     public var isDrawBehindParentEnabled: Bool {
         get {
             __isDrawBehindParentEnabled()
         }
-        set {
+        set(newValue) {
             __setDrawBehindParent(
                 enable: newValue
             )
         }
     }
-
+    
     public var isSetAsTopLevel: Bool {
         get {
             __isSetAsTopLevel()
         }
-        set {
+        set(newValue) {
             __setAsTopLevel(
                 enable: newValue
             )
         }
     }
-
+    
     public var clipChildrenMode: Godot.CanvasItem.ClipChildrenMode {
         get {
             __getClipChildrenMode()
         }
-        set {
+        set(newValue) {
             __setClipChildrenMode(
                 newValue
             )
         }
     }
-
+    
     public var lightMask: Int32 {
         get {
             __getLightMask()
         }
-        set {
+        set(newValue) {
             __setLightMask(
                 newValue
             )
         }
     }
-
+    
     public var visibilityLayer: UInt32 {
         get {
             __getVisibilityLayer()
         }
-        set {
+        set(newValue) {
             __setVisibilityLayer(
                 newValue
             )
         }
     }
-
+    
     public var zIndex: Int32 {
         get {
             __getZIndex()
         }
-        set {
+        set(newValue) {
             __setZIndex(
                 newValue
             )
         }
     }
-
+    
     public var isZRelative: Bool {
         get {
             __isZRelative()
         }
-        set {
+        set(newValue) {
             __setZAsRelative(
                 enable: newValue
             )
         }
     }
-
+    
     public var isYSortEnabled: Bool {
         get {
             __isYSortEnabled()
         }
-        set {
+        set(newValue) {
             __setYSortEnabled(
                 newValue
             )
         }
     }
-
+    
     public var textureFilter: Godot.CanvasItem.TextureFilter {
         get {
             __getTextureFilter()
         }
-        set {
+        set(newValue) {
             __setTextureFilter(
                 mode: newValue
             )
         }
     }
-
+    
     public var textureRepeat: Godot.CanvasItem.TextureRepeat {
         get {
             __getTextureRepeat()
         }
-        set {
+        set(newValue) {
             __setTextureRepeat(
                 mode: newValue
             )
         }
     }
-
+    
     public var material: Godot.Material? {
         get {
             __getMaterial()
         }
-        set {
+        set(newValue) {
             __setMaterial(
                 newValue
             )
         }
     }
-
+    
     public var useParentMaterial: Bool {
         get {
             __getUseParentMaterial()
         }
-        set {
+        set(newValue) {
             __setUseParentMaterial(
                 enable: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _draw_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<CanvasItem> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._draw()}
+            guard let instancePtr else { return }
+            Unmanaged<CanvasItem>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._draw()
+        }
         _virtualFunctions = [
             "_draw" : ("_draw", _draw_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

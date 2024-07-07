@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class PhysicsTestMotionParameters2D: RefCounted {
     internal static var __method_binding_get_from: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_from").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814499831)!
-        }
+            GodotStringName(swiftStaticString: "get_from").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814499831)!
+            }
         }
     }()
-
+    
     private func __getFrom() -> Godot.Transform2D {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -26,15 +26,15 @@ open class PhysicsTestMotionParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_from: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_from").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2761652528)!
-        }
+            GodotStringName(swiftStaticString: "set_from").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2761652528)!
+            }
         }
     }()
-
+    
     private func __set(
         from: Godot.Transform2D
     ) {
@@ -51,15 +51,15 @@ open class PhysicsTestMotionParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_motion: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_motion").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_motion").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getMotion() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -72,15 +72,15 @@ open class PhysicsTestMotionParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_motion: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_motion").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_motion").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setMotion(
         _ motion: Godot.Vector2
     ) {
@@ -97,15 +97,15 @@ open class PhysicsTestMotionParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getMargin() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -118,15 +118,15 @@ open class PhysicsTestMotionParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setMargin(
         _ margin: Double
     ) {
@@ -143,15 +143,15 @@ open class PhysicsTestMotionParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_is_collide_separation_ray_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_collide_separation_ray_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_collide_separation_ray_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isCollideSeparationRayEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -164,15 +164,15 @@ open class PhysicsTestMotionParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_collide_separation_ray_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_collide_separation_ray_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_collide_separation_ray_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setCollideSeparationRayEnabled(
         _ enabled: Bool
     ) {
@@ -189,15 +189,15 @@ open class PhysicsTestMotionParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_exclude_bodies: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_exclude_bodies").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
-        }
+            GodotStringName(swiftStaticString: "get_exclude_bodies").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
+            }
         }
     }()
-
+    
     private func __getExcludeBodies() -> Godot.GodotArray<Godot.RID> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -210,15 +210,15 @@ open class PhysicsTestMotionParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_exclude_bodies: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_exclude_bodies").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
-        }
+            GodotStringName(swiftStaticString: "set_exclude_bodies").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
+            }
         }
     }()
-
+    
     private func __setExcludeBodies(
         excludeList: Godot.GodotArray<Godot.RID>
     ) {
@@ -235,15 +235,15 @@ open class PhysicsTestMotionParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_exclude_objects: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_exclude_objects").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
-        }
+            GodotStringName(swiftStaticString: "get_exclude_objects").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
+            }
         }
     }()
-
+    
     private func __getExcludeObjects() -> Godot.GodotArray<Int> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -256,15 +256,15 @@ open class PhysicsTestMotionParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_exclude_objects: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_exclude_objects").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
-        }
+            GodotStringName(swiftStaticString: "set_exclude_objects").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
+            }
         }
     }()
-
+    
     private func __setExcludeObjects(
         excludeList: Godot.GodotArray<Int>
     ) {
@@ -281,15 +281,15 @@ open class PhysicsTestMotionParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_is_recovery_as_collision_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_recovery_as_collision_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_recovery_as_collision_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isRecoveryAsCollisionEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -302,15 +302,15 @@ open class PhysicsTestMotionParameters2D: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_recovery_as_collision_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_recovery_as_collision_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_recovery_as_collision_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setRecoveryAsCollisionEnabled(
         _ enabled: Bool
     ) {
@@ -327,95 +327,92 @@ open class PhysicsTestMotionParameters2D: RefCounted {
             }
         }
     }
-
+    
     public var from: Godot.Transform2D {
         get {
             __getFrom()
         }
-        set {
+        set(newValue) {
             __set(
                 from: newValue
             )
         }
     }
-
+    
     public var motion: Godot.Vector2 {
         get {
             __getMotion()
         }
-        set {
+        set(newValue) {
             __setMotion(
                 newValue
             )
         }
     }
-
+    
     public var margin: Double {
         get {
             __getMargin()
         }
-        set {
+        set(newValue) {
             __setMargin(
                 newValue
             )
         }
     }
-
+    
     public var isCollideSeparationRayEnabled: Bool {
         get {
             __isCollideSeparationRayEnabled()
         }
-        set {
+        set(newValue) {
             __setCollideSeparationRayEnabled(
                 newValue
             )
         }
     }
-
+    
     public var excludeBodies: Godot.GodotArray<Godot.RID> {
         get {
             __getExcludeBodies()
         }
-        set {
+        set(newValue) {
             __setExcludeBodies(
                 excludeList: newValue
             )
         }
     }
-
+    
     public var excludeObjects: Godot.GodotArray<Int> {
         get {
             __getExcludeObjects()
         }
-        set {
+        set(newValue) {
             __setExcludeObjects(
                 excludeList: newValue
             )
         }
     }
-
+    
     public var isRecoveryAsCollisionEnabled: Bool {
         get {
             __isRecoveryAsCollisionEnabled()
         }
-        set {
+        set(newValue) {
             __setRecoveryAsCollisionEnabled(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

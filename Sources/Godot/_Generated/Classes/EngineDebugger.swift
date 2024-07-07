@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class EngineDebugger: Object {
     internal static var __method_binding_is_active: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_active").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
-        }
+            GodotStringName(swiftStaticString: "is_active").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
+            }
         }
     }()
-
+    
     public func isActive() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -26,15 +26,15 @@ open class EngineDebugger: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_register_profiler: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "register_profiler").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3651669560)!
-        }
+            GodotStringName(swiftStaticString: "register_profiler").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3651669560)!
+            }
         }
     }()
-
+    
     public func registerProfiler(
         name: Godot.GodotStringName,
         profiler: Godot.EngineProfiler?
@@ -56,15 +56,15 @@ open class EngineDebugger: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_unregister_profiler: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "unregister_profiler").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
-        }
+            GodotStringName(swiftStaticString: "unregister_profiler").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
+            }
         }
     }()
-
+    
     public func unregisterProfiler(
         name: Godot.GodotStringName
     ) {
@@ -81,15 +81,15 @@ open class EngineDebugger: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_profiling: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_profiling").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2041966384)!
-        }
+            GodotStringName(swiftStaticString: "is_profiling").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2041966384)!
+            }
         }
     }()
-
+    
     public func isProfiling(
         name: Godot.GodotStringName
     ) -> Bool {
@@ -108,15 +108,15 @@ open class EngineDebugger: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_has_profiler: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_profiler").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2041966384)!
-        }
+            GodotStringName(swiftStaticString: "has_profiler").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2041966384)!
+            }
         }
     }()
-
+    
     public func hasProfiler(
         name: Godot.GodotStringName
     ) -> Bool {
@@ -135,15 +135,15 @@ open class EngineDebugger: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_profiler_add_frame_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "profiler_add_frame_data").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1895267858)!
-        }
+            GodotStringName(swiftStaticString: "profiler_add_frame_data").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1895267858)!
+            }
         }
     }()
-
+    
     public func profilerAddFrameData<Value: Variant.Storable>(
         name: Godot.GodotStringName,
         data: Godot.GodotArray<Value>
@@ -163,15 +163,15 @@ open class EngineDebugger: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_profiler_enable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "profiler_enable").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3192561009)!
-        }
+            GodotStringName(swiftStaticString: "profiler_enable").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3192561009)!
+            }
         }
     }()
-
+    
     public func profilerEnable<Value: Variant.Storable>(
         name: Godot.GodotStringName,
         enable: Bool,
@@ -194,15 +194,15 @@ open class EngineDebugger: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_register_message_capture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "register_message_capture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1874754934)!
-        }
+            GodotStringName(swiftStaticString: "register_message_capture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1874754934)!
+            }
         }
     }()
-
+    
     public func registerMessageCapture(
         name: Godot.GodotStringName,
         callable: Godot.Callable
@@ -222,15 +222,15 @@ open class EngineDebugger: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_unregister_message_capture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "unregister_message_capture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
-        }
+            GodotStringName(swiftStaticString: "unregister_message_capture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
+            }
         }
     }()
-
+    
     public func unregisterMessageCapture(
         name: Godot.GodotStringName
     ) {
@@ -247,15 +247,15 @@ open class EngineDebugger: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_has_capture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_capture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2041966384)!
-        }
+            GodotStringName(swiftStaticString: "has_capture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2041966384)!
+            }
         }
     }()
-
+    
     public func hasCapture(
         name: Godot.GodotStringName
     ) -> Bool {
@@ -274,15 +274,15 @@ open class EngineDebugger: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_send_message: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "send_message").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1209351045)!
-        }
+            GodotStringName(swiftStaticString: "send_message").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1209351045)!
+            }
         }
     }()
-
+    
     public func sendMessage<Value: Variant.Storable>(
         _ message: Godot.GodotString,
         data: Godot.GodotArray<Value>
@@ -302,18 +302,15 @@ open class EngineDebugger: Object {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

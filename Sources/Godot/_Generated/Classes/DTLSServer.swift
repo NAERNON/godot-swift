@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class DTLSServer: RefCounted {
     internal static var __method_binding_setup: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "setup").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1262296096)!
-        }
+            GodotStringName(swiftStaticString: "setup").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1262296096)!
+            }
         }
     }()
-
+    
     public func setup(
         serverOptions: Godot.TLSOptions?
     ) -> Godot.ErrorType {
@@ -34,15 +34,15 @@ open class DTLSServer: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_take_connection: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "take_connection").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3946580474)!
-        }
+            GodotStringName(swiftStaticString: "take_connection").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3946580474)!
+            }
         }
     }()
-
+    
     public func takeConnection(
         udpPeer: Godot.PacketPeerUDP?
     ) -> Godot.PacketPeerDTLS? {
@@ -63,18 +63,15 @@ open class DTLSServer: RefCounted {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

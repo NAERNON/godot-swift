@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class StaticBody3D: PhysicsBody3D {
     internal static var __method_binding_set_constant_linear_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_constant_linear_velocity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
-        }
+            GodotStringName(swiftStaticString: "set_constant_linear_velocity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
+            }
         }
     }()
-
+    
     private func __setConstantLinearVelocity(
         vel: Godot.Vector3
     ) {
@@ -30,15 +30,15 @@ open class StaticBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_constant_angular_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_constant_angular_velocity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
-        }
+            GodotStringName(swiftStaticString: "set_constant_angular_velocity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
+            }
         }
     }()
-
+    
     private func __setConstantAngularVelocity(
         vel: Godot.Vector3
     ) {
@@ -55,15 +55,15 @@ open class StaticBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_constant_linear_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_constant_linear_velocity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
-        }
+            GodotStringName(swiftStaticString: "get_constant_linear_velocity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
+            }
         }
     }()
-
+    
     private func __getConstantLinearVelocity() -> Godot.Vector3 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -76,15 +76,15 @@ open class StaticBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_constant_angular_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_constant_angular_velocity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
-        }
+            GodotStringName(swiftStaticString: "get_constant_angular_velocity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
+            }
         }
     }()
-
+    
     private func __getConstantAngularVelocity() -> Godot.Vector3 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -97,15 +97,15 @@ open class StaticBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_physics_material_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_physics_material_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1784508650)!
-        }
+            GodotStringName(swiftStaticString: "set_physics_material_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1784508650)!
+            }
         }
     }()
-
+    
     private func __setPhysicsMaterialOverride(
         _ physicsMaterialOverride: Godot.PhysicsMaterial?
     ) {
@@ -124,15 +124,15 @@ open class StaticBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_physics_material_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_physics_material_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2521850424)!
-        }
+            GodotStringName(swiftStaticString: "get_physics_material_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2521850424)!
+            }
         }
     }()
-
+    
     private func __getPhysicsMaterialOverride() -> Godot.PhysicsMaterial? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -145,51 +145,48 @@ open class StaticBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     public var physicsMaterialOverride: Godot.PhysicsMaterial? {
         get {
             __getPhysicsMaterialOverride()
         }
-        set {
+        set(newValue) {
             __setPhysicsMaterialOverride(
                 newValue
             )
         }
     }
-
+    
     public var constantLinearVelocity: Godot.Vector3 {
         get {
             __getConstantLinearVelocity()
         }
-        set {
+        set(newValue) {
             __setConstantLinearVelocity(
                 vel: newValue
             )
         }
     }
-
+    
     public var constantAngularVelocity: Godot.Vector3 {
         get {
             __getConstantAngularVelocity()
         }
-        set {
+        set(newValue) {
             __setConstantAngularVelocity(
                 vel: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

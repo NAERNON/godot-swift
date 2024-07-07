@@ -8,26 +8,16 @@ import GodotExtensionHeaders
 open class TabContainer: Container {
     public struct ActiveTabRearrangedSignalInput: Godot.SignalInput {
         public let idxTo: Int
-
-        fileprivate init(
-            idxTo: Int
-        ) {
+        fileprivate init(idxTo: Int) {
             self.idxTo = idxTo
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.idxTo)]
         }
     }
-
-    public func activeTabRearranged(
-        idxTo: Int
-    ) {
+    public func activeTabRearranged(idxTo: Int) {
         _ = activeTabRearrangedSignal.emit(.init(idxTo: idxTo))
     }
-
     public lazy var activeTabRearrangedSignal: Godot.SignalEmitter<ActiveTabRearrangedSignalInput> = {
         .init(object: self, signalName: "active_tab_rearranged") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ActiveTabRearrangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -42,29 +32,19 @@ open class TabContainer: Container {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct TabChangedSignalInput: Godot.SignalInput {
         public let tab: Int
-
-        fileprivate init(
-            tab: Int
-        ) {
+        fileprivate init(tab: Int) {
             self.tab = tab
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.tab)]
         }
     }
-
-    public func tabChanged(
-        tab: Int
-    ) {
+    public func tabChanged(tab: Int) {
         _ = tabChangedSignal.emit(.init(tab: tab))
     }
-
     public lazy var tabChangedSignal: Godot.SignalEmitter<TabChangedSignalInput> = {
         .init(object: self, signalName: "tab_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TabChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -79,29 +59,19 @@ open class TabContainer: Container {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct TabClickedSignalInput: Godot.SignalInput {
         public let tab: Int
-
-        fileprivate init(
-            tab: Int
-        ) {
+        fileprivate init(tab: Int) {
             self.tab = tab
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.tab)]
         }
     }
-
-    public func tabClicked(
-        tab: Int
-    ) {
+    public func tabClicked(tab: Int) {
         _ = tabClickedSignal.emit(.init(tab: tab))
     }
-
     public lazy var tabClickedSignal: Godot.SignalEmitter<TabClickedSignalInput> = {
         .init(object: self, signalName: "tab_clicked") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TabClickedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -116,29 +86,19 @@ open class TabContainer: Container {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct TabHoveredSignalInput: Godot.SignalInput {
         public let tab: Int
-
-        fileprivate init(
-            tab: Int
-        ) {
+        fileprivate init(tab: Int) {
             self.tab = tab
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.tab)]
         }
     }
-
-    public func tabHovered(
-        tab: Int
-    ) {
+    public func tabHovered(tab: Int) {
         _ = tabHoveredSignal.emit(.init(tab: tab))
     }
-
     public lazy var tabHoveredSignal: Godot.SignalEmitter<TabHoveredSignalInput> = {
         .init(object: self, signalName: "tab_hovered") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TabHoveredSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -153,29 +113,19 @@ open class TabContainer: Container {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct TabSelectedSignalInput: Godot.SignalInput {
         public let tab: Int
-
-        fileprivate init(
-            tab: Int
-        ) {
+        fileprivate init(tab: Int) {
             self.tab = tab
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.tab)]
         }
     }
-
-    public func tabSelected(
-        tab: Int
-    ) {
+    public func tabSelected(tab: Int) {
         _ = tabSelectedSignal.emit(.init(tab: tab))
     }
-
     public lazy var tabSelectedSignal: Godot.SignalEmitter<TabSelectedSignalInput> = {
         .init(object: self, signalName: "tab_selected") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TabSelectedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -190,29 +140,19 @@ open class TabContainer: Container {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct TabButtonPressedSignalInput: Godot.SignalInput {
         public let tab: Int
-
-        fileprivate init(
-            tab: Int
-        ) {
+        fileprivate init(tab: Int) {
             self.tab = tab
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.tab)]
         }
     }
-
-    public func tabButtonPressed(
-        tab: Int
-    ) {
+    public func tabButtonPressed(tab: Int) {
         _ = tabButtonPressedSignal.emit(.init(tab: tab))
     }
-
     public lazy var tabButtonPressedSignal: Godot.SignalEmitter<TabButtonPressedSignalInput> = {
         .init(object: self, signalName: "tab_button_pressed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<TabButtonPressedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -227,11 +167,11 @@ open class TabContainer: Container {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func prePopupPressed() {
         _ = prePopupPressedSignal.emit()
     }
-
     public lazy var prePopupPressedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "pre_popup_pressed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -246,15 +186,15 @@ open class TabContainer: Container {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_get_tab_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tab_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_tab_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func tabCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -267,15 +207,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_set_current_tab: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_current_tab").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_current_tab").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setCurrentTab(
         tabIdx: Int32
     ) {
@@ -292,15 +232,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_current_tab: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_current_tab").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_current_tab").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getCurrentTab() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -313,15 +253,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_previous_tab: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_previous_tab").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_previous_tab").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func previousTab() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -334,15 +274,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_select_previous_available: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "select_previous_available").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
-        }
+            GodotStringName(swiftStaticString: "select_previous_available").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
+            }
         }
     }()
-
+    
     public func selectPreviousAvailable() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -355,15 +295,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_select_next_available: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "select_next_available").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
-        }
+            GodotStringName(swiftStaticString: "select_next_available").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
+            }
         }
     }()
-
+    
     public func selectNextAvailable() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -376,15 +316,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_current_tab_control: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_current_tab_control").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2783021301)!
-        }
+            GodotStringName(swiftStaticString: "get_current_tab_control").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2783021301)!
+            }
         }
     }()
-
+    
     public func currentTabControl() -> Godot.Control? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -397,15 +337,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_tab_bar: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tab_bar").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1865451809)!
-        }
+            GodotStringName(swiftStaticString: "get_tab_bar").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1865451809)!
+            }
         }
     }()
-
+    
     public func tabBar() -> Godot.TabBar? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -418,15 +358,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_tab_control: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tab_control").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1065994134)!
-        }
+            GodotStringName(swiftStaticString: "get_tab_control").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1065994134)!
+            }
         }
     }()
-
+    
     public func tabControl(
         tabIdx: Int32
     ) -> Godot.Control? {
@@ -445,15 +385,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_set_tab_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_tab_alignment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2413632353)!
-        }
+            GodotStringName(swiftStaticString: "set_tab_alignment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2413632353)!
+            }
         }
     }()
-
+    
     private func __setTabAlignment(
         _ alignment: Godot.TabBar.AlignmentMode
     ) {
@@ -470,15 +410,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_tab_alignment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tab_alignment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2178122193)!
-        }
+            GodotStringName(swiftStaticString: "get_tab_alignment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2178122193)!
+            }
         }
     }()
-
+    
     private func __getTabAlignment() -> Godot.TabBar.AlignmentMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -491,15 +431,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_set_clip_tabs: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_clip_tabs").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_clip_tabs").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setClipTabs(
         _ clipTabs: Bool
     ) {
@@ -516,15 +456,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_clip_tabs: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_clip_tabs").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_clip_tabs").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getClipTabs() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -537,15 +477,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_set_tabs_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_tabs_visible").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_tabs_visible").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setTabsVisible(
         _ visible: Bool
     ) {
@@ -562,15 +502,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_are_tabs_visible: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "are_tabs_visible").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "are_tabs_visible").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __areTabsVisible() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -583,15 +523,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_set_all_tabs_in_front: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_all_tabs_in_front").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_all_tabs_in_front").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setAllTabsInFront(
         isFront: Bool
     ) {
@@ -608,15 +548,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_is_all_tabs_in_front: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_all_tabs_in_front").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_all_tabs_in_front").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isAllTabsInFront() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -629,15 +569,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_set_tab_title: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_tab_title").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
-        }
+            GodotStringName(swiftStaticString: "set_tab_title").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
+            }
         }
     }()
-
+    
     public func setTabTitle(
         tabIdx: Int32,
         title: Godot.GodotString
@@ -657,15 +597,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_tab_title: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tab_title").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
-        }
+            GodotStringName(swiftStaticString: "get_tab_title").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
+            }
         }
     }()
-
+    
     public func tabTitle(
         tabIdx: Int32
     ) -> Godot.GodotString {
@@ -684,15 +624,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_set_tab_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_tab_icon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 666127730)!
-        }
+            GodotStringName(swiftStaticString: "set_tab_icon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 666127730)!
+            }
         }
     }()
-
+    
     public func setTabIcon(
         tabIdx: Int32,
         icon: Godot.Texture2D?
@@ -714,15 +654,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_tab_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tab_icon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3536238170)!
-        }
+            GodotStringName(swiftStaticString: "get_tab_icon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3536238170)!
+            }
         }
     }()
-
+    
     public func tabIcon(
         tabIdx: Int32
     ) -> Godot.Texture2D? {
@@ -741,15 +681,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_set_tab_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_tab_disabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "set_tab_disabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func setTabDisabled(
         tabIdx: Int32,
         disabled: Bool
@@ -769,15 +709,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_is_tab_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_tab_disabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "is_tab_disabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func isTabDisabled(
         tabIdx: Int32
     ) -> Bool {
@@ -796,15 +736,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_set_tab_hidden: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_tab_hidden").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "set_tab_hidden").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func setTabHidden(
         tabIdx: Int32,
         hidden: Bool
@@ -824,15 +764,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_is_tab_hidden: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_tab_hidden").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "is_tab_hidden").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func isTabHidden(
         tabIdx: Int32
     ) -> Bool {
@@ -851,15 +791,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_set_tab_metadata: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_tab_metadata").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2152698145)!
-        }
+            GodotStringName(swiftStaticString: "set_tab_metadata").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2152698145)!
+            }
         }
     }()
-
+    
     public func setTabMetadata<Value: Variant.Storable>(
         tabIdx: Int32,
         metadata: Value
@@ -879,15 +819,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_tab_metadata: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tab_metadata").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4227898402)!
-        }
+            GodotStringName(swiftStaticString: "get_tab_metadata").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4227898402)!
+            }
         }
     }()
-
+    
     public func tabMetadata(
         tabIdx: Int32
     ) -> Godot.Variant {
@@ -906,15 +846,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_set_tab_button_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_tab_button_icon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 666127730)!
-        }
+            GodotStringName(swiftStaticString: "set_tab_button_icon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 666127730)!
+            }
         }
     }()
-
+    
     public func setTabButtonIcon(
         tabIdx: Int32,
         icon: Godot.Texture2D?
@@ -936,15 +876,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_tab_button_icon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tab_button_icon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3536238170)!
-        }
+            GodotStringName(swiftStaticString: "get_tab_button_icon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3536238170)!
+            }
         }
     }()
-
+    
     public func tabButtonIcon(
         tabIdx: Int32
     ) -> Godot.Texture2D? {
@@ -963,15 +903,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_tab_idx_at_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tab_idx_at_point").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3820158470)!
-        }
+            GodotStringName(swiftStaticString: "get_tab_idx_at_point").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3820158470)!
+            }
         }
     }()
-
+    
     public func tabIdxAtPoint(
         _ point: Godot.Vector2
     ) -> Int32 {
@@ -990,15 +930,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_tab_idx_from_control: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tab_idx_from_control").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2787397975)!
-        }
+            GodotStringName(swiftStaticString: "get_tab_idx_from_control").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2787397975)!
+            }
         }
     }()
-
+    
     public func tabIdxFromControl(
         _ control: Godot.Control?
     ) -> Int32 {
@@ -1019,15 +959,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_set_popup: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_popup").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
-        }
+            GodotStringName(swiftStaticString: "set_popup").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
+            }
         }
     }()
-
+    
     public func setPopup(
         _ popup: Godot.Node?
     ) {
@@ -1046,15 +986,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_popup: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_popup").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 111095082)!
-        }
+            GodotStringName(swiftStaticString: "get_popup").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 111095082)!
+            }
         }
     }()
-
+    
     public func popup() -> Godot.Popup? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1067,15 +1007,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_set_drag_to_rearrange_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_drag_to_rearrange_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_drag_to_rearrange_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setDragToRearrangeEnabled(
         _ enabled: Bool
     ) {
@@ -1092,15 +1032,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_drag_to_rearrange_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_drag_to_rearrange_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_drag_to_rearrange_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getDragToRearrangeEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1113,15 +1053,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_set_tabs_rearrange_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_tabs_rearrange_group").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_tabs_rearrange_group").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setTabsRearrangeGroup(
         groupID: Int32
     ) {
@@ -1138,15 +1078,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_tabs_rearrange_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tabs_rearrange_group").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_tabs_rearrange_group").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getTabsRearrangeGroup() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1159,15 +1099,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_set_use_hidden_tabs_for_min_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_use_hidden_tabs_for_min_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_use_hidden_tabs_for_min_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setUseHiddenTabsForMinSize(
         enabled: Bool
     ) {
@@ -1184,15 +1124,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_use_hidden_tabs_for_min_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_use_hidden_tabs_for_min_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_use_hidden_tabs_for_min_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getUseHiddenTabsForMinSize() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1205,15 +1145,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_set_tab_focus_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_tab_focus_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3232914922)!
-        }
+            GodotStringName(swiftStaticString: "set_tab_focus_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3232914922)!
+            }
         }
     }()
-
+    
     private func __setTabFocusMode(
         _ focusMode: Godot.Control.FocusMode
     ) {
@@ -1230,15 +1170,15 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     internal static var __method_binding_get_tab_focus_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tab_focus_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2132829277)!
-        }
+            GodotStringName(swiftStaticString: "get_tab_focus_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2132829277)!
+            }
         }
     }()
-
+    
     private func __getTabFocusMode() -> Godot.Control.FocusMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1251,117 +1191,114 @@ open class TabContainer: Container {
             }
         }
     }
-
+    
     public var tabAlignment: Godot.TabBar.AlignmentMode {
         get {
             __getTabAlignment()
         }
-        set {
+        set(newValue) {
             __setTabAlignment(
                 newValue
             )
         }
     }
-
+    
     public var currentTab: Int32 {
         get {
             __getCurrentTab()
         }
-        set {
+        set(newValue) {
             __setCurrentTab(
                 tabIdx: newValue
             )
         }
     }
-
+    
     public var clipTabs: Bool {
         get {
             __getClipTabs()
         }
-        set {
+        set(newValue) {
             __setClipTabs(
                 newValue
             )
         }
     }
-
+    
     public var areTabsVisible: Bool {
         get {
             __areTabsVisible()
         }
-        set {
+        set(newValue) {
             __setTabsVisible(
                 newValue
             )
         }
     }
-
+    
     public var isAllTabsInFront: Bool {
         get {
             __isAllTabsInFront()
         }
-        set {
+        set(newValue) {
             __setAllTabsInFront(
                 isFront: newValue
             )
         }
     }
-
+    
     public var dragToRearrangeEnabled: Bool {
         get {
             __getDragToRearrangeEnabled()
         }
-        set {
+        set(newValue) {
             __setDragToRearrangeEnabled(
                 newValue
             )
         }
     }
-
+    
     public var tabsRearrangeGroup: Int32 {
         get {
             __getTabsRearrangeGroup()
         }
-        set {
+        set(newValue) {
             __setTabsRearrangeGroup(
                 groupID: newValue
             )
         }
     }
-
+    
     public var useHiddenTabsForMinSize: Bool {
         get {
             __getUseHiddenTabsForMinSize()
         }
-        set {
+        set(newValue) {
             __setUseHiddenTabsForMinSize(
                 enabled: newValue
             )
         }
     }
-
+    
     public var tabFocusMode: Godot.Control.FocusMode {
         get {
             __getTabFocusMode()
         }
-        set {
+        set(newValue) {
             __setTabFocusMode(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

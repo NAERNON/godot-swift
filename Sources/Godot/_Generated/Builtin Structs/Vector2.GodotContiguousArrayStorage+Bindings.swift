@@ -6,10 +6,11 @@ import GodotExtensionHeaders
 
 internal enum Vector2GodotContiguousArrayStorageBindings {
     static private var areBindingsLoaded = false
-
+    
     internal static func loadBindings() {
         precondition(!areBindingsLoaded, "GodotContiguousArray<Vector2> bindings are already loaded.")
         areBindingsLoaded = true
+        
         destructor = GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY)!
         constructor = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY, 0)!
         constructorFromGodotContiguousArrayVector2 = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY, 1)!
@@ -89,78 +90,43 @@ internal enum Vector2GodotContiguousArrayStorageBindings {
             GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_VECTOR2_ARRAY, __ptr__method_name, 2798848307)!
         }
     }
-
-    static private (set) var destructor: GDExtensionPtrDestructor!
-
-    static private (set) var constructor: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromGodotContiguousArrayVector2: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromGodotArray: GDExtensionPtrConstructor!
-
-    static private (set) var operatorEqualVariant: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNotEqualVariant: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNot: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorMultiplyTransform2d: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorInGodotdictionary: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorInGodotarray: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorEqualGodotcontiguousarrayvector2: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNotEqualGodotcontiguousarrayvector2: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorAddGodotcontiguousarrayvector2: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var indexedSetter: GDExtensionPtrIndexedSetter!
-
-    static private (set) var indexedGetter: GDExtensionPtrIndexedGetter!
-
-    static private (set) var methodSize: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodIsEmpty: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodSet: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodPushBack: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodAppend: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodAppendArray: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodRemoveAt: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodInsert: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodFill: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodResize: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodClear: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodHas: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodReverse: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodSlice: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodToByteArray: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodSort: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodBsearch: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodDuplicate: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodFind: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodRfind: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodCount: GDExtensionPtrBuiltInMethod!
+    
+    static private(set) var destructor: GDExtensionPtrDestructor!
+    static private(set) var constructor: GDExtensionPtrConstructor!
+    static private(set) var constructorFromGodotContiguousArrayVector2: GDExtensionPtrConstructor!
+    static private(set) var constructorFromGodotArray: GDExtensionPtrConstructor!
+    static private(set) var operatorEqualVariant: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNotEqualVariant: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNot: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorMultiplyTransform2d: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorInGodotdictionary: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorInGodotarray: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorEqualGodotcontiguousarrayvector2: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNotEqualGodotcontiguousarrayvector2: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorAddGodotcontiguousarrayvector2: GDExtensionPtrOperatorEvaluator!
+    static private(set) var indexedSetter: GDExtensionPtrIndexedSetter!
+    static private(set) var indexedGetter: GDExtensionPtrIndexedGetter!
+    static private(set) var methodSize: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodIsEmpty: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodSet: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodPushBack: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodAppend: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodAppendArray: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodRemoveAt: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodInsert: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodFill: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodResize: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodClear: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodHas: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodReverse: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodSlice: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodToByteArray: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodSort: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodBsearch: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodDuplicate: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodFind: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodRfind: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodCount: GDExtensionPtrBuiltInMethod!
 }
 
 extension Vector2.GodotContiguousArrayStorage {
@@ -169,7 +135,7 @@ extension Vector2.GodotContiguousArrayStorage {
     ) -> Opaque.Storage {
         Opaque.Storage(size: 16, destructorPtr: useDestructor ? Vector2GodotContiguousArrayStorageBindings.destructor : nil)
     }
-
+    
     static internal func make() -> Opaque.Storage {
         var __temporary: Opaque.Storage = makeOpaqueStorage()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -177,7 +143,7 @@ extension Vector2.GodotContiguousArrayStorage {
         }
         return __temporary
     }
-
+    
     static internal func make(
         from: Vector2.GodotContiguousArrayStorage
     ) -> Opaque.Storage {
@@ -191,7 +157,7 @@ extension Vector2.GodotContiguousArrayStorage {
         }
         return __temporary
     }
-
+    
     static internal func make<Value: Variant.Storable>(
         from: Godot.GodotArray<Value>
     ) -> Opaque.Storage {
@@ -205,7 +171,7 @@ extension Vector2.GodotContiguousArrayStorage {
         }
         return __temporary
     }
-
+    
     static internal func _operatorEqual<Value: Variant.Storable>(
         _ lhs: Vector2.GodotContiguousArrayStorage,
         _ rhs: Value
@@ -218,7 +184,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     static internal func _operatorNotEqual<Value: Variant.Storable>(
         _ lhs: Vector2.GodotContiguousArrayStorage,
         _ rhs: Value
@@ -231,7 +197,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     static internal func _operatorNot(
         _ lhs: Vector2.GodotContiguousArrayStorage
     ) -> Bool {
@@ -241,7 +207,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     static internal func _operatorMultiply(
         _ lhs: Vector2.GodotContiguousArrayStorage,
         _ rhs: Godot.Transform2D
@@ -254,7 +220,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     static internal func _operatorIn<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ lhs: Vector2.GodotContiguousArrayStorage,
         _ rhs: Godot.GodotDictionary<Value1, Value2>
@@ -267,7 +233,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     static internal func _operatorIn<Value: Variant.Storable>(
         _ lhs: Vector2.GodotContiguousArrayStorage,
         _ rhs: Godot.GodotArray<Value>
@@ -280,7 +246,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     static internal func _operatorEqual(
         _ lhs: Vector2.GodotContiguousArrayStorage,
         _ rhs: Vector2.GodotContiguousArrayStorage
@@ -293,7 +259,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     static internal func _operatorNotEqual(
         _ lhs: Vector2.GodotContiguousArrayStorage,
         _ rhs: Vector2.GodotContiguousArrayStorage
@@ -306,7 +272,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     static internal func _operatorAdd(
         _ lhs: Vector2.GodotContiguousArrayStorage,
         _ rhs: Vector2.GodotContiguousArrayStorage
@@ -319,28 +285,23 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
-    internal func _getValue(
-        at index: GDExtensionInt
-    ) -> Godot.Vector2 {
+    
+    internal func _getValue(at index: GDExtensionInt) -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
                 Vector2GodotContiguousArrayStorageBindings.indexedGetter(__ptr_self, index, __temporary)
             }
         }
     }
-
-    internal func _setValue(
-        _ value: Godot.Vector2,
-        at index: GDExtensionInt
-    ) {
+    
+    internal func _setValue(_ value: Godot.Vector2, at index: GDExtensionInt) {
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
                 Vector2GodotContiguousArrayStorageBindings.indexedSetter(UnsafeMutableRawPointer(mutating: __ptr_self), index, __ptr_value)
             }
         }
     }
-
+    
     internal func _size() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -348,7 +309,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _isEmpty() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -356,7 +317,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _set(
         index: Int,
         value: Godot.Vector2
@@ -371,7 +332,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _pushBack(
         value: Godot.Vector2
     ) -> Bool {
@@ -385,7 +346,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _append(
         value: Godot.Vector2
     ) -> Bool {
@@ -399,7 +360,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _appendArray(
         _ array: Vector2.GodotContiguousArrayStorage
     ) {
@@ -411,7 +372,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _removeAt(
         index: Int
     ) {
@@ -423,7 +384,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _insert(
         atIndex index: Int,
         value: Godot.Vector2
@@ -440,7 +401,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _fill(
         value: Godot.Vector2
     ) {
@@ -452,7 +413,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _resize(
         newSize: Int
     ) -> Int {
@@ -466,13 +427,13 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _clear() {
         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
             Vector2GodotContiguousArrayStorageBindings.methodClear(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
-
+    
     internal func _has(
         value: Godot.Vector2
     ) -> Bool {
@@ -486,13 +447,13 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _reverse() {
         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
             Vector2GodotContiguousArrayStorageBindings.methodReverse(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
-
+    
     internal func _slice(
         begin: Int,
         end: Int = 2147483647
@@ -509,7 +470,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _toByteArray() -> UInt8.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -517,13 +478,13 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _sort() {
         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
             Vector2GodotContiguousArrayStorageBindings.methodSort(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
-
+    
     internal func _bsearch(
         value: Godot.Vector2,
         before: Bool = true
@@ -540,7 +501,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _duplicate() -> Vector2.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -548,7 +509,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _find(
         value: Godot.Vector2,
         from: Int = 0
@@ -565,7 +526,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _rfind(
         value: Godot.Vector2,
         from: Int = -1
@@ -582,7 +543,7 @@ extension Vector2.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _count(
         value: Godot.Vector2
     ) -> Int {

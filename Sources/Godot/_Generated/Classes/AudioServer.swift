@@ -11,20 +11,21 @@ open class AudioServer: Object {
         case surround31 = 1
         case surround51 = 2
         case surround71 = 3
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Mode Stereo", 0),
-            ("Surround31", 1),
-            ("Surround51", 2),
-            ("Surround71", 3),]
+               ("Mode Stereo", 0),
+               ("Surround31", 1),
+               ("Surround51", 2),
+               ("Surround71", 3),
+            ]
         }
     }
-
+    
+    
     public func busLayoutChanged() {
         _ = busLayoutChangedSignal.emit()
     }
-
     public lazy var busLayoutChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "bus_layout_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -39,41 +40,25 @@ open class AudioServer: Object {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct BusRenamedSignalInput: Godot.SignalInput {
         public let busIndex: Int
-
         public let oldName: Godot.GodotStringName
-
         public let newName: Godot.GodotStringName
-
-        fileprivate init(
-            busIndex: Int,
-            oldName: Godot.GodotStringName,
-            newName: Godot.GodotStringName
-        ) {
+        fileprivate init(busIndex: Int, oldName: Godot.GodotStringName, newName: Godot.GodotStringName) {
             self.busIndex = busIndex
             self.oldName = oldName
             self.newName = newName
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.busIndex), Variant(input.oldName), Variant(input.newName)]
         }
     }
-
-    public func busRenamed(
-        busIndex: Int,
-        oldName: Godot.GodotStringName,
-        newName: Godot.GodotStringName
-    ) {
+    public func busRenamed(busIndex: Int, oldName: Godot.GodotStringName, newName: Godot.GodotStringName) {
         _ = busRenamedSignal.emit(.init(busIndex: busIndex,
                 oldName: oldName,
                 newName: newName))
     }
-
     public lazy var busRenamedSignal: Godot.SignalEmitter<BusRenamedSignalInput> = {
         .init(object: self, signalName: "bus_renamed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<BusRenamedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -90,15 +75,15 @@ open class AudioServer: Object {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_set_bus_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_bus_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_bus_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setBusCount(
         amount: Int32
     ) {
@@ -115,15 +100,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bus_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bus_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_bus_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getBusCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -136,15 +121,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_bus: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_bus").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "remove_bus").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func removeBus(
         index: Int32
     ) {
@@ -161,15 +146,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_add_bus: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_bus").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1025054187)!
-        }
+            GodotStringName(swiftStaticString: "add_bus").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1025054187)!
+            }
         }
     }()
-
+    
     public func addBus(
         atPosition position: Int32 = -1
     ) {
@@ -186,15 +171,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_move_bus: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "move_bus").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
-        }
+            GodotStringName(swiftStaticString: "move_bus").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
+            }
         }
     }()
-
+    
     public func moveBus(
         index: Int32,
         toIndex: Int32
@@ -214,15 +199,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_bus_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_bus_name").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
-        }
+            GodotStringName(swiftStaticString: "set_bus_name").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 501894301)!
+            }
         }
     }()
-
+    
     public func setBusName(
         busIdx: Int32,
         name: Godot.GodotString
@@ -242,15 +227,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bus_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bus_name").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
-        }
+            GodotStringName(swiftStaticString: "get_bus_name").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
+            }
         }
     }()
-
+    
     public func busName(
         busIdx: Int32
     ) -> Godot.GodotString {
@@ -269,15 +254,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bus_index: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bus_index").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2458036349)!
-        }
+            GodotStringName(swiftStaticString: "get_bus_index").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2458036349)!
+            }
         }
     }()
-
+    
     public func busIndex(
         busName: Godot.GodotStringName
     ) -> Int32 {
@@ -296,15 +281,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bus_channels: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bus_channels").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
-        }
+            GodotStringName(swiftStaticString: "get_bus_channels").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
+            }
         }
     }()
-
+    
     public func busChannels(
         busIdx: Int32
     ) -> Int32 {
@@ -323,15 +308,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_bus_volume_db: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_bus_volume_db").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
-        }
+            GodotStringName(swiftStaticString: "set_bus_volume_db").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
+            }
         }
     }()
-
+    
     public func setBusVolumeDb(
         busIdx: Int32,
         volumeDb: Double
@@ -351,15 +336,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bus_volume_db: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bus_volume_db").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
-        }
+            GodotStringName(swiftStaticString: "get_bus_volume_db").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
+            }
         }
     }()
-
+    
     public func busVolumeDb(
         busIdx: Int32
     ) -> Double {
@@ -378,15 +363,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_bus_send: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_bus_send").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3780747571)!
-        }
+            GodotStringName(swiftStaticString: "set_bus_send").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3780747571)!
+            }
         }
     }()
-
+    
     public func setBusSend(
         busIdx: Int32,
         send: Godot.GodotStringName
@@ -406,15 +391,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bus_send: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bus_send").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 659327637)!
-        }
+            GodotStringName(swiftStaticString: "get_bus_send").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 659327637)!
+            }
         }
     }()
-
+    
     public func busSend(
         busIdx: Int32
     ) -> Godot.GodotStringName {
@@ -433,15 +418,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_bus_solo: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_bus_solo").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "set_bus_solo").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func setBusSolo(
         busIdx: Int32,
         enable: Bool
@@ -461,15 +446,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_bus_solo: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_bus_solo").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "is_bus_solo").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func isBusSolo(
         busIdx: Int32
     ) -> Bool {
@@ -488,15 +473,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_bus_mute: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_bus_mute").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "set_bus_mute").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func setBusMute(
         busIdx: Int32,
         enable: Bool
@@ -516,15 +501,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_bus_mute: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_bus_mute").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "is_bus_mute").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func isBusMute(
         busIdx: Int32
     ) -> Bool {
@@ -543,15 +528,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_bus_bypass_effects: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_bus_bypass_effects").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
-        }
+            GodotStringName(swiftStaticString: "set_bus_bypass_effects").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 300928843)!
+            }
         }
     }()
-
+    
     public func setBusBypassEffects(
         busIdx: Int32,
         enable: Bool
@@ -571,15 +556,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_bus_bypassing_effects: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_bus_bypassing_effects").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "is_bus_bypassing_effects").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func isBusBypassingEffects(
         busIdx: Int32
     ) -> Bool {
@@ -598,15 +583,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_add_bus_effect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_bus_effect").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4068819785)!
-        }
+            GodotStringName(swiftStaticString: "add_bus_effect").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4068819785)!
+            }
         }
     }()
-
+    
     public func addBusEffect(
         busIdx: Int32,
         effect: Godot.AudioEffect?,
@@ -631,15 +616,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_bus_effect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_bus_effect").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
-        }
+            GodotStringName(swiftStaticString: "remove_bus_effect").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
+            }
         }
     }()
-
+    
     public func removeBusEffect(
         busIdx: Int32,
         effectIdx: Int32
@@ -659,15 +644,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bus_effect_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bus_effect_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3744713108)!
-        }
+            GodotStringName(swiftStaticString: "get_bus_effect_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3744713108)!
+            }
         }
     }()
-
+    
     public func busEffectCount(
         busIdx: Int32
     ) -> Int32 {
@@ -686,15 +671,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bus_effect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bus_effect").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 726064442)!
-        }
+            GodotStringName(swiftStaticString: "get_bus_effect").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 726064442)!
+            }
         }
     }()
-
+    
     public func busEffect(
         busIdx: Int32,
         effectIdx: Int32
@@ -716,15 +701,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bus_effect_instance: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bus_effect_instance").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1829771234)!
-        }
+            GodotStringName(swiftStaticString: "get_bus_effect_instance").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1829771234)!
+            }
         }
     }()
-
+    
     public func busEffectInstance(
         busIdx: Int32,
         effectIdx: Int32,
@@ -749,15 +734,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_swap_bus_effects: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "swap_bus_effects").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1649997291)!
-        }
+            GodotStringName(swiftStaticString: "swap_bus_effects").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1649997291)!
+            }
         }
     }()
-
+    
     public func swapBusEffects(
         busIdx: Int32,
         effectIdx: Int32,
@@ -780,15 +765,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_bus_effect_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_bus_effect_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1383440665)!
-        }
+            GodotStringName(swiftStaticString: "set_bus_effect_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1383440665)!
+            }
         }
     }()
-
+    
     public func setBusEffectEnabled(
         busIdx: Int32,
         effectIdx: Int32,
@@ -811,15 +796,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_bus_effect_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_bus_effect_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2522259332)!
-        }
+            GodotStringName(swiftStaticString: "is_bus_effect_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2522259332)!
+            }
         }
     }()
-
+    
     public func isBusEffectEnabled(
         busIdx: Int32,
         effectIdx: Int32
@@ -841,15 +826,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bus_peak_volume_left_db: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bus_peak_volume_left_db").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
-        }
+            GodotStringName(swiftStaticString: "get_bus_peak_volume_left_db").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
+            }
         }
     }()
-
+    
     public func busPeakVolumeLeftDb(
         busIdx: Int32,
         channel: Int32
@@ -871,15 +856,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bus_peak_volume_right_db: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bus_peak_volume_right_db").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
-        }
+            GodotStringName(swiftStaticString: "get_bus_peak_volume_right_db").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3085491603)!
+            }
         }
     }()
-
+    
     public func busPeakVolumeRightDb(
         busIdx: Int32,
         channel: Int32
@@ -901,15 +886,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_playback_speed_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_playback_speed_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_playback_speed_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setPlaybackSpeedScale(
         _ scale: Double
     ) {
@@ -926,15 +911,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_playback_speed_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_playback_speed_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_playback_speed_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getPlaybackSpeedScale() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -947,15 +932,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_lock: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "lock").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "lock").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func lock() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -966,15 +951,15 @@ open class AudioServer: Object {
             )
         }
     }
-
+    
     internal static var __method_binding_unlock: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "unlock").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "unlock").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func unlock() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -985,15 +970,15 @@ open class AudioServer: Object {
             )
         }
     }
-
+    
     internal static var __method_binding_get_speaker_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_speaker_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2549190337)!
-        }
+            GodotStringName(swiftStaticString: "get_speaker_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2549190337)!
+            }
         }
     }()
-
+    
     public func speakerMode() -> Godot.AudioServer.SpeakerMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1006,15 +991,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_mix_rate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_mix_rate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_mix_rate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     public func mixRate() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1027,15 +1012,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_output_device_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_output_device_list").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2981934095)!
-        }
+            GodotStringName(swiftStaticString: "get_output_device_list").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2981934095)!
+            }
         }
     }()
-
+    
     public func outputDeviceList() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1048,15 +1033,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_output_device: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_output_device").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2841200299)!
-        }
+            GodotStringName(swiftStaticString: "get_output_device").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2841200299)!
+            }
         }
     }()
-
+    
     private func __getOutputDevice() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1069,15 +1054,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_output_device: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_output_device").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_output_device").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setOutputDevice(
         name: Godot.GodotString
     ) {
@@ -1094,15 +1079,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_time_to_next_mix: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_time_to_next_mix").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_time_to_next_mix").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     public func timeToNextMix() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1115,15 +1100,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_time_since_last_mix: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_time_since_last_mix").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_time_since_last_mix").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     public func timeSinceLastMix() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1136,15 +1121,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_output_latency: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_output_latency").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_output_latency").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     public func outputLatency() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1157,15 +1142,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_input_device_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_input_device_list").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2981934095)!
-        }
+            GodotStringName(swiftStaticString: "get_input_device_list").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2981934095)!
+            }
         }
     }()
-
+    
     public func inputDeviceList() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1178,15 +1163,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_input_device: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_input_device").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2841200299)!
-        }
+            GodotStringName(swiftStaticString: "get_input_device").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2841200299)!
+            }
         }
     }()
-
+    
     private func __getInputDevice() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1199,15 +1184,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_input_device: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_input_device").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_input_device").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setInputDevice(
         name: Godot.GodotString
     ) {
@@ -1224,15 +1209,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_bus_layout: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_bus_layout").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3319058824)!
-        }
+            GodotStringName(swiftStaticString: "set_bus_layout").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3319058824)!
+            }
         }
     }()
-
+    
     public func setBusLayout(
         _ busLayout: Godot.AudioBusLayout?
     ) {
@@ -1251,15 +1236,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_generate_bus_layout: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "generate_bus_layout").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3769973890)!
-        }
+            GodotStringName(swiftStaticString: "generate_bus_layout").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3769973890)!
+            }
         }
     }()
-
+    
     public func generateBusLayout() -> Godot.AudioBusLayout? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1272,15 +1257,15 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_enable_tagging_used_audio_streams: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_enable_tagging_used_audio_streams").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_enable_tagging_used_audio_streams").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     public func setEnableTaggingUsedAudioStreams(
         enable: Bool
     ) {
@@ -1297,62 +1282,59 @@ open class AudioServer: Object {
             }
         }
     }
-
+    
     public var busCount: Int32 {
         get {
             __getBusCount()
         }
-        set {
+        set(newValue) {
             __setBusCount(
                 amount: newValue
             )
         }
     }
-
+    
     public var outputDevice: Godot.GodotString {
         get {
             __getOutputDevice()
         }
-        set {
+        set(newValue) {
             __setOutputDevice(
                 name: newValue
             )
         }
     }
-
+    
     public var inputDevice: Godot.GodotString {
         get {
             __getInputDevice()
         }
-        set {
+        set(newValue) {
             __setInputDevice(
                 name: newValue
             )
         }
     }
-
+    
     public var playbackSpeedScale: Double {
         get {
             __getPlaybackSpeedScale()
         }
-        set {
+        set(newValue) {
             __setPlaybackSpeedScale(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

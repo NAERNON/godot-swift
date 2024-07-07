@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class Crypto: RefCounted {
     internal static var __method_binding_generate_random_bytes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "generate_random_bytes").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 47165747)!
-        }
+            GodotStringName(swiftStaticString: "generate_random_bytes").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 47165747)!
+            }
         }
     }()
-
+    
     public func generateRandomBytes(
         size: Int32
     ) -> Godot.GodotContiguousArray<UInt8> {
@@ -32,15 +32,15 @@ open class Crypto: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_generate_rsa: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "generate_rsa").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1237515462)!
-        }
+            GodotStringName(swiftStaticString: "generate_rsa").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1237515462)!
+            }
         }
     }()
-
+    
     public func generateRsa(
         size: Int32
     ) -> Godot.CryptoKey? {
@@ -59,15 +59,15 @@ open class Crypto: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_generate_self_signed_certificate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "generate_self_signed_certificate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 492266173)!
-        }
+            GodotStringName(swiftStaticString: "generate_self_signed_certificate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 492266173)!
+            }
         }
     }()
-
+    
     public func generateSelfSignedCertificate(
         key: Godot.CryptoKey?,
         issuerName: Godot.GodotString = "CN=myserver,O=myorganisation,C=IT",
@@ -97,15 +97,15 @@ open class Crypto: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_sign: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "sign").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1673662703)!
-        }
+            GodotStringName(swiftStaticString: "sign").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1673662703)!
+            }
         }
     }()
-
+    
     public func sign(
         hashType: Godot.HashingContext.HashType,
         hash: Godot.GodotContiguousArray<UInt8>,
@@ -132,15 +132,15 @@ open class Crypto: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_verify: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "verify").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2805902225)!
-        }
+            GodotStringName(swiftStaticString: "verify").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2805902225)!
+            }
         }
     }()
-
+    
     public func verify(
         hashType: Godot.HashingContext.HashType,
         hash: Godot.GodotContiguousArray<UInt8>,
@@ -170,15 +170,15 @@ open class Crypto: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_encrypt: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "encrypt").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2361793670)!
-        }
+            GodotStringName(swiftStaticString: "encrypt").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2361793670)!
+            }
         }
     }()
-
+    
     public func encrypt(
         key: Godot.CryptoKey?,
         plaintext: Godot.GodotContiguousArray<UInt8>
@@ -202,15 +202,15 @@ open class Crypto: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_decrypt: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "decrypt").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2361793670)!
-        }
+            GodotStringName(swiftStaticString: "decrypt").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2361793670)!
+            }
         }
     }()
-
+    
     public func decrypt(
         key: Godot.CryptoKey?,
         ciphertext: Godot.GodotContiguousArray<UInt8>
@@ -234,15 +234,15 @@ open class Crypto: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_hmac_digest: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "hmac_digest").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2368951203)!
-        }
+            GodotStringName(swiftStaticString: "hmac_digest").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2368951203)!
+            }
         }
     }()
-
+    
     public func hmacDigest(
         hashType: Godot.HashingContext.HashType,
         key: Godot.GodotContiguousArray<UInt8>,
@@ -267,15 +267,15 @@ open class Crypto: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_constant_time_compare: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "constant_time_compare").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1024142237)!
-        }
+            GodotStringName(swiftStaticString: "constant_time_compare").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1024142237)!
+            }
         }
     }()
-
+    
     public func constantTimeCompare(
         trusted: Godot.GodotContiguousArray<UInt8>,
         received: Godot.GodotContiguousArray<UInt8>
@@ -297,18 +297,15 @@ open class Crypto: RefCounted {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

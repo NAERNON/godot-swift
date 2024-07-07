@@ -3,7 +3,7 @@ extension Callable: Variant.Storable {
     public static let variantStorageType: Variant.StorageType? = .callable
     
     public static func convertToStorage(
-        _ value: consuming Callable
+        _ value: Callable
     ) -> Variant.Storage {
         let storage = Variant.Storage()
         
@@ -45,7 +45,7 @@ extension Callable: Hintable {
 extension Callable: Exposable {
     public static let variantRepresentationType: Variant.RepresentationType = .callable
     
-    public consuming func transferToGodot(
+    public func transferToGodot(
         unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
     ) {
         withUnsafeOpaquePointer { selfPtr in

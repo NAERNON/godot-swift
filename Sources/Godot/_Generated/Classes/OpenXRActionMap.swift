@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class OpenXRActionMap: Resource {
     internal static var __method_binding_set_action_sets: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_action_sets").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
-        }
+            GodotStringName(swiftStaticString: "set_action_sets").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
+            }
         }
     }()
-
+    
     private func __setActionSets<Value: Variant.Storable>(
         _ actionSets: Godot.GodotArray<Value>
     ) {
@@ -30,15 +30,15 @@ open class OpenXRActionMap: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_action_sets: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_action_sets").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
-        }
+            GodotStringName(swiftStaticString: "get_action_sets").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
+            }
         }
     }()
-
+    
     private func __getActionSets() -> Godot.AnyGodotArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -51,15 +51,15 @@ open class OpenXRActionMap: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_action_set_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_action_set_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_action_set_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func actionSetCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -72,15 +72,15 @@ open class OpenXRActionMap: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_find_action_set: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "find_action_set").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1888809267)!
-        }
+            GodotStringName(swiftStaticString: "find_action_set").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1888809267)!
+            }
         }
     }()
-
+    
     public func findActionSet(
         name: Godot.GodotString
     ) -> Godot.OpenXRActionSet? {
@@ -99,15 +99,15 @@ open class OpenXRActionMap: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_action_set: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_action_set").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1789580336)!
-        }
+            GodotStringName(swiftStaticString: "get_action_set").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1789580336)!
+            }
         }
     }()
-
+    
     public func actionSet(
         idx: Int32
     ) -> Godot.OpenXRActionSet? {
@@ -126,15 +126,15 @@ open class OpenXRActionMap: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_add_action_set: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_action_set").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2093310581)!
-        }
+            GodotStringName(swiftStaticString: "add_action_set").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2093310581)!
+            }
         }
     }()
-
+    
     public func addActionSet(
         _ actionSet: Godot.OpenXRActionSet?
     ) {
@@ -153,15 +153,15 @@ open class OpenXRActionMap: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_action_set: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_action_set").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2093310581)!
-        }
+            GodotStringName(swiftStaticString: "remove_action_set").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2093310581)!
+            }
         }
     }()
-
+    
     public func removeActionSet(
         _ actionSet: Godot.OpenXRActionSet?
     ) {
@@ -180,15 +180,15 @@ open class OpenXRActionMap: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_interaction_profiles: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_interaction_profiles").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
-        }
+            GodotStringName(swiftStaticString: "set_interaction_profiles").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
+            }
         }
     }()
-
+    
     private func __setInteractionProfiles<Value: Variant.Storable>(
         _ interactionProfiles: Godot.GodotArray<Value>
     ) {
@@ -205,15 +205,15 @@ open class OpenXRActionMap: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_interaction_profiles: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_interaction_profiles").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
-        }
+            GodotStringName(swiftStaticString: "get_interaction_profiles").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
+            }
         }
     }()
-
+    
     private func __getInteractionProfiles() -> Godot.AnyGodotArray {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -226,15 +226,15 @@ open class OpenXRActionMap: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_interaction_profile_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_interaction_profile_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_interaction_profile_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func interactionProfileCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -247,15 +247,15 @@ open class OpenXRActionMap: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_find_interaction_profile: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "find_interaction_profile").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3095875538)!
-        }
+            GodotStringName(swiftStaticString: "find_interaction_profile").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3095875538)!
+            }
         }
     }()
-
+    
     public func findInteractionProfile(
         name: Godot.GodotString
     ) -> Godot.OpenXRInteractionProfile? {
@@ -274,15 +274,15 @@ open class OpenXRActionMap: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_interaction_profile: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_interaction_profile").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2546151210)!
-        }
+            GodotStringName(swiftStaticString: "get_interaction_profile").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2546151210)!
+            }
         }
     }()
-
+    
     public func interactionProfile(
         idx: Int32
     ) -> Godot.OpenXRInteractionProfile? {
@@ -301,15 +301,15 @@ open class OpenXRActionMap: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_add_interaction_profile: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_interaction_profile").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2697953512)!
-        }
+            GodotStringName(swiftStaticString: "add_interaction_profile").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2697953512)!
+            }
         }
     }()
-
+    
     public func addInteractionProfile(
         _ interactionProfile: Godot.OpenXRInteractionProfile?
     ) {
@@ -328,15 +328,15 @@ open class OpenXRActionMap: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_interaction_profile: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_interaction_profile").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2697953512)!
-        }
+            GodotStringName(swiftStaticString: "remove_interaction_profile").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2697953512)!
+            }
         }
     }()
-
+    
     public func removeInteractionProfile(
         _ interactionProfile: Godot.OpenXRInteractionProfile?
     ) {
@@ -355,15 +355,15 @@ open class OpenXRActionMap: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_create_default_action_sets: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_default_action_sets").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "create_default_action_sets").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func createDefaultActionSets() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -374,40 +374,37 @@ open class OpenXRActionMap: Resource {
             )
         }
     }
-
+    
     public var actionSets: Godot.AnyGodotArray {
         get {
             __getActionSets()
         }
-        set {
+        set(newValue) {
             __setActionSets(
                 newValue
             )
         }
     }
-
+    
     public var interactionProfiles: Godot.AnyGodotArray {
         get {
             __getInteractionProfiles()
         }
-        set {
+        set(newValue) {
             __setInteractionProfiles(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

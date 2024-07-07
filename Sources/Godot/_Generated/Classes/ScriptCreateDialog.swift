@@ -8,26 +8,16 @@ import GodotExtensionHeaders
 open class ScriptCreateDialog: ConfirmationDialog {
     public struct ScriptCreatedSignalInput: Godot.SignalInput {
         public let script: Godot.Script?
-
-        fileprivate init(
-            script: Godot.Script?
-        ) {
+        fileprivate init(script: Godot.Script?) {
             self.script = script
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.script)]
         }
     }
-
-    public func scriptCreated(
-        script: Godot.Script?
-    ) {
+    public func scriptCreated(script: Godot.Script?) {
         _ = scriptCreatedSignal.emit(.init(script: script))
     }
-
     public lazy var scriptCreatedSignal: Godot.SignalEmitter<ScriptCreatedSignalInput> = {
         .init(object: self, signalName: "script_created") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ScriptCreatedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -42,15 +32,15 @@ open class ScriptCreateDialog: ConfirmationDialog {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_config: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "config").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 869314288)!
-        }
+            GodotStringName(swiftStaticString: "config").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 869314288)!
+            }
         }
     }()
-
+    
     public func config(
         inherits: Godot.GodotString,
         path: Godot.GodotString,
@@ -76,18 +66,15 @@ open class ScriptCreateDialog: ConfirmationDialog {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

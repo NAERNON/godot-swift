@@ -9,22 +9,23 @@ open class AudioEffectSpectrumAnalyzerInstance: AudioEffectInstance {
     public enum MagnitudeMode: UInt32, GodotEnum {
         case average = 0
         case max = 1
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Average", 0),
-            ("Max", 1),]
+               ("Average", 0),
+               ("Max", 1),
+            ]
         }
     }
-
+    
     internal static var __method_binding_get_magnitude_for_frequency_range: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_magnitude_for_frequency_range").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 797993915)!
-        }
+            GodotStringName(swiftStaticString: "get_magnitude_for_frequency_range").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 797993915)!
+            }
         }
     }()
-
+    
     public func magnitudeForFrequencyRange(
         fromHz: Double,
         toHz: Double,
@@ -49,18 +50,15 @@ open class AudioEffectSpectrumAnalyzerInstance: AudioEffectInstance {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

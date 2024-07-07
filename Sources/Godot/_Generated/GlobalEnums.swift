@@ -7,13 +7,14 @@ public enum Side: UInt32, GodotEnum {
     case top = 1
     case right = 2
     case bottom = 3
-
+    
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
-        ("Left", 0),
-        ("Top", 1),
-        ("Right", 2),
-        ("Bottom", 3),]
+           ("Left", 0),
+           ("Top", 1),
+           ("Right", 2),
+           ("Bottom", 3),
+        ]
     }
 }
 
@@ -22,35 +23,38 @@ public enum Corner: UInt32, GodotEnum {
     case topRight = 1
     case bottomRight = 2
     case bottomLeft = 3
-
+    
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
-        ("Top Left", 0),
-        ("Top Right", 1),
-        ("Bottom Right", 2),
-        ("Bottom Left", 3),]
+           ("Top Left", 0),
+           ("Top Right", 1),
+           ("Bottom Right", 2),
+           ("Bottom Left", 3),
+        ]
     }
 }
 
 public enum Orientation: UInt32, GodotEnum {
     case vertical = 1
     case horizontal = 0
-
+    
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
-        ("Horizontal", 0),
-        ("Vertical", 1),]
+           ("Horizontal", 0),
+           ("Vertical", 1),
+        ]
     }
 }
 
 public enum ClockDirection: UInt32, GodotEnum {
     case clockwise = 0
     case counterclockwise = 1
-
+    
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
-        ("Clockwise", 0),
-        ("Counterclockwise", 1),]
+           ("Clockwise", 0),
+           ("Counterclockwise", 1),
+        ]
     }
 }
 
@@ -59,13 +63,14 @@ public enum HorizontalAlignment: UInt32, GodotEnum {
     case center = 1
     case right = 2
     case fill = 3
-
+    
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
-        ("Left", 0),
-        ("Center", 1),
-        ("Right", 2),
-        ("Fill", 3),]
+           ("Left", 0),
+           ("Center", 1),
+           ("Right", 2),
+           ("Fill", 3),
+        ]
     }
 }
 
@@ -74,13 +79,14 @@ public enum VerticalAlignment: UInt32, GodotEnum {
     case center = 1
     case bottom = 2
     case fill = 3
-
+    
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
-        ("Top", 0),
-        ("Center", 1),
-        ("Bottom", 2),
-        ("Fill", 3),]
+           ("Top", 0),
+           ("Center", 1),
+           ("Bottom", 2),
+           ("Fill", 3),
+        ]
     }
 }
 
@@ -89,31 +95,28 @@ public enum InlineAlignment: UInt32, GodotEnum {
     case centerTo = 1
     case baselineTo = 3
     case bottomTo = 2
-
     public static let toTop: Self = .topTo
     case toCenter = 4
     case toBaseline = 8
     case toBottom = 12
-
     public static let top: Self = .topTo
     case center = 5
     case bottom = 14
-
     public static let imageMask: Self = .baselineTo
-
     public static let textMask: Self = .toBottom
-
+    
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
-        ("Top To", 0),
-        ("Center To", 1),
-        ("Bottom To", 2),
-        ("Baseline To", 3),
-        ("To Center", 4),
-        ("Center", 5),
-        ("To Baseline", 8),
-        ("To Bottom", 12),
-        ("Bottom", 14),]
+           ("Top To", 0),
+           ("Center To", 1),
+           ("Bottom To", 2),
+           ("Baseline To", 3),
+           ("To Center", 4),
+           ("Center", 5),
+           ("To Baseline", 8),
+           ("To Bottom", 12),
+           ("Bottom", 14),
+        ]
     }
 }
 
@@ -124,15 +127,16 @@ public enum EulerOrder: UInt32, GodotEnum {
     case yzx = 3
     case zxy = 4
     case zyx = 5
-
+    
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
-        ("Xyz", 0),
-        ("Xzy", 1),
-        ("Yxz", 2),
-        ("Yzx", 3),
-        ("Zxy", 4),
-        ("Zyx", 5),]
+           ("Xyz", 0),
+           ("Xzy", 1),
+           ("Yxz", 2),
+           ("Yzx", 3),
+           ("Zxy", 4),
+           ("Zyx", 5),
+        ]
     }
 }
 
@@ -330,243 +334,235 @@ public enum Key: UInt32, GodotEnum {
     case asciitilde = 126
     case yen = 165
     case section = 167
-
+    
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
-        ("None", 0),
-        ("Space", 32),
-        ("Exclam", 33),
-        ("Quotedbl", 34),
-        ("Numbersign", 35),
-        ("Dollar", 36),
-        ("Percent", 37),
-        ("Ampersand", 38),
-        ("Apostrophe", 39),
-        ("Parenleft", 40),
-        ("Parenright", 41),
-        ("Asterisk", 42),
-        ("Plus", 43),
-        ("Comma", 44),
-        ("Minus", 45),
-        ("Period", 46),
-        ("Slash", 47),
-        ("Key0", 48),
-        ("Key1", 49),
-        ("Key2", 50),
-        ("Key3", 51),
-        ("Key4", 52),
-        ("Key5", 53),
-        ("Key6", 54),
-        ("Key7", 55),
-        ("Key8", 56),
-        ("Key9", 57),
-        ("Colon", 58),
-        ("Semicolon", 59),
-        ("Less", 60),
-        ("Equal", 61),
-        ("Greater", 62),
-        ("Question", 63),
-        ("At", 64),
-        ("A", 65),
-        ("B", 66),
-        ("C", 67),
-        ("D", 68),
-        ("E", 69),
-        ("F", 70),
-        ("G", 71),
-        ("H", 72),
-        ("I", 73),
-        ("J", 74),
-        ("K", 75),
-        ("L", 76),
-        ("M", 77),
-        ("N", 78),
-        ("O", 79),
-        ("P", 80),
-        ("Q", 81),
-        ("R", 82),
-        ("S", 83),
-        ("T", 84),
-        ("U", 85),
-        ("V", 86),
-        ("W", 87),
-        ("X", 88),
-        ("Y", 89),
-        ("Z", 90),
-        ("Bracketleft", 91),
-        ("Backslash", 92),
-        ("Bracketright", 93),
-        ("Asciicircum", 94),
-        ("Underscore", 95),
-        ("Quoteleft", 96),
-        ("Braceleft", 123),
-        ("Bar", 124),
-        ("Braceright", 125),
-        ("Asciitilde", 126),
-        ("Yen", 165),
-        ("Section", 167),
-        ("Special", 4194304),
-        ("Escape", 4194305),
-        ("Tab", 4194306),
-        ("Backtab", 4194307),
-        ("Backspace", 4194308),
-        ("Enter", 4194309),
-        ("Kp Enter", 4194310),
-        ("Insert", 4194311),
-        ("Delete", 4194312),
-        ("Pause", 4194313),
-        ("Print", 4194314),
-        ("Sysreq", 4194315),
-        ("Clear", 4194316),
-        ("Home", 4194317),
-        ("End", 4194318),
-        ("Left", 4194319),
-        ("Up", 4194320),
-        ("Right", 4194321),
-        ("Down", 4194322),
-        ("Pageup", 4194323),
-        ("Pagedown", 4194324),
-        ("Shift", 4194325),
-        ("Ctrl", 4194326),
-        ("Meta", 4194327),
-        ("Alt", 4194328),
-        ("Capslock", 4194329),
-        ("Numlock", 4194330),
-        ("Scrolllock", 4194331),
-        ("F1", 4194332),
-        ("F2", 4194333),
-        ("F3", 4194334),
-        ("F4", 4194335),
-        ("F5", 4194336),
-        ("F6", 4194337),
-        ("F7", 4194338),
-        ("F8", 4194339),
-        ("F9", 4194340),
-        ("F10", 4194341),
-        ("F11", 4194342),
-        ("F12", 4194343),
-        ("F13", 4194344),
-        ("F14", 4194345),
-        ("F15", 4194346),
-        ("F16", 4194347),
-        ("F17", 4194348),
-        ("F18", 4194349),
-        ("F19", 4194350),
-        ("F20", 4194351),
-        ("F21", 4194352),
-        ("F22", 4194353),
-        ("F23", 4194354),
-        ("F24", 4194355),
-        ("F25", 4194356),
-        ("F26", 4194357),
-        ("F27", 4194358),
-        ("F28", 4194359),
-        ("F29", 4194360),
-        ("F30", 4194361),
-        ("F31", 4194362),
-        ("F32", 4194363),
-        ("F33", 4194364),
-        ("F34", 4194365),
-        ("F35", 4194366),
-        ("Menu", 4194370),
-        ("Hyper", 4194371),
-        ("Help", 4194373),
-        ("Back", 4194376),
-        ("Forward", 4194377),
-        ("Stop", 4194378),
-        ("Refresh", 4194379),
-        ("Volumedown", 4194380),
-        ("Volumemute", 4194381),
-        ("Volumeup", 4194382),
-        ("Mediaplay", 4194388),
-        ("Mediastop", 4194389),
-        ("Mediaprevious", 4194390),
-        ("Medianext", 4194391),
-        ("Mediarecord", 4194392),
-        ("Homepage", 4194393),
-        ("Favorites", 4194394),
-        ("Search", 4194395),
-        ("Standby", 4194396),
-        ("Openurl", 4194397),
-        ("Launchmail", 4194398),
-        ("Launchmedia", 4194399),
-        ("Launch0", 4194400),
-        ("Launch1", 4194401),
-        ("Launch2", 4194402),
-        ("Launch3", 4194403),
-        ("Launch4", 4194404),
-        ("Launch5", 4194405),
-        ("Launch6", 4194406),
-        ("Launch7", 4194407),
-        ("Launch8", 4194408),
-        ("Launch9", 4194409),
-        ("Launcha", 4194410),
-        ("Launchb", 4194411),
-        ("Launchc", 4194412),
-        ("Launchd", 4194413),
-        ("Launche", 4194414),
-        ("Launchf", 4194415),
-        ("Globe", 4194416),
-        ("Keyboard", 4194417),
-        ("Jis Eisu", 4194418),
-        ("Jis Kana", 4194419),
-        ("Kp Multiply", 4194433),
-        ("Kp Divide", 4194434),
-        ("Kp Subtract", 4194435),
-        ("Kp Period", 4194436),
-        ("Kp Add", 4194437),
-        ("Kp0", 4194438),
-        ("Kp1", 4194439),
-        ("Kp2", 4194440),
-        ("Kp3", 4194441),
-        ("Kp4", 4194442),
-        ("Kp5", 4194443),
-        ("Kp6", 4194444),
-        ("Kp7", 4194445),
-        ("Kp8", 4194446),
-        ("Kp9", 4194447),
-        ("Unknown", 8388607),]
+           ("None", 0),
+           ("Space", 32),
+           ("Exclam", 33),
+           ("Quotedbl", 34),
+           ("Numbersign", 35),
+           ("Dollar", 36),
+           ("Percent", 37),
+           ("Ampersand", 38),
+           ("Apostrophe", 39),
+           ("Parenleft", 40),
+           ("Parenright", 41),
+           ("Asterisk", 42),
+           ("Plus", 43),
+           ("Comma", 44),
+           ("Minus", 45),
+           ("Period", 46),
+           ("Slash", 47),
+           ("Key0", 48),
+           ("Key1", 49),
+           ("Key2", 50),
+           ("Key3", 51),
+           ("Key4", 52),
+           ("Key5", 53),
+           ("Key6", 54),
+           ("Key7", 55),
+           ("Key8", 56),
+           ("Key9", 57),
+           ("Colon", 58),
+           ("Semicolon", 59),
+           ("Less", 60),
+           ("Equal", 61),
+           ("Greater", 62),
+           ("Question", 63),
+           ("At", 64),
+           ("A", 65),
+           ("B", 66),
+           ("C", 67),
+           ("D", 68),
+           ("E", 69),
+           ("F", 70),
+           ("G", 71),
+           ("H", 72),
+           ("I", 73),
+           ("J", 74),
+           ("K", 75),
+           ("L", 76),
+           ("M", 77),
+           ("N", 78),
+           ("O", 79),
+           ("P", 80),
+           ("Q", 81),
+           ("R", 82),
+           ("S", 83),
+           ("T", 84),
+           ("U", 85),
+           ("V", 86),
+           ("W", 87),
+           ("X", 88),
+           ("Y", 89),
+           ("Z", 90),
+           ("Bracketleft", 91),
+           ("Backslash", 92),
+           ("Bracketright", 93),
+           ("Asciicircum", 94),
+           ("Underscore", 95),
+           ("Quoteleft", 96),
+           ("Braceleft", 123),
+           ("Bar", 124),
+           ("Braceright", 125),
+           ("Asciitilde", 126),
+           ("Yen", 165),
+           ("Section", 167),
+           ("Special", 4194304),
+           ("Escape", 4194305),
+           ("Tab", 4194306),
+           ("Backtab", 4194307),
+           ("Backspace", 4194308),
+           ("Enter", 4194309),
+           ("Kp Enter", 4194310),
+           ("Insert", 4194311),
+           ("Delete", 4194312),
+           ("Pause", 4194313),
+           ("Print", 4194314),
+           ("Sysreq", 4194315),
+           ("Clear", 4194316),
+           ("Home", 4194317),
+           ("End", 4194318),
+           ("Left", 4194319),
+           ("Up", 4194320),
+           ("Right", 4194321),
+           ("Down", 4194322),
+           ("Pageup", 4194323),
+           ("Pagedown", 4194324),
+           ("Shift", 4194325),
+           ("Ctrl", 4194326),
+           ("Meta", 4194327),
+           ("Alt", 4194328),
+           ("Capslock", 4194329),
+           ("Numlock", 4194330),
+           ("Scrolllock", 4194331),
+           ("F1", 4194332),
+           ("F2", 4194333),
+           ("F3", 4194334),
+           ("F4", 4194335),
+           ("F5", 4194336),
+           ("F6", 4194337),
+           ("F7", 4194338),
+           ("F8", 4194339),
+           ("F9", 4194340),
+           ("F10", 4194341),
+           ("F11", 4194342),
+           ("F12", 4194343),
+           ("F13", 4194344),
+           ("F14", 4194345),
+           ("F15", 4194346),
+           ("F16", 4194347),
+           ("F17", 4194348),
+           ("F18", 4194349),
+           ("F19", 4194350),
+           ("F20", 4194351),
+           ("F21", 4194352),
+           ("F22", 4194353),
+           ("F23", 4194354),
+           ("F24", 4194355),
+           ("F25", 4194356),
+           ("F26", 4194357),
+           ("F27", 4194358),
+           ("F28", 4194359),
+           ("F29", 4194360),
+           ("F30", 4194361),
+           ("F31", 4194362),
+           ("F32", 4194363),
+           ("F33", 4194364),
+           ("F34", 4194365),
+           ("F35", 4194366),
+           ("Menu", 4194370),
+           ("Hyper", 4194371),
+           ("Help", 4194373),
+           ("Back", 4194376),
+           ("Forward", 4194377),
+           ("Stop", 4194378),
+           ("Refresh", 4194379),
+           ("Volumedown", 4194380),
+           ("Volumemute", 4194381),
+           ("Volumeup", 4194382),
+           ("Mediaplay", 4194388),
+           ("Mediastop", 4194389),
+           ("Mediaprevious", 4194390),
+           ("Medianext", 4194391),
+           ("Mediarecord", 4194392),
+           ("Homepage", 4194393),
+           ("Favorites", 4194394),
+           ("Search", 4194395),
+           ("Standby", 4194396),
+           ("Openurl", 4194397),
+           ("Launchmail", 4194398),
+           ("Launchmedia", 4194399),
+           ("Launch0", 4194400),
+           ("Launch1", 4194401),
+           ("Launch2", 4194402),
+           ("Launch3", 4194403),
+           ("Launch4", 4194404),
+           ("Launch5", 4194405),
+           ("Launch6", 4194406),
+           ("Launch7", 4194407),
+           ("Launch8", 4194408),
+           ("Launch9", 4194409),
+           ("Launcha", 4194410),
+           ("Launchb", 4194411),
+           ("Launchc", 4194412),
+           ("Launchd", 4194413),
+           ("Launche", 4194414),
+           ("Launchf", 4194415),
+           ("Globe", 4194416),
+           ("Keyboard", 4194417),
+           ("Jis Eisu", 4194418),
+           ("Jis Kana", 4194419),
+           ("Kp Multiply", 4194433),
+           ("Kp Divide", 4194434),
+           ("Kp Subtract", 4194435),
+           ("Kp Period", 4194436),
+           ("Kp Add", 4194437),
+           ("Kp0", 4194438),
+           ("Kp1", 4194439),
+           ("Kp2", 4194440),
+           ("Kp3", 4194441),
+           ("Kp4", 4194442),
+           ("Kp5", 4194443),
+           ("Kp6", 4194444),
+           ("Kp7", 4194445),
+           ("Kp8", 4194446),
+           ("Kp9", 4194447),
+           ("Unknown", 8388607),
+        ]
     }
 }
 
 public struct KeyModifierMask: GodotOptionSet {
     public let rawValue: Int64
-
-    public init(
-        rawValue: Int64
-    ) {
+    
+    public init(rawValue: Int64) {
         self.rawValue = rawValue
     }
-
+    
     public static let codeMask: Self = .init(rawValue: 8388607)
-
     public static let modifierMask: Self = .init(rawValue: 532676608)
-
     public static let maskCmdOrCtrl: Self = .init(rawValue: 16777216)
-
     public static let maskShift: Self = .init(rawValue: 33554432)
-
     public static let maskAlt: Self = .init(rawValue: 67108864)
-
     public static let maskMeta: Self = .init(rawValue: 134217728)
-
     public static let maskCtrl: Self = .init(rawValue: 268435456)
-
     public static let maskKpad: Self = .init(rawValue: 536870912)
-
     public static let maskGroupSwitch: Self = .init(rawValue: 1073741824)
-
+    
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
-        ("Code Mask", 8388607),
-        ("Mask Cmd Or Ctrl", 16777216),
-        ("Mask Shift", 33554432),
-        ("Mask Alt", 67108864),
-        ("Mask Meta", 134217728),
-        ("Mask Ctrl", 268435456),
-        ("Modifier Mask", 532676608),
-        ("Mask Kpad", 536870912),
-        ("Mask Group Switch", 1073741824),]
+           ("Code Mask", 8388607),
+           ("Mask Cmd Or Ctrl", 16777216),
+           ("Mask Shift", 33554432),
+           ("Mask Alt", 67108864),
+           ("Mask Meta", 134217728),
+           ("Mask Ctrl", 268435456),
+           ("Modifier Mask", 532676608),
+           ("Mask Kpad", 536870912),
+           ("Mask Group Switch", 1073741824),
+        ]
     }
 }
 
@@ -581,48 +577,44 @@ public enum MouseButton: UInt32, GodotEnum {
     case wheelRight = 7
     case xbutton1 = 8
     case xbutton2 = 9
-
+    
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
-        ("None", 0),
-        ("Left", 1),
-        ("Right", 2),
-        ("Middle", 3),
-        ("Wheel Up", 4),
-        ("Wheel Down", 5),
-        ("Wheel Left", 6),
-        ("Wheel Right", 7),
-        ("Xbutton1", 8),
-        ("Xbutton2", 9),]
+           ("None", 0),
+           ("Left", 1),
+           ("Right", 2),
+           ("Middle", 3),
+           ("Wheel Up", 4),
+           ("Wheel Down", 5),
+           ("Wheel Left", 6),
+           ("Wheel Right", 7),
+           ("Xbutton1", 8),
+           ("Xbutton2", 9),
+        ]
     }
 }
 
 public struct MouseButtonMask: GodotOptionSet {
     public let rawValue: Int64
-
-    public init(
-        rawValue: Int64
-    ) {
+    
+    public init(rawValue: Int64) {
         self.rawValue = rawValue
     }
-
+    
     public static let left: Self = .init(rawValue: 1)
-
     public static let right: Self = .init(rawValue: 2)
-
     public static let middle: Self = .init(rawValue: 4)
-
     public static let mbXbutton1: Self = .init(rawValue: 128)
-
     public static let mbXbutton2: Self = .init(rawValue: 256)
-
+    
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
-        ("Left", 1),
-        ("Right", 2),
-        ("Middle", 4),
-        ("Mb Xbutton1", 128),
-        ("Mb Xbutton2", 256),]
+           ("Left", 1),
+           ("Right", 2),
+           ("Middle", 4),
+           ("Mb Xbutton1", 128),
+           ("Mb Xbutton2", 256),
+        ]
     }
 }
 
@@ -651,33 +643,34 @@ public enum JoyButton: Int32, GodotEnum {
     case touchpad = 20
     case sdlMax = 21
     case max = 128
-
+    
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
-        ("Invalid", -1),
-        ("A", 0),
-        ("B", 1),
-        ("X", 2),
-        ("Y", 3),
-        ("Back", 4),
-        ("Guide", 5),
-        ("Start", 6),
-        ("Left Stick", 7),
-        ("Right Stick", 8),
-        ("Left Shoulder", 9),
-        ("Right Shoulder", 10),
-        ("Dpad Up", 11),
-        ("Dpad Down", 12),
-        ("Dpad Left", 13),
-        ("Dpad Right", 14),
-        ("Misc1", 15),
-        ("Paddle1", 16),
-        ("Paddle2", 17),
-        ("Paddle3", 18),
-        ("Paddle4", 19),
-        ("Touchpad", 20),
-        ("Sdl Max", 21),
-        ("Max", 128),]
+           ("Invalid", -1),
+           ("A", 0),
+           ("B", 1),
+           ("X", 2),
+           ("Y", 3),
+           ("Back", 4),
+           ("Guide", 5),
+           ("Start", 6),
+           ("Left Stick", 7),
+           ("Right Stick", 8),
+           ("Left Shoulder", 9),
+           ("Right Shoulder", 10),
+           ("Dpad Up", 11),
+           ("Dpad Down", 12),
+           ("Dpad Left", 13),
+           ("Dpad Right", 14),
+           ("Misc1", 15),
+           ("Paddle1", 16),
+           ("Paddle2", 17),
+           ("Paddle3", 18),
+           ("Paddle4", 19),
+           ("Touchpad", 20),
+           ("Sdl Max", 21),
+           ("Max", 128),
+        ]
     }
 }
 
@@ -691,18 +684,19 @@ public enum JoyAxis: Int32, GodotEnum {
     case triggerRight = 5
     case sdlMax = 6
     case max = 10
-
+    
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
-        ("Invalid", -1),
-        ("Left X", 0),
-        ("Left Y", 1),
-        ("Right X", 2),
-        ("Right Y", 3),
-        ("Trigger Left", 4),
-        ("Trigger Right", 5),
-        ("Sdl Max", 6),
-        ("Max", 10),]
+           ("Invalid", -1),
+           ("Left X", 0),
+           ("Left Y", 1),
+           ("Right X", 2),
+           ("Right Y", 3),
+           ("Trigger Left", 4),
+           ("Trigger Right", 5),
+           ("Sdl Max", 6),
+           ("Max", 10),
+        ]
     }
 }
 
@@ -726,28 +720,29 @@ public enum MIDIMessage: UInt32, GodotEnum {
     case stop = 252
     case activeSensing = 254
     case systemReset = 255
-
+    
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
-        ("None", 0),
-        ("Note Off", 8),
-        ("Note On", 9),
-        ("Aftertouch", 10),
-        ("Control Change", 11),
-        ("Program Change", 12),
-        ("Channel Pressure", 13),
-        ("Pitch Bend", 14),
-        ("System Exclusive", 240),
-        ("Quarter Frame", 241),
-        ("Song Position Pointer", 242),
-        ("Song Select", 243),
-        ("Tune Request", 246),
-        ("Timing Clock", 248),
-        ("Start", 250),
-        ("Continue", 251),
-        ("Stop", 252),
-        ("Active Sensing", 254),
-        ("System Reset", 255),]
+           ("None", 0),
+           ("Note Off", 8),
+           ("Note On", 9),
+           ("Aftertouch", 10),
+           ("Control Change", 11),
+           ("Program Change", 12),
+           ("Channel Pressure", 13),
+           ("Pitch Bend", 14),
+           ("System Exclusive", 240),
+           ("Quarter Frame", 241),
+           ("Song Position Pointer", 242),
+           ("Song Select", 243),
+           ("Tune Request", 246),
+           ("Timing Clock", 248),
+           ("Start", 250),
+           ("Continue", 251),
+           ("Stop", 252),
+           ("Active Sensing", 254),
+           ("System Reset", 255),
+        ]
     }
 }
 
@@ -801,58 +796,59 @@ public enum ErrorType: UInt32, GodotEnum {
     case errHelp = 46
     case errBug = 47
     case errPrinterOnFire = 48
-
+    
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
-        ("Ok", 0),
-        ("Failed", 1),
-        ("Err Unavailable", 2),
-        ("Err Unconfigured", 3),
-        ("Err Unauthorized", 4),
-        ("Err Parameter Range Error", 5),
-        ("Err Out Of Memory", 6),
-        ("Err File Not Found", 7),
-        ("Err File Bad Drive", 8),
-        ("Err File Bad Path", 9),
-        ("Err File No Permission", 10),
-        ("Err File Already In Use", 11),
-        ("Err File Cant Open", 12),
-        ("Err File Cant Write", 13),
-        ("Err File Cant Read", 14),
-        ("Err File Unrecognized", 15),
-        ("Err File Corrupt", 16),
-        ("Err File Missing Dependencies", 17),
-        ("Err File Eof", 18),
-        ("Err Cant Open", 19),
-        ("Err Cant Create", 20),
-        ("Err Query Failed", 21),
-        ("Err Already In Use", 22),
-        ("Err Locked", 23),
-        ("Err Timeout", 24),
-        ("Err Cant Connect", 25),
-        ("Err Cant Resolve", 26),
-        ("Err Connection Error", 27),
-        ("Err Cant Acquire Resource", 28),
-        ("Err Cant Fork", 29),
-        ("Err Invalid Data", 30),
-        ("Err Invalid Parameter", 31),
-        ("Err Already Exists", 32),
-        ("Err Does Not Exist", 33),
-        ("Err Database Cant Read", 34),
-        ("Err Database Cant Write", 35),
-        ("Err Compilation Failed", 36),
-        ("Err Method Not Found", 37),
-        ("Err Link Failed", 38),
-        ("Err Script Failed", 39),
-        ("Err Cyclic Link", 40),
-        ("Err Invalid Declaration", 41),
-        ("Err Duplicate Symbol", 42),
-        ("Err Parse Error", 43),
-        ("Err Busy", 44),
-        ("Err Skip", 45),
-        ("Err Help", 46),
-        ("Err Bug", 47),
-        ("Err Printer On Fire", 48),]
+           ("Ok", 0),
+           ("Failed", 1),
+           ("Err Unavailable", 2),
+           ("Err Unconfigured", 3),
+           ("Err Unauthorized", 4),
+           ("Err Parameter Range Error", 5),
+           ("Err Out Of Memory", 6),
+           ("Err File Not Found", 7),
+           ("Err File Bad Drive", 8),
+           ("Err File Bad Path", 9),
+           ("Err File No Permission", 10),
+           ("Err File Already In Use", 11),
+           ("Err File Cant Open", 12),
+           ("Err File Cant Write", 13),
+           ("Err File Cant Read", 14),
+           ("Err File Unrecognized", 15),
+           ("Err File Corrupt", 16),
+           ("Err File Missing Dependencies", 17),
+           ("Err File Eof", 18),
+           ("Err Cant Open", 19),
+           ("Err Cant Create", 20),
+           ("Err Query Failed", 21),
+           ("Err Already In Use", 22),
+           ("Err Locked", 23),
+           ("Err Timeout", 24),
+           ("Err Cant Connect", 25),
+           ("Err Cant Resolve", 26),
+           ("Err Connection Error", 27),
+           ("Err Cant Acquire Resource", 28),
+           ("Err Cant Fork", 29),
+           ("Err Invalid Data", 30),
+           ("Err Invalid Parameter", 31),
+           ("Err Already Exists", 32),
+           ("Err Does Not Exist", 33),
+           ("Err Database Cant Read", 34),
+           ("Err Database Cant Write", 35),
+           ("Err Compilation Failed", 36),
+           ("Err Method Not Found", 37),
+           ("Err Link Failed", 38),
+           ("Err Script Failed", 39),
+           ("Err Cyclic Link", 40),
+           ("Err Invalid Declaration", 41),
+           ("Err Duplicate Symbol", 42),
+           ("Err Parse Error", 43),
+           ("Err Busy", 44),
+           ("Err Skip", 45),
+           ("Err Help", 46),
+           ("Err Bug", 47),
+           ("Err Printer On Fire", 48),
+        ]
     }
 }
 
@@ -896,193 +892,154 @@ public enum PropertyHint: UInt32, GodotEnum {
     case hideQuaternionEdit = 35
     case password = 36
     case max = 38
-
+    
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
-        ("None", 0),
-        ("Range", 1),
-        ("Enum", 2),
-        ("Enum Suggestion", 3),
-        ("Exp Easing", 4),
-        ("Link", 5),
-        ("Flags", 6),
-        ("Layers2D Render", 7),
-        ("Layers2D Physics", 8),
-        ("Layers2D Navigation", 9),
-        ("Layers3D Render", 10),
-        ("Layers3D Physics", 11),
-        ("Layers3D Navigation", 12),
-        ("File", 13),
-        ("Dir", 14),
-        ("Global File", 15),
-        ("Global Dir", 16),
-        ("Resource Type", 17),
-        ("Multiline Text", 18),
-        ("Expression", 19),
-        ("Placeholder Text", 20),
-        ("Color No Alpha", 21),
-        ("Object ID", 22),
-        ("Type String", 23),
-        ("Node Path To Edited Node", 24),
-        ("Object Too Big", 25),
-        ("Node Path Valid Types", 26),
-        ("Save File", 27),
-        ("Global Save File", 28),
-        ("Int Is Objectid", 29),
-        ("Int Is Pointer", 30),
-        ("Array Type", 31),
-        ("Locale ID", 32),
-        ("Localizable String", 33),
-        ("Node Type", 34),
-        ("Hide Quaternion Edit", 35),
-        ("Password", 36),
-        ("Layers Avoidance", 37),
-        ("Max", 38),]
+           ("None", 0),
+           ("Range", 1),
+           ("Enum", 2),
+           ("Enum Suggestion", 3),
+           ("Exp Easing", 4),
+           ("Link", 5),
+           ("Flags", 6),
+           ("Layers2D Render", 7),
+           ("Layers2D Physics", 8),
+           ("Layers2D Navigation", 9),
+           ("Layers3D Render", 10),
+           ("Layers3D Physics", 11),
+           ("Layers3D Navigation", 12),
+           ("File", 13),
+           ("Dir", 14),
+           ("Global File", 15),
+           ("Global Dir", 16),
+           ("Resource Type", 17),
+           ("Multiline Text", 18),
+           ("Expression", 19),
+           ("Placeholder Text", 20),
+           ("Color No Alpha", 21),
+           ("Object ID", 22),
+           ("Type String", 23),
+           ("Node Path To Edited Node", 24),
+           ("Object Too Big", 25),
+           ("Node Path Valid Types", 26),
+           ("Save File", 27),
+           ("Global Save File", 28),
+           ("Int Is Objectid", 29),
+           ("Int Is Pointer", 30),
+           ("Array Type", 31),
+           ("Locale ID", 32),
+           ("Localizable String", 33),
+           ("Node Type", 34),
+           ("Hide Quaternion Edit", 35),
+           ("Password", 36),
+           ("Layers Avoidance", 37),
+           ("Max", 38),
+        ]
     }
 }
 
 public struct PropertyUsageFlags: GodotOptionSet {
     public let rawValue: Int64
-
-    public init(
-        rawValue: Int64
-    ) {
+    
+    public init(rawValue: Int64) {
         self.rawValue = rawValue
     }
-
+    
     public static let none: Self = .init(rawValue: 0)
-
     public static let storage: Self = .init(rawValue: 2)
-
     public static let editor: Self = .init(rawValue: 4)
-
     public static let `internal`: Self = .init(rawValue: 8)
-
     public static let checkable: Self = .init(rawValue: 16)
-
     public static let checked: Self = .init(rawValue: 32)
-
     public static let group: Self = .init(rawValue: 64)
-
     public static let category: Self = .init(rawValue: 128)
-
     public static let subgroup: Self = .init(rawValue: 256)
-
     public static let classIsBitfield: Self = .init(rawValue: 512)
-
     public static let noInstanceState: Self = .init(rawValue: 1024)
-
     public static let restartIfChanged: Self = .init(rawValue: 2048)
-
     public static let scriptVariable: Self = .init(rawValue: 4096)
-
     public static let storeIfNull: Self = .init(rawValue: 8192)
-
     public static let updateAllIfModified: Self = .init(rawValue: 16384)
-
     public static let scriptDefaultValue: Self = .init(rawValue: 32768)
-
     public static let classIsEnum: Self = .init(rawValue: 65536)
-
     public static let nilIsVariant: Self = .init(rawValue: 131072)
-
     public static let array: Self = .init(rawValue: 262144)
-
     public static let alwaysDuplicate: Self = .init(rawValue: 524288)
-
     public static let neverDuplicate: Self = .init(rawValue: 1048576)
-
     public static let highEndGfx: Self = .init(rawValue: 2097152)
-
     public static let nodePathFromSceneRoot: Self = .init(rawValue: 4194304)
-
     public static let resourceNotPersistent: Self = .init(rawValue: 8388608)
-
     public static let keyingIncrements: Self = .init(rawValue: 16777216)
-
     public static let deferredSetResource: Self = .init(rawValue: 33554432)
-
     public static let editorInstantiateObject: Self = .init(rawValue: 67108864)
-
     public static let editorBasicSetting: Self = .init(rawValue: 134217728)
-
     public static let readOnly: Self = .init(rawValue: 268435456)
-
     public static let secret: Self = .init(rawValue: 536870912)
-
     public static let `default`: Self = .init(rawValue: 6)
-
     public static let noEditor: Self = .init(rawValue: 2)
-
+    
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
-        ("None", 0),
-        ("Storage", 2),
-        ("Editor", 4),
-        ("Default", 6),
-        ("Internal", 8),
-        ("Checkable", 16),
-        ("Checked", 32),
-        ("Group", 64),
-        ("Category", 128),
-        ("Subgroup", 256),
-        ("Class Is Bitfield", 512),
-        ("No Instance State", 1024),
-        ("Restart If Changed", 2048),
-        ("Script Variable", 4096),
-        ("Store If Null", 8192),
-        ("Update All If Modified", 16384),
-        ("Script Default Value", 32768),
-        ("Class Is Enum", 65536),
-        ("Nil Is Variant", 131072),
-        ("Array", 262144),
-        ("Always Duplicate", 524288),
-        ("Never Duplicate", 1048576),
-        ("High End Gfx", 2097152),
-        ("Node Path From Scene Root", 4194304),
-        ("Resource Not Persistent", 8388608),
-        ("Keying Increments", 16777216),
-        ("Deferred Set Resource", 33554432),
-        ("Editor Instantiate Object", 67108864),
-        ("Editor Basic Setting", 134217728),
-        ("Read Only", 268435456),
-        ("Secret", 536870912),]
+           ("None", 0),
+           ("Storage", 2),
+           ("Editor", 4),
+           ("Default", 6),
+           ("Internal", 8),
+           ("Checkable", 16),
+           ("Checked", 32),
+           ("Group", 64),
+           ("Category", 128),
+           ("Subgroup", 256),
+           ("Class Is Bitfield", 512),
+           ("No Instance State", 1024),
+           ("Restart If Changed", 2048),
+           ("Script Variable", 4096),
+           ("Store If Null", 8192),
+           ("Update All If Modified", 16384),
+           ("Script Default Value", 32768),
+           ("Class Is Enum", 65536),
+           ("Nil Is Variant", 131072),
+           ("Array", 262144),
+           ("Always Duplicate", 524288),
+           ("Never Duplicate", 1048576),
+           ("High End Gfx", 2097152),
+           ("Node Path From Scene Root", 4194304),
+           ("Resource Not Persistent", 8388608),
+           ("Keying Increments", 16777216),
+           ("Deferred Set Resource", 33554432),
+           ("Editor Instantiate Object", 67108864),
+           ("Editor Basic Setting", 134217728),
+           ("Read Only", 268435456),
+           ("Secret", 536870912),
+        ]
     }
 }
 
 public struct MethodFlags: GodotOptionSet {
     public let rawValue: Int64
-
-    public init(
-        rawValue: Int64
-    ) {
+    
+    public init(rawValue: Int64) {
         self.rawValue = rawValue
     }
-
+    
     public static let flagNormal: Self = .init(rawValue: 1)
-
     public static let flagEditor: Self = .init(rawValue: 2)
-
     public static let flagConst: Self = .init(rawValue: 4)
-
     public static let flagVirtual: Self = .init(rawValue: 8)
-
     public static let flagVararg: Self = .init(rawValue: 16)
-
     public static let flagStatic: Self = .init(rawValue: 32)
-
     public static let flagObjectCore: Self = .init(rawValue: 64)
-
     public static let flagsDefault: Self = .init(rawValue: 1)
-
+    
     public static func hintValues() -> [(name: String, value: RawValue)] {
         [
-        ("Flag Normal", 1),
-        ("Flag Editor", 2),
-        ("Flag Const", 4),
-        ("Flag Virtual", 8),
-        ("Flag Vararg", 16),
-        ("Flag Static", 32),
-        ("Flag Object Core", 64),]
+           ("Flag Normal", 1),
+           ("Flag Editor", 2),
+           ("Flag Const", 4),
+           ("Flag Virtual", 8),
+           ("Flag Vararg", 16),
+           ("Flag Static", 32),
+           ("Flag Object Core", 64),
+        ]
     }
 }

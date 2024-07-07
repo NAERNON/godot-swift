@@ -8,13 +8,13 @@ import GodotExtensionHeaders
 open class GDScript: Script {
     internal static var __method_binding_new: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "new").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1545262638)!
-        }
+            GodotStringName(swiftStaticString: "new").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1545262638)!
+            }
         }
     }()
-
-    public func new<each VariantRest : Variant.Storable>(
+    
+    public func new<each VariantRest: Variant.Storable>(
         _ rest: repeat each VariantRest
     ) -> Godot.Variant {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
@@ -32,18 +32,15 @@ open class GDScript: Script {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

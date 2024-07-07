@@ -14,27 +14,28 @@ open class VisualShaderNodeClamp: VisualShaderNode {
         case vector3D = 4
         case vector4D = 5
         case max = 6
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Float", 0),
-            ("Int", 1),
-            ("Uint", 2),
-            ("Vector2D", 3),
-            ("Vector3D", 4),
-            ("Vector4D", 5),
-            ("Max", 6),]
+               ("Float", 0),
+               ("Int", 1),
+               ("Uint", 2),
+               ("Vector2D", 3),
+               ("Vector3D", 4),
+               ("Vector4D", 5),
+               ("Max", 6),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_op_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_op_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 405010749)!
-        }
+            GodotStringName(swiftStaticString: "set_op_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 405010749)!
+            }
         }
     }()
-
+    
     private func __setOpType(
         _ opType: Godot.VisualShaderNodeClamp.OpType
     ) {
@@ -51,15 +52,15 @@ open class VisualShaderNodeClamp: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_op_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_op_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 233276050)!
-        }
+            GodotStringName(swiftStaticString: "get_op_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 233276050)!
+            }
         }
     }()
-
+    
     private func __getOpType() -> Godot.VisualShaderNodeClamp.OpType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -72,29 +73,26 @@ open class VisualShaderNodeClamp: VisualShaderNode {
             }
         }
     }
-
+    
     public var opType: Godot.VisualShaderNodeClamp.OpType {
         get {
             __getOpType()
         }
-        set {
+        set(newValue) {
             __setOpType(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

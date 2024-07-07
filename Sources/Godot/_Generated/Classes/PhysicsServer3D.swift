@@ -13,31 +13,33 @@ open class PhysicsServer3D: Object {
         case coneTwist = 3
         case jointType6dof = 4
         case max = 5
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Pin", 0),
-            ("Hinge", 1),
-            ("Slider", 2),
-            ("Cone Twist", 3),
-            ("Joint Type6dof", 4),
-            ("Max", 5),]
+               ("Pin", 0),
+               ("Hinge", 1),
+               ("Slider", 2),
+               ("Cone Twist", 3),
+               ("Joint Type6dof", 4),
+               ("Max", 5),
+            ]
         }
     }
-
+    
     public enum PinJointParam: UInt32, GodotEnum {
         case bias = 0
         case damping = 1
         case impulseClamp = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Bias", 0),
-            ("Damping", 1),
-            ("Impulse Clamp", 2),]
+               ("Bias", 0),
+               ("Damping", 1),
+               ("Impulse Clamp", 2),
+            ]
         }
     }
-
+    
     public enum HingeJointParam: UInt32, GodotEnum {
         case bias = 0
         case limitUpper = 1
@@ -47,31 +49,33 @@ open class PhysicsServer3D: Object {
         case limitRelaxation = 5
         case motorTargetVelocity = 6
         case motorMaxImpulse = 7
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Bias", 0),
-            ("Limit Upper", 1),
-            ("Limit Lower", 2),
-            ("Limit Bias", 3),
-            ("Limit Softness", 4),
-            ("Limit Relaxation", 5),
-            ("Motor Target Velocity", 6),
-            ("Motor Max Impulse", 7),]
+               ("Bias", 0),
+               ("Limit Upper", 1),
+               ("Limit Lower", 2),
+               ("Limit Bias", 3),
+               ("Limit Softness", 4),
+               ("Limit Relaxation", 5),
+               ("Motor Target Velocity", 6),
+               ("Motor Max Impulse", 7),
+            ]
         }
     }
-
+    
     public enum HingeJointFlag: UInt32, GodotEnum {
         case useLimit = 0
         case enableMotor = 1
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Use Limit", 0),
-            ("Enable Motor", 1),]
+               ("Use Limit", 0),
+               ("Enable Motor", 1),
+            ]
         }
     }
-
+    
     public enum SliderJointParam: UInt32, GodotEnum {
         case linearLimitUpper = 0
         case linearLimitLower = 1
@@ -96,52 +100,54 @@ open class PhysicsServer3D: Object {
         case angularOrthogonalRestitution = 20
         case angularOrthogonalDamping = 21
         case max = 22
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Linear Limit Upper", 0),
-            ("Linear Limit Lower", 1),
-            ("Linear Limit Softness", 2),
-            ("Linear Limit Restitution", 3),
-            ("Linear Limit Damping", 4),
-            ("Linear Motion Softness", 5),
-            ("Linear Motion Restitution", 6),
-            ("Linear Motion Damping", 7),
-            ("Linear Orthogonal Softness", 8),
-            ("Linear Orthogonal Restitution", 9),
-            ("Linear Orthogonal Damping", 10),
-            ("Angular Limit Upper", 11),
-            ("Angular Limit Lower", 12),
-            ("Angular Limit Softness", 13),
-            ("Angular Limit Restitution", 14),
-            ("Angular Limit Damping", 15),
-            ("Angular Motion Softness", 16),
-            ("Angular Motion Restitution", 17),
-            ("Angular Motion Damping", 18),
-            ("Angular Orthogonal Softness", 19),
-            ("Angular Orthogonal Restitution", 20),
-            ("Angular Orthogonal Damping", 21),
-            ("Max", 22),]
+               ("Linear Limit Upper", 0),
+               ("Linear Limit Lower", 1),
+               ("Linear Limit Softness", 2),
+               ("Linear Limit Restitution", 3),
+               ("Linear Limit Damping", 4),
+               ("Linear Motion Softness", 5),
+               ("Linear Motion Restitution", 6),
+               ("Linear Motion Damping", 7),
+               ("Linear Orthogonal Softness", 8),
+               ("Linear Orthogonal Restitution", 9),
+               ("Linear Orthogonal Damping", 10),
+               ("Angular Limit Upper", 11),
+               ("Angular Limit Lower", 12),
+               ("Angular Limit Softness", 13),
+               ("Angular Limit Restitution", 14),
+               ("Angular Limit Damping", 15),
+               ("Angular Motion Softness", 16),
+               ("Angular Motion Restitution", 17),
+               ("Angular Motion Damping", 18),
+               ("Angular Orthogonal Softness", 19),
+               ("Angular Orthogonal Restitution", 20),
+               ("Angular Orthogonal Damping", 21),
+               ("Max", 22),
+            ]
         }
     }
-
+    
     public enum ConeTwistJointParam: UInt32, GodotEnum {
         case swingSpan = 0
         case twistSpan = 1
         case bias = 2
         case softness = 3
         case relaxation = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Swing Span", 0),
-            ("Twist Span", 1),
-            ("Bias", 2),
-            ("Softness", 3),
-            ("Relaxation", 4),]
+               ("Swing Span", 0),
+               ("Twist Span", 1),
+               ("Bias", 2),
+               ("Softness", 3),
+               ("Relaxation", 4),
+            ]
         }
     }
-
+    
     public enum G6DOFJointAxisParam: UInt32, GodotEnum {
         case linearLowerLimit = 0
         case linearUpperLimit = 1
@@ -159,43 +165,45 @@ open class PhysicsServer3D: Object {
         case angularErp = 16
         case angularMotorTargetVelocity = 17
         case angularMotorForceLimit = 18
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Linear Lower Limit", 0),
-            ("Linear Upper Limit", 1),
-            ("Linear Limit Softness", 2),
-            ("Linear Restitution", 3),
-            ("Linear Damping", 4),
-            ("Linear Motor Target Velocity", 5),
-            ("Linear Motor Force Limit", 6),
-            ("Angular Lower Limit", 10),
-            ("Angular Upper Limit", 11),
-            ("Angular Limit Softness", 12),
-            ("Angular Damping", 13),
-            ("Angular Restitution", 14),
-            ("Angular Force Limit", 15),
-            ("Angular Erp", 16),
-            ("Angular Motor Target Velocity", 17),
-            ("Angular Motor Force Limit", 18),]
+               ("Linear Lower Limit", 0),
+               ("Linear Upper Limit", 1),
+               ("Linear Limit Softness", 2),
+               ("Linear Restitution", 3),
+               ("Linear Damping", 4),
+               ("Linear Motor Target Velocity", 5),
+               ("Linear Motor Force Limit", 6),
+               ("Angular Lower Limit", 10),
+               ("Angular Upper Limit", 11),
+               ("Angular Limit Softness", 12),
+               ("Angular Damping", 13),
+               ("Angular Restitution", 14),
+               ("Angular Force Limit", 15),
+               ("Angular Erp", 16),
+               ("Angular Motor Target Velocity", 17),
+               ("Angular Motor Force Limit", 18),
+            ]
         }
     }
-
+    
     public enum G6DOFJointAxisFlag: UInt32, GodotEnum {
         case linearLimit = 0
         case angularLimit = 1
         case motor = 4
         case linearMotor = 5
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Linear Limit", 0),
-            ("Angular Limit", 1),
-            ("Motor", 4),
-            ("Linear Motor", 5),]
+               ("Linear Limit", 0),
+               ("Angular Limit", 1),
+               ("Motor", 4),
+               ("Linear Motor", 5),
+            ]
         }
     }
-
+    
     public enum ShapeType: UInt32, GodotEnum {
         case worldBoundary = 0
         case separationRay = 1
@@ -208,23 +216,24 @@ open class PhysicsServer3D: Object {
         case heightmap = 8
         case softBody = 9
         case custom = 10
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("World Boundary", 0),
-            ("Separation Ray", 1),
-            ("Sphere", 2),
-            ("Box", 3),
-            ("Capsule", 4),
-            ("Cylinder", 5),
-            ("Convex Polygon", 6),
-            ("Concave Polygon", 7),
-            ("Heightmap", 8),
-            ("Soft Body", 9),
-            ("Custom", 10),]
+               ("World Boundary", 0),
+               ("Separation Ray", 1),
+               ("Sphere", 2),
+               ("Box", 3),
+               ("Capsule", 4),
+               ("Cylinder", 5),
+               ("Convex Polygon", 6),
+               ("Concave Polygon", 7),
+               ("Heightmap", 8),
+               ("Soft Body", 9),
+               ("Custom", 10),
+            ]
         }
     }
-
+    
     public enum AreaParameter: UInt32, GodotEnum {
         case gravityOverrideMode = 0
         case gravity = 1
@@ -240,58 +249,61 @@ open class PhysicsServer3D: Object {
         case windSource = 11
         case windDirection = 12
         case windAttenuationFactor = 13
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Gravity Override Mode", 0),
-            ("Gravity", 1),
-            ("Gravity Vector", 2),
-            ("Gravity Is Point", 3),
-            ("Gravity Point Unit Distance", 4),
-            ("Linear Damp Override Mode", 5),
-            ("Linear Damp", 6),
-            ("Angular Damp Override Mode", 7),
-            ("Angular Damp", 8),
-            ("Priority", 9),
-            ("Wind Force Magnitude", 10),
-            ("Wind Source", 11),
-            ("Wind Direction", 12),
-            ("Wind Attenuation Factor", 13),]
+               ("Gravity Override Mode", 0),
+               ("Gravity", 1),
+               ("Gravity Vector", 2),
+               ("Gravity Is Point", 3),
+               ("Gravity Point Unit Distance", 4),
+               ("Linear Damp Override Mode", 5),
+               ("Linear Damp", 6),
+               ("Angular Damp Override Mode", 7),
+               ("Angular Damp", 8),
+               ("Priority", 9),
+               ("Wind Force Magnitude", 10),
+               ("Wind Source", 11),
+               ("Wind Direction", 12),
+               ("Wind Attenuation Factor", 13),
+            ]
         }
     }
-
+    
     public enum AreaSpaceOverrideMode: UInt32, GodotEnum {
         case disabled = 0
         case combine = 1
         case combineReplace = 2
         case replace = 3
         case replaceCombine = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Disabled", 0),
-            ("Combine", 1),
-            ("Combine Replace", 2),
-            ("Replace", 3),
-            ("Replace Combine", 4),]
+               ("Disabled", 0),
+               ("Combine", 1),
+               ("Combine Replace", 2),
+               ("Replace", 3),
+               ("Replace Combine", 4),
+            ]
         }
     }
-
+    
     public enum BodyMode: UInt32, GodotEnum {
         case `static` = 0
         case kinematic = 1
         case rigid = 2
         case rigidLinear = 3
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Static", 0),
-            ("Kinematic", 1),
-            ("Rigid", 2),
-            ("Rigid Linear", 3),]
+               ("Static", 0),
+               ("Kinematic", 1),
+               ("Rigid", 2),
+               ("Rigid Linear", 3),
+            ]
         }
     }
-
+    
     public enum BodyParameter: UInt32, GodotEnum {
         case bounce = 0
         case friction = 1
@@ -304,75 +316,80 @@ open class PhysicsServer3D: Object {
         case linearDamp = 8
         case angularDamp = 9
         case max = 10
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Bounce", 0),
-            ("Friction", 1),
-            ("Mass", 2),
-            ("Inertia", 3),
-            ("Center Of Mass", 4),
-            ("Gravity Scale", 5),
-            ("Linear Damp Mode", 6),
-            ("Angular Damp Mode", 7),
-            ("Linear Damp", 8),
-            ("Angular Damp", 9),
-            ("Max", 10),]
+               ("Bounce", 0),
+               ("Friction", 1),
+               ("Mass", 2),
+               ("Inertia", 3),
+               ("Center Of Mass", 4),
+               ("Gravity Scale", 5),
+               ("Linear Damp Mode", 6),
+               ("Angular Damp Mode", 7),
+               ("Linear Damp", 8),
+               ("Angular Damp", 9),
+               ("Max", 10),
+            ]
         }
     }
-
+    
     public enum BodyDampMode: UInt32, GodotEnum {
         case combine = 0
         case replace = 1
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Combine", 0),
-            ("Replace", 1),]
+               ("Combine", 0),
+               ("Replace", 1),
+            ]
         }
     }
-
+    
     public enum BodyState: UInt32, GodotEnum {
         case transform = 0
         case linearVelocity = 1
         case angularVelocity = 2
         case sleeping = 3
         case canSleep = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Transform", 0),
-            ("Linear Velocity", 1),
-            ("Angular Velocity", 2),
-            ("Sleeping", 3),
-            ("Can Sleep", 4),]
+               ("Transform", 0),
+               ("Linear Velocity", 1),
+               ("Angular Velocity", 2),
+               ("Sleeping", 3),
+               ("Can Sleep", 4),
+            ]
         }
     }
-
+    
     public enum AreaBodyStatus: UInt32, GodotEnum {
         case added = 0
         case removed = 1
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Added", 0),
-            ("Removed", 1),]
+               ("Added", 0),
+               ("Removed", 1),
+            ]
         }
     }
-
+    
     public enum ProcessInfo: UInt32, GodotEnum {
         case activeObjects = 0
         case collisionPairs = 1
         case islandCount = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Active Objects", 0),
-            ("Collision Pairs", 1),
-            ("Island Count", 2),]
+               ("Active Objects", 0),
+               ("Collision Pairs", 1),
+               ("Island Count", 2),
+            ]
         }
     }
-
+    
     public enum SpaceParameter: UInt32, GodotEnum {
         case contactRecycleRadius = 0
         case contactMaxSeparation = 1
@@ -382,20 +399,21 @@ open class PhysicsServer3D: Object {
         case bodyAngularVelocitySleepThreshold = 5
         case bodyTimeToSleep = 6
         case solverIterations = 7
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Contact Recycle Radius", 0),
-            ("Contact Max Separation", 1),
-            ("Contact Max Allowed Penetration", 2),
-            ("Contact Default Bias", 3),
-            ("Body Linear Velocity Sleep Threshold", 4),
-            ("Body Angular Velocity Sleep Threshold", 5),
-            ("Body Time To Sleep", 6),
-            ("Solver Iterations", 7),]
+               ("Contact Recycle Radius", 0),
+               ("Contact Max Separation", 1),
+               ("Contact Max Allowed Penetration", 2),
+               ("Contact Default Bias", 3),
+               ("Body Linear Velocity Sleep Threshold", 4),
+               ("Body Angular Velocity Sleep Threshold", 5),
+               ("Body Time To Sleep", 6),
+               ("Solver Iterations", 7),
+            ]
         }
     }
-
+    
     public enum BodyAxis: UInt32, GodotEnum {
         case linearX = 1
         case linearY = 2
@@ -403,26 +421,27 @@ open class PhysicsServer3D: Object {
         case angularX = 8
         case angularY = 16
         case angularZ = 32
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Linear X", 1),
-            ("Linear Y", 2),
-            ("Linear Z", 4),
-            ("Angular X", 8),
-            ("Angular Y", 16),
-            ("Angular Z", 32),]
+               ("Linear X", 1),
+               ("Linear Y", 2),
+               ("Linear Z", 4),
+               ("Angular X", 8),
+               ("Angular Y", 16),
+               ("Angular Z", 32),
+            ]
         }
     }
-
+    
     internal static var __method_binding_world_boundary_shape_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "world_boundary_shape_create").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "world_boundary_shape_create").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func worldBoundaryShapeCreate() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -435,15 +454,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_separation_ray_shape_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "separation_ray_shape_create").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "separation_ray_shape_create").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func separationRayShapeCreate() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -456,15 +475,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_sphere_shape_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "sphere_shape_create").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "sphere_shape_create").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func sphereShapeCreate() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -477,15 +496,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_box_shape_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "box_shape_create").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "box_shape_create").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func boxShapeCreate() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -498,15 +517,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_capsule_shape_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "capsule_shape_create").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "capsule_shape_create").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func capsuleShapeCreate() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -519,15 +538,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_cylinder_shape_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "cylinder_shape_create").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "cylinder_shape_create").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func cylinderShapeCreate() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -540,15 +559,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_convex_polygon_shape_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "convex_polygon_shape_create").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "convex_polygon_shape_create").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func convexPolygonShapeCreate() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -561,15 +580,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_concave_polygon_shape_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "concave_polygon_shape_create").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "concave_polygon_shape_create").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func concavePolygonShapeCreate() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -582,15 +601,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_heightmap_shape_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "heightmap_shape_create").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "heightmap_shape_create").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func heightmapShapeCreate() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -603,15 +622,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_custom_shape_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "custom_shape_create").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "custom_shape_create").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func customShapeCreate() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -624,15 +643,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_shape_set_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shape_set_data").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3175752987)!
-        }
+            GodotStringName(swiftStaticString: "shape_set_data").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3175752987)!
+            }
         }
     }()
-
+    
     public func shapeSetData<Value: Variant.Storable>(
         shape: Godot.RID,
         data: Value
@@ -652,15 +671,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_shape_get_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shape_get_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3418923367)!
-        }
+            GodotStringName(swiftStaticString: "shape_get_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3418923367)!
+            }
         }
     }()
-
+    
     public func shapeGetType(
         shape: Godot.RID
     ) -> Godot.PhysicsServer3D.ShapeType {
@@ -679,15 +698,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_shape_get_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "shape_get_data").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4171304767)!
-        }
+            GodotStringName(swiftStaticString: "shape_get_data").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4171304767)!
+            }
         }
     }()
-
+    
     public func shapeGetData(
         shape: Godot.RID
     ) -> Godot.Variant {
@@ -706,15 +725,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_space_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "space_create").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "space_create").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func spaceCreate() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -727,15 +746,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_space_set_active: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "space_set_active").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
-        }
+            GodotStringName(swiftStaticString: "space_set_active").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
+            }
         }
     }()
-
+    
     public func spaceSetActive(
         space: Godot.RID,
         active: Bool
@@ -755,15 +774,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_space_is_active: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "space_is_active").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
-        }
+            GodotStringName(swiftStaticString: "space_is_active").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
+            }
         }
     }()
-
+    
     public func spaceIsActive(
         space: Godot.RID
     ) -> Bool {
@@ -782,15 +801,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_space_set_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "space_set_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2406017470)!
-        }
+            GodotStringName(swiftStaticString: "space_set_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2406017470)!
+            }
         }
     }()
-
+    
     public func spaceSetParam(
         space: Godot.RID,
         param: Godot.PhysicsServer3D.SpaceParameter,
@@ -813,15 +832,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_space_get_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "space_get_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1523206731)!
-        }
+            GodotStringName(swiftStaticString: "space_get_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1523206731)!
+            }
         }
     }()
-
+    
     public func spaceGetParam(
         space: Godot.RID,
         param: Godot.PhysicsServer3D.SpaceParameter
@@ -843,15 +862,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_space_get_direct_state: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "space_get_direct_state").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2048616813)!
-        }
+            GodotStringName(swiftStaticString: "space_get_direct_state").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2048616813)!
+            }
         }
     }()
-
+    
     public func spaceGetDirectState(
         space: Godot.RID
     ) -> Godot.PhysicsDirectSpaceState3D? {
@@ -870,15 +889,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_create").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "area_create").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func areaCreate() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -891,15 +910,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_set_space: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_set_space").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 395945892)!
-        }
+            GodotStringName(swiftStaticString: "area_set_space").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 395945892)!
+            }
         }
     }()
-
+    
     public func areaSetSpace(
         area: Godot.RID,
         space: Godot.RID
@@ -919,15 +938,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_get_space: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_get_space").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814569979)!
-        }
+            GodotStringName(swiftStaticString: "area_get_space").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814569979)!
+            }
         }
     }()
-
+    
     public func areaGetSpace(
         area: Godot.RID
     ) -> Godot.RID {
@@ -946,15 +965,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_add_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_add_shape").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3711419014)!
-        }
+            GodotStringName(swiftStaticString: "area_add_shape").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3711419014)!
+            }
         }
     }()
-
+    
     public func areaAddShape(
         area: Godot.RID,
         shape: Godot.RID,
@@ -980,15 +999,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_set_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_set_shape").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2310537182)!
-        }
+            GodotStringName(swiftStaticString: "area_set_shape").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2310537182)!
+            }
         }
     }()
-
+    
     public func areaSetShape(
         area: Godot.RID,
         shapeIdx: Int32,
@@ -1011,15 +1030,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_set_shape_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_set_shape_transform").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 675327471)!
-        }
+            GodotStringName(swiftStaticString: "area_set_shape_transform").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 675327471)!
+            }
         }
     }()
-
+    
     public func areaSetShapeTransform(
         area: Godot.RID,
         shapeIdx: Int32,
@@ -1042,15 +1061,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_set_shape_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_set_shape_disabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2658558584)!
-        }
+            GodotStringName(swiftStaticString: "area_set_shape_disabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2658558584)!
+            }
         }
     }()
-
+    
     public func areaSetShapeDisabled(
         area: Godot.RID,
         shapeIdx: Int32,
@@ -1073,15 +1092,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_get_shape_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_get_shape_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
-        }
+            GodotStringName(swiftStaticString: "area_get_shape_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
+            }
         }
     }()
-
+    
     public func areaGetShapeCount(
         area: Godot.RID
     ) -> Int32 {
@@ -1100,15 +1119,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_get_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_get_shape").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1066463050)!
-        }
+            GodotStringName(swiftStaticString: "area_get_shape").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1066463050)!
+            }
         }
     }()
-
+    
     public func areaGetShape(
         area: Godot.RID,
         shapeIdx: Int32
@@ -1130,15 +1149,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_get_shape_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_get_shape_transform").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1050775521)!
-        }
+            GodotStringName(swiftStaticString: "area_get_shape_transform").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1050775521)!
+            }
         }
     }()
-
+    
     public func areaGetShapeTransform(
         area: Godot.RID,
         shapeIdx: Int32
@@ -1160,15 +1179,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_remove_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_remove_shape").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
-        }
+            GodotStringName(swiftStaticString: "area_remove_shape").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
+            }
         }
     }()
-
+    
     public func areaRemoveShape(
         area: Godot.RID,
         shapeIdx: Int32
@@ -1188,15 +1207,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_clear_shapes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_clear_shapes").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
-        }
+            GodotStringName(swiftStaticString: "area_clear_shapes").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
+            }
         }
     }()
-
+    
     public func areaClearShapes(
         area: Godot.RID
     ) {
@@ -1213,15 +1232,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_set_collision_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_set_collision_layer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
-        }
+            GodotStringName(swiftStaticString: "area_set_collision_layer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
+            }
         }
     }()
-
+    
     public func areaSetCollisionLayer(
         area: Godot.RID,
         layer: UInt32
@@ -1241,15 +1260,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_get_collision_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_get_collision_layer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
-        }
+            GodotStringName(swiftStaticString: "area_get_collision_layer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
+            }
         }
     }()
-
+    
     public func areaGetCollisionLayer(
         area: Godot.RID
     ) -> UInt32 {
@@ -1268,15 +1287,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_set_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_set_collision_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
-        }
+            GodotStringName(swiftStaticString: "area_set_collision_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
+            }
         }
     }()
-
+    
     public func areaSetCollisionMask(
         area: Godot.RID,
         mask: UInt32
@@ -1296,15 +1315,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_get_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_get_collision_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
-        }
+            GodotStringName(swiftStaticString: "area_get_collision_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
+            }
         }
     }()
-
+    
     public func areaGetCollisionMask(
         area: Godot.RID
     ) -> UInt32 {
@@ -1323,15 +1342,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_set_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_set_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2980114638)!
-        }
+            GodotStringName(swiftStaticString: "area_set_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2980114638)!
+            }
         }
     }()
-
+    
     public func areaSetParam<Value: Variant.Storable>(
         area: Godot.RID,
         param: Godot.PhysicsServer3D.AreaParameter,
@@ -1354,15 +1373,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_set_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_set_transform").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3935195649)!
-        }
+            GodotStringName(swiftStaticString: "area_set_transform").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3935195649)!
+            }
         }
     }()
-
+    
     public func areaSetTransform(
         area: Godot.RID,
         transform: Godot.Transform3D
@@ -1382,15 +1401,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_get_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_get_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 890056067)!
-        }
+            GodotStringName(swiftStaticString: "area_get_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 890056067)!
+            }
         }
     }()
-
+    
     public func areaGetParam(
         area: Godot.RID,
         param: Godot.PhysicsServer3D.AreaParameter
@@ -1412,15 +1431,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_get_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_get_transform").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1128465797)!
-        }
+            GodotStringName(swiftStaticString: "area_get_transform").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1128465797)!
+            }
         }
     }()
-
+    
     public func areaGetTransform(
         area: Godot.RID
     ) -> Godot.Transform3D {
@@ -1439,15 +1458,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_attach_object_instance_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_attach_object_instance_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
-        }
+            GodotStringName(swiftStaticString: "area_attach_object_instance_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
+            }
         }
     }()
-
+    
     public func areaAttachObjectInstanceID(
         area: Godot.RID,
         id: UInt64
@@ -1467,15 +1486,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_get_object_instance_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_get_object_instance_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
-        }
+            GodotStringName(swiftStaticString: "area_get_object_instance_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
+            }
         }
     }()
-
+    
     public func areaGetObjectInstanceID(
         area: Godot.RID
     ) -> UInt64 {
@@ -1494,15 +1513,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_set_monitor_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_set_monitor_callback").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3379118538)!
-        }
+            GodotStringName(swiftStaticString: "area_set_monitor_callback").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3379118538)!
+            }
         }
     }()
-
+    
     public func areaSetMonitorCallback(
         area: Godot.RID,
         callback: Godot.Callable
@@ -1522,15 +1541,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_set_area_monitor_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_set_area_monitor_callback").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3379118538)!
-        }
+            GodotStringName(swiftStaticString: "area_set_area_monitor_callback").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3379118538)!
+            }
         }
     }()
-
+    
     public func areaSetAreaMonitorCallback(
         area: Godot.RID,
         callback: Godot.Callable
@@ -1550,15 +1569,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_set_monitorable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_set_monitorable").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
-        }
+            GodotStringName(swiftStaticString: "area_set_monitorable").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
+            }
         }
     }()
-
+    
     public func areaSetMonitorable(
         area: Godot.RID,
         monitorable: Bool
@@ -1578,15 +1597,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_area_set_ray_pickable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "area_set_ray_pickable").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
-        }
+            GodotStringName(swiftStaticString: "area_set_ray_pickable").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
+            }
         }
     }()
-
+    
     public func areaSetRayPickable(
         area: Godot.RID,
         enable: Bool
@@ -1606,15 +1625,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_create").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "body_create").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func bodyCreate() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1627,15 +1646,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_set_space: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_set_space").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 395945892)!
-        }
+            GodotStringName(swiftStaticString: "body_set_space").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 395945892)!
+            }
         }
     }()
-
+    
     public func bodySetSpace(
         body: Godot.RID,
         space: Godot.RID
@@ -1655,15 +1674,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_get_space: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_get_space").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814569979)!
-        }
+            GodotStringName(swiftStaticString: "body_get_space").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3814569979)!
+            }
         }
     }()
-
+    
     public func bodyGetSpace(
         body: Godot.RID
     ) -> Godot.RID {
@@ -1682,15 +1701,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_set_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_set_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 606803466)!
-        }
+            GodotStringName(swiftStaticString: "body_set_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 606803466)!
+            }
         }
     }()
-
+    
     public func bodySetMode(
         body: Godot.RID,
         mode: Godot.PhysicsServer3D.BodyMode
@@ -1710,15 +1729,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_get_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_get_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2488819728)!
-        }
+            GodotStringName(swiftStaticString: "body_get_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2488819728)!
+            }
         }
     }()
-
+    
     public func bodyGetMode(
         body: Godot.RID
     ) -> Godot.PhysicsServer3D.BodyMode {
@@ -1737,15 +1756,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_set_collision_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_set_collision_layer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
-        }
+            GodotStringName(swiftStaticString: "body_set_collision_layer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
+            }
         }
     }()
-
+    
     public func bodySetCollisionLayer(
         body: Godot.RID,
         layer: UInt32
@@ -1765,15 +1784,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_get_collision_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_get_collision_layer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
-        }
+            GodotStringName(swiftStaticString: "body_get_collision_layer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
+            }
         }
     }()
-
+    
     public func bodyGetCollisionLayer(
         body: Godot.RID
     ) -> UInt32 {
@@ -1792,15 +1811,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_set_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_set_collision_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
-        }
+            GodotStringName(swiftStaticString: "body_set_collision_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
+            }
         }
     }()
-
+    
     public func bodySetCollisionMask(
         body: Godot.RID,
         mask: UInt32
@@ -1820,15 +1839,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_get_collision_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_get_collision_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
-        }
+            GodotStringName(swiftStaticString: "body_get_collision_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
+            }
         }
     }()
-
+    
     public func bodyGetCollisionMask(
         body: Godot.RID
     ) -> UInt32 {
@@ -1847,15 +1866,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_set_collision_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_set_collision_priority").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
-        }
+            GodotStringName(swiftStaticString: "body_set_collision_priority").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794382983)!
+            }
         }
     }()
-
+    
     public func bodySetCollisionPriority(
         body: Godot.RID,
         priority: Double
@@ -1875,15 +1894,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_get_collision_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_get_collision_priority").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
-        }
+            GodotStringName(swiftStaticString: "body_get_collision_priority").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 866169185)!
+            }
         }
     }()
-
+    
     public func bodyGetCollisionPriority(
         body: Godot.RID
     ) -> Double {
@@ -1902,15 +1921,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_add_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_add_shape").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3711419014)!
-        }
+            GodotStringName(swiftStaticString: "body_add_shape").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3711419014)!
+            }
         }
     }()
-
+    
     public func bodyAddShape(
         body: Godot.RID,
         shape: Godot.RID,
@@ -1936,15 +1955,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_set_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_set_shape").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2310537182)!
-        }
+            GodotStringName(swiftStaticString: "body_set_shape").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2310537182)!
+            }
         }
     }()
-
+    
     public func bodySetShape(
         body: Godot.RID,
         shapeIdx: Int32,
@@ -1967,15 +1986,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_set_shape_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_set_shape_transform").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 675327471)!
-        }
+            GodotStringName(swiftStaticString: "body_set_shape_transform").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 675327471)!
+            }
         }
     }()
-
+    
     public func bodySetShapeTransform(
         body: Godot.RID,
         shapeIdx: Int32,
@@ -1998,15 +2017,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_set_shape_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_set_shape_disabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2658558584)!
-        }
+            GodotStringName(swiftStaticString: "body_set_shape_disabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2658558584)!
+            }
         }
     }()
-
+    
     public func bodySetShapeDisabled(
         body: Godot.RID,
         shapeIdx: Int32,
@@ -2029,15 +2048,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_get_shape_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_get_shape_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
-        }
+            GodotStringName(swiftStaticString: "body_get_shape_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
+            }
         }
     }()
-
+    
     public func bodyGetShapeCount(
         body: Godot.RID
     ) -> Int32 {
@@ -2056,15 +2075,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_get_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_get_shape").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1066463050)!
-        }
+            GodotStringName(swiftStaticString: "body_get_shape").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1066463050)!
+            }
         }
     }()
-
+    
     public func bodyGetShape(
         body: Godot.RID,
         shapeIdx: Int32
@@ -2086,15 +2105,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_get_shape_transform: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_get_shape_transform").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1050775521)!
-        }
+            GodotStringName(swiftStaticString: "body_get_shape_transform").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1050775521)!
+            }
         }
     }()
-
+    
     public func bodyGetShapeTransform(
         body: Godot.RID,
         shapeIdx: Int32
@@ -2116,15 +2135,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_remove_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_remove_shape").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
-        }
+            GodotStringName(swiftStaticString: "body_remove_shape").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
+            }
         }
     }()
-
+    
     public func bodyRemoveShape(
         body: Godot.RID,
         shapeIdx: Int32
@@ -2144,15 +2163,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_clear_shapes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_clear_shapes").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
-        }
+            GodotStringName(swiftStaticString: "body_clear_shapes").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
+            }
         }
     }()
-
+    
     public func bodyClearShapes(
         body: Godot.RID
     ) {
@@ -2169,15 +2188,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_attach_object_instance_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_attach_object_instance_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
-        }
+            GodotStringName(swiftStaticString: "body_attach_object_instance_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
+            }
         }
     }()
-
+    
     public func bodyAttachObjectInstanceID(
         body: Godot.RID,
         id: UInt64
@@ -2197,15 +2216,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_get_object_instance_id: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_get_object_instance_id").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
-        }
+            GodotStringName(swiftStaticString: "body_get_object_instance_id").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
+            }
         }
     }()
-
+    
     public func bodyGetObjectInstanceID(
         body: Godot.RID
     ) -> UInt64 {
@@ -2224,15 +2243,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_set_enable_continuous_collision_detection: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_set_enable_continuous_collision_detection").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
-        }
+            GodotStringName(swiftStaticString: "body_set_enable_continuous_collision_detection").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
+            }
         }
     }()
-
+    
     public func bodySetEnableContinuousCollisionDetection(
         body: Godot.RID,
         enable: Bool
@@ -2252,15 +2271,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_is_continuous_collision_detection_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_is_continuous_collision_detection_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
-        }
+            GodotStringName(swiftStaticString: "body_is_continuous_collision_detection_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
+            }
         }
     }()
-
+    
     public func bodyIsContinuousCollisionDetectionEnabled(
         body: Godot.RID
     ) -> Bool {
@@ -2279,15 +2298,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_set_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_set_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 910941953)!
-        }
+            GodotStringName(swiftStaticString: "body_set_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 910941953)!
+            }
         }
     }()
-
+    
     public func bodySetParam<Value: Variant.Storable>(
         body: Godot.RID,
         param: Godot.PhysicsServer3D.BodyParameter,
@@ -2310,15 +2329,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_get_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_get_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3385027841)!
-        }
+            GodotStringName(swiftStaticString: "body_get_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3385027841)!
+            }
         }
     }()
-
+    
     public func bodyGetParam(
         body: Godot.RID,
         param: Godot.PhysicsServer3D.BodyParameter
@@ -2340,15 +2359,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_reset_mass_properties: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_reset_mass_properties").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
-        }
+            GodotStringName(swiftStaticString: "body_reset_mass_properties").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
+            }
         }
     }()
-
+    
     public func bodyResetMassProperties(
         body: Godot.RID
     ) {
@@ -2365,15 +2384,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_set_state: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_set_state").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 599977762)!
-        }
+            GodotStringName(swiftStaticString: "body_set_state").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 599977762)!
+            }
         }
     }()
-
+    
     public func bodySetState<Value: Variant.Storable>(
         body: Godot.RID,
         state: Godot.PhysicsServer3D.BodyState,
@@ -2396,15 +2415,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_get_state: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_get_state").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1850449534)!
-        }
+            GodotStringName(swiftStaticString: "body_get_state").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1850449534)!
+            }
         }
     }()
-
+    
     public func bodyGetState(
         body: Godot.RID,
         state: Godot.PhysicsServer3D.BodyState
@@ -2426,15 +2445,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_apply_central_impulse: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_apply_central_impulse").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
-        }
+            GodotStringName(swiftStaticString: "body_apply_central_impulse").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
+            }
         }
     }()
-
+    
     public func bodyApplyCentralImpulse(
         body: Godot.RID,
         impulse: Godot.Vector3
@@ -2454,15 +2473,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_apply_impulse: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_apply_impulse").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 390416203)!
-        }
+            GodotStringName(swiftStaticString: "body_apply_impulse").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 390416203)!
+            }
         }
     }()
-
+    
     public func bodyApplyImpulse(
         body: Godot.RID,
         impulse: Godot.Vector3,
@@ -2485,15 +2504,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_apply_torque_impulse: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_apply_torque_impulse").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
-        }
+            GodotStringName(swiftStaticString: "body_apply_torque_impulse").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
+            }
         }
     }()
-
+    
     public func bodyApplyTorqueImpulse(
         body: Godot.RID,
         impulse: Godot.Vector3
@@ -2513,15 +2532,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_apply_central_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_apply_central_force").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
-        }
+            GodotStringName(swiftStaticString: "body_apply_central_force").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
+            }
         }
     }()
-
+    
     public func bodyApplyCentralForce(
         body: Godot.RID,
         force: Godot.Vector3
@@ -2541,15 +2560,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_apply_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_apply_force").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 390416203)!
-        }
+            GodotStringName(swiftStaticString: "body_apply_force").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 390416203)!
+            }
         }
     }()
-
+    
     public func bodyApplyForce(
         body: Godot.RID,
         force: Godot.Vector3,
@@ -2572,15 +2591,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_apply_torque: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_apply_torque").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
-        }
+            GodotStringName(swiftStaticString: "body_apply_torque").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
+            }
         }
     }()
-
+    
     public func bodyApplyTorque(
         body: Godot.RID,
         torque: Godot.Vector3
@@ -2600,15 +2619,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_add_constant_central_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_add_constant_central_force").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
-        }
+            GodotStringName(swiftStaticString: "body_add_constant_central_force").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
+            }
         }
     }()
-
+    
     public func bodyAddConstantCentralForce(
         body: Godot.RID,
         force: Godot.Vector3
@@ -2628,15 +2647,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_add_constant_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_add_constant_force").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 390416203)!
-        }
+            GodotStringName(swiftStaticString: "body_add_constant_force").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 390416203)!
+            }
         }
     }()
-
+    
     public func bodyAddConstantForce(
         body: Godot.RID,
         force: Godot.Vector3,
@@ -2659,15 +2678,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_add_constant_torque: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_add_constant_torque").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
-        }
+            GodotStringName(swiftStaticString: "body_add_constant_torque").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
+            }
         }
     }()
-
+    
     public func bodyAddConstantTorque(
         body: Godot.RID,
         torque: Godot.Vector3
@@ -2687,15 +2706,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_set_constant_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_set_constant_force").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
-        }
+            GodotStringName(swiftStaticString: "body_set_constant_force").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
+            }
         }
     }()
-
+    
     public func bodySetConstantForce(
         body: Godot.RID,
         force: Godot.Vector3
@@ -2715,15 +2734,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_get_constant_force: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_get_constant_force").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 531438156)!
-        }
+            GodotStringName(swiftStaticString: "body_get_constant_force").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 531438156)!
+            }
         }
     }()
-
+    
     public func bodyGetConstantForce(
         body: Godot.RID
     ) -> Godot.Vector3 {
@@ -2742,15 +2761,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_set_constant_torque: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_set_constant_torque").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
-        }
+            GodotStringName(swiftStaticString: "body_set_constant_torque").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
+            }
         }
     }()
-
+    
     public func bodySetConstantTorque(
         body: Godot.RID,
         torque: Godot.Vector3
@@ -2770,15 +2789,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_get_constant_torque: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_get_constant_torque").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 531438156)!
-        }
+            GodotStringName(swiftStaticString: "body_get_constant_torque").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 531438156)!
+            }
         }
     }()
-
+    
     public func bodyGetConstantTorque(
         body: Godot.RID
     ) -> Godot.Vector3 {
@@ -2797,15 +2816,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_set_axis_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_set_axis_velocity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
-        }
+            GodotStringName(swiftStaticString: "body_set_axis_velocity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
+            }
         }
     }()
-
+    
     public func bodySetAxisVelocity(
         body: Godot.RID,
         axisVelocity: Godot.Vector3
@@ -2825,15 +2844,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_set_axis_lock: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_set_axis_lock").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2020836892)!
-        }
+            GodotStringName(swiftStaticString: "body_set_axis_lock").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2020836892)!
+            }
         }
     }()
-
+    
     public func bodySetAxisLock(
         body: Godot.RID,
         axis: Godot.PhysicsServer3D.BodyAxis,
@@ -2856,15 +2875,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_is_axis_locked: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_is_axis_locked").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 587853580)!
-        }
+            GodotStringName(swiftStaticString: "body_is_axis_locked").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 587853580)!
+            }
         }
     }()
-
+    
     public func bodyIsAxisLocked(
         body: Godot.RID,
         axis: Godot.PhysicsServer3D.BodyAxis
@@ -2886,15 +2905,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_add_collision_exception: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_add_collision_exception").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 395945892)!
-        }
+            GodotStringName(swiftStaticString: "body_add_collision_exception").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 395945892)!
+            }
         }
     }()
-
+    
     public func bodyAddCollisionException(
         body: Godot.RID,
         exceptedBody: Godot.RID
@@ -2914,15 +2933,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_remove_collision_exception: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_remove_collision_exception").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 395945892)!
-        }
+            GodotStringName(swiftStaticString: "body_remove_collision_exception").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 395945892)!
+            }
         }
     }()
-
+    
     public func bodyRemoveCollisionException(
         body: Godot.RID,
         exceptedBody: Godot.RID
@@ -2942,15 +2961,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_set_max_contacts_reported: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_set_max_contacts_reported").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
-        }
+            GodotStringName(swiftStaticString: "body_set_max_contacts_reported").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
+            }
         }
     }()
-
+    
     public func bodySetMaxContactsReported(
         body: Godot.RID,
         amount: Int32
@@ -2970,15 +2989,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_get_max_contacts_reported: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_get_max_contacts_reported").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
-        }
+            GodotStringName(swiftStaticString: "body_get_max_contacts_reported").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
+            }
         }
     }()
-
+    
     public func bodyGetMaxContactsReported(
         body: Godot.RID
     ) -> Int32 {
@@ -2997,15 +3016,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_set_omit_force_integration: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_set_omit_force_integration").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
-        }
+            GodotStringName(swiftStaticString: "body_set_omit_force_integration").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
+            }
         }
     }()
-
+    
     public func bodySetOmitForceIntegration(
         body: Godot.RID,
         enable: Bool
@@ -3025,15 +3044,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_is_omitting_force_integration: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_is_omitting_force_integration").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
-        }
+            GodotStringName(swiftStaticString: "body_is_omitting_force_integration").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
+            }
         }
     }()
-
+    
     public func bodyIsOmittingForceIntegration(
         body: Godot.RID
     ) -> Bool {
@@ -3052,15 +3071,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_set_force_integration_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_set_force_integration_callback").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3059434249)!
-        }
+            GodotStringName(swiftStaticString: "body_set_force_integration_callback").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3059434249)!
+            }
         }
     }()
-
+    
     public func bodySetForceIntegrationCallback<Value: Variant.Storable>(
         body: Godot.RID,
         callable: Godot.Callable,
@@ -3083,15 +3102,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_set_ray_pickable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_set_ray_pickable").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
-        }
+            GodotStringName(swiftStaticString: "body_set_ray_pickable").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
+            }
         }
     }()
-
+    
     public func bodySetRayPickable(
         body: Godot.RID,
         enable: Bool
@@ -3111,15 +3130,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_test_motion: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_test_motion").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1944921792)!
-        }
+            GodotStringName(swiftStaticString: "body_test_motion").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1944921792)!
+            }
         }
     }()
-
+    
     public func bodyTestMotion(
         body: Godot.RID,
         parameters: Godot.PhysicsTestMotionParameters3D?,
@@ -3148,15 +3167,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_body_get_direct_state: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "body_get_direct_state").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3029727957)!
-        }
+            GodotStringName(swiftStaticString: "body_get_direct_state").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3029727957)!
+            }
         }
     }()
-
+    
     public func bodyGetDirectState(
         body: Godot.RID
     ) -> Godot.PhysicsDirectBodyState3D? {
@@ -3175,15 +3194,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_soft_body_get_bounds: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "soft_body_get_bounds").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 974181306)!
-        }
+            GodotStringName(swiftStaticString: "soft_body_get_bounds").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 974181306)!
+            }
         }
     }()
-
+    
     public func softBodyGetBounds(
         body: Godot.RID
     ) -> Godot.AABB {
@@ -3202,15 +3221,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_joint_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "joint_create").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "joint_create").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func jointCreate() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -3223,15 +3242,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_joint_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "joint_clear").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
-        }
+            GodotStringName(swiftStaticString: "joint_clear").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
+            }
         }
     }()
-
+    
     public func jointClear(
         joint: Godot.RID
     ) {
@@ -3248,15 +3267,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_joint_make_pin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "joint_make_pin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4280171926)!
-        }
+            GodotStringName(swiftStaticString: "joint_make_pin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4280171926)!
+            }
         }
     }()
-
+    
     public func jointMakePin(
         joint: Godot.RID,
         bodyA: Godot.RID,
@@ -3285,15 +3304,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_pin_joint_set_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "pin_joint_set_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 810685294)!
-        }
+            GodotStringName(swiftStaticString: "pin_joint_set_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 810685294)!
+            }
         }
     }()
-
+    
     public func pinJointSetParam(
         joint: Godot.RID,
         param: Godot.PhysicsServer3D.PinJointParam,
@@ -3316,15 +3335,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_pin_joint_get_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "pin_joint_get_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2817972347)!
-        }
+            GodotStringName(swiftStaticString: "pin_joint_get_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2817972347)!
+            }
         }
     }()
-
+    
     public func pinJointGetParam(
         joint: Godot.RID,
         param: Godot.PhysicsServer3D.PinJointParam
@@ -3346,15 +3365,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_pin_joint_set_local_a: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "pin_joint_set_local_a").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
-        }
+            GodotStringName(swiftStaticString: "pin_joint_set_local_a").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
+            }
         }
     }()
-
+    
     public func pinJointSetLocalA(
         joint: Godot.RID,
         localA: Godot.Vector3
@@ -3374,15 +3393,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_pin_joint_get_local_a: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "pin_joint_get_local_a").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 531438156)!
-        }
+            GodotStringName(swiftStaticString: "pin_joint_get_local_a").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 531438156)!
+            }
         }
     }()
-
+    
     public func pinJointGetLocalA(
         joint: Godot.RID
     ) -> Godot.Vector3 {
@@ -3401,15 +3420,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_pin_joint_set_local_b: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "pin_joint_set_local_b").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
-        }
+            GodotStringName(swiftStaticString: "pin_joint_set_local_b").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3227306858)!
+            }
         }
     }()
-
+    
     public func pinJointSetLocalB(
         joint: Godot.RID,
         localB: Godot.Vector3
@@ -3429,15 +3448,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_pin_joint_get_local_b: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "pin_joint_get_local_b").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 531438156)!
-        }
+            GodotStringName(swiftStaticString: "pin_joint_get_local_b").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 531438156)!
+            }
         }
     }()
-
+    
     public func pinJointGetLocalB(
         joint: Godot.RID
     ) -> Godot.Vector3 {
@@ -3456,15 +3475,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_joint_make_hinge: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "joint_make_hinge").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1684107643)!
-        }
+            GodotStringName(swiftStaticString: "joint_make_hinge").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1684107643)!
+            }
         }
     }()
-
+    
     public func jointMakeHinge(
         joint: Godot.RID,
         bodyA: Godot.RID,
@@ -3493,15 +3512,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_hinge_joint_set_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "hinge_joint_set_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3165502333)!
-        }
+            GodotStringName(swiftStaticString: "hinge_joint_set_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3165502333)!
+            }
         }
     }()
-
+    
     public func hingeJointSetParam(
         joint: Godot.RID,
         param: Godot.PhysicsServer3D.HingeJointParam,
@@ -3524,15 +3543,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_hinge_joint_get_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "hinge_joint_get_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2129207581)!
-        }
+            GodotStringName(swiftStaticString: "hinge_joint_get_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2129207581)!
+            }
         }
     }()
-
+    
     public func hingeJointGetParam(
         joint: Godot.RID,
         param: Godot.PhysicsServer3D.HingeJointParam
@@ -3554,15 +3573,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_hinge_joint_set_flag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "hinge_joint_set_flag").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1601626188)!
-        }
+            GodotStringName(swiftStaticString: "hinge_joint_set_flag").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1601626188)!
+            }
         }
     }()
-
+    
     public func hingeJointSetFlag(
         joint: Godot.RID,
         flag: Godot.PhysicsServer3D.HingeJointFlag,
@@ -3585,15 +3604,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_hinge_joint_get_flag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "hinge_joint_get_flag").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4165147865)!
-        }
+            GodotStringName(swiftStaticString: "hinge_joint_get_flag").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4165147865)!
+            }
         }
     }()
-
+    
     public func hingeJointGetFlag(
         joint: Godot.RID,
         flag: Godot.PhysicsServer3D.HingeJointFlag
@@ -3615,15 +3634,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_joint_make_slider: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "joint_make_slider").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1684107643)!
-        }
+            GodotStringName(swiftStaticString: "joint_make_slider").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1684107643)!
+            }
         }
     }()
-
+    
     public func jointMakeSlider(
         joint: Godot.RID,
         bodyA: Godot.RID,
@@ -3652,15 +3671,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_slider_joint_set_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "slider_joint_set_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2264833593)!
-        }
+            GodotStringName(swiftStaticString: "slider_joint_set_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2264833593)!
+            }
         }
     }()
-
+    
     public func sliderJointSetParam(
         joint: Godot.RID,
         param: Godot.PhysicsServer3D.SliderJointParam,
@@ -3683,15 +3702,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_slider_joint_get_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "slider_joint_get_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3498644957)!
-        }
+            GodotStringName(swiftStaticString: "slider_joint_get_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3498644957)!
+            }
         }
     }()
-
+    
     public func sliderJointGetParam(
         joint: Godot.RID,
         param: Godot.PhysicsServer3D.SliderJointParam
@@ -3713,15 +3732,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_joint_make_cone_twist: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "joint_make_cone_twist").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1684107643)!
-        }
+            GodotStringName(swiftStaticString: "joint_make_cone_twist").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1684107643)!
+            }
         }
     }()
-
+    
     public func jointMakeConeTwist(
         joint: Godot.RID,
         bodyA: Godot.RID,
@@ -3750,15 +3769,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_cone_twist_joint_set_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "cone_twist_joint_set_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 808587618)!
-        }
+            GodotStringName(swiftStaticString: "cone_twist_joint_set_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 808587618)!
+            }
         }
     }()
-
+    
     public func coneTwistJointSetParam(
         joint: Godot.RID,
         param: Godot.PhysicsServer3D.ConeTwistJointParam,
@@ -3781,15 +3800,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_cone_twist_joint_get_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "cone_twist_joint_get_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1134789658)!
-        }
+            GodotStringName(swiftStaticString: "cone_twist_joint_get_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1134789658)!
+            }
         }
     }()
-
+    
     public func coneTwistJointGetParam(
         joint: Godot.RID,
         param: Godot.PhysicsServer3D.ConeTwistJointParam
@@ -3811,15 +3830,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_joint_get_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "joint_get_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4290791900)!
-        }
+            GodotStringName(swiftStaticString: "joint_get_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4290791900)!
+            }
         }
     }()
-
+    
     public func jointGetType(
         joint: Godot.RID
     ) -> Godot.PhysicsServer3D.JointType {
@@ -3838,15 +3857,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_joint_set_solver_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "joint_set_solver_priority").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
-        }
+            GodotStringName(swiftStaticString: "joint_set_solver_priority").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3411492887)!
+            }
         }
     }()
-
+    
     public func jointSetSolverPriority(
         joint: Godot.RID,
         priority: Int32
@@ -3866,15 +3885,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_joint_get_solver_priority: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "joint_get_solver_priority").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
-        }
+            GodotStringName(swiftStaticString: "joint_get_solver_priority").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2198884583)!
+            }
         }
     }()
-
+    
     public func jointGetSolverPriority(
         joint: Godot.RID
     ) -> Int32 {
@@ -3893,15 +3912,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_joint_disable_collisions_between_bodies: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "joint_disable_collisions_between_bodies").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
-        }
+            GodotStringName(swiftStaticString: "joint_disable_collisions_between_bodies").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1265174801)!
+            }
         }
     }()
-
+    
     public func jointDisableCollisionsBetweenBodies(
         joint: Godot.RID,
         disable: Bool
@@ -3921,15 +3940,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_joint_is_disabled_collisions_between_bodies: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "joint_is_disabled_collisions_between_bodies").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
-        }
+            GodotStringName(swiftStaticString: "joint_is_disabled_collisions_between_bodies").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155700596)!
+            }
         }
     }()
-
+    
     public func jointIsDisabledCollisionsBetweenBodies(
         joint: Godot.RID
     ) -> Bool {
@@ -3948,15 +3967,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_joint_make_generic_6dof: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "joint_make_generic_6dof").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1684107643)!
-        }
+            GodotStringName(swiftStaticString: "joint_make_generic_6dof").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1684107643)!
+            }
         }
     }()
-
+    
     public func jointMakeGeneric6dof(
         joint: Godot.RID,
         bodyA: Godot.RID,
@@ -3985,15 +4004,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_generic_6dof_joint_set_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "generic_6dof_joint_set_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2600081391)!
-        }
+            GodotStringName(swiftStaticString: "generic_6dof_joint_set_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2600081391)!
+            }
         }
     }()
-
+    
     public func generic6dofJointSetParam(
         joint: Godot.RID,
         axis: Godot.Vector3.Axis,
@@ -4019,15 +4038,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_generic_6dof_joint_get_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "generic_6dof_joint_get_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 467122058)!
-        }
+            GodotStringName(swiftStaticString: "generic_6dof_joint_get_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 467122058)!
+            }
         }
     }()
-
+    
     public func generic6dofJointGetParam(
         joint: Godot.RID,
         axis: Godot.Vector3.Axis,
@@ -4052,15 +4071,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_generic_6dof_joint_set_flag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "generic_6dof_joint_set_flag").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3570926903)!
-        }
+            GodotStringName(swiftStaticString: "generic_6dof_joint_set_flag").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3570926903)!
+            }
         }
     }()
-
+    
     public func generic6dofJointSetFlag(
         joint: Godot.RID,
         axis: Godot.Vector3.Axis,
@@ -4086,15 +4105,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_generic_6dof_joint_get_flag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "generic_6dof_joint_get_flag").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4158090196)!
-        }
+            GodotStringName(swiftStaticString: "generic_6dof_joint_get_flag").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4158090196)!
+            }
         }
     }()
-
+    
     public func generic6dofJointGetFlag(
         joint: Godot.RID,
         axis: Godot.Vector3.Axis,
@@ -4119,15 +4138,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_free_rid: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "free_rid").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
-        }
+            GodotStringName(swiftStaticString: "free_rid").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2722037293)!
+            }
         }
     }()
-
+    
     public func freeRID(
         _ rid: Godot.RID
     ) {
@@ -4144,15 +4163,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_set_active: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_active").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_active").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     public func setActive(
         _ active: Bool
     ) {
@@ -4169,15 +4188,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_process_info: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_process_info").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1332958745)!
-        }
+            GodotStringName(swiftStaticString: "get_process_info").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1332958745)!
+            }
         }
     }()
-
+    
     public func processInfo(
         _ processInfo: Godot.PhysicsServer3D.ProcessInfo
     ) -> Int32 {
@@ -4196,18 +4215,15 @@ open class PhysicsServer3D: Object {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

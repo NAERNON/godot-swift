@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class Shape2D: Resource {
     internal static var __method_binding_set_custom_solver_bias: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_custom_solver_bias").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_custom_solver_bias").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setCustomSolverBias(
         _ bias: Double
     ) {
@@ -30,15 +30,15 @@ open class Shape2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_custom_solver_bias: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_custom_solver_bias").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_custom_solver_bias").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getCustomSolverBias() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -51,15 +51,15 @@ open class Shape2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_collide: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "collide").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3709843132)!
-        }
+            GodotStringName(swiftStaticString: "collide").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3709843132)!
+            }
         }
     }()
-
+    
     public func collide(
         localXform: Godot.Transform2D,
         withShape shape: Godot.Shape2D?,
@@ -86,15 +86,15 @@ open class Shape2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_collide_with_motion: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "collide_with_motion").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2869556801)!
-        }
+            GodotStringName(swiftStaticString: "collide_with_motion").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2869556801)!
+            }
         }
     }()
-
+    
     public func collideWithMotion(
         localXform: Godot.Transform2D,
         localMotion: Godot.Vector2,
@@ -127,15 +127,15 @@ open class Shape2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_collide_and_get_contacts: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "collide_and_get_contacts").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3056932662)!
-        }
+            GodotStringName(swiftStaticString: "collide_and_get_contacts").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3056932662)!
+            }
         }
     }()
-
+    
     public func collideAndGetContacts(
         localXform: Godot.Transform2D,
         withShape shape: Godot.Shape2D?,
@@ -162,15 +162,15 @@ open class Shape2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_collide_with_motion_and_get_contacts: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "collide_with_motion_and_get_contacts").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3620351573)!
-        }
+            GodotStringName(swiftStaticString: "collide_with_motion_and_get_contacts").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3620351573)!
+            }
         }
     }()
-
+    
     public func collideWithMotionAndGetContacts(
         localXform: Godot.Transform2D,
         localMotion: Godot.Vector2,
@@ -203,15 +203,15 @@ open class Shape2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_draw: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2948539648)!
-        }
+            GodotStringName(swiftStaticString: "draw").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2948539648)!
+            }
         }
     }()
-
+    
     public func draw(
         canvasItem: Godot.RID,
         color: Godot.Color
@@ -231,15 +231,15 @@ open class Shape2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_rect").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!
-        }
+            GodotStringName(swiftStaticString: "get_rect").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!
+            }
         }
     }()
-
+    
     public func rect() -> Godot.Rect2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -252,29 +252,26 @@ open class Shape2D: Resource {
             }
         }
     }
-
+    
     public var customSolverBias: Double {
         get {
             __getCustomSolverBias()
         }
-        set {
+        set(newValue) {
             __setCustomSolverBias(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

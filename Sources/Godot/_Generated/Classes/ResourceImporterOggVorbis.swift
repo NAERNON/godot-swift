@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class ResourceImporterOggVorbis: ResourceImporter {
     internal static var __method_binding_load_from_buffer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "load_from_buffer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 354904730)!
-        }
+            GodotStringName(swiftStaticString: "load_from_buffer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 354904730)!
+            }
         }
     }()
-
+    
     static public func loadFromBuffer(
         _ buffer: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.AudioStreamOggVorbis? {
@@ -30,15 +30,15 @@ open class ResourceImporterOggVorbis: ResourceImporter {
             }
         }
     }
-
+    
     internal static var __method_binding_load_from_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "load_from_file").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 797568536)!
-        }
+            GodotStringName(swiftStaticString: "load_from_file").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 797568536)!
+            }
         }
     }()
-
+    
     static public func loadFromFile(
         path: Godot.GodotString
     ) -> Godot.AudioStreamOggVorbis? {
@@ -55,18 +55,15 @@ open class ResourceImporterOggVorbis: ResourceImporter {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

@@ -19,24 +19,25 @@ open class Time: Object {
         case october = 10
         case november = 11
         case december = 12
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("January", 1),
-            ("February", 2),
-            ("March", 3),
-            ("April", 4),
-            ("May", 5),
-            ("June", 6),
-            ("July", 7),
-            ("August", 8),
-            ("September", 9),
-            ("October", 10),
-            ("November", 11),
-            ("December", 12),]
+               ("January", 1),
+               ("February", 2),
+               ("March", 3),
+               ("April", 4),
+               ("May", 5),
+               ("June", 6),
+               ("July", 7),
+               ("August", 8),
+               ("September", 9),
+               ("October", 10),
+               ("November", 11),
+               ("December", 12),
+            ]
         }
     }
-
+    
     public enum Weekday: UInt32, GodotEnum {
         case sunday = 0
         case monday = 1
@@ -45,27 +46,28 @@ open class Time: Object {
         case thursday = 4
         case friday = 5
         case saturday = 6
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Sunday", 0),
-            ("Monday", 1),
-            ("Tuesday", 2),
-            ("Wednesday", 3),
-            ("Thursday", 4),
-            ("Friday", 5),
-            ("Saturday", 6),]
+               ("Sunday", 0),
+               ("Monday", 1),
+               ("Tuesday", 2),
+               ("Wednesday", 3),
+               ("Thursday", 4),
+               ("Friday", 5),
+               ("Saturday", 6),
+            ]
         }
     }
-
+    
     internal static var __method_binding_get_datetime_dict_from_unix_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_datetime_dict_from_unix_time").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3485342025)!
-        }
+            GodotStringName(swiftStaticString: "get_datetime_dict_from_unix_time").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3485342025)!
+            }
         }
     }()
-
+    
     public func datetimeDictFromUnixTime(
         unixTimeVal: Int64
     ) -> Godot.AnyGodotDictionary {
@@ -84,15 +86,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_date_dict_from_unix_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_date_dict_from_unix_time").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3485342025)!
-        }
+            GodotStringName(swiftStaticString: "get_date_dict_from_unix_time").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3485342025)!
+            }
         }
     }()
-
+    
     public func dateDictFromUnixTime(
         unixTimeVal: Int64
     ) -> Godot.AnyGodotDictionary {
@@ -111,15 +113,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_time_dict_from_unix_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_time_dict_from_unix_time").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3485342025)!
-        }
+            GodotStringName(swiftStaticString: "get_time_dict_from_unix_time").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3485342025)!
+            }
         }
     }()
-
+    
     public func timeDictFromUnixTime(
         unixTimeVal: Int64
     ) -> Godot.AnyGodotDictionary {
@@ -138,15 +140,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_datetime_string_from_unix_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_datetime_string_from_unix_time").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2311239925)!
-        }
+            GodotStringName(swiftStaticString: "get_datetime_string_from_unix_time").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2311239925)!
+            }
         }
     }()
-
+    
     public func datetimeStringFromUnixTime(
         unixTimeVal: Int64,
         useSpace: Bool = false
@@ -168,15 +170,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_date_string_from_unix_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_date_string_from_unix_time").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
-        }
+            GodotStringName(swiftStaticString: "get_date_string_from_unix_time").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
+            }
         }
     }()
-
+    
     public func dateStringFromUnixTime(
         unixTimeVal: Int64
     ) -> Godot.GodotString {
@@ -195,15 +197,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_time_string_from_unix_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_time_string_from_unix_time").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
-        }
+            GodotStringName(swiftStaticString: "get_time_string_from_unix_time").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
+            }
         }
     }()
-
+    
     public func timeStringFromUnixTime(
         unixTimeVal: Int64
     ) -> Godot.GodotString {
@@ -222,15 +224,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_datetime_dict_from_datetime_string: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_datetime_dict_from_datetime_string").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3253569256)!
-        }
+            GodotStringName(swiftStaticString: "get_datetime_dict_from_datetime_string").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3253569256)!
+            }
         }
     }()
-
+    
     public func datetimeDictFromDatetimeString(
         datetime: Godot.GodotString,
         weekday: Bool
@@ -252,15 +254,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_datetime_string_from_datetime_dict: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_datetime_string_from_datetime_dict").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1898123706)!
-        }
+            GodotStringName(swiftStaticString: "get_datetime_string_from_datetime_dict").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1898123706)!
+            }
         }
     }()
-
+    
     public func datetimeStringFromDatetimeDict<Value1: Variant.Storable, Value2: Variant.Storable>(
         datetime: Godot.GodotDictionary<Value1, Value2>,
         useSpace: Bool
@@ -282,15 +284,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_unix_time_from_datetime_dict: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_unix_time_from_datetime_dict").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3021115443)!
-        }
+            GodotStringName(swiftStaticString: "get_unix_time_from_datetime_dict").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3021115443)!
+            }
         }
     }()
-
+    
     public func unixTimeFromDatetimeDict<Value1: Variant.Storable, Value2: Variant.Storable>(
         datetime: Godot.GodotDictionary<Value1, Value2>
     ) -> Int64 {
@@ -309,15 +311,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_unix_time_from_datetime_string: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_unix_time_from_datetime_string").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1321353865)!
-        }
+            GodotStringName(swiftStaticString: "get_unix_time_from_datetime_string").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1321353865)!
+            }
         }
     }()
-
+    
     public func unixTimeFromDatetimeString(
         datetime: Godot.GodotString
     ) -> Int64 {
@@ -336,15 +338,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_offset_string_from_offset_minutes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_offset_string_from_offset_minutes").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
-        }
+            GodotStringName(swiftStaticString: "get_offset_string_from_offset_minutes").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
+            }
         }
     }()
-
+    
     public func offsetStringFromOffsetMinutes(
         _ offsetMinutes: Int64
     ) -> Godot.GodotString {
@@ -363,15 +365,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_datetime_dict_from_system: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_datetime_dict_from_system").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 205769976)!
-        }
+            GodotStringName(swiftStaticString: "get_datetime_dict_from_system").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 205769976)!
+            }
         }
     }()
-
+    
     public func datetimeDictFromSystem(
         utc: Bool = false
     ) -> Godot.AnyGodotDictionary {
@@ -390,15 +392,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_date_dict_from_system: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_date_dict_from_system").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 205769976)!
-        }
+            GodotStringName(swiftStaticString: "get_date_dict_from_system").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 205769976)!
+            }
         }
     }()
-
+    
     public func dateDictFromSystem(
         utc: Bool = false
     ) -> Godot.AnyGodotDictionary {
@@ -417,15 +419,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_time_dict_from_system: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_time_dict_from_system").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 205769976)!
-        }
+            GodotStringName(swiftStaticString: "get_time_dict_from_system").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 205769976)!
+            }
         }
     }()
-
+    
     public func timeDictFromSystem(
         utc: Bool = false
     ) -> Godot.AnyGodotDictionary {
@@ -444,15 +446,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_datetime_string_from_system: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_datetime_string_from_system").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1136425492)!
-        }
+            GodotStringName(swiftStaticString: "get_datetime_string_from_system").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1136425492)!
+            }
         }
     }()
-
+    
     public func datetimeStringFromSystem(
         utc: Bool = false,
         useSpace: Bool = false
@@ -474,15 +476,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_date_string_from_system: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_date_string_from_system").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1162154673)!
-        }
+            GodotStringName(swiftStaticString: "get_date_string_from_system").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1162154673)!
+            }
         }
     }()
-
+    
     public func dateStringFromSystem(
         utc: Bool = false
     ) -> Godot.GodotString {
@@ -501,15 +503,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_time_string_from_system: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_time_string_from_system").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1162154673)!
-        }
+            GodotStringName(swiftStaticString: "get_time_string_from_system").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1162154673)!
+            }
         }
     }()
-
+    
     public func timeStringFromSystem(
         utc: Bool = false
     ) -> Godot.GodotString {
@@ -528,15 +530,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_time_zone_from_system: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_time_zone_from_system").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3102165223)!
-        }
+            GodotStringName(swiftStaticString: "get_time_zone_from_system").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3102165223)!
+            }
         }
     }()
-
+    
     public func timeZoneFromSystem() -> Godot.AnyGodotDictionary {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -549,15 +551,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_unix_time_from_system: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_unix_time_from_system").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_unix_time_from_system").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     public func unixTimeFromSystem() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -570,15 +572,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_ticks_msec: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_ticks_msec").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_ticks_msec").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func ticksMsec() -> UInt64 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -591,15 +593,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_ticks_usec: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_ticks_usec").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_ticks_usec").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func ticksUsec() -> UInt64 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -612,18 +614,15 @@ open class Time: Object {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

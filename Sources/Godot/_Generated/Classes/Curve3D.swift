@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class Curve3D: Resource {
     internal static var __method_binding_get_point_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_point_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getPointCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -26,15 +26,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_point_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_point_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_point_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setPointCount(
         _ count: Int32
     ) {
@@ -51,15 +51,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_add_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_point").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2931053748)!
-        }
+            GodotStringName(swiftStaticString: "add_point").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2931053748)!
+            }
         }
     }()
-
+    
     public func addPoint(
         position: Godot.Vector3,
         `in`: Godot.Vector3 = Vector3(x: 0, y: 0, z: 0),
@@ -85,15 +85,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_point_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_point_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1530502735)!
-        }
+            GodotStringName(swiftStaticString: "set_point_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1530502735)!
+            }
         }
     }()
-
+    
     public func setPointPosition(
         idx: Int32,
         position: Godot.Vector3
@@ -113,15 +113,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_point_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 711720468)!
-        }
+            GodotStringName(swiftStaticString: "get_point_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 711720468)!
+            }
         }
     }()
-
+    
     public func pointPosition(
         idx: Int32
     ) -> Godot.Vector3 {
@@ -140,15 +140,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_point_tilt: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_point_tilt").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
-        }
+            GodotStringName(swiftStaticString: "set_point_tilt").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
+            }
         }
     }()
-
+    
     public func setPointTilt(
         idx: Int32,
         tilt: Double
@@ -168,15 +168,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_point_tilt: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_tilt").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
-        }
+            GodotStringName(swiftStaticString: "get_point_tilt").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
+            }
         }
     }()
-
+    
     public func pointTilt(
         idx: Int32
     ) -> Double {
@@ -195,15 +195,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_point_in: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_point_in").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1530502735)!
-        }
+            GodotStringName(swiftStaticString: "set_point_in").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1530502735)!
+            }
         }
     }()
-
+    
     public func setPointIn(
         idx: Int32,
         position: Godot.Vector3
@@ -223,15 +223,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_point_in: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_in").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 711720468)!
-        }
+            GodotStringName(swiftStaticString: "get_point_in").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 711720468)!
+            }
         }
     }()
-
+    
     public func pointIn(
         idx: Int32
     ) -> Godot.Vector3 {
@@ -250,15 +250,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_point_out: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_point_out").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1530502735)!
-        }
+            GodotStringName(swiftStaticString: "set_point_out").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1530502735)!
+            }
         }
     }()
-
+    
     public func setPointOut(
         idx: Int32,
         position: Godot.Vector3
@@ -278,15 +278,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_point_out: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_out").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 711720468)!
-        }
+            GodotStringName(swiftStaticString: "get_point_out").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 711720468)!
+            }
         }
     }()
-
+    
     public func pointOut(
         idx: Int32
     ) -> Godot.Vector3 {
@@ -305,15 +305,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_point").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "remove_point").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func removePoint(
         idx: Int32
     ) {
@@ -330,15 +330,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_clear_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear_points").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "clear_points").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func clearPoints() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -349,15 +349,15 @@ open class Curve3D: Resource {
             )
         }
     }
-
+    
     internal static var __method_binding_sample: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "sample").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3285246857)!
-        }
+            GodotStringName(swiftStaticString: "sample").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3285246857)!
+            }
         }
     }()
-
+    
     public func sample(
         idx: Int32,
         t: Double
@@ -379,15 +379,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_samplef: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "samplef").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2553580215)!
-        }
+            GodotStringName(swiftStaticString: "samplef").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2553580215)!
+            }
         }
     }()
-
+    
     public func samplef(
         fofs: Double
     ) -> Godot.Vector3 {
@@ -406,15 +406,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_bake_interval: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_bake_interval").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_bake_interval").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setBakeInterval(
         distance: Double
     ) {
@@ -431,15 +431,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bake_interval: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bake_interval").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_bake_interval").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getBakeInterval() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -452,15 +452,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_up_vector_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_up_vector_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_up_vector_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setUpVectorEnabled(
         enable: Bool
     ) {
@@ -477,15 +477,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_is_up_vector_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_up_vector_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_up_vector_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isUpVectorEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -498,15 +498,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_baked_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_baked_length").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_baked_length").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     public func bakedLength() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -519,15 +519,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_sample_baked: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "sample_baked").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1350085894)!
-        }
+            GodotStringName(swiftStaticString: "sample_baked").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1350085894)!
+            }
         }
     }()
-
+    
     public func sampleBaked(
         offset: Double = 0.0,
         cubic: Bool = false
@@ -549,15 +549,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_sample_baked_with_rotation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "sample_baked_with_rotation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1939359131)!
-        }
+            GodotStringName(swiftStaticString: "sample_baked_with_rotation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1939359131)!
+            }
         }
     }()
-
+    
     public func sampleBakedWithRotation(
         offset: Double = 0.0,
         cubic: Bool = false,
@@ -582,15 +582,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_sample_baked_up_vector: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "sample_baked_up_vector").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1362627031)!
-        }
+            GodotStringName(swiftStaticString: "sample_baked_up_vector").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1362627031)!
+            }
         }
     }()
-
+    
     public func sampleBakedUpVector(
         offset: Double,
         applyTilt: Bool = false
@@ -612,15 +612,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_baked_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_baked_points").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 497664490)!
-        }
+            GodotStringName(swiftStaticString: "get_baked_points").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 497664490)!
+            }
         }
     }()
-
+    
     public func bakedPoints() -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -633,15 +633,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_baked_tilts: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_baked_tilts").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 675695659)!
-        }
+            GodotStringName(swiftStaticString: "get_baked_tilts").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 675695659)!
+            }
         }
     }()
-
+    
     public func bakedTilts() -> Godot.GodotContiguousArray<Float> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -654,15 +654,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_baked_up_vectors: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_baked_up_vectors").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 497664490)!
-        }
+            GodotStringName(swiftStaticString: "get_baked_up_vectors").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 497664490)!
+            }
         }
     }()
-
+    
     public func bakedUpVectors() -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -675,15 +675,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_closest_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_closest_point").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 192990374)!
-        }
+            GodotStringName(swiftStaticString: "get_closest_point").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 192990374)!
+            }
         }
     }()
-
+    
     public func closestPoint(
         _ point: Godot.Vector3
     ) -> Godot.Vector3 {
@@ -702,15 +702,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_closest_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_closest_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1109078154)!
-        }
+            GodotStringName(swiftStaticString: "get_closest_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1109078154)!
+            }
         }
     }()
-
+    
     public func closestOffset(
         toPoint point: Godot.Vector3
     ) -> Double {
@@ -729,15 +729,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_tessellate: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "tessellate").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1519759391)!
-        }
+            GodotStringName(swiftStaticString: "tessellate").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1519759391)!
+            }
         }
     }()
-
+    
     public func tessellate(
         maxStages: Int32 = 5,
         toleranceDegrees: Double = 4
@@ -759,15 +759,15 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_tessellate_even_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "tessellate_even_length").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 133237049)!
-        }
+            GodotStringName(swiftStaticString: "tessellate_even_length").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 133237049)!
+            }
         }
     }()
-
+    
     public func tessellateEvenLength(
         maxStages: Int32 = 5,
         toleranceLength: Double = 0.2
@@ -789,51 +789,48 @@ open class Curve3D: Resource {
             }
         }
     }
-
+    
     public var bakeInterval: Double {
         get {
             __getBakeInterval()
         }
-        set {
+        set(newValue) {
             __setBakeInterval(
                 distance: newValue
             )
         }
     }
-
+    
     public var pointCount: Int32 {
         get {
             __getPointCount()
         }
-        set {
+        set(newValue) {
             __setPointCount(
                 newValue
             )
         }
     }
-
+    
     public var isUpVectorEnabled: Bool {
         get {
             __isUpVectorEnabled()
         }
-        set {
+        set(newValue) {
             __setUpVectorEnabled(
                 enable: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

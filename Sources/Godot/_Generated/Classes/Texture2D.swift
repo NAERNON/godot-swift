@@ -9,30 +9,31 @@ open class Texture2D: Texture {
     open func _getWidth() -> Int32 {
         Int32()
     }
-
+    
     open func _getHeight() -> Int32 {
         Int32()
     }
-
+    
     open func _isPixelOpaque(
         x: Int32,
         y: Int32
     ) -> Bool {
         Bool()
     }
-
+    
     open func _hasAlpha() -> Bool {
         Bool()
     }
-
+    
     open func _draw(
         toCanvasItem canvasItem: Godot.RID,
         pos: Godot.Vector2,
         modulate: Godot.Color,
         transpose: Bool
     ) {
+        
     }
-
+    
     open func _drawRect(
         toCanvasItem canvasItem: Godot.RID,
         rect: Godot.Rect2,
@@ -40,8 +41,9 @@ open class Texture2D: Texture {
         modulate: Godot.Color,
         transpose: Bool
     ) {
+        
     }
-
+    
     open func _drawRectRegion(
         toCanvasItem canvasItem: Godot.RID,
         rect: Godot.Rect2,
@@ -50,16 +52,17 @@ open class Texture2D: Texture {
         transpose: Bool,
         clipUv: Bool
     ) {
+        
     }
-
+    
     internal static var __method_binding_get_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_width").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_width").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func width() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -72,15 +75,15 @@ open class Texture2D: Texture {
             }
         }
     }
-
+    
     internal static var __method_binding_get_height: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_height").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_height").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func height() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -93,15 +96,15 @@ open class Texture2D: Texture {
             }
         }
     }
-
+    
     internal static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     public func size() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -114,15 +117,15 @@ open class Texture2D: Texture {
             }
         }
     }
-
+    
     internal static var __method_binding_has_alpha: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_alpha").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "has_alpha").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func hasAlpha() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -135,15 +138,15 @@ open class Texture2D: Texture {
             }
         }
     }
-
+    
     internal static var __method_binding_draw: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2729649137)!
-        }
+            GodotStringName(swiftStaticString: "draw").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2729649137)!
+            }
         }
     }()
-
+    
     public func draw(
         canvasItem: Godot.RID,
         position: Godot.Vector2,
@@ -169,15 +172,15 @@ open class Texture2D: Texture {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_rect").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3499451691)!
-        }
+            GodotStringName(swiftStaticString: "draw_rect").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3499451691)!
+            }
         }
     }()
-
+    
     public func drawRect(
         canvasItem: Godot.RID,
         rect: Godot.Rect2,
@@ -206,15 +209,15 @@ open class Texture2D: Texture {
             }
         }
     }
-
+    
     internal static var __method_binding_draw_rect_region: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "draw_rect_region").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2963678660)!
-        }
+            GodotStringName(swiftStaticString: "draw_rect_region").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2963678660)!
+            }
         }
     }()
-
+    
     public func drawRectRegion(
         canvasItem: Godot.RID,
         rect: Godot.Rect2,
@@ -246,15 +249,15 @@ open class Texture2D: Texture {
             }
         }
     }
-
+    
     internal static var __method_binding_get_image: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_image").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4190603485)!
-        }
+            GodotStringName(swiftStaticString: "get_image").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4190603485)!
+            }
         }
     }()
-
+    
     public func image() -> Godot.Image? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -267,15 +270,15 @@ open class Texture2D: Texture {
             }
         }
     }
-
+    
     internal static var __method_binding_create_placeholder: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_placeholder").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 121922552)!
-        }
+            GodotStringName(swiftStaticString: "create_placeholder").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 121922552)!
+            }
         }
     }()
-
+    
     public func createPlaceholder() -> Godot.Resource? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -288,80 +291,79 @@ open class Texture2D: Texture {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _get_width_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getWidth()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<Texture2D>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getWidth()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_height_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getHeight()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<Texture2D>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getHeight()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _is_pixel_opaque_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._isPixelOpaque(
-            x: Int32.transferFromGodot(unsafePointer: args[0]!),
-            y: Int32.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<Texture2D>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._isPixelOpaque(
+                    x: Int32.transferFromGodot(unsafePointer: args[0]!),
+                    y: Int32.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _has_alpha_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._hasAlpha()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<Texture2D>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._hasAlpha()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _draw_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._draw(
-            toCanvasItem: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            pos: Godot.Vector2.transferFromGodot(unsafePointer: args[1]!),
-            modulate: Godot.Color.transferFromGodot(unsafePointer: args[2]!),
-            transpose: Bool.transferFromGodot(unsafePointer: args[3]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<Texture2D>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._draw(
+                    toCanvasItem: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    pos: Godot.Vector2.transferFromGodot(unsafePointer: args[1]!),
+                    modulate: Godot.Color.transferFromGodot(unsafePointer: args[2]!),
+                    transpose: Bool.transferFromGodot(unsafePointer: args[3]!)
+                )
+        }
         let _draw_rect_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._drawRect(
-            toCanvasItem: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            rect: Godot.Rect2.transferFromGodot(unsafePointer: args[1]!),
-            tile: Bool.transferFromGodot(unsafePointer: args[2]!),
-            modulate: Godot.Color.transferFromGodot(unsafePointer: args[3]!),
-            transpose: Bool.transferFromGodot(unsafePointer: args[4]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<Texture2D>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._drawRect(
+                    toCanvasItem: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    rect: Godot.Rect2.transferFromGodot(unsafePointer: args[1]!),
+                    tile: Bool.transferFromGodot(unsafePointer: args[2]!),
+                    modulate: Godot.Color.transferFromGodot(unsafePointer: args[3]!),
+                    transpose: Bool.transferFromGodot(unsafePointer: args[4]!)
+                )
+        }
         let _draw_rect_region_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<Texture2D> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._drawRectRegion(
-            toCanvasItem: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
-            rect: Godot.Rect2.transferFromGodot(unsafePointer: args[1]!),
-            srcRect: Godot.Rect2.transferFromGodot(unsafePointer: args[2]!),
-            modulate: Godot.Color.transferFromGodot(unsafePointer: args[3]!),
-            transpose: Bool.transferFromGodot(unsafePointer: args[4]!),
-            clipUv: Bool.transferFromGodot(unsafePointer: args[5]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<Texture2D>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._drawRectRegion(
+                    toCanvasItem: Godot.RID.transferFromGodot(unsafePointer: args[0]!),
+                    rect: Godot.Rect2.transferFromGodot(unsafePointer: args[1]!),
+                    srcRect: Godot.Rect2.transferFromGodot(unsafePointer: args[2]!),
+                    modulate: Godot.Color.transferFromGodot(unsafePointer: args[3]!),
+                    transpose: Bool.transferFromGodot(unsafePointer: args[4]!),
+                    clipUv: Bool.transferFromGodot(unsafePointer: args[5]!)
+                )
+        }
         _virtualFunctions = [
             "_getWidth" : ("_get_width", _get_width_call),
             "_getHeight" : ("_get_height", _get_height_call),
@@ -372,7 +374,7 @@ open class Texture2D: Texture {
             "_drawRectRegion" : ("_draw_rect_region", _draw_rect_region_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

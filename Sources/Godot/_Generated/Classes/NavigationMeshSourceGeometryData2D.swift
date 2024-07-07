@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class NavigationMeshSourceGeometryData2D: Resource {
     internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "clear").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func clear() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -24,15 +24,15 @@ open class NavigationMeshSourceGeometryData2D: Resource {
             )
         }
     }
-
+    
     internal static var __method_binding_has_data: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_data").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
-        }
+            GodotStringName(swiftStaticString: "has_data").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
+            }
         }
     }()
-
+    
     public func hasData() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -45,15 +45,15 @@ open class NavigationMeshSourceGeometryData2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_traversable_outlines: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_traversable_outlines").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
-        }
+            GodotStringName(swiftStaticString: "set_traversable_outlines").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
+            }
         }
     }()
-
+    
     private func __setTraversableOutlines(
         _ traversableOutlines: Godot.GodotArray<Godot.GodotContiguousArray<Vector2>>
     ) {
@@ -70,15 +70,15 @@ open class NavigationMeshSourceGeometryData2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_traversable_outlines: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_traversable_outlines").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
-        }
+            GodotStringName(swiftStaticString: "get_traversable_outlines").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
+            }
         }
     }()
-
+    
     private func __getTraversableOutlines() -> Godot.GodotArray<Godot.GodotContiguousArray<Vector2>> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -91,15 +91,15 @@ open class NavigationMeshSourceGeometryData2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_obstruction_outlines: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_obstruction_outlines").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
-        }
+            GodotStringName(swiftStaticString: "set_obstruction_outlines").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
+            }
         }
     }()
-
+    
     private func __setObstructionOutlines(
         _ obstructionOutlines: Godot.GodotArray<Godot.GodotContiguousArray<Vector2>>
     ) {
@@ -116,15 +116,15 @@ open class NavigationMeshSourceGeometryData2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_obstruction_outlines: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_obstruction_outlines").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
-        }
+            GodotStringName(swiftStaticString: "get_obstruction_outlines").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
+            }
         }
     }()
-
+    
     private func __getObstructionOutlines() -> Godot.GodotArray<Godot.GodotContiguousArray<Vector2>> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -137,15 +137,15 @@ open class NavigationMeshSourceGeometryData2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_add_traversable_outline: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_traversable_outline").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
-        }
+            GodotStringName(swiftStaticString: "add_traversable_outline").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
+            }
         }
     }()
-
+    
     public func addTraversableOutline(
         shapeOutline: Godot.GodotContiguousArray<Vector2>
     ) {
@@ -162,15 +162,15 @@ open class NavigationMeshSourceGeometryData2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_add_obstruction_outline: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_obstruction_outline").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
-        }
+            GodotStringName(swiftStaticString: "add_obstruction_outline").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
+            }
         }
     }()
-
+    
     public func addObstructionOutline(
         shapeOutline: Godot.GodotContiguousArray<Vector2>
     ) {
@@ -187,40 +187,37 @@ open class NavigationMeshSourceGeometryData2D: Resource {
             }
         }
     }
-
+    
     public var traversableOutlines: Godot.GodotArray<Godot.GodotContiguousArray<Vector2>> {
         get {
             __getTraversableOutlines()
         }
-        set {
+        set(newValue) {
             __setTraversableOutlines(
                 newValue
             )
         }
     }
-
+    
     public var obstructionOutlines: Godot.GodotArray<Godot.GodotContiguousArray<Vector2>> {
         get {
             __getObstructionOutlines()
         }
-        set {
+        set(newValue) {
             __setObstructionOutlines(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

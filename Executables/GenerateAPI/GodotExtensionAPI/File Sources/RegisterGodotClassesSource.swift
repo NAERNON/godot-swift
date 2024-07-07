@@ -1,40 +1,44 @@
-import SwiftSyntax
 
 struct RegisterGodotClassesSource: FileSource {
     func fileCodeContent(
         for extensionAPI: GodotExtensionAPI,
         with configuration: BuildConfiguration
-    ) throws -> CodeBlockItemListSyntax {
-        try ExtensionDeclSyntax("internal extension ClassRegistrar") {
-            try FunctionDeclSyntax("func registerGodotClasses(forLevel level: GodotInitializationLevel)") {
-                """
+    ) throws -> Syntax {
+        """
+        internal extension ClassRegistrar {
+            func registerGodotClasses(forLevel level: GodotInitializationLevel) {
                 switch level {
                 case .core:
-                \(raw: classRegistrationSyntax(forClasses: extensionAPI.classes, apiType: .core))
+                \(classRegistrationSyntax(forClasses: extensionAPI.classes, apiType: .core))
                 case .servers:
-                \(raw: classRegistrationSyntax(forClasses: extensionAPI.classes, apiType: .servers))
+                \(classRegistrationSyntax(forClasses: extensionAPI.classes, apiType: .servers))
                 case .scene:
-                \(raw: classRegistrationSyntax(forClasses: extensionAPI.classes, apiType: .scene))
+                \(classRegistrationSyntax(forClasses: extensionAPI.classes, apiType: .scene))
                 case .editor:
-                \(raw: classRegistrationSyntax(forClasses: extensionAPI.classes, apiType: .editor))
+                \(classRegistrationSyntax(forClasses: extensionAPI.classes, apiType: .editor))
                 case .level:
-                \(raw: classRegistrationSyntax(forClasses: extensionAPI.classes, apiType: .level))
+                \(classRegistrationSyntax(forClasses: extensionAPI.classes, apiType: .level))
                 }
-                """
             }
         }
+        """
     }
     
-    func classRegistrationSyntax(forClasses classes: [GodotClass], apiType: GodotClass.APIType) -> String {
-        let filteredClasses = classes
-            .filter { $0.apiType == apiType }
-        
-        if filteredClasses.isEmpty {
-            return "break"
-        } else {
-            return filteredClasses
-                .map { $0.identifier + "._registerClassToGodot()" }
-                .joined(separator: "\n")
+    private func classRegistrationSyntax(
+        forClasses classes: [GodotClass],
+        apiType: GodotClass.APIType
+    ) -> Syntax {
+        Syntax {
+            let filteredClasses = classes
+                .filter { $0.apiType == apiType }
+            
+            if filteredClasses.isEmpty {
+                "break"
+            } else {
+                for filteredClass in filteredClasses {
+                    "\(filteredClass.identifier)._registerClassToGodot()"
+                }
+            }
         }
     }
 }

@@ -12,38 +12,40 @@ open class CanvasItemMaterial: Material {
         case sub = 2
         case mul = 3
         case premultAlpha = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Mix", 0),
-            ("Add", 1),
-            ("Sub", 2),
-            ("Mul", 3),
-            ("Premult Alpha", 4),]
+               ("Mix", 0),
+               ("Add", 1),
+               ("Sub", 2),
+               ("Mul", 3),
+               ("Premult Alpha", 4),
+            ]
         }
     }
-
+    
     public enum LightMode: UInt32, GodotEnum {
         case normal = 0
         case unshaded = 1
         case lightOnly = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Normal", 0),
-            ("Unshaded", 1),
-            ("Light Only", 2),]
+               ("Normal", 0),
+               ("Unshaded", 1),
+               ("Light Only", 2),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_blend_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_blend_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1786054936)!
-        }
+            GodotStringName(swiftStaticString: "set_blend_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1786054936)!
+            }
         }
     }()
-
+    
     private func __setBlendMode(
         _ blendMode: Godot.CanvasItemMaterial.BlendMode
     ) {
@@ -60,15 +62,15 @@ open class CanvasItemMaterial: Material {
             }
         }
     }
-
+    
     internal static var __method_binding_get_blend_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_blend_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3318684035)!
-        }
+            GodotStringName(swiftStaticString: "get_blend_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3318684035)!
+            }
         }
     }()
-
+    
     private func __getBlendMode() -> Godot.CanvasItemMaterial.BlendMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -81,15 +83,15 @@ open class CanvasItemMaterial: Material {
             }
         }
     }
-
+    
     internal static var __method_binding_set_light_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_light_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 628074070)!
-        }
+            GodotStringName(swiftStaticString: "set_light_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 628074070)!
+            }
         }
     }()
-
+    
     private func __setLightMode(
         _ lightMode: Godot.CanvasItemMaterial.LightMode
     ) {
@@ -106,15 +108,15 @@ open class CanvasItemMaterial: Material {
             }
         }
     }
-
+    
     internal static var __method_binding_get_light_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_light_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3863292382)!
-        }
+            GodotStringName(swiftStaticString: "get_light_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3863292382)!
+            }
         }
     }()
-
+    
     private func __getLightMode() -> Godot.CanvasItemMaterial.LightMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -127,15 +129,15 @@ open class CanvasItemMaterial: Material {
             }
         }
     }
-
+    
     internal static var __method_binding_set_particles_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_particles_animation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_particles_animation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setParticlesAnimation(
         particlesAnim: Bool
     ) {
@@ -152,15 +154,15 @@ open class CanvasItemMaterial: Material {
             }
         }
     }
-
+    
     internal static var __method_binding_get_particles_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_particles_animation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_particles_animation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getParticlesAnimation() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -173,15 +175,15 @@ open class CanvasItemMaterial: Material {
             }
         }
     }
-
+    
     internal static var __method_binding_set_particles_anim_h_frames: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_particles_anim_h_frames").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_particles_anim_h_frames").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setParticlesAnimHFrames(
         _ frames: Int32
     ) {
@@ -198,15 +200,15 @@ open class CanvasItemMaterial: Material {
             }
         }
     }
-
+    
     internal static var __method_binding_get_particles_anim_h_frames: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_particles_anim_h_frames").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_particles_anim_h_frames").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getParticlesAnimHFrames() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -219,15 +221,15 @@ open class CanvasItemMaterial: Material {
             }
         }
     }
-
+    
     internal static var __method_binding_set_particles_anim_v_frames: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_particles_anim_v_frames").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_particles_anim_v_frames").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setParticlesAnimVFrames(
         _ frames: Int32
     ) {
@@ -244,15 +246,15 @@ open class CanvasItemMaterial: Material {
             }
         }
     }
-
+    
     internal static var __method_binding_get_particles_anim_v_frames: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_particles_anim_v_frames").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_particles_anim_v_frames").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getParticlesAnimVFrames() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -265,15 +267,15 @@ open class CanvasItemMaterial: Material {
             }
         }
     }
-
+    
     internal static var __method_binding_set_particles_anim_loop: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_particles_anim_loop").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_particles_anim_loop").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setParticlesAnimLoop(
         _ loop: Bool
     ) {
@@ -290,15 +292,15 @@ open class CanvasItemMaterial: Material {
             }
         }
     }
-
+    
     internal static var __method_binding_get_particles_anim_loop: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_particles_anim_loop").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_particles_anim_loop").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getParticlesAnimLoop() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -311,84 +313,81 @@ open class CanvasItemMaterial: Material {
             }
         }
     }
-
+    
     public var blendMode: Godot.CanvasItemMaterial.BlendMode {
         get {
             __getBlendMode()
         }
-        set {
+        set(newValue) {
             __setBlendMode(
                 newValue
             )
         }
     }
-
+    
     public var lightMode: Godot.CanvasItemMaterial.LightMode {
         get {
             __getLightMode()
         }
-        set {
+        set(newValue) {
             __setLightMode(
                 newValue
             )
         }
     }
-
+    
     public var particlesAnimation: Bool {
         get {
             __getParticlesAnimation()
         }
-        set {
+        set(newValue) {
             __setParticlesAnimation(
                 particlesAnim: newValue
             )
         }
     }
-
+    
     public var particlesAnimHFrames: Int32 {
         get {
             __getParticlesAnimHFrames()
         }
-        set {
+        set(newValue) {
             __setParticlesAnimHFrames(
                 newValue
             )
         }
     }
-
+    
     public var particlesAnimVFrames: Int32 {
         get {
             __getParticlesAnimVFrames()
         }
-        set {
+        set(newValue) {
             __setParticlesAnimVFrames(
                 newValue
             )
         }
     }
-
+    
     public var particlesAnimLoop: Bool {
         get {
             __getParticlesAnimLoop()
         }
-        set {
+        set(newValue) {
             __setParticlesAnimLoop(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

@@ -1411,7 +1411,7 @@ private var __function_binding_max: GDExtensionPtrUtilityFunction = {
     }
 }()
 
-internal func _max<Value1: Variant.Storable, Value2: Variant.Storable, each VariantRest : Variant.Storable>(
+internal func _max<Value1: Variant.Storable, Value2: Variant.Storable, each VariantRest: Variant.Storable>(
     arg1: Value1,
     arg2: Value2,
     _ rest: repeat each VariantRest
@@ -1475,7 +1475,7 @@ private var __function_binding_min: GDExtensionPtrUtilityFunction = {
     }
 }()
 
-internal func _min<Value1: Variant.Storable, Value2: Variant.Storable, each VariantRest : Variant.Storable>(
+internal func _min<Value1: Variant.Storable, Value2: Variant.Storable, each VariantRest: Variant.Storable>(
     arg1: Value1,
     arg2: Value2,
     _ rest: repeat each VariantRest
@@ -1838,7 +1838,7 @@ private var __function_binding_str: GDExtensionPtrUtilityFunction = {
     }
 }()
 
-internal func _str<Value: Variant.Storable, each VariantRest : Variant.Storable>(
+internal func _str<Value: Variant.Storable, each VariantRest: Variant.Storable>(
     arg1: Value,
     _ rest: repeat each VariantRest
 ) -> GodotString {
@@ -1893,7 +1893,7 @@ private var __function_binding_print: GDExtensionPtrUtilityFunction = {
     }
 }()
 
-internal func _print<Value: Variant.Storable, each VariantRest : Variant.Storable>(
+internal func _print<Value: Variant.Storable, each VariantRest: Variant.Storable>(
     arg1: Value,
     _ rest: repeat each VariantRest
 ) {
@@ -1910,7 +1910,7 @@ private var __function_binding_print_rich: GDExtensionPtrUtilityFunction = {
     }
 }()
 
-internal func _printRich<Value: Variant.Storable, each VariantRest : Variant.Storable>(
+internal func _printRich<Value: Variant.Storable, each VariantRest: Variant.Storable>(
     arg1: Value,
     _ rest: repeat each VariantRest
 ) {
@@ -1927,7 +1927,7 @@ private var __function_binding_printerr: GDExtensionPtrUtilityFunction = {
     }
 }()
 
-internal func _printerr<Value: Variant.Storable, each VariantRest : Variant.Storable>(
+internal func _printerr<Value: Variant.Storable, each VariantRest: Variant.Storable>(
     arg1: Value,
     _ rest: repeat each VariantRest
 ) {
@@ -1944,7 +1944,7 @@ private var __function_binding_printt: GDExtensionPtrUtilityFunction = {
     }
 }()
 
-internal func _printt<Value: Variant.Storable, each VariantRest : Variant.Storable>(
+internal func _printt<Value: Variant.Storable, each VariantRest: Variant.Storable>(
     arg1: Value,
     _ rest: repeat each VariantRest
 ) {
@@ -1961,7 +1961,7 @@ private var __function_binding_prints: GDExtensionPtrUtilityFunction = {
     }
 }()
 
-internal func _prints<Value: Variant.Storable, each VariantRest : Variant.Storable>(
+internal func _prints<Value: Variant.Storable, each VariantRest: Variant.Storable>(
     arg1: Value,
     _ rest: repeat each VariantRest
 ) {
@@ -1978,7 +1978,7 @@ private var __function_binding_printraw: GDExtensionPtrUtilityFunction = {
     }
 }()
 
-internal func _printraw<Value: Variant.Storable, each VariantRest : Variant.Storable>(
+internal func _printraw<Value: Variant.Storable, each VariantRest: Variant.Storable>(
     arg1: Value,
     _ rest: repeat each VariantRest
 ) {
@@ -1995,7 +1995,7 @@ private var __function_binding_print_verbose: GDExtensionPtrUtilityFunction = {
     }
 }()
 
-internal func _printVerbose<Value: Variant.Storable, each VariantRest : Variant.Storable>(
+internal func _printVerbose<Value: Variant.Storable, each VariantRest: Variant.Storable>(
     arg1: Value,
     _ rest: repeat each VariantRest
 ) {
@@ -2012,7 +2012,7 @@ private var __function_binding_push_error: GDExtensionPtrUtilityFunction = {
     }
 }()
 
-internal func _pushError<Value: Variant.Storable, each VariantRest : Variant.Storable>(
+internal func _pushError<Value: Variant.Storable, each VariantRest: Variant.Storable>(
     arg1: Value,
     _ rest: repeat each VariantRest
 ) {
@@ -2029,7 +2029,7 @@ private var __function_binding_push_warning: GDExtensionPtrUtilityFunction = {
     }
 }()
 
-internal func _pushWarning<Value: Variant.Storable, each VariantRest : Variant.Storable>(
+internal func _pushWarning<Value: Variant.Storable, each VariantRest: Variant.Storable>(
     arg1: Value,
     _ rest: repeat each VariantRest
 ) {

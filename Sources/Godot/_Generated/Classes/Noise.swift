@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class Noise: Resource {
     internal static var __method_binding_get_noise_1d: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_noise_1d").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3919130443)!
-        }
+            GodotStringName(swiftStaticString: "get_noise_1d").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3919130443)!
+            }
         }
     }()
-
+    
     public func noise1d(
         _ x: Double
     ) -> Double {
@@ -32,15 +32,15 @@ open class Noise: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_noise_2d: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_noise_2d").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2753205203)!
-        }
+            GodotStringName(swiftStaticString: "get_noise_2d").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2753205203)!
+            }
         }
     }()
-
+    
     public func noise2D(
         x: Double,
         y: Double
@@ -62,15 +62,15 @@ open class Noise: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_noise_2dv: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_noise_2dv").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2276447920)!
-        }
+            GodotStringName(swiftStaticString: "get_noise_2dv").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2276447920)!
+            }
         }
     }()
-
+    
     public func noise2dv(
         _ v: Godot.Vector2
     ) -> Double {
@@ -89,15 +89,15 @@ open class Noise: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_noise_3d: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_noise_3d").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 973811851)!
-        }
+            GodotStringName(swiftStaticString: "get_noise_3d").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 973811851)!
+            }
         }
     }()
-
+    
     public func noise3D(
         x: Double,
         y: Double,
@@ -122,15 +122,15 @@ open class Noise: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_noise_3dv: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_noise_3dv").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1109078154)!
-        }
+            GodotStringName(swiftStaticString: "get_noise_3dv").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1109078154)!
+            }
         }
     }()
-
+    
     public func noise3dv(
         _ v: Godot.Vector3
     ) -> Double {
@@ -149,15 +149,15 @@ open class Noise: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_image: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_image").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3180683109)!
-        }
+            GodotStringName(swiftStaticString: "get_image").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3180683109)!
+            }
         }
     }()
-
+    
     public func image(
         width: Int32,
         height: Int32,
@@ -188,15 +188,15 @@ open class Noise: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_seamless_image: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_seamless_image").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2770743602)!
-        }
+            GodotStringName(swiftStaticString: "get_seamless_image").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2770743602)!
+            }
         }
     }()
-
+    
     public func seamlessImage(
         width: Int32,
         height: Int32,
@@ -230,22 +230,22 @@ open class Noise: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_image_3d: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_image_3d").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3977814329)!
-        }
+            GodotStringName(swiftStaticString: "get_image_3d").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3977814329)!
+            }
         }
     }()
-
+    
     public func image3D(
         width: Int32,
         height: Int32,
         depth: Int32,
         invert: Bool = false,
         normalize: Bool = true
-    ) -> Godot.GodotArray<Godot.Image?> {
+    ) -> Godot.GodotArray<Godot.Image> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: width) { __ptr_width in
                 withTransferrableUnsafeRawPointer(to: height) { __ptr_height in
@@ -269,15 +269,15 @@ open class Noise: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_seamless_image_3d: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_seamless_image_3d").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 451006340)!
-        }
+            GodotStringName(swiftStaticString: "get_seamless_image_3d").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 451006340)!
+            }
         }
     }()
-
+    
     public func seamlessImage3D(
         width: Int32,
         height: Int32,
@@ -285,7 +285,7 @@ open class Noise: Resource {
         invert: Bool = false,
         skirt: Double = 0.1,
         normalize: Bool = true
-    ) -> Godot.GodotArray<Godot.Image?> {
+    ) -> Godot.GodotArray<Godot.Image> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: width) { __ptr_width in
                 withTransferrableUnsafeRawPointer(to: height) { __ptr_height in
@@ -311,18 +311,15 @@ open class Noise: Resource {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

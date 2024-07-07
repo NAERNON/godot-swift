@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class Geometry3D: Object {
     internal static var __method_binding_compute_convex_mesh_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "compute_convex_mesh_points").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1936902142)!
-        }
+            GodotStringName(swiftStaticString: "compute_convex_mesh_points").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1936902142)!
+            }
         }
     }()
-
+    
     public func computeConvexMeshPoints(
         planes: Godot.GodotArray<Godot.Plane>
     ) -> Godot.GodotContiguousArray<Vector3> {
@@ -32,15 +32,15 @@ open class Geometry3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_build_box_planes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "build_box_planes").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3622277145)!
-        }
+            GodotStringName(swiftStaticString: "build_box_planes").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3622277145)!
+            }
         }
     }()
-
+    
     public func buildBoxPlanes(
         extents: Godot.Vector3
     ) -> Godot.GodotArray<Godot.Plane> {
@@ -59,15 +59,15 @@ open class Geometry3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_build_cylinder_planes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "build_cylinder_planes").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 449920067)!
-        }
+            GodotStringName(swiftStaticString: "build_cylinder_planes").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 449920067)!
+            }
         }
     }()
-
+    
     public func buildCylinderPlanes(
         radius: Double,
         height: Double,
@@ -95,15 +95,15 @@ open class Geometry3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_build_capsule_planes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "build_capsule_planes").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2113592876)!
-        }
+            GodotStringName(swiftStaticString: "build_capsule_planes").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2113592876)!
+            }
         }
     }()
-
+    
     public func buildCapsulePlanes(
         radius: Double,
         height: Double,
@@ -134,15 +134,15 @@ open class Geometry3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_closest_points_between_segments: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_closest_points_between_segments").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1056373962)!
-        }
+            GodotStringName(swiftStaticString: "get_closest_points_between_segments").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1056373962)!
+            }
         }
     }()
-
+    
     public func closestPointsBetweenSegments(
         p1: Godot.Vector3,
         p2: Godot.Vector3,
@@ -170,15 +170,15 @@ open class Geometry3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_closest_point_to_segment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_closest_point_to_segment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2168193209)!
-        }
+            GodotStringName(swiftStaticString: "get_closest_point_to_segment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2168193209)!
+            }
         }
     }()
-
+    
     public func closestPointToSegment(
         point: Godot.Vector3,
         s1: Godot.Vector3,
@@ -203,15 +203,15 @@ open class Geometry3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_closest_point_to_segment_uncapped: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_closest_point_to_segment_uncapped").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2168193209)!
-        }
+            GodotStringName(swiftStaticString: "get_closest_point_to_segment_uncapped").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2168193209)!
+            }
         }
     }()
-
+    
     public func closestPointToSegmentUncapped(
         point: Godot.Vector3,
         s1: Godot.Vector3,
@@ -236,15 +236,15 @@ open class Geometry3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_triangle_barycentric_coords: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_triangle_barycentric_coords").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1362048029)!
-        }
+            GodotStringName(swiftStaticString: "get_triangle_barycentric_coords").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1362048029)!
+            }
         }
     }()
-
+    
     public func triangleBarycentricCoords(
         point: Godot.Vector3,
         a: Godot.Vector3,
@@ -272,15 +272,15 @@ open class Geometry3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_ray_intersects_triangle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "ray_intersects_triangle").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1718655448)!
-        }
+            GodotStringName(swiftStaticString: "ray_intersects_triangle").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1718655448)!
+            }
         }
     }()
-
+    
     public func rayIntersectsTriangle(
         from: Godot.Vector3,
         dir: Godot.Vector3,
@@ -311,15 +311,15 @@ open class Geometry3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_segment_intersects_triangle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "segment_intersects_triangle").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1718655448)!
-        }
+            GodotStringName(swiftStaticString: "segment_intersects_triangle").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1718655448)!
+            }
         }
     }()
-
+    
     public func segmentIntersectsTriangle(
         from: Godot.Vector3,
         to: Godot.Vector3,
@@ -350,15 +350,15 @@ open class Geometry3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_segment_intersects_sphere: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "segment_intersects_sphere").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4080141172)!
-        }
+            GodotStringName(swiftStaticString: "segment_intersects_sphere").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4080141172)!
+            }
         }
     }()
-
+    
     public func segmentIntersectsSphere(
         from: Godot.Vector3,
         to: Godot.Vector3,
@@ -386,15 +386,15 @@ open class Geometry3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_segment_intersects_cylinder: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "segment_intersects_cylinder").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2361316491)!
-        }
+            GodotStringName(swiftStaticString: "segment_intersects_cylinder").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2361316491)!
+            }
         }
     }()
-
+    
     public func segmentIntersectsCylinder(
         from: Godot.Vector3,
         to: Godot.Vector3,
@@ -422,15 +422,15 @@ open class Geometry3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_segment_intersects_convex: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "segment_intersects_convex").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 537425332)!
-        }
+            GodotStringName(swiftStaticString: "segment_intersects_convex").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 537425332)!
+            }
         }
     }()
-
+    
     public func segmentIntersectsConvex(
         from: Godot.Vector3,
         to: Godot.Vector3,
@@ -455,15 +455,15 @@ open class Geometry3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_clip_polygon: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clip_polygon").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2603188319)!
-        }
+            GodotStringName(swiftStaticString: "clip_polygon").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2603188319)!
+            }
         }
     }()
-
+    
     public func clipPolygon(
         points: Godot.GodotContiguousArray<Vector3>,
         plane: Godot.Plane
@@ -485,18 +485,15 @@ open class Geometry3D: Object {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

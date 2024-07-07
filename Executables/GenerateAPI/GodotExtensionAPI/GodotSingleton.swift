@@ -1,5 +1,3 @@
-import SwiftSyntax
-import SwiftSyntaxBuilder
 
 /// A representation of a Godot singleton.
 ///
@@ -10,11 +8,11 @@ struct GodotSingleton: Decodable {
 }
 
 extension GodotSingleton {
-    func declSyntax() -> CodeBlockItemListSyntax {
-        let typeSyntax = ExprSyntax("\(raw: type.syntax())")
+    func declSyntax() -> Syntax {
+        let typeSyntax = type.syntax()
         
         return """
-        private var _shared\(raw: name) = {
+        private var _shared\(name) = {
             \(typeSyntax)._exposedClassName.withUnsafeOpaquePointer { namePtr in
                 let instancePointer = GodotExtension.Interface.globalGetSingleton(namePtr)
                 return \(typeSyntax).retrievedInstanceManagedByGodot(instancePointer)!
@@ -22,7 +20,9 @@ extension GodotSingleton {
         }()
         
         public extension \(typeSyntax) {
-            static var shared: \(typeSyntax) { _shared\(raw: name) }
+            static var shared: \(typeSyntax) { 
+                _shared\(name)
+            }
         }
         """
     }

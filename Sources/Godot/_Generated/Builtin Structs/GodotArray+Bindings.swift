@@ -6,10 +6,11 @@ import GodotExtensionHeaders
 
 internal enum GodotArrayBindings {
     static private var areBindingsLoaded = false
-
+    
     internal static func loadBindings() {
         precondition(!areBindingsLoaded, "GodotArray bindings are already loaded.")
         areBindingsLoaded = true
+        
         destructor = GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_ARRAY)!
         constructor = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 0)!
         constructorFromGodotArray = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_ARRAY, 1)!
@@ -176,152 +177,80 @@ internal enum GodotArrayBindings {
             GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_ARRAY, __ptr__method_name, 3918633141)!
         }
     }
-
-    static private (set) var destructor: GDExtensionPtrDestructor!
-
-    static private (set) var constructor: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromGodotArray: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromGodotArrayIntGodotStringNameVariant: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromGodotContiguousArrayUInt8: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromGodotContiguousArrayInt32: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromGodotContiguousArrayInt64: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromGodotContiguousArrayFloat: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromGodotContiguousArrayDouble: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromGodotContiguousArrayGodotString: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromGodotContiguousArrayVector2: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromGodotContiguousArrayVector3: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromGodotContiguousArrayColor: GDExtensionPtrConstructor!
-
-    static private (set) var operatorEqualVariant: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNotEqualVariant: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNot: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorInGodotdictionary: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorEqualGodotarray: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNotEqualGodotarray: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorLessGodotarray: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorLessEqualGodotarray: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorGreaterGodotarray: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorGreaterEqualGodotarray: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorAddGodotarray: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorInGodotarray: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var indexedSetter: GDExtensionPtrIndexedSetter!
-
-    static private (set) var indexedGetter: GDExtensionPtrIndexedGetter!
-
-    static private (set) var methodSize: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodIsEmpty: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodClear: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodHash: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodAssign: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodPushBack: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodPushFront: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodAppend: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodAppendArray: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodResize: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodInsert: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodRemoveAt: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodFill: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodErase: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodFront: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodBack: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodPickRandom: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodFind: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodRfind: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodCount: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodHas: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodPopBack: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodPopFront: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodPopAt: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodSort: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodSortCustom: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodShuffle: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodBsearch: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodBsearchCustom: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodReverse: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodDuplicate: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodSlice: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodFilter: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodMap: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodReduce: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodAny: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodAll: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodMax: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodMin: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodIsTyped: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodIsSameTyped: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodGetTypedBuiltin: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodGetTypedClassName: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodGetTypedScript: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodMakeReadOnly: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodIsReadOnly: GDExtensionPtrBuiltInMethod!
+    
+    static private(set) var destructor: GDExtensionPtrDestructor!
+    static private(set) var constructor: GDExtensionPtrConstructor!
+    static private(set) var constructorFromGodotArray: GDExtensionPtrConstructor!
+    static private(set) var constructorFromGodotArrayIntGodotStringNameVariant: GDExtensionPtrConstructor!
+    static private(set) var constructorFromGodotContiguousArrayUInt8: GDExtensionPtrConstructor!
+    static private(set) var constructorFromGodotContiguousArrayInt32: GDExtensionPtrConstructor!
+    static private(set) var constructorFromGodotContiguousArrayInt64: GDExtensionPtrConstructor!
+    static private(set) var constructorFromGodotContiguousArrayFloat: GDExtensionPtrConstructor!
+    static private(set) var constructorFromGodotContiguousArrayDouble: GDExtensionPtrConstructor!
+    static private(set) var constructorFromGodotContiguousArrayGodotString: GDExtensionPtrConstructor!
+    static private(set) var constructorFromGodotContiguousArrayVector2: GDExtensionPtrConstructor!
+    static private(set) var constructorFromGodotContiguousArrayVector3: GDExtensionPtrConstructor!
+    static private(set) var constructorFromGodotContiguousArrayColor: GDExtensionPtrConstructor!
+    static private(set) var operatorEqualVariant: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNotEqualVariant: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNot: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorInGodotdictionary: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorEqualGodotarray: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNotEqualGodotarray: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorLessGodotarray: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorLessEqualGodotarray: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorGreaterGodotarray: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorGreaterEqualGodotarray: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorAddGodotarray: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorInGodotarray: GDExtensionPtrOperatorEvaluator!
+    static private(set) var indexedSetter: GDExtensionPtrIndexedSetter!
+    static private(set) var indexedGetter: GDExtensionPtrIndexedGetter!
+    static private(set) var methodSize: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodIsEmpty: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodClear: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodHash: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodAssign: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodPushBack: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodPushFront: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodAppend: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodAppendArray: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodResize: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodInsert: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodRemoveAt: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodFill: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodErase: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodFront: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodBack: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodPickRandom: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodFind: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodRfind: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodCount: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodHas: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodPopBack: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodPopFront: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodPopAt: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodSort: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodSortCustom: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodShuffle: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodBsearch: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodBsearchCustom: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodReverse: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodDuplicate: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodSlice: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodFilter: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodMap: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodReduce: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodAny: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodAll: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodMax: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodMin: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodIsTyped: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodIsSameTyped: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodGetTypedBuiltin: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodGetTypedClassName: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodGetTypedScript: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodMakeReadOnly: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodIsReadOnly: GDExtensionPtrBuiltInMethod!
 }
 
 extension GodotArray {
@@ -330,7 +259,7 @@ extension GodotArray {
     ) -> Opaque.Storage {
         Opaque.Storage(size: 8, destructorPtr: useDestructor ? GodotArrayBindings.destructor : nil)
     }
-
+    
     static internal func make() -> Opaque.Storage {
         var __temporary: Opaque.Storage = makeOpaqueStorage()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -338,7 +267,7 @@ extension GodotArray {
         }
         return __temporary
     }
-
+    
     static internal func make<Value: Variant.Storable>(
         from: Godot.GodotArray<Value>
     ) -> Opaque.Storage {
@@ -352,7 +281,7 @@ extension GodotArray {
         }
         return __temporary
     }
-
+    
     static internal func make<Value1: Variant.Storable, Value2: Variant.Storable>(
         base: Godot.GodotArray<Value1>,
         type: Int,
@@ -375,7 +304,7 @@ extension GodotArray {
         }
         return __temporary
     }
-
+    
     static internal func make(
         from: UInt8.GodotContiguousArrayStorage
     ) -> Opaque.Storage {
@@ -389,7 +318,7 @@ extension GodotArray {
         }
         return __temporary
     }
-
+    
     static internal func make(
         from: Int32.GodotContiguousArrayStorage
     ) -> Opaque.Storage {
@@ -403,7 +332,7 @@ extension GodotArray {
         }
         return __temporary
     }
-
+    
     static internal func make(
         from: Int64.GodotContiguousArrayStorage
     ) -> Opaque.Storage {
@@ -417,7 +346,7 @@ extension GodotArray {
         }
         return __temporary
     }
-
+    
     static internal func make(
         from: Float.GodotContiguousArrayStorage
     ) -> Opaque.Storage {
@@ -431,7 +360,7 @@ extension GodotArray {
         }
         return __temporary
     }
-
+    
     static internal func make(
         from: Double.GodotContiguousArrayStorage
     ) -> Opaque.Storage {
@@ -445,7 +374,7 @@ extension GodotArray {
         }
         return __temporary
     }
-
+    
     static internal func make(
         from: GodotString.GodotContiguousArrayStorage
     ) -> Opaque.Storage {
@@ -459,7 +388,7 @@ extension GodotArray {
         }
         return __temporary
     }
-
+    
     static internal func make(
         from: Vector2.GodotContiguousArrayStorage
     ) -> Opaque.Storage {
@@ -473,7 +402,7 @@ extension GodotArray {
         }
         return __temporary
     }
-
+    
     static internal func make(
         from: Vector3.GodotContiguousArrayStorage
     ) -> Opaque.Storage {
@@ -487,7 +416,7 @@ extension GodotArray {
         }
         return __temporary
     }
-
+    
     static internal func make(
         from: Color.GodotContiguousArrayStorage
     ) -> Opaque.Storage {
@@ -501,7 +430,7 @@ extension GodotArray {
         }
         return __temporary
     }
-
+    
     static internal func _operatorEqual<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ lhs: Godot.GodotArray<Value1>,
         _ rhs: Value2
@@ -514,7 +443,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     static internal func _operatorNotEqual<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ lhs: Godot.GodotArray<Value1>,
         _ rhs: Value2
@@ -527,7 +456,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     static internal func _operatorNot<Value: Variant.Storable>(
         _ lhs: Godot.GodotArray<Value>
     ) -> Bool {
@@ -537,7 +466,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     static internal func _operatorIn<Value1: Variant.Storable, Value2: Variant.Storable, Value3: Variant.Storable>(
         _ lhs: Godot.GodotArray<Value1>,
         _ rhs: Godot.GodotDictionary<Value2, Value3>
@@ -550,7 +479,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     static internal func _operatorEqual<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ lhs: Godot.GodotArray<Value1>,
         _ rhs: Godot.GodotArray<Value2>
@@ -563,7 +492,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     static internal func _operatorNotEqual<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ lhs: Godot.GodotArray<Value1>,
         _ rhs: Godot.GodotArray<Value2>
@@ -576,7 +505,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     static internal func _operatorLess<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ lhs: Godot.GodotArray<Value1>,
         _ rhs: Godot.GodotArray<Value2>
@@ -589,7 +518,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     static internal func _operatorLessEqual<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ lhs: Godot.GodotArray<Value1>,
         _ rhs: Godot.GodotArray<Value2>
@@ -602,7 +531,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     static internal func _operatorGreater<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ lhs: Godot.GodotArray<Value1>,
         _ rhs: Godot.GodotArray<Value2>
@@ -615,7 +544,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     static internal func _operatorGreaterEqual<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ lhs: Godot.GodotArray<Value1>,
         _ rhs: Godot.GodotArray<Value2>
@@ -628,7 +557,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     static internal func _operatorAdd<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ lhs: Godot.GodotArray<Value1>,
         _ rhs: Godot.GodotArray<Value2>
@@ -641,7 +570,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     static internal func _operatorIn<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ lhs: Godot.GodotArray<Value1>,
         _ rhs: Godot.GodotArray<Value2>
@@ -654,28 +583,23 @@ extension GodotArray {
             }
         }
     }
-
-    internal func _getValue(
-        at index: GDExtensionInt
-    ) -> Godot.Variant.Storage {
+    
+    internal func _getValue(at index: GDExtensionInt) -> Godot.Variant.Storage {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
                 GodotArrayBindings.indexedGetter(__ptr_self, index, __temporary)
             }
         }
     }
-
-    internal func _setValue(
-        _ value: borrowing Godot.Variant.Storage,
-        at index: GDExtensionInt
-    ) {
+    
+    internal func _setValue(_ value: borrowing Godot.Variant.Storage, at index: GDExtensionInt) {
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
                 GodotArrayBindings.indexedSetter(UnsafeMutableRawPointer(mutating: __ptr_self), index, __ptr_value)
             }
         }
     }
-
+    
     internal func _size() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -683,7 +607,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _isEmpty() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -691,13 +615,13 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _clear() {
         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
             GodotArrayBindings.methodClear(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
-
+    
     internal func _hash() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -705,7 +629,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _assign<Value: Variant.Storable>(
         array: Godot.GodotArray<Value>
     ) {
@@ -717,7 +641,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _pushBack(
         value: borrowing Godot.Variant.Storage
     ) {
@@ -729,7 +653,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _pushFront(
         value: borrowing Godot.Variant.Storage
     ) {
@@ -741,7 +665,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _append(
         value: borrowing Godot.Variant.Storage
     ) {
@@ -753,7 +677,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _appendArray<Value: Variant.Storable>(
         _ array: Godot.GodotArray<Value>
     ) {
@@ -765,7 +689,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _resize(
         size: Int
     ) -> Int {
@@ -779,7 +703,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _insert(
         position: Int,
         value: borrowing Godot.Variant.Storage
@@ -796,7 +720,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _removeAt(
         position: Int
     ) {
@@ -808,7 +732,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _fill(
         value: borrowing Godot.Variant.Storage
     ) {
@@ -820,7 +744,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _erase(
         value: borrowing Godot.Variant.Storage
     ) {
@@ -832,7 +756,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _front() -> Godot.Variant.Storage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -840,7 +764,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _back() -> Godot.Variant.Storage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -848,7 +772,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _pickRandom() -> Godot.Variant.Storage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -856,7 +780,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _find(
         what: borrowing Godot.Variant.Storage,
         from: Int = 0
@@ -873,7 +797,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _rfind(
         what: borrowing Godot.Variant.Storage,
         from: Int = -1
@@ -890,7 +814,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _count(
         value: borrowing Godot.Variant.Storage
     ) -> Int {
@@ -904,7 +828,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _has(
         value: borrowing Godot.Variant.Storage
     ) -> Bool {
@@ -918,7 +842,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _popBack() -> Godot.Variant.Storage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -926,7 +850,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _popFront() -> Godot.Variant.Storage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -934,7 +858,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _popAt(
         position: Int
     ) -> Godot.Variant.Storage {
@@ -948,13 +872,13 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _sort() {
         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
             GodotArrayBindings.methodSort(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
-
+    
     internal func _sortCustom(
         `func`: Godot.Callable
     ) {
@@ -966,13 +890,13 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _shuffle() {
         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
             GodotArrayBindings.methodShuffle(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
-
+    
     internal func _bsearch(
         value: borrowing Godot.Variant.Storage,
         before: Bool = true
@@ -989,7 +913,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _bsearchCustom(
         value: borrowing Godot.Variant.Storage,
         `func`: Godot.Callable,
@@ -1009,13 +933,13 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _reverse() {
         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
             GodotArrayBindings.methodReverse(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
-
+    
     internal func _duplicate(
         deep: Bool = false
     ) -> Godot.GodotArray<Element> {
@@ -1029,7 +953,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _slice(
         begin: Int,
         end: Int = 2147483647,
@@ -1052,7 +976,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _filter(
         method: Godot.Callable
     ) -> Godot.GodotArray<Element> {
@@ -1066,7 +990,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _map(
         method: Godot.Callable
     ) -> Godot.GodotArray<Element> {
@@ -1080,7 +1004,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _reduce(
         method: Godot.Callable,
         accum: borrowing Godot.Variant.Storage
@@ -1097,7 +1021,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _any(
         method: Godot.Callable
     ) -> Bool {
@@ -1111,7 +1035,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _all(
         method: Godot.Callable
     ) -> Bool {
@@ -1125,7 +1049,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _max() -> Godot.Variant.Storage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -1133,7 +1057,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _min() -> Godot.Variant.Storage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -1141,7 +1065,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _isTyped() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -1149,7 +1073,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _isSameTyped<Value: Variant.Storable>(
         array: Godot.GodotArray<Value>
     ) -> Bool {
@@ -1163,7 +1087,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _typedBuiltin() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -1171,7 +1095,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _typedClassName() -> Godot.GodotStringName {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -1179,7 +1103,7 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _typedScript() -> Godot.Variant.Storage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -1187,13 +1111,13 @@ extension GodotArray {
             }
         }
     }
-
+    
     internal func _makeReadOnly() {
         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
             GodotArrayBindings.methodMakeReadOnly(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
-
+    
     internal func _isReadOnly() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in

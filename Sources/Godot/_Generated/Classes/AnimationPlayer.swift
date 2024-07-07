@@ -10,48 +10,40 @@ open class AnimationPlayer: AnimationMixer {
         case physics = 0
         case idle = 1
         case manual = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Physics", 0),
-            ("Idle", 1),
-            ("Manual", 2),]
+               ("Physics", 0),
+               ("Idle", 1),
+               ("Manual", 2),
+            ]
         }
     }
-
+    
     public enum AnimationMethodCallMode: UInt32, GodotEnum {
         case deferred = 0
         case immediate = 1
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Deferred", 0),
-            ("Immediate", 1),]
+               ("Deferred", 0),
+               ("Immediate", 1),
+            ]
         }
     }
-
+    
     public struct CurrentAnimationChangedSignalInput: Godot.SignalInput {
         public let name: Godot.GodotString
-
-        fileprivate init(
-            name: Godot.GodotString
-        ) {
+        fileprivate init(name: Godot.GodotString) {
             self.name = name
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.name)]
         }
     }
-
-    public func currentAnimationChanged(
-        name: Godot.GodotString
-    ) {
+    public func currentAnimationChanged(name: Godot.GodotString) {
         _ = currentAnimationChangedSignal.emit(.init(name: name))
     }
-
     public lazy var currentAnimationChangedSignal: Godot.SignalEmitter<CurrentAnimationChangedSignalInput> = {
         .init(object: self, signalName: "current_animation_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<CurrentAnimationChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -66,35 +58,22 @@ open class AnimationPlayer: AnimationMixer {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct AnimationChangedSignalInput: Godot.SignalInput {
         public let oldName: Godot.GodotStringName
-
         public let newName: Godot.GodotStringName
-
-        fileprivate init(
-            oldName: Godot.GodotStringName,
-            newName: Godot.GodotStringName
-        ) {
+        fileprivate init(oldName: Godot.GodotStringName, newName: Godot.GodotStringName) {
             self.oldName = oldName
             self.newName = newName
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.oldName), Variant(input.newName)]
         }
     }
-
-    public func animationChanged(
-        oldName: Godot.GodotStringName,
-        newName: Godot.GodotStringName
-    ) {
+    public func animationChanged(oldName: Godot.GodotStringName, newName: Godot.GodotStringName) {
         _ = animationChangedSignal.emit(.init(oldName: oldName,
                 newName: newName))
     }
-
     public lazy var animationChangedSignal: Godot.SignalEmitter<AnimationChangedSignalInput> = {
         .init(object: self, signalName: "animation_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<AnimationChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -110,15 +89,15 @@ open class AnimationPlayer: AnimationMixer {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_animation_set_next: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "animation_set_next").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740211285)!
-        }
+            GodotStringName(swiftStaticString: "animation_set_next").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3740211285)!
+            }
         }
     }()
-
+    
     public func animationSetNext(
         animationFrom: Godot.GodotStringName,
         animationTo: Godot.GodotStringName
@@ -138,15 +117,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_animation_get_next: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "animation_get_next").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1965194235)!
-        }
+            GodotStringName(swiftStaticString: "animation_get_next").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1965194235)!
+            }
         }
     }()
-
+    
     public func animationGetNext(
         animationFrom: Godot.GodotStringName
     ) -> Godot.GodotStringName {
@@ -165,15 +144,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_set_blend_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_blend_time").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3231131886)!
-        }
+            GodotStringName(swiftStaticString: "set_blend_time").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3231131886)!
+            }
         }
     }()
-
+    
     public func setBlendTime(
         animationFrom: Godot.GodotStringName,
         animationTo: Godot.GodotStringName,
@@ -196,15 +175,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_blend_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_blend_time").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1958752504)!
-        }
+            GodotStringName(swiftStaticString: "get_blend_time").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1958752504)!
+            }
         }
     }()
-
+    
     public func blendTime(
         animationFrom: Godot.GodotStringName,
         animationTo: Godot.GodotStringName
@@ -226,15 +205,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_set_default_blend_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_default_blend_time").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_default_blend_time").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setDefaultBlendTime(
         sec: Double
     ) {
@@ -251,15 +230,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_default_blend_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_default_blend_time").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_default_blend_time").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getDefaultBlendTime() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -272,15 +251,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_play: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "play").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3118260607)!
-        }
+            GodotStringName(swiftStaticString: "play").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3118260607)!
+            }
         }
     }()
-
+    
     public func play(
         name: Godot.GodotStringName = "",
         customBlend: Double = -1,
@@ -306,15 +285,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_play_backwards: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "play_backwards").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2787282401)!
-        }
+            GodotStringName(swiftStaticString: "play_backwards").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2787282401)!
+            }
         }
     }()
-
+    
     public func playBackwards(
         name: Godot.GodotStringName = "",
         customBlend: Double = -1
@@ -334,15 +313,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_pause: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "pause").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "pause").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func pause() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -353,15 +332,15 @@ open class AnimationPlayer: AnimationMixer {
             )
         }
     }
-
+    
     internal static var __method_binding_stop: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "stop").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 107499316)!
-        }
+            GodotStringName(swiftStaticString: "stop").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 107499316)!
+            }
         }
     }()
-
+    
     public func stop(
         keepState: Bool = false
     ) {
@@ -378,15 +357,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_is_playing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_playing").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_playing").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isPlaying() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -399,15 +378,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_set_current_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_current_animation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_current_animation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setCurrentAnimation(
         _ animation: Godot.GodotString
     ) {
@@ -424,15 +403,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_current_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_current_animation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_current_animation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getCurrentAnimation() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -445,15 +424,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_set_assigned_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_assigned_animation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_assigned_animation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setAssignedAnimation(
         _ animation: Godot.GodotString
     ) {
@@ -470,15 +449,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_assigned_animation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_assigned_animation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_assigned_animation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getAssignedAnimation() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -491,15 +470,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_queue: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "queue").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
-        }
+            GodotStringName(swiftStaticString: "queue").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
+            }
         }
     }()
-
+    
     public func queue(
         name: Godot.GodotStringName
     ) {
@@ -516,15 +495,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_queue: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_queue").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2981934095)!
-        }
+            GodotStringName(swiftStaticString: "get_queue").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2981934095)!
+            }
         }
     }()
-
+    
     public func queue() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -537,15 +516,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_clear_queue: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear_queue").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "clear_queue").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func clearQueue() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -556,15 +535,15 @@ open class AnimationPlayer: AnimationMixer {
             )
         }
     }
-
+    
     internal static var __method_binding_set_speed_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_speed_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_speed_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setSpeedScale(
         speed: Double
     ) {
@@ -581,15 +560,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_speed_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_speed_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_speed_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getSpeedScale() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -602,15 +581,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_playing_speed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_playing_speed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_playing_speed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     public func playingSpeed() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -623,15 +602,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_set_autoplay: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_autoplay").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_autoplay").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setAutoplay(
         name: Godot.GodotString
     ) {
@@ -648,15 +627,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_autoplay: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_autoplay").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_autoplay").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getAutoplay() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -669,15 +648,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_set_movie_quit_on_finish_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_movie_quit_on_finish_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_movie_quit_on_finish_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setMovieQuitOnFinishEnabled(
         _ enabled: Bool
     ) {
@@ -694,15 +673,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_is_movie_quit_on_finish_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_movie_quit_on_finish_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_movie_quit_on_finish_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isMovieQuitOnFinishEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -715,15 +694,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_current_animation_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_current_animation_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_current_animation_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getCurrentAnimationPosition() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -736,15 +715,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_current_animation_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_current_animation_length").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_current_animation_length").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getCurrentAnimationLength() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -757,15 +736,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_seek: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "seek").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1807872683)!
-        }
+            GodotStringName(swiftStaticString: "seek").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1807872683)!
+            }
         }
     }()
-
+    
     public func seek(
         seconds: Double,
         update: Bool = false,
@@ -788,15 +767,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_set_process_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_process_callback").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1663839457)!
-        }
+            GodotStringName(swiftStaticString: "set_process_callback").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1663839457)!
+            }
         }
     }()
-
+    
     public func setProcessCallback(
         mode: Godot.AnimationPlayer.AnimationProcessCallback
     ) {
@@ -813,15 +792,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_process_callback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_process_callback").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4207496604)!
-        }
+            GodotStringName(swiftStaticString: "get_process_callback").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4207496604)!
+            }
         }
     }()
-
+    
     public func processCallback() -> Godot.AnimationPlayer.AnimationProcessCallback {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -834,15 +813,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_set_method_call_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_method_call_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3413514846)!
-        }
+            GodotStringName(swiftStaticString: "set_method_call_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3413514846)!
+            }
         }
     }()
-
+    
     public func setMethodCallMode(
         _ mode: Godot.AnimationPlayer.AnimationMethodCallMode
     ) {
@@ -859,15 +838,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_method_call_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_method_call_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3583380054)!
-        }
+            GodotStringName(swiftStaticString: "get_method_call_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3583380054)!
+            }
         }
     }()
-
+    
     public func methodCallMode() -> Godot.AnimationPlayer.AnimationMethodCallMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -880,15 +859,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_set_root: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_root").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
-        }
+            GodotStringName(swiftStaticString: "set_root").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
+            }
         }
     }()
-
+    
     public func setRoot(
         path: Godot.NodePath
     ) {
@@ -905,15 +884,15 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_root: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_root").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
-        }
+            GodotStringName(swiftStaticString: "get_root").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
+            }
         }
     }()
-
+    
     public func root() -> Godot.NodePath {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -926,96 +905,93 @@ open class AnimationPlayer: AnimationMixer {
             }
         }
     }
-
+    
     public var currentAnimation: Godot.GodotString {
         get {
             __getCurrentAnimation()
         }
-        set {
+        set(newValue) {
             __setCurrentAnimation(
                 newValue
             )
         }
     }
-
+    
     public var assignedAnimation: Godot.GodotString {
         get {
             __getAssignedAnimation()
         }
-        set {
+        set(newValue) {
             __setAssignedAnimation(
                 newValue
             )
         }
     }
-
+    
     public var autoplay: Godot.GodotString {
         get {
             __getAutoplay()
         }
-        set {
+        set(newValue) {
             __setAutoplay(
                 name: newValue
             )
         }
     }
-
+    
     public var currentAnimationLength: Double {
         get {
             __getCurrentAnimationLength()
         }
     }
-
+    
     public var currentAnimationPosition: Double {
         get {
             __getCurrentAnimationPosition()
         }
     }
-
+    
     public var defaultBlendTime: Double {
         get {
             __getDefaultBlendTime()
         }
-        set {
+        set(newValue) {
             __setDefaultBlendTime(
                 sec: newValue
             )
         }
     }
-
+    
     public var speedScale: Double {
         get {
             __getSpeedScale()
         }
-        set {
+        set(newValue) {
             __setSpeedScale(
                 speed: newValue
             )
         }
     }
-
+    
     public var isMovieQuitOnFinishEnabled: Bool {
         get {
             __isMovieQuitOnFinishEnabled()
         }
-        set {
+        set(newValue) {
             __setMovieQuitOnFinishEnabled(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

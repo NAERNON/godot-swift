@@ -10,40 +10,42 @@ open class SubViewport: Viewport {
         case always = 0
         case never = 1
         case once = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Always", 0),
-            ("Never", 1),
-            ("Once", 2),]
+               ("Always", 0),
+               ("Never", 1),
+               ("Once", 2),
+            ]
         }
     }
-
+    
     public enum UpdateMode: UInt32, GodotEnum {
         case disabled = 0
         case once = 1
         case whenVisible = 2
         case whenParentVisible = 3
         case always = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Disabled", 0),
-            ("Once", 1),
-            ("When Visible", 2),
-            ("When Parent Visible", 3),
-            ("Always", 4),]
+               ("Disabled", 0),
+               ("Once", 1),
+               ("When Visible", 2),
+               ("When Parent Visible", 3),
+               ("Always", 4),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
-        }
+            GodotStringName(swiftStaticString: "set_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
+            }
         }
     }()
-
+    
     private func __setSize(
         _ size: Godot.Vector2I
     ) {
@@ -60,15 +62,15 @@ open class SubViewport: Viewport {
             }
         }
     }
-
+    
     internal static var __method_binding_get_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
-        }
+            GodotStringName(swiftStaticString: "get_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
+            }
         }
     }()
-
+    
     private func __getSize() -> Godot.Vector2I {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -81,15 +83,15 @@ open class SubViewport: Viewport {
             }
         }
     }
-
+    
     internal static var __method_binding_set_size_2d_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_size_2d_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
-        }
+            GodotStringName(swiftStaticString: "set_size_2d_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130785943)!
+            }
         }
     }()
-
+    
     private func __setSize2DOverride(
         size: Godot.Vector2I
     ) {
@@ -106,15 +108,15 @@ open class SubViewport: Viewport {
             }
         }
     }
-
+    
     internal static var __method_binding_get_size_2d_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_size_2d_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
-        }
+            GodotStringName(swiftStaticString: "get_size_2d_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
+            }
         }
     }()
-
+    
     private func __getSize2DOverride() -> Godot.Vector2I {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -127,15 +129,15 @@ open class SubViewport: Viewport {
             }
         }
     }
-
+    
     internal static var __method_binding_set_size_2d_override_stretch: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_size_2d_override_stretch").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_size_2d_override_stretch").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setSize2DOverrideStretch(
         enable: Bool
     ) {
@@ -152,15 +154,15 @@ open class SubViewport: Viewport {
             }
         }
     }
-
+    
     internal static var __method_binding_is_size_2d_override_stretch_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_size_2d_override_stretch_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_size_2d_override_stretch_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isSize2DOverrideStretchEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -173,15 +175,15 @@ open class SubViewport: Viewport {
             }
         }
     }
-
+    
     internal static var __method_binding_set_update_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_update_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1295690030)!
-        }
+            GodotStringName(swiftStaticString: "set_update_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1295690030)!
+            }
         }
     }()
-
+    
     private func __setUpdateMode(
         _ mode: Godot.SubViewport.UpdateMode
     ) {
@@ -198,15 +200,15 @@ open class SubViewport: Viewport {
             }
         }
     }
-
+    
     internal static var __method_binding_get_update_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_update_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2980171553)!
-        }
+            GodotStringName(swiftStaticString: "get_update_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2980171553)!
+            }
         }
     }()
-
+    
     private func __getUpdateMode() -> Godot.SubViewport.UpdateMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -219,15 +221,15 @@ open class SubViewport: Viewport {
             }
         }
     }
-
+    
     internal static var __method_binding_set_clear_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_clear_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2834454712)!
-        }
+            GodotStringName(swiftStaticString: "set_clear_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2834454712)!
+            }
         }
     }()
-
+    
     private func __setClearMode(
         _ mode: Godot.SubViewport.ClearMode
     ) {
@@ -244,15 +246,15 @@ open class SubViewport: Viewport {
             }
         }
     }
-
+    
     internal static var __method_binding_get_clear_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_clear_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 331324495)!
-        }
+            GodotStringName(swiftStaticString: "get_clear_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 331324495)!
+            }
         }
     }()
-
+    
     private func __getClearMode() -> Godot.SubViewport.ClearMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -265,73 +267,70 @@ open class SubViewport: Viewport {
             }
         }
     }
-
+    
     public var size: Godot.Vector2I {
         get {
             __getSize()
         }
-        set {
+        set(newValue) {
             __setSize(
                 newValue
             )
         }
     }
-
+    
     public var size2DOverride: Godot.Vector2I {
         get {
             __getSize2DOverride()
         }
-        set {
+        set(newValue) {
             __setSize2DOverride(
                 size: newValue
             )
         }
     }
-
+    
     public var isSize2DOverrideStretchEnabled: Bool {
         get {
             __isSize2DOverrideStretchEnabled()
         }
-        set {
+        set(newValue) {
             __setSize2DOverrideStretch(
                 enable: newValue
             )
         }
     }
-
+    
     public var clearMode: Godot.SubViewport.ClearMode {
         get {
             __getClearMode()
         }
-        set {
+        set(newValue) {
             __setClearMode(
                 newValue
             )
         }
     }
-
+    
     public var updateMode: Godot.SubViewport.UpdateMode {
         get {
             __getUpdateMode()
         }
-        set {
+        set(newValue) {
             __setUpdateMode(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

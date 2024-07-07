@@ -1,6 +1,4 @@
 import Foundation
-import SwiftSyntax
-import SwiftSyntaxBuilder
 import Utils
 
 /// A representation of a Godot type.
@@ -13,27 +11,28 @@ indirect enum GodotType: Equatable, Decodable, Hashable {
     /// ```swift
     /// GodotType.base("some_class")
     /// ```
+    ///
+    /// In the case of a scoped type, several tokens can be used.
     case base(String)
+    
+    /// A type defined in the scope of another type.
+    ///
+    /// If `A` and `B` are two types:
+    /// ```swift
+    /// let t: GodotType = ... // T
+    ///
+    /// GodotType.scope("Namespace", type: t)
+    ///
+    /// // Represents the type:
+    /// Namespace.T
+    /// ```
+    case scope(String, type: GodotType)
     
     /// A type known to be an enum.
     case `enum`(GodotType)
     
     /// A type known to be a bitfield.
     case bitfield(GodotType)
-    
-    /// A type defined in the scope of another type.
-    ///
-    /// If `A` and `B` are two types:
-    /// ```swift
-    /// let a: GodotType = ... // A
-    /// let b: GodotType = ... // B
-    ///
-    /// GodotType.scope(scopeType: a, type: b)
-    ///
-    /// // Represents the type:
-    /// A.B
-    /// ```
-    case scope(scopeType: GodotType, type: GodotType)
     
     /// A type defined using a generic.
     ///
@@ -49,36 +48,8 @@ indirect enum GodotType: Equatable, Decodable, Hashable {
     /// ```
     case generic(type: GodotType, genericType: GodotType)
     
-    /// A generic array.
-    ///
-    /// In Godot, a generic array is a `GodotArray<Element>`.
-    ///
-    /// If `A` is a type:
-    /// ```swift
-    /// let a: GodotType = ... // A
-    ///
-    /// GodotType.typedArray(a)
-    ///
-    /// // Represents the type:
-    /// GodotArray<A>
-    /// ```
-    case typedArray(GodotType)
-    
     /// An optional type.
     case optional(GodotType)
-    
-    /// A varargs type.
-    ///
-    /// If `A` is a type:
-    /// ```swift
-    /// let a: GodotType = ... // A
-    ///
-    /// GodotType.varargs(a)
-    ///
-    /// // Represents the type:
-    /// A...
-    /// ```
-    case varargs(GodotType)
     
     /// A tuple type.
     ///
@@ -97,7 +68,7 @@ indirect enum GodotType: Equatable, Decodable, Hashable {
     
     /// An immutable type.
     ///
-    /// This is usefull for defining pointers.
+    /// This is useful for defining pointers.
     /// A pointer inside an `immutable` type will be a `UnsafePointer`
     /// where a pointer not defined inside an `immutable` type
     /// will be a `UnsafeMutablePointer`.
@@ -144,22 +115,22 @@ extension GodotType {
         } else if string.starts(with: "bitfield::") {
             self = .bitfield(GodotType(cTypeSyntax: cTypeSyntax.dropFirst(10)))
         } else if string.starts(with: "typedarray::") {
-            self = .typedArray(GodotType(cTypeSyntax: cTypeSyntax.dropFirst(12)))
-        } else if let index = string.lastIndex(of: ".") {
-            self = .scope(
-                scopeType: GodotType(cTypeSyntax: string[..<index]),
-                type: GodotType(cTypeSyntax: string[string.index(after: index)...])
-            )
+            self = .generic(type: .array, genericType: GodotType(cTypeSyntax: cTypeSyntax.dropFirst(12)))
         } else {
-            let components = string.split(separator: "::", maxSplits: 2)
-            if components.count == 2 {
-                self = .scope(
-                    scopeType: GodotType(cTypeSyntax: components[0]),
-                    type: GodotType(cTypeSyntax: components[1])
-                )
-            } else {
-                self = .base(string)
-            }
+            let substrings = string
+                .split(separator: /(::|\.)/)
+                .lazy
+                .map { String($0) }
+            
+            self = .init(scopes: substrings)
+        }
+    }
+    
+    init(scopes: some Collection<String>) {
+        switch scopes.count {
+        case 0: fatalError("Type must not be empty")
+        case 1: self = .base(scopes.first!)
+        default: self = .scope(scopes.first!, type: .init(scopes: scopes.dropFirst()))
         }
     }
     
@@ -168,7 +139,7 @@ extension GodotType {
         self.init(cTypeSyntax: string)
     }
     
-    // MARK: Access
+    // MARK: Modifiers
     
     func optional(_ `optional`: Bool = true) -> GodotType {
         if `optional` {
@@ -179,7 +150,7 @@ extension GodotType {
     }
     
     /// Returns `Variant.Storage` if the type is a `Variant`, or the current type otherwise.
-    var storage: GodotType {
+    var variantStorage: GodotType {
         if self == .variant {
             return .variantStorage
         } else {
@@ -211,33 +182,33 @@ extension GodotType {
         }
     }
     
-    /// Returns the scope type at a given index.
-    ///
-    /// - Parameter index: The index of the scope to retrieve.
-    /// An index of 0 would return the most global scope.
-    /// Pass `nil` if you want the last scope (the most local one).
-    /// - Returns: The scope to retrieve, if any.
-    func scope(atIndex index: Int? = nil) -> GodotType? {
+    func scopes() -> [String] {
         switch self {
-        case .scope(let scopeType, let type):
-            if let index {
-                if index == 0 {
-                    return scopeType
-                } else {
-                    return type.scope(atIndex: index - 1)
-                }
-            } else {
-                if let retrievedScopeType = type.scope(atIndex: nil) {
-                    return retrievedScopeType
-                } else {
-                    return scopeType
-                }
-            }
+        case .base(_):
+            return []
+        case .scope(let scope, let type):
+            return CollectionOfOne(scope) + type.scopes()
+        case .enum(let godotType):
+            return godotType.scopes()
+        case .bitfield(let godotType):
+            return godotType.scopes()
         case .generic(let type, _):
-            return type.scope(atIndex: index)
-        default:
-            return nil
+            return type.scopes()
+        case .optional(let godotType):
+            return godotType.scopes()
+        case .tuple(_):
+            return []
+        case .immutable(let godotType):
+            return godotType.scopes()
+        case .rawPointer:
+            return []
+        case .typedPointer(_):
+            return []
         }
+    }
+    
+    func scoped(in identifier: String) -> GodotType {
+        GodotType.scope(identifier, type: self)
     }
     
     /// Returns a new type where all pointers to a Godot class
@@ -245,44 +216,50 @@ extension GodotType {
     ///
     /// For example:
     /// ```swift
-    /// let type: GodotType = "Object *someType"
+    /// let type: GodotType = "Object *"
     /// print(type.syntax())
     /// // Prints "UnsafePointer<Object>"
     /// print(type.removePointerForGodotClass.syntax())
     /// // Prints "Object"
     /// ```
-    var removeGodotClassPointers: GodotType {
+    func godotClassPointerRemoved() -> GodotType {
         switch self {
-        case .base(let string):
-            return .base(string)
+        case .base(let tokens):
+            return .base(tokens)
+        case .scope(let scope, let type):
+            return .scope(scope, type: type.godotClassPointerRemoved())
         case .enum(let godotType):
-            return .enum(godotType.removeGodotClassPointers)
+            return .enum(godotType.godotClassPointerRemoved())
         case .bitfield(let godotType):
-            return .bitfield(godotType.removeGodotClassPointers)
-        case .scope(let scopeType, let type):
-            return .scope(scopeType: scopeType.removeGodotClassPointers,
-                          type: type.removeGodotClassPointers)
+            return .bitfield(godotType.godotClassPointerRemoved())
         case .generic(let type, let genericType):
-            return .generic(type: type.removeGodotClassPointers,
-                            genericType: genericType.removeGodotClassPointers)
-        case .typedArray(let godotType):
-            return .typedArray(godotType.removeGodotClassPointers)
+            return .generic(type: type.godotClassPointerRemoved(),
+                            genericType: genericType.godotClassPointerRemoved())
         case .optional(let godotType):
-            return .optional(godotType.removeGodotClassPointers)
-        case .varargs(let godotType):
-            return .varargs(godotType.removeGodotClassPointers)
+            return .optional(godotType.godotClassPointerRemoved())
         case .tuple(let types):
-            return .tuple(types.map { $0.removeGodotClassPointers })
+            return .tuple(types.map { $0.godotClassPointerRemoved() })
         case .immutable(let godotType):
-            return .immutable(godotType.removeGodotClassPointers)
+            return .immutable(godotType.godotClassPointerRemoved())
         case .rawPointer:
             return .rawPointer
         case .typedPointer(let godotType):
             if godotType.isGodotClass {
                 return godotType
             } else {
-                return .typedPointer(godotType.removeGodotClassPointers)
+                return .typedPointer(godotType.godotClassPointerRemoved())
             }
+        }
+    }
+    
+    // MARK: Getters
+    
+    var withoutGeneric: GodotType {
+        switch self {
+        case .generic(let type, _):
+            type
+        default:
+            self
         }
     }
     
@@ -290,7 +267,6 @@ extension GodotType {
         switch self {
         case .enum(_): true
         case .generic(let type, _): type.isEnum
-        case .scope(_, let type): type.isEnum
         case .immutable(let type): type.isEnum
         default: false
         }
@@ -300,18 +276,7 @@ extension GodotType {
         switch self {
         case .bitfield(_): true
         case .generic(let type, _): type.isBitfield
-        case .scope(_, let type): type.isBitfield
         case .immutable(let type): type.isBitfield
-        default: false
-        }
-    }
-    
-    var isTypedArray: Bool {
-        switch self {
-        case .typedArray(_): true
-        case .generic(let type, _): type.isTypedArray
-        case .scope(_, let type): type.isTypedArray
-        case .immutable(let type): type.isTypedArray
         default: false
         }
     }
@@ -354,7 +319,7 @@ extension GodotType {
     ///
     /// - Returns: `true` if the type is a Godot builtin class (not a Godot class).
     var isBuiltinGodotClass: Bool {
-        GodotType.godotBuiltinClassTypes.contains(self) || isTypedArray
+        GodotType.godotBuiltinClassTypes.contains(withoutGeneric)
     }
     
     /// A Boolean value indicating whether the type
@@ -379,9 +344,7 @@ extension GodotType {
             return false
         }
         
-        if isTypedArray { return true }
-        
-        switch self {
+        switch withoutGeneric {
         case .array: return true
         case .callable: return true
         case .dictionary: return true
@@ -403,6 +366,16 @@ extension GodotType {
         }
     }
     
+    /// A Boolean indicating whether this type is at the root of the Godot target.
+    var isGodotScopeType: Bool {
+        isBuiltinGodotClass ||
+         isGodotClass ||
+         isEnum ||
+         isBitfield ||
+         self == .variant ||
+         self == .variantStorage
+    }
+    
     var packedArrayGenericType: GodotType? {
         switch self {
         case .packedByteArray: .uint8
@@ -420,12 +393,8 @@ extension GodotType {
     
     // MARK: - Syntax
     
-    var variantRepresentationType: String? {
-        if isTypedArray {
-            "GDEXTENSION_VARIANT_TYPE_ARRAY"
-        } else {
-            typeToGodotVariantType[self]
-        }
+    var godotVariantType: Syntax? {
+        typeToGodotVariantType[withoutGeneric]
     }
     
     /// Returns the syntax of the type.
@@ -433,7 +402,7 @@ extension GodotType {
     /// This function translates the type to Swift.
     ///
     /// - parameter options: The options to define how to translate the type.
-    func syntax(options: GodotTypeSyntaxOptions = []) -> String {
+    func syntax(options: GodotTypeSyntaxOptions = []) -> Syntax {
         _syntax(options: options, scopeIndex: 0)
     }
     
@@ -443,17 +412,29 @@ extension GodotType {
     /// - 0 for types defined at the root
     /// - 1 for typed defined inside other types, or for types defined inside a namespace
     /// ...
-    private func _syntax(options: GodotTypeSyntaxOptions, scopeIndex: Int) -> String {
+    private func _syntax(
+        options: GodotTypeSyntaxOptions,
+        scopeIndex: Int
+    ) -> Syntax {
         if options.contains(.prefixByGodot),
            scopeIndex == 0,
-           isGodotClass ||
-            isBuiltinGodotClass ||
-            isEnum ||
-            isBitfield ||
-            self == .variant,
+           isGodotScopeType,
            packedArrayGenericType == nil || !options.contains(.packedArrayStorage)
         {
-            return "Godot." + self._syntax(options: options, scopeIndex: scopeIndex+1)
+            return self
+                .scoped(in: "Godot")
+                .optional(isGodotClass && options.contains(.optionalClasses))
+                ._syntax(
+                    options: options.subtracting(.optionalClasses),
+                    scopeIndex: scopeIndex+1
+                )
+        } else if options.contains(.optionalClasses) && isGodotClass {
+            return self
+                .optional()
+                ._syntax(
+                    options: options.subtracting(.optionalClasses),
+                    scopeIndex: scopeIndex
+                )
         }
         
         if let packedArrayGenericType {
@@ -465,8 +446,8 @@ extension GodotType {
         }
         
         switch self {
-        case .base(let string):
-            switch string {
+        case .base(let identifier):
+            switch identifier {
             case "float":
                 if options.contains(.floatUseBuildConfiguration) {
                     return "Scalar"
@@ -488,20 +469,20 @@ extension GodotType {
             case "uint64_t": return "UInt64"
             case "bool": return "Bool"
             case "Array":
-                return if options.contains(.genericArrayOnVariant) {
-                    "AnyGodotArray"
+                if options.contains(.genericArrayOnVariant) {
+                    return "AnyGodotArray"
                 } else if options.contains(.genericArrayOnElement) {
-                    "GodotArray<Element>"
+                    return "GodotArray<Element>"
                 } else {
-                    "GodotArray"
+                    return "GodotArray"
                 }
-            case "Dictionary": 
-                return if options.contains(.genericDictionaryOnVariant) {
-                    "AnyGodotDictionary"
+            case "Dictionary":
+                if options.contains(.genericDictionaryOnVariant) {
+                    return "AnyGodotDictionary"
                 } else if options.contains(.genericDictionaryOnKeyValue) {
-                    "GodotDictionary<Key, AssociatedValue>"
+                    return "GodotDictionary<Key, AssociatedValue>"
                 } else {
-                    "GodotDictionary"
+                    return "GodotDictionary"
                 }
             case "String": return "GodotString"
             case "StringName": return "GodotStringName"
@@ -510,72 +491,70 @@ extension GodotType {
             case "Vector3i": return "Vector3I"
             case "Vector4i": return "Vector4I"
             case "Error": return "ErrorType"
-            case "Type": return options.contains(.typeIsStorageType) ?
-                "StorageType" : "GodotType"
-            default:
-                if options.contains(.optionalClasses) && isGodotClass {
-                    return string + "?"
+            case "Type":
+                if options.contains(.typeIsStorageType) {
+                    return "StorageType"
                 } else {
-                    return string
+                    return "GodotType"
                 }
+            default:
+                return .init(identifier)
             }
+        case .scope(let scope, let type):
+            return "\(scope).\(type._syntax(options: options, scopeIndex: scopeIndex+1))"
         case .enum(let type):
             return type._syntax(options: options, scopeIndex: scopeIndex)
         case .bitfield(let type):
             return type._syntax(options: options, scopeIndex: scopeIndex)
-        case .scope(let scopeType, let type):
-            let base = scopeType._syntax(
-                options: options.subtracting(.optionalClasses),
+        case .generic(let type, let genericType):
+            let typeSyntax = type._syntax(
+                options: options.subtracting(
+                    [
+                        .optionalClasses,
+                        .genericArrayOnVariant,
+                        .genericDictionaryOnVariant,
+                    ]
+                ),
                 scopeIndex: scopeIndex
             )
-            let additional = type._syntax(
-                options: options.union(scopeType == .variant ? [.typeIsStorageType] : []),
-                scopeIndex: scopeIndex+1
-            )
-            return base + "." + additional
-        case .generic(let type, let genericType):
-            return type._syntax(options: options.subtracting(.optionalClasses), scopeIndex: scopeIndex) + "<"
-                + genericType._syntax(options: options, scopeIndex: 0) + ">"
-        case .typedArray(let type):
-            return "GodotArray" +
-                "<" + type._syntax(options: options, scopeIndex: 0) + ">"
-        case .optional(let instanceType):
-            return instanceType._syntax(options: options, scopeIndex: scopeIndex) + "?"
-        case .varargs(let type):
-            return type._syntax(options: options, scopeIndex: scopeIndex) + "..."
+            let genericSyntax = genericType._syntax(options: options, scopeIndex: 0)
+            return "\(typeSyntax)<\(genericSyntax)>"
+        case .optional(let type):
+            return "\(type._syntax(options: options, scopeIndex: scopeIndex))?"
         case .tuple(let types):
-            return "(" + types.map { $0._syntax(options: options, scopeIndex: scopeIndex) }
+            return "(" + types.lazy
+                .map { $0._syntax(options: options, scopeIndex: scopeIndex) }
                 .joined(separator: ", ") + ")"
         case .immutable(let type):
             return type._syntax(options: options.union(.immutable), scopeIndex: scopeIndex)
         case .rawPointer:
             return "UnsafeRawPointer"
         case .typedPointer(let type):
-            let pointedType = type._syntax(options: options, scopeIndex: scopeIndex)
             let isImmutable = options.contains(.immutable)
-            if pointedType == "void" {
+            if type == .base("void") {
                 return isImmutable ? "UnsafeRawPointer" : "UnsafeMutableRawPointer"
             } else {
-                let pointerString = isImmutable ? "UnsafePointer" : "UnsafeMutablePointer"
-                return pointerString + "<" + pointedType + ">"
+                return GodotType.generic(
+                    type: .base(isImmutable ? "UnsafePointer" : "UnsafeMutablePointer"),
+                    genericType: type
+                )._syntax(options: options, scopeIndex: scopeIndex)
             }
         }
     }
     
     /// Returns the syntax for instantiating the type and returning it.
     ///
-    /// Use the `bodyBuilder` parameter to use the instantiated variable name.
-    @CodeBlockItemListBuilder
+    /// Use the `body` parameter to use the instantiated variable name.
     func instantiationSyntax(
         options: GodotTypeSyntaxOptions = [],
-        prefix: String = "",
-        @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
-    ) throws -> CodeBlockItemListSyntax {
-        let variableName = "__temporary"
+        prefix: Syntax = "",
+        @SyntaxGroupBuilder body: (Syntax) throws -> SyntaxGroup
+    ) rethrows -> Syntax {
+        let variableName: Syntax = "__temporary"
         
-        """
-        \(raw: prefix)fromInitializingTransferrableUnsafeRawPointer { \(raw: variableName) in
-            \(try bodyBuilder(variableName))
+        return """
+        \(prefix)fromInitializingTransferrableUnsafeRawPointer { \(variableName) in
+            \(try body(variableName))
         }
         """
     }
@@ -598,22 +577,22 @@ extension GodotType {
     ///   - mutability: The mutability of the instance.
     ///   - accessThroughVariantStorage: A Boolean value indicating whether
     ///   the pointer is accessed through a variant storage.
-    ///   - bodyBuilder: The content syntax to access the pointer.
+    ///   - body: The content syntax to access the pointer.
     ///   Use the value provided inside the closure to retrieve the pointer name.
     func pointerAccessSyntax(
         instanceName: String,
         options: GodotTypeSyntaxOptions,
         mutability: Mutability,
         accessThroughVariantStorage: Bool = false,
-        @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
-    ) throws -> CodeBlockItemListSyntax {
-        let pointerName = "__ptr_" + instanceName.backticksRemoved()
-        let newInstanceName = instanceName.backticksKeyword()
+        @SyntaxGroupBuilder body: (Syntax) throws -> SyntaxGroup
+    ) rethrows -> Syntax {
+        let pointerName: Syntax = "__ptr_\(instanceName.backticksRemoved())"
+        let newInstanceName: Syntax = "\(instanceName.backticksKeyword())"
         
         if isPointer {
-            return try bodyBuilder(newInstanceName)
+            return try body(newInstanceName).syntax()
         } else {
-            let call = if accessThroughVariantStorage {
+            let call: Syntax = if accessThroughVariantStorage {
                 "Godot.Variant.withStorageUnsafeRawPointer(to: \(newInstanceName))"
             } else {
                 switch mutability {
@@ -626,19 +605,18 @@ extension GodotType {
                 }
             }
             
-            let finalPointerName = if !accessThroughVariantStorage && mutability == .constMutablePointer {
-                "UnsafeMutableRawPointer(mutating: \(pointerName))"
+            let finalPointerName: Syntax
+            if !accessThroughVariantStorage && mutability == .constMutablePointer {
+                finalPointerName = "UnsafeMutableRawPointer(mutating: \(pointerName))"
             } else {
-                pointerName
+                finalPointerName = pointerName
             }
             
-            return try CodeBlockItemListSyntax {
-                """
-                \(raw: call) { \(raw: pointerName) in
-                    \(try bodyBuilder(finalPointerName))
-                }
-                """
+            return """
+            \(call) { \(pointerName) in
+                \(try body(finalPointerName))
             }
+            """
         }
     }
     
@@ -652,16 +630,15 @@ extension GodotType {
     ///   - mutability: The mutability of the instance.
     ///   - accessThroughVariantStorage: A Boolean value indicating whether
     ///   the pointer is accessed through a variant storage.
-    ///   - bodyBuilder: The content syntax to access the pointer.
+    ///   - body: The content syntax to access the pointer.
     ///   Use the value provided inside the closure to retrieve the pointer name.
-    @CodeBlockItemListBuilder
     func argumentPointerAccessSyntax(
         instanceName: String,
         options: GodotTypeSyntaxOptions,
         mutability: Mutability,
         accessThroughVariantStorage: Bool = false,
-        @CodeBlockItemListBuilder bodyBuilder: (String) throws -> CodeBlockItemListSyntax
-    ) throws -> CodeBlockItemListSyntax {
+        @SyntaxGroupBuilder body: (Syntax) throws -> SyntaxGroup
+    ) rethrows -> Syntax {
         try pointerAccessSyntax(
             instanceName: instanceName,
             options: options,
@@ -669,22 +646,22 @@ extension GodotType {
             accessThroughVariantStorage: accessThroughVariantStorage
         ) { pointerName in
             if isGodotClass && !accessThroughVariantStorage {
-                let newPointerName = "_ptr_" + pointerName
+                let newPointerName: Syntax = "_ptr_\(pointerName)"
                 
                 """
-                withUnsafePointer(to: \(raw: pointerName)) { \(raw: newPointerName) in
-                    \(try bodyBuilder(newPointerName))
+                withUnsafePointer(to: \(pointerName)) { \(newPointerName) in
+                    \(try body(newPointerName))
                 }
                 """
             } else {
-                try bodyBuilder(pointerName)
+                try body(pointerName).syntax()
             }
         }
     }
 }
 
 /// The godot native variant enum value: `GDEXTENSION_VARIANT_TYPE_<type>`.
-private let typeToGodotVariantType: [GodotType : String] = [
+private let typeToGodotVariantType: [GodotType : Syntax] = [
     .nil: "GDEXTENSION_VARIANT_TYPE_NIL",
     .variant: "GDEXTENSION_VARIANT_TYPE_NIL",
     .bool: "GDEXTENSION_VARIANT_TYPE_BOOL",
@@ -739,7 +716,7 @@ extension GodotType {
     }
     
     static var variantStorage: GodotType {
-        .scope(scopeType: .variant, type: .base("Storage"))
+        .scope("Variant", type: .base("Storage"))
     }
     
     static var `nil`: GodotType {

@@ -10,19 +10,20 @@ open class NinePatchRect: Control {
         case stretch = 0
         case tile = 1
         case tileFit = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Stretch", 0),
-            ("Tile", 1),
-            ("Tile Fit", 2),]
+               ("Stretch", 0),
+               ("Tile", 1),
+               ("Tile Fit", 2),
+            ]
         }
     }
-
+    
+    
     public func textureChanged() {
         _ = textureChangedSignal.emit()
     }
-
     public lazy var textureChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "texture_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -37,15 +38,15 @@ open class NinePatchRect: Control {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
-        }
+            GodotStringName(swiftStaticString: "set_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
+            }
         }
     }()
-
+    
     private func __setTexture(
         _ texture: Godot.Texture2D?
     ) {
@@ -64,15 +65,15 @@ open class NinePatchRect: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
-        }
+            GodotStringName(swiftStaticString: "get_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
+            }
         }
     }()
-
+    
     private func __getTexture() -> Godot.Texture2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -85,15 +86,15 @@ open class NinePatchRect: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_set_patch_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_patch_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 437707142)!
-        }
+            GodotStringName(swiftStaticString: "set_patch_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 437707142)!
+            }
         }
     }()
-
+    
     public func setPatchMargin(
         _ margin: Godot.Side,
         value: Int32
@@ -113,15 +114,15 @@ open class NinePatchRect: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_get_patch_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_patch_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1983885014)!
-        }
+            GodotStringName(swiftStaticString: "get_patch_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1983885014)!
+            }
         }
     }()
-
+    
     private func __getPatchMargin(
         _ margin: Godot.Side
     ) -> Int32 {
@@ -140,15 +141,15 @@ open class NinePatchRect: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_set_region_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_region_rect").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2046264180)!
-        }
+            GodotStringName(swiftStaticString: "set_region_rect").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2046264180)!
+            }
         }
     }()
-
+    
     private func __setRegionRect(
         _ rect: Godot.Rect2
     ) {
@@ -165,15 +166,15 @@ open class NinePatchRect: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_get_region_rect: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_region_rect").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!
-        }
+            GodotStringName(swiftStaticString: "get_region_rect").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1639390495)!
+            }
         }
     }()
-
+    
     private func __getRegionRect() -> Godot.Rect2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -186,15 +187,15 @@ open class NinePatchRect: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_set_draw_center: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_draw_center").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_draw_center").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setDrawCenter(
         _ drawCenter: Bool
     ) {
@@ -211,15 +212,15 @@ open class NinePatchRect: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_is_draw_center_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_draw_center_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_draw_center_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isDrawCenterEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -232,15 +233,15 @@ open class NinePatchRect: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_set_h_axis_stretch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_h_axis_stretch_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3219608417)!
-        }
+            GodotStringName(swiftStaticString: "set_h_axis_stretch_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3219608417)!
+            }
         }
     }()
-
+    
     private func __setHAxisStretchMode(
         _ mode: Godot.NinePatchRect.AxisStretchMode
     ) {
@@ -257,15 +258,15 @@ open class NinePatchRect: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_get_h_axis_stretch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_h_axis_stretch_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3317113799)!
-        }
+            GodotStringName(swiftStaticString: "get_h_axis_stretch_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3317113799)!
+            }
         }
     }()
-
+    
     private func __getHAxisStretchMode() -> Godot.NinePatchRect.AxisStretchMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -278,15 +279,15 @@ open class NinePatchRect: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_set_v_axis_stretch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_v_axis_stretch_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3219608417)!
-        }
+            GodotStringName(swiftStaticString: "set_v_axis_stretch_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3219608417)!
+            }
         }
     }()
-
+    
     private func __setVAxisStretchMode(
         _ mode: Godot.NinePatchRect.AxisStretchMode
     ) {
@@ -303,15 +304,15 @@ open class NinePatchRect: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_get_v_axis_stretch_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_v_axis_stretch_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3317113799)!
-        }
+            GodotStringName(swiftStaticString: "get_v_axis_stretch_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3317113799)!
+            }
         }
     }()
-
+    
     private func __getVAxisStretchMode() -> Godot.NinePatchRect.AxisStretchMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -324,40 +325,40 @@ open class NinePatchRect: Control {
             }
         }
     }
-
+    
     public var texture: Godot.Texture2D? {
         get {
             __getTexture()
         }
-        set {
+        set(newValue) {
             __setTexture(
                 newValue
             )
         }
     }
-
+    
     public var isDrawCenterEnabled: Bool {
         get {
             __isDrawCenterEnabled()
         }
-        set {
+        set(newValue) {
             __setDrawCenter(
                 newValue
             )
         }
     }
-
+    
     public var regionRect: Godot.Rect2 {
         get {
             __getRegionRect()
         }
-        set {
+        set(newValue) {
             __setRegionRect(
                 newValue
             )
         }
     }
-
+    
     public var patchMarginLeft: Int32 {
         get {
             __getPatchMargin(
@@ -365,7 +366,7 @@ open class NinePatchRect: Control {
             )
         }
     }
-
+    
     public var patchMarginTop: Int32 {
         get {
             __getPatchMargin(
@@ -373,7 +374,7 @@ open class NinePatchRect: Control {
             )
         }
     }
-
+    
     public var patchMarginRight: Int32 {
         get {
             __getPatchMargin(
@@ -381,7 +382,7 @@ open class NinePatchRect: Control {
             )
         }
     }
-
+    
     public var patchMarginBottom: Int32 {
         get {
             __getPatchMargin(
@@ -389,40 +390,37 @@ open class NinePatchRect: Control {
             )
         }
     }
-
+    
     public var hAxisStretchMode: Godot.NinePatchRect.AxisStretchMode {
         get {
             __getHAxisStretchMode()
         }
-        set {
+        set(newValue) {
             __setHAxisStretchMode(
                 newValue
             )
         }
     }
-
+    
     public var vAxisStretchMode: Godot.NinePatchRect.AxisStretchMode {
         get {
             __getVAxisStretchMode()
         }
-        set {
+        set(newValue) {
             __setVAxisStretchMode(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

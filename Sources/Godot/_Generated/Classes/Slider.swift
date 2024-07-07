@@ -6,11 +6,10 @@ import GodotExtensionHeaders
 
 @GodotClass
 open class Slider: Range {
-
+    
     public func dragStarted() {
         _ = dragStartedSignal.emit()
     }
-
     public lazy var dragStartedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "drag_started") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -25,29 +24,19 @@ open class Slider: Range {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct DragEndedSignalInput: Godot.SignalInput {
         public let valueChanged: Bool
-
-        fileprivate init(
-            valueChanged: Bool
-        ) {
+        fileprivate init(valueChanged: Bool) {
             self.valueChanged = valueChanged
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.valueChanged)]
         }
     }
-
-    public func dragEnded(
-        valueChanged: Bool
-    ) {
+    public func dragEnded(valueChanged: Bool) {
         _ = dragEndedSignal.emit(.init(valueChanged: valueChanged))
     }
-
     public lazy var dragEndedSignal: Godot.SignalEmitter<DragEndedSignalInput> = {
         .init(object: self, signalName: "drag_ended") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<DragEndedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -62,15 +51,15 @@ open class Slider: Range {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_set_ticks: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_ticks").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_ticks").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setTicks(
         count: Int32
     ) {
@@ -87,15 +76,15 @@ open class Slider: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_get_ticks: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_ticks").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_ticks").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getTicks() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -108,15 +97,15 @@ open class Slider: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_get_ticks_on_borders: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_ticks_on_borders").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_ticks_on_borders").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getTicksOnBorders() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -129,15 +118,15 @@ open class Slider: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_set_ticks_on_borders: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_ticks_on_borders").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_ticks_on_borders").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setTicksOnBorders(
         ticksOnBorder: Bool
     ) {
@@ -154,15 +143,15 @@ open class Slider: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_set_editable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_editable").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_editable").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setEditable(
         _ editable: Bool
     ) {
@@ -179,15 +168,15 @@ open class Slider: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_is_editable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_editable").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_editable").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isEditable() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -200,15 +189,15 @@ open class Slider: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_set_scrollable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_scrollable").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_scrollable").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setScrollable(
         _ scrollable: Bool
     ) {
@@ -225,15 +214,15 @@ open class Slider: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_is_scrollable: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_scrollable").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_scrollable").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isScrollable() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -246,62 +235,59 @@ open class Slider: Range {
             }
         }
     }
-
+    
     public var isEditable: Bool {
         get {
             __isEditable()
         }
-        set {
+        set(newValue) {
             __setEditable(
                 newValue
             )
         }
     }
-
+    
     public var isScrollable: Bool {
         get {
             __isScrollable()
         }
-        set {
+        set(newValue) {
             __setScrollable(
                 newValue
             )
         }
     }
-
+    
     public var ticks: Int32 {
         get {
             __getTicks()
         }
-        set {
+        set(newValue) {
             __setTicks(
                 count: newValue
             )
         }
     }
-
+    
     public var ticksOnBorders: Bool {
         get {
             __getTicksOnBorders()
         }
-        set {
+        set(newValue) {
             __setTicksOnBorders(
                 ticksOnBorder: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

@@ -20,7 +20,7 @@ public protocol Exposable: Variant.Storable {
     ///
     /// >important: If this instance is not an object, do not use,
     /// in any way, this instance after calling this function.
-    consuming func transferToGodot(
+    func transferToGodot(
         unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
     )
 }

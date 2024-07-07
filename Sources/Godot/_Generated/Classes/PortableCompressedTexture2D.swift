@@ -13,26 +13,27 @@ open class PortableCompressedTexture2D: Texture2D {
         case s3tc = 3
         case etc2 = 4
         case bptc = 5
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Lossless", 0),
-            ("Lossy", 1),
-            ("Basis Universal", 2),
-            ("S3tc", 3),
-            ("Etc2", 4),
-            ("Bptc", 5),]
+               ("Lossless", 0),
+               ("Lossy", 1),
+               ("Basis Universal", 2),
+               ("S3tc", 3),
+               ("Etc2", 4),
+               ("Bptc", 5),
+            ]
         }
     }
-
+    
     internal static var __method_binding_create_from_image: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_from_image").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3679243433)!
-        }
+            GodotStringName(swiftStaticString: "create_from_image").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3679243433)!
+            }
         }
     }()
-
+    
     public func createFromImage(
         _ image: Godot.Image?,
         compressionMode: Godot.PortableCompressedTexture2D.CompressionMode,
@@ -60,15 +61,15 @@ open class PortableCompressedTexture2D: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_format: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_format").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3847873762)!
-        }
+            GodotStringName(swiftStaticString: "get_format").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3847873762)!
+            }
         }
     }()
-
+    
     public func format() -> Godot.Image.Format {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -81,15 +82,15 @@ open class PortableCompressedTexture2D: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_compression_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_compression_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3265612739)!
-        }
+            GodotStringName(swiftStaticString: "get_compression_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3265612739)!
+            }
         }
     }()
-
+    
     public func compressionMode() -> Godot.PortableCompressedTexture2D.CompressionMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -102,15 +103,15 @@ open class PortableCompressedTexture2D: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_size_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_size_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_size_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setSizeOverride(
         size: Godot.Vector2
     ) {
@@ -127,15 +128,15 @@ open class PortableCompressedTexture2D: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_size_override: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_size_override").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_size_override").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getSizeOverride() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -148,15 +149,15 @@ open class PortableCompressedTexture2D: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_keep_compressed_buffer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_keep_compressed_buffer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_keep_compressed_buffer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setKeepCompressedBuffer(
         keep: Bool
     ) {
@@ -173,15 +174,15 @@ open class PortableCompressedTexture2D: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_keeping_compressed_buffer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_keeping_compressed_buffer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_keeping_compressed_buffer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isKeepingCompressedBuffer() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -194,15 +195,15 @@ open class PortableCompressedTexture2D: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_keep_all_compressed_buffers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_keep_all_compressed_buffers").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_keep_all_compressed_buffers").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     static public func setKeepAllCompressedBuffers(
         keep: Bool
     ) {
@@ -217,15 +218,15 @@ open class PortableCompressedTexture2D: Texture2D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_keeping_all_compressed_buffers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_keeping_all_compressed_buffers").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
-        }
+            GodotStringName(swiftStaticString: "is_keeping_all_compressed_buffers").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
+            }
         }
     }()
-
+    
     static public func isKeepingAllCompressedBuffers() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -236,40 +237,37 @@ open class PortableCompressedTexture2D: Texture2D {
             )
         }
     }
-
+    
     public var sizeOverride: Godot.Vector2 {
         get {
             __getSizeOverride()
         }
-        set {
+        set(newValue) {
             __setSizeOverride(
                 size: newValue
             )
         }
     }
-
+    
     public var isKeepingCompressedBuffer: Bool {
         get {
             __isKeepingCompressedBuffer()
         }
-        set {
+        set(newValue) {
             __setKeepCompressedBuffer(
                 keep: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

@@ -12,25 +12,26 @@ open class StreamPeerTLS: StreamPeer {
         case connected = 2
         case error = 3
         case errorHostnameMismatch = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Disconnected", 0),
-            ("Handshaking", 1),
-            ("Connected", 2),
-            ("Error", 3),
-            ("Error Hostname Mismatch", 4),]
+               ("Disconnected", 0),
+               ("Handshaking", 1),
+               ("Connected", 2),
+               ("Error", 3),
+               ("Error Hostname Mismatch", 4),
+            ]
         }
     }
-
+    
     internal static var __method_binding_poll: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "poll").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "poll").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func poll() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -41,15 +42,15 @@ open class StreamPeerTLS: StreamPeer {
             )
         }
     }
-
+    
     internal static var __method_binding_accept_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "accept_stream").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4292689651)!
-        }
+            GodotStringName(swiftStaticString: "accept_stream").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4292689651)!
+            }
         }
     }()
-
+    
     public func acceptStream(
         _ stream: Godot.StreamPeer?,
         serverOptions: Godot.TLSOptions?
@@ -75,15 +76,15 @@ open class StreamPeerTLS: StreamPeer {
             }
         }
     }
-
+    
     internal static var __method_binding_connect_to_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "connect_to_stream").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 57169517)!
-        }
+            GodotStringName(swiftStaticString: "connect_to_stream").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 57169517)!
+            }
         }
     }()
-
+    
     public func connectToStream(
         _ stream: Godot.StreamPeer?,
         commonName: Godot.GodotString,
@@ -112,15 +113,15 @@ open class StreamPeerTLS: StreamPeer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_status: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_status").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1128380576)!
-        }
+            GodotStringName(swiftStaticString: "get_status").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1128380576)!
+            }
         }
     }()
-
+    
     public func status() -> Godot.StreamPeerTLS.Status {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -133,15 +134,15 @@ open class StreamPeerTLS: StreamPeer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_stream").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2741655269)!
-        }
+            GodotStringName(swiftStaticString: "get_stream").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2741655269)!
+            }
         }
     }()
-
+    
     public func stream() -> Godot.StreamPeer? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -154,15 +155,15 @@ open class StreamPeerTLS: StreamPeer {
             }
         }
     }
-
+    
     internal static var __method_binding_disconnect_from_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "disconnect_from_stream").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "disconnect_from_stream").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func disconnectFromStream() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -173,18 +174,15 @@ open class StreamPeerTLS: StreamPeer {
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

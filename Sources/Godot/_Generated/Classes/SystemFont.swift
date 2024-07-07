@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class SystemFont: Font {
     internal static var __method_binding_set_antialiasing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_antialiasing").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1669900)!
-        }
+            GodotStringName(swiftStaticString: "set_antialiasing").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1669900)!
+            }
         }
     }()
-
+    
     private func __setAntialiasing(
         _ antialiasing: Godot.TextServer.FontAntialiasing
     ) {
@@ -30,15 +30,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_get_antialiasing: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_antialiasing").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4262718649)!
-        }
+            GodotStringName(swiftStaticString: "get_antialiasing").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4262718649)!
+            }
         }
     }()
-
+    
     private func __getAntialiasing() -> Godot.TextServer.FontAntialiasing {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -51,15 +51,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_set_generate_mipmaps: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_generate_mipmaps").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_generate_mipmaps").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setGenerateMipmaps(
         _ generateMipmaps: Bool
     ) {
@@ -76,15 +76,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_get_generate_mipmaps: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_generate_mipmaps").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_generate_mipmaps").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getGenerateMipmaps() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -97,15 +97,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_set_allow_system_fallback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_allow_system_fallback").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_allow_system_fallback").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setAllowSystemFallback(
         _ allowSystemFallback: Bool
     ) {
@@ -122,15 +122,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_is_allow_system_fallback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_allow_system_fallback").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_allow_system_fallback").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isAllowSystemFallback() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -143,15 +143,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_set_force_autohinter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_force_autohinter").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_force_autohinter").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setForceAutohinter(
         _ forceAutohinter: Bool
     ) {
@@ -168,15 +168,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_is_force_autohinter: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_force_autohinter").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_force_autohinter").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isForceAutohinter() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -189,15 +189,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_set_hinting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_hinting").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1827459492)!
-        }
+            GodotStringName(swiftStaticString: "set_hinting").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1827459492)!
+            }
         }
     }()
-
+    
     private func __setHinting(
         _ hinting: Godot.TextServer.Hinting
     ) {
@@ -214,15 +214,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_get_hinting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_hinting").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3683214614)!
-        }
+            GodotStringName(swiftStaticString: "get_hinting").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3683214614)!
+            }
         }
     }()
-
+    
     private func __getHinting() -> Godot.TextServer.Hinting {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -235,15 +235,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_set_subpixel_positioning: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_subpixel_positioning").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4225742182)!
-        }
+            GodotStringName(swiftStaticString: "set_subpixel_positioning").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4225742182)!
+            }
         }
     }()
-
+    
     private func __setSubpixelPositioning(
         _ subpixelPositioning: Godot.TextServer.SubpixelPositioning
     ) {
@@ -260,15 +260,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_get_subpixel_positioning: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_subpixel_positioning").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1069238588)!
-        }
+            GodotStringName(swiftStaticString: "get_subpixel_positioning").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1069238588)!
+            }
         }
     }()
-
+    
     private func __getSubpixelPositioning() -> Godot.TextServer.SubpixelPositioning {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -281,15 +281,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_set_multichannel_signed_distance_field: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_multichannel_signed_distance_field").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_multichannel_signed_distance_field").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setMultichannelSignedDistanceField(
         msdf: Bool
     ) {
@@ -306,15 +306,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_is_multichannel_signed_distance_field: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_multichannel_signed_distance_field").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_multichannel_signed_distance_field").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isMultichannelSignedDistanceField() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -327,15 +327,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_set_msdf_pixel_range: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_msdf_pixel_range").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_msdf_pixel_range").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setMsdfPixelRange(
         _ msdfPixelRange: Int32
     ) {
@@ -352,15 +352,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_get_msdf_pixel_range: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_msdf_pixel_range").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_msdf_pixel_range").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getMsdfPixelRange() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -373,15 +373,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_set_msdf_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_msdf_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_msdf_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setMsdfSize(
         _ msdfSize: Int32
     ) {
@@ -398,15 +398,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_get_msdf_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_msdf_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_msdf_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getMsdfSize() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -419,15 +419,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_set_oversampling: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_oversampling").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_oversampling").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setOversampling(
         _ oversampling: Double
     ) {
@@ -444,15 +444,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_get_oversampling: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_oversampling").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_oversampling").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getOversampling() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -465,15 +465,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_get_font_names: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_font_names").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
-        }
+            GodotStringName(swiftStaticString: "get_font_names").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
+            }
         }
     }()
-
+    
     private func __getFontNames() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -486,15 +486,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_set_font_names: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_font_names").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4015028928)!
-        }
+            GodotStringName(swiftStaticString: "set_font_names").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4015028928)!
+            }
         }
     }()
-
+    
     private func __setFontNames(
         _ names: Godot.GodotContiguousArray<GodotString>
     ) {
@@ -511,15 +511,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_get_font_italic: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_font_italic").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_font_italic").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getFontItalic() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -532,15 +532,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_set_font_italic: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_font_italic").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_font_italic").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setFontItalic(
         _ italic: Bool
     ) {
@@ -557,15 +557,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_set_font_weight: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_font_weight").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_font_weight").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func setFontWeight(
         _ weight: Int32
     ) {
@@ -582,15 +582,15 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     internal static var __method_binding_set_font_stretch: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_font_stretch").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_font_stretch").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func setFontStretch(
         _ stretch: Int32
     ) {
@@ -607,150 +607,147 @@ open class SystemFont: Font {
             }
         }
     }
-
+    
     public var fontNames: Godot.GodotContiguousArray<GodotString> {
         get {
             __getFontNames()
         }
-        set {
+        set(newValue) {
             __setFontNames(
                 newValue
             )
         }
     }
-
+    
     public var fontItalic: Bool {
         get {
             __getFontItalic()
         }
-        set {
+        set(newValue) {
             __setFontItalic(
                 newValue
             )
         }
     }
-
+    
     public var antialiasing: Godot.TextServer.FontAntialiasing {
         get {
             __getAntialiasing()
         }
-        set {
+        set(newValue) {
             __setAntialiasing(
                 newValue
             )
         }
     }
-
+    
     public var generateMipmaps: Bool {
         get {
             __getGenerateMipmaps()
         }
-        set {
+        set(newValue) {
             __setGenerateMipmaps(
                 newValue
             )
         }
     }
-
+    
     public var isAllowSystemFallback: Bool {
         get {
             __isAllowSystemFallback()
         }
-        set {
+        set(newValue) {
             __setAllowSystemFallback(
                 newValue
             )
         }
     }
-
+    
     public var isForceAutohinter: Bool {
         get {
             __isForceAutohinter()
         }
-        set {
+        set(newValue) {
             __setForceAutohinter(
                 newValue
             )
         }
     }
-
+    
     public var hinting: Godot.TextServer.Hinting {
         get {
             __getHinting()
         }
-        set {
+        set(newValue) {
             __setHinting(
                 newValue
             )
         }
     }
-
+    
     public var subpixelPositioning: Godot.TextServer.SubpixelPositioning {
         get {
             __getSubpixelPositioning()
         }
-        set {
+        set(newValue) {
             __setSubpixelPositioning(
                 newValue
             )
         }
     }
-
+    
     public var isMultichannelSignedDistanceField: Bool {
         get {
             __isMultichannelSignedDistanceField()
         }
-        set {
+        set(newValue) {
             __setMultichannelSignedDistanceField(
                 msdf: newValue
             )
         }
     }
-
+    
     public var msdfPixelRange: Int32 {
         get {
             __getMsdfPixelRange()
         }
-        set {
+        set(newValue) {
             __setMsdfPixelRange(
                 newValue
             )
         }
     }
-
+    
     public var msdfSize: Int32 {
         get {
             __getMsdfSize()
         }
-        set {
+        set(newValue) {
             __setMsdfSize(
                 newValue
             )
         }
     }
-
+    
     public var oversampling: Double {
         get {
             __getOversampling()
         }
-        set {
+        set(newValue) {
             __setOversampling(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

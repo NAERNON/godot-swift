@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class PhysicsDirectSpaceState3D: Object {
     internal static var __method_binding_intersect_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "intersect_point").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 975173756)!
-        }
+            GodotStringName(swiftStaticString: "intersect_point").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 975173756)!
+            }
         }
     }()
-
+    
     public func intersectPoint(
         parameters: Godot.PhysicsPointQueryParameters3D?,
         maxResults: Int32 = 32
@@ -37,15 +37,15 @@ open class PhysicsDirectSpaceState3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_intersect_ray: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "intersect_ray").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3957970750)!
-        }
+            GodotStringName(swiftStaticString: "intersect_ray").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3957970750)!
+            }
         }
     }()
-
+    
     public func intersectRay(
         parameters: Godot.PhysicsRayQueryParameters3D?
     ) -> Godot.AnyGodotDictionary {
@@ -66,15 +66,15 @@ open class PhysicsDirectSpaceState3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_intersect_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "intersect_shape").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3762137681)!
-        }
+            GodotStringName(swiftStaticString: "intersect_shape").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3762137681)!
+            }
         }
     }()
-
+    
     public func intersectShape(
         parameters: Godot.PhysicsShapeQueryParameters3D?,
         maxResults: Int32 = 32
@@ -98,15 +98,15 @@ open class PhysicsDirectSpaceState3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_cast_motion: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "cast_motion").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1778757334)!
-        }
+            GodotStringName(swiftStaticString: "cast_motion").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1778757334)!
+            }
         }
     }()
-
+    
     public func castMotion(
         parameters: Godot.PhysicsShapeQueryParameters3D?
     ) -> Godot.GodotContiguousArray<Float> {
@@ -127,15 +127,15 @@ open class PhysicsDirectSpaceState3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_collide_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "collide_shape").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3762137681)!
-        }
+            GodotStringName(swiftStaticString: "collide_shape").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3762137681)!
+            }
         }
     }()
-
+    
     public func collideShape(
         parameters: Godot.PhysicsShapeQueryParameters3D?,
         maxResults: Int32 = 32
@@ -159,15 +159,15 @@ open class PhysicsDirectSpaceState3D: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_rest_info: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_rest_info").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1376751592)!
-        }
+            GodotStringName(swiftStaticString: "get_rest_info").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1376751592)!
+            }
         }
     }()
-
+    
     public func restInfo(
         parameters: Godot.PhysicsShapeQueryParameters3D?
     ) -> Godot.AnyGodotDictionary {
@@ -188,18 +188,15 @@ open class PhysicsDirectSpaceState3D: Object {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

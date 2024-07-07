@@ -11,24 +11,25 @@ open class VisualShaderNodeParameter: VisualShaderNode {
         case global = 1
         case instance = 2
         case max = 3
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("None", 0),
-            ("Global", 1),
-            ("Instance", 2),
-            ("Max", 3),]
+               ("None", 0),
+               ("Global", 1),
+               ("Instance", 2),
+               ("Max", 3),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_parameter_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_parameter_name").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_parameter_name").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setParameterName(
         _ name: Godot.GodotString
     ) {
@@ -45,15 +46,15 @@ open class VisualShaderNodeParameter: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_parameter_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_parameter_name").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_parameter_name").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getParameterName() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -66,15 +67,15 @@ open class VisualShaderNodeParameter: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_set_qualifier: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_qualifier").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1276489447)!
-        }
+            GodotStringName(swiftStaticString: "set_qualifier").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1276489447)!
+            }
         }
     }()
-
+    
     private func __setQualifier(
         _ qualifier: Godot.VisualShaderNodeParameter.Qualifier
     ) {
@@ -91,15 +92,15 @@ open class VisualShaderNodeParameter: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_qualifier: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_qualifier").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3558406205)!
-        }
+            GodotStringName(swiftStaticString: "get_qualifier").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3558406205)!
+            }
         }
     }()
-
+    
     private func __getQualifier() -> Godot.VisualShaderNodeParameter.Qualifier {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -112,40 +113,37 @@ open class VisualShaderNodeParameter: VisualShaderNode {
             }
         }
     }
-
+    
     public var parameterName: Godot.GodotString {
         get {
             __getParameterName()
         }
-        set {
+        set(newValue) {
             __setParameterName(
                 newValue
             )
         }
     }
-
+    
     public var qualifier: Godot.VisualShaderNodeParameter.Qualifier {
         get {
             __getQualifier()
         }
-        set {
+        set(newValue) {
             __setQualifier(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

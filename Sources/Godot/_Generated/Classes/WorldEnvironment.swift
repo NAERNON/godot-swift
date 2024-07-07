@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class WorldEnvironment: Node {
     internal static var __method_binding_set_environment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_environment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4143518816)!
-        }
+            GodotStringName(swiftStaticString: "set_environment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4143518816)!
+            }
         }
     }()
-
+    
     private func __setEnvironment(
         env: Godot.Environment?
     ) {
@@ -32,15 +32,15 @@ open class WorldEnvironment: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_environment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_environment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3082064660)!
-        }
+            GodotStringName(swiftStaticString: "get_environment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3082064660)!
+            }
         }
     }()
-
+    
     private func __getEnvironment() -> Godot.Environment? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -53,15 +53,15 @@ open class WorldEnvironment: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_camera_attributes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_camera_attributes").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2817810567)!
-        }
+            GodotStringName(swiftStaticString: "set_camera_attributes").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2817810567)!
+            }
         }
     }()
-
+    
     private func __setCameraAttributes(
         _ cameraAttributes: Godot.CameraAttributes?
     ) {
@@ -80,15 +80,15 @@ open class WorldEnvironment: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_camera_attributes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_camera_attributes").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3921283215)!
-        }
+            GodotStringName(swiftStaticString: "get_camera_attributes").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3921283215)!
+            }
         }
     }()
-
+    
     private func __getCameraAttributes() -> Godot.CameraAttributes? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -101,40 +101,37 @@ open class WorldEnvironment: Node {
             }
         }
     }
-
+    
     public var environment: Godot.Environment? {
         get {
             __getEnvironment()
         }
-        set {
+        set(newValue) {
             __setEnvironment(
                 env: newValue
             )
         }
     }
-
+    
     public var cameraAttributes: Godot.CameraAttributes? {
         get {
             __getCameraAttributes()
         }
-        set {
+        set(newValue) {
             __setCameraAttributes(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class RDPipelineMultisampleState: RefCounted {
     internal static var __method_binding_set_sample_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_sample_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3774171498)!
-        }
+            GodotStringName(swiftStaticString: "set_sample_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3774171498)!
+            }
         }
     }()
-
+    
     private func __setSampleCount(
         pMember: Godot.RenderingDevice.TextureSamples
     ) {
@@ -30,15 +30,15 @@ open class RDPipelineMultisampleState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_sample_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_sample_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 407791724)!
-        }
+            GodotStringName(swiftStaticString: "get_sample_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 407791724)!
+            }
         }
     }()
-
+    
     private func __getSampleCount() -> Godot.RenderingDevice.TextureSamples {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -51,15 +51,15 @@ open class RDPipelineMultisampleState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_enable_sample_shading: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_enable_sample_shading").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_enable_sample_shading").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setEnableSampleShading(
         pMember: Bool
     ) {
@@ -76,15 +76,15 @@ open class RDPipelineMultisampleState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_enable_sample_shading: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_enable_sample_shading").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_enable_sample_shading").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getEnableSampleShading() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -97,15 +97,15 @@ open class RDPipelineMultisampleState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_min_sample_shading: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_min_sample_shading").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_min_sample_shading").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setMinSampleShading(
         pMember: Double
     ) {
@@ -122,15 +122,15 @@ open class RDPipelineMultisampleState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_min_sample_shading: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_min_sample_shading").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_min_sample_shading").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getMinSampleShading() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -143,15 +143,15 @@ open class RDPipelineMultisampleState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_enable_alpha_to_coverage: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_enable_alpha_to_coverage").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_enable_alpha_to_coverage").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setEnableAlphaToCoverage(
         pMember: Bool
     ) {
@@ -168,15 +168,15 @@ open class RDPipelineMultisampleState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_enable_alpha_to_coverage: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_enable_alpha_to_coverage").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_enable_alpha_to_coverage").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getEnableAlphaToCoverage() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -189,15 +189,15 @@ open class RDPipelineMultisampleState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_enable_alpha_to_one: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_enable_alpha_to_one").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_enable_alpha_to_one").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setEnableAlphaToOne(
         pMember: Bool
     ) {
@@ -214,15 +214,15 @@ open class RDPipelineMultisampleState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_enable_alpha_to_one: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_enable_alpha_to_one").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_enable_alpha_to_one").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getEnableAlphaToOne() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -235,15 +235,15 @@ open class RDPipelineMultisampleState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_sample_masks: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_sample_masks").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
-        }
+            GodotStringName(swiftStaticString: "set_sample_masks").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
+            }
         }
     }()
-
+    
     private func __setSampleMasks(
         _ masks: Godot.GodotArray<Int>
     ) {
@@ -260,15 +260,15 @@ open class RDPipelineMultisampleState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_sample_masks: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_sample_masks").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
-        }
+            GodotStringName(swiftStaticString: "get_sample_masks").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3995934104)!
+            }
         }
     }()
-
+    
     private func __getSampleMasks() -> Godot.GodotArray<Int> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -281,84 +281,81 @@ open class RDPipelineMultisampleState: RefCounted {
             }
         }
     }
-
+    
     public var sampleCount: Godot.RenderingDevice.TextureSamples {
         get {
             __getSampleCount()
         }
-        set {
+        set(newValue) {
             __setSampleCount(
                 pMember: newValue
             )
         }
     }
-
+    
     public var enableSampleShading: Bool {
         get {
             __getEnableSampleShading()
         }
-        set {
+        set(newValue) {
             __setEnableSampleShading(
                 pMember: newValue
             )
         }
     }
-
+    
     public var minSampleShading: Double {
         get {
             __getMinSampleShading()
         }
-        set {
+        set(newValue) {
             __setMinSampleShading(
                 pMember: newValue
             )
         }
     }
-
+    
     public var enableAlphaToCoverage: Bool {
         get {
             __getEnableAlphaToCoverage()
         }
-        set {
+        set(newValue) {
             __setEnableAlphaToCoverage(
                 pMember: newValue
             )
         }
     }
-
+    
     public var enableAlphaToOne: Bool {
         get {
             __getEnableAlphaToOne()
         }
-        set {
+        set(newValue) {
             __setEnableAlphaToOne(
                 pMember: newValue
             )
         }
     }
-
+    
     public var sampleMasks: Godot.GodotArray<Int> {
         get {
             __getSampleMasks()
         }
-        set {
+        set(newValue) {
             __setSampleMasks(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

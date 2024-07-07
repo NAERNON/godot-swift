@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class AudioStreamOggVorbis: AudioStream {
     internal static var __method_binding_load_from_buffer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "load_from_buffer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 354904730)!
-        }
+            GodotStringName(swiftStaticString: "load_from_buffer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 354904730)!
+            }
         }
     }()
-
+    
     static public func loadFromBuffer(
         _ buffer: Godot.GodotContiguousArray<UInt8>
     ) -> Godot.AudioStreamOggVorbis? {
@@ -30,15 +30,15 @@ open class AudioStreamOggVorbis: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_load_from_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "load_from_file").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 797568536)!
-        }
+            GodotStringName(swiftStaticString: "load_from_file").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 797568536)!
+            }
         }
     }()
-
+    
     static public func loadFromFile(
         path: Godot.GodotString
     ) -> Godot.AudioStreamOggVorbis? {
@@ -55,15 +55,15 @@ open class AudioStreamOggVorbis: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_set_packet_sequence: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_packet_sequence").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 438882457)!
-        }
+            GodotStringName(swiftStaticString: "set_packet_sequence").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 438882457)!
+            }
         }
     }()
-
+    
     private func __setPacketSequence(
         _ packetSequence: Godot.OggPacketSequence?
     ) {
@@ -82,15 +82,15 @@ open class AudioStreamOggVorbis: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_get_packet_sequence: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_packet_sequence").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2801636033)!
-        }
+            GodotStringName(swiftStaticString: "get_packet_sequence").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2801636033)!
+            }
         }
     }()
-
+    
     private func __getPacketSequence() -> Godot.OggPacketSequence? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -103,15 +103,15 @@ open class AudioStreamOggVorbis: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_set_loop: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_loop").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_loop").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setLoop(
         enable: Bool
     ) {
@@ -128,15 +128,15 @@ open class AudioStreamOggVorbis: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_has_loop: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_loop").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "has_loop").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __hasLoop() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -149,15 +149,15 @@ open class AudioStreamOggVorbis: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_set_loop_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_loop_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_loop_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setLoopOffset(
         seconds: Double
     ) {
@@ -174,15 +174,15 @@ open class AudioStreamOggVorbis: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_get_loop_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_loop_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_loop_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getLoopOffset() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -195,15 +195,15 @@ open class AudioStreamOggVorbis: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_set_bpm: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_bpm").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_bpm").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setBpm(
         _ bpm: Double
     ) {
@@ -220,15 +220,15 @@ open class AudioStreamOggVorbis: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bpm: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bpm").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_bpm").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getBpm() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -241,15 +241,15 @@ open class AudioStreamOggVorbis: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_set_beat_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_beat_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_beat_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setBeatCount(
         _ count: Int32
     ) {
@@ -266,15 +266,15 @@ open class AudioStreamOggVorbis: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_get_beat_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_beat_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_beat_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getBeatCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -287,15 +287,15 @@ open class AudioStreamOggVorbis: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_set_bar_beats: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_bar_beats").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_bar_beats").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setBarBeats(
         count: Int32
     ) {
@@ -312,15 +312,15 @@ open class AudioStreamOggVorbis: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bar_beats: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bar_beats").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_bar_beats").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getBarBeats() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -333,84 +333,81 @@ open class AudioStreamOggVorbis: AudioStream {
             }
         }
     }
-
+    
     public var packetSequence: Godot.OggPacketSequence? {
         get {
             __getPacketSequence()
         }
-        set {
+        set(newValue) {
             __setPacketSequence(
                 newValue
             )
         }
     }
-
+    
     public var bpm: Double {
         get {
             __getBpm()
         }
-        set {
+        set(newValue) {
             __setBpm(
                 newValue
             )
         }
     }
-
+    
     public var beatCount: Int32 {
         get {
             __getBeatCount()
         }
-        set {
+        set(newValue) {
             __setBeatCount(
                 newValue
             )
         }
     }
-
+    
     public var barBeats: Int32 {
         get {
             __getBarBeats()
         }
-        set {
+        set(newValue) {
             __setBarBeats(
                 count: newValue
             )
         }
     }
-
+    
     public var hasLoop: Bool {
         get {
             __hasLoop()
         }
-        set {
+        set(newValue) {
             __setLoop(
                 enable: newValue
             )
         }
     }
-
+    
     public var loopOffset: Double {
         get {
             __getLoopOffset()
         }
-        set {
+        set(newValue) {
             __setLoopOffset(
                 seconds: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

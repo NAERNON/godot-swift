@@ -1,23 +1,19 @@
 import Foundation
-import SwiftSyntax
-import SwiftSyntaxBuilder
 
-/// A `File` represents a Swift file.
-///
-/// Use the ``codeString()`` function to retrieve the code of the file.
+/// A `File` represents a generated Swift file.
 struct File {
     /// The file URL.
     let url: URL
     
     /// The code statements in the file.
-    let code: () throws -> CodeBlockItemListSyntax
+    let content: () throws -> Syntax
     
     init(
         url: URL,
-        @CodeBlockItemListBuilder code: @escaping () throws -> CodeBlockItemListSyntax
+        @SyntaxGroupBuilder content: @escaping () throws -> SyntaxGroup
     ) {
         self.url = url
-        self.code = code
+        self.content = { try content().syntax() }
     }
     
     init(
@@ -27,7 +23,7 @@ struct File {
         source: some FileSource
     ) {
         self.url = url
-        self.code = {
+        self.content = {
             try source.fileCodeContent(for: extensionAPI, with: buildConfiguration)
         }
     }
@@ -43,16 +39,9 @@ extension File {
         url.lastPathComponent
     }
     
-    /// The source file syntax.
-    func syntax() throws -> SourceFileSyntax {
-        try SourceFileSyntax {
-            try code()
-        }
-    }
-    
     /// The final formatted code.
     func codeString() throws -> String {
-        let syntax = try File.SyntaxRewriter().rewrite(syntax())
+        let syntax = try content().formatted()
         
         return """
         //
@@ -60,8 +49,7 @@ extension File {
         //
         
         
-        """ +
-        syntax.formatted().description
+        """ + syntax
     }
     
     /// Writes the code data to the file URL.

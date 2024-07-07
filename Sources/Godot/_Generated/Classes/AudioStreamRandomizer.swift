@@ -10,23 +10,24 @@ open class AudioStreamRandomizer: AudioStream {
         case randomNoRepeats = 0
         case random = 1
         case sequential = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Random No Repeats", 0),
-            ("Random", 1),
-            ("Sequential", 2),]
+               ("Random No Repeats", 0),
+               ("Random", 1),
+               ("Sequential", 2),
+            ]
         }
     }
-
+    
     internal static var __method_binding_add_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_stream").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1892018854)!
-        }
+            GodotStringName(swiftStaticString: "add_stream").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1892018854)!
+            }
         }
     }()
-
+    
     public func addStream(
         index: Int32,
         stream: Godot.AudioStream?,
@@ -51,15 +52,15 @@ open class AudioStreamRandomizer: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_move_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "move_stream").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
-        }
+            GodotStringName(swiftStaticString: "move_stream").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3937882851)!
+            }
         }
     }()
-
+    
     public func moveStream(
         indexFrom: Int32,
         indexTo: Int32
@@ -79,15 +80,15 @@ open class AudioStreamRandomizer: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_stream").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "remove_stream").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func removeStream(
         index: Int32
     ) {
@@ -104,15 +105,15 @@ open class AudioStreamRandomizer: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_set_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_stream").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 111075094)!
-        }
+            GodotStringName(swiftStaticString: "set_stream").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 111075094)!
+            }
         }
     }()
-
+    
     public func setStream(
         index: Int32,
         stream: Godot.AudioStream?
@@ -134,15 +135,15 @@ open class AudioStreamRandomizer: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_get_stream: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_stream").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2739380747)!
-        }
+            GodotStringName(swiftStaticString: "get_stream").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2739380747)!
+            }
         }
     }()
-
+    
     public func stream(
         index: Int32
     ) -> Godot.AudioStream? {
@@ -161,15 +162,15 @@ open class AudioStreamRandomizer: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_set_stream_probability_weight: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_stream_probability_weight").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
-        }
+            GodotStringName(swiftStaticString: "set_stream_probability_weight").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1602489585)!
+            }
         }
     }()
-
+    
     public func setStreamProbabilityWeight(
         index: Int32,
         weight: Double
@@ -189,15 +190,15 @@ open class AudioStreamRandomizer: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_get_stream_probability_weight: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_stream_probability_weight").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
-        }
+            GodotStringName(swiftStaticString: "get_stream_probability_weight").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2339986948)!
+            }
         }
     }()
-
+    
     public func streamProbabilityWeight(
         index: Int32
     ) -> Double {
@@ -216,15 +217,15 @@ open class AudioStreamRandomizer: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_set_streams_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_streams_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_streams_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setStreamsCount(
         _ count: Int32
     ) {
@@ -241,15 +242,15 @@ open class AudioStreamRandomizer: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_get_streams_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_streams_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_streams_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getStreamsCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -262,15 +263,15 @@ open class AudioStreamRandomizer: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_set_random_pitch: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_random_pitch").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_random_pitch").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setRandomPitch(
         scale: Double
     ) {
@@ -287,15 +288,15 @@ open class AudioStreamRandomizer: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_get_random_pitch: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_random_pitch").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_random_pitch").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getRandomPitch() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -308,15 +309,15 @@ open class AudioStreamRandomizer: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_set_random_volume_offset_db: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_random_volume_offset_db").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_random_volume_offset_db").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setRandomVolumeOffsetDb(
         dbOffset: Double
     ) {
@@ -333,15 +334,15 @@ open class AudioStreamRandomizer: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_get_random_volume_offset_db: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_random_volume_offset_db").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_random_volume_offset_db").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getRandomVolumeOffsetDb() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -354,15 +355,15 @@ open class AudioStreamRandomizer: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_set_playback_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_playback_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3950967023)!
-        }
+            GodotStringName(swiftStaticString: "set_playback_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3950967023)!
+            }
         }
     }()
-
+    
     private func __setPlaybackMode(
         _ mode: Godot.AudioStreamRandomizer.PlaybackMode
     ) {
@@ -379,15 +380,15 @@ open class AudioStreamRandomizer: AudioStream {
             }
         }
     }
-
+    
     internal static var __method_binding_get_playback_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_playback_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3943055077)!
-        }
+            GodotStringName(swiftStaticString: "get_playback_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3943055077)!
+            }
         }
     }()
-
+    
     private func __getPlaybackMode() -> Godot.AudioStreamRandomizer.PlaybackMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -400,62 +401,59 @@ open class AudioStreamRandomizer: AudioStream {
             }
         }
     }
-
+    
     public var playbackMode: Godot.AudioStreamRandomizer.PlaybackMode {
         get {
             __getPlaybackMode()
         }
-        set {
+        set(newValue) {
             __setPlaybackMode(
                 newValue
             )
         }
     }
-
+    
     public var randomPitch: Double {
         get {
             __getRandomPitch()
         }
-        set {
+        set(newValue) {
             __setRandomPitch(
                 scale: newValue
             )
         }
     }
-
+    
     public var randomVolumeOffsetDb: Double {
         get {
             __getRandomVolumeOffsetDb()
         }
-        set {
+        set(newValue) {
             __setRandomVolumeOffsetDb(
                 dbOffset: newValue
             )
         }
     }
-
+    
     public var streamsCount: Int32 {
         get {
             __getStreamsCount()
         }
-        set {
+        set(newValue) {
             __setStreamsCount(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

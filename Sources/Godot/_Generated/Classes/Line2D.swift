@@ -10,49 +10,52 @@ open class Line2D: Node2D {
         case sharp = 0
         case bevel = 1
         case round = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Sharp", 0),
-            ("Bevel", 1),
-            ("Round", 2),]
+               ("Sharp", 0),
+               ("Bevel", 1),
+               ("Round", 2),
+            ]
         }
     }
-
+    
     public enum LineCapMode: UInt32, GodotEnum {
         case none = 0
         case box = 1
         case round = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("None", 0),
-            ("Box", 1),
-            ("Round", 2),]
+               ("None", 0),
+               ("Box", 1),
+               ("Round", 2),
+            ]
         }
     }
-
+    
     public enum LineTextureMode: UInt32, GodotEnum {
         case none = 0
         case tile = 1
         case stretch = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("None", 0),
-            ("Tile", 1),
-            ("Stretch", 2),]
+               ("None", 0),
+               ("Tile", 1),
+               ("Stretch", 2),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_points").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
-        }
+            GodotStringName(swiftStaticString: "set_points").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
+            }
         }
     }()
-
+    
     private func __setPoints(
         _ points: Godot.GodotContiguousArray<Vector2>
     ) {
@@ -69,15 +72,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_points").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!
-        }
+            GodotStringName(swiftStaticString: "get_points").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!
+            }
         }
     }()
-
+    
     private func __getPoints() -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -90,15 +93,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_point_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_point_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 163021252)!
-        }
+            GodotStringName(swiftStaticString: "set_point_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 163021252)!
+            }
         }
     }()
-
+    
     public func setPointPosition(
         index: Int32,
         position: Godot.Vector2
@@ -118,15 +121,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_point_position: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_position").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2299179447)!
-        }
+            GodotStringName(swiftStaticString: "get_point_position").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2299179447)!
+            }
         }
     }()
-
+    
     public func pointPosition(
         index: Int32
     ) -> Godot.Vector2 {
@@ -145,15 +148,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_point_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_point_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_point_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func pointCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -166,15 +169,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_add_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_point").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2654014372)!
-        }
+            GodotStringName(swiftStaticString: "add_point").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2654014372)!
+            }
         }
     }()
-
+    
     public func addPoint(
         position: Godot.Vector2,
         index: Int32 = -1
@@ -194,15 +197,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_point: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_point").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "remove_point").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func removePoint(
         index: Int32
     ) {
@@ -219,15 +222,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_clear_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear_points").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "clear_points").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func clearPoints() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -238,15 +241,15 @@ open class Line2D: Node2D {
             )
         }
     }
-
+    
     internal static var __method_binding_set_closed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_closed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_closed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setClosed(
         _ closed: Bool
     ) {
@@ -263,15 +266,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_closed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_closed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_closed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isClosed() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -284,15 +287,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_width").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_width").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setWidth(
         _ width: Double
     ) {
@@ -309,15 +312,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_width: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_width").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_width").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getWidth() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -330,15 +333,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_curve").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 270443179)!
-        }
+            GodotStringName(swiftStaticString: "set_curve").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 270443179)!
+            }
         }
     }()
-
+    
     private func __setCurve(
         _ curve: Godot.Curve?
     ) {
@@ -357,15 +360,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_curve").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2460114913)!
-        }
+            GodotStringName(swiftStaticString: "get_curve").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2460114913)!
+            }
         }
     }()
-
+    
     private func __getCurve() -> Godot.Curve? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -378,15 +381,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_default_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_default_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
-        }
+            GodotStringName(swiftStaticString: "set_default_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
+            }
         }
     }()
-
+    
     private func __setDefaultColor(
         _ color: Godot.Color
     ) {
@@ -403,15 +406,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_default_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_default_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
-        }
+            GodotStringName(swiftStaticString: "get_default_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
+            }
         }
     }()
-
+    
     private func __getDefaultColor() -> Godot.Color {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -424,15 +427,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_gradient: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_gradient").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2756054477)!
-        }
+            GodotStringName(swiftStaticString: "set_gradient").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2756054477)!
+            }
         }
     }()
-
+    
     private func __setGradient(
         color: Godot.Gradient?
     ) {
@@ -451,15 +454,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_gradient: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_gradient").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 132272999)!
-        }
+            GodotStringName(swiftStaticString: "get_gradient").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 132272999)!
+            }
         }
     }()
-
+    
     private func __getGradient() -> Godot.Gradient? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -472,15 +475,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
-        }
+            GodotStringName(swiftStaticString: "set_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
+            }
         }
     }()
-
+    
     private func __setTexture(
         _ texture: Godot.Texture2D?
     ) {
@@ -499,15 +502,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
-        }
+            GodotStringName(swiftStaticString: "get_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
+            }
         }
     }()
-
+    
     private func __getTexture() -> Godot.Texture2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -520,15 +523,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1952559516)!
-        }
+            GodotStringName(swiftStaticString: "set_texture_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1952559516)!
+            }
         }
     }()
-
+    
     private func __setTextureMode(
         _ mode: Godot.Line2D.LineTextureMode
     ) {
@@ -545,15 +548,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2341040722)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2341040722)!
+            }
         }
     }()
-
+    
     private func __getTextureMode() -> Godot.Line2D.LineTextureMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -566,15 +569,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_joint_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_joint_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 604292979)!
-        }
+            GodotStringName(swiftStaticString: "set_joint_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 604292979)!
+            }
         }
     }()
-
+    
     private func __setJointMode(
         _ mode: Godot.Line2D.LineJointMode
     ) {
@@ -591,15 +594,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_joint_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_joint_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2546544037)!
-        }
+            GodotStringName(swiftStaticString: "get_joint_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2546544037)!
+            }
         }
     }()
-
+    
     private func __getJointMode() -> Godot.Line2D.LineJointMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -612,15 +615,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_begin_cap_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_begin_cap_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1669024546)!
-        }
+            GodotStringName(swiftStaticString: "set_begin_cap_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1669024546)!
+            }
         }
     }()
-
+    
     private func __setBeginCapMode(
         _ mode: Godot.Line2D.LineCapMode
     ) {
@@ -637,15 +640,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_begin_cap_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_begin_cap_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1107511441)!
-        }
+            GodotStringName(swiftStaticString: "get_begin_cap_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1107511441)!
+            }
         }
     }()
-
+    
     private func __getBeginCapMode() -> Godot.Line2D.LineCapMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -658,15 +661,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_end_cap_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_end_cap_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1669024546)!
-        }
+            GodotStringName(swiftStaticString: "set_end_cap_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1669024546)!
+            }
         }
     }()
-
+    
     private func __setEndCapMode(
         _ mode: Godot.Line2D.LineCapMode
     ) {
@@ -683,15 +686,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_end_cap_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_end_cap_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1107511441)!
-        }
+            GodotStringName(swiftStaticString: "get_end_cap_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1107511441)!
+            }
         }
     }()
-
+    
     private func __getEndCapMode() -> Godot.Line2D.LineCapMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -704,15 +707,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_sharp_limit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_sharp_limit").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_sharp_limit").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setSharpLimit(
         _ limit: Double
     ) {
@@ -729,15 +732,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_sharp_limit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_sharp_limit").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_sharp_limit").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getSharpLimit() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -750,15 +753,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_round_precision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_round_precision").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_round_precision").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setRoundPrecision(
         _ precision: Int32
     ) {
@@ -775,15 +778,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_round_precision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_round_precision").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_round_precision").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getRoundPrecision() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -796,15 +799,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_antialiased: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_antialiased").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_antialiased").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setAntialiased(
         _ antialiased: Bool
     ) {
@@ -821,15 +824,15 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_antialiased: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_antialiased").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_antialiased").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getAntialiased() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -842,172 +845,169 @@ open class Line2D: Node2D {
             }
         }
     }
-
+    
     public var points: Godot.GodotContiguousArray<Vector2> {
         get {
             __getPoints()
         }
-        set {
+        set(newValue) {
             __setPoints(
                 newValue
             )
         }
     }
-
+    
     public var isClosed: Bool {
         get {
             __isClosed()
         }
-        set {
+        set(newValue) {
             __setClosed(
                 newValue
             )
         }
     }
-
+    
     public var width: Double {
         get {
             __getWidth()
         }
-        set {
+        set(newValue) {
             __setWidth(
                 newValue
             )
         }
     }
-
+    
     public var curve: Godot.Curve? {
         get {
             __getCurve()
         }
-        set {
+        set(newValue) {
             __setCurve(
                 newValue
             )
         }
     }
-
+    
     public var defaultColor: Godot.Color {
         get {
             __getDefaultColor()
         }
-        set {
+        set(newValue) {
             __setDefaultColor(
                 newValue
             )
         }
     }
-
+    
     public var gradient: Godot.Gradient? {
         get {
             __getGradient()
         }
-        set {
+        set(newValue) {
             __setGradient(
                 color: newValue
             )
         }
     }
-
+    
     public var texture: Godot.Texture2D? {
         get {
             __getTexture()
         }
-        set {
+        set(newValue) {
             __setTexture(
                 newValue
             )
         }
     }
-
+    
     public var textureMode: Godot.Line2D.LineTextureMode {
         get {
             __getTextureMode()
         }
-        set {
+        set(newValue) {
             __setTextureMode(
                 newValue
             )
         }
     }
-
+    
     public var jointMode: Godot.Line2D.LineJointMode {
         get {
             __getJointMode()
         }
-        set {
+        set(newValue) {
             __setJointMode(
                 newValue
             )
         }
     }
-
+    
     public var beginCapMode: Godot.Line2D.LineCapMode {
         get {
             __getBeginCapMode()
         }
-        set {
+        set(newValue) {
             __setBeginCapMode(
                 newValue
             )
         }
     }
-
+    
     public var endCapMode: Godot.Line2D.LineCapMode {
         get {
             __getEndCapMode()
         }
-        set {
+        set(newValue) {
             __setEndCapMode(
                 newValue
             )
         }
     }
-
+    
     public var sharpLimit: Double {
         get {
             __getSharpLimit()
         }
-        set {
+        set(newValue) {
             __setSharpLimit(
                 newValue
             )
         }
     }
-
+    
     public var roundPrecision: Int32 {
         get {
             __getRoundPrecision()
         }
-        set {
+        set(newValue) {
             __setRoundPrecision(
                 newValue
             )
         }
     }
-
+    
     public var antialiased: Bool {
         get {
             __getAntialiased()
         }
-        set {
+        set(newValue) {
             __setAntialiased(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

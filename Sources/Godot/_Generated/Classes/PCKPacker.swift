@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class PCKPacker: RefCounted {
     internal static var __method_binding_pck_start: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "pck_start").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 508410629)!
-        }
+            GodotStringName(swiftStaticString: "pck_start").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 508410629)!
+            }
         }
     }()
-
+    
     public func pckStart(
         pckName: Godot.GodotString,
         alignment: Int32 = 32,
@@ -41,15 +41,15 @@ open class PCKPacker: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_add_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_file").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2215643711)!
-        }
+            GodotStringName(swiftStaticString: "add_file").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2215643711)!
+            }
         }
     }()
-
+    
     public func addFile(
         pckPath: Godot.GodotString,
         sourcePath: Godot.GodotString,
@@ -74,15 +74,15 @@ open class PCKPacker: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_flush: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "flush").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1633102583)!
-        }
+            GodotStringName(swiftStaticString: "flush").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1633102583)!
+            }
         }
     }()
-
+    
     public func flush(
         verbose: Bool = false
     ) -> Godot.ErrorType {
@@ -101,18 +101,15 @@ open class PCKPacker: RefCounted {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

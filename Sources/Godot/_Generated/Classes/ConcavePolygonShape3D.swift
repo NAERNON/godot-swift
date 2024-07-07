@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class ConcavePolygonShape3D: Shape3D {
     internal static var __method_binding_set_faces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_faces").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 334873810)!
-        }
+            GodotStringName(swiftStaticString: "set_faces").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 334873810)!
+            }
         }
     }()
-
+    
     private func __setFaces(
         _ faces: Godot.GodotContiguousArray<Vector3>
     ) {
@@ -30,15 +30,15 @@ open class ConcavePolygonShape3D: Shape3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_faces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_faces").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 497664490)!
-        }
+            GodotStringName(swiftStaticString: "get_faces").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 497664490)!
+            }
         }
     }()
-
+    
     private func __getFaces() -> Godot.GodotContiguousArray<Vector3> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -51,15 +51,15 @@ open class ConcavePolygonShape3D: Shape3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_backface_collision_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_backface_collision_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_backface_collision_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setBackfaceCollisionEnabled(
         _ enabled: Bool
     ) {
@@ -76,15 +76,15 @@ open class ConcavePolygonShape3D: Shape3D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_backface_collision_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_backface_collision_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_backface_collision_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isBackfaceCollisionEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -97,40 +97,37 @@ open class ConcavePolygonShape3D: Shape3D {
             }
         }
     }
-
+    
     public var faces: Godot.GodotContiguousArray<Vector3> {
         get {
             __getFaces()
         }
-        set {
+        set(newValue) {
             __setFaces(
                 newValue
             )
         }
     }
-
+    
     public var isBackfaceCollisionEnabled: Bool {
         get {
             __isBackfaceCollisionEnabled()
         }
-        set {
+        set(newValue) {
             __setBackfaceCollisionEnabled(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

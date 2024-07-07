@@ -9,14 +9,15 @@ open class CPUParticles2D: Node2D {
     public enum DrawOrder: UInt32, GodotEnum {
         case index = 0
         case lifetime = 1
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Index", 0),
-            ("Lifetime", 1),]
+               ("Index", 0),
+               ("Lifetime", 1),
+            ]
         }
     }
-
+    
     public enum Parameter: UInt32, GodotEnum {
         case initialLinearVelocity = 0
         case angularVelocity = 1
@@ -31,40 +32,42 @@ open class CPUParticles2D: Node2D {
         case animSpeed = 10
         case animOffset = 11
         case max = 12
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Initial Linear Velocity", 0),
-            ("Angular Velocity", 1),
-            ("Orbit Velocity", 2),
-            ("Linear Accel", 3),
-            ("Radial Accel", 4),
-            ("Tangential Accel", 5),
-            ("Damping", 6),
-            ("Angle", 7),
-            ("Scale", 8),
-            ("Hue Variation", 9),
-            ("Anim Speed", 10),
-            ("Anim Offset", 11),
-            ("Max", 12),]
+               ("Initial Linear Velocity", 0),
+               ("Angular Velocity", 1),
+               ("Orbit Velocity", 2),
+               ("Linear Accel", 3),
+               ("Radial Accel", 4),
+               ("Tangential Accel", 5),
+               ("Damping", 6),
+               ("Angle", 7),
+               ("Scale", 8),
+               ("Hue Variation", 9),
+               ("Anim Speed", 10),
+               ("Anim Offset", 11),
+               ("Max", 12),
+            ]
         }
     }
-
+    
     public enum ParticleFlags: UInt32, GodotEnum {
         case alignYToVelocity = 0
         case rotateY = 1
         case disableZ = 2
         case max = 3
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Align Y To Velocity", 0),
-            ("Rotate Y", 1),
-            ("Disable Z", 2),
-            ("Max", 3),]
+               ("Align Y To Velocity", 0),
+               ("Rotate Y", 1),
+               ("Disable Z", 2),
+               ("Max", 3),
+            ]
         }
     }
-
+    
     public enum EmissionShape: UInt32, GodotEnum {
         case point = 0
         case sphere = 1
@@ -73,23 +76,24 @@ open class CPUParticles2D: Node2D {
         case points = 4
         case directedPoints = 5
         case max = 6
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Point", 0),
-            ("Sphere", 1),
-            ("Sphere Surface", 2),
-            ("Rectangle", 3),
-            ("Points", 4),
-            ("Directed Points", 5),
-            ("Max", 6),]
+               ("Point", 0),
+               ("Sphere", 1),
+               ("Sphere Surface", 2),
+               ("Rectangle", 3),
+               ("Points", 4),
+               ("Directed Points", 5),
+               ("Max", 6),
+            ]
         }
     }
-
+    
+    
     public func finished() {
         _ = finishedSignal.emit()
     }
-
     public lazy var finishedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "finished") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -104,15 +108,15 @@ open class CPUParticles2D: Node2D {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_set_emitting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_emitting").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_emitting").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setEmitting(
         _ emitting: Bool
     ) {
@@ -129,15 +133,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_amount: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_amount").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_amount").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setAmount(
         _ amount: Int32
     ) {
@@ -154,15 +158,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_lifetime: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_lifetime").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_lifetime").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setLifetime(
         secs: Double
     ) {
@@ -179,15 +183,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_one_shot: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_one_shot").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_one_shot").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setOneShot(
         enable: Bool
     ) {
@@ -204,15 +208,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_pre_process_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_pre_process_time").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_pre_process_time").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setPreProcessTime(
         secs: Double
     ) {
@@ -229,15 +233,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_explosiveness_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_explosiveness_ratio").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_explosiveness_ratio").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setExplosivenessRatio(
         _ ratio: Double
     ) {
@@ -254,15 +258,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_randomness_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_randomness_ratio").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_randomness_ratio").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setRandomnessRatio(
         _ ratio: Double
     ) {
@@ -279,15 +283,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_lifetime_randomness: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_lifetime_randomness").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_lifetime_randomness").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setLifetimeRandomness(
         random: Double
     ) {
@@ -304,15 +308,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_use_local_coordinates: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_use_local_coordinates").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_use_local_coordinates").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setUseLocalCoordinates(
         enable: Bool
     ) {
@@ -329,15 +333,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_fixed_fps: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_fixed_fps").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_fixed_fps").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setFixedFps(
         _ fps: Int32
     ) {
@@ -354,15 +358,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_fractional_delta: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_fractional_delta").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_fractional_delta").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setFractionalDelta(
         enable: Bool
     ) {
@@ -379,15 +383,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_speed_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_speed_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_speed_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setSpeedScale(
         _ scale: Double
     ) {
@@ -404,15 +408,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_emitting: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_emitting").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_emitting").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isEmitting() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -425,15 +429,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_amount: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_amount").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_amount").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getAmount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -446,15 +450,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_lifetime: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_lifetime").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_lifetime").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getLifetime() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -467,15 +471,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_one_shot: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_one_shot").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_one_shot").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getOneShot() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -488,15 +492,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_pre_process_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_pre_process_time").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_pre_process_time").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getPreProcessTime() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -509,15 +513,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_explosiveness_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_explosiveness_ratio").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_explosiveness_ratio").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getExplosivenessRatio() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -530,15 +534,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_randomness_ratio: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_randomness_ratio").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_randomness_ratio").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getRandomnessRatio() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -551,15 +555,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_lifetime_randomness: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_lifetime_randomness").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_lifetime_randomness").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getLifetimeRandomness() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -572,15 +576,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_use_local_coordinates: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_use_local_coordinates").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_use_local_coordinates").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getUseLocalCoordinates() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -593,15 +597,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_fixed_fps: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_fixed_fps").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_fixed_fps").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getFixedFps() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -614,15 +618,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_fractional_delta: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_fractional_delta").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_fractional_delta").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getFractionalDelta() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -635,15 +639,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_speed_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_speed_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_speed_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getSpeedScale() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -656,15 +660,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_draw_order: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_draw_order").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4183193490)!
-        }
+            GodotStringName(swiftStaticString: "set_draw_order").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4183193490)!
+            }
         }
     }()
-
+    
     private func __setDrawOrder(
         _ order: Godot.CPUParticles2D.DrawOrder
     ) {
@@ -681,15 +685,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_draw_order: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_draw_order").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1668655735)!
-        }
+            GodotStringName(swiftStaticString: "get_draw_order").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1668655735)!
+            }
         }
     }()
-
+    
     private func __getDrawOrder() -> Godot.CPUParticles2D.DrawOrder {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -702,15 +706,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
-        }
+            GodotStringName(swiftStaticString: "set_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
+            }
         }
     }()
-
+    
     private func __setTexture(
         _ texture: Godot.Texture2D?
     ) {
@@ -729,15 +733,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
-        }
+            GodotStringName(swiftStaticString: "get_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
+            }
         }
     }()
-
+    
     private func __getTexture() -> Godot.Texture2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -750,15 +754,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_restart: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "restart").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "restart").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func restart() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -769,15 +773,15 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     internal static var __method_binding_set_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_direction").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_direction").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setDirection(
         _ direction: Godot.Vector2
     ) {
@@ -794,15 +798,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_direction").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_direction").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getDirection() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -815,15 +819,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_spread: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_spread").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_spread").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setSpread(
         _ spread: Double
     ) {
@@ -840,15 +844,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_spread: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_spread").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_spread").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getSpread() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -861,15 +865,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_param_min: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_param_min").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3320615296)!
-        }
+            GodotStringName(swiftStaticString: "set_param_min").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3320615296)!
+            }
         }
     }()
-
+    
     public func setParamMin(
         param: Godot.CPUParticles2D.Parameter,
         value: Double
@@ -889,15 +893,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_param_min: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_param_min").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2038050600)!
-        }
+            GodotStringName(swiftStaticString: "get_param_min").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2038050600)!
+            }
         }
     }()
-
+    
     private func __getParamMin(
         param: Godot.CPUParticles2D.Parameter
     ) -> Double {
@@ -916,15 +920,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_param_max: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_param_max").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3320615296)!
-        }
+            GodotStringName(swiftStaticString: "set_param_max").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3320615296)!
+            }
         }
     }()
-
+    
     public func setParamMax(
         param: Godot.CPUParticles2D.Parameter,
         value: Double
@@ -944,15 +948,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_param_max: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_param_max").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2038050600)!
-        }
+            GodotStringName(swiftStaticString: "get_param_max").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2038050600)!
+            }
         }
     }()
-
+    
     private func __getParamMax(
         param: Godot.CPUParticles2D.Parameter
     ) -> Double {
@@ -971,15 +975,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_param_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_param_curve").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2959350143)!
-        }
+            GodotStringName(swiftStaticString: "set_param_curve").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2959350143)!
+            }
         }
     }()
-
+    
     public func setParamCurve(
         param: Godot.CPUParticles2D.Parameter,
         curve: Godot.Curve?
@@ -1001,15 +1005,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_param_curve: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_param_curve").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2603158474)!
-        }
+            GodotStringName(swiftStaticString: "get_param_curve").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2603158474)!
+            }
         }
     }()
-
+    
     private func __getParamCurve(
         param: Godot.CPUParticles2D.Parameter
     ) -> Godot.Curve? {
@@ -1028,15 +1032,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
-        }
+            GodotStringName(swiftStaticString: "set_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
+            }
         }
     }()
-
+    
     private func __setColor(
         _ color: Godot.Color
     ) {
@@ -1053,15 +1057,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
-        }
+            GodotStringName(swiftStaticString: "get_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
+            }
         }
     }()
-
+    
     private func __getColor() -> Godot.Color {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1074,15 +1078,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_color_ramp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_color_ramp").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2756054477)!
-        }
+            GodotStringName(swiftStaticString: "set_color_ramp").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2756054477)!
+            }
         }
     }()
-
+    
     private func __setColorRamp(
         _ ramp: Godot.Gradient?
     ) {
@@ -1101,15 +1105,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_color_ramp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_color_ramp").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 132272999)!
-        }
+            GodotStringName(swiftStaticString: "get_color_ramp").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 132272999)!
+            }
         }
     }()
-
+    
     private func __getColorRamp() -> Godot.Gradient? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1122,15 +1126,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_color_initial_ramp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_color_initial_ramp").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2756054477)!
-        }
+            GodotStringName(swiftStaticString: "set_color_initial_ramp").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2756054477)!
+            }
         }
     }()
-
+    
     private func __setColorInitialRamp(
         _ ramp: Godot.Gradient?
     ) {
@@ -1149,15 +1153,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_color_initial_ramp: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_color_initial_ramp").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 132272999)!
-        }
+            GodotStringName(swiftStaticString: "get_color_initial_ramp").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 132272999)!
+            }
         }
     }()
-
+    
     private func __getColorInitialRamp() -> Godot.Gradient? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1170,15 +1174,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_particle_flag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_particle_flag").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4178137949)!
-        }
+            GodotStringName(swiftStaticString: "set_particle_flag").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4178137949)!
+            }
         }
     }()
-
+    
     public func setParticleFlag(
         _ particleFlag: Godot.CPUParticles2D.ParticleFlags,
         enable: Bool
@@ -1198,15 +1202,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_particle_flag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_particle_flag").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2829976507)!
-        }
+            GodotStringName(swiftStaticString: "get_particle_flag").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2829976507)!
+            }
         }
     }()
-
+    
     private func __getParticleFlag(
         _ particleFlag: Godot.CPUParticles2D.ParticleFlags
     ) -> Bool {
@@ -1225,15 +1229,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_emission_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_emission_shape").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 393763892)!
-        }
+            GodotStringName(swiftStaticString: "set_emission_shape").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 393763892)!
+            }
         }
     }()
-
+    
     private func __setEmissionShape(
         _ shape: Godot.CPUParticles2D.EmissionShape
     ) {
@@ -1250,15 +1254,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_emission_shape: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_emission_shape").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740246024)!
-        }
+            GodotStringName(swiftStaticString: "get_emission_shape").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740246024)!
+            }
         }
     }()
-
+    
     private func __getEmissionShape() -> Godot.CPUParticles2D.EmissionShape {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1271,15 +1275,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_emission_sphere_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_emission_sphere_radius").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_emission_sphere_radius").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setEmissionSphereRadius(
         _ radius: Double
     ) {
@@ -1296,15 +1300,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_emission_sphere_radius: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_emission_sphere_radius").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_emission_sphere_radius").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getEmissionSphereRadius() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1317,15 +1321,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_emission_rect_extents: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_emission_rect_extents").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_emission_rect_extents").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setEmissionRectExtents(
         _ extents: Godot.Vector2
     ) {
@@ -1342,15 +1346,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_emission_rect_extents: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_emission_rect_extents").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_emission_rect_extents").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getEmissionRectExtents() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1363,15 +1367,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_emission_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_emission_points").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
-        }
+            GodotStringName(swiftStaticString: "set_emission_points").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
+            }
         }
     }()
-
+    
     private func __setEmissionPoints(
         array: Godot.GodotContiguousArray<Vector2>
     ) {
@@ -1388,15 +1392,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_emission_points: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_emission_points").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!
-        }
+            GodotStringName(swiftStaticString: "get_emission_points").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!
+            }
         }
     }()
-
+    
     private func __getEmissionPoints() -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1409,15 +1413,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_emission_normals: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_emission_normals").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
-        }
+            GodotStringName(swiftStaticString: "set_emission_normals").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1509147220)!
+            }
         }
     }()
-
+    
     private func __setEmissionNormals(
         array: Godot.GodotContiguousArray<Vector2>
     ) {
@@ -1434,15 +1438,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_emission_normals: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_emission_normals").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!
-        }
+            GodotStringName(swiftStaticString: "get_emission_normals").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2961356807)!
+            }
         }
     }()
-
+    
     private func __getEmissionNormals() -> Godot.GodotContiguousArray<Vector2> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1455,15 +1459,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_emission_colors: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_emission_colors").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3546319833)!
-        }
+            GodotStringName(swiftStaticString: "set_emission_colors").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3546319833)!
+            }
         }
     }()
-
+    
     private func __setEmissionColors(
         array: Godot.GodotContiguousArray<Color>
     ) {
@@ -1480,15 +1484,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_emission_colors: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_emission_colors").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1392750486)!
-        }
+            GodotStringName(swiftStaticString: "get_emission_colors").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1392750486)!
+            }
         }
     }()
-
+    
     private func __getEmissionColors() -> Godot.GodotContiguousArray<Color> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1501,15 +1505,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_gravity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_gravity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_gravity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getGravity() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1522,15 +1526,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_gravity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_gravity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_gravity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setGravity(
         accelVec: Godot.Vector2
     ) {
@@ -1547,15 +1551,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_split_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_split_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
-        }
+            GodotStringName(swiftStaticString: "get_split_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
+            }
         }
     }()
-
+    
     private func __getSplitScale() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1568,15 +1572,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_split_scale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_split_scale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_split_scale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setSplitScale(
         _ splitScale: Bool
     ) {
@@ -1593,15 +1597,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_scale_curve_x: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_scale_curve_x").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2460114913)!
-        }
+            GodotStringName(swiftStaticString: "get_scale_curve_x").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2460114913)!
+            }
         }
     }()
-
+    
     private func __getScaleCurveX() -> Godot.Curve? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1614,15 +1618,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_scale_curve_x: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_scale_curve_x").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 270443179)!
-        }
+            GodotStringName(swiftStaticString: "set_scale_curve_x").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 270443179)!
+            }
         }
     }()
-
+    
     private func __setScaleCurveX(
         scaleCurve: Godot.Curve?
     ) {
@@ -1641,15 +1645,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_scale_curve_y: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_scale_curve_y").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2460114913)!
-        }
+            GodotStringName(swiftStaticString: "get_scale_curve_y").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2460114913)!
+            }
         }
     }()
-
+    
     private func __getScaleCurveY() -> Godot.Curve? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1662,15 +1666,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_scale_curve_y: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_scale_curve_y").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 270443179)!
-        }
+            GodotStringName(swiftStaticString: "set_scale_curve_y").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 270443179)!
+            }
         }
     }()
-
+    
     private func __setScaleCurveY(
         scaleCurve: Godot.Curve?
     ) {
@@ -1689,15 +1693,15 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     internal static var __method_binding_convert_from_particles: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "convert_from_particles").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
-        }
+            GodotStringName(swiftStaticString: "convert_from_particles").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
+            }
         }
     }()
-
+    
     public func convertFromParticles(
         _ particles: Godot.Node?
     ) {
@@ -1716,227 +1720,227 @@ open class CPUParticles2D: Node2D {
             }
         }
     }
-
+    
     public var isEmitting: Bool {
         get {
             __isEmitting()
         }
-        set {
+        set(newValue) {
             __setEmitting(
                 newValue
             )
         }
     }
-
+    
     public var amount: Int32 {
         get {
             __getAmount()
         }
-        set {
+        set(newValue) {
             __setAmount(
                 newValue
             )
         }
     }
-
+    
     public var lifetime: Double {
         get {
             __getLifetime()
         }
-        set {
+        set(newValue) {
             __setLifetime(
                 secs: newValue
             )
         }
     }
-
+    
     public var oneShot: Bool {
         get {
             __getOneShot()
         }
-        set {
+        set(newValue) {
             __setOneShot(
                 enable: newValue
             )
         }
     }
-
+    
     public var preProcessTime: Double {
         get {
             __getPreProcessTime()
         }
-        set {
+        set(newValue) {
             __setPreProcessTime(
                 secs: newValue
             )
         }
     }
-
+    
     public var speedScale: Double {
         get {
             __getSpeedScale()
         }
-        set {
+        set(newValue) {
             __setSpeedScale(
                 newValue
             )
         }
     }
-
+    
     public var explosivenessRatio: Double {
         get {
             __getExplosivenessRatio()
         }
-        set {
+        set(newValue) {
             __setExplosivenessRatio(
                 newValue
             )
         }
     }
-
+    
     public var randomnessRatio: Double {
         get {
             __getRandomnessRatio()
         }
-        set {
+        set(newValue) {
             __setRandomnessRatio(
                 newValue
             )
         }
     }
-
+    
     public var lifetimeRandomness: Double {
         get {
             __getLifetimeRandomness()
         }
-        set {
+        set(newValue) {
             __setLifetimeRandomness(
                 random: newValue
             )
         }
     }
-
+    
     public var fixedFps: Int32 {
         get {
             __getFixedFps()
         }
-        set {
+        set(newValue) {
             __setFixedFps(
                 newValue
             )
         }
     }
-
+    
     public var fractionalDelta: Bool {
         get {
             __getFractionalDelta()
         }
-        set {
+        set(newValue) {
             __setFractionalDelta(
                 enable: newValue
             )
         }
     }
-
+    
     public var useLocalCoordinates: Bool {
         get {
             __getUseLocalCoordinates()
         }
-        set {
+        set(newValue) {
             __setUseLocalCoordinates(
                 enable: newValue
             )
         }
     }
-
+    
     public var drawOrder: Godot.CPUParticles2D.DrawOrder {
         get {
             __getDrawOrder()
         }
-        set {
+        set(newValue) {
             __setDrawOrder(
                 newValue
             )
         }
     }
-
+    
     public var texture: Godot.Texture2D? {
         get {
             __getTexture()
         }
-        set {
+        set(newValue) {
             __setTexture(
                 newValue
             )
         }
     }
-
+    
     public var emissionShape: Godot.CPUParticles2D.EmissionShape {
         get {
             __getEmissionShape()
         }
-        set {
+        set(newValue) {
             __setEmissionShape(
                 newValue
             )
         }
     }
-
+    
     public var emissionSphereRadius: Double {
         get {
             __getEmissionSphereRadius()
         }
-        set {
+        set(newValue) {
             __setEmissionSphereRadius(
                 newValue
             )
         }
     }
-
+    
     public var emissionRectExtents: Godot.Vector2 {
         get {
             __getEmissionRectExtents()
         }
-        set {
+        set(newValue) {
             __setEmissionRectExtents(
                 newValue
             )
         }
     }
-
+    
     public var emissionPoints: Godot.GodotContiguousArray<Vector2> {
         get {
             __getEmissionPoints()
         }
-        set {
+        set(newValue) {
             __setEmissionPoints(
                 array: newValue
             )
         }
     }
-
+    
     public var emissionNormals: Godot.GodotContiguousArray<Vector2> {
         get {
             __getEmissionNormals()
         }
-        set {
+        set(newValue) {
             __setEmissionNormals(
                 array: newValue
             )
         }
     }
-
+    
     public var emissionColors: Godot.GodotContiguousArray<Color> {
         get {
             __getEmissionColors()
         }
-        set {
+        set(newValue) {
             __setEmissionColors(
                 array: newValue
             )
         }
     }
-
+    
     public var particleFlagAlignY: Bool {
         get {
             __getParticleFlag(
@@ -1944,40 +1948,40 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var direction: Godot.Vector2 {
         get {
             __getDirection()
         }
-        set {
+        set(newValue) {
             __setDirection(
                 newValue
             )
         }
     }
-
+    
     public var spread: Double {
         get {
             __getSpread()
         }
-        set {
+        set(newValue) {
             __setSpread(
                 newValue
             )
         }
     }
-
+    
     public var gravity: Godot.Vector2 {
         get {
             __getGravity()
         }
-        set {
+        set(newValue) {
             __setGravity(
                 accelVec: newValue
             )
         }
     }
-
+    
     public var initialVelocityMin: Double {
         get {
             __getParamMin(
@@ -1985,7 +1989,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var initialVelocityMax: Double {
         get {
             __getParamMax(
@@ -1993,7 +1997,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var angularVelocityMin: Double {
         get {
             __getParamMin(
@@ -2001,7 +2005,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var angularVelocityMax: Double {
         get {
             __getParamMax(
@@ -2009,7 +2013,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var angularVelocityCurve: Godot.Curve? {
         get {
             __getParamCurve(
@@ -2017,7 +2021,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var orbitVelocityMin: Double {
         get {
             __getParamMin(
@@ -2025,7 +2029,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var orbitVelocityMax: Double {
         get {
             __getParamMax(
@@ -2033,7 +2037,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var orbitVelocityCurve: Godot.Curve? {
         get {
             __getParamCurve(
@@ -2041,7 +2045,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var linearAccelMin: Double {
         get {
             __getParamMin(
@@ -2049,7 +2053,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var linearAccelMax: Double {
         get {
             __getParamMax(
@@ -2057,7 +2061,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var linearAccelCurve: Godot.Curve? {
         get {
             __getParamCurve(
@@ -2065,7 +2069,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var radialAccelMin: Double {
         get {
             __getParamMin(
@@ -2073,7 +2077,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var radialAccelMax: Double {
         get {
             __getParamMax(
@@ -2081,7 +2085,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var radialAccelCurve: Godot.Curve? {
         get {
             __getParamCurve(
@@ -2089,7 +2093,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var tangentialAccelMin: Double {
         get {
             __getParamMin(
@@ -2097,7 +2101,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var tangentialAccelMax: Double {
         get {
             __getParamMax(
@@ -2105,7 +2109,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var tangentialAccelCurve: Godot.Curve? {
         get {
             __getParamCurve(
@@ -2113,7 +2117,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var dampingMin: Double {
         get {
             __getParamMin(
@@ -2121,7 +2125,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var dampingMax: Double {
         get {
             __getParamMax(
@@ -2129,7 +2133,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var dampingCurve: Godot.Curve? {
         get {
             __getParamCurve(
@@ -2137,7 +2141,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var angleMin: Double {
         get {
             __getParamMin(
@@ -2145,7 +2149,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var angleMax: Double {
         get {
             __getParamMax(
@@ -2153,7 +2157,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var angleCurve: Godot.Curve? {
         get {
             __getParamCurve(
@@ -2161,7 +2165,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var scaleAmountMin: Double {
         get {
             __getParamMin(
@@ -2169,7 +2173,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var scaleAmountMax: Double {
         get {
             __getParamMax(
@@ -2177,7 +2181,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var scaleAmountCurve: Godot.Curve? {
         get {
             __getParamCurve(
@@ -2185,73 +2189,73 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var splitScale: Bool {
         get {
             __getSplitScale()
         }
-        set {
+        set(newValue) {
             __setSplitScale(
                 newValue
             )
         }
     }
-
+    
     public var scaleCurveX: Godot.Curve? {
         get {
             __getScaleCurveX()
         }
-        set {
+        set(newValue) {
             __setScaleCurveX(
                 scaleCurve: newValue
             )
         }
     }
-
+    
     public var scaleCurveY: Godot.Curve? {
         get {
             __getScaleCurveY()
         }
-        set {
+        set(newValue) {
             __setScaleCurveY(
                 scaleCurve: newValue
             )
         }
     }
-
+    
     public var color: Godot.Color {
         get {
             __getColor()
         }
-        set {
+        set(newValue) {
             __setColor(
                 newValue
             )
         }
     }
-
+    
     public var colorRamp: Godot.Gradient? {
         get {
             __getColorRamp()
         }
-        set {
+        set(newValue) {
             __setColorRamp(
                 newValue
             )
         }
     }
-
+    
     public var colorInitialRamp: Godot.Gradient? {
         get {
             __getColorInitialRamp()
         }
-        set {
+        set(newValue) {
             __setColorInitialRamp(
                 newValue
             )
         }
     }
-
+    
     public var hueVariationMin: Double {
         get {
             __getParamMin(
@@ -2259,7 +2263,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var hueVariationMax: Double {
         get {
             __getParamMax(
@@ -2267,7 +2271,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var hueVariationCurve: Godot.Curve? {
         get {
             __getParamCurve(
@@ -2275,7 +2279,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var animSpeedMin: Double {
         get {
             __getParamMin(
@@ -2283,7 +2287,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var animSpeedMax: Double {
         get {
             __getParamMax(
@@ -2291,7 +2295,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var animSpeedCurve: Godot.Curve? {
         get {
             __getParamCurve(
@@ -2299,7 +2303,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var animOffsetMin: Double {
         get {
             __getParamMin(
@@ -2307,7 +2311,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var animOffsetMax: Double {
         get {
             __getParamMax(
@@ -2315,7 +2319,7 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     public var animOffsetCurve: Godot.Curve? {
         get {
             __getParamCurve(
@@ -2323,18 +2327,15 @@ open class CPUParticles2D: Node2D {
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

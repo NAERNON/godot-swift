@@ -11,24 +11,25 @@ open class OpenXRAction: Resource {
         case float = 1
         case vector2 = 2
         case pose = 3
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Bool", 0),
-            ("Float", 1),
-            ("Vector2", 2),
-            ("Pose", 3),]
+               ("Bool", 0),
+               ("Float", 1),
+               ("Vector2", 2),
+               ("Pose", 3),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_localized_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_localized_name").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_localized_name").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setLocalizedName(
         _ localizedName: Godot.GodotString
     ) {
@@ -45,15 +46,15 @@ open class OpenXRAction: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_localized_name: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_localized_name").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_localized_name").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getLocalizedName() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -66,15 +67,15 @@ open class OpenXRAction: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_action_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_action_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1675238366)!
-        }
+            GodotStringName(swiftStaticString: "set_action_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1675238366)!
+            }
         }
     }()
-
+    
     private func __setActionType(
         _ actionType: Godot.OpenXRAction.ActionType
     ) {
@@ -91,15 +92,15 @@ open class OpenXRAction: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_action_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_action_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3536542431)!
-        }
+            GodotStringName(swiftStaticString: "get_action_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3536542431)!
+            }
         }
     }()
-
+    
     private func __getActionType() -> Godot.OpenXRAction.ActionType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -112,15 +113,15 @@ open class OpenXRAction: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_toplevel_paths: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_toplevel_paths").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4015028928)!
-        }
+            GodotStringName(swiftStaticString: "set_toplevel_paths").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4015028928)!
+            }
         }
     }()
-
+    
     private func __setToplevelPaths(
         _ toplevelPaths: Godot.GodotContiguousArray<GodotString>
     ) {
@@ -137,15 +138,15 @@ open class OpenXRAction: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_toplevel_paths: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_toplevel_paths").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
-        }
+            GodotStringName(swiftStaticString: "get_toplevel_paths").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
+            }
         }
     }()
-
+    
     private func __getToplevelPaths() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -158,51 +159,48 @@ open class OpenXRAction: Resource {
             }
         }
     }
-
+    
     public var localizedName: Godot.GodotString {
         get {
             __getLocalizedName()
         }
-        set {
+        set(newValue) {
             __setLocalizedName(
                 newValue
             )
         }
     }
-
+    
     public var actionType: Godot.OpenXRAction.ActionType {
         get {
             __getActionType()
         }
-        set {
+        set(newValue) {
             __setActionType(
                 newValue
             )
         }
     }
-
+    
     public var toplevelPaths: Godot.GodotContiguousArray<GodotString> {
         get {
             __getToplevelPaths()
         }
-        set {
+        set(newValue) {
             __setToplevelPaths(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

@@ -6,10 +6,11 @@ import GodotExtensionHeaders
 
 internal enum UInt8GodotContiguousArrayStorageBindings {
     static private var areBindingsLoaded = false
-
+    
     internal static func loadBindings() {
         precondition(!areBindingsLoaded, "GodotContiguousArray<UInt8> bindings are already loaded.")
         areBindingsLoaded = true
+        
         destructor = GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY)!
         constructor = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, 0)!
         constructorFromGodotContiguousArrayUInt8 = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, 1)!
@@ -202,152 +203,80 @@ internal enum UInt8GodotContiguousArrayStorageBindings {
             GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_PACKED_BYTE_ARRAY, __ptr__method_name, 2604460497)!
         }
     }
-
-    static private (set) var destructor: GDExtensionPtrDestructor!
-
-    static private (set) var constructor: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromGodotContiguousArrayUInt8: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromGodotArray: GDExtensionPtrConstructor!
-
-    static private (set) var operatorEqualVariant: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNotEqualVariant: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNot: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorInGodotdictionary: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorInGodotarray: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorEqualGodotcontiguousarrayuint8: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNotEqualGodotcontiguousarrayuint8: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorAddGodotcontiguousarrayuint8: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var indexedSetter: GDExtensionPtrIndexedSetter!
-
-    static private (set) var indexedGetter: GDExtensionPtrIndexedGetter!
-
-    static private (set) var methodSize: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodIsEmpty: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodSet: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodPushBack: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodAppend: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodAppendArray: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodRemoveAt: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodInsert: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodFill: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodResize: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodClear: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodHas: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodReverse: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodSlice: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodSort: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodBsearch: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodDuplicate: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodFind: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodRfind: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodCount: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodGetStringFromAscii: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodGetStringFromUtf8: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodGetStringFromUtf16: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodGetStringFromUtf32: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodGetStringFromWchar: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodHexEncode: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodCompress: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodDecompress: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodDecompressDynamic: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodDecodeU8: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodDecodeS8: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodDecodeU16: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodDecodeS16: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodDecodeU32: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodDecodeS32: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodDecodeU64: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodDecodeS64: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodDecodeHalf: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodDecodeFloat: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodDecodeDouble: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodHasEncodedVar: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodDecodeVar: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodDecodeVarSize: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodToInt32Array: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodToInt64Array: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodToFloat32Array: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodToFloat64Array: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodEncodeU8: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodEncodeS8: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodEncodeU16: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodEncodeS16: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodEncodeU32: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodEncodeS32: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodEncodeU64: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodEncodeS64: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodEncodeHalf: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodEncodeFloat: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodEncodeDouble: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodEncodeVar: GDExtensionPtrBuiltInMethod!
+    
+    static private(set) var destructor: GDExtensionPtrDestructor!
+    static private(set) var constructor: GDExtensionPtrConstructor!
+    static private(set) var constructorFromGodotContiguousArrayUInt8: GDExtensionPtrConstructor!
+    static private(set) var constructorFromGodotArray: GDExtensionPtrConstructor!
+    static private(set) var operatorEqualVariant: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNotEqualVariant: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNot: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorInGodotdictionary: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorInGodotarray: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorEqualGodotcontiguousarrayuint8: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNotEqualGodotcontiguousarrayuint8: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorAddGodotcontiguousarrayuint8: GDExtensionPtrOperatorEvaluator!
+    static private(set) var indexedSetter: GDExtensionPtrIndexedSetter!
+    static private(set) var indexedGetter: GDExtensionPtrIndexedGetter!
+    static private(set) var methodSize: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodIsEmpty: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodSet: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodPushBack: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodAppend: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodAppendArray: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodRemoveAt: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodInsert: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodFill: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodResize: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodClear: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodHas: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodReverse: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodSlice: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodSort: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodBsearch: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodDuplicate: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodFind: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodRfind: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodCount: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodGetStringFromAscii: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodGetStringFromUtf8: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodGetStringFromUtf16: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodGetStringFromUtf32: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodGetStringFromWchar: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodHexEncode: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodCompress: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodDecompress: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodDecompressDynamic: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodDecodeU8: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodDecodeS8: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodDecodeU16: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodDecodeS16: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodDecodeU32: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodDecodeS32: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodDecodeU64: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodDecodeS64: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodDecodeHalf: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodDecodeFloat: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodDecodeDouble: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodHasEncodedVar: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodDecodeVar: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodDecodeVarSize: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodToInt32Array: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodToInt64Array: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodToFloat32Array: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodToFloat64Array: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodEncodeU8: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodEncodeS8: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodEncodeU16: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodEncodeS16: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodEncodeU32: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodEncodeS32: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodEncodeU64: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodEncodeS64: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodEncodeHalf: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodEncodeFloat: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodEncodeDouble: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodEncodeVar: GDExtensionPtrBuiltInMethod!
 }
 
 extension UInt8.GodotContiguousArrayStorage {
@@ -356,7 +285,7 @@ extension UInt8.GodotContiguousArrayStorage {
     ) -> Opaque.Storage {
         Opaque.Storage(size: 16, destructorPtr: useDestructor ? UInt8GodotContiguousArrayStorageBindings.destructor : nil)
     }
-
+    
     static internal func make() -> Opaque.Storage {
         var __temporary: Opaque.Storage = makeOpaqueStorage()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -364,7 +293,7 @@ extension UInt8.GodotContiguousArrayStorage {
         }
         return __temporary
     }
-
+    
     static internal func make(
         from: UInt8.GodotContiguousArrayStorage
     ) -> Opaque.Storage {
@@ -378,7 +307,7 @@ extension UInt8.GodotContiguousArrayStorage {
         }
         return __temporary
     }
-
+    
     static internal func make<Value: Variant.Storable>(
         from: Godot.GodotArray<Value>
     ) -> Opaque.Storage {
@@ -392,7 +321,7 @@ extension UInt8.GodotContiguousArrayStorage {
         }
         return __temporary
     }
-
+    
     static internal func _operatorEqual<Value: Variant.Storable>(
         _ lhs: UInt8.GodotContiguousArrayStorage,
         _ rhs: Value
@@ -405,7 +334,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     static internal func _operatorNotEqual<Value: Variant.Storable>(
         _ lhs: UInt8.GodotContiguousArrayStorage,
         _ rhs: Value
@@ -418,7 +347,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     static internal func _operatorNot(
         _ lhs: UInt8.GodotContiguousArrayStorage
     ) -> Bool {
@@ -428,7 +357,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     static internal func _operatorIn<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ lhs: UInt8.GodotContiguousArrayStorage,
         _ rhs: Godot.GodotDictionary<Value1, Value2>
@@ -441,7 +370,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     static internal func _operatorIn<Value: Variant.Storable>(
         _ lhs: UInt8.GodotContiguousArrayStorage,
         _ rhs: Godot.GodotArray<Value>
@@ -454,7 +383,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     static internal func _operatorEqual(
         _ lhs: UInt8.GodotContiguousArrayStorage,
         _ rhs: UInt8.GodotContiguousArrayStorage
@@ -467,7 +396,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     static internal func _operatorNotEqual(
         _ lhs: UInt8.GodotContiguousArrayStorage,
         _ rhs: UInt8.GodotContiguousArrayStorage
@@ -480,7 +409,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     static internal func _operatorAdd(
         _ lhs: UInt8.GodotContiguousArrayStorage,
         _ rhs: UInt8.GodotContiguousArrayStorage
@@ -493,28 +422,23 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
-    internal func _getValue(
-        at index: GDExtensionInt
-    ) -> Int {
+    
+    internal func _getValue(at index: GDExtensionInt) -> Int {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
                 UInt8GodotContiguousArrayStorageBindings.indexedGetter(__ptr_self, index, __temporary)
             }
         }
     }
-
-    internal func _setValue(
-        _ value: Int,
-        at index: GDExtensionInt
-    ) {
+    
+    internal func _setValue(_ value: Int, at index: GDExtensionInt) {
         withTransferrableUnsafeRawPointer(to: value) { __ptr_value in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
                 UInt8GodotContiguousArrayStorageBindings.indexedSetter(UnsafeMutableRawPointer(mutating: __ptr_self), index, __ptr_value)
             }
         }
     }
-
+    
     internal func _size() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -522,7 +446,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _isEmpty() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -530,7 +454,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _set(
         index: Int,
         value: Int
@@ -545,7 +469,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _pushBack(
         value: Int
     ) -> Bool {
@@ -559,7 +483,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _append(
         value: Int
     ) -> Bool {
@@ -573,7 +497,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _appendArray(
         _ array: UInt8.GodotContiguousArrayStorage
     ) {
@@ -585,7 +509,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _removeAt(
         index: Int
     ) {
@@ -597,7 +521,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _insert(
         atIndex index: Int,
         value: Int
@@ -614,7 +538,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _fill(
         value: Int
     ) {
@@ -626,7 +550,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _resize(
         newSize: Int
     ) -> Int {
@@ -640,13 +564,13 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _clear() {
         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
             UInt8GodotContiguousArrayStorageBindings.methodClear(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
-
+    
     internal func _has(
         value: Int
     ) -> Bool {
@@ -660,13 +584,13 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _reverse() {
         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
             UInt8GodotContiguousArrayStorageBindings.methodReverse(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
-
+    
     internal func _slice(
         begin: Int,
         end: Int = 2147483647
@@ -683,13 +607,13 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _sort() {
         withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
             UInt8GodotContiguousArrayStorageBindings.methodSort(UnsafeMutableRawPointer(mutating: __ptr_self), nil, nil, 0)
         }
     }
-
+    
     internal func _bsearch(
         value: Int,
         before: Bool = true
@@ -706,7 +630,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _duplicate() -> UInt8.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -714,7 +638,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _find(
         value: Int,
         from: Int = 0
@@ -731,7 +655,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _rfind(
         value: Int,
         from: Int = -1
@@ -748,7 +672,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _count(
         value: Int
     ) -> Int {
@@ -762,7 +686,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _stringFromAscii() -> Godot.GodotString {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -770,7 +694,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _stringFromUtf8() -> Godot.GodotString {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -778,7 +702,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _stringFromUtf16() -> Godot.GodotString {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -786,7 +710,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _stringFromUtf32() -> Godot.GodotString {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -794,7 +718,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _stringFromWchar() -> Godot.GodotString {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -802,7 +726,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _hexEncode() -> Godot.GodotString {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -810,7 +734,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _compress(
         compressionMode: Int = 0
     ) -> UInt8.GodotContiguousArrayStorage {
@@ -824,7 +748,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _decompress(
         bufferSize: Int,
         compressionMode: Int = 0
@@ -841,7 +765,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _decompressDynamic(
         maxOutputSize: Int,
         compressionMode: Int = 0
@@ -858,7 +782,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _decodeU8(
         byteOffset: Int
     ) -> Int {
@@ -872,7 +796,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _decodeS8(
         byteOffset: Int
     ) -> Int {
@@ -886,7 +810,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _decodeU16(
         byteOffset: Int
     ) -> Int {
@@ -900,7 +824,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _decodeS16(
         byteOffset: Int
     ) -> Int {
@@ -914,7 +838,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _decodeU32(
         byteOffset: Int
     ) -> Int {
@@ -928,7 +852,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _decodeS32(
         byteOffset: Int
     ) -> Int {
@@ -942,7 +866,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _decodeU64(
         byteOffset: Int
     ) -> Int {
@@ -956,7 +880,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _decodeS64(
         byteOffset: Int
     ) -> Int {
@@ -970,7 +894,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _decodeHalf(
         byteOffset: Int
     ) -> Double {
@@ -984,7 +908,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _decodeFloat(
         byteOffset: Int
     ) -> Double {
@@ -998,7 +922,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _decodeDouble(
         byteOffset: Int
     ) -> Double {
@@ -1012,7 +936,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _hasEncodedVar(
         byteOffset: Int,
         allowObjects: Bool = false
@@ -1029,7 +953,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _decodeVar(
         byteOffset: Int,
         allowObjects: Bool = false
@@ -1046,7 +970,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _decodeVarSize(
         byteOffset: Int,
         allowObjects: Bool = false
@@ -1063,7 +987,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _toInt32Array() -> Int32.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -1071,7 +995,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _toInt64Array() -> Int64.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -1079,7 +1003,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _toFloat32Array() -> Float.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -1087,7 +1011,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _toFloat64Array() -> Double.GodotContiguousArrayStorage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -1095,7 +1019,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _encodeU8(
         byteOffset: Int,
         value: Int
@@ -1110,7 +1034,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _encodeS8(
         byteOffset: Int,
         value: Int
@@ -1125,7 +1049,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _encodeU16(
         byteOffset: Int,
         value: Int
@@ -1140,7 +1064,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _encodeS16(
         byteOffset: Int,
         value: Int
@@ -1155,7 +1079,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _encodeU32(
         byteOffset: Int,
         value: Int
@@ -1170,7 +1094,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _encodeS32(
         byteOffset: Int,
         value: Int
@@ -1185,7 +1109,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _encodeU64(
         byteOffset: Int,
         value: Int
@@ -1200,7 +1124,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _encodeS64(
         byteOffset: Int,
         value: Int
@@ -1215,7 +1139,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _encodeHalf(
         byteOffset: Int,
         value: Double
@@ -1230,7 +1154,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _encodeFloat(
         byteOffset: Int,
         value: Double
@@ -1245,7 +1169,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _encodeDouble(
         byteOffset: Int,
         value: Double
@@ -1260,7 +1184,7 @@ extension UInt8.GodotContiguousArrayStorage {
             }
         }
     }
-
+    
     internal func _encodeVar(
         byteOffset: Int,
         value: borrowing Godot.Variant.Storage,

@@ -1,5 +1,3 @@
-import SwiftSyntax
-import SwiftSyntaxBuilder
 
 /// A representation of a Godot utility function.
 ///
@@ -33,21 +31,21 @@ struct GodotUtilityFunction: Decodable {
 }
 
 extension GodotUtilityFunction {
-    private var ptrIdentifier: String {
+    private var ptrIdentifier: Syntax {
         "__function_binding_\(name)"
     }
     
-    func bindingDeclSyntax() -> DeclSyntax {
+    func bindingDeclSyntax() -> Syntax {
         """
-        private var \(raw: ptrIdentifier): GDExtensionPtrUtilityFunction = {
-            GodotStringName(swiftStaticString: \(literal: name)).withUnsafeOpaquePointer { __ptr__method_name in
-            return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, \(literal: hash))!
+        private var \(ptrIdentifier): GDExtensionPtrUtilityFunction = {
+            GodotStringName(swiftStaticString: "\(name)").withUnsafeOpaquePointer { __ptr__method_name in
+            return GodotExtension.Interface.variantGetPtrUtilityFunction(__ptr__method_name, \(hash))!
             }
         }()
         """
     }
     
-    func declSyntax() throws -> FunctionDeclSyntax {
+    func declSyntax() -> Syntax {
         let options: GodotTypeSyntaxOptions = [.optionalClasses, .floatAsDouble]
         
         let function = GodotFunction(
@@ -63,16 +61,16 @@ extension GodotUtilityFunction {
         )
         .translated()
         
-        return try function.declSyntax(options: options) {
+        return function.declSyntax(options: options) {
             if let returnType = returnType {
-                try returnType.instantiationSyntax(options: options) { instancePtr in
-                    try function.argumentsPackPointerAccessSyntax(options: options) { packName in
-                        "\(raw: ptrIdentifier)(\(raw: instancePtr), \(raw: packName), \(raw: function.argumentsCountSyntax(type: Int32.self)))"
+                returnType.instantiationSyntax(options: options) { instancePtr in
+                    function.argumentsPackPointerAccessSyntax(options: options) { packName in
+                        "\(ptrIdentifier)(\(instancePtr), \(packName), \(function.argumentsCountSyntax(type: Int32.self)))"
                     }
                 }
             } else {
-                try function.argumentsPackPointerAccessSyntax(options: options) { packName in
-                    "\(raw: ptrIdentifier)(nil, \(raw: packName), \(raw: function.argumentsCountSyntax(type: Int32.self)))"
+                function.argumentsPackPointerAccessSyntax(options: options) { packName in
+                    "\(ptrIdentifier)(nil, \(packName), \(function.argumentsCountSyntax(type: Int32.self)))"
                 }
             }
         }

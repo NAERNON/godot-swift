@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class PacketPeerStream: PacketPeer {
     internal static var __method_binding_set_stream_peer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_stream_peer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3281897016)!
-        }
+            GodotStringName(swiftStaticString: "set_stream_peer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3281897016)!
+            }
         }
     }()
-
+    
     private func __setStreamPeer(
         _ peer: Godot.StreamPeer?
     ) {
@@ -32,15 +32,15 @@ open class PacketPeerStream: PacketPeer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_stream_peer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_stream_peer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2741655269)!
-        }
+            GodotStringName(swiftStaticString: "get_stream_peer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2741655269)!
+            }
         }
     }()
-
+    
     private func __getStreamPeer() -> Godot.StreamPeer? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -53,15 +53,15 @@ open class PacketPeerStream: PacketPeer {
             }
         }
     }
-
+    
     internal static var __method_binding_set_input_buffer_max_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_input_buffer_max_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_input_buffer_max_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setInputBufferMaxSize(
         maxSizeBytes: Int32
     ) {
@@ -78,15 +78,15 @@ open class PacketPeerStream: PacketPeer {
             }
         }
     }
-
+    
     internal static var __method_binding_set_output_buffer_max_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_output_buffer_max_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_output_buffer_max_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setOutputBufferMaxSize(
         maxSizeBytes: Int32
     ) {
@@ -103,15 +103,15 @@ open class PacketPeerStream: PacketPeer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_input_buffer_max_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_input_buffer_max_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_input_buffer_max_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getInputBufferMaxSize() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -124,15 +124,15 @@ open class PacketPeerStream: PacketPeer {
             }
         }
     }
-
+    
     internal static var __method_binding_get_output_buffer_max_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_output_buffer_max_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_output_buffer_max_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getOutputBufferMaxSize() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -145,51 +145,48 @@ open class PacketPeerStream: PacketPeer {
             }
         }
     }
-
+    
     public var inputBufferMaxSize: Int32 {
         get {
             __getInputBufferMaxSize()
         }
-        set {
+        set(newValue) {
             __setInputBufferMaxSize(
                 maxSizeBytes: newValue
             )
         }
     }
-
+    
     public var outputBufferMaxSize: Int32 {
         get {
             __getOutputBufferMaxSize()
         }
-        set {
+        set(newValue) {
             __setOutputBufferMaxSize(
                 maxSizeBytes: newValue
             )
         }
     }
-
+    
     public var streamPeer: Godot.StreamPeer? {
         get {
             __getStreamPeer()
         }
-        set {
+        set(newValue) {
             __setStreamPeer(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

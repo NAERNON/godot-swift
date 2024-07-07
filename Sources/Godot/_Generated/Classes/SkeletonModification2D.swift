@@ -9,24 +9,27 @@ open class SkeletonModification2D: Resource {
     open func _execute(
         delta: Double
     ) {
+        
     }
-
+    
     open func _setupModification(
         modificationStack: Godot.SkeletonModificationStack2D?
     ) {
+        
     }
-
+    
     open func _drawEditorGizmo() {
+        
     }
-
+    
     internal static var __method_binding_set_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setEnabled(
         _ enabled: Bool
     ) {
@@ -43,15 +46,15 @@ open class SkeletonModification2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
-        }
+            GodotStringName(swiftStaticString: "get_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
+            }
         }
     }()
-
+    
     private func __getEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -64,15 +67,15 @@ open class SkeletonModification2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_modification_stack: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_modification_stack").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2137761694)!
-        }
+            GodotStringName(swiftStaticString: "get_modification_stack").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2137761694)!
+            }
         }
     }()
-
+    
     public func modificationStack() -> Godot.SkeletonModificationStack2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -85,15 +88,15 @@ open class SkeletonModification2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_is_setup: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_is_setup").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_is_setup").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     public func setIsSetup(
         _ isSetup: Bool
     ) {
@@ -110,15 +113,15 @@ open class SkeletonModification2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_is_setup: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_is_setup").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_is_setup").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isSetup() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -131,15 +134,15 @@ open class SkeletonModification2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_execution_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_execution_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_execution_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setExecutionMode(
         _ executionMode: Int32
     ) {
@@ -156,15 +159,15 @@ open class SkeletonModification2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_execution_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_execution_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_execution_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getExecutionMode() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -177,15 +180,15 @@ open class SkeletonModification2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_clamp_angle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clamp_angle").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1229502682)!
-        }
+            GodotStringName(swiftStaticString: "clamp_angle").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1229502682)!
+            }
         }
     }()
-
+    
     public func clampAngle(
         _ angle: Double,
         min: Double,
@@ -213,15 +216,15 @@ open class SkeletonModification2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_editor_draw_gizmo: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_editor_draw_gizmo").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_editor_draw_gizmo").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     public func setEditorDrawGizmo(
         _ drawGizmo: Bool
     ) {
@@ -238,15 +241,15 @@ open class SkeletonModification2D: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_editor_draw_gizmo: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_editor_draw_gizmo").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_editor_draw_gizmo").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func editorDrawGizmo() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -259,64 +262,63 @@ open class SkeletonModification2D: Resource {
             }
         }
     }
-
+    
     public var enabled: Bool {
         get {
             __getEnabled()
         }
-        set {
+        set(newValue) {
             __setEnabled(
                 newValue
             )
         }
     }
-
+    
     public var executionMode: Int32 {
         get {
             __getExecutionMode()
         }
-        set {
+        set(newValue) {
             __setExecutionMode(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _execute_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<SkeletonModification2D> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._execute(
-            delta: Double.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<SkeletonModification2D>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._execute(
+                    delta: Double.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _setup_modification_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<SkeletonModification2D> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._setupModification(
-            modificationStack: Godot.SkeletonModificationStack2D?.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<SkeletonModification2D>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._setupModification(
+                    modificationStack: Godot.SkeletonModificationStack2D?.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _draw_editor_gizmo_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<SkeletonModification2D> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._drawEditorGizmo()}
+            guard let instancePtr else { return }
+            Unmanaged<SkeletonModification2D>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._drawEditorGizmo()
+        }
         _virtualFunctions = [
             "_execute" : ("_execute", _execute_call),
             "_setupModification" : ("_setup_modification", _setup_modification_call),
             "_drawEditorGizmo" : ("_draw_editor_gizmo", _draw_editor_gizmo_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

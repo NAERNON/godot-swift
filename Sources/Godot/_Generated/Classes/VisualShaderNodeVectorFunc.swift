@@ -41,54 +41,55 @@ open class VisualShaderNodeVectorFunc: VisualShaderNodeVectorBase {
         case trunc = 31
         case oneminus = 32
         case max = 33
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Normalize", 0),
-            ("Saturate", 1),
-            ("Negate", 2),
-            ("Reciprocal", 3),
-            ("Abs", 4),
-            ("Acos", 5),
-            ("Acosh", 6),
-            ("Asin", 7),
-            ("Asinh", 8),
-            ("Atan", 9),
-            ("Atanh", 10),
-            ("Ceil", 11),
-            ("Cos", 12),
-            ("Cosh", 13),
-            ("Degrees", 14),
-            ("Exp", 15),
-            ("Exp2", 16),
-            ("Floor", 17),
-            ("Fract", 18),
-            ("Inverse Sqrt", 19),
-            ("Log", 20),
-            ("Log2", 21),
-            ("Radians", 22),
-            ("Round", 23),
-            ("Roundeven", 24),
-            ("Sign", 25),
-            ("Sin", 26),
-            ("Sinh", 27),
-            ("Sqrt", 28),
-            ("Tan", 29),
-            ("Tanh", 30),
-            ("Trunc", 31),
-            ("Oneminus", 32),
-            ("Max", 33),]
+               ("Normalize", 0),
+               ("Saturate", 1),
+               ("Negate", 2),
+               ("Reciprocal", 3),
+               ("Abs", 4),
+               ("Acos", 5),
+               ("Acosh", 6),
+               ("Asin", 7),
+               ("Asinh", 8),
+               ("Atan", 9),
+               ("Atanh", 10),
+               ("Ceil", 11),
+               ("Cos", 12),
+               ("Cosh", 13),
+               ("Degrees", 14),
+               ("Exp", 15),
+               ("Exp2", 16),
+               ("Floor", 17),
+               ("Fract", 18),
+               ("Inverse Sqrt", 19),
+               ("Log", 20),
+               ("Log2", 21),
+               ("Radians", 22),
+               ("Round", 23),
+               ("Roundeven", 24),
+               ("Sign", 25),
+               ("Sin", 26),
+               ("Sinh", 27),
+               ("Sqrt", 28),
+               ("Tan", 29),
+               ("Tanh", 30),
+               ("Trunc", 31),
+               ("Oneminus", 32),
+               ("Max", 33),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_function: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_function").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 629964457)!
-        }
+            GodotStringName(swiftStaticString: "set_function").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 629964457)!
+            }
         }
     }()
-
+    
     private func __setFunction(
         `func`: Godot.VisualShaderNodeVectorFunc.Function
     ) {
@@ -105,15 +106,15 @@ open class VisualShaderNodeVectorFunc: VisualShaderNodeVectorBase {
             }
         }
     }
-
+    
     internal static var __method_binding_get_function: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_function").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4047776843)!
-        }
+            GodotStringName(swiftStaticString: "get_function").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4047776843)!
+            }
         }
     }()
-
+    
     private func __getFunction() -> Godot.VisualShaderNodeVectorFunc.Function {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -126,29 +127,26 @@ open class VisualShaderNodeVectorFunc: VisualShaderNodeVectorBase {
             }
         }
     }
-
+    
     public var function: Godot.VisualShaderNodeVectorFunc.Function {
         get {
             __getFunction()
         }
-        set {
+        set(newValue) {
             __setFunction(
                 func: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

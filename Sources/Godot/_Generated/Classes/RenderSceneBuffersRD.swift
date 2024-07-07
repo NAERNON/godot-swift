@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class RenderSceneBuffersRD: RenderSceneBuffers {
     internal static var __method_binding_has_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 471820014)!
-        }
+            GodotStringName(swiftStaticString: "has_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 471820014)!
+            }
         }
     }()
-
+    
     public func hasTexture(
         context: Godot.GodotStringName,
         name: Godot.GodotStringName
@@ -35,15 +35,15 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
             }
         }
     }
-
+    
     internal static var __method_binding_create_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3559915770)!
-        }
+            GodotStringName(swiftStaticString: "create_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3559915770)!
+            }
         }
     }()
-
+    
     public func createTexture(
         context: Godot.GodotStringName,
         name: Godot.GodotStringName,
@@ -86,15 +86,15 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
             }
         }
     }
-
+    
     internal static var __method_binding_create_texture_from_format: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_texture_from_format").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3344669382)!
-        }
+            GodotStringName(swiftStaticString: "create_texture_from_format").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3344669382)!
+            }
         }
     }()
-
+    
     public func createTextureFromFormat(
         context: Godot.GodotStringName,
         name: Godot.GodotStringName,
@@ -129,15 +129,15 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
             }
         }
     }
-
+    
     internal static var __method_binding_create_texture_view: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_texture_view").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 283055834)!
-        }
+            GodotStringName(swiftStaticString: "create_texture_view").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 283055834)!
+            }
         }
     }()
-
+    
     public func createTextureView(
         context: Godot.GodotStringName,
         name: Godot.GodotStringName,
@@ -167,15 +167,15 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 750006389)!
-        }
+            GodotStringName(swiftStaticString: "get_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 750006389)!
+            }
         }
     }()
-
+    
     public func texture(
         context: Godot.GodotStringName,
         name: Godot.GodotStringName
@@ -197,15 +197,15 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_format: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_format").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 371461758)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_format").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 371461758)!
+            }
         }
     }()
-
+    
     public func textureFormat(
         context: Godot.GodotStringName,
         name: Godot.GodotStringName
@@ -227,15 +227,15 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_slice: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_slice").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 588440706)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_slice").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 588440706)!
+            }
         }
     }()
-
+    
     public func textureSlice(
         context: Godot.GodotStringName,
         name: Godot.GodotStringName,
@@ -269,15 +269,15 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_slice_view: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_slice_view").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 682451778)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_slice_view").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 682451778)!
+            }
         }
     }()
-
+    
     public func textureSliceView(
         context: Godot.GodotStringName,
         name: Godot.GodotStringName,
@@ -316,15 +316,15 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_slice_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_slice_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2617625368)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_slice_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2617625368)!
+            }
         }
     }()
-
+    
     public func textureSliceSize(
         context: Godot.GodotStringName,
         name: Godot.GodotStringName,
@@ -349,15 +349,15 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
             }
         }
     }
-
+    
     internal static var __method_binding_clear_context: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear_context").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
-        }
+            GodotStringName(swiftStaticString: "clear_context").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
+            }
         }
     }()
-
+    
     public func clearContext(
         _ context: Godot.GodotStringName
     ) {
@@ -374,15 +374,15 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
             }
         }
     }
-
+    
     internal static var __method_binding_get_color_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_color_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "get_color_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func colorTexture() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -395,15 +395,15 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
             }
         }
     }
-
+    
     internal static var __method_binding_get_color_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_color_layer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 937000113)!
-        }
+            GodotStringName(swiftStaticString: "get_color_layer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 937000113)!
+            }
         }
     }()
-
+    
     public func colorLayer(
         _ layer: UInt32
     ) -> Godot.RID {
@@ -422,15 +422,15 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
             }
         }
     }
-
+    
     internal static var __method_binding_get_depth_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_depth_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "get_depth_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func depthTexture() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -443,15 +443,15 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
             }
         }
     }
-
+    
     internal static var __method_binding_get_depth_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_depth_layer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 937000113)!
-        }
+            GodotStringName(swiftStaticString: "get_depth_layer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 937000113)!
+            }
         }
     }()
-
+    
     public func depthLayer(
         _ layer: UInt32
     ) -> Godot.RID {
@@ -470,15 +470,15 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
             }
         }
     }
-
+    
     internal static var __method_binding_get_velocity_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_velocity_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
-        }
+            GodotStringName(swiftStaticString: "get_velocity_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 529393457)!
+            }
         }
     }()
-
+    
     public func velocityTexture() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -491,15 +491,15 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
             }
         }
     }
-
+    
     internal static var __method_binding_get_velocity_layer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_velocity_layer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 937000113)!
-        }
+            GodotStringName(swiftStaticString: "get_velocity_layer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 937000113)!
+            }
         }
     }()
-
+    
     public func velocityLayer(
         _ layer: UInt32
     ) -> Godot.RID {
@@ -518,15 +518,15 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
             }
         }
     }
-
+    
     internal static var __method_binding_get_render_target: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_render_target").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
-        }
+            GodotStringName(swiftStaticString: "get_render_target").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2944877500)!
+            }
         }
     }()
-
+    
     public func renderTarget() -> Godot.RID {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -539,15 +539,15 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
             }
         }
     }
-
+    
     internal static var __method_binding_get_view_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_view_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_view_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func viewCount() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -560,15 +560,15 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
             }
         }
     }
-
+    
     internal static var __method_binding_get_internal_size: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_internal_size").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
-        }
+            GodotStringName(swiftStaticString: "get_internal_size").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3690982128)!
+            }
         }
     }()
-
+    
     public func internalSize() -> Godot.Vector2I {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -581,15 +581,15 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
             }
         }
     }
-
+    
     internal static var __method_binding_get_use_taa: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_use_taa").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_use_taa").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func useTaa() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -602,18 +602,15 @@ open class RenderSceneBuffersRD: RenderSceneBuffers {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

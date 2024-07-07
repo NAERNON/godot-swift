@@ -11,27 +11,30 @@ open class EditorInspectorPlugin: RefCounted {
     ) -> Bool {
         Bool()
     }
-
+    
     open func _parseBegin(
         object: Godot.Object?
     ) {
+        
     }
-
+    
     open func _parseCategory(
         object: Godot.Object?,
         category: Godot.GodotString
     ) {
+        
     }
-
+    
     open func _parseGroup(
         object: Godot.Object?,
         group: Godot.GodotString
     ) {
+        
     }
-
+    
     open func _parseProperty(
         object: Godot.Object?,
-        type: Godot.Variant.StorageType,
+        type: Godot.Variant.GodotType,
         name: Godot.GodotString,
         hintType: Godot.PropertyHint,
         hintString: Godot.GodotString,
@@ -40,20 +43,21 @@ open class EditorInspectorPlugin: RefCounted {
     ) -> Bool {
         Bool()
     }
-
+    
     open func _parseEnd(
         object: Godot.Object?
     ) {
+        
     }
-
+    
     internal static var __method_binding_add_custom_control: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_custom_control").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
-        }
+            GodotStringName(swiftStaticString: "add_custom_control").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1496901182)!
+            }
         }
     }()
-
+    
     public func addCustomControl(
         _ control: Godot.Control?
     ) {
@@ -72,15 +76,15 @@ open class EditorInspectorPlugin: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_add_property_editor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_property_editor").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3406284123)!
-        }
+            GodotStringName(swiftStaticString: "add_property_editor").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3406284123)!
+            }
         }
     }()
-
+    
     public func addPropertyEditor(
         property: Godot.GodotString,
         editor: Godot.Control?,
@@ -105,15 +109,15 @@ open class EditorInspectorPlugin: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_add_property_editor_for_multiple_properties: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_property_editor_for_multiple_properties").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 788598683)!
-        }
+            GodotStringName(swiftStaticString: "add_property_editor_for_multiple_properties").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 788598683)!
+            }
         }
     }()
-
+    
     public func addPropertyEditorForMultipleProperties(
         label: Godot.GodotString,
         properties: Godot.GodotContiguousArray<GodotString>,
@@ -138,71 +142,70 @@ open class EditorInspectorPlugin: RefCounted {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _can_handle_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._canHandle(
-            object: Godot.Object?.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorInspectorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._canHandle(
+                    object: Godot.Object?.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _parse_begin_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._parseBegin(
-            object: Godot.Object?.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorInspectorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._parseBegin(
+                    object: Godot.Object?.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _parse_category_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._parseCategory(
-            object: Godot.Object?.transferFromGodot(unsafePointer: args[0]!),
-            category: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorInspectorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._parseCategory(
+                    object: Godot.Object?.transferFromGodot(unsafePointer: args[0]!),
+                    category: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _parse_group_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._parseGroup(
-            object: Godot.Object?.transferFromGodot(unsafePointer: args[0]!),
-            group: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorInspectorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._parseGroup(
+                    object: Godot.Object?.transferFromGodot(unsafePointer: args[0]!),
+                    group: Godot.GodotString.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _parse_property_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._parseProperty(
-            object: Godot.Object?.transferFromGodot(unsafePointer: args[0]!),
-            type: Godot.Variant.StorageType.transferFromGodot(unsafePointer: args[1]!),
-            name: Godot.GodotString.transferFromGodot(unsafePointer: args[2]!),
-            hintType: Godot.PropertyHint.transferFromGodot(unsafePointer: args[3]!),
-            hintString: Godot.GodotString.transferFromGodot(unsafePointer: args[4]!),
-            usageFlags: Godot.PropertyUsageFlags.transferFromGodot(unsafePointer: args[5]!),
-            wide: Bool.transferFromGodot(unsafePointer: args[6]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorInspectorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._parseProperty(
+                    object: Godot.Object?.transferFromGodot(unsafePointer: args[0]!),
+                    type: Godot.Variant.GodotType.transferFromGodot(unsafePointer: args[1]!),
+                    name: Godot.GodotString.transferFromGodot(unsafePointer: args[2]!),
+                    hintType: Godot.PropertyHint.transferFromGodot(unsafePointer: args[3]!),
+                    hintString: Godot.GodotString.transferFromGodot(unsafePointer: args[4]!),
+                    usageFlags: Godot.PropertyUsageFlags.transferFromGodot(unsafePointer: args[5]!),
+                    wide: Bool.transferFromGodot(unsafePointer: args[6]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _parse_end_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<EditorInspectorPlugin> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._parseEnd(
-            object: Godot.Object?.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<EditorInspectorPlugin>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._parseEnd(
+                    object: Godot.Object?.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         _virtualFunctions = [
             "_canHandle" : ("_can_handle", _can_handle_call),
             "_parseBegin" : ("_parse_begin", _parse_begin_call),
@@ -212,7 +215,7 @@ open class EditorInspectorPlugin: RefCounted {
             "_parseEnd" : ("_parse_end", _parse_end_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

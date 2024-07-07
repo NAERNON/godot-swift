@@ -8,19 +8,19 @@ import GodotExtensionHeaders
 open class ImageTexture3D: Texture3D {
     internal static var __method_binding_create: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130379827)!
-        }
+            GodotStringName(swiftStaticString: "create").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1130379827)!
+            }
         }
     }()
-
+    
     public func create(
         format: Godot.Image.Format,
         width: Int32,
         height: Int32,
         depth: Int32,
         useMipmaps: Bool,
-        data: Godot.GodotArray<Godot.Image?>
+        data: Godot.GodotArray<Godot.Image>
     ) -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: format) { __ptr_format in
@@ -47,17 +47,17 @@ open class ImageTexture3D: Texture3D {
             }
         }
     }
-
+    
     internal static var __method_binding_update: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "update").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
-        }
+            GodotStringName(swiftStaticString: "update").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
+            }
         }
     }()
-
+    
     public func update(
-        data: Godot.GodotArray<Godot.Image?>
+        data: Godot.GodotArray<Godot.Image>
     ) {
         withTransferrableUnsafeRawPointer(to: data) { __ptr_data in
             withUnsafeArgumentPackPointer(__ptr_data) { __accessPtr in
@@ -72,18 +72,15 @@ open class ImageTexture3D: Texture3D {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

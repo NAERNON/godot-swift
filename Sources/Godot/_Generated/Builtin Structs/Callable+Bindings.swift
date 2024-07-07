@@ -6,10 +6,11 @@ import GodotExtensionHeaders
 
 internal enum CallableBindings {
     static private var areBindingsLoaded = false
-
+    
     internal static func loadBindings() {
         precondition(!areBindingsLoaded, "Callable bindings are already loaded.")
         areBindingsLoaded = true
+        
         destructor = GodotExtension.Interface.variantGetPtrDestructor(GDEXTENSION_VARIANT_TYPE_CALLABLE)!
         constructor = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_CALLABLE, 0)!
         constructorFromCallable = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_CALLABLE, 1)!
@@ -76,64 +77,36 @@ internal enum CallableBindings {
             GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_CALLABLE, __ptr__method_name, 3224143119)!
         }
     }
-
-    static private (set) var destructor: GDExtensionPtrDestructor!
-
-    static private (set) var constructor: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromCallable: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromObjectGodotStringName: GDExtensionPtrConstructor!
-
-    static private (set) var operatorEqualVariant: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNotEqualVariant: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNot: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorEqualCallable: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNotEqualCallable: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorInGodotdictionary: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorInGodotarray: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var methodCallv: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodIsNull: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodIsCustom: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodIsStandard: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodIsValid: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodGetObject: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodGetObjectID: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodGetMethod: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodGetBoundArgumentsCount: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodGetBoundArguments: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodHash: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodBindv: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodUnbind: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodCall: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodCallDeferred: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodRpc: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodRpcID: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodBind: GDExtensionPtrBuiltInMethod!
+    
+    static private(set) var destructor: GDExtensionPtrDestructor!
+    static private(set) var constructor: GDExtensionPtrConstructor!
+    static private(set) var constructorFromCallable: GDExtensionPtrConstructor!
+    static private(set) var constructorFromObjectGodotStringName: GDExtensionPtrConstructor!
+    static private(set) var operatorEqualVariant: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNotEqualVariant: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNot: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorEqualCallable: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNotEqualCallable: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorInGodotdictionary: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorInGodotarray: GDExtensionPtrOperatorEvaluator!
+    static private(set) var methodCallv: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodIsNull: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodIsCustom: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodIsStandard: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodIsValid: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodGetObject: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodGetObjectID: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodGetMethod: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodGetBoundArgumentsCount: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodGetBoundArguments: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodHash: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodBindv: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodUnbind: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodCall: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodCallDeferred: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodRpc: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodRpcID: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodBind: GDExtensionPtrBuiltInMethod!
 }
 
 extension Callable {
@@ -142,7 +115,7 @@ extension Callable {
     ) -> Opaque.Storage {
         Opaque.Storage(size: 16, destructorPtr: useDestructor ? CallableBindings.destructor : nil)
     }
-
+    
     static internal func make() -> Opaque.Storage {
         var __temporary: Opaque.Storage = makeOpaqueStorage()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -150,7 +123,7 @@ extension Callable {
         }
         return __temporary
     }
-
+    
     static internal func make(
         from: Godot.Callable
     ) -> Opaque.Storage {
@@ -164,7 +137,7 @@ extension Callable {
         }
         return __temporary
     }
-
+    
     static internal func make(
         object: Godot.Object?,
         method: Godot.GodotStringName
@@ -183,7 +156,7 @@ extension Callable {
         }
         return __temporary
     }
-
+    
     static internal func _operatorEqual<Value: Variant.Storable>(
         _ lhs: Godot.Callable,
         _ rhs: Value
@@ -196,7 +169,7 @@ extension Callable {
             }
         }
     }
-
+    
     static internal func _operatorNotEqual<Value: Variant.Storable>(
         _ lhs: Godot.Callable,
         _ rhs: Value
@@ -209,7 +182,7 @@ extension Callable {
             }
         }
     }
-
+    
     static internal func _operatorNot(
         _ lhs: Godot.Callable
     ) -> Bool {
@@ -219,7 +192,7 @@ extension Callable {
             }
         }
     }
-
+    
     static internal func _operatorEqual(
         _ lhs: Godot.Callable,
         _ rhs: Godot.Callable
@@ -232,7 +205,7 @@ extension Callable {
             }
         }
     }
-
+    
     static internal func _operatorNotEqual(
         _ lhs: Godot.Callable,
         _ rhs: Godot.Callable
@@ -245,7 +218,7 @@ extension Callable {
             }
         }
     }
-
+    
     static internal func _operatorIn<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ lhs: Godot.Callable,
         _ rhs: Godot.GodotDictionary<Value1, Value2>
@@ -258,7 +231,7 @@ extension Callable {
             }
         }
     }
-
+    
     static internal func _operatorIn<Value: Variant.Storable>(
         _ lhs: Godot.Callable,
         _ rhs: Godot.GodotArray<Value>
@@ -271,7 +244,7 @@ extension Callable {
             }
         }
     }
-
+    
     internal func _callv<Value: Variant.Storable>(
         arguments: Godot.GodotArray<Value>
     ) -> Godot.Variant.Storage {
@@ -285,7 +258,7 @@ extension Callable {
             }
         }
     }
-
+    
     internal func _isNull() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -293,7 +266,7 @@ extension Callable {
             }
         }
     }
-
+    
     internal func _isCustom() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -301,7 +274,7 @@ extension Callable {
             }
         }
     }
-
+    
     internal func _isStandard() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -309,7 +282,7 @@ extension Callable {
             }
         }
     }
-
+    
     internal func _isValid() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -317,7 +290,7 @@ extension Callable {
             }
         }
     }
-
+    
     internal func _object() -> Godot.Object? {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -325,7 +298,7 @@ extension Callable {
             }
         }
     }
-
+    
     internal func _objectID() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -333,7 +306,7 @@ extension Callable {
             }
         }
     }
-
+    
     internal func _method() -> Godot.GodotStringName {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -341,7 +314,7 @@ extension Callable {
             }
         }
     }
-
+    
     internal func _boundArgumentsCount() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -349,7 +322,7 @@ extension Callable {
             }
         }
     }
-
+    
     internal func _boundArguments() -> Godot.AnyGodotArray {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -357,7 +330,7 @@ extension Callable {
             }
         }
     }
-
+    
     internal func _hash() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -365,7 +338,7 @@ extension Callable {
             }
         }
     }
-
+    
     internal func _bindv<Value: Variant.Storable>(
         arguments: Godot.GodotArray<Value>
     ) -> Godot.Callable {
@@ -379,7 +352,7 @@ extension Callable {
             }
         }
     }
-
+    
     internal func _unbind(
         argcount: Int
     ) -> Godot.Callable {
@@ -393,8 +366,8 @@ extension Callable {
             }
         }
     }
-
-    internal func _call<each VariantRest : Variant.Storable>(
+    
+    internal func _call<each VariantRest: Variant.Storable>(
         _ rest: repeat each VariantRest
     ) -> Godot.Variant.Storage {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
@@ -405,8 +378,8 @@ extension Callable {
             }
         }
     }
-
-    internal func _callDeferred<each VariantRest : Variant.Storable>(
+    
+    internal func _callDeferred<each VariantRest: Variant.Storable>(
         _ rest: repeat each VariantRest
     ) {
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { packCount, __accessPtr in
@@ -415,8 +388,8 @@ extension Callable {
             }
         }
     }
-
-    internal func _rpc<each VariantRest : Variant.Storable>(
+    
+    internal func _rpc<each VariantRest: Variant.Storable>(
         _ rest: repeat each VariantRest
     ) {
         withUnsafeArgumentPackPointer(varargs: repeat each rest) { packCount, __accessPtr in
@@ -425,8 +398,8 @@ extension Callable {
             }
         }
     }
-
-    internal func _rpcID<each VariantRest : Variant.Storable>(
+    
+    internal func _rpcID<each VariantRest: Variant.Storable>(
         peerID: Int,
         _ rest: repeat each VariantRest
     ) {
@@ -438,8 +411,8 @@ extension Callable {
             }
         }
     }
-
-    internal func _bind<each VariantRest : Variant.Storable>(
+    
+    internal func _bind<each VariantRest: Variant.Storable>(
         _ rest: repeat each VariantRest
     ) -> Godot.Callable {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in

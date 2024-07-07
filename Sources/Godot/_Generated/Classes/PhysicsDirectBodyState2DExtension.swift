@@ -9,575 +9,590 @@ open class PhysicsDirectBodyState2DExtension: PhysicsDirectBodyState2D {
     open func _getTotalGravity() -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _getTotalLinearDamp() -> Double {
         Double()
     }
-
+    
     open func _getTotalAngularDamp() -> Double {
         Double()
     }
-
+    
     open func _getCenterOfMass() -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _getCenterOfMassLocal() -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _getInverseMass() -> Double {
         Double()
     }
-
+    
     open func _getInverseInertia() -> Double {
         Double()
     }
-
+    
     open func _setLinearVelocity(
         _ velocity: Godot.Vector2
     ) {
+        
     }
-
+    
     open func _getLinearVelocity() -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _setAngularVelocity(
         _ velocity: Double
     ) {
+        
     }
-
+    
     open func _getAngularVelocity() -> Double {
         Double()
     }
-
+    
     open func _setTransform(
         _ transform: Godot.Transform2D
     ) {
+        
     }
-
+    
     open func _getTransform() -> Godot.Transform2D {
         Godot.Transform2D()
     }
-
+    
     open func _getVelocityAtLocalPosition(
         _ localPosition: Godot.Vector2
     ) -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _applyCentralImpulse(
         _ impulse: Godot.Vector2
     ) {
+        
     }
-
+    
     open func _applyImpulse(
         _ impulse: Godot.Vector2,
         position: Godot.Vector2
     ) {
+        
     }
-
+    
     open func _applyTorqueImpulse(
         _ impulse: Double
     ) {
+        
     }
-
+    
     open func _applyCentralForce(
         _ force: Godot.Vector2
     ) {
+        
     }
-
+    
     open func _applyForce(
         _ force: Godot.Vector2,
         position: Godot.Vector2
     ) {
+        
     }
-
+    
     open func _applyTorque(
         _ torque: Double
     ) {
+        
     }
-
+    
     open func _addConstantCentralForce(
         _ force: Godot.Vector2
     ) {
+        
     }
-
+    
     open func _addConstantForce(
         _ force: Godot.Vector2,
         position: Godot.Vector2
     ) {
+        
     }
-
+    
     open func _addConstantTorque(
         _ torque: Double
     ) {
+        
     }
-
+    
     open func _setConstantForce(
         _ force: Godot.Vector2
     ) {
+        
     }
-
+    
     open func _getConstantForce() -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _setConstantTorque(
         _ torque: Double
     ) {
+        
     }
-
+    
     open func _getConstantTorque() -> Double {
         Double()
     }
-
+    
     open func _setSleepState(
         enabled: Bool
     ) {
+        
     }
-
+    
     open func _isSleeping() -> Bool {
         Bool()
     }
-
+    
     open func _getContactCount() -> Int32 {
         Int32()
     }
-
+    
     open func _getContactLocalPosition(
         contactIdx: Int32
     ) -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _getContactLocalNormal(
         contactIdx: Int32
     ) -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _getContactLocalShape(
         contactIdx: Int32
     ) -> Int32 {
         Int32()
     }
-
+    
     open func _getContactLocalVelocityAtPosition(
         contactIdx: Int32
     ) -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _getContactCollider(
         contactIdx: Int32
     ) -> Godot.RID {
         Godot.RID()
     }
-
+    
     open func _getContactColliderPosition(
         contactIdx: Int32
     ) -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _getContactColliderID(
         contactIdx: Int32
     ) -> UInt64 {
         UInt64()
     }
-
+    
     open func _getContactColliderObject(
         contactIdx: Int32
     ) -> Godot.Object? {
         nil
     }
-
+    
     open func _getContactColliderShape(
         contactIdx: Int32
     ) -> Int32 {
         Int32()
     }
-
+    
     open func _getContactColliderVelocityAtPosition(
         contactIdx: Int32
     ) -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _getContactImpulse(
         contactIdx: Int32
     ) -> Godot.Vector2 {
         Godot.Vector2()
     }
-
+    
     open func _getStep() -> Double {
         Double()
     }
-
+    
     open func _integrateForces() {
+        
     }
-
+    
     open func _getSpaceState() -> Godot.PhysicsDirectSpaceState2D? {
         nil
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _get_total_gravity_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getTotalGravity()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getTotalGravity()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_total_linear_damp_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getTotalLinearDamp()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getTotalLinearDamp()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_total_angular_damp_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getTotalAngularDamp()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getTotalAngularDamp()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_center_of_mass_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getCenterOfMass()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getCenterOfMass()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_center_of_mass_local_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getCenterOfMassLocal()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getCenterOfMassLocal()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_inverse_mass_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getInverseMass()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getInverseMass()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_inverse_inertia_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getInverseInertia()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getInverseInertia()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _set_linear_velocity_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._setLinearVelocity(
-            Godot.Vector2.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._setLinearVelocity(
+                    Godot.Vector2.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _get_linear_velocity_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getLinearVelocity()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getLinearVelocity()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _set_angular_velocity_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._setAngularVelocity(
-            Double.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._setAngularVelocity(
+                    Double.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _get_angular_velocity_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getAngularVelocity()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getAngularVelocity()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _set_transform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._setTransform(
-            Godot.Transform2D.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._setTransform(
+                    Godot.Transform2D.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _get_transform_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getTransform()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getTransform()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_velocity_at_local_position_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getVelocityAtLocalPosition(
-            Godot.Vector2.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getVelocityAtLocalPosition(
+                    Godot.Vector2.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _apply_central_impulse_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._applyCentralImpulse(
-            Godot.Vector2.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._applyCentralImpulse(
+                    Godot.Vector2.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _apply_impulse_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._applyImpulse(
-            Godot.Vector2.transferFromGodot(unsafePointer: args[0]!),
-            position: Godot.Vector2.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._applyImpulse(
+                    Godot.Vector2.transferFromGodot(unsafePointer: args[0]!),
+                    position: Godot.Vector2.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _apply_torque_impulse_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._applyTorqueImpulse(
-            Double.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._applyTorqueImpulse(
+                    Double.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _apply_central_force_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._applyCentralForce(
-            Godot.Vector2.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._applyCentralForce(
+                    Godot.Vector2.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _apply_force_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._applyForce(
-            Godot.Vector2.transferFromGodot(unsafePointer: args[0]!),
-            position: Godot.Vector2.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._applyForce(
+                    Godot.Vector2.transferFromGodot(unsafePointer: args[0]!),
+                    position: Godot.Vector2.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _apply_torque_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._applyTorque(
-            Double.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._applyTorque(
+                    Double.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _add_constant_central_force_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._addConstantCentralForce(
-            Godot.Vector2.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._addConstantCentralForce(
+                    Godot.Vector2.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _add_constant_force_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._addConstantForce(
-            Godot.Vector2.transferFromGodot(unsafePointer: args[0]!),
-            position: Godot.Vector2.transferFromGodot(unsafePointer: args[1]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._addConstantForce(
+                    Godot.Vector2.transferFromGodot(unsafePointer: args[0]!),
+                    position: Godot.Vector2.transferFromGodot(unsafePointer: args[1]!)
+                )
+        }
         let _add_constant_torque_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._addConstantTorque(
-            Double.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._addConstantTorque(
+                    Double.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _set_constant_force_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._setConstantForce(
-            Godot.Vector2.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._setConstantForce(
+                    Godot.Vector2.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _get_constant_force_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getConstantForce()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getConstantForce()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _set_constant_torque_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._setConstantTorque(
-            Double.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._setConstantTorque(
+                    Double.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _get_constant_torque_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getConstantTorque()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getConstantTorque()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _set_sleep_state_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._setSleepState(
-            enabled: Bool.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._setSleepState(
+                    enabled: Bool.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         let _is_sleeping_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._isSleeping()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._isSleeping()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_contact_count_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getContactCount()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getContactCount()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_contact_local_position_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getContactLocalPosition(
-            contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getContactLocalPosition(
+                    contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_contact_local_normal_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getContactLocalNormal(
-            contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getContactLocalNormal(
+                    contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_contact_local_shape_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getContactLocalShape(
-            contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getContactLocalShape(
+                    contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_contact_local_velocity_at_position_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getContactLocalVelocityAtPosition(
-            contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getContactLocalVelocityAtPosition(
+                    contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_contact_collider_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getContactCollider(
-            contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getContactCollider(
+                    contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_contact_collider_position_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getContactColliderPosition(
-            contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getContactColliderPosition(
+                    contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_contact_collider_id_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getContactColliderID(
-            contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getContactColliderID(
+                    contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_contact_collider_object_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getContactColliderObject(
-            contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getContactColliderObject(
+                    contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_contact_collider_shape_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getContactColliderShape(
-            contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getContactColliderShape(
+                    contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_contact_collider_velocity_at_position_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getContactColliderVelocityAtPosition(
-            contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getContactColliderVelocityAtPosition(
+                    contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_contact_impulse_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getContactImpulse(
-            contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getContactImpulse(
+                    contactIdx: Int32.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_step_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getStep()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getStep()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _integrate_forces_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._integrateForces()}
+            guard let instancePtr else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._integrateForces()
+        }
         let _get_space_state_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<PhysicsDirectBodyState2DExtension> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getSpaceState()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<PhysicsDirectBodyState2DExtension>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getSpaceState()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         _virtualFunctions = [
             "_getTotalGravity" : ("_get_total_gravity", _get_total_gravity_call),
             "_getTotalLinearDamp" : ("_get_total_linear_damp", _get_total_linear_damp_call),
@@ -625,7 +640,7 @@ open class PhysicsDirectBodyState2DExtension: PhysicsDirectBodyState2D {
             "_getSpaceState" : ("_get_space_state", _get_space_state_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

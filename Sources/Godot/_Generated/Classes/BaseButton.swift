@@ -12,32 +12,34 @@ open class BaseButton: Control {
         case hover = 2
         case disabled = 3
         case hoverPressed = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Normal", 0),
-            ("Pressed", 1),
-            ("Hover", 2),
-            ("Disabled", 3),
-            ("Hover Pressed", 4),]
+               ("Normal", 0),
+               ("Pressed", 1),
+               ("Hover", 2),
+               ("Disabled", 3),
+               ("Hover Pressed", 4),
+            ]
         }
     }
-
+    
     public enum ActionMode: UInt32, GodotEnum {
         case press = 0
         case release = 1
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Press", 0),
-            ("Release", 1),]
+               ("Press", 0),
+               ("Release", 1),
+            ]
         }
     }
-
+    
+    
     public func pressed() {
         _ = pressedSignal.emit()
     }
-
     public lazy var pressedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "pressed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -52,11 +54,11 @@ open class BaseButton: Control {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func buttonUp() {
         _ = buttonUpSignal.emit()
     }
-
     public lazy var buttonUpSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "button_up") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -71,11 +73,11 @@ open class BaseButton: Control {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func buttonDown() {
         _ = buttonDownSignal.emit()
     }
-
     public lazy var buttonDownSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "button_down") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -90,29 +92,19 @@ open class BaseButton: Control {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct ToggledSignalInput: Godot.SignalInput {
         public let toggledOn: Bool
-
-        fileprivate init(
-            toggledOn: Bool
-        ) {
+        fileprivate init(toggledOn: Bool) {
             self.toggledOn = toggledOn
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.toggledOn)]
         }
     }
-
-    public func toggled(
-        toggledOn: Bool
-    ) {
+    public func toggled(toggledOn: Bool) {
         _ = toggledSignal.emit(.init(toggledOn: toggledOn))
     }
-
     public lazy var toggledSignal: Godot.SignalEmitter<ToggledSignalInput> = {
         .init(object: self, signalName: "toggled") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<ToggledSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -127,23 +119,25 @@ open class BaseButton: Control {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     open func _pressed() {
+        
     }
-
+    
     open func _toggled(
         toggledOn: Bool
     ) {
+        
     }
-
+    
     internal static var __method_binding_set_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_pressed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_pressed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setPressed(
         _ pressed: Bool
     ) {
@@ -160,15 +154,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_is_pressed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_pressed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_pressed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isPressed() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -181,15 +175,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_set_pressed_no_signal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_pressed_no_signal").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_pressed_no_signal").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     public func setPressedNoSignal(
         pressed: Bool
     ) {
@@ -206,15 +200,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_is_hovered: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_hovered").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_hovered").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isHovered() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -227,15 +221,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_set_toggle_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_toggle_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_toggle_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setToggleMode(
         enabled: Bool
     ) {
@@ -252,15 +246,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_is_toggle_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_toggle_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_toggle_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isToggleMode() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -273,15 +267,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_set_shortcut_in_tooltip: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_shortcut_in_tooltip").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_shortcut_in_tooltip").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setShortcutInTooltip(
         enabled: Bool
     ) {
@@ -298,15 +292,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_is_shortcut_in_tooltip_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_shortcut_in_tooltip_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_shortcut_in_tooltip_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isShortcutInTooltipEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -319,15 +313,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_set_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_disabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_disabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setDisabled(
         _ disabled: Bool
     ) {
@@ -344,15 +338,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_is_disabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_disabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_disabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isDisabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -365,15 +359,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_set_action_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_action_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1985162088)!
-        }
+            GodotStringName(swiftStaticString: "set_action_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1985162088)!
+            }
         }
     }()
-
+    
     private func __setActionMode(
         _ mode: Godot.BaseButton.ActionMode
     ) {
@@ -390,15 +384,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_get_action_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_action_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2589712189)!
-        }
+            GodotStringName(swiftStaticString: "get_action_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2589712189)!
+            }
         }
     }()
-
+    
     private func __getActionMode() -> Godot.BaseButton.ActionMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -411,15 +405,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_set_button_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_button_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3950145251)!
-        }
+            GodotStringName(swiftStaticString: "set_button_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3950145251)!
+            }
         }
     }()
-
+    
     private func __setButtonMask(
         _ mask: Godot.MouseButtonMask
     ) {
@@ -436,15 +430,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_get_button_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_button_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2512161324)!
-        }
+            GodotStringName(swiftStaticString: "get_button_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2512161324)!
+            }
         }
     }()
-
+    
     private func __getButtonMask() -> Godot.MouseButtonMask {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -457,15 +451,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_get_draw_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_draw_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2492721305)!
-        }
+            GodotStringName(swiftStaticString: "get_draw_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2492721305)!
+            }
         }
     }()
-
+    
     public func drawMode() -> Godot.BaseButton.DrawMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -478,15 +472,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_set_keep_pressed_outside: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_keep_pressed_outside").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_keep_pressed_outside").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setKeepPressedOutside(
         enabled: Bool
     ) {
@@ -503,15 +497,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_is_keep_pressed_outside: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_keep_pressed_outside").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_keep_pressed_outside").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isKeepPressedOutside() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -524,15 +518,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_set_shortcut_feedback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_shortcut_feedback").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_shortcut_feedback").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setShortcutFeedback(
         enabled: Bool
     ) {
@@ -549,15 +543,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_is_shortcut_feedback: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_shortcut_feedback").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_shortcut_feedback").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isShortcutFeedback() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -570,15 +564,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_set_shortcut: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_shortcut").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 857163497)!
-        }
+            GodotStringName(swiftStaticString: "set_shortcut").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 857163497)!
+            }
         }
     }()
-
+    
     private func __setShortcut(
         _ shortcut: Godot.Shortcut?
     ) {
@@ -597,15 +591,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_get_shortcut: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_shortcut").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3415666916)!
-        }
+            GodotStringName(swiftStaticString: "get_shortcut").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3415666916)!
+            }
         }
     }()
-
+    
     private func __getShortcut() -> Godot.Shortcut? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -618,15 +612,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_set_button_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_button_group").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794463739)!
-        }
+            GodotStringName(swiftStaticString: "set_button_group").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1794463739)!
+            }
         }
     }()
-
+    
     private func __setButtonGroup(
         _ buttonGroup: Godot.ButtonGroup?
     ) {
@@ -645,15 +639,15 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     internal static var __method_binding_get_button_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_button_group").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 281644053)!
-        }
+            GodotStringName(swiftStaticString: "get_button_group").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 281644053)!
+            }
         }
     }()
-
+    
     private func __getButtonGroup() -> Godot.ButtonGroup? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -666,143 +660,142 @@ open class BaseButton: Control {
             }
         }
     }
-
+    
     public var isDisabled: Bool {
         get {
             __isDisabled()
         }
-        set {
+        set(newValue) {
             __setDisabled(
                 newValue
             )
         }
     }
-
+    
     public var isToggleMode: Bool {
         get {
             __isToggleMode()
         }
-        set {
+        set(newValue) {
             __setToggleMode(
                 enabled: newValue
             )
         }
     }
-
+    
     public var isPressed: Bool {
         get {
             __isPressed()
         }
-        set {
+        set(newValue) {
             __setPressed(
                 newValue
             )
         }
     }
-
+    
     public var actionMode: Godot.BaseButton.ActionMode {
         get {
             __getActionMode()
         }
-        set {
+        set(newValue) {
             __setActionMode(
                 newValue
             )
         }
     }
-
+    
     public var buttonMask: Godot.MouseButtonMask {
         get {
             __getButtonMask()
         }
-        set {
+        set(newValue) {
             __setButtonMask(
                 newValue
             )
         }
     }
-
+    
     public var isKeepPressedOutside: Bool {
         get {
             __isKeepPressedOutside()
         }
-        set {
+        set(newValue) {
             __setKeepPressedOutside(
                 enabled: newValue
             )
         }
     }
-
+    
     public var buttonGroup: Godot.ButtonGroup? {
         get {
             __getButtonGroup()
         }
-        set {
+        set(newValue) {
             __setButtonGroup(
                 newValue
             )
         }
     }
-
+    
     public var shortcut: Godot.Shortcut? {
         get {
             __getShortcut()
         }
-        set {
+        set(newValue) {
             __setShortcut(
                 newValue
             )
         }
     }
-
+    
     public var isShortcutFeedback: Bool {
         get {
             __isShortcutFeedback()
         }
-        set {
+        set(newValue) {
             __setShortcutFeedback(
                 enabled: newValue
             )
         }
     }
-
+    
     public var isShortcutInTooltipEnabled: Bool {
         get {
             __isShortcutInTooltipEnabled()
         }
-        set {
+        set(newValue) {
             __setShortcutInTooltip(
                 enabled: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _pressed_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<BaseButton> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._pressed()}
+            guard let instancePtr else { return }
+            Unmanaged<BaseButton>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._pressed()
+        }
         let _toggled_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<BaseButton> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._toggled(
-            toggledOn: Bool.transferFromGodot(unsafePointer: args[0]!)
-        )}
+            guard let instancePtr, let args else { return }
+            Unmanaged<BaseButton>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._toggled(
+                    toggledOn: Bool.transferFromGodot(unsafePointer: args[0]!)
+                )
+        }
         _virtualFunctions = [
             "_pressed" : ("_pressed", _pressed_call),
             "_toggled" : ("_toggled", _toggled_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

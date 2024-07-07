@@ -1,7 +1,5 @@
 import Foundation
 import Utils
-import SwiftSyntax
-import SwiftSyntaxBuilder
 
 /// A representation of a Godot enum.
 ///
@@ -23,14 +21,14 @@ extension GodotEnum {
         var value: T
     }
     
-    func declSyntax() throws -> DeclSyntax {
+    func declSyntax() -> Syntax {
         if isBitfield == true {
-            try DeclSyntax(optionSetSyntax(forType: Int64.self))
+            optionSetSyntax(forType: Int64.self)
         } else {
             if values.contains(where: { $0.value < 0 }) {
-                try DeclSyntax(enumSyntax(forType: Int32.self))
+                enumSyntax(forType: Int32.self)
             } else {
-                try DeclSyntax(enumSyntax(forType: UInt32.self))
+                enumSyntax(forType: UInt32.self)
             }
         }
     }
@@ -40,7 +38,7 @@ extension GodotEnum {
         forType type: T.Type
     ) -> (name: String, cases: [Case<T>]) where T : FixedWidthInteger {
         let translatedEnum = translatedEnum(
-            name: name.syntax(),
+            name: name.syntax().formatted(),
             cases: values.map { $0.name }
         )
         
@@ -53,8 +51,8 @@ extension GodotEnum {
         return (translatedEnum.name, cases)
     }
     
-    private func enumSyntax<T>(forType type: T.Type) throws -> EnumDeclSyntax
-    where T : FixedWidthInteger, T : ExpressibleByLiteralSyntax {
+    private func enumSyntax<T>(forType type: T.Type) -> Syntax
+    where T : FixedWidthInteger {
         let (name, temporaryCases) = self.nameAndCases(forType: type)
         
         var alreadyAddedCases = [T : String]()
@@ -73,43 +71,42 @@ extension GodotEnum {
             }
         }
         
-        return try EnumDeclSyntax("public enum \(raw: name): \(raw: T.self), GodotEnum") {
-            "\(raw: caseStrings.joined(separator: "\n"))"
+        return Syntax("public enum \(name): \(T.self), GodotEnum") {
+            """
+            \(caseStrings.joined(separator: "\n"))
             
-            try hintValuesFunctionSyntax(forType: type)
+            \(hintValuesFunctionSyntax(forType: type))
+            """
         }
     }
     
     private func optionSetSyntax<T>(
         forType type: T.Type
-    ) throws -> StructDeclSyntax
-    where T : FixedWidthInteger, T : ExpressibleByLiteralSyntax {
+    ) -> Syntax where T : FixedWidthInteger {
         let (name, cases) = self.nameAndCases(forType: type)
         
         let caseStrings = cases.map {
             "public static let \($0.name): Self = .init(rawValue: \($0.value))"
         }
         
-        return try StructDeclSyntax("public struct \(raw: name): GodotOptionSet") {
+        return Syntax("public struct \(name): GodotOptionSet") {
             """
-            public let rawValue: \(raw: T.self)
+            public let rawValue: \(T.self)
             
-            public init(rawValue: \(raw: T.self)) {
+            public init(rawValue: \(T.self)) {
                 self.rawValue = rawValue
             }
             
-            \(raw: caseStrings.joined(separator: "\n"))
-            """
+            \(caseStrings.joined(separator: "\n"))
             
-            try hintValuesFunctionSyntax(forType: type)
+            \(hintValuesFunctionSyntax(forType: type))
+            """
         }
     }
     
     private func hintValuesFunctionSyntax<T>(
         forType type: T.Type
-    ) throws -> FunctionDeclSyntax
-    where T : FixedWidthInteger, T : ExpressibleByLiteralSyntax
-    {
+    ) -> Syntax where T : FixedWidthInteger {
         var hintNamesAndValues = [T : String]()
         
         for `case` in self.nameAndCases(forType: type).cases
@@ -118,10 +115,10 @@ extension GodotEnum {
             hintNamesAndValues[`case`.value] = NamingConvention.camel.makeSentence(`case`.name)
         }
         
-        return try FunctionDeclSyntax("public static func hintValues() -> [(name: String, value: RawValue)]") {
+        return Syntax("public static func hintValues() -> [(name: String, value: RawValue)]") {
             "["
             for (value, name) in hintNamesAndValues.sorted(by: { $0.key < $1.key }) {
-                "(\(literal: name), \(literal: value)),"
+                "   (\"\(name)\", \(value)),"
             }
             "]"
         }

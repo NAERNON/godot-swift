@@ -146,7 +146,7 @@ extension Vector2.GodotContiguousArrayStorage: GodotContiguousArrayStorageProtoc
         .packedVector2Array
     }
     
-    public consuming func transferToGodot(
+    public func transferToGodot(
         unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
     ) {
         withUnsafeOpaquePointer { selfPtr in

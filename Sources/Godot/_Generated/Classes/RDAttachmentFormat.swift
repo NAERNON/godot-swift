@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class RDAttachmentFormat: RefCounted {
     internal static var __method_binding_set_format: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_format").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 565531219)!
-        }
+            GodotStringName(swiftStaticString: "set_format").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 565531219)!
+            }
         }
     }()
-
+    
     private func __setFormat(
         pMember: Godot.RenderingDevice.DataFormat
     ) {
@@ -30,15 +30,15 @@ open class RDAttachmentFormat: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_format: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_format").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2235804183)!
-        }
+            GodotStringName(swiftStaticString: "get_format").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2235804183)!
+            }
         }
     }()
-
+    
     private func __getFormat() -> Godot.RenderingDevice.DataFormat {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -51,15 +51,15 @@ open class RDAttachmentFormat: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_samples: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_samples").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3774171498)!
-        }
+            GodotStringName(swiftStaticString: "set_samples").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3774171498)!
+            }
         }
     }()
-
+    
     private func __setSamples(
         pMember: Godot.RenderingDevice.TextureSamples
     ) {
@@ -76,15 +76,15 @@ open class RDAttachmentFormat: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_samples: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_samples").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 407791724)!
-        }
+            GodotStringName(swiftStaticString: "get_samples").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 407791724)!
+            }
         }
     }()
-
+    
     private func __getSamples() -> Godot.RenderingDevice.TextureSamples {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -97,15 +97,15 @@ open class RDAttachmentFormat: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_usage_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_usage_flags").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_usage_flags").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setUsageFlags(
         pMember: UInt32
     ) {
@@ -122,15 +122,15 @@ open class RDAttachmentFormat: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_usage_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_usage_flags").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_usage_flags").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getUsageFlags() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -143,51 +143,48 @@ open class RDAttachmentFormat: RefCounted {
             }
         }
     }
-
+    
     public var format: Godot.RenderingDevice.DataFormat {
         get {
             __getFormat()
         }
-        set {
+        set(newValue) {
             __setFormat(
                 pMember: newValue
             )
         }
     }
-
+    
     public var samples: Godot.RenderingDevice.TextureSamples {
         get {
             __getSamples()
         }
-        set {
+        set(newValue) {
             __setSamples(
                 pMember: newValue
             )
         }
     }
-
+    
     public var usageFlags: UInt32 {
         get {
             __getUsageFlags()
         }
-        set {
+        set(newValue) {
             __setUsageFlags(
                 pMember: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

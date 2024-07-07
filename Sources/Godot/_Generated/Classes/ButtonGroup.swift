@@ -8,26 +8,16 @@ import GodotExtensionHeaders
 open class ButtonGroup: Resource {
     public struct PressedSignalInput: Godot.SignalInput {
         public let button: Godot.BaseButton?
-
-        fileprivate init(
-            button: Godot.BaseButton?
-        ) {
+        fileprivate init(button: Godot.BaseButton?) {
             self.button = button
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.button)]
         }
     }
-
-    public func pressed(
-        button: Godot.BaseButton?
-    ) {
+    public func pressed(button: Godot.BaseButton?) {
         _ = pressedSignal.emit(.init(button: button))
     }
-
     public lazy var pressedSignal: Godot.SignalEmitter<PressedSignalInput> = {
         .init(object: self, signalName: "pressed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<PressedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -42,15 +32,15 @@ open class ButtonGroup: Resource {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_get_pressed_button: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_pressed_button").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3886434893)!
-        }
+            GodotStringName(swiftStaticString: "get_pressed_button").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3886434893)!
+            }
         }
     }()
-
+    
     public func pressedButton() -> Godot.BaseButton? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -63,16 +53,16 @@ open class ButtonGroup: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_buttons: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_buttons").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
-        }
+            GodotStringName(swiftStaticString: "get_buttons").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
+            }
         }
     }()
-
-    public func buttons() -> Godot.GodotArray<Godot.BaseButton?> {
+    
+    public func buttons() -> Godot.GodotArray<Godot.BaseButton> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -84,15 +74,15 @@ open class ButtonGroup: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_allow_unpress: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_allow_unpress").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_allow_unpress").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setAllowUnpress(
         enabled: Bool
     ) {
@@ -109,15 +99,15 @@ open class ButtonGroup: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_is_allow_unpress: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_allow_unpress").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
-        }
+            GodotStringName(swiftStaticString: "is_allow_unpress").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
+            }
         }
     }()
-
+    
     private func __isAllowUnpress() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -130,29 +120,26 @@ open class ButtonGroup: Resource {
             }
         }
     }
-
+    
     public var isAllowUnpress: Bool {
         get {
             __isAllowUnpress()
         }
-        set {
+        set(newValue) {
             __setAllowUnpress(
                 enabled: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

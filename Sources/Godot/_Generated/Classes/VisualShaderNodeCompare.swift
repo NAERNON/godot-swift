@@ -16,21 +16,22 @@ open class VisualShaderNodeCompare: VisualShaderNode {
         case boolean = 6
         case transform = 7
         case max = 8
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Scalar", 0),
-            ("Scalar Int", 1),
-            ("Scalar Uint", 2),
-            ("Vector2D", 3),
-            ("Vector3D", 4),
-            ("Vector4D", 5),
-            ("Boolean", 6),
-            ("Transform", 7),
-            ("Max", 8),]
+               ("Scalar", 0),
+               ("Scalar Int", 1),
+               ("Scalar Uint", 2),
+               ("Vector2D", 3),
+               ("Vector3D", 4),
+               ("Vector4D", 5),
+               ("Boolean", 6),
+               ("Transform", 7),
+               ("Max", 8),
+            ]
         }
     }
-
+    
     public enum Function: UInt32, GodotEnum {
         case equal = 0
         case notEqual = 1
@@ -39,40 +40,42 @@ open class VisualShaderNodeCompare: VisualShaderNode {
         case lessThan = 4
         case lessThanEqual = 5
         case max = 6
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Equal", 0),
-            ("Not Equal", 1),
-            ("Greater Than", 2),
-            ("Greater Than Equal", 3),
-            ("Less Than", 4),
-            ("Less Than Equal", 5),
-            ("Max", 6),]
+               ("Equal", 0),
+               ("Not Equal", 1),
+               ("Greater Than", 2),
+               ("Greater Than Equal", 3),
+               ("Less Than", 4),
+               ("Less Than Equal", 5),
+               ("Max", 6),
+            ]
         }
     }
-
+    
     public enum Condition: UInt32, GodotEnum {
         case all = 0
         case any = 1
         case max = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("All", 0),
-            ("Any", 1),
-            ("Max", 2),]
+               ("All", 0),
+               ("Any", 1),
+               ("Max", 2),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_comparison_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_comparison_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 516558320)!
-        }
+            GodotStringName(swiftStaticString: "set_comparison_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 516558320)!
+            }
         }
     }()
-
+    
     private func __setComparisonType(
         _ type: Godot.VisualShaderNodeCompare.ComparisonType
     ) {
@@ -89,15 +92,15 @@ open class VisualShaderNodeCompare: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_comparison_type: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_comparison_type").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3495315961)!
-        }
+            GodotStringName(swiftStaticString: "get_comparison_type").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3495315961)!
+            }
         }
     }()
-
+    
     private func __getComparisonType() -> Godot.VisualShaderNodeCompare.ComparisonType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -110,15 +113,15 @@ open class VisualShaderNodeCompare: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_set_function: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_function").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2370951349)!
-        }
+            GodotStringName(swiftStaticString: "set_function").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2370951349)!
+            }
         }
     }()
-
+    
     private func __setFunction(
         `func`: Godot.VisualShaderNodeCompare.Function
     ) {
@@ -135,15 +138,15 @@ open class VisualShaderNodeCompare: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_function: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_function").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4089164265)!
-        }
+            GodotStringName(swiftStaticString: "get_function").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4089164265)!
+            }
         }
     }()
-
+    
     private func __getFunction() -> Godot.VisualShaderNodeCompare.Function {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -156,15 +159,15 @@ open class VisualShaderNodeCompare: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_set_condition: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_condition").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 918742392)!
-        }
+            GodotStringName(swiftStaticString: "set_condition").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 918742392)!
+            }
         }
     }()
-
+    
     private func __setCondition(
         _ condition: Godot.VisualShaderNodeCompare.Condition
     ) {
@@ -181,15 +184,15 @@ open class VisualShaderNodeCompare: VisualShaderNode {
             }
         }
     }
-
+    
     internal static var __method_binding_get_condition: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_condition").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3281078941)!
-        }
+            GodotStringName(swiftStaticString: "get_condition").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3281078941)!
+            }
         }
     }()
-
+    
     private func __getCondition() -> Godot.VisualShaderNodeCompare.Condition {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -202,51 +205,48 @@ open class VisualShaderNodeCompare: VisualShaderNode {
             }
         }
     }
-
+    
     public var comparisonType: Godot.VisualShaderNodeCompare.ComparisonType {
         get {
             __getComparisonType()
         }
-        set {
+        set(newValue) {
             __setComparisonType(
                 newValue
             )
         }
     }
-
+    
     public var function: Godot.VisualShaderNodeCompare.Function {
         get {
             __getFunction()
         }
-        set {
+        set(newValue) {
             __setFunction(
                 func: newValue
             )
         }
     }
-
+    
     public var condition: Godot.VisualShaderNodeCompare.Condition {
         get {
             __getCondition()
         }
-        set {
+        set(newValue) {
             __setCondition(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class MeshDataTool: RefCounted {
     internal static var __method_binding_clear: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "clear").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func clear() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -24,15 +24,15 @@ open class MeshDataTool: RefCounted {
             )
         }
     }
-
+    
     internal static var __method_binding_create_from_surface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_from_surface").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2727020678)!
-        }
+            GodotStringName(swiftStaticString: "create_from_surface").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2727020678)!
+            }
         }
     }()
-
+    
     public func createFromSurface(
         mesh: Godot.ArrayMesh?,
         surface: Int32
@@ -56,15 +56,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_commit_to_surface: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "commit_to_surface").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2021686445)!
-        }
+            GodotStringName(swiftStaticString: "commit_to_surface").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2021686445)!
+            }
         }
     }()
-
+    
     public func commitToSurface(
         mesh: Godot.ArrayMesh?,
         compressionFlags: UInt64 = 0
@@ -88,15 +88,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_format: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_format").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_format").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func format() -> UInt64 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -109,15 +109,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_vertex_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_vertex_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_vertex_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func vertexCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -130,15 +130,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_edge_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_edge_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_edge_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func edgeCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -151,15 +151,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_face_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_face_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_face_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func faceCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -172,15 +172,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_vertex: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_vertex").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1530502735)!
-        }
+            GodotStringName(swiftStaticString: "set_vertex").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1530502735)!
+            }
         }
     }()
-
+    
     public func setVertex(
         idx: Int32,
         vertex: Godot.Vector3
@@ -200,15 +200,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_vertex: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_vertex").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 711720468)!
-        }
+            GodotStringName(swiftStaticString: "get_vertex").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 711720468)!
+            }
         }
     }()
-
+    
     public func vertex(
         idx: Int32
     ) -> Godot.Vector3 {
@@ -227,15 +227,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_vertex_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_vertex_normal").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1530502735)!
-        }
+            GodotStringName(swiftStaticString: "set_vertex_normal").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1530502735)!
+            }
         }
     }()
-
+    
     public func setVertexNormal(
         idx: Int32,
         normal: Godot.Vector3
@@ -255,15 +255,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_vertex_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_vertex_normal").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 711720468)!
-        }
+            GodotStringName(swiftStaticString: "get_vertex_normal").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 711720468)!
+            }
         }
     }()
-
+    
     public func vertexNormal(
         idx: Int32
     ) -> Godot.Vector3 {
@@ -282,15 +282,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_vertex_tangent: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_vertex_tangent").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1104099133)!
-        }
+            GodotStringName(swiftStaticString: "set_vertex_tangent").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1104099133)!
+            }
         }
     }()
-
+    
     public func setVertexTangent(
         idx: Int32,
         tangent: Godot.Plane
@@ -310,15 +310,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_vertex_tangent: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_vertex_tangent").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1372055458)!
-        }
+            GodotStringName(swiftStaticString: "get_vertex_tangent").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1372055458)!
+            }
         }
     }()
-
+    
     public func vertexTangent(
         idx: Int32
     ) -> Godot.Plane {
@@ -337,15 +337,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_vertex_uv: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_vertex_uv").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 163021252)!
-        }
+            GodotStringName(swiftStaticString: "set_vertex_uv").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 163021252)!
+            }
         }
     }()
-
+    
     public func setVertexUv(
         idx: Int32,
         uv: Godot.Vector2
@@ -365,15 +365,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_vertex_uv: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_vertex_uv").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2299179447)!
-        }
+            GodotStringName(swiftStaticString: "get_vertex_uv").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2299179447)!
+            }
         }
     }()
-
+    
     public func vertexUv(
         idx: Int32
     ) -> Godot.Vector2 {
@@ -392,15 +392,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_vertex_uv2: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_vertex_uv2").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 163021252)!
-        }
+            GodotStringName(swiftStaticString: "set_vertex_uv2").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 163021252)!
+            }
         }
     }()
-
+    
     public func setVertexUv2(
         idx: Int32,
         uv2: Godot.Vector2
@@ -420,15 +420,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_vertex_uv2: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_vertex_uv2").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2299179447)!
-        }
+            GodotStringName(swiftStaticString: "get_vertex_uv2").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2299179447)!
+            }
         }
     }()
-
+    
     public func vertexUv2(
         idx: Int32
     ) -> Godot.Vector2 {
@@ -447,15 +447,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_vertex_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_vertex_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2878471219)!
-        }
+            GodotStringName(swiftStaticString: "set_vertex_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2878471219)!
+            }
         }
     }()
-
+    
     public func setVertexColor(
         idx: Int32,
         color: Godot.Color
@@ -475,15 +475,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_vertex_color: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_vertex_color").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3457211756)!
-        }
+            GodotStringName(swiftStaticString: "get_vertex_color").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3457211756)!
+            }
         }
     }()
-
+    
     public func vertexColor(
         idx: Int32
     ) -> Godot.Color {
@@ -502,15 +502,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_vertex_bones: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_vertex_bones").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3500328261)!
-        }
+            GodotStringName(swiftStaticString: "set_vertex_bones").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3500328261)!
+            }
         }
     }()
-
+    
     public func setVertexBones(
         idx: Int32,
         bones: Godot.GodotContiguousArray<Int32>
@@ -530,15 +530,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_vertex_bones: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_vertex_bones").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1706082319)!
-        }
+            GodotStringName(swiftStaticString: "get_vertex_bones").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1706082319)!
+            }
         }
     }()
-
+    
     public func vertexBones(
         idx: Int32
     ) -> Godot.GodotContiguousArray<Int32> {
@@ -557,15 +557,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_vertex_weights: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_vertex_weights").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1345852415)!
-        }
+            GodotStringName(swiftStaticString: "set_vertex_weights").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1345852415)!
+            }
         }
     }()
-
+    
     public func setVertexWeights(
         idx: Int32,
         weights: Godot.GodotContiguousArray<Float>
@@ -585,15 +585,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_vertex_weights: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_vertex_weights").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1542882410)!
-        }
+            GodotStringName(swiftStaticString: "get_vertex_weights").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1542882410)!
+            }
         }
     }()
-
+    
     public func vertexWeights(
         idx: Int32
     ) -> Godot.GodotContiguousArray<Float> {
@@ -612,15 +612,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_vertex_meta: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_vertex_meta").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2152698145)!
-        }
+            GodotStringName(swiftStaticString: "set_vertex_meta").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2152698145)!
+            }
         }
     }()
-
+    
     public func setVertexMeta<Value: Variant.Storable>(
         idx: Int32,
         meta: Value
@@ -640,15 +640,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_vertex_meta: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_vertex_meta").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4227898402)!
-        }
+            GodotStringName(swiftStaticString: "get_vertex_meta").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4227898402)!
+            }
         }
     }()
-
+    
     public func vertexMeta(
         idx: Int32
     ) -> Godot.Variant {
@@ -667,15 +667,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_vertex_edges: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_vertex_edges").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1706082319)!
-        }
+            GodotStringName(swiftStaticString: "get_vertex_edges").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1706082319)!
+            }
         }
     }()
-
+    
     public func vertexEdges(
         idx: Int32
     ) -> Godot.GodotContiguousArray<Int32> {
@@ -694,15 +694,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_vertex_faces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_vertex_faces").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1706082319)!
-        }
+            GodotStringName(swiftStaticString: "get_vertex_faces").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1706082319)!
+            }
         }
     }()
-
+    
     public func vertexFaces(
         idx: Int32
     ) -> Godot.GodotContiguousArray<Int32> {
@@ -721,15 +721,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_edge_vertex: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_edge_vertex").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3175239445)!
-        }
+            GodotStringName(swiftStaticString: "get_edge_vertex").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3175239445)!
+            }
         }
     }()
-
+    
     public func edgeVertex(
         idx: Int32,
         vertex: Int32
@@ -751,15 +751,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_edge_faces: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_edge_faces").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1706082319)!
-        }
+            GodotStringName(swiftStaticString: "get_edge_faces").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1706082319)!
+            }
         }
     }()
-
+    
     public func edgeFaces(
         idx: Int32
     ) -> Godot.GodotContiguousArray<Int32> {
@@ -778,15 +778,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_edge_meta: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_edge_meta").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2152698145)!
-        }
+            GodotStringName(swiftStaticString: "set_edge_meta").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2152698145)!
+            }
         }
     }()
-
+    
     public func setEdgeMeta<Value: Variant.Storable>(
         idx: Int32,
         meta: Value
@@ -806,15 +806,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_edge_meta: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_edge_meta").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4227898402)!
-        }
+            GodotStringName(swiftStaticString: "get_edge_meta").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4227898402)!
+            }
         }
     }()
-
+    
     public func edgeMeta(
         idx: Int32
     ) -> Godot.Variant {
@@ -833,15 +833,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_face_vertex: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_face_vertex").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3175239445)!
-        }
+            GodotStringName(swiftStaticString: "get_face_vertex").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3175239445)!
+            }
         }
     }()
-
+    
     public func faceVertex(
         idx: Int32,
         vertex: Int32
@@ -863,15 +863,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_face_edge: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_face_edge").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3175239445)!
-        }
+            GodotStringName(swiftStaticString: "get_face_edge").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3175239445)!
+            }
         }
     }()
-
+    
     public func faceEdge(
         idx: Int32,
         edge: Int32
@@ -893,15 +893,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_face_meta: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_face_meta").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2152698145)!
-        }
+            GodotStringName(swiftStaticString: "set_face_meta").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2152698145)!
+            }
         }
     }()
-
+    
     public func setFaceMeta<Value: Variant.Storable>(
         idx: Int32,
         meta: Value
@@ -921,15 +921,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_face_meta: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_face_meta").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4227898402)!
-        }
+            GodotStringName(swiftStaticString: "get_face_meta").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4227898402)!
+            }
         }
     }()
-
+    
     public func faceMeta(
         idx: Int32
     ) -> Godot.Variant {
@@ -948,15 +948,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_face_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_face_normal").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 711720468)!
-        }
+            GodotStringName(swiftStaticString: "get_face_normal").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 711720468)!
+            }
         }
     }()
-
+    
     public func faceNormal(
         idx: Int32
     ) -> Godot.Vector3 {
@@ -975,15 +975,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_material").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2757459619)!
-        }
+            GodotStringName(swiftStaticString: "set_material").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2757459619)!
+            }
         }
     }()
-
+    
     public func setMaterial(
         _ material: Godot.Material?
     ) {
@@ -1002,15 +1002,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_material: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_material").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 5934680)!
-        }
+            GodotStringName(swiftStaticString: "get_material").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 5934680)!
+            }
         }
     }()
-
+    
     public func material() -> Godot.Material? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1023,18 +1023,15 @@ open class MeshDataTool: RefCounted {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

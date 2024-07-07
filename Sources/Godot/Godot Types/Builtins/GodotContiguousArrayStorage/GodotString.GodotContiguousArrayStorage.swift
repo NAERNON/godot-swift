@@ -183,7 +183,7 @@ extension GodotString.GodotContiguousArrayStorage: GodotContiguousArrayStoragePr
         .packedStringArray
     }
     
-    public consuming func transferToGodot(
+    public func transferToGodot(
         unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
     ) {
         withUnsafeOpaquePointer { selfPtr in

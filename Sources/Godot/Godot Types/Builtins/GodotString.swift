@@ -427,7 +427,9 @@ extension GodotString: ExpressibleByStringLiteral, ExpressibleByStringInterpolat
     }
 }
 
-extension GodotString: Sequence {}
+extension GodotString: Sequence {
+    public typealias Element = Character
+}
 
 extension GodotString: Collection {
     public var startIndex: Int {

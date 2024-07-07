@@ -6,10 +6,11 @@ import GodotExtensionHeaders
 
 internal enum RIDBindings {
     static private var areBindingsLoaded = false
-
+    
     internal static func loadBindings() {
         precondition(!areBindingsLoaded, "RID bindings are already loaded.")
         areBindingsLoaded = true
+        
         constructor = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_RID, 0)!
         constructorFromRID = GodotExtension.Interface.variantGetPtrConstructor(GDEXTENSION_VARIANT_TYPE_RID, 1)!
         operatorEqualVariant = GodotExtension.Interface.variantGetPtrOperatorEvaluator(GDEXTENSION_VARIANT_OP_EQUAL, GDEXTENSION_VARIANT_TYPE_RID, GDEXTENSION_VARIANT_TYPE_NIL)!
@@ -28,32 +29,20 @@ internal enum RIDBindings {
             GodotExtension.Interface.variantGetPtrBuiltinMethod(GDEXTENSION_VARIANT_TYPE_RID, __ptr__method_name, 3173160232)!
         }
     }
-
-    static private (set) var constructor: GDExtensionPtrConstructor!
-
-    static private (set) var constructorFromRID: GDExtensionPtrConstructor!
-
-    static private (set) var operatorEqualVariant: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNotEqualVariant: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNot: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorEqualRID: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorNotEqualRID: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorLessRID: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorLessEqualRID: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorGreaterRID: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var operatorGreaterEqualRID: GDExtensionPtrOperatorEvaluator!
-
-    static private (set) var methodIsValid: GDExtensionPtrBuiltInMethod!
-
-    static private (set) var methodGetID: GDExtensionPtrBuiltInMethod!
+    
+    static private(set) var constructor: GDExtensionPtrConstructor!
+    static private(set) var constructorFromRID: GDExtensionPtrConstructor!
+    static private(set) var operatorEqualVariant: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNotEqualVariant: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNot: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorEqualRID: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorNotEqualRID: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorLessRID: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorLessEqualRID: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorGreaterRID: GDExtensionPtrOperatorEvaluator!
+    static private(set) var operatorGreaterEqualRID: GDExtensionPtrOperatorEvaluator!
+    static private(set) var methodIsValid: GDExtensionPtrBuiltInMethod!
+    static private(set) var methodGetID: GDExtensionPtrBuiltInMethod!
 }
 
 extension RID {
@@ -62,7 +51,7 @@ extension RID {
     ) -> Opaque.Storage {
         Opaque.Storage(size: 8, destructorPtr: useDestructor ? nil : nil)
     }
-
+    
     static internal func make() -> Opaque.Storage {
         var __temporary: Opaque.Storage = makeOpaqueStorage()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -70,7 +59,7 @@ extension RID {
         }
         return __temporary
     }
-
+    
     static internal func make(
         from: Godot.RID
     ) -> Opaque.Storage {
@@ -84,7 +73,7 @@ extension RID {
         }
         return __temporary
     }
-
+    
     static internal func _operatorEqual<Value: Variant.Storable>(
         _ lhs: Godot.RID,
         _ rhs: Value
@@ -97,7 +86,7 @@ extension RID {
             }
         }
     }
-
+    
     static internal func _operatorNotEqual<Value: Variant.Storable>(
         _ lhs: Godot.RID,
         _ rhs: Value
@@ -110,7 +99,7 @@ extension RID {
             }
         }
     }
-
+    
     static internal func _operatorNot(
         _ lhs: Godot.RID
     ) -> Bool {
@@ -120,7 +109,7 @@ extension RID {
             }
         }
     }
-
+    
     static internal func _operatorEqual(
         _ lhs: Godot.RID,
         _ rhs: Godot.RID
@@ -133,7 +122,7 @@ extension RID {
             }
         }
     }
-
+    
     static internal func _operatorNotEqual(
         _ lhs: Godot.RID,
         _ rhs: Godot.RID
@@ -146,7 +135,7 @@ extension RID {
             }
         }
     }
-
+    
     static internal func _operatorLess(
         _ lhs: Godot.RID,
         _ rhs: Godot.RID
@@ -159,7 +148,7 @@ extension RID {
             }
         }
     }
-
+    
     static internal func _operatorLessEqual(
         _ lhs: Godot.RID,
         _ rhs: Godot.RID
@@ -172,7 +161,7 @@ extension RID {
             }
         }
     }
-
+    
     static internal func _operatorGreater(
         _ lhs: Godot.RID,
         _ rhs: Godot.RID
@@ -185,7 +174,7 @@ extension RID {
             }
         }
     }
-
+    
     static internal func _operatorGreaterEqual(
         _ lhs: Godot.RID,
         _ rhs: Godot.RID
@@ -198,7 +187,7 @@ extension RID {
             }
         }
     }
-
+    
     internal func _isValid() -> Bool {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in
@@ -206,7 +195,7 @@ extension RID {
             }
         }
     }
-
+    
     internal func _id() -> Int {
         return fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: `self`) { __ptr_self in

@@ -9,35 +9,37 @@ open class CharacterBody3D: PhysicsBody3D {
     public enum MotionMode: UInt32, GodotEnum {
         case grounded = 0
         case floating = 1
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Grounded", 0),
-            ("Floating", 1),]
+               ("Grounded", 0),
+               ("Floating", 1),
+            ]
         }
     }
-
+    
     public enum PlatformOnLeave: UInt32, GodotEnum {
         case addVelocity = 0
         case addUpwardVelocity = 1
         case doNothing = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Add Velocity", 0),
-            ("Add Upward Velocity", 1),
-            ("Do Nothing", 2),]
+               ("Add Velocity", 0),
+               ("Add Upward Velocity", 1),
+               ("Do Nothing", 2),
+            ]
         }
     }
-
+    
     internal static var __method_binding_move_and_slide: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "move_and_slide").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
-        }
+            GodotStringName(swiftStaticString: "move_and_slide").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2240911060)!
+            }
         }
     }()
-
+    
     public func moveAndSlide() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -50,15 +52,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_apply_floor_snap: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "apply_floor_snap").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "apply_floor_snap").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func applyFloorSnap() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -69,15 +71,15 @@ open class CharacterBody3D: PhysicsBody3D {
             )
         }
     }
-
+    
     internal static var __method_binding_set_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_velocity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
-        }
+            GodotStringName(swiftStaticString: "set_velocity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
+            }
         }
     }()
-
+    
     private func __setVelocity(
         _ velocity: Godot.Vector3
     ) {
@@ -94,15 +96,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_velocity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
-        }
+            GodotStringName(swiftStaticString: "get_velocity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
+            }
         }
     }()
-
+    
     private func __getVelocity() -> Godot.Vector3 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -115,15 +117,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_safe_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_safe_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_safe_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setSafeMargin(
         _ margin: Double
     ) {
@@ -140,15 +142,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_safe_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_safe_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_safe_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getSafeMargin() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -161,15 +163,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_floor_stop_on_slope_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_floor_stop_on_slope_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_floor_stop_on_slope_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isFloorStopOnSlopeEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -182,15 +184,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_floor_stop_on_slope_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_floor_stop_on_slope_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_floor_stop_on_slope_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setFloorStopOnSlopeEnabled(
         _ enabled: Bool
     ) {
@@ -207,15 +209,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_floor_constant_speed_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_floor_constant_speed_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_floor_constant_speed_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setFloorConstantSpeedEnabled(
         _ enabled: Bool
     ) {
@@ -232,15 +234,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_floor_constant_speed_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_floor_constant_speed_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_floor_constant_speed_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isFloorConstantSpeedEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -253,15 +255,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_floor_block_on_wall_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_floor_block_on_wall_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_floor_block_on_wall_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setFloorBlockOnWallEnabled(
         _ enabled: Bool
     ) {
@@ -278,15 +280,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_floor_block_on_wall_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_floor_block_on_wall_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_floor_block_on_wall_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isFloorBlockOnWallEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -299,15 +301,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_slide_on_ceiling_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_slide_on_ceiling_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_slide_on_ceiling_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setSlideOnCeilingEnabled(
         _ enabled: Bool
     ) {
@@ -324,15 +326,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_slide_on_ceiling_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_slide_on_ceiling_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_slide_on_ceiling_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isSlideOnCeilingEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -345,15 +347,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_platform_floor_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_platform_floor_layers").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_platform_floor_layers").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setPlatformFloorLayers(
         excludeLayer: UInt32
     ) {
@@ -370,15 +372,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_platform_floor_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_platform_floor_layers").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_platform_floor_layers").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getPlatformFloorLayers() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -391,15 +393,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_platform_wall_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_platform_wall_layers").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_platform_wall_layers").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setPlatformWallLayers(
         excludeLayer: UInt32
     ) {
@@ -416,15 +418,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_platform_wall_layers: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_platform_wall_layers").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_platform_wall_layers").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getPlatformWallLayers() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -437,15 +439,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_max_slides: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_max_slides").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_max_slides").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getMaxSlides() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -458,15 +460,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_max_slides: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_max_slides").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_max_slides").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setMaxSlides(
         _ maxSlides: Int32
     ) {
@@ -483,15 +485,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_floor_max_angle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_floor_max_angle").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_floor_max_angle").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getFloorMaxAngle() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -504,15 +506,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_floor_max_angle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_floor_max_angle").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_floor_max_angle").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setFloorMaxAngle(
         radians: Double
     ) {
@@ -529,15 +531,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_floor_snap_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_floor_snap_length").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 191475506)!
-        }
+            GodotStringName(swiftStaticString: "get_floor_snap_length").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 191475506)!
+            }
         }
     }()
-
+    
     private func __getFloorSnapLength() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -550,15 +552,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_floor_snap_length: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_floor_snap_length").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_floor_snap_length").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setFloorSnapLength(
         _ floorSnapLength: Double
     ) {
@@ -575,15 +577,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_wall_min_slide_angle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_wall_min_slide_angle").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_wall_min_slide_angle").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getWallMinSlideAngle() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -596,15 +598,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_wall_min_slide_angle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_wall_min_slide_angle").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_wall_min_slide_angle").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setWallMinSlideAngle(
         radians: Double
     ) {
@@ -621,15 +623,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_up_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_up_direction").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
-        }
+            GodotStringName(swiftStaticString: "get_up_direction").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
+            }
         }
     }()
-
+    
     private func __getUpDirection() -> Godot.Vector3 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -642,15 +644,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_up_direction: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_up_direction").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
-        }
+            GodotStringName(swiftStaticString: "set_up_direction").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3460891852)!
+            }
         }
     }()
-
+    
     private func __setUpDirection(
         _ upDirection: Godot.Vector3
     ) {
@@ -667,15 +669,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_motion_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_motion_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2690739026)!
-        }
+            GodotStringName(swiftStaticString: "set_motion_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2690739026)!
+            }
         }
     }()
-
+    
     private func __setMotionMode(
         _ mode: Godot.CharacterBody3D.MotionMode
     ) {
@@ -692,15 +694,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_motion_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_motion_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3529553604)!
-        }
+            GodotStringName(swiftStaticString: "get_motion_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3529553604)!
+            }
         }
     }()
-
+    
     private func __getMotionMode() -> Godot.CharacterBody3D.MotionMode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -713,15 +715,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_platform_on_leave: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_platform_on_leave").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1459986142)!
-        }
+            GodotStringName(swiftStaticString: "set_platform_on_leave").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1459986142)!
+            }
         }
     }()
-
+    
     private func __setPlatformOnLeave(
         onLeaveApplyVelocity: Godot.CharacterBody3D.PlatformOnLeave
     ) {
@@ -738,15 +740,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_platform_on_leave: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_platform_on_leave").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 996491171)!
-        }
+            GodotStringName(swiftStaticString: "get_platform_on_leave").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 996491171)!
+            }
         }
     }()
-
+    
     private func __getPlatformOnLeave() -> Godot.CharacterBody3D.PlatformOnLeave {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -759,15 +761,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_on_floor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_on_floor").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_on_floor").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isOnFloor() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -780,15 +782,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_on_floor_only: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_on_floor_only").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_on_floor_only").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isOnFloorOnly() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -801,15 +803,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_on_ceiling: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_on_ceiling").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_on_ceiling").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isOnCeiling() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -822,15 +824,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_on_ceiling_only: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_on_ceiling_only").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_on_ceiling_only").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isOnCeilingOnly() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -843,15 +845,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_on_wall: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_on_wall").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_on_wall").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isOnWall() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -864,15 +866,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_is_on_wall_only: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_on_wall_only").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_on_wall_only").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     public func isOnWallOnly() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -885,15 +887,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_floor_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_floor_normal").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
-        }
+            GodotStringName(swiftStaticString: "get_floor_normal").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
+            }
         }
     }()
-
+    
     public func floorNormal() -> Godot.Vector3 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -906,15 +908,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_wall_normal: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_wall_normal").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
-        }
+            GodotStringName(swiftStaticString: "get_wall_normal").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
+            }
         }
     }()
-
+    
     public func wallNormal() -> Godot.Vector3 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -927,15 +929,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_last_motion: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_last_motion").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
-        }
+            GodotStringName(swiftStaticString: "get_last_motion").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
+            }
         }
     }()
-
+    
     public func lastMotion() -> Godot.Vector3 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -948,15 +950,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_position_delta: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_position_delta").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
-        }
+            GodotStringName(swiftStaticString: "get_position_delta").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
+            }
         }
     }()
-
+    
     public func positionDelta() -> Godot.Vector3 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -969,15 +971,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_real_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_real_velocity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
-        }
+            GodotStringName(swiftStaticString: "get_real_velocity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
+            }
         }
     }()
-
+    
     public func realVelocity() -> Godot.Vector3 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -990,15 +992,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_floor_angle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_floor_angle").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2906300789)!
-        }
+            GodotStringName(swiftStaticString: "get_floor_angle").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2906300789)!
+            }
         }
     }()
-
+    
     public func floorAngle(
         upDirection: Godot.Vector3 = Vector3(x: 0, y: 1, z: 0)
     ) -> Double {
@@ -1017,15 +1019,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_platform_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_platform_velocity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
-        }
+            GodotStringName(swiftStaticString: "get_platform_velocity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
+            }
         }
     }()
-
+    
     public func platformVelocity() -> Godot.Vector3 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1038,15 +1040,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_platform_angular_velocity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_platform_angular_velocity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
-        }
+            GodotStringName(swiftStaticString: "get_platform_angular_velocity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3360562783)!
+            }
         }
     }()
-
+    
     public func platformAngularVelocity() -> Godot.Vector3 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1059,15 +1061,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_slide_collision_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_slide_collision_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_slide_collision_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func slideCollisionCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1080,15 +1082,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_slide_collision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_slide_collision").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 107003663)!
-        }
+            GodotStringName(swiftStaticString: "get_slide_collision").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 107003663)!
+            }
         }
     }()
-
+    
     public func slideCollision(
         slideIdx: Int32
     ) -> Godot.KinematicCollision3D? {
@@ -1107,15 +1109,15 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_last_slide_collision: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_last_slide_collision").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 186875014)!
-        }
+            GodotStringName(swiftStaticString: "get_last_slide_collision").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 186875014)!
+            }
         }
     }()
-
+    
     public func lastSlideCollision() -> Godot.KinematicCollision3D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1128,183 +1130,180 @@ open class CharacterBody3D: PhysicsBody3D {
             }
         }
     }
-
+    
     public var motionMode: Godot.CharacterBody3D.MotionMode {
         get {
             __getMotionMode()
         }
-        set {
+        set(newValue) {
             __setMotionMode(
                 newValue
             )
         }
     }
-
+    
     public var upDirection: Godot.Vector3 {
         get {
             __getUpDirection()
         }
-        set {
+        set(newValue) {
             __setUpDirection(
                 newValue
             )
         }
     }
-
+    
     public var isSlideOnCeilingEnabled: Bool {
         get {
             __isSlideOnCeilingEnabled()
         }
-        set {
+        set(newValue) {
             __setSlideOnCeilingEnabled(
                 newValue
             )
         }
     }
-
+    
     public var velocity: Godot.Vector3 {
         get {
             __getVelocity()
         }
-        set {
+        set(newValue) {
             __setVelocity(
                 newValue
             )
         }
     }
-
+    
     public var maxSlides: Int32 {
         get {
             __getMaxSlides()
         }
-        set {
+        set(newValue) {
             __setMaxSlides(
                 newValue
             )
         }
     }
-
+    
     public var wallMinSlideAngle: Double {
         get {
             __getWallMinSlideAngle()
         }
-        set {
+        set(newValue) {
             __setWallMinSlideAngle(
                 radians: newValue
             )
         }
     }
-
+    
     public var isFloorStopOnSlopeEnabled: Bool {
         get {
             __isFloorStopOnSlopeEnabled()
         }
-        set {
+        set(newValue) {
             __setFloorStopOnSlopeEnabled(
                 newValue
             )
         }
     }
-
+    
     public var isFloorConstantSpeedEnabled: Bool {
         get {
             __isFloorConstantSpeedEnabled()
         }
-        set {
+        set(newValue) {
             __setFloorConstantSpeedEnabled(
                 newValue
             )
         }
     }
-
+    
     public var isFloorBlockOnWallEnabled: Bool {
         get {
             __isFloorBlockOnWallEnabled()
         }
-        set {
+        set(newValue) {
             __setFloorBlockOnWallEnabled(
                 newValue
             )
         }
     }
-
+    
     public var floorMaxAngle: Double {
         get {
             __getFloorMaxAngle()
         }
-        set {
+        set(newValue) {
             __setFloorMaxAngle(
                 radians: newValue
             )
         }
     }
-
+    
     public var floorSnapLength: Double {
         get {
             __getFloorSnapLength()
         }
-        set {
+        set(newValue) {
             __setFloorSnapLength(
                 newValue
             )
         }
     }
-
+    
     public var platformOnLeave: Godot.CharacterBody3D.PlatformOnLeave {
         get {
             __getPlatformOnLeave()
         }
-        set {
+        set(newValue) {
             __setPlatformOnLeave(
                 onLeaveApplyVelocity: newValue
             )
         }
     }
-
+    
     public var platformFloorLayers: UInt32 {
         get {
             __getPlatformFloorLayers()
         }
-        set {
+        set(newValue) {
             __setPlatformFloorLayers(
                 excludeLayer: newValue
             )
         }
     }
-
+    
     public var platformWallLayers: UInt32 {
         get {
             __getPlatformWallLayers()
         }
-        set {
+        set(newValue) {
             __setPlatformWallLayers(
                 excludeLayer: newValue
             )
         }
     }
-
+    
     public var safeMargin: Double {
         get {
             __getSafeMargin()
         }
-        set {
+        set(newValue) {
             __setSafeMargin(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

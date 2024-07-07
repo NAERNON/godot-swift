@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class WorkerThreadPool: Object {
     internal static var __method_binding_add_task: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_task").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3745067146)!
-        }
+            GodotStringName(swiftStaticString: "add_task").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3745067146)!
+            }
         }
     }()
-
+    
     public func addTask(
         action: Godot.Callable,
         highPriority: Bool = false,
@@ -38,15 +38,15 @@ open class WorkerThreadPool: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_task_completed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_task_completed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "is_task_completed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func isTaskCompleted(
         taskID: Int64
     ) -> Bool {
@@ -65,15 +65,15 @@ open class WorkerThreadPool: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_wait_for_task_completion: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "wait_for_task_completion").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844576869)!
-        }
+            GodotStringName(swiftStaticString: "wait_for_task_completion").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844576869)!
+            }
         }
     }()
-
+    
     public func waitForTaskCompletion(
         taskID: Int64
     ) -> Godot.ErrorType {
@@ -92,15 +92,15 @@ open class WorkerThreadPool: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_add_group_task: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_group_task").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1801953219)!
-        }
+            GodotStringName(swiftStaticString: "add_group_task").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1801953219)!
+            }
         }
     }()
-
+    
     public func addGroupTask(
         action: Godot.Callable,
         elements: Int32,
@@ -131,15 +131,15 @@ open class WorkerThreadPool: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_is_group_task_completed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_group_task_completed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
-        }
+            GodotStringName(swiftStaticString: "is_group_task_completed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1116898809)!
+            }
         }
     }()
-
+    
     public func isGroupTaskCompleted(
         groupID: Int64
     ) -> Bool {
@@ -158,15 +158,15 @@ open class WorkerThreadPool: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_group_processed_element_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_group_processed_element_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
-        }
+            GodotStringName(swiftStaticString: "get_group_processed_element_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 923996154)!
+            }
         }
     }()
-
+    
     public func groupProcessedElementCount(
         groupID: Int64
     ) -> UInt32 {
@@ -185,15 +185,15 @@ open class WorkerThreadPool: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_wait_for_group_task_completion: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "wait_for_group_task_completion").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "wait_for_group_task_completion").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     public func waitForGroupTaskCompletion(
         groupID: Int64
     ) {
@@ -210,18 +210,15 @@ open class WorkerThreadPool: Object {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

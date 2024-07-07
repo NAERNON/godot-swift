@@ -16,42 +16,44 @@ open class HingeJoint3D: Joint3D {
         case motorTargetVelocity = 6
         case motorMaxImpulse = 7
         case max = 8
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Bias", 0),
-            ("Limit Upper", 1),
-            ("Limit Lower", 2),
-            ("Limit Bias", 3),
-            ("Limit Softness", 4),
-            ("Limit Relaxation", 5),
-            ("Motor Target Velocity", 6),
-            ("Motor Max Impulse", 7),
-            ("Max", 8),]
+               ("Bias", 0),
+               ("Limit Upper", 1),
+               ("Limit Lower", 2),
+               ("Limit Bias", 3),
+               ("Limit Softness", 4),
+               ("Limit Relaxation", 5),
+               ("Motor Target Velocity", 6),
+               ("Motor Max Impulse", 7),
+               ("Max", 8),
+            ]
         }
     }
-
+    
     public enum Flag: UInt32, GodotEnum {
         case useLimit = 0
         case enableMotor = 1
         case max = 2
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Use Limit", 0),
-            ("Enable Motor", 1),
-            ("Max", 2),]
+               ("Use Limit", 0),
+               ("Enable Motor", 1),
+               ("Max", 2),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3082977519)!
-        }
+            GodotStringName(swiftStaticString: "set_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3082977519)!
+            }
         }
     }()
-
+    
     public func setParam(
         _ param: Godot.HingeJoint3D.Param,
         value: Double
@@ -71,15 +73,15 @@ open class HingeJoint3D: Joint3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_param: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_param").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4066002676)!
-        }
+            GodotStringName(swiftStaticString: "get_param").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4066002676)!
+            }
         }
     }()
-
+    
     public func param(
         _ param: Godot.HingeJoint3D.Param
     ) -> Double {
@@ -98,15 +100,15 @@ open class HingeJoint3D: Joint3D {
             }
         }
     }
-
+    
     internal static var __method_binding_set_flag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_flag").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1083494620)!
-        }
+            GodotStringName(swiftStaticString: "set_flag").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1083494620)!
+            }
         }
     }()
-
+    
     public func setFlag(
         _ flag: Godot.HingeJoint3D.Flag,
         enabled: Bool
@@ -126,15 +128,15 @@ open class HingeJoint3D: Joint3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_flag: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_flag").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2841369610)!
-        }
+            GodotStringName(swiftStaticString: "get_flag").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2841369610)!
+            }
         }
     }()
-
+    
     public func flag(
         _ flag: Godot.HingeJoint3D.Flag
     ) -> Bool {
@@ -153,18 +155,15 @@ open class HingeJoint3D: Joint3D {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

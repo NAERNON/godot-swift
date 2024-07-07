@@ -41,54 +41,55 @@ open class Performance: Object {
         case navigationEdgeConnectionCount = 31
         case navigationEdgeFreeCount = 32
         case monitorMax = 33
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Time Fps", 0),
-            ("Time Process", 1),
-            ("Time Physics Process", 2),
-            ("Time Navigation Process", 3),
-            ("Memory Static", 4),
-            ("Memory Static Max", 5),
-            ("Memory Message Buffer Max", 6),
-            ("Object Count", 7),
-            ("Object Resource Count", 8),
-            ("Object Node Count", 9),
-            ("Object Orphan Node Count", 10),
-            ("Render Total Objects In Frame", 11),
-            ("Render Total Primitives In Frame", 12),
-            ("Render Total Draw Calls In Frame", 13),
-            ("Render Video Mem Used", 14),
-            ("Render Texture Mem Used", 15),
-            ("Render Buffer Mem Used", 16),
-            ("Physics2D Active Objects", 17),
-            ("Physics2D Collision Pairs", 18),
-            ("Physics2D Island Count", 19),
-            ("Physics3D Active Objects", 20),
-            ("Physics3D Collision Pairs", 21),
-            ("Physics3D Island Count", 22),
-            ("Audio Output Latency", 23),
-            ("Navigation Active Maps", 24),
-            ("Navigation Region Count", 25),
-            ("Navigation Agent Count", 26),
-            ("Navigation Link Count", 27),
-            ("Navigation Polygon Count", 28),
-            ("Navigation Edge Count", 29),
-            ("Navigation Edge Merge Count", 30),
-            ("Navigation Edge Connection Count", 31),
-            ("Navigation Edge Free Count", 32),
-            ("Monitor Max", 33),]
+               ("Time Fps", 0),
+               ("Time Process", 1),
+               ("Time Physics Process", 2),
+               ("Time Navigation Process", 3),
+               ("Memory Static", 4),
+               ("Memory Static Max", 5),
+               ("Memory Message Buffer Max", 6),
+               ("Object Count", 7),
+               ("Object Resource Count", 8),
+               ("Object Node Count", 9),
+               ("Object Orphan Node Count", 10),
+               ("Render Total Objects In Frame", 11),
+               ("Render Total Primitives In Frame", 12),
+               ("Render Total Draw Calls In Frame", 13),
+               ("Render Video Mem Used", 14),
+               ("Render Texture Mem Used", 15),
+               ("Render Buffer Mem Used", 16),
+               ("Physics2D Active Objects", 17),
+               ("Physics2D Collision Pairs", 18),
+               ("Physics2D Island Count", 19),
+               ("Physics3D Active Objects", 20),
+               ("Physics3D Collision Pairs", 21),
+               ("Physics3D Island Count", 22),
+               ("Audio Output Latency", 23),
+               ("Navigation Active Maps", 24),
+               ("Navigation Region Count", 25),
+               ("Navigation Agent Count", 26),
+               ("Navigation Link Count", 27),
+               ("Navigation Polygon Count", 28),
+               ("Navigation Edge Count", 29),
+               ("Navigation Edge Merge Count", 30),
+               ("Navigation Edge Connection Count", 31),
+               ("Navigation Edge Free Count", 32),
+               ("Monitor Max", 33),
+            ]
         }
     }
-
+    
     internal static var __method_binding_get_monitor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_monitor").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1943275655)!
-        }
+            GodotStringName(swiftStaticString: "get_monitor").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1943275655)!
+            }
         }
     }()
-
+    
     public func monitor(
         _ monitor: Godot.Performance.Monitor
     ) -> Double {
@@ -107,15 +108,15 @@ open class Performance: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_add_custom_monitor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_custom_monitor").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4099036814)!
-        }
+            GodotStringName(swiftStaticString: "add_custom_monitor").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4099036814)!
+            }
         }
     }()
-
+    
     public func addCustomMonitor<Value: Variant.Storable>(
         id: Godot.GodotStringName,
         callable: Godot.Callable,
@@ -138,15 +139,15 @@ open class Performance: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_remove_custom_monitor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "remove_custom_monitor").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
-        }
+            GodotStringName(swiftStaticString: "remove_custom_monitor").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
+            }
         }
     }()
-
+    
     public func removeCustomMonitor(
         id: Godot.GodotStringName
     ) {
@@ -163,15 +164,15 @@ open class Performance: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_has_custom_monitor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_custom_monitor").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2041966384)!
-        }
+            GodotStringName(swiftStaticString: "has_custom_monitor").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2041966384)!
+            }
         }
     }()
-
+    
     public func hasCustomMonitor(
         id: Godot.GodotStringName
     ) -> Bool {
@@ -190,15 +191,15 @@ open class Performance: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_custom_monitor: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_custom_monitor").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2138907829)!
-        }
+            GodotStringName(swiftStaticString: "get_custom_monitor").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2138907829)!
+            }
         }
     }()
-
+    
     public func customMonitor(
         id: Godot.GodotStringName
     ) -> Godot.Variant {
@@ -217,15 +218,15 @@ open class Performance: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_monitor_modification_time: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_monitor_modification_time").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
-        }
+            GodotStringName(swiftStaticString: "get_monitor_modification_time").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
+            }
         }
     }()
-
+    
     public func monitorModificationTime() -> UInt64 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -238,15 +239,15 @@ open class Performance: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_custom_monitor_names: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_custom_monitor_names").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
-        }
+            GodotStringName(swiftStaticString: "get_custom_monitor_names").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
+            }
         }
     }()
-
+    
     public func customMonitorNames() -> Godot.GodotArray<Godot.GodotStringName> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -259,18 +260,15 @@ open class Performance: Object {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

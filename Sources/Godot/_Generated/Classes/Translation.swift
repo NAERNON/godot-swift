@@ -14,22 +14,22 @@ open class Translation: Resource {
     ) -> Godot.GodotStringName {
         Godot.GodotStringName()
     }
-
+    
     open func _getMessage(
         srcMessage: Godot.GodotStringName,
         context: Godot.GodotStringName
     ) -> Godot.GodotStringName {
         Godot.GodotStringName()
     }
-
+    
     internal static var __method_binding_set_locale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_locale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "set_locale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     private func __setLocale(
         _ locale: Godot.GodotString
     ) {
@@ -46,15 +46,15 @@ open class Translation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_locale: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_locale").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
-        }
+            GodotStringName(swiftStaticString: "get_locale").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 201670096)!
+            }
         }
     }()
-
+    
     private func __getLocale() -> Godot.GodotString {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -67,15 +67,15 @@ open class Translation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_add_message: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_message").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3898530326)!
-        }
+            GodotStringName(swiftStaticString: "add_message").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3898530326)!
+            }
         }
     }()
-
+    
     public func addMessage(
         srcMessage: Godot.GodotStringName,
         xlatedMessage: Godot.GodotStringName,
@@ -98,15 +98,15 @@ open class Translation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_add_plural_message: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_plural_message").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2356982266)!
-        }
+            GodotStringName(swiftStaticString: "add_plural_message").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2356982266)!
+            }
         }
     }()
-
+    
     public func addPluralMessage(
         srcMessage: Godot.GodotStringName,
         xlatedMessages: Godot.GodotContiguousArray<GodotString>,
@@ -129,15 +129,15 @@ open class Translation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_message: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_message").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1829228469)!
-        }
+            GodotStringName(swiftStaticString: "get_message").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1829228469)!
+            }
         }
     }()
-
+    
     public func message(
         _ srcMessage: Godot.GodotStringName,
         context: Godot.GodotStringName = ""
@@ -159,15 +159,15 @@ open class Translation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_plural_message: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_plural_message").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 229954002)!
-        }
+            GodotStringName(swiftStaticString: "get_plural_message").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 229954002)!
+            }
         }
     }()
-
+    
     public func pluralMessage(
         srcMessage: Godot.GodotStringName,
         srcPluralMessage: Godot.GodotStringName,
@@ -195,15 +195,15 @@ open class Translation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_erase_message: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "erase_message").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3959009644)!
-        }
+            GodotStringName(swiftStaticString: "erase_message").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3959009644)!
+            }
         }
     }()
-
+    
     public func eraseMessage(
         srcMessage: Godot.GodotStringName,
         context: Godot.GodotStringName = ""
@@ -223,15 +223,15 @@ open class Translation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_message_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_message_list").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
-        }
+            GodotStringName(swiftStaticString: "get_message_list").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
+            }
         }
     }()
-
+    
     public func messageList() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -244,15 +244,15 @@ open class Translation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_translated_message_list: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_translated_message_list").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
-        }
+            GodotStringName(swiftStaticString: "get_translated_message_list").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1139954409)!
+            }
         }
     }()
-
+    
     public func translatedMessageList() -> Godot.GodotContiguousArray<GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -265,15 +265,15 @@ open class Translation: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_message_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_message_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_message_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func messageCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -286,52 +286,51 @@ open class Translation: Resource {
             }
         }
     }
-
+    
     public var locale: Godot.GodotString {
         get {
             __getLocale()
         }
-        set {
+        set(newValue) {
             __setLocale(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _get_plural_message_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<Translation> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getPluralMessage(
-            srcMessage: Godot.GodotStringName.transferFromGodot(unsafePointer: args[0]!),
-            srcPluralMessage: Godot.GodotStringName.transferFromGodot(unsafePointer: args[1]!),
-            n: Int32.transferFromGodot(unsafePointer: args[2]!),
-            context: Godot.GodotStringName.transferFromGodot(unsafePointer: args[3]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<Translation>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getPluralMessage(
+                    srcMessage: Godot.GodotStringName.transferFromGodot(unsafePointer: args[0]!),
+                    srcPluralMessage: Godot.GodotStringName.transferFromGodot(unsafePointer: args[1]!),
+                    n: Int32.transferFromGodot(unsafePointer: args[2]!),
+                    context: Godot.GodotStringName.transferFromGodot(unsafePointer: args[3]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_message_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<Translation> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getMessage(
-            srcMessage: Godot.GodotStringName.transferFromGodot(unsafePointer: args[0]!),
-            context: Godot.GodotStringName.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<Translation>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getMessage(
+                    srcMessage: Godot.GodotStringName.transferFromGodot(unsafePointer: args[0]!),
+                    context: Godot.GodotStringName.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         _virtualFunctions = [
             "_getPluralMessage" : ("_get_plural_message", _get_plural_message_call),
             "_getMessage" : ("_get_message", _get_message_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

@@ -9,17 +9,17 @@ open class MovieWriter: Object {
     open func _getAudioMixRate() -> UInt32 {
         UInt32()
     }
-
+    
     open func _getAudioSpeakerMode() -> Godot.AudioServer.SpeakerMode {
         Godot.AudioServer.SpeakerMode(rawValue: 0)!
     }
-
+    
     open func _handlesFile(
         path: Godot.GodotString
     ) -> Bool {
         Bool()
     }
-
+    
     open func _writeBegin(
         movieSize: Godot.Vector2I,
         fps: UInt32,
@@ -27,25 +27,26 @@ open class MovieWriter: Object {
     ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
-
+    
     open func _writeFrame(
         frameImage: Godot.Image?,
         audioFrameBlock: UnsafeRawPointer
     ) -> Godot.ErrorType {
         Godot.ErrorType(rawValue: 0)!
     }
-
+    
     open func _writeEnd() {
+        
     }
-
+    
     internal static var __method_binding_add_writer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_writer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4023702871)!
-        }
+            GodotStringName(swiftStaticString: "add_writer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4023702871)!
+            }
         }
     }()
-
+    
     static public func addWriter(
         _ writer: Godot.MovieWriter?
     ) {
@@ -62,63 +63,62 @@ open class MovieWriter: Object {
             }
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
         let _get_audio_mix_rate_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<MovieWriter> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getAudioMixRate()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<MovieWriter>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getAudioMixRate()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _get_audio_speaker_mode_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<MovieWriter> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._getAudioSpeakerMode()
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr else { return }
+            Unmanaged<MovieWriter>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._getAudioSpeakerMode()
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _handles_file_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<MovieWriter> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._handlesFile(
-            path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<MovieWriter>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._handlesFile(
+                    path: Godot.GodotString.transferFromGodot(unsafePointer: args[0]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _write_begin_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<MovieWriter> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._writeBegin(
-            movieSize: Godot.Vector2I.transferFromGodot(unsafePointer: args[0]!),
-            fps: UInt32.transferFromGodot(unsafePointer: args[1]!),
-            basePath: Godot.GodotString.transferFromGodot(unsafePointer: args[2]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<MovieWriter>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._writeBegin(
+                    movieSize: Godot.Vector2I.transferFromGodot(unsafePointer: args[0]!),
+                    fps: UInt32.transferFromGodot(unsafePointer: args[1]!),
+                    basePath: Godot.GodotString.transferFromGodot(unsafePointer: args[2]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _write_frame_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr, let args else {
-                return
-            }
-            Unmanaged<MovieWriter> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._writeFrame(
-            frameImage: Godot.Image?.transferFromGodot(unsafePointer: args[0]!),
-            audioFrameBlock: UnsafeRawPointer.transferFromGodot(unsafePointer: args[1]!)
-        )
-        .transferToGodot(unsafePointer: returnPtr!)}
+            guard let instancePtr, let args else { return }
+            Unmanaged<MovieWriter>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._writeFrame(
+                    frameImage: Godot.Image?.transferFromGodot(unsafePointer: args[0]!),
+                    audioFrameBlock: UnsafeRawPointer.transferFromGodot(unsafePointer: args[1]!)
+                )
+               .transferToGodot(unsafePointer: returnPtr!)
+        }
         let _write_end_call: GDExtensionClassCallVirtual = { instancePtr, args, returnPtr in
-            guard let instancePtr else {
-                return
-            }
-            Unmanaged<MovieWriter> .fromOpaque(instancePtr).takeUnretainedValue()
-        ._writeEnd()}
+            guard let instancePtr else { return }
+            Unmanaged<MovieWriter>.fromOpaque(instancePtr)
+                .takeUnretainedValue()
+                ._writeEnd()
+        }
         _virtualFunctions = [
             "_getAudioMixRate" : ("_get_audio_mix_rate", _get_audio_mix_rate_call),
             "_getAudioSpeakerMode" : ("_get_audio_speaker_mode", _get_audio_speaker_mode_call),
@@ -128,7 +128,7 @@ open class MovieWriter: Object {
             "_writeEnd" : ("_write_end", _write_end_call)
         ]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class MultiMeshInstance3D: GeometryInstance3D {
     internal static var __method_binding_set_multimesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_multimesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2246127404)!
-        }
+            GodotStringName(swiftStaticString: "set_multimesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2246127404)!
+            }
         }
     }()
-
+    
     private func __setMultimesh(
         _ multimesh: Godot.MultiMesh?
     ) {
@@ -32,15 +32,15 @@ open class MultiMeshInstance3D: GeometryInstance3D {
             }
         }
     }
-
+    
     internal static var __method_binding_get_multimesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_multimesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1385450523)!
-        }
+            GodotStringName(swiftStaticString: "get_multimesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1385450523)!
+            }
         }
     }()
-
+    
     private func __getMultimesh() -> Godot.MultiMesh? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -53,29 +53,26 @@ open class MultiMeshInstance3D: GeometryInstance3D {
             }
         }
     }
-
+    
     public var multimesh: Godot.MultiMesh? {
         get {
             __getMultimesh()
         }
-        set {
+        set(newValue) {
             __setMultimesh(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

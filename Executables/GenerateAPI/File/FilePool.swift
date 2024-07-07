@@ -43,14 +43,15 @@ extension FilePool {
     private static let loadingBarWidth = 60
     
     func generateFiles(
-        writeFiles: Bool
+        writeFiles: Bool,
+        concurrentTaskCount: Int
     ) async throws {
         print("Generating files...")
         let generationStart = Date()
         let count = content.count
         
         try await withThrowingTaskGroup(of: Void.self) { group in
-            let maxTasks = 8
+            let maxTasks = concurrentTaskCount
             
             var index = 0
             var doneIndex = 0

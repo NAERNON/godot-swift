@@ -11,20 +11,21 @@ open class SceneTree: MainLoop {
         case reverse = 1
         case deferred = 2
         case unique = 4
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Default", 0),
-            ("Reverse", 1),
-            ("Deferred", 2),
-            ("Unique", 4),]
+               ("Default", 0),
+               ("Reverse", 1),
+               ("Deferred", 2),
+               ("Unique", 4),
+            ]
         }
     }
-
+    
+    
     public func treeChanged() {
         _ = treeChangedSignal.emit()
     }
-
     public lazy var treeChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "tree_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -39,11 +40,11 @@ open class SceneTree: MainLoop {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func treeProcessModeChanged() {
         _ = treeProcessModeChangedSignal.emit()
     }
-
     public lazy var treeProcessModeChangedSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "tree_process_mode_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -58,29 +59,19 @@ open class SceneTree: MainLoop {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct NodeAddedSignalInput: Godot.SignalInput {
         public let node: Godot.Node?
-
-        fileprivate init(
-            node: Godot.Node?
-        ) {
+        fileprivate init(node: Godot.Node?) {
             self.node = node
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.node)]
         }
     }
-
-    public func nodeAdded(
-        node: Godot.Node?
-    ) {
+    public func nodeAdded(node: Godot.Node?) {
         _ = nodeAddedSignal.emit(.init(node: node))
     }
-
     public lazy var nodeAddedSignal: Godot.SignalEmitter<NodeAddedSignalInput> = {
         .init(object: self, signalName: "node_added") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<NodeAddedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -95,29 +86,19 @@ open class SceneTree: MainLoop {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct NodeRemovedSignalInput: Godot.SignalInput {
         public let node: Godot.Node?
-
-        fileprivate init(
-            node: Godot.Node?
-        ) {
+        fileprivate init(node: Godot.Node?) {
             self.node = node
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.node)]
         }
     }
-
-    public func nodeRemoved(
-        node: Godot.Node?
-    ) {
+    public func nodeRemoved(node: Godot.Node?) {
         _ = nodeRemovedSignal.emit(.init(node: node))
     }
-
     public lazy var nodeRemovedSignal: Godot.SignalEmitter<NodeRemovedSignalInput> = {
         .init(object: self, signalName: "node_removed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<NodeRemovedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -132,29 +113,19 @@ open class SceneTree: MainLoop {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct NodeRenamedSignalInput: Godot.SignalInput {
         public let node: Godot.Node?
-
-        fileprivate init(
-            node: Godot.Node?
-        ) {
+        fileprivate init(node: Godot.Node?) {
             self.node = node
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.node)]
         }
     }
-
-    public func nodeRenamed(
-        node: Godot.Node?
-    ) {
+    public func nodeRenamed(node: Godot.Node?) {
         _ = nodeRenamedSignal.emit(.init(node: node))
     }
-
     public lazy var nodeRenamedSignal: Godot.SignalEmitter<NodeRenamedSignalInput> = {
         .init(object: self, signalName: "node_renamed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<NodeRenamedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -169,29 +140,19 @@ open class SceneTree: MainLoop {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct NodeConfigurationWarningChangedSignalInput: Godot.SignalInput {
         public let node: Godot.Node?
-
-        fileprivate init(
-            node: Godot.Node?
-        ) {
+        fileprivate init(node: Godot.Node?) {
             self.node = node
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.node)]
         }
     }
-
-    public func nodeConfigurationWarningChanged(
-        node: Godot.Node?
-    ) {
+    public func nodeConfigurationWarningChanged(node: Godot.Node?) {
         _ = nodeConfigurationWarningChangedSignal.emit(.init(node: node))
     }
-
     public lazy var nodeConfigurationWarningChangedSignal: Godot.SignalEmitter<NodeConfigurationWarningChangedSignalInput> = {
         .init(object: self, signalName: "node_configuration_warning_changed") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<NodeConfigurationWarningChangedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -206,11 +167,11 @@ open class SceneTree: MainLoop {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func processFrame() {
         _ = processFrameSignal.emit()
     }
-
     public lazy var processFrameSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "process_frame") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -225,11 +186,11 @@ open class SceneTree: MainLoop {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
+    
     public func physicsFrame() {
         _ = physicsFrameSignal.emit()
     }
-
     public lazy var physicsFrameSignal: Godot.SignalEmitter<Void> = {
         .init(object: self, signalName: "physics_frame") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<Void>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -244,15 +205,15 @@ open class SceneTree: MainLoop {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_get_root: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_root").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1757182445)!
-        }
+            GodotStringName(swiftStaticString: "get_root").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1757182445)!
+            }
         }
     }()
-
+    
     private func __getRoot() -> Godot.Window? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -265,15 +226,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_has_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_group").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
-        }
+            GodotStringName(swiftStaticString: "has_group").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
+            }
         }
     }()
-
+    
     public func hasGroup(
         name: Godot.GodotStringName
     ) -> Bool {
@@ -292,15 +253,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_is_auto_accept_quit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_auto_accept_quit").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_auto_accept_quit").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isAutoAcceptQuit() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -313,15 +274,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_set_auto_accept_quit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_auto_accept_quit").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_auto_accept_quit").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setAutoAcceptQuit(
         enabled: Bool
     ) {
@@ -338,15 +299,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_is_quit_on_go_back: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_quit_on_go_back").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_quit_on_go_back").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isQuitOnGoBack() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -359,15 +320,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_set_quit_on_go_back: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_quit_on_go_back").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_quit_on_go_back").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setQuitOnGoBack(
         enabled: Bool
     ) {
@@ -384,15 +345,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_set_debug_collisions_hint: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_debug_collisions_hint").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_debug_collisions_hint").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setDebugCollisionsHint(
         enable: Bool
     ) {
@@ -409,15 +370,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_is_debugging_collisions_hint: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_debugging_collisions_hint").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_debugging_collisions_hint").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isDebuggingCollisionsHint() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -430,15 +391,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_set_debug_paths_hint: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_debug_paths_hint").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_debug_paths_hint").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setDebugPathsHint(
         enable: Bool
     ) {
@@ -455,15 +416,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_is_debugging_paths_hint: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_debugging_paths_hint").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_debugging_paths_hint").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isDebuggingPathsHint() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -476,15 +437,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_set_debug_navigation_hint: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_debug_navigation_hint").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_debug_navigation_hint").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setDebugNavigationHint(
         enable: Bool
     ) {
@@ -501,15 +462,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_is_debugging_navigation_hint: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_debugging_navigation_hint").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_debugging_navigation_hint").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isDebuggingNavigationHint() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -522,15 +483,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_set_edited_scene_root: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_edited_scene_root").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
-        }
+            GodotStringName(swiftStaticString: "set_edited_scene_root").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
+            }
         }
     }()
-
+    
     private func __setEditedSceneRoot(
         scene: Godot.Node?
     ) {
@@ -549,15 +510,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_get_edited_scene_root: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_edited_scene_root").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3160264692)!
-        }
+            GodotStringName(swiftStaticString: "get_edited_scene_root").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3160264692)!
+            }
         }
     }()
-
+    
     private func __getEditedSceneRoot() -> Godot.Node? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -570,15 +531,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_set_pause: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_pause").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_pause").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setPause(
         enable: Bool
     ) {
@@ -595,15 +556,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_is_paused: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_paused").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_paused").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isPaused() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -616,15 +577,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_create_timer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_timer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2709170273)!
-        }
+            GodotStringName(swiftStaticString: "create_timer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2709170273)!
+            }
         }
     }()
-
+    
     public func createTimer(
         timeSec: Double,
         processAlways: Bool = true,
@@ -652,15 +613,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_create_tween: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "create_tween").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3426978995)!
-        }
+            GodotStringName(swiftStaticString: "create_tween").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3426978995)!
+            }
         }
     }()
-
+    
     public func createTween() -> Godot.Tween? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -673,16 +634,16 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_get_processed_tweens: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_processed_tweens").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
-        }
+            GodotStringName(swiftStaticString: "get_processed_tweens").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
+            }
         }
     }()
-
-    public func processedTweens() -> Godot.GodotArray<Godot.Tween?> {
+    
+    public func processedTweens() -> Godot.GodotArray<Godot.Tween> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
                 GodotExtension.Interface.objectMethodBindPtrcall(
@@ -694,15 +655,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_get_node_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_node_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_node_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func nodeCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -715,15 +676,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_get_frame: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_frame").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_frame").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func frame() -> Int64 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -736,15 +697,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_quit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "quit").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1995695955)!
-        }
+            GodotStringName(swiftStaticString: "quit").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1995695955)!
+            }
         }
     }()
-
+    
     public func quit(
         exitCode: Int32 = 0
     ) {
@@ -761,15 +722,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_queue_delete: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "queue_delete").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3975164845)!
-        }
+            GodotStringName(swiftStaticString: "queue_delete").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3975164845)!
+            }
         }
     }()
-
+    
     public func queueDelete(
         obj: Godot.Object?
     ) {
@@ -788,16 +749,16 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_call_group_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "call_group_flags").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1527739229)!
-        }
+            GodotStringName(swiftStaticString: "call_group_flags").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1527739229)!
+            }
         }
     }()
-
-    public func callGroupFlags<each VariantRest : Variant.Storable>(
+    
+    public func callGroupFlags<each VariantRest: Variant.Storable>(
         _ flags: Int,
         group: Godot.GodotStringName,
         method: Godot.GodotStringName,
@@ -822,15 +783,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_notify_group_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "notify_group_flags").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1245489420)!
-        }
+            GodotStringName(swiftStaticString: "notify_group_flags").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1245489420)!
+            }
         }
     }()
-
+    
     public func notifyGroupFlags(
         callFlags: UInt32,
         group: Godot.GodotStringName,
@@ -853,15 +814,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_set_group_flags: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_group_flags").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3497599527)!
-        }
+            GodotStringName(swiftStaticString: "set_group_flags").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3497599527)!
+            }
         }
     }()
-
+    
     public func setGroupFlags<Value: Variant.Storable>(
         callFlags: UInt32,
         group: Godot.GodotStringName,
@@ -887,16 +848,16 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_call_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "call_group").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1257962832)!
-        }
+            GodotStringName(swiftStaticString: "call_group").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1257962832)!
+            }
         }
     }()
-
-    public func callGroup<each VariantRest : Variant.Storable>(
+    
+    public func callGroup<each VariantRest: Variant.Storable>(
         _ group: Godot.GodotStringName,
         method: Godot.GodotStringName,
         _ rest: repeat each VariantRest
@@ -918,15 +879,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_notify_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "notify_group").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2415702435)!
-        }
+            GodotStringName(swiftStaticString: "notify_group").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2415702435)!
+            }
         }
     }()
-
+    
     public func notifyGroup(
         _ group: Godot.GodotStringName,
         notification: Int32
@@ -946,15 +907,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_set_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_group").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1279312029)!
-        }
+            GodotStringName(swiftStaticString: "set_group").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1279312029)!
+            }
         }
     }()
-
+    
     public func setGroup<Value: Variant.Storable>(
         _ group: Godot.GodotStringName,
         property: Godot.GodotString,
@@ -977,18 +938,18 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_get_nodes_in_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_nodes_in_group").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 689397652)!
-        }
+            GodotStringName(swiftStaticString: "get_nodes_in_group").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 689397652)!
+            }
         }
     }()
-
+    
     public func nodesInGroup(
         _ group: Godot.GodotStringName
-    ) -> Godot.GodotArray<Godot.Node?> {
+    ) -> Godot.GodotArray<Godot.Node> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: group) { __ptr_group in
                 withUnsafeArgumentPackPointer(__ptr_group) { __accessPtr in
@@ -1004,15 +965,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_get_first_node_in_group: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_first_node_in_group").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4071044623)!
-        }
+            GodotStringName(swiftStaticString: "get_first_node_in_group").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4071044623)!
+            }
         }
     }()
-
+    
     public func firstNodeInGroup(
         _ group: Godot.GodotStringName
     ) -> Godot.Node? {
@@ -1031,15 +992,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_set_current_scene: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_current_scene").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
-        }
+            GodotStringName(swiftStaticString: "set_current_scene").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1078189570)!
+            }
         }
     }()
-
+    
     private func __setCurrentScene(
         childNode: Godot.Node?
     ) {
@@ -1058,15 +1019,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_get_current_scene: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_current_scene").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3160264692)!
-        }
+            GodotStringName(swiftStaticString: "get_current_scene").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3160264692)!
+            }
         }
     }()
-
+    
     private func __getCurrentScene() -> Godot.Node? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1079,15 +1040,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_change_scene_to_file: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "change_scene_to_file").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
-        }
+            GodotStringName(swiftStaticString: "change_scene_to_file").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166001499)!
+            }
         }
     }()
-
+    
     public func changeSceneToFile(
         path: Godot.GodotString
     ) -> Godot.ErrorType {
@@ -1106,15 +1067,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_change_scene_to_packed: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "change_scene_to_packed").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 107349098)!
-        }
+            GodotStringName(swiftStaticString: "change_scene_to_packed").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 107349098)!
+            }
         }
     }()
-
+    
     public func changeSceneToPacked(
         packedScene: Godot.PackedScene?
     ) -> Godot.ErrorType {
@@ -1135,15 +1096,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_reload_current_scene: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "reload_current_scene").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166280745)!
-        }
+            GodotStringName(swiftStaticString: "reload_current_scene").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 166280745)!
+            }
         }
     }()
-
+    
     public func reloadCurrentScene() -> Godot.ErrorType {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1156,15 +1117,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_unload_current_scene: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "unload_current_scene").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "unload_current_scene").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func unloadCurrentScene() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -1175,15 +1136,15 @@ open class SceneTree: MainLoop {
             )
         }
     }
-
+    
     internal static var __method_binding_set_multiplayer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_multiplayer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2385607013)!
-        }
+            GodotStringName(swiftStaticString: "set_multiplayer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2385607013)!
+            }
         }
     }()
-
+    
     public func setMultiplayer(
         _ multiplayer: Godot.MultiplayerAPI?,
         rootPath: Godot.NodePath = NodePath(string: "")
@@ -1205,15 +1166,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_get_multiplayer: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_multiplayer").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3453401404)!
-        }
+            GodotStringName(swiftStaticString: "get_multiplayer").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3453401404)!
+            }
         }
     }()
-
+    
     public func multiplayer(
         forPath path: Godot.NodePath = NodePath(string: "")
     ) -> Godot.MultiplayerAPI? {
@@ -1232,15 +1193,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_set_multiplayer_poll_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_multiplayer_poll_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_multiplayer_poll_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setMultiplayerPollEnabled(
         _ enabled: Bool
     ) {
@@ -1257,15 +1218,15 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     internal static var __method_binding_is_multiplayer_poll_enabled: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "is_multiplayer_poll_enabled").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "is_multiplayer_poll_enabled").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __isMultiplayerPollEnabled() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -1278,123 +1239,120 @@ open class SceneTree: MainLoop {
             }
         }
     }
-
+    
     public var isAutoAcceptQuit: Bool {
         get {
             __isAutoAcceptQuit()
         }
-        set {
+        set(newValue) {
             __setAutoAcceptQuit(
                 enabled: newValue
             )
         }
     }
-
+    
     public var isQuitOnGoBack: Bool {
         get {
             __isQuitOnGoBack()
         }
-        set {
+        set(newValue) {
             __setQuitOnGoBack(
                 enabled: newValue
             )
         }
     }
-
+    
     public var isDebuggingCollisionsHint: Bool {
         get {
             __isDebuggingCollisionsHint()
         }
-        set {
+        set(newValue) {
             __setDebugCollisionsHint(
                 enable: newValue
             )
         }
     }
-
+    
     public var isDebuggingPathsHint: Bool {
         get {
             __isDebuggingPathsHint()
         }
-        set {
+        set(newValue) {
             __setDebugPathsHint(
                 enable: newValue
             )
         }
     }
-
+    
     public var isDebuggingNavigationHint: Bool {
         get {
             __isDebuggingNavigationHint()
         }
-        set {
+        set(newValue) {
             __setDebugNavigationHint(
                 enable: newValue
             )
         }
     }
-
+    
     public var isPaused: Bool {
         get {
             __isPaused()
         }
-        set {
+        set(newValue) {
             __setPause(
                 enable: newValue
             )
         }
     }
-
+    
     public var editedSceneRoot: Godot.Node? {
         get {
             __getEditedSceneRoot()
         }
-        set {
+        set(newValue) {
             __setEditedSceneRoot(
                 scene: newValue
             )
         }
     }
-
+    
     public var currentScene: Godot.Node? {
         get {
             __getCurrentScene()
         }
-        set {
+        set(newValue) {
             __setCurrentScene(
                 childNode: newValue
             )
         }
     }
-
+    
     public var root: Godot.Window? {
         get {
             __getRoot()
         }
     }
-
+    
     public var isMultiplayerPollEnabled: Bool {
         get {
             __isMultiplayerPollEnabled()
         }
-        set {
+        set(newValue) {
             __setMultiplayerPollEnabled(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

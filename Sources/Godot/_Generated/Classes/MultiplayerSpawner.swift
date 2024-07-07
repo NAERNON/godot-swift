@@ -8,26 +8,16 @@ import GodotExtensionHeaders
 open class MultiplayerSpawner: Node {
     public struct DespawnedSignalInput: Godot.SignalInput {
         public let node: Godot.Node?
-
-        fileprivate init(
-            node: Godot.Node?
-        ) {
+        fileprivate init(node: Godot.Node?) {
             self.node = node
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.node)]
         }
     }
-
-    public func despawned(
-        node: Godot.Node?
-    ) {
+    public func despawned(node: Godot.Node?) {
         _ = despawnedSignal.emit(.init(node: node))
     }
-
     public lazy var despawnedSignal: Godot.SignalEmitter<DespawnedSignalInput> = {
         .init(object: self, signalName: "despawned") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<DespawnedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -42,29 +32,19 @@ open class MultiplayerSpawner: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     public struct SpawnedSignalInput: Godot.SignalInput {
         public let node: Godot.Node?
-
-        fileprivate init(
-            node: Godot.Node?
-        ) {
+        fileprivate init(node: Godot.Node?) {
             self.node = node
         }
-
-        public static func arguments(
-            from input: Self
-        ) -> [Variant] {
+        public static func arguments(from input: Self) -> [Variant] {
             [Variant(input.node)]
         }
     }
-
-    public func spawned(
-        node: Godot.Node?
-    ) {
+    public func spawned(node: Godot.Node?) {
         _ = spawnedSignal.emit(.init(node: node))
     }
-
     public lazy var spawnedSignal: Godot.SignalEmitter<SpawnedSignalInput> = {
         .init(object: self, signalName: "spawned") { callablePtr, args, _, _, _ in
             Unmanaged<Godot.SignalReceiver<SpawnedSignalInput>> .fromOpaque(callablePtr!).takeUnretainedValue()
@@ -79,15 +59,15 @@ open class MultiplayerSpawner: Node {
             ).transferToGodot(unsafePointer: stringResultPtr!)
         }
     }()
-
+    
     internal static var __method_binding_add_spawnable_scene: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_spawnable_scene").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
-        }
+            GodotStringName(swiftStaticString: "add_spawnable_scene").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 83702148)!
+            }
         }
     }()
-
+    
     public func addSpawnableScene(
         path: Godot.GodotString
     ) {
@@ -104,15 +84,15 @@ open class MultiplayerSpawner: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_spawnable_scene_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_spawnable_scene_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_spawnable_scene_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     public func spawnableSceneCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -125,15 +105,15 @@ open class MultiplayerSpawner: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_spawnable_scene: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_spawnable_scene").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
-        }
+            GodotStringName(swiftStaticString: "get_spawnable_scene").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 844755477)!
+            }
         }
     }()
-
+    
     public func spawnableScene(
         index: Int32
     ) -> Godot.GodotString {
@@ -152,15 +132,15 @@ open class MultiplayerSpawner: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_clear_spawnable_scenes: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "clear_spawnable_scenes").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "clear_spawnable_scenes").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func clearSpawnableScenes() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -171,15 +151,15 @@ open class MultiplayerSpawner: Node {
             )
         }
     }
-
+    
     internal static var __method_binding_spawn: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "spawn").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1991184589)!
-        }
+            GodotStringName(swiftStaticString: "spawn").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1991184589)!
+            }
         }
     }()
-
+    
     public func spawn<Value: Variant.Storable>(
         data: Value = Variant()
     ) -> Godot.Node? {
@@ -198,15 +178,15 @@ open class MultiplayerSpawner: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_spawn_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_spawn_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
-        }
+            GodotStringName(swiftStaticString: "get_spawn_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4075236667)!
+            }
         }
     }()
-
+    
     private func __getSpawnPath() -> Godot.NodePath {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -219,15 +199,15 @@ open class MultiplayerSpawner: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_spawn_path: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_spawn_path").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
-        }
+            GodotStringName(swiftStaticString: "set_spawn_path").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1348162250)!
+            }
         }
     }()
-
+    
     private func __setSpawnPath(
         _ path: Godot.NodePath
     ) {
@@ -244,15 +224,15 @@ open class MultiplayerSpawner: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_spawn_limit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_spawn_limit").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_spawn_limit").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getSpawnLimit() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -265,15 +245,15 @@ open class MultiplayerSpawner: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_spawn_limit: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_spawn_limit").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_spawn_limit").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setSpawnLimit(
         _ limit: UInt32
     ) {
@@ -290,15 +270,15 @@ open class MultiplayerSpawner: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_get_spawn_function: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_spawn_function").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1307783378)!
-        }
+            GodotStringName(swiftStaticString: "get_spawn_function").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1307783378)!
+            }
         }
     }()
-
+    
     private func __getSpawnFunction() -> Godot.Callable {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -311,15 +291,15 @@ open class MultiplayerSpawner: Node {
             }
         }
     }
-
+    
     internal static var __method_binding_set_spawn_function: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_spawn_function").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1611583062)!
-        }
+            GodotStringName(swiftStaticString: "set_spawn_function").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1611583062)!
+            }
         }
     }()
-
+    
     private func __setSpawnFunction(
         _ spawnFunction: Godot.Callable
     ) {
@@ -336,51 +316,48 @@ open class MultiplayerSpawner: Node {
             }
         }
     }
-
+    
     public var spawnPath: Godot.NodePath {
         get {
             __getSpawnPath()
         }
-        set {
+        set(newValue) {
             __setSpawnPath(
                 newValue
             )
         }
     }
-
+    
     public var spawnLimit: UInt32 {
         get {
             __getSpawnLimit()
         }
-        set {
+        set(newValue) {
             __setSpawnLimit(
                 newValue
             )
         }
     }
-
+    
     public var spawnFunction: Godot.Callable {
         get {
             __getSpawnFunction()
         }
-        set {
+        set(newValue) {
             __setSpawnFunction(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

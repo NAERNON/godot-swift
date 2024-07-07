@@ -16,29 +16,30 @@ open class TextureProgressBar: Range {
         case bilinearLeftAndRight = 6
         case bilinearTopAndBottom = 7
         case clockwiseAndCounterClockwise = 8
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Left To Right", 0),
-            ("Right To Left", 1),
-            ("Top To Bottom", 2),
-            ("Bottom To Top", 3),
-            ("Clockwise", 4),
-            ("Counter Clockwise", 5),
-            ("Bilinear Left And Right", 6),
-            ("Bilinear Top And Bottom", 7),
-            ("Clockwise And Counter Clockwise", 8),]
+               ("Left To Right", 0),
+               ("Right To Left", 1),
+               ("Top To Bottom", 2),
+               ("Bottom To Top", 3),
+               ("Clockwise", 4),
+               ("Counter Clockwise", 5),
+               ("Bilinear Left And Right", 6),
+               ("Bilinear Top And Bottom", 7),
+               ("Clockwise And Counter Clockwise", 8),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_under_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_under_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
-        }
+            GodotStringName(swiftStaticString: "set_under_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
+            }
         }
     }()
-
+    
     private func __setUnderTexture(
         tex: Godot.Texture2D?
     ) {
@@ -57,15 +58,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_get_under_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_under_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
-        }
+            GodotStringName(swiftStaticString: "get_under_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
+            }
         }
     }()
-
+    
     private func __getUnderTexture() -> Godot.Texture2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -78,15 +79,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_set_progress_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_progress_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
-        }
+            GodotStringName(swiftStaticString: "set_progress_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
+            }
         }
     }()
-
+    
     private func __setProgressTexture(
         tex: Godot.Texture2D?
     ) {
@@ -105,15 +106,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_get_progress_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_progress_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
-        }
+            GodotStringName(swiftStaticString: "get_progress_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
+            }
         }
     }()
-
+    
     private func __getProgressTexture() -> Godot.Texture2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -126,15 +127,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_set_over_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_over_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
-        }
+            GodotStringName(swiftStaticString: "set_over_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4051416890)!
+            }
         }
     }()
-
+    
     private func __setOverTexture(
         tex: Godot.Texture2D?
     ) {
@@ -153,15 +154,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_get_over_texture: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_over_texture").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
-        }
+            GodotStringName(swiftStaticString: "get_over_texture").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3635182373)!
+            }
         }
     }()
-
+    
     private func __getOverTexture() -> Godot.Texture2D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -174,15 +175,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_set_fill_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_fill_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_fill_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setFillMode(
         _ mode: Int32
     ) {
@@ -199,15 +200,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_get_fill_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_fill_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
-        }
+            GodotStringName(swiftStaticString: "get_fill_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
+            }
         }
     }()
-
+    
     private func __getFillMode() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -220,15 +221,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_set_tint_under: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_tint_under").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
-        }
+            GodotStringName(swiftStaticString: "set_tint_under").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
+            }
         }
     }()
-
+    
     private func __setTintUnder(
         tint: Godot.Color
     ) {
@@ -245,15 +246,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_get_tint_under: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tint_under").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
-        }
+            GodotStringName(swiftStaticString: "get_tint_under").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
+            }
         }
     }()
-
+    
     private func __getTintUnder() -> Godot.Color {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -266,15 +267,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_set_tint_progress: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_tint_progress").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
-        }
+            GodotStringName(swiftStaticString: "set_tint_progress").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
+            }
         }
     }()
-
+    
     private func __setTintProgress(
         tint: Godot.Color
     ) {
@@ -291,15 +292,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_get_tint_progress: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tint_progress").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
-        }
+            GodotStringName(swiftStaticString: "get_tint_progress").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
+            }
         }
     }()
-
+    
     private func __getTintProgress() -> Godot.Color {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -312,15 +313,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_set_tint_over: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_tint_over").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
-        }
+            GodotStringName(swiftStaticString: "set_tint_over").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2920490490)!
+            }
         }
     }()
-
+    
     private func __setTintOver(
         tint: Godot.Color
     ) {
@@ -337,15 +338,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_get_tint_over: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_tint_over").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
-        }
+            GodotStringName(swiftStaticString: "get_tint_over").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3444240500)!
+            }
         }
     }()
-
+    
     private func __getTintOver() -> Godot.Color {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -358,15 +359,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_set_texture_progress_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_texture_progress_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_texture_progress_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setTextureProgressOffset(
         _ offset: Godot.Vector2
     ) {
@@ -383,15 +384,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_get_texture_progress_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_texture_progress_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
-        }
+            GodotStringName(swiftStaticString: "get_texture_progress_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3341600327)!
+            }
         }
     }()
-
+    
     private func __getTextureProgressOffset() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -404,15 +405,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_set_radial_initial_angle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_radial_initial_angle").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_radial_initial_angle").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setRadialInitialAngle(
         mode: Double
     ) {
@@ -429,15 +430,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_get_radial_initial_angle: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_radial_initial_angle").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 191475506)!
-        }
+            GodotStringName(swiftStaticString: "get_radial_initial_angle").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 191475506)!
+            }
         }
     }()
-
+    
     private func __getRadialInitialAngle() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -450,15 +451,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_set_radial_center_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_radial_center_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
-        }
+            GodotStringName(swiftStaticString: "set_radial_center_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 743155724)!
+            }
         }
     }()
-
+    
     private func __setRadialCenterOffset(
         mode: Godot.Vector2
     ) {
@@ -475,15 +476,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_get_radial_center_offset: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_radial_center_offset").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1497962370)!
-        }
+            GodotStringName(swiftStaticString: "get_radial_center_offset").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1497962370)!
+            }
         }
     }()
-
+    
     private func __getRadialCenterOffset() -> Godot.Vector2 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -496,15 +497,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_set_fill_degrees: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_fill_degrees").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_fill_degrees").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setFillDegrees(
         mode: Double
     ) {
@@ -521,15 +522,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_get_fill_degrees: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_fill_degrees").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 191475506)!
-        }
+            GodotStringName(swiftStaticString: "get_fill_degrees").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 191475506)!
+            }
         }
     }()
-
+    
     private func __getFillDegrees() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -542,15 +543,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_set_stretch_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_stretch_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 437707142)!
-        }
+            GodotStringName(swiftStaticString: "set_stretch_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 437707142)!
+            }
         }
     }()
-
+    
     public func setStretchMargin(
         _ margin: Godot.Side,
         value: Int32
@@ -570,15 +571,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_get_stretch_margin: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_stretch_margin").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1983885014)!
-        }
+            GodotStringName(swiftStaticString: "get_stretch_margin").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1983885014)!
+            }
         }
     }()
-
+    
     private func __getStretchMargin(
         _ margin: Godot.Side
     ) -> Int32 {
@@ -597,15 +598,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_set_nine_patch_stretch: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_nine_patch_stretch").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_nine_patch_stretch").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setNinePatchStretch(
         _ stretch: Bool
     ) {
@@ -622,15 +623,15 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     internal static var __method_binding_get_nine_patch_stretch: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_nine_patch_stretch").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_nine_patch_stretch").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getNinePatchStretch() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -643,29 +644,29 @@ open class TextureProgressBar: Range {
             }
         }
     }
-
+    
     public var fillMode: Int32 {
         get {
             __getFillMode()
         }
-        set {
+        set(newValue) {
             __setFillMode(
                 newValue
             )
         }
     }
-
+    
     public var ninePatchStretch: Bool {
         get {
             __getNinePatchStretch()
         }
-        set {
+        set(newValue) {
             __setNinePatchStretch(
                 newValue
             )
         }
     }
-
+    
     public var stretchMarginLeft: Int32 {
         get {
             __getStretchMargin(
@@ -673,7 +674,7 @@ open class TextureProgressBar: Range {
             )
         }
     }
-
+    
     public var stretchMarginTop: Int32 {
         get {
             __getStretchMargin(
@@ -681,7 +682,7 @@ open class TextureProgressBar: Range {
             )
         }
     }
-
+    
     public var stretchMarginRight: Int32 {
         get {
             __getStretchMargin(
@@ -689,7 +690,7 @@ open class TextureProgressBar: Range {
             )
         }
     }
-
+    
     public var stretchMarginBottom: Int32 {
         get {
             __getStretchMargin(
@@ -697,128 +698,125 @@ open class TextureProgressBar: Range {
             )
         }
     }
-
+    
     public var underTexture: Godot.Texture2D? {
         get {
             __getUnderTexture()
         }
-        set {
+        set(newValue) {
             __setUnderTexture(
                 tex: newValue
             )
         }
     }
-
+    
     public var overTexture: Godot.Texture2D? {
         get {
             __getOverTexture()
         }
-        set {
+        set(newValue) {
             __setOverTexture(
                 tex: newValue
             )
         }
     }
-
+    
     public var progressTexture: Godot.Texture2D? {
         get {
             __getProgressTexture()
         }
-        set {
+        set(newValue) {
             __setProgressTexture(
                 tex: newValue
             )
         }
     }
-
+    
     public var textureProgressOffset: Godot.Vector2 {
         get {
             __getTextureProgressOffset()
         }
-        set {
+        set(newValue) {
             __setTextureProgressOffset(
                 newValue
             )
         }
     }
-
+    
     public var tintUnder: Godot.Color {
         get {
             __getTintUnder()
         }
-        set {
+        set(newValue) {
             __setTintUnder(
                 tint: newValue
             )
         }
     }
-
+    
     public var tintOver: Godot.Color {
         get {
             __getTintOver()
         }
-        set {
+        set(newValue) {
             __setTintOver(
                 tint: newValue
             )
         }
     }
-
+    
     public var tintProgress: Godot.Color {
         get {
             __getTintProgress()
         }
-        set {
+        set(newValue) {
             __setTintProgress(
                 tint: newValue
             )
         }
     }
-
+    
     public var radialInitialAngle: Double {
         get {
             __getRadialInitialAngle()
         }
-        set {
+        set(newValue) {
             __setRadialInitialAngle(
                 mode: newValue
             )
         }
     }
-
+    
     public var fillDegrees: Double {
         get {
             __getFillDegrees()
         }
-        set {
+        set(newValue) {
             __setFillDegrees(
                 mode: newValue
             )
         }
     }
-
+    
     public var radialCenterOffset: Godot.Vector2 {
         get {
             __getRadialCenterOffset()
         }
-        set {
+        set(newValue) {
             __setRadialCenterOffset(
                 mode: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

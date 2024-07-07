@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class RDPipelineDepthStencilState: RefCounted {
     internal static var __method_binding_set_enable_depth_test: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_enable_depth_test").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_enable_depth_test").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setEnableDepthTest(
         pMember: Bool
     ) {
@@ -30,15 +30,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_enable_depth_test: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_enable_depth_test").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_enable_depth_test").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getEnableDepthTest() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -51,15 +51,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_enable_depth_write: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_enable_depth_write").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_enable_depth_write").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setEnableDepthWrite(
         pMember: Bool
     ) {
@@ -76,15 +76,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_enable_depth_write: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_enable_depth_write").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_enable_depth_write").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getEnableDepthWrite() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -97,15 +97,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_depth_compare_operator: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_depth_compare_operator").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2573711505)!
-        }
+            GodotStringName(swiftStaticString: "set_depth_compare_operator").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2573711505)!
+            }
         }
     }()
-
+    
     private func __setDepthCompareOperator(
         pMember: Godot.RenderingDevice.CompareOperator
     ) {
@@ -122,15 +122,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_depth_compare_operator: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_depth_compare_operator").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 269730778)!
-        }
+            GodotStringName(swiftStaticString: "get_depth_compare_operator").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 269730778)!
+            }
         }
     }()
-
+    
     private func __getDepthCompareOperator() -> Godot.RenderingDevice.CompareOperator {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -143,15 +143,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_enable_depth_range: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_enable_depth_range").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_enable_depth_range").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setEnableDepthRange(
         pMember: Bool
     ) {
@@ -168,15 +168,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_enable_depth_range: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_enable_depth_range").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_enable_depth_range").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getEnableDepthRange() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -189,15 +189,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_depth_range_min: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_depth_range_min").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_depth_range_min").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setDepthRangeMin(
         pMember: Double
     ) {
@@ -214,15 +214,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_depth_range_min: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_depth_range_min").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_depth_range_min").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getDepthRangeMin() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -235,15 +235,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_depth_range_max: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_depth_range_max").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_depth_range_max").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setDepthRangeMax(
         pMember: Double
     ) {
@@ -260,15 +260,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_depth_range_max: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_depth_range_max").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_depth_range_max").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getDepthRangeMax() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -281,15 +281,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_enable_stencil: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_enable_stencil").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_enable_stencil").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setEnableStencil(
         pMember: Bool
     ) {
@@ -306,15 +306,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_enable_stencil: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_enable_stencil").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_enable_stencil").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getEnableStencil() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -327,15 +327,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_front_op_fail: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_front_op_fail").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2092799566)!
-        }
+            GodotStringName(swiftStaticString: "set_front_op_fail").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2092799566)!
+            }
         }
     }()
-
+    
     private func __setFrontOpFail(
         pMember: Godot.RenderingDevice.StencilOperation
     ) {
@@ -352,15 +352,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_front_op_fail: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_front_op_fail").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1714732389)!
-        }
+            GodotStringName(swiftStaticString: "get_front_op_fail").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1714732389)!
+            }
         }
     }()
-
+    
     private func __getFrontOpFail() -> Godot.RenderingDevice.StencilOperation {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -373,15 +373,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_front_op_pass: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_front_op_pass").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2092799566)!
-        }
+            GodotStringName(swiftStaticString: "set_front_op_pass").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2092799566)!
+            }
         }
     }()
-
+    
     private func __setFrontOpPass(
         pMember: Godot.RenderingDevice.StencilOperation
     ) {
@@ -398,15 +398,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_front_op_pass: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_front_op_pass").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1714732389)!
-        }
+            GodotStringName(swiftStaticString: "get_front_op_pass").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1714732389)!
+            }
         }
     }()
-
+    
     private func __getFrontOpPass() -> Godot.RenderingDevice.StencilOperation {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -419,15 +419,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_front_op_depth_fail: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_front_op_depth_fail").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2092799566)!
-        }
+            GodotStringName(swiftStaticString: "set_front_op_depth_fail").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2092799566)!
+            }
         }
     }()
-
+    
     private func __setFrontOpDepthFail(
         pMember: Godot.RenderingDevice.StencilOperation
     ) {
@@ -444,15 +444,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_front_op_depth_fail: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_front_op_depth_fail").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1714732389)!
-        }
+            GodotStringName(swiftStaticString: "get_front_op_depth_fail").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1714732389)!
+            }
         }
     }()
-
+    
     private func __getFrontOpDepthFail() -> Godot.RenderingDevice.StencilOperation {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -465,15 +465,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_front_op_compare: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_front_op_compare").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2573711505)!
-        }
+            GodotStringName(swiftStaticString: "set_front_op_compare").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2573711505)!
+            }
         }
     }()
-
+    
     private func __setFrontOpCompare(
         pMember: Godot.RenderingDevice.CompareOperator
     ) {
@@ -490,15 +490,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_front_op_compare: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_front_op_compare").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 269730778)!
-        }
+            GodotStringName(swiftStaticString: "get_front_op_compare").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 269730778)!
+            }
         }
     }()
-
+    
     private func __getFrontOpCompare() -> Godot.RenderingDevice.CompareOperator {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -511,15 +511,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_front_op_compare_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_front_op_compare_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_front_op_compare_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setFrontOpCompareMask(
         pMember: UInt32
     ) {
@@ -536,15 +536,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_front_op_compare_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_front_op_compare_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_front_op_compare_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getFrontOpCompareMask() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -557,15 +557,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_front_op_write_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_front_op_write_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_front_op_write_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setFrontOpWriteMask(
         pMember: UInt32
     ) {
@@ -582,15 +582,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_front_op_write_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_front_op_write_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_front_op_write_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getFrontOpWriteMask() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -603,15 +603,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_front_op_reference: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_front_op_reference").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_front_op_reference").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setFrontOpReference(
         pMember: UInt32
     ) {
@@ -628,15 +628,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_front_op_reference: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_front_op_reference").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_front_op_reference").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getFrontOpReference() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -649,15 +649,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_back_op_fail: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_back_op_fail").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2092799566)!
-        }
+            GodotStringName(swiftStaticString: "set_back_op_fail").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2092799566)!
+            }
         }
     }()
-
+    
     private func __setBackOpFail(
         pMember: Godot.RenderingDevice.StencilOperation
     ) {
@@ -674,15 +674,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_back_op_fail: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_back_op_fail").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1714732389)!
-        }
+            GodotStringName(swiftStaticString: "get_back_op_fail").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1714732389)!
+            }
         }
     }()
-
+    
     private func __getBackOpFail() -> Godot.RenderingDevice.StencilOperation {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -695,15 +695,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_back_op_pass: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_back_op_pass").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2092799566)!
-        }
+            GodotStringName(swiftStaticString: "set_back_op_pass").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2092799566)!
+            }
         }
     }()
-
+    
     private func __setBackOpPass(
         pMember: Godot.RenderingDevice.StencilOperation
     ) {
@@ -720,15 +720,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_back_op_pass: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_back_op_pass").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1714732389)!
-        }
+            GodotStringName(swiftStaticString: "get_back_op_pass").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1714732389)!
+            }
         }
     }()
-
+    
     private func __getBackOpPass() -> Godot.RenderingDevice.StencilOperation {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -741,15 +741,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_back_op_depth_fail: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_back_op_depth_fail").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2092799566)!
-        }
+            GodotStringName(swiftStaticString: "set_back_op_depth_fail").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2092799566)!
+            }
         }
     }()
-
+    
     private func __setBackOpDepthFail(
         pMember: Godot.RenderingDevice.StencilOperation
     ) {
@@ -766,15 +766,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_back_op_depth_fail: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_back_op_depth_fail").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1714732389)!
-        }
+            GodotStringName(swiftStaticString: "get_back_op_depth_fail").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1714732389)!
+            }
         }
     }()
-
+    
     private func __getBackOpDepthFail() -> Godot.RenderingDevice.StencilOperation {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -787,15 +787,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_back_op_compare: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_back_op_compare").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2573711505)!
-        }
+            GodotStringName(swiftStaticString: "set_back_op_compare").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2573711505)!
+            }
         }
     }()
-
+    
     private func __setBackOpCompare(
         pMember: Godot.RenderingDevice.CompareOperator
     ) {
@@ -812,15 +812,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_back_op_compare: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_back_op_compare").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 269730778)!
-        }
+            GodotStringName(swiftStaticString: "get_back_op_compare").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 269730778)!
+            }
         }
     }()
-
+    
     private func __getBackOpCompare() -> Godot.RenderingDevice.CompareOperator {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -833,15 +833,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_back_op_compare_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_back_op_compare_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_back_op_compare_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setBackOpCompareMask(
         pMember: UInt32
     ) {
@@ -858,15 +858,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_back_op_compare_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_back_op_compare_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_back_op_compare_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getBackOpCompareMask() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -879,15 +879,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_back_op_write_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_back_op_write_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_back_op_write_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setBackOpWriteMask(
         pMember: UInt32
     ) {
@@ -904,15 +904,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_back_op_write_mask: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_back_op_write_mask").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_back_op_write_mask").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getBackOpWriteMask() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -925,15 +925,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_back_op_reference: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_back_op_reference").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_back_op_reference").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setBackOpReference(
         pMember: UInt32
     ) {
@@ -950,15 +950,15 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_back_op_reference: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_back_op_reference").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_back_op_reference").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getBackOpReference() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -971,249 +971,246 @@ open class RDPipelineDepthStencilState: RefCounted {
             }
         }
     }
-
+    
     public var enableDepthTest: Bool {
         get {
             __getEnableDepthTest()
         }
-        set {
+        set(newValue) {
             __setEnableDepthTest(
                 pMember: newValue
             )
         }
     }
-
+    
     public var enableDepthWrite: Bool {
         get {
             __getEnableDepthWrite()
         }
-        set {
+        set(newValue) {
             __setEnableDepthWrite(
                 pMember: newValue
             )
         }
     }
-
+    
     public var depthCompareOperator: Godot.RenderingDevice.CompareOperator {
         get {
             __getDepthCompareOperator()
         }
-        set {
+        set(newValue) {
             __setDepthCompareOperator(
                 pMember: newValue
             )
         }
     }
-
+    
     public var enableDepthRange: Bool {
         get {
             __getEnableDepthRange()
         }
-        set {
+        set(newValue) {
             __setEnableDepthRange(
                 pMember: newValue
             )
         }
     }
-
+    
     public var depthRangeMin: Double {
         get {
             __getDepthRangeMin()
         }
-        set {
+        set(newValue) {
             __setDepthRangeMin(
                 pMember: newValue
             )
         }
     }
-
+    
     public var depthRangeMax: Double {
         get {
             __getDepthRangeMax()
         }
-        set {
+        set(newValue) {
             __setDepthRangeMax(
                 pMember: newValue
             )
         }
     }
-
+    
     public var enableStencil: Bool {
         get {
             __getEnableStencil()
         }
-        set {
+        set(newValue) {
             __setEnableStencil(
                 pMember: newValue
             )
         }
     }
-
+    
     public var frontOpFail: Godot.RenderingDevice.StencilOperation {
         get {
             __getFrontOpFail()
         }
-        set {
+        set(newValue) {
             __setFrontOpFail(
                 pMember: newValue
             )
         }
     }
-
+    
     public var frontOpPass: Godot.RenderingDevice.StencilOperation {
         get {
             __getFrontOpPass()
         }
-        set {
+        set(newValue) {
             __setFrontOpPass(
                 pMember: newValue
             )
         }
     }
-
+    
     public var frontOpDepthFail: Godot.RenderingDevice.StencilOperation {
         get {
             __getFrontOpDepthFail()
         }
-        set {
+        set(newValue) {
             __setFrontOpDepthFail(
                 pMember: newValue
             )
         }
     }
-
+    
     public var frontOpCompare: Godot.RenderingDevice.CompareOperator {
         get {
             __getFrontOpCompare()
         }
-        set {
+        set(newValue) {
             __setFrontOpCompare(
                 pMember: newValue
             )
         }
     }
-
+    
     public var frontOpCompareMask: UInt32 {
         get {
             __getFrontOpCompareMask()
         }
-        set {
+        set(newValue) {
             __setFrontOpCompareMask(
                 pMember: newValue
             )
         }
     }
-
+    
     public var frontOpWriteMask: UInt32 {
         get {
             __getFrontOpWriteMask()
         }
-        set {
+        set(newValue) {
             __setFrontOpWriteMask(
                 pMember: newValue
             )
         }
     }
-
+    
     public var frontOpReference: UInt32 {
         get {
             __getFrontOpReference()
         }
-        set {
+        set(newValue) {
             __setFrontOpReference(
                 pMember: newValue
             )
         }
     }
-
+    
     public var backOpFail: Godot.RenderingDevice.StencilOperation {
         get {
             __getBackOpFail()
         }
-        set {
+        set(newValue) {
             __setBackOpFail(
                 pMember: newValue
             )
         }
     }
-
+    
     public var backOpPass: Godot.RenderingDevice.StencilOperation {
         get {
             __getBackOpPass()
         }
-        set {
+        set(newValue) {
             __setBackOpPass(
                 pMember: newValue
             )
         }
     }
-
+    
     public var backOpDepthFail: Godot.RenderingDevice.StencilOperation {
         get {
             __getBackOpDepthFail()
         }
-        set {
+        set(newValue) {
             __setBackOpDepthFail(
                 pMember: newValue
             )
         }
     }
-
+    
     public var backOpCompare: Godot.RenderingDevice.CompareOperator {
         get {
             __getBackOpCompare()
         }
-        set {
+        set(newValue) {
             __setBackOpCompare(
                 pMember: newValue
             )
         }
     }
-
+    
     public var backOpCompareMask: UInt32 {
         get {
             __getBackOpCompareMask()
         }
-        set {
+        set(newValue) {
             __setBackOpCompareMask(
                 pMember: newValue
             )
         }
     }
-
+    
     public var backOpWriteMask: UInt32 {
         get {
             __getBackOpWriteMask()
         }
-        set {
+        set(newValue) {
             __setBackOpWriteMask(
                 pMember: newValue
             )
         }
     }
-
+    
     public var backOpReference: UInt32 {
         get {
             __getBackOpReference()
         }
-        set {
+        set(newValue) {
             __setBackOpReference(
                 pMember: newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

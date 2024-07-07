@@ -5,4 +5,5 @@
 import GodotExtensionHeaders
 
 extension Vector2I {
+    
 }

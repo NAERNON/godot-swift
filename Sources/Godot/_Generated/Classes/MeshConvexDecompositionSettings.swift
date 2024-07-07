@@ -9,22 +9,23 @@ open class MeshConvexDecompositionSettings: RefCounted {
     public enum Mode: UInt32, GodotEnum {
         case voxel = 0
         case tetrahedron = 1
-
+        
         public static func hintValues() -> [(name: String, value: RawValue)] {
             [
-            ("Voxel", 0),
-            ("Tetrahedron", 1),]
+               ("Voxel", 0),
+               ("Tetrahedron", 1),
+            ]
         }
     }
-
+    
     internal static var __method_binding_set_max_concavity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_max_concavity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_max_concavity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setMaxConcavity(
         _ maxConcavity: Double
     ) {
@@ -41,15 +42,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_max_concavity: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_max_concavity").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_max_concavity").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getMaxConcavity() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -62,15 +63,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_symmetry_planes_clipping_bias: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_symmetry_planes_clipping_bias").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_symmetry_planes_clipping_bias").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setSymmetryPlanesClippingBias(
         _ symmetryPlanesClippingBias: Double
     ) {
@@ -87,15 +88,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_symmetry_planes_clipping_bias: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_symmetry_planes_clipping_bias").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_symmetry_planes_clipping_bias").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getSymmetryPlanesClippingBias() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -108,15 +109,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_revolution_axes_clipping_bias: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_revolution_axes_clipping_bias").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_revolution_axes_clipping_bias").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setRevolutionAxesClippingBias(
         _ revolutionAxesClippingBias: Double
     ) {
@@ -133,15 +134,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_revolution_axes_clipping_bias: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_revolution_axes_clipping_bias").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_revolution_axes_clipping_bias").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getRevolutionAxesClippingBias() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -154,15 +155,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_min_volume_per_convex_hull: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_min_volume_per_convex_hull").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
-        }
+            GodotStringName(swiftStaticString: "set_min_volume_per_convex_hull").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 373806689)!
+            }
         }
     }()
-
+    
     private func __setMinVolumePerConvexHull(
         _ minVolumePerConvexHull: Double
     ) {
@@ -179,15 +180,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_min_volume_per_convex_hull: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_min_volume_per_convex_hull").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
-        }
+            GodotStringName(swiftStaticString: "get_min_volume_per_convex_hull").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1740695150)!
+            }
         }
     }()
-
+    
     private func __getMinVolumePerConvexHull() -> Double {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -200,15 +201,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_resolution: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_resolution").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_resolution").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setResolution(
         minVolumePerConvexHull: UInt32
     ) {
@@ -225,15 +226,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_resolution: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_resolution").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_resolution").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getResolution() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -246,15 +247,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_max_num_vertices_per_convex_hull: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_max_num_vertices_per_convex_hull").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_max_num_vertices_per_convex_hull").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setMaxNumVerticesPerConvexHull(
         _ maxNumVerticesPerConvexHull: UInt32
     ) {
@@ -271,15 +272,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_max_num_vertices_per_convex_hull: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_max_num_vertices_per_convex_hull").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_max_num_vertices_per_convex_hull").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getMaxNumVerticesPerConvexHull() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -292,15 +293,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_plane_downsampling: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_plane_downsampling").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_plane_downsampling").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setPlaneDownsampling(
         _ planeDownsampling: UInt32
     ) {
@@ -317,15 +318,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_plane_downsampling: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_plane_downsampling").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_plane_downsampling").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getPlaneDownsampling() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -338,15 +339,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_convex_hull_downsampling: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_convex_hull_downsampling").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_convex_hull_downsampling").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setConvexHullDownsampling(
         _ convexHullDownsampling: UInt32
     ) {
@@ -363,15 +364,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_convex_hull_downsampling: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_convex_hull_downsampling").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_convex_hull_downsampling").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getConvexHullDownsampling() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -384,15 +385,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_normalize_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_normalize_mesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_normalize_mesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setNormalizeMesh(
         _ normalizeMesh: Bool
     ) {
@@ -409,15 +410,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_normalize_mesh: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_normalize_mesh").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_normalize_mesh").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getNormalizeMesh() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -430,15 +431,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1668072869)!
-        }
+            GodotStringName(swiftStaticString: "set_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1668072869)!
+            }
         }
     }()
-
+    
     private func __setMode(
         _ mode: Godot.MeshConvexDecompositionSettings.Mode
     ) {
@@ -455,15 +456,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_mode: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_mode").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 23479454)!
-        }
+            GodotStringName(swiftStaticString: "get_mode").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 23479454)!
+            }
         }
     }()
-
+    
     private func __getMode() -> Godot.MeshConvexDecompositionSettings.Mode {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -476,15 +477,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_convex_hull_approximation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_convex_hull_approximation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_convex_hull_approximation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setConvexHullApproximation(
         _ convexHullApproximation: Bool
     ) {
@@ -501,15 +502,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_convex_hull_approximation: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_convex_hull_approximation").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_convex_hull_approximation").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getConvexHullApproximation() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -522,15 +523,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_max_convex_hulls: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_max_convex_hulls").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
-        }
+            GodotStringName(swiftStaticString: "set_max_convex_hulls").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1286410249)!
+            }
         }
     }()
-
+    
     private func __setMaxConvexHulls(
         _ maxConvexHulls: UInt32
     ) {
@@ -547,15 +548,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_max_convex_hulls: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_max_convex_hulls").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
-        }
+            GodotStringName(swiftStaticString: "get_max_convex_hulls").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3905245786)!
+            }
         }
     }()
-
+    
     private func __getMaxConvexHulls() -> UInt32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -568,15 +569,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_set_project_hull_vertices: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_project_hull_vertices").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
-        }
+            GodotStringName(swiftStaticString: "set_project_hull_vertices").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2586408642)!
+            }
         }
     }()
-
+    
     private func __setProjectHullVertices(
         _ projectHullVertices: Bool
     ) {
@@ -593,15 +594,15 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     internal static var __method_binding_get_project_hull_vertices: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_project_hull_vertices").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
-        }
+            GodotStringName(swiftStaticString: "get_project_hull_vertices").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 36873697)!
+            }
         }
     }()
-
+    
     private func __getProjectHullVertices() -> Bool {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -614,161 +615,158 @@ open class MeshConvexDecompositionSettings: RefCounted {
             }
         }
     }
-
+    
     public var maxConcavity: Double {
         get {
             __getMaxConcavity()
         }
-        set {
+        set(newValue) {
             __setMaxConcavity(
                 newValue
             )
         }
     }
-
+    
     public var symmetryPlanesClippingBias: Double {
         get {
             __getSymmetryPlanesClippingBias()
         }
-        set {
+        set(newValue) {
             __setSymmetryPlanesClippingBias(
                 newValue
             )
         }
     }
-
+    
     public var revolutionAxesClippingBias: Double {
         get {
             __getRevolutionAxesClippingBias()
         }
-        set {
+        set(newValue) {
             __setRevolutionAxesClippingBias(
                 newValue
             )
         }
     }
-
+    
     public var minVolumePerConvexHull: Double {
         get {
             __getMinVolumePerConvexHull()
         }
-        set {
+        set(newValue) {
             __setMinVolumePerConvexHull(
                 newValue
             )
         }
     }
-
+    
     public var resolution: UInt32 {
         get {
             __getResolution()
         }
-        set {
+        set(newValue) {
             __setResolution(
                 minVolumePerConvexHull: newValue
             )
         }
     }
-
+    
     public var maxNumVerticesPerConvexHull: UInt32 {
         get {
             __getMaxNumVerticesPerConvexHull()
         }
-        set {
+        set(newValue) {
             __setMaxNumVerticesPerConvexHull(
                 newValue
             )
         }
     }
-
+    
     public var planeDownsampling: UInt32 {
         get {
             __getPlaneDownsampling()
         }
-        set {
+        set(newValue) {
             __setPlaneDownsampling(
                 newValue
             )
         }
     }
-
+    
     public var convexHullDownsampling: UInt32 {
         get {
             __getConvexHullDownsampling()
         }
-        set {
+        set(newValue) {
             __setConvexHullDownsampling(
                 newValue
             )
         }
     }
-
+    
     public var normalizeMesh: Bool {
         get {
             __getNormalizeMesh()
         }
-        set {
+        set(newValue) {
             __setNormalizeMesh(
                 newValue
             )
         }
     }
-
+    
     public var mode: Godot.MeshConvexDecompositionSettings.Mode {
         get {
             __getMode()
         }
-        set {
+        set(newValue) {
             __setMode(
                 newValue
             )
         }
     }
-
+    
     public var convexHullApproximation: Bool {
         get {
             __getConvexHullApproximation()
         }
-        set {
+        set(newValue) {
             __setConvexHullApproximation(
                 newValue
             )
         }
     }
-
+    
     public var maxConvexHulls: UInt32 {
         get {
             __getMaxConvexHulls()
         }
-        set {
+        set(newValue) {
             __setMaxConvexHulls(
                 newValue
             )
         }
     }
-
+    
     public var projectHullVertices: Bool {
         get {
             __getProjectHullVertices()
         }
-        set {
+        set(newValue) {
             __setProjectHullVertices(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

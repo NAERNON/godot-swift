@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class InputMap: Object {
     internal static var __method_binding_has_action: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "has_action").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
-        }
+            GodotStringName(swiftStaticString: "has_action").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2619796661)!
+            }
         }
     }()
-
+    
     public func hasAction(
         _ action: Godot.GodotStringName
     ) -> Bool {
@@ -32,15 +32,15 @@ open class InputMap: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_get_actions: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_actions").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
-        }
+            GodotStringName(swiftStaticString: "get_actions").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
+            }
         }
     }()
-
+    
     public func actions() -> Godot.GodotArray<Godot.GodotStringName> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -53,15 +53,15 @@ open class InputMap: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_add_action: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "add_action").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4100757082)!
-        }
+            GodotStringName(swiftStaticString: "add_action").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4100757082)!
+            }
         }
     }()
-
+    
     public func addAction(
         _ action: Godot.GodotStringName,
         deadzone: Double = 0.5
@@ -81,15 +81,15 @@ open class InputMap: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_erase_action: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "erase_action").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
-        }
+            GodotStringName(swiftStaticString: "erase_action").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
+            }
         }
     }()
-
+    
     public func eraseAction(
         _ action: Godot.GodotStringName
     ) {
@@ -106,15 +106,15 @@ open class InputMap: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_action_set_deadzone: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "action_set_deadzone").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4135858297)!
-        }
+            GodotStringName(swiftStaticString: "action_set_deadzone").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4135858297)!
+            }
         }
     }()
-
+    
     public func actionSetDeadzone(
         action: Godot.GodotStringName,
         deadzone: Double
@@ -134,15 +134,15 @@ open class InputMap: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_action_get_deadzone: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "action_get_deadzone").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1391627649)!
-        }
+            GodotStringName(swiftStaticString: "action_get_deadzone").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1391627649)!
+            }
         }
     }()
-
+    
     public func actionGetDeadzone(
         action: Godot.GodotStringName
     ) -> Double {
@@ -161,15 +161,15 @@ open class InputMap: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_action_add_event: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "action_add_event").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 518302593)!
-        }
+            GodotStringName(swiftStaticString: "action_add_event").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 518302593)!
+            }
         }
     }()
-
+    
     public func actionAddEvent(
         action: Godot.GodotStringName,
         event: Godot.InputEvent?
@@ -191,15 +191,15 @@ open class InputMap: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_action_has_event: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "action_has_event").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1185871985)!
-        }
+            GodotStringName(swiftStaticString: "action_has_event").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1185871985)!
+            }
         }
     }()
-
+    
     public func actionHasEvent(
         action: Godot.GodotStringName,
         event: Godot.InputEvent?
@@ -223,15 +223,15 @@ open class InputMap: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_action_erase_event: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "action_erase_event").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 518302593)!
-        }
+            GodotStringName(swiftStaticString: "action_erase_event").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 518302593)!
+            }
         }
     }()
-
+    
     public func actionEraseEvent(
         action: Godot.GodotStringName,
         event: Godot.InputEvent?
@@ -253,15 +253,15 @@ open class InputMap: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_action_erase_events: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "action_erase_events").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
-        }
+            GodotStringName(swiftStaticString: "action_erase_events").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3304788590)!
+            }
         }
     }()
-
+    
     public func actionEraseEvents(
         action: Godot.GodotStringName
     ) {
@@ -278,18 +278,18 @@ open class InputMap: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_action_get_events: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "action_get_events").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 689397652)!
-        }
+            GodotStringName(swiftStaticString: "action_get_events").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 689397652)!
+            }
         }
     }()
-
+    
     public func actionGetEvents(
         action: Godot.GodotStringName
-    ) -> Godot.GodotArray<Godot.InputEvent?> {
+    ) -> Godot.GodotArray<Godot.InputEvent> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             withTransferrableUnsafeRawPointer(to: action) { __ptr_action in
                 withUnsafeArgumentPackPointer(__ptr_action) { __accessPtr in
@@ -305,15 +305,15 @@ open class InputMap: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_event_is_action: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "event_is_action").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3193353650)!
-        }
+            GodotStringName(swiftStaticString: "event_is_action").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3193353650)!
+            }
         }
     }()
-
+    
     public func eventIsAction(
         event: Godot.InputEvent?,
         action: Godot.GodotStringName,
@@ -340,15 +340,15 @@ open class InputMap: Object {
             }
         }
     }
-
+    
     internal static var __method_binding_load_from_project_settings: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "load_from_project_settings").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
-        }
+            GodotStringName(swiftStaticString: "load_from_project_settings").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3218959716)!
+            }
         }
     }()
-
+    
     public func loadFromProjectSettings() {
         self.withUnsafeMutableRawPointer { __ptr_self in
             GodotExtension.Interface.objectMethodBindPtrcall(
@@ -359,18 +359,15 @@ open class InputMap: Object {
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }

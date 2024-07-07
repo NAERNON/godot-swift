@@ -146,7 +146,7 @@ extension Double.GodotContiguousArrayStorage: GodotContiguousArrayStorageProtoco
         .packedFloat64Array
     }
     
-    public consuming func transferToGodot(
+    public func transferToGodot(
         unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
     ) {
         withUnsafeOpaquePointer { selfPtr in

@@ -12,7 +12,7 @@ private var _sharedPerformance = {
 }()
 
 public extension Performance {
-    static var shared: Performance {
+    static var shared: Performance { 
         _sharedPerformance
     }
 }
@@ -25,7 +25,7 @@ private var _sharedTextServerManager = {
 }()
 
 public extension TextServerManager {
-    static var shared: TextServerManager {
+    static var shared: TextServerManager { 
         _sharedTextServerManager
     }
 }
@@ -38,7 +38,7 @@ private var _sharedPhysicsServer2DManager = {
 }()
 
 public extension PhysicsServer2DManager {
-    static var shared: PhysicsServer2DManager {
+    static var shared: PhysicsServer2DManager { 
         _sharedPhysicsServer2DManager
     }
 }
@@ -51,7 +51,7 @@ private var _sharedPhysicsServer3DManager = {
 }()
 
 public extension PhysicsServer3DManager {
-    static var shared: PhysicsServer3DManager {
+    static var shared: PhysicsServer3DManager { 
         _sharedPhysicsServer3DManager
     }
 }
@@ -64,7 +64,7 @@ private var _sharedNavigationMeshGenerator = {
 }()
 
 public extension NavigationMeshGenerator {
-    static var shared: NavigationMeshGenerator {
+    static var shared: NavigationMeshGenerator { 
         _sharedNavigationMeshGenerator
     }
 }
@@ -77,7 +77,7 @@ private var _sharedProjectSettings = {
 }()
 
 public extension ProjectSettings {
-    static var shared: ProjectSettings {
+    static var shared: ProjectSettings { 
         _sharedProjectSettings
     }
 }
@@ -90,7 +90,7 @@ private var _sharedIP = {
 }()
 
 public extension IP {
-    static var shared: IP {
+    static var shared: IP { 
         _sharedIP
     }
 }
@@ -103,7 +103,7 @@ private var _sharedGeometry2D = {
 }()
 
 public extension Geometry2D {
-    static var shared: Geometry2D {
+    static var shared: Geometry2D { 
         _sharedGeometry2D
     }
 }
@@ -116,7 +116,7 @@ private var _sharedGeometry3D = {
 }()
 
 public extension Geometry3D {
-    static var shared: Geometry3D {
+    static var shared: Geometry3D { 
         _sharedGeometry3D
     }
 }
@@ -129,7 +129,7 @@ private var _sharedResourceLoader = {
 }()
 
 public extension ResourceLoader {
-    static var shared: ResourceLoader {
+    static var shared: ResourceLoader { 
         _sharedResourceLoader
     }
 }
@@ -142,7 +142,7 @@ private var _sharedResourceSaver = {
 }()
 
 public extension ResourceSaver {
-    static var shared: ResourceSaver {
+    static var shared: ResourceSaver { 
         _sharedResourceSaver
     }
 }
@@ -155,7 +155,7 @@ private var _sharedOS = {
 }()
 
 public extension OS {
-    static var shared: OS {
+    static var shared: OS { 
         _sharedOS
     }
 }
@@ -168,7 +168,7 @@ private var _sharedEngine = {
 }()
 
 public extension Engine {
-    static var shared: Engine {
+    static var shared: Engine { 
         _sharedEngine
     }
 }
@@ -181,7 +181,7 @@ private var _sharedClassDB = {
 }()
 
 public extension ClassDB {
-    static var shared: ClassDB {
+    static var shared: ClassDB { 
         _sharedClassDB
     }
 }
@@ -194,7 +194,7 @@ private var _sharedMarshalls = {
 }()
 
 public extension Marshalls {
-    static var shared: Marshalls {
+    static var shared: Marshalls { 
         _sharedMarshalls
     }
 }
@@ -207,7 +207,7 @@ private var _sharedTranslationServer = {
 }()
 
 public extension TranslationServer {
-    static var shared: TranslationServer {
+    static var shared: TranslationServer { 
         _sharedTranslationServer
     }
 }
@@ -220,7 +220,7 @@ private var _sharedInput = {
 }()
 
 public extension Input {
-    static var shared: Input {
+    static var shared: Input { 
         _sharedInput
     }
 }
@@ -233,7 +233,7 @@ private var _sharedInputMap = {
 }()
 
 public extension InputMap {
-    static var shared: InputMap {
+    static var shared: InputMap { 
         _sharedInputMap
     }
 }
@@ -246,7 +246,7 @@ private var _sharedEngineDebugger = {
 }()
 
 public extension EngineDebugger {
-    static var shared: EngineDebugger {
+    static var shared: EngineDebugger { 
         _sharedEngineDebugger
     }
 }
@@ -259,7 +259,7 @@ private var _sharedTime = {
 }()
 
 public extension Time {
-    static var shared: Time {
+    static var shared: Time { 
         _sharedTime
     }
 }
@@ -272,7 +272,7 @@ private var _sharedGDExtensionManager = {
 }()
 
 public extension GDExtensionManager {
-    static var shared: GDExtensionManager {
+    static var shared: GDExtensionManager { 
         _sharedGDExtensionManager
     }
 }
@@ -285,7 +285,7 @@ private var _sharedResourceUID = {
 }()
 
 public extension ResourceUID {
-    static var shared: ResourceUID {
+    static var shared: ResourceUID { 
         _sharedResourceUID
     }
 }
@@ -298,7 +298,7 @@ private var _sharedWorkerThreadPool = {
 }()
 
 public extension WorkerThreadPool {
-    static var shared: WorkerThreadPool {
+    static var shared: WorkerThreadPool { 
         _sharedWorkerThreadPool
     }
 }
@@ -311,7 +311,7 @@ private var _sharedThemeDB = {
 }()
 
 public extension ThemeDB {
-    static var shared: ThemeDB {
+    static var shared: ThemeDB { 
         _sharedThemeDB
     }
 }
@@ -324,7 +324,7 @@ private var _sharedEditorInterface = {
 }()
 
 public extension EditorInterface {
-    static var shared: EditorInterface {
+    static var shared: EditorInterface { 
         _sharedEditorInterface
     }
 }
@@ -337,7 +337,7 @@ private var _sharedJavaClassWrapper = {
 }()
 
 public extension JavaClassWrapper {
-    static var shared: JavaClassWrapper {
+    static var shared: JavaClassWrapper { 
         _sharedJavaClassWrapper
     }
 }
@@ -350,7 +350,7 @@ private var _sharedJavaScriptBridge = {
 }()
 
 public extension JavaScriptBridge {
-    static var shared: JavaScriptBridge {
+    static var shared: JavaScriptBridge { 
         _sharedJavaScriptBridge
     }
 }
@@ -363,7 +363,7 @@ private var _sharedDisplayServer = {
 }()
 
 public extension DisplayServer {
-    static var shared: DisplayServer {
+    static var shared: DisplayServer { 
         _sharedDisplayServer
     }
 }
@@ -376,7 +376,7 @@ private var _sharedRenderingServer = {
 }()
 
 public extension RenderingServer {
-    static var shared: RenderingServer {
+    static var shared: RenderingServer { 
         _sharedRenderingServer
     }
 }
@@ -389,7 +389,7 @@ private var _sharedAudioServer = {
 }()
 
 public extension AudioServer {
-    static var shared: AudioServer {
+    static var shared: AudioServer { 
         _sharedAudioServer
     }
 }
@@ -402,7 +402,7 @@ private var _sharedPhysicsServer2D = {
 }()
 
 public extension PhysicsServer2D {
-    static var shared: PhysicsServer2D {
+    static var shared: PhysicsServer2D { 
         _sharedPhysicsServer2D
     }
 }
@@ -415,7 +415,7 @@ private var _sharedPhysicsServer3D = {
 }()
 
 public extension PhysicsServer3D {
-    static var shared: PhysicsServer3D {
+    static var shared: PhysicsServer3D { 
         _sharedPhysicsServer3D
     }
 }
@@ -428,7 +428,7 @@ private var _sharedNavigationServer2D = {
 }()
 
 public extension NavigationServer2D {
-    static var shared: NavigationServer2D {
+    static var shared: NavigationServer2D { 
         _sharedNavigationServer2D
     }
 }
@@ -441,7 +441,7 @@ private var _sharedNavigationServer3D = {
 }()
 
 public extension NavigationServer3D {
-    static var shared: NavigationServer3D {
+    static var shared: NavigationServer3D { 
         _sharedNavigationServer3D
     }
 }
@@ -454,7 +454,7 @@ private var _sharedXRServer = {
 }()
 
 public extension XRServer {
-    static var shared: XRServer {
+    static var shared: XRServer { 
         _sharedXRServer
     }
 }
@@ -467,7 +467,7 @@ private var _sharedCameraServer = {
 }()
 
 public extension CameraServer {
-    static var shared: CameraServer {
+    static var shared: CameraServer { 
         _sharedCameraServer
     }
 }

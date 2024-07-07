@@ -3,7 +3,7 @@ extension Signal: Variant.Storable {
     public static let variantStorageType: Variant.StorageType? = .signal
     
     public static func convertToStorage(
-        _ value: consuming Signal
+        _ value: Signal
     ) -> Variant.Storage {
         let storage = Variant.Storage()
         
@@ -45,7 +45,7 @@ extension Signal: Hintable {
 extension Signal: Exposable {
     public static let variantRepresentationType: Variant.RepresentationType = .signal
     
-    public consuming func transferToGodot(
+    public func transferToGodot(
         unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
     ) {
         withUnsafeOpaquePointer { selfPtr in

@@ -8,12 +8,12 @@ import GodotExtensionHeaders
 open class GLTFSkeleton: Resource {
     internal static var __method_binding_get_joints: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_joints").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
-        }
+            GodotStringName(swiftStaticString: "get_joints").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
+            }
         }
     }()
-
+    
     private func __getJoints() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -26,15 +26,15 @@ open class GLTFSkeleton: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_joints: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_joints").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
-        }
+            GodotStringName(swiftStaticString: "set_joints").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
+            }
         }
     }()
-
+    
     private func __setJoints(
         _ joints: Godot.GodotContiguousArray<Int32>
     ) {
@@ -51,15 +51,15 @@ open class GLTFSkeleton: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_roots: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_roots").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
-        }
+            GodotStringName(swiftStaticString: "get_roots").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 969006518)!
+            }
         }
     }()
-
+    
     private func __getRoots() -> Godot.GodotContiguousArray<Int32> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -72,15 +72,15 @@ open class GLTFSkeleton: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_roots: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_roots").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
-        }
+            GodotStringName(swiftStaticString: "set_roots").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 3614634198)!
+            }
         }
     }()
-
+    
     private func __setRoots(
         _ roots: Godot.GodotContiguousArray<Int32>
     ) {
@@ -97,15 +97,15 @@ open class GLTFSkeleton: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_godot_skeleton: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_godot_skeleton").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1814733083)!
-        }
+            GodotStringName(swiftStaticString: "get_godot_skeleton").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 1814733083)!
+            }
         }
     }()
-
+    
     public func godotSkeleton() -> Godot.Skeleton3D? {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -118,15 +118,15 @@ open class GLTFSkeleton: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_unique_names: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_unique_names").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
-        }
+            GodotStringName(swiftStaticString: "get_unique_names").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2915620761)!
+            }
         }
     }()
-
+    
     private func __getUniqueNames() -> Godot.GodotArray<Godot.GodotString> {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -139,15 +139,15 @@ open class GLTFSkeleton: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_unique_names: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_unique_names").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
-        }
+            GodotStringName(swiftStaticString: "set_unique_names").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 381264803)!
+            }
         }
     }()
-
+    
     private func __setUniqueNames(
         _ uniqueNames: Godot.GodotArray<Godot.GodotString>
     ) {
@@ -164,15 +164,15 @@ open class GLTFSkeleton: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_godot_bone_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_godot_bone_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2382534195)!
-        }
+            GodotStringName(swiftStaticString: "get_godot_bone_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2382534195)!
+            }
         }
     }()
-
+    
     private func __getGodotBoneNode() -> Godot.AnyGodotDictionary {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -185,15 +185,15 @@ open class GLTFSkeleton: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_set_godot_bone_node: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "set_godot_bone_node").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155329257)!
-        }
+            GodotStringName(swiftStaticString: "set_godot_bone_node").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 4155329257)!
+            }
         }
     }()
-
+    
     private func __setGodotBoneNode<Value1: Variant.Storable, Value2: Variant.Storable>(
         _ godotBoneNode: Godot.GodotDictionary<Value1, Value2>
     ) {
@@ -210,15 +210,15 @@ open class GLTFSkeleton: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bone_attachment_count: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bone_attachment_count").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
-        }
+            GodotStringName(swiftStaticString: "get_bone_attachment_count").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 2455072627)!
+            }
         }
     }()
-
+    
     public func boneAttachmentCount() -> Int32 {
         fromInitializingTransferrableUnsafeRawPointer { __temporary in
             self.withUnsafeMutableRawPointer { __ptr_self in
@@ -231,15 +231,15 @@ open class GLTFSkeleton: Resource {
             }
         }
     }
-
+    
     internal static var __method_binding_get_bone_attachment: GDExtensionMethodBindPtr = {
         _$exposedClassName.withUnsafeOpaquePointer { __ptr__class_name in
-        GodotStringName(swiftStaticString: "get_bone_attachment").withUnsafeOpaquePointer { __ptr__method_name in
-        return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 945440495)!
-        }
+            GodotStringName(swiftStaticString: "get_bone_attachment").withUnsafeOpaquePointer { __ptr__method_name in
+                return GodotExtension.Interface.classdbGetMethodBind(__ptr__class_name, __ptr__method_name, 945440495)!
+            }
         }
     }()
-
+    
     public func boneAttachment(
         idx: Int32
     ) -> Godot.BoneAttachment3D? {
@@ -258,62 +258,59 @@ open class GLTFSkeleton: Resource {
             }
         }
     }
-
+    
     public var joints: Godot.GodotContiguousArray<Int32> {
         get {
             __getJoints()
         }
-        set {
+        set(newValue) {
             __setJoints(
                 newValue
             )
         }
     }
-
+    
     public var roots: Godot.GodotContiguousArray<Int32> {
         get {
             __getRoots()
         }
-        set {
+        set(newValue) {
             __setRoots(
                 newValue
             )
         }
     }
-
+    
     public var uniqueNames: Godot.GodotArray<Godot.GodotString> {
         get {
             __getUniqueNames()
         }
-        set {
+        set(newValue) {
             __setUniqueNames(
                 newValue
             )
         }
     }
-
+    
     public var godotBoneNode: Godot.AnyGodotDictionary {
         get {
             __getGodotBoneNode()
         }
-        set {
+        set(newValue) {
             __setGodotBoneNode(
                 newValue
             )
         }
     }
-
+    
     private static var _virtualFunctions: [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)]? = nil
-
     internal override class func virtualFunctions() -> [GodotStringName: (godotName: GodotStringName, call: GDExtensionClassCallVirtual)] {
         if let _virtualFunctions {
             return _virtualFunctions
         }
-        _virtualFunctions = [
-            :
-        ]
+        _virtualFunctions = [:]
         for (key, value) in super.virtualFunctions() {
-            _virtualFunctions! [key] = value
+            _virtualFunctions![key] = value
         }
         return _virtualFunctions!
     }
