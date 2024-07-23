@@ -117,7 +117,7 @@ extension Callable {
     }
     
     static internal func make() -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
             CallableBindings.constructor(__ptr___temporary, nil)
         }
@@ -127,7 +127,7 @@ extension Callable {
     static internal func make(
         from: Godot.Callable
     ) -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -142,7 +142,7 @@ extension Callable {
         object: Godot.Object?,
         method: Godot.GodotStringName
     ) -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: object) { __ptr_object in
             withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
                 withTransferrableUnsafeRawPointer(to: method) { __ptr_method in

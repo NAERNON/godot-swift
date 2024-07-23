@@ -135,7 +135,7 @@ extension UInt8.GodotContiguousArrayStorage: GodotContiguousArrayStorageProtocol
     public static func fromInitializingTransferrableRawTypeUnsafeRawPointer(
         _ body: (UnsafeMutableRawPointer) -> Void
     ) -> Self {
-        var storage = Self.makeOpaqueStorage()
+        let storage = Self.makeOpaqueStorage()
         storage.withUnsafeMutableRawPointer(body)
         return .init(storage: storage)
     }
@@ -160,7 +160,7 @@ extension UInt8.GodotContiguousArrayStorage: GodotContiguousArrayStorageProtocol
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        var storage = makeOpaqueStorage()
+        let storage = makeOpaqueStorage()
         withUnsafeArgumentPackPointer(unsafePointer!) { accessPtr in
             storage.withUnsafeMutableRawPointer { opaquePtr in
                 UInt8GodotContiguousArrayStorageBindings

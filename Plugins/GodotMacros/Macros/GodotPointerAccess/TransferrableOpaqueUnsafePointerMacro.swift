@@ -30,7 +30,7 @@ public enum TransferrableOpaqueUnsafePointerMacro: DeclarationMacro {
         internal func fromInitializingTransferrableUnsafeRawPointer(
             _ body: (UnsafeMutableRawPointer) -> Void
         ) -> \(type) {
-            var storage = \(type).makeOpaqueStorage()
+            let storage = \(type).makeOpaqueStorage()
             storage.withUnsafeMutableRawPointer(body)
             return \(type)(storage: storage)
         }

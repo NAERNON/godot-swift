@@ -261,7 +261,7 @@ extension GodotArray {
     }
     
     static internal func make() -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
             GodotArrayBindings.constructor(__ptr___temporary, nil)
         }
@@ -271,7 +271,7 @@ extension GodotArray {
     static internal func make<Value: Variant.Storable>(
         from: Godot.GodotArray<Value>
     ) -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -288,7 +288,7 @@ extension GodotArray {
         className: Godot.GodotStringName,
         script: Value2
     ) -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: base) { __ptr_base in
             withTransferrableUnsafeRawPointer(to: type) { __ptr_type in
                 withTransferrableUnsafeRawPointer(to: className) { __ptr_className in
@@ -308,7 +308,7 @@ extension GodotArray {
     static internal func make(
         from: UInt8.GodotContiguousArrayStorage
     ) -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -322,7 +322,7 @@ extension GodotArray {
     static internal func make(
         from: Int32.GodotContiguousArrayStorage
     ) -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -336,7 +336,7 @@ extension GodotArray {
     static internal func make(
         from: Int64.GodotContiguousArrayStorage
     ) -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -350,7 +350,7 @@ extension GodotArray {
     static internal func make(
         from: Float.GodotContiguousArrayStorage
     ) -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -364,7 +364,7 @@ extension GodotArray {
     static internal func make(
         from: Double.GodotContiguousArrayStorage
     ) -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -378,7 +378,7 @@ extension GodotArray {
     static internal func make(
         from: GodotString.GodotContiguousArrayStorage
     ) -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -392,7 +392,7 @@ extension GodotArray {
     static internal func make(
         from: Vector2.GodotContiguousArrayStorage
     ) -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -406,7 +406,7 @@ extension GodotArray {
     static internal func make(
         from: Vector3.GodotContiguousArrayStorage
     ) -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -420,7 +420,7 @@ extension GodotArray {
     static internal func make(
         from: Color.GodotContiguousArrayStorage
     ) -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in

@@ -53,7 +53,7 @@ extension RID {
     }
     
     static internal func make() -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
             RIDBindings.constructor(__ptr___temporary, nil)
         }
@@ -63,7 +63,7 @@ extension RID {
     static internal func make(
         from: Godot.RID
     ) -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in

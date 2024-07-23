@@ -535,7 +535,7 @@ extension GodotStringName {
     }
     
     static internal func make() -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
             GodotStringNameBindings.constructor(__ptr___temporary, nil)
         }
@@ -545,7 +545,7 @@ extension GodotStringName {
     static internal func make(
         from: Godot.GodotStringName
     ) -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -559,7 +559,7 @@ extension GodotStringName {
     static internal func make(
         from: Godot.GodotString
     ) -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in

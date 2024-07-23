@@ -137,7 +137,7 @@ extension GodotArray: Exposable where Element : Exposable {
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        var storage = makeOpaqueStorage()
+        let storage = makeOpaqueStorage()
         withUnsafeArgumentPackPointer(unsafePointer!) { accessPtr in
             storage.withUnsafeMutableRawPointer { opaquePtr in
                 GodotArrayBindings.constructorFromGodotArray(opaquePtr, accessPtr)

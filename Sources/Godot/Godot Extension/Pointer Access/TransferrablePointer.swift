@@ -73,7 +73,7 @@ internal func withTransferrableUnsafeMutableRawPointer<Result, Element>(
 internal func fromInitializingTransferrableUnsafeRawPointer<Element>(
     _ body: (UnsafeMutableRawPointer) -> Void
 ) -> GodotArray<Element> {
-    var storage = GodotArray<Element>.makeOpaqueStorage()
+    let storage = GodotArray<Element>.makeOpaqueStorage()
     storage.withUnsafeMutableRawPointer(body)
     return .init(storage: storage)
 }
@@ -141,7 +141,7 @@ internal func withTransferrableUnsafeMutableRawPointer<Result, Key, AssociatedVa
 internal func fromInitializingTransferrableUnsafeRawPointer<Key, AssociatedValue>(
     _ body: (UnsafeMutableRawPointer) -> Void
 ) -> GodotDictionary<Key, AssociatedValue> {
-    var storage = GodotDictionary<Key, AssociatedValue>.makeOpaqueStorage()
+    let storage = GodotDictionary<Key, AssociatedValue>.makeOpaqueStorage()
     storage.withUnsafeMutableRawPointer(body)
     return .init(storage: storage)
 }

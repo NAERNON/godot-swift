@@ -24,7 +24,7 @@ extension Variant {
             }
         }
         
-        private var rawData: UnsafeMutableRawBufferPointer
+        private let rawData: UnsafeMutableRawBufferPointer
         
         init() {
             self.rawData = .allocate(byteCount: Variant.opaqueSize, alignment: 1)
@@ -178,13 +178,6 @@ extension Variant {
                 self.extensionType,
                 type.extensionType
             ) == 0 ? false : true
-        }
-        
-        /// Swaps the two variants raw values.
-        internal mutating func swap(with other: inout Variant.Storage) {
-            let selfRawData = self.rawData
-            self.rawData = other.rawData
-            other.rawData = selfRawData
         }
         
         // MARK: Operators

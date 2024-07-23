@@ -414,7 +414,7 @@ extension GodotBuiltinClass.Constructor {
         ).translated()
         
         return function.declSyntax(options: builtinClass.syntaxOptions) {
-            "var __temporary: Opaque.Storage = makeOpaqueStorage()"
+            "let __temporary: Opaque.Storage = makeOpaqueStorage()"
             
             function.argumentsPackPointerAccessSyntax(options: builtinClass.syntaxOptions) { packName in
                 """

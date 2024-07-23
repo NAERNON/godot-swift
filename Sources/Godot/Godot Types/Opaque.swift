@@ -1,6 +1,6 @@
 
 internal final class Opaque: CustomDebugStringConvertible {
-    private var storage: Storage
+    private let storage: Storage
     
     init(_ storage: consuming Storage) {
         self.storage = storage

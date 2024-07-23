@@ -397,9 +397,7 @@ private final class VariantSingleValueContainer: VariantRootEncoder, SingleValue
     override func generateVariantStorage() -> Variant.Storage {
         precondition(isValueEncoded, "No value was encoded.")
         
-        var resultVariantStorage = Variant.Storage()
-        resultVariantStorage.swap(with: &variantStorage)
-        return resultVariantStorage
+        return variantStorage.copy()
     }
     
     private func encodeStorage(_ storage: consuming Variant.Storage) {

@@ -46,7 +46,7 @@ extension GodotString: GodotContiguousArrayElement {
         }
         
         public func read() -> GodotString {
-            var storage = GodotString.makeOpaqueStorage()
+            let storage = GodotString.makeOpaqueStorage()
             withUnsafePointer(to: rawData) { rawPointer in
                 withUnsafeArgumentPackPointer(rawPointer) { accessPtr in
                     storage.withUnsafeMutableRawPointer { opaquePtr in
@@ -172,7 +172,7 @@ extension GodotString.GodotContiguousArrayStorage: GodotContiguousArrayStoragePr
     public static func fromInitializingTransferrableRawTypeUnsafeRawPointer(
         _ body: (UnsafeMutableRawPointer) -> Void
     ) -> Self {
-        var storage = Self.makeOpaqueStorage()
+        let storage = Self.makeOpaqueStorage()
         storage.withUnsafeMutableRawPointer(body)
         return .init(storage: storage)
     }
@@ -197,7 +197,7 @@ extension GodotString.GodotContiguousArrayStorage: GodotContiguousArrayStoragePr
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        var storage = makeOpaqueStorage()
+        let storage = makeOpaqueStorage()
         withUnsafeArgumentPackPointer(unsafePointer!) { accessPtr in
             storage.withUnsafeMutableRawPointer { opaquePtr in
                 GodotStringGodotContiguousArrayStorageBindings

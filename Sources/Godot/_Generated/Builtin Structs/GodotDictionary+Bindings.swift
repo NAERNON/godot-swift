@@ -109,7 +109,7 @@ extension GodotDictionary {
     }
     
     static internal func make() -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
             GodotDictionaryBindings.constructor(__ptr___temporary, nil)
         }
@@ -119,7 +119,7 @@ extension GodotDictionary {
     static internal func make<Value1: Variant.Storable, Value2: Variant.Storable>(
         from: Godot.GodotDictionary<Value1, Value2>
     ) -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in

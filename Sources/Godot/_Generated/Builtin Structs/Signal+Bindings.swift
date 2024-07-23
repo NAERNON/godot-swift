@@ -81,7 +81,7 @@ extension Signal {
     }
     
     static internal func make() -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
             SignalBindings.constructor(__ptr___temporary, nil)
         }
@@ -91,7 +91,7 @@ extension Signal {
     static internal func make(
         from: Godot.Signal
     ) -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: from) { __ptr_from in
             withUnsafeArgumentPackPointer(__ptr_from) { __accessPtr in
                 __temporary.withUnsafeMutableRawPointer { __ptr___temporary in
@@ -106,7 +106,7 @@ extension Signal {
         object: Godot.Object?,
         signal: Godot.GodotStringName
     ) -> Opaque.Storage {
-        var __temporary: Opaque.Storage = makeOpaqueStorage()
+        let __temporary: Opaque.Storage = makeOpaqueStorage()
         withTransferrableUnsafeRawPointer(to: object) { __ptr_object in
             withUnsafePointer(to: __ptr_object) { _ptr___ptr_object in
                 withTransferrableUnsafeRawPointer(to: signal) { __ptr_signal in

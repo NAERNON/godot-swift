@@ -1,7 +1,7 @@
 import GodotExtensionHeaders
 
 public final class Callable {
-    private var storage: Opaque.Storage
+    private let storage: Opaque.Storage
 
     internal init(storage: consuming Opaque.Storage) {
         self.storage = storage

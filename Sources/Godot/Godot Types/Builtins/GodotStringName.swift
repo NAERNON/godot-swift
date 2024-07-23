@@ -1,7 +1,7 @@
 import GodotExtensionHeaders
 
 public final class GodotStringName {
-    private var storage: Opaque.Storage
+    private let storage: Opaque.Storage
 
     internal init(storage: consuming Opaque.Storage) {
         self.storage = storage
@@ -75,7 +75,7 @@ extension GodotStringName {
     public static func className(
         forObjectPointer instancePtr: GDExtensionObjectPtr
     ) -> GodotStringName? {
-        var storage = Self.make()
+        let storage = Self.make()
         let classNameRetrieved = storage.withUnsafeMutableRawPointer { ptr in
             GodotExtension.Interface.objectGetClassName(instancePtr, GodotExtension.libraryPtr, ptr) != 0
         }

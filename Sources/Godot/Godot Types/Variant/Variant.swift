@@ -5,7 +5,7 @@ public final class Variant {
     // MARK: Inits
     
     /// The storage containing the variant data.
-    internal var storage: Storage
+    internal let storage: Storage
     
     public init(storage: consuming Storage) {
         self.storage = storage
@@ -178,17 +178,10 @@ extension Variant: Exposable {
     public consuming func transferToGodot(
         unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
     ) {
-        if isKnownUniquelyReferenced(&self) {
-            var emptyStorage = Storage()
-            emptyStorage.swap(with: &self.storage)
-            // Now the empty storage has the variant storage
-            emptyStorage.consumeByGodot(unsafePointer: destinationUnsafePointer)
-        } else {
             storage.copy().consumeByGodot(unsafePointer: destinationUnsafePointer)
         }
-    }
     
-    consuming public func transferVariantStorageToGodot(
+    public consuming func transferVariantStorageToGodot(
         unsafePointer destinationUnsafePointer: UnsafeMutableRawPointer
     ) {
         self.transferToGodot(unsafePointer: destinationUnsafePointer)

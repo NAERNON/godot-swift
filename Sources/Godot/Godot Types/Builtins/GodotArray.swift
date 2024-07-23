@@ -2,7 +2,7 @@ import GodotExtensionHeaders
 
 public final class GodotArray<Element>
 where Element : Variant.Storable {
-    private var storage: Opaque.Storage
+    private let storage: Opaque.Storage
 
     internal init(storage: consuming Opaque.Storage) {
         self.storage = storage

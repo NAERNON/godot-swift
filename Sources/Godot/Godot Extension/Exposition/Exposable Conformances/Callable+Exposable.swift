@@ -58,7 +58,7 @@ extension Callable: Exposable {
     public static func transferFromGodot(
         unsafePointer: UnsafeRawPointer?
     ) -> Self {
-        var storage = makeOpaqueStorage()
+        let storage = makeOpaqueStorage()
         withUnsafeArgumentPackPointer(unsafePointer!) { accessPtr in
             storage.withUnsafeMutableRawPointer { opaquePtr in
                 CallableBindings.constructorFromCallable(opaquePtr, accessPtr)

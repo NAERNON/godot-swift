@@ -35,7 +35,7 @@ extension Opaque {
             try body(UnsafeRawBufferPointer(rawData))
         }
         
-        mutating func withUnsafeMutableRawBufferPointer<Result>(
+        func withUnsafeMutableRawBufferPointer<Result>(
             _ body: (UnsafeMutableRawBufferPointer) throws -> Result
         ) rethrows -> Result {
             try body(rawData)
@@ -47,7 +47,7 @@ extension Opaque {
             try body(rawData.baseAddress!)
         }
         
-        mutating func withUnsafeMutableRawPointer<Result>(
+        func withUnsafeMutableRawPointer<Result>(
             _ body: (UnsafeMutableRawPointer) throws -> Result
         ) rethrows -> Result {
             try body(rawData.baseAddress!)
